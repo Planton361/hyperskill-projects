@@ -1,0 +1,46 @@
+# IDE / local tooling
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Builds and caches (wrapper files are intentionally tracked)
+.gradle/
+.kotlin/
+build/
+target/
+out/
+*.class
+*.log
+*.tmp
+*.swp
+*~
+
+# Hyperskill
+*-info.yaml
+task.html
+frameworkLessonHistory/
+.author_contents_storage_db*
+.hyperskill/
+.education/
+
+# Local credentials and configuration
+.env
+.env.*
+!.env.example
+local.properties
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Import transaction lock
+.import-hyperskill.lock
