@@ -1,12 +1,14 @@
 ### My Learning
 
+I learn through project-based work on Hyperskill, connecting the topics in an interactive Knowledge Map.
+
 Introduction to Java<br>
-31 / 89 course topics learned · 12 verified
+Course coverage: 31 / 89 course topics learned · 12 verified
 
 Knowledge areas:
 
-- [Java](https://planton361.github.io/hyperskill-projects/knowledge-map/?domain=java) — 26 learned
-- [Software development](https://planton361.github.io/hyperskill-projects/knowledge-map/?domain=software) — 5 learned
+- Java — 26 learned
+- Software development — 5 learned
 
 Project evidence:
 

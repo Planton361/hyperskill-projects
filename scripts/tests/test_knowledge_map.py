@@ -2,6 +2,7 @@
 import hashlib
 import importlib.util
 import json
+import re
 from pathlib import Path
 import shutil
 import tempfile
@@ -90,7 +91,13 @@ class KnowledgeMapTests(unittest.TestCase):
         m = self.model
         summary = build.summary(m)
         self.assertIn('31 / 89 course topics learned · 12 verified', summary)
-        self.assertIn(build.PUBLIC_URL, summary)
+        self.assertIn('Course coverage:', summary)
+        self.assertIn('project-based work on Hyperskill', summary)
+        self.assertIn('connecting the topics in an interactive Knowledge Map', summary)
+        self.assertEqual(summary.count(build.PUBLIC_URL), 1)
+        links = re.findall(r'\]\(([^)]+)\)', summary)
+        self.assertEqual([url for url in links if url.startswith(build.PUBLIC_URL)], [build.PUBLIC_URL])
+        self.assertNotIn('?domain=', summary)
         self.assertNotIn('For loop', summary)
         self.assertNotIn('verification_status', summary)
         self.assertLess(len(summary.splitlines()), 25)
@@ -98,6 +105,8 @@ class KnowledgeMapTests(unittest.TestCase):
         area_part = build.summary(expanded).split('Knowledge areas:')[1].split('Project evidence:')[0]
         self.assertEqual(sum(line.startswith('- ') for line in area_part.splitlines()), 4)
         self.assertIn('Other areas (27)', area_part)
+        self.assertEqual(build.summary(expanded).count(build.PUBLIC_URL), 1)
+        self.assertNotIn('?domain=', build.summary(expanded))
         cap = m['capability_evidence'][0]
         self.assertEqual((cap['learned_evidence'], cap['verified_evidence']), (4, 3))
         self.assertEqual(cap['required_topic_ids'], [25, 89, 87, 88])

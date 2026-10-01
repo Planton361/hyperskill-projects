@@ -143,11 +143,13 @@ def summary(model):
     course = courses[0]
     title = next(c['title'] for c in model['courses'] if c['id'] == course['course_id'])
     verified = sum(t['is_learned'] is True and t['is_verified'] is True for t in model['topics'] if course['course_id'] in t['course_ids'])
-    lines = ['### My Learning', '', title + '<br>',
-             f'{course["learned_topics_count"]} / {course["learned_topics_total"]} course topics learned · {verified} verified',
+    lines = ['### My Learning', '',
+             'I learn through project-based work on Hyperskill, connecting the topics in an interactive Knowledge Map.',
+             '', title + '<br>',
+             f'Course coverage: {course["learned_topics_count"]} / {course["learned_topics_total"]} course topics learned · {verified} verified',
              '', 'Knowledge areas:', '']
     for d in shown:
-        lines.append(f'- [{d["title"]}]({PUBLIC_URL}?domain={d["id"].split(":")[-1]}) — {d["learned"]} learned')
+        lines.append(f'- {d["title"]} — {d["learned"]} learned')
     if rest:
         lines.append(f'- Other areas ({len(rest)}) — {sum(d["learned"] for d in rest)} learned')
     completed = sorted([p for p in model['projects'] if p['status'] == 'completed'], key=lambda p: p['id'])
