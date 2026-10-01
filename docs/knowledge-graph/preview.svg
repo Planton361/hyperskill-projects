@@ -1,0 +1,477 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="660" viewBox="0 0 1200 660" role="img" aria-labelledby="title desc">
+<title id="title">Introduction to Java — personal knowledge graph</title>
+<desc id="desc">89 course topics. One explicitly known learned topic. Project 113 requires 26 topics; their applied status is unknown. Aggregate progress: 31 of 89 learned, 26 of 85 applied.</desc>
+<rect width="1200" height="660" fill="#101319"/>
+<g font-family="system-ui,sans-serif" fill="#e4e8f1">
+<text x="38" y="43" font-size="13" fill="#98a5bc" letter-spacing="3">PERSONAL KNOWLEDGE / COURSE 08</text>
+<text x="38" y="85" font-size="30">Introduction to Java</text>
+<text x="38" y="115" font-size="15" fill="#aeb9cc">31 / 89 learned · 26 / 85 applied — aggregate only</text>
+<line x1="430.36" y1="365.08" x2="515.75" y2="333.86" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="430.36" y1="365.08" x2="490.87" y2="431.49" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="430.36" y1="365.08" x2="314.62" y2="527.68" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="430.36" y1="365.08" x2="352.93" y2="161.46" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="430.36" y1="365.08" x2="630.62" y2="473.04" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="430.36" y1="365.08" x2="257.49" y2="461.68" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="430.36" y1="365.08" x2="606.98" y2="210.04" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="430.36" y1="365.08" x2="349.08" y2="540.35" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="430.36" y1="365.08" x2="290.33" y2="227.22" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="430.36" y1="365.08" x2="631.92" y2="358.28" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="430.36" y1="365.08" x2="267.84" y2="507.37" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="430.36" y1="365.08" x2="444.22" y2="170.72" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="475.33" y1="478.19" x2="427.82" y2="554.60" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="475.33" y1="478.19" x2="487.93" y2="480.70" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="450.47" y1="490.24" x2="568.63" y2="549.46" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="450.47" y1="490.24" x2="475.33" y2="478.19" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="450.47" y1="490.24" x2="375.47" y2="405.81" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="450.47" y1="490.24" x2="310.60" y2="392.14" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="450.47" y1="490.24" x2="533.93" y2="494.72" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="450.47" y1="490.24" x2="414.13" y2="532.85" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="321.45" y1="419.54" x2="280.68" y2="344.25" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="590.48" y1="507.54" x2="490.25" y2="524.61" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="530.35" y1="441.56" x2="473.38" y2="392.85" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="530.35" y1="441.56" x2="490.25" y2="524.61" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="378.28" y1="338.84" x2="375.47" y2="405.81" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="378.28" y1="338.84" x2="310.60" y2="392.14" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="378.28" y1="338.84" x2="279.60" y2="255.28" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="378.28" y1="338.84" x2="469.17" y2="338.88" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="375.47" y1="405.81" x2="277.98" y2="321.06" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="375.47" y1="405.81" x2="343.41" y2="370.92" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="375.47" y1="405.81" x2="449.82" y2="313.32" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="261.70" y1="191.57" x2="378.28" y2="338.84" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="300.69" y1="459.19" x2="243.91" y2="380.82" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="624.86" y1="532.11" x2="590.48" y2="507.54" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="243.91" y1="380.82" x2="300.07" y2="297.88" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="243.91" y1="380.82" x2="286.17" y2="386.97" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="410.37" y1="294.29" x2="327.99" y2="218.41" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="537.29" y1="515.02" x2="490.25" y2="524.61" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="519.64" y1="230.83" x2="510.18" y2="261.05" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="490.02" y1="512.44" x2="524.68" y2="554.20" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="524.68" y1="554.20" x2="573.63" y2="513.71" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="239.58" y1="262.63" x2="376.51" y2="176.97" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="551.06" y1="442.57" x2="590.48" y2="507.54" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="551.06" y1="442.57" x2="530.35" y2="441.56" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="551.06" y1="442.57" x2="516.66" y2="296.42" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="551.06" y1="442.57" x2="563.35" y2="410.57" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="551.06" y1="442.57" x2="481.39" y2="548.08" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="403.10" y1="455.69" x2="355.85" y2="440.30" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="403.10" y1="455.69" x2="423.70" y2="378.74" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="403.10" y1="455.69" x2="374.43" y2="501.31" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="566.53" y1="442.31" x2="490.02" y2="512.44" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="516.66" y1="296.42" x2="539.12" y2="302.30" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="473.38" y1="392.85" x2="412.18" y2="414.46" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="355.85" y1="440.30" x2="393.47" y2="401.07" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="410.71" y1="287.24" x2="274.72" y2="291.88" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="310.60" y1="392.14" x2="321.45" y2="419.54" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="310.60" y1="392.14" x2="280.68" y2="344.25" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="310.60" y1="392.14" x2="300.69" y2="459.19" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="310.60" y1="392.14" x2="277.98" y2="321.06" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="310.60" y1="392.14" x2="343.41" y2="370.92" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="310.60" y1="392.14" x2="253.15" y2="350.12" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="291.64" y1="348.28" x2="378.28" y2="338.84" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="291.64" y1="348.28" x2="239.58" y2="262.63" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="291.64" y1="348.28" x2="473.38" y2="392.85" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="573.63" y1="513.71" x2="624.86" y2="532.11" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="573.63" y1="513.71" x2="551.06" y2="442.57" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="573.63" y1="513.71" x2="537.29" y2="515.02" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="573.63" y1="513.71" x2="604.45" y2="470.85" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="454.22" y1="458.35" x2="450.47" y2="490.24" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="454.22" y1="458.35" x2="532.83" y2="545.06" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="454.22" y1="458.35" x2="510.66" y2="486.95" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="454.22" y1="458.35" x2="458.83" y2="386.14" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="568.63" y1="549.46" x2="533.93" y2="494.72" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="258.84" y1="252.24" x2="253.15" y2="350.12" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="364.31" y1="330.11" x2="485.52" y2="288.34" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="458.18" y1="468.67" x2="403.10" y2="455.69" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="458.18" y1="468.67" x2="412.18" y2="414.46" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="485.52" y1="288.34" x2="410.71" y2="287.24" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="485.52" y1="288.34" x2="510.18" y2="261.05" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="485.52" y1="288.34" x2="538.73" y2="310.73" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="485.52" y1="288.34" x2="555.47" y2="204.65" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="490.25" y1="524.61" x2="412.45" y2="501.23" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="490.25" y1="524.61" x2="453.33" y2="508.44" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="490.25" y1="524.61" x2="449.13" y2="558.79" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="277.98" y1="321.06" x2="258.84" y2="252.24" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="277.98" y1="321.06" x2="350.05" y2="355.11" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="327.99" y1="218.41" x2="399.87" y2="144.86" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="412.45" y1="501.23" x2="411.07" y2="479.74" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="412.45" y1="501.23" x2="423.70" y2="378.74" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="412.45" y1="501.23" x2="374.43" y2="501.31" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="563.35" y1="410.57" x2="487.93" y2="480.70" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="563.35" y1="410.57" x2="512.92" y2="412.05" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="563.35" y1="410.57" x2="469.17" y2="338.88" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="604.45" y1="470.85" x2="530.35" y2="441.56" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="411.07" y1="479.74" x2="491.11" y2="353.31" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="539.12" y1="302.30" x2="475.33" y2="478.19" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="532.83" y1="545.06" x2="533.93" y2="494.72" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="452.28" y1="215.83" x2="390.19" y2="208.34" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="452.28" y1="215.83" x2="519.64" y2="230.83" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="510.18" y1="261.05" x2="410.71" y2="287.24" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="510.18" y1="261.05" x2="555.47" y2="204.65" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="501.17" y1="135.00" x2="390.19" y2="208.34" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="453.33" y1="508.44" x2="481.39" y2="548.08" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="427.82" y1="554.60" x2="300.69" y2="459.19" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="538.73" y1="310.73" x2="442.20" y2="407.03" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="343.41" y1="370.92" x2="321.45" y2="419.54" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="343.41" y1="370.92" x2="280.68" y2="344.25" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="343.41" y1="370.92" x2="274.72" y2="291.88" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="343.41" y1="370.92" x2="300.07" y2="297.88" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="491.72" y1="157.41" x2="649.86" y2="241.33" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="583.18" y1="139.86" x2="556.61" y2="168.71" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="350.05" y1="355.11" x2="410.37" y2="294.29" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="487.93" y1="480.70" x2="393.47" y2="401.07" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="487.93" y1="480.70" x2="477.93" y2="565.00" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="487.93" y1="480.70" x2="510.66" y2="486.95" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="487.93" y1="480.70" x2="458.83" y2="386.14" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="487.93" y1="480.70" x2="414.13" y2="532.85" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="649.86" y1="241.33" x2="660.42" y2="329.94" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="512.92" y1="412.05" x2="343.41" y2="370.92" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="286.17" y1="386.97" x2="390.19" y2="208.34" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="286.17" y1="386.97" x2="274.73" y2="491.16" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="300.07" y1="297.88" x2="327.99" y2="218.41" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="412.18" y1="414.46" x2="355.85" y2="440.30" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="412.18" y1="414.46" x2="286.17" y2="386.97" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="449.82" y1="313.32" x2="300.07" y2="297.88" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="279.60" y1="255.28" x2="277.98" y2="321.06" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="536.80" y1="138.34" x2="583.18" y2="139.86" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="375.47" y1="162.97" x2="536.80" y2="138.34" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="556.61" y1="168.71" x2="376.51" y2="176.97" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="556.61" y1="168.71" x2="555.47" y2="204.65" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="481.39" y1="548.08" x2="449.13" y2="558.79" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="449.13" y1="558.79" x2="458.18" y2="468.67" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="423.70" y1="378.74" x2="410.71" y2="287.24" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="423.70" y1="378.74" x2="454.22" y2="458.35" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="253.15" y1="350.12" x2="243.91" y2="380.82" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="253.15" y1="350.12" x2="350.05" y2="355.11" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="253.15" y1="350.12" x2="286.17" y2="386.97" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="374.43" y1="501.31" x2="454.22" y2="458.35" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="469.17" y1="338.88" x2="588.95" y2="300.52" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="469.17" y1="338.88" x2="343.41" y2="370.92" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="510.66" y1="486.95" x2="321.45" y2="419.54" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="510.66" y1="486.95" x2="645.23" y2="454.85" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="533.93" y1="494.72" x2="378.28" y2="338.84" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="414.13" y1="532.85" x2="375.47" y2="405.81" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="491.11" y1="353.31" x2="378.28" y2="338.84" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="491.11" y1="353.31" x2="588.95" y2="300.52" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="491.11" y1="353.31" x2="523.74" y2="198.43" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="491.11" y1="353.31" x2="512.92" y2="412.05" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="491.11" y1="353.31" x2="458.83" y2="386.14" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="515.75" y1="333.86" x2="435.74" y2="267.26" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="515.75" y1="333.86" x2="591.37" y2="282.55" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="515.75" y1="333.86" x2="469.04" y2="365.58" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="435.74" y1="267.26" x2="307.57" y2="202.67" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="435.74" y1="267.26" x2="371.17" y2="281.74" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="435.74" y1="267.26" x2="545.74" y2="216.27" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="591.37" y1="282.55" x2="578.27" y2="357.47" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="614.91" y1="242.90" x2="546.70" y2="169.76" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="465.79" y1="196.91" x2="311.31" y2="158.97" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="622.18" y1="388.25" x2="579.31" y2="480.80" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="541.83" y1="468.79" x2="621.98" y2="520.71" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="541.83" y1="468.79" x2="363.72" y2="391.11" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="541.83" y1="468.79" x2="502.00" y2="539.49" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="425.32" y1="261.65" x2="354.13" y2="221.73" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="425.32" y1="261.65" x2="341.94" y2="412.15" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="425.32" y1="261.65" x2="390.19" y2="208.34" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="339.09" y1="355.82" x2="378.28" y2="338.84" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="339.09" y1="355.82" x2="375.47" y2="405.81" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="339.09" y1="355.82" x2="300.69" y2="459.19" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="339.09" y1="355.82" x2="310.60" y2="392.14" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="339.09" y1="355.82" x2="343.41" y2="370.92" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="339.09" y1="355.82" x2="279.60" y2="255.28" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="339.09" y1="355.82" x2="469.17" y2="338.88" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="320.79" y1="290.90" x2="258.84" y2="252.24" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="320.79" y1="290.90" x2="277.98" y2="321.06" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="320.79" y1="290.90" x2="350.05" y2="355.11" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="320.59" y1="309.97" x2="243.91" y2="380.82" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="320.59" y1="309.97" x2="410.37" y2="294.29" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="320.59" y1="309.97" x2="253.15" y2="350.12" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="343.04" y1="248.12" x2="327.99" y2="218.41" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="343.04" y1="248.12" x2="300.07" y2="297.88" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="343.04" y1="248.12" x2="449.82" y2="313.32" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="496.44" y1="183.35" x2="399.87" y2="144.86" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="273.97" y1="419.34" x2="297.50" y2="355.93" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="297.50" y1="355.93" x2="321.45" y2="419.54" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="297.50" y1="355.93" x2="280.68" y2="344.25" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="307.57" y1="202.67" x2="265.04" y2="253.81" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="460.22" y1="197.11" x2="583.18" y2="139.86" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="460.22" y1="197.11" x2="556.61" y2="168.71" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="360.38" y1="346.92" x2="339.09" y2="355.82" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="360.38" y1="346.92" x2="320.79" y2="290.90" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="354.13" y1="221.73" x2="390.19" y2="208.34" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="354.13" y1="221.73" x2="410.71" y2="287.24" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="354.13" y1="221.73" x2="274.72" y2="291.88" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="580.93" y1="285.06" x2="536.80" y2="138.34" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="543.92" y1="335.49" x2="530.35" y2="441.56" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="543.92" y1="335.49" x2="473.38" y2="392.85" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="543.92" y1="335.49" x2="523.74" y2="198.43" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="579.31" y1="480.80" x2="645.23" y2="454.85" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="579.31" y1="480.80" x2="477.93" y2="565.00" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="579.31" y1="480.80" x2="487.93" y2="480.70" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="579.31" y1="480.80" x2="510.66" y2="486.95" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="526.91" y1="328.93" x2="588.95" y2="300.52" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="526.91" y1="328.93" x2="491.11" y2="353.31" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="526.91" y1="328.93" x2="458.83" y2="386.14" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="381.15" y1="249.36" x2="320.59" y2="309.97" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="381.15" y1="249.36" x2="343.04" y2="248.12" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="381.15" y1="249.36" x2="496.44" y2="183.35" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="621.98" y1="520.71" x2="590.48" y2="507.54" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="621.98" y1="520.71" x2="624.86" y2="532.11" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="621.98" y1="520.71" x2="604.45" y2="470.85" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="363.72" y1="391.11" x2="273.97" y2="419.34" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="363.72" y1="391.11" x2="360.38" y2="346.92" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="363.72" y1="391.11" x2="381.15" y2="249.36" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="531.44" y1="407.49" x2="543.92" y2="335.49" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="531.44" y1="407.49" x2="526.91" y2="328.93" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="531.44" y1="407.49" x2="439.33" y2="463.21" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="531.44" y1="407.49" x2="456.47" y2="529.54" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="531.44" y1="407.49" x2="532.01" y2="363.78" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="531.44" y1="407.49" x2="539.27" y2="504.51" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="371.17" y1="281.74" x2="325.01" y2="269.38" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="371.17" y1="281.74" x2="489.94" y2="211.52" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="325.01" y1="269.38" x2="472.95" y2="272.79" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="325.01" y1="269.38" x2="364.31" y2="330.11" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="469.04" y1="365.58" x2="366.22" y2="305.80" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="265.04" y1="253.81" x2="239.58" y2="262.63" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="265.04" y1="253.81" x2="291.64" y2="348.28" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="265.04" y1="253.81" x2="376.51" y2="176.97" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="456.47" y1="529.54" x2="537.29" y2="515.02" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="456.47" y1="529.54" x2="490.25" y2="524.61" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="456.47" y1="529.54" x2="412.45" y2="501.23" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="456.47" y1="529.54" x2="411.07" y2="479.74" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="456.47" y1="529.54" x2="453.33" y2="508.44" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="456.47" y1="529.54" x2="481.39" y2="548.08" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="456.47" y1="529.54" x2="449.13" y2="558.79" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="545.74" y1="216.27" x2="614.91" y2="242.90" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="545.74" y1="216.27" x2="465.79" y2="196.91" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="545.74" y1="216.27" x2="499.58" y2="177.32" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="532.01" y1="363.78" x2="551.06" y2="442.57" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="532.01" y1="363.78" x2="516.66" y2="296.42" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="532.01" y1="363.78" x2="483.39" y2="140.62" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="532.01" y1="363.78" x2="563.35" y2="410.57" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="532.01" y1="363.78" x2="539.12" y2="302.30" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="532.01" y1="363.78" x2="453.33" y2="508.44" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="532.01" y1="363.78" x2="512.92" y2="412.05" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="472.95" y1="272.79" x2="485.52" y2="288.34" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="472.95" y1="272.79" x2="510.18" y2="261.05" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="472.95" y1="272.79" x2="538.73" y2="310.73" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="472.95" y1="272.79" x2="442.20" y2="407.03" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="472.95" y1="272.79" x2="555.47" y2="204.65" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="439.33" y1="463.21" x2="403.10" y2="455.69" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="439.33" y1="463.21" x2="454.22" y2="458.35" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="439.33" y1="463.21" x2="458.18" y2="468.67" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="439.33" y1="463.21" x2="532.83" y2="545.06" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="439.33" y1="463.21" x2="423.70" y2="378.74" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="439.33" y1="463.21" x2="374.43" y2="501.31" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="489.94" y1="211.52" x2="615.60" y2="255.77" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="615.60" y1="255.77" x2="491.72" y2="157.41" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="615.60" y1="255.77" x2="660.42" y2="329.94" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="615.60" y1="255.77" x2="649.86" y2="241.33" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="366.22" y1="305.80" x2="460.22" y2="197.11" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="546.70" y1="169.76" x2="519.64" y2="230.83" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="546.70" y1="169.76" x2="452.28" y2="215.83" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="546.70" y1="169.76" x2="501.17" y2="135.00" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="341.94" y1="412.15" x2="355.85" y2="440.30" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="341.94" y1="412.15" x2="393.47" y2="401.07" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="341.94" y1="412.15" x2="286.17" y2="386.97" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="341.94" y1="412.15" x2="412.18" y2="414.46" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="341.94" y1="412.15" x2="274.73" y2="491.16" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="311.31" y1="158.97" x2="261.70" y2="191.57" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="578.27" y1="357.47" x2="622.18" y2="388.25" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="578.27" y1="357.47" x2="541.83" y2="468.79" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="578.27" y1="357.47" x2="425.32" y2="261.65" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="578.27" y1="357.47" x2="531.44" y2="407.49" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="539.27" y1="504.51" x2="490.02" y2="512.44" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="539.27" y1="504.51" x2="524.68" y2="554.20" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="539.27" y1="504.51" x2="566.53" y2="442.31" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="539.27" y1="504.51" x2="573.63" y2="513.71" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="499.58" y1="177.32" x2="580.93" y2="285.06" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="499.58" y1="177.32" x2="375.47" y2="162.97" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="502.00" y1="539.49" x2="568.63" y2="549.46" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="502.00" y1="539.49" x2="475.33" y2="478.19" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="502.00" y1="539.49" x2="450.47" y2="490.24" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="502.00" y1="539.49" x2="427.82" y2="554.60" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="502.00" y1="539.49" x2="533.93" y2="494.72" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="502.00" y1="539.49" x2="414.13" y2="532.85" stroke="#65728a" stroke-opacity=".24"/>
+<line x1="490.87" y1="431.49" x2="590.48" y2="507.54" stroke="#79dcb4" stroke-opacity=".24"/>
+<line x1="490.87" y1="431.49" x2="530.35" y2="441.56" stroke="#79dcb4" stroke-opacity=".24"/>
+<line x1="490.87" y1="431.49" x2="624.86" y2="532.11" stroke="#79dcb4" stroke-opacity=".24"/>
+<line x1="490.87" y1="431.49" x2="551.06" y2="442.57" stroke="#79dcb4" stroke-opacity=".24"/>
+<line x1="490.87" y1="431.49" x2="537.29" y2="515.02" stroke="#79dcb4" stroke-opacity=".24"/>
+<line x1="490.87" y1="431.49" x2="490.02" y2="512.44" stroke="#79dcb4" stroke-opacity=".24"/>
+<line x1="490.87" y1="431.49" x2="519.64" y2="230.83" stroke="#79dcb4" stroke-opacity=".24"/>
+<line x1="490.87" y1="431.49" x2="524.68" y2="554.20" stroke="#79dcb4" stroke-opacity=".24"/>
+<line x1="490.87" y1="431.49" x2="566.53" y2="442.31" stroke="#79dcb4" stroke-opacity=".24"/>
+<line x1="490.87" y1="431.49" x2="403.10" y2="455.69" stroke="#79dcb4" stroke-opacity=".24"/>
+<line x1="490.87" y1="431.49" x2="410.71" y2="287.24" stroke="#79dcb4" stroke-opacity=".24"/>
+<line x1="490.87" y1="431.49" x2="573.63" y2="513.71" stroke="#79dcb4" stroke-opacity=".24"/>
+<line x1="490.87" y1="431.49" x2="458.18" y2="468.67" stroke="#79dcb4" stroke-opacity=".24"/>
+<line x1="490.87" y1="431.49" x2="364.31" y2="330.11" stroke="#79dcb4" stroke-opacity=".24"/>
+<line x1="490.87" y1="431.49" x2="485.52" y2="288.34" stroke="#79dcb4" stroke-opacity=".24"/>
+<line x1="490.87" y1="431.49" x2="490.25" y2="524.61" stroke="#79dcb4" stroke-opacity=".24"/>
+<line x1="490.87" y1="431.49" x2="604.45" y2="470.85" stroke="#79dcb4" stroke-opacity=".24"/>
+<line x1="490.87" y1="431.49" x2="412.45" y2="501.23" stroke="#79dcb4" stroke-opacity=".24"/>
+<line x1="490.87" y1="431.49" x2="411.07" y2="479.74" stroke="#79dcb4" stroke-opacity=".24"/>
+<line x1="490.87" y1="431.49" x2="452.28" y2="215.83" stroke="#79dcb4" stroke-opacity=".24"/>
+<line x1="490.87" y1="431.49" x2="510.18" y2="261.05" stroke="#79dcb4" stroke-opacity=".24"/>
+<line x1="490.87" y1="431.49" x2="453.33" y2="508.44" stroke="#79dcb4" stroke-opacity=".24"/>
+<line x1="490.87" y1="431.49" x2="481.39" y2="548.08" stroke="#79dcb4" stroke-opacity=".24"/>
+<line x1="490.87" y1="431.49" x2="449.13" y2="558.79" stroke="#79dcb4" stroke-opacity=".24"/>
+<line x1="490.87" y1="431.49" x2="423.70" y2="378.74" stroke="#79dcb4" stroke-opacity=".24"/>
+<line x1="490.87" y1="431.49" x2="491.11" y2="353.31" stroke="#79dcb4" stroke-opacity=".24"/>
+<circle cx="515.75" cy="333.86" r="5" fill="#101319" stroke="#818da9"><title>Computer science</title></circle>
+<circle cx="435.74" cy="267.26" r="5" fill="#101319" stroke="#818da9"><title>Software development foundations</title></circle>
+<circle cx="591.37" cy="282.55" r="5" fill="#101319" stroke="#818da9"><title>Programming languages</title></circle>
+<circle cx="614.91" cy="242.90" r="5" fill="#101319" stroke="#818da9"><title>Software construction</title></circle>
+<circle cx="465.79" cy="196.91" r="5" fill="#101319" stroke="#818da9"><title>Programming concepts</title></circle>
+<circle cx="622.18" cy="388.25" r="5" fill="#101319" stroke="#818da9"><title>Working with data</title></circle>
+<circle cx="541.83" cy="468.79" r="5" fill="#101319" stroke="#818da9"><title>Code organization</title></circle>
+<circle cx="307.57" cy="202.67" r="5" fill="#101319" stroke="#818da9"><title>JVM</title></circle>
+<circle cx="425.32" cy="261.65" r="5" fill="#101319" stroke="#818da9"><title>Errorless code</title></circle>
+<circle cx="339.09" cy="355.82" r="5" fill="#101319" stroke="#818da9"><title>Classes and members</title></circle>
+<circle cx="320.79" cy="290.90" r="5" fill="#101319" stroke="#818da9"><title>Access control</title></circle>
+<circle cx="320.59" cy="309.97" r="5" fill="#101319" stroke="#818da9"><title>Building class hierarchies</title></circle>
+<circle cx="343.04" cy="248.12" r="5" fill="#101319" stroke="#818da9"><title>Overriding methods</title></circle>
+<circle cx="496.44" cy="183.35" r="5" fill="#101319" stroke="#818da9"><title>Interfaces and abstract classes</title></circle>
+<circle cx="273.97" cy="419.34" r="5" fill="#101319" stroke="#818da9"><title>Other concepts</title></circle>
+<circle cx="297.50" cy="355.93" r="5" fill="#101319" stroke="#818da9"><title>Enumerations</title></circle>
+<circle cx="360.38" cy="346.92" r="5" fill="#101319" stroke="#818da9"><title>Classes and objects</title></circle>
+<circle cx="460.22" cy="197.11" r="5" fill="#101319" stroke="#818da9"><title>Command line basics</title></circle>
+<circle cx="354.13" cy="221.73" r="5" fill="#101319" stroke="#818da9"><title>Debugging</title></circle>
+<circle cx="580.93" cy="285.06" r="5" fill="#101319" stroke="#818da9"><title>Unix</title></circle>
+<circle cx="543.92" cy="335.49" r="5" fill="#101319" stroke="#818da9"><title>Simple programs</title></circle>
+<circle cx="579.31" cy="480.80" r="5" fill="#101319" stroke="#818da9"><title>Arrays</title></circle>
+<circle cx="526.91" cy="328.93" r="5" fill="#101319" stroke="#818da9"><title>Strings</title></circle>
+<circle cx="381.15" cy="249.36" r="5" fill="#101319" stroke="#818da9"><title>Class hierarchies</title></circle>
+<circle cx="621.98" cy="520.71" r="5" fill="#101319" stroke="#818da9"><title>Code style</title></circle>
+<circle cx="363.72" cy="391.11" r="5" fill="#101319" stroke="#818da9"><title>Object-oriented programming</title></circle>
+<circle cx="531.44" cy="407.49" r="5" fill="#101319" stroke="#818da9"><title>Basics</title></circle>
+<circle cx="371.17" cy="281.74" r="5" fill="#101319" stroke="#818da9"><title>Dev tools</title></circle>
+<circle cx="325.01" cy="269.38" r="5" fill="#101319" stroke="#818da9"><title>IDE</title></circle>
+<circle cx="469.04" cy="365.58" r="5" fill="#101319" stroke="#818da9"><title>System administration and DevOps</title></circle>
+<circle cx="265.04" cy="253.81" r="5" fill="#101319" stroke="#818da9"><title>JVM basics</title></circle>
+<circle cx="439.33" cy="463.21" r="5" fill="#101319" stroke="#818da9"><title>Control flow statements</title></circle>
+<circle cx="456.47" cy="529.54" r="5" fill="#101319" stroke="#818da9"><title>Operations on primitive types</title></circle>
+<circle cx="532.01" cy="363.78" r="5" fill="#101319" stroke="#818da9"><title>Data types and variables</title></circle>
+<circle cx="545.74" cy="216.27" r="5" fill="#101319" stroke="#818da9"><title>Computer science fundamentals</title></circle>
+<circle cx="472.95" cy="272.79" r="5" fill="#101319" stroke="#818da9"><title>IntelliJ IDEA</title></circle>
+<circle cx="489.94" cy="211.52" r="5" fill="#101319" stroke="#818da9"><title>AI tools</title></circle>
+<circle cx="615.60" cy="255.77" r="5" fill="#101319" stroke="#818da9"><title>Coding with AI tools</title></circle>
+<circle cx="366.22" cy="305.80" r="5" fill="#101319" stroke="#818da9"><title>Command line</title></circle>
+<circle cx="546.70" cy="169.76" r="5" fill="#101319" stroke="#818da9"><title>Software quality</title></circle>
+<circle cx="341.94" cy="412.15" r="5" fill="#101319" stroke="#818da9"><title>Exception handling</title></circle>
+<circle cx="311.31" cy="158.97" r="5" fill="#101319" stroke="#818da9"><title>Object-oriented programming</title></circle>
+<circle cx="578.27" cy="357.47" r="5" fill="#101319" stroke="#818da9"><title>Java</title></circle>
+<circle cx="539.27" cy="504.51" r="5" fill="#101319" stroke="#818da9"><title>Introduction to Java</title></circle>
+<circle cx="499.58" cy="177.32" r="5" fill="#101319" stroke="#818da9"><title>Operating systems</title></circle>
+<circle cx="502.00" cy="539.49" r="5" fill="#101319" stroke="#818da9"><title>Methods</title></circle>
+<path d="M430.36,358.08 l6,7 -6,7 -6,-7 Z" fill="#c9afff"><title>Introduction to Java</title></path>
+<rect x="485.87" y="426.49" width="10" height="10" rx="2" fill="#79dcb4" stroke="#79dcb4"><title>Simple Chat Bot with Java</title></rect>
+<rect x="309.62" y="522.68" width="10" height="10" rx="2" fill="#101319" stroke="#9aa8ed"><title>Cinema Room Manager</title></rect>
+<rect x="347.93" y="156.46" width="10" height="10" rx="2" fill="#101319" stroke="#9aa8ed"><title>Amazing Numbers</title></rect>
+<rect x="625.62" y="468.04" width="10" height="10" rx="2" fill="#101319" stroke="#9aa8ed"><title>Zookeeper with Java</title></rect>
+<rect x="252.49" y="456.68" width="10" height="10" rx="2" fill="#101319" stroke="#9aa8ed"><title>Chuck Norris Cipher Encoder (Java)</title></rect>
+<rect x="601.98" y="205.04" width="10" height="10" rx="2" fill="#101319" stroke="#9aa8ed"><title>Coffee Machine Simulator with Java</title></rect>
+<rect x="344.08" y="535.35" width="10" height="10" rx="2" fill="#101319" stroke="#9aa8ed"><title>Last Pencil (Java)</title></rect>
+<rect x="285.33" y="222.22" width="10" height="10" rx="2" fill="#efbb79" stroke="#efbb79"><title>My First Project with Java</title></rect>
+<rect x="626.92" y="353.28" width="10" height="10" rx="2" fill="#101319" stroke="#9aa8ed"><title>Battleship with Java</title></rect>
+<rect x="262.84" y="502.37" width="10" height="10" rx="2" fill="#101319" stroke="#9aa8ed"><title>Simple Tic-Tac-Toe (Java)</title></rect>
+<rect x="439.22" y="165.72" width="10" height="10" rx="2" fill="#101319" stroke="#9aa8ed"><title>Bulls and Cows</title></rect>
+<circle cx="568.63" cy="549.46" r="4" fill="#647087" stroke="#647087"><title>Method &quot;main&quot;</title></circle>
+<circle cx="475.33" cy="478.19" r="4" fill="#647087" stroke="#647087"><title>Calling methods</title></circle>
+<circle cx="450.47" cy="490.24" r="4" fill="#647087" stroke="#647087"><title>Declaring methods</title></circle>
+<circle cx="321.45" cy="419.54" r="4" fill="#647087" stroke="#647087"><title>Combining constants with enum</title></circle>
+<circle cx="280.68" cy="344.25" r="4" fill="#647087" stroke="#647087"><title>Fields and methods in enum</title></circle>
+<circle cx="590.48" cy="507.54" r="4" fill="#647087" stroke="#647087"><title>Naming variables</title></circle>
+<circle cx="530.35" cy="441.56" r="4" fill="#647087" stroke="#647087"><title>Reading user input with Scanner</title></circle>
+<circle cx="378.28" cy="338.84" r="4" fill="#647087" stroke="#647087"><title>Defining classes</title></circle>
+<circle cx="375.47" cy="405.81" r="4" fill="#647087" stroke="#647087"><title>Instance methods</title></circle>
+<circle cx="261.70" cy="191.57" r="4" fill="#647087" stroke="#647087"><title>What is object-oriented programming</title></circle>
+<circle cx="645.23" cy="454.85" r="4" fill="#647087" stroke="#647087"><title>Multidimensional array</title></circle>
+<circle cx="300.69" cy="459.19" r="4" fill="#647087" stroke="#647087"><title>Multiple constructors</title></circle>
+<circle cx="399.87" cy="144.86" r="4" fill="#647087" stroke="#647087"><title>Abstract class</title></circle>
+<circle cx="624.86" cy="532.11" r="4" fill="#647087" stroke="#647087"><title>Coding style conventions</title></circle>
+<circle cx="243.91" cy="380.82" r="4" fill="#647087" stroke="#647087"><title>Keyword &quot;super&quot;</title></circle>
+<circle cx="410.37" cy="294.29" r="4" fill="#647087" stroke="#647087"><title>Referencing subclass objects</title></circle>
+<circle cx="551.06" cy="442.57" r="4" fill="#647087" stroke="#647087"><title>Types and variables</title></circle>
+<circle cx="390.19" cy="208.34" r="4" fill="#647087" stroke="#647087"><title>Debugging techniques</title></circle>
+<circle cx="537.29" cy="515.02" r="4" fill="#647087" stroke="#647087"><title>Arithmetic operations</title></circle>
+<circle cx="490.02" cy="512.44" r="4" fill="#647087" stroke="#647087"><title>Basic literals: numbers, strings and characters</title></circle>
+<circle cx="519.64" cy="230.83" r="4" fill="#647087" stroke="#647087"><title>Debugging overview</title></circle>
+<circle cx="524.68" cy="554.20" r="4" fill="#647087" stroke="#647087"><title>Writing first program</title></circle>
+<circle cx="239.58" cy="262.63" r="4" fill="#647087" stroke="#647087"><title>Basic terms: JVM, JRE, JDK</title></circle>
+<circle cx="566.53" cy="442.31" r="4" fill="#79dcb4" stroke="#79dcb4"><title>Introduction to Java</title></circle>
+<circle cx="403.10" cy="455.69" r="4" fill="#647087" stroke="#647087"><title>One-line condition with ternary operator</title></circle>
+<circle cx="516.66" cy="296.42" r="4" fill="#647087" stroke="#647087"><title>Primitive data types and their sizes</title></circle>
+<circle cx="473.38" cy="392.85" r="4" fill="#647087" stroke="#647087"><title>Errors in programs</title></circle>
+<circle cx="355.85" cy="440.30" r="4" fill="#647087" stroke="#647087"><title>NullPointerException</title></circle>
+<circle cx="393.47" cy="401.07" r="4" fill="#647087" stroke="#647087"><title>Array exceptions</title></circle>
+<circle cx="310.60" cy="392.14" r="4" fill="#647087" stroke="#647087"><title>Initializing new instances. Constructor</title></circle>
+<circle cx="410.71" cy="287.24" r="4" fill="#647087" stroke="#647087"><title>Debugging simple constructs</title></circle>
+<circle cx="454.22" cy="458.35" r="4" fill="#647087" stroke="#647087"><title>Break and continue. Branching</title></circle>
+<circle cx="291.64" cy="348.28" r="4" fill="#647087" stroke="#647087"><title>Write, compile, and run</title></circle>
+<circle cx="376.51" cy="176.97" r="4" fill="#647087" stroke="#647087"><title>Compile and run Java from CLI</title></circle>
+<circle cx="573.63" cy="513.71" r="4" fill="#647087" stroke="#647087"><title>Printing data</title></circle>
+<circle cx="327.99" cy="218.41" r="4" fill="#647087" stroke="#647087"><title>Polymorphism</title></circle>
+<circle cx="588.95" cy="300.52" r="4" fill="#647087" stroke="#647087"><title>StringBuilder</title></circle>
+<circle cx="477.93" cy="565.00" r="4" fill="#647087" stroke="#647087"><title>java.util.Arrays</title></circle>
+<circle cx="258.84" cy="252.24" r="4" fill="#647087" stroke="#647087"><title>Getters and setters</title></circle>
+<circle cx="458.18" cy="468.67" r="4" fill="#647087" stroke="#647087"><title>Conditional statement</title></circle>
+<circle cx="364.31" cy="330.11" r="4" fill="#647087" stroke="#647087"><title>IDE</title></circle>
+<circle cx="485.52" cy="288.34" r="4" fill="#647087" stroke="#647087"><title>IntelliJ IDEA</title></circle>
+<circle cx="490.25" cy="524.61" r="4" fill="#647087" stroke="#647087"><title>Integer types and operations</title></circle>
+<circle cx="277.98" cy="321.06" r="4" fill="#647087" stroke="#647087"><title>Access modifiers</title></circle>
+<circle cx="604.45" cy="470.85" r="4" fill="#647087" stroke="#647087"><title>Comments</title></circle>
+<circle cx="412.45" cy="501.23" r="4" fill="#647087" stroke="#647087"><title>Increment and decrement</title></circle>
+<circle cx="483.39" cy="140.62" r="4" fill="#647087" stroke="#647087"><title>Numeric literals</title></circle>
+<circle cx="563.35" cy="410.57" r="4" fill="#647087" stroke="#647087"><title>Primitive and reference types</title></circle>
+<circle cx="411.07" cy="479.74" r="4" fill="#647087" stroke="#647087"><title>Characters</title></circle>
+<circle cx="539.12" cy="302.30" r="4" fill="#647087" stroke="#647087"><title>Type casting</title></circle>
+<circle cx="532.83" cy="545.06" r="4" fill="#647087" stroke="#647087"><title>Multiple conditions: switch</title></circle>
+<circle cx="452.28" cy="215.83" r="4" fill="#647087" stroke="#647087"><title>What are bugs</title></circle>
+<circle cx="510.18" cy="261.05" r="4" fill="#647087" stroke="#647087"><title>Run and debug with IntelliJ IDEA</title></circle>
+<circle cx="453.33" cy="508.44" r="4" fill="#647087" stroke="#647087"><title>Floating-point types and operations</title></circle>
+<circle cx="501.17" cy="135.00" r="4" fill="#647087" stroke="#647087"><title>Introduction to logging</title></circle>
+<circle cx="427.82" cy="554.60" r="4" fill="#647087" stroke="#647087"><title>Overloading</title></circle>
+<circle cx="343.41" cy="370.92" r="4" fill="#647087" stroke="#647087"><title>Static members</title></circle>
+<circle cx="538.73" cy="310.73" r="4" fill="#647087" stroke="#647087"><title>IntelliJ IDEA basics</title></circle>
+<circle cx="487.93" cy="480.70" r="4" fill="#647087" stroke="#647087"><title>Array</title></circle>
+<circle cx="491.72" cy="157.41" r="4" fill="#647087" stroke="#647087"><title>Introduction to AI in software development</title></circle>
+<circle cx="660.42" cy="329.94" r="4" fill="#647087" stroke="#647087"><title>Integrating AI tools into your workflow</title></circle>
+<circle cx="274.72" cy="291.88" r="4" fill="#647087" stroke="#647087"><title>Debugging methods</title></circle>
+<circle cx="583.18" cy="139.86" r="4" fill="#647087" stroke="#647087"><title>Command line overview</title></circle>
+<circle cx="350.05" cy="355.11" r="4" fill="#647087" stroke="#647087"><title>Protected modifier</title></circle>
+<circle cx="300.07" cy="297.88" r="4" fill="#647087" stroke="#647087"><title>Method overriding</title></circle>
+<circle cx="649.86" cy="241.33" r="4" fill="#647087" stroke="#647087"><title>Core workflows with AI tools</title></circle>
+<circle cx="442.20" cy="407.03" r="4" fill="#647087" stroke="#647087"><title>Hyperskill Academy plugin</title></circle>
+<circle cx="523.74" cy="198.43" r="4" fill="#647087" stroke="#647087"><title>Formatted output</title></circle>
+<circle cx="512.92" cy="412.05" r="4" fill="#647087" stroke="#647087"><title>Constants. Final variables</title></circle>
+<circle cx="286.17" cy="386.97" r="4" fill="#647087" stroke="#647087"><title>Hierarchy of exceptions</title></circle>
+<circle cx="412.18" cy="414.46" r="4" fill="#647087" stroke="#647087"><title>First glance at exceptions</title></circle>
+<circle cx="274.73" cy="491.16" r="4" fill="#647087" stroke="#647087"><title>Exception handling</title></circle>
+<circle cx="279.60" cy="255.28" r="4" fill="#647087" stroke="#647087"><title>Grouping classes with packages</title></circle>
+<circle cx="449.82" cy="313.32" r="4" fill="#647087" stroke="#647087"><title>Adding annotations</title></circle>
+<circle cx="253.15" cy="350.12" r="4" fill="#647087" stroke="#647087"><title>Inheritance</title></circle>
+<circle cx="536.80" cy="138.34" r="4" fill="#647087" stroke="#647087"><title>Introduction to Linux</title></circle>
+<circle cx="481.39" cy="548.08" r="4" fill="#647087" stroke="#647087"><title>Boolean type and operations. True and false</title></circle>
+<circle cx="375.47" cy="162.97" r="4" fill="#647087" stroke="#647087"><title>Operating systems</title></circle>
+<circle cx="556.61" cy="168.71" r="4" fill="#647087" stroke="#647087"><title>Parameters and options</title></circle>
+<circle cx="449.13" cy="558.79" r="4" fill="#647087" stroke="#647087"><title>Comparing values. Relational operators</title></circle>
+<circle cx="423.70" cy="378.74" r="4" fill="#647087" stroke="#647087"><title>For loop</title></circle>
+<circle cx="491.11" cy="353.31" r="4" fill="#647087" stroke="#647087"><title>String</title></circle>
+<circle cx="374.43" cy="501.31" r="4" fill="#647087" stroke="#647087"><title>While and do-while loops</title></circle>
+<circle cx="469.17" cy="338.88" r="4" fill="#647087" stroke="#647087"><title>Objects and their properties</title></circle>
+<circle cx="510.66" cy="486.95" r="4" fill="#647087" stroke="#647087"><title>Iterating over arrays</title></circle>
+<circle cx="458.83" cy="386.14" r="4" fill="#647087" stroke="#647087"><title>Processing strings</title></circle>
+<circle cx="533.93" cy="494.72" r="4" fill="#647087" stroke="#647087"><title>Functional decomposition</title></circle>
+<circle cx="414.13" cy="532.85" r="4" fill="#647087" stroke="#647087"><title>Arrays as parameters</title></circle>
+<circle cx="555.47" cy="204.65" r="4" fill="#647087" stroke="#647087"><title>IntelliJ IDEA run configurations</title></circle>
+<text x="905" y="225" font-size="13" fill="#79dcb4">COMPLETED PROJECT</text>
+<text x="905" y="257" font-size="18">Simple Chat Bot</text>
+<text x="905" y="282" font-size="18">with Java</text>
+<text x="905" y="322" font-size="15">26 required topics</text>
+<text x="905" y="348" font-size="13" fill="#aeb9cc">project_requires ≠ project_applies</text>
+<text x="905" y="401" font-size="14" fill="#79dcb4">● Learned / verified</text>
+<text x="905" y="429" font-size="14" fill="#aeb9cc">● Unknown topic status</text>
+<text x="905" y="457" font-size="14" fill="#efbb79">■ Active project</text>
+<text x="905" y="485" font-size="14" fill="#9aa8ed">■ Available project</text>
+<text x="38" y="620" font-size="14" fill="#aeb9cc">COURSE ROADMAP · 89 topics · 46 categories · partial personal evidence · snapshot 2026-10-01</text>
+</g></svg>

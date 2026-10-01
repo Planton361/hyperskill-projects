@@ -1,0 +1,416 @@
+[
+  {
+    "canonical_parent_id": 252,
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": 3,
+    "title": "Control flow statements",
+    "url": "https://hyperskill.org/knowledge-map/3?track=8"
+  },
+  {
+    "canonical_parent_id": 251,
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": 13,
+    "title": "Classes and objects",
+    "url": "https://hyperskill.org/knowledge-map/13?track=8"
+  },
+  {
+    "canonical_parent_id": 252,
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": 35,
+    "title": "Data types and variables",
+    "url": "https://hyperskill.org/knowledge-map/35?track=8"
+  },
+  {
+    "canonical_parent_id": 1260,
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": 61,
+    "title": "Exception handling",
+    "url": "https://hyperskill.org/knowledge-map/61?track=8"
+  },
+  {
+    "canonical_parent_id": 1164,
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": 73,
+    "title": "Java",
+    "url": "https://hyperskill.org/knowledge-map/73?track=8"
+  },
+  {
+    "canonical_parent_id": 252,
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": 74,
+    "title": "Introduction to Java",
+    "url": "https://hyperskill.org/knowledge-map/74?track=8"
+  },
+  {
+    "canonical_parent_id": 1258,
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": 95,
+    "title": "Methods",
+    "url": "https://hyperskill.org/knowledge-map/95?track=8"
+  },
+  {
+    "canonical_parent_id": 1163,
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": 126,
+    "title": "JVM",
+    "url": "https://hyperskill.org/knowledge-map/126?track=8"
+  },
+  {
+    "canonical_parent_id": 252,
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": 153,
+    "title": "Simple programs",
+    "url": "https://hyperskill.org/knowledge-map/153?track=8"
+  },
+  {
+    "canonical_parent_id": 1215,
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": 187,
+    "title": "Arrays",
+    "url": "https://hyperskill.org/knowledge-map/187?track=8"
+  },
+  {
+    "canonical_parent_id": 252,
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": 188,
+    "title": "Strings",
+    "url": "https://hyperskill.org/knowledge-map/188?track=8"
+  },
+  {
+    "canonical_parent_id": 251,
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": 195,
+    "title": "Class hierarchies",
+    "url": "https://hyperskill.org/knowledge-map/195?track=8"
+  },
+  {
+    "canonical_parent_id": 1258,
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": 196,
+    "title": "Code style",
+    "url": "https://hyperskill.org/knowledge-map/196?track=8"
+  },
+  {
+    "canonical_parent_id": 1258,
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": 251,
+    "title": "Object-oriented programming",
+    "url": "https://hyperskill.org/knowledge-map/251?track=8"
+  },
+  {
+    "canonical_parent_id": 73,
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": 252,
+    "title": "Basics",
+    "url": "https://hyperskill.org/knowledge-map/252?track=8"
+  },
+  {
+    "canonical_parent_id": 1163,
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": 258,
+    "title": "Dev tools",
+    "url": "https://hyperskill.org/knowledge-map/258?track=8"
+  },
+  {
+    "canonical_parent_id": 258,
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": 262,
+    "title": "IDE",
+    "url": "https://hyperskill.org/knowledge-map/262?track=8"
+  },
+  {
+    "canonical_parent_id": 252,
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": 306,
+    "title": "Operations on primitive types",
+    "url": "https://hyperskill.org/knowledge-map/306?track=8"
+  },
+  {
+    "canonical_parent_id": 1163,
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": 357,
+    "title": "Computer science fundamentals",
+    "url": "https://hyperskill.org/knowledge-map/357?track=8"
+  },
+  {
+    "canonical_parent_id": 262,
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": 386,
+    "title": "IntelliJ IDEA",
+    "url": "https://hyperskill.org/knowledge-map/386?track=8"
+  },
+  {
+    "canonical_parent_id": 2679,
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": 477,
+    "title": "Command line",
+    "url": "https://hyperskill.org/knowledge-map/477?track=8"
+  },
+  {
+    "canonical_parent_id": 1186,
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": 516,
+    "title": "Software quality",
+    "url": "https://hyperskill.org/knowledge-map/516?track=8"
+  },
+  {
+    "canonical_parent_id": 1188,
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": 679,
+    "title": "Object-oriented programming",
+    "url": "https://hyperskill.org/knowledge-map/679?track=8"
+  },
+  {
+    "canonical_parent_id": 357,
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": 850,
+    "title": "Operating systems",
+    "url": "https://hyperskill.org/knowledge-map/850?track=8"
+  },
+  {
+    "canonical_parent_id": null,
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": 1162,
+    "title": "Computer science",
+    "url": "https://hyperskill.org/knowledge-map/1162?track=8"
+  },
+  {
+    "canonical_parent_id": 1162,
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": 1163,
+    "title": "Software development foundations",
+    "url": "https://hyperskill.org/knowledge-map/1163?track=8"
+  },
+  {
+    "canonical_parent_id": 1162,
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": 1164,
+    "title": "Programming languages",
+    "url": "https://hyperskill.org/knowledge-map/1164?track=8"
+  },
+  {
+    "canonical_parent_id": 357,
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": 1186,
+    "title": "Software construction",
+    "url": "https://hyperskill.org/knowledge-map/1186?track=8"
+  },
+  {
+    "canonical_parent_id": 357,
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": 1188,
+    "title": "Programming concepts",
+    "url": "https://hyperskill.org/knowledge-map/1188?track=8"
+  },
+  {
+    "canonical_parent_id": 73,
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": 1215,
+    "title": "Working with data",
+    "url": "https://hyperskill.org/knowledge-map/1215?track=8"
+  },
+  {
+    "canonical_parent_id": 73,
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": 1258,
+    "title": "Code organization",
+    "url": "https://hyperskill.org/knowledge-map/1258?track=8"
+  },
+  {
+    "canonical_parent_id": 73,
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": 1260,
+    "title": "Errorless code",
+    "url": "https://hyperskill.org/knowledge-map/1260?track=8"
+  },
+  {
+    "canonical_parent_id": 13,
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": 1262,
+    "title": "Classes and members",
+    "url": "https://hyperskill.org/knowledge-map/1262?track=8"
+  },
+  {
+    "canonical_parent_id": 13,
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": 1263,
+    "title": "Access control",
+    "url": "https://hyperskill.org/knowledge-map/1263?track=8"
+  },
+  {
+    "canonical_parent_id": 195,
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": 1264,
+    "title": "Building class hierarchies",
+    "url": "https://hyperskill.org/knowledge-map/1264?track=8"
+  },
+  {
+    "canonical_parent_id": 195,
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": 1265,
+    "title": "Overriding methods",
+    "url": "https://hyperskill.org/knowledge-map/1265?track=8"
+  },
+  {
+    "canonical_parent_id": 195,
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": 1267,
+    "title": "Interfaces and abstract classes",
+    "url": "https://hyperskill.org/knowledge-map/1267?track=8"
+  },
+  {
+    "canonical_parent_id": 251,
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": 1268,
+    "title": "Other concepts",
+    "url": "https://hyperskill.org/knowledge-map/1268?track=8"
+  },
+  {
+    "canonical_parent_id": 1268,
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": 1269,
+    "title": "Enumerations",
+    "url": "https://hyperskill.org/knowledge-map/1269?track=8"
+  },
+  {
+    "canonical_parent_id": 477,
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": 1356,
+    "title": "Command line basics",
+    "url": "https://hyperskill.org/knowledge-map/1356?track=8"
+  },
+  {
+    "canonical_parent_id": 1260,
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": 1423,
+    "title": "Debugging",
+    "url": "https://hyperskill.org/knowledge-map/1423?track=8"
+  },
+  {
+    "canonical_parent_id": 850,
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": 1432,
+    "title": "Unix",
+    "url": "https://hyperskill.org/knowledge-map/1432?track=8"
+  },
+  {
+    "canonical_parent_id": 1162,
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": 2679,
+    "title": "System administration and DevOps",
+    "url": "https://hyperskill.org/knowledge-map/2679?track=8"
+  },
+  {
+    "canonical_parent_id": 126,
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": 2944,
+    "title": "JVM basics",
+    "url": "https://hyperskill.org/knowledge-map/2944?track=8"
+  },
+  {
+    "canonical_parent_id": 258,
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": 4502,
+    "title": "AI tools",
+    "url": "https://hyperskill.org/knowledge-map/4502?track=8"
+  },
+  {
+    "canonical_parent_id": 4502,
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": 4503,
+    "title": "Coding with AI tools",
+    "url": "https://hyperskill.org/knowledge-map/4503?track=8"
+  }
+]

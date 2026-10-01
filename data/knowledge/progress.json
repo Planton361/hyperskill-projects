@@ -1,0 +1,59 @@
+{
+  "courses": [
+    {
+      "active_project": 380,
+      "applied_topic_ids": null,
+      "applied_topics_count": 26,
+      "applied_topics_total": 85,
+      "completed_projects": [
+        113
+      ],
+      "course_id": 8,
+      "evidence_ids": [
+        "personal-course-8",
+        "personal-plan"
+      ],
+      "learned_topic_ids": null,
+      "learned_topics_count": 31,
+      "learned_topics_total": 89,
+      "skipped_topics_count": 0,
+      "topic_status_coverage": "partial"
+    }
+  ],
+  "projects": [
+    {
+      "completed_stage_ids": null,
+      "course_id": 8,
+      "evidence_ids": [
+        "personal-course-8"
+      ],
+      "project_id": 113,
+      "status": "completed"
+    },
+    {
+      "completed_stage_ids": [],
+      "course_id": 8,
+      "evidence_ids": [
+        "personal-plan",
+        "personal-project-380"
+      ],
+      "project_id": 380,
+      "status": "active"
+    }
+  ],
+  "topics": [
+    {
+      "course_id": 8,
+      "evidence_ids": [
+        "personal-topic-15"
+      ],
+      "is_applied": null,
+      "is_learned": true,
+      "is_skipped": false,
+      "is_verified": true,
+      "observed_stage_position": 1,
+      "topic_id": 15,
+      "verification_status": "verified"
+    }
+  ]
+}

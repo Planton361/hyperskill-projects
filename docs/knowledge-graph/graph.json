@@ -1,0 +1,8161 @@
+{
+  "coverage": {
+    "course_topics": "complete",
+    "project_applies": "unknown",
+    "project_requirements": [
+      113
+    ],
+    "topic_progress": "partial"
+  },
+  "edges": [
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "course_contains:course:8:category:1162",
+      "source": "course:8",
+      "target": "category:1162",
+      "type": "course_contains"
+    },
+    {
+      "evidence_ids": [
+        "course-8"
+      ],
+      "id": "course_contains:course:8:project:113",
+      "source": "course:8",
+      "target": "project:113",
+      "type": "course_contains"
+    },
+    {
+      "evidence_ids": [
+        "course-8"
+      ],
+      "id": "course_contains:course:8:project:133",
+      "source": "course:8",
+      "target": "project:133",
+      "type": "course_contains"
+    },
+    {
+      "evidence_ids": [
+        "course-8"
+      ],
+      "id": "course_contains:course:8:project:184",
+      "source": "course:8",
+      "target": "project:184",
+      "type": "course_contains"
+    },
+    {
+      "evidence_ids": [
+        "course-8"
+      ],
+      "id": "course_contains:course:8:project:229",
+      "source": "course:8",
+      "target": "project:229",
+      "type": "course_contains"
+    },
+    {
+      "evidence_ids": [
+        "course-8"
+      ],
+      "id": "course_contains:course:8:project:293",
+      "source": "course:8",
+      "target": "project:293",
+      "type": "course_contains"
+    },
+    {
+      "evidence_ids": [
+        "course-8"
+      ],
+      "id": "course_contains:course:8:project:33",
+      "source": "course:8",
+      "target": "project:33",
+      "type": "course_contains"
+    },
+    {
+      "evidence_ids": [
+        "course-8"
+      ],
+      "id": "course_contains:course:8:project:341",
+      "source": "course:8",
+      "target": "project:341",
+      "type": "course_contains"
+    },
+    {
+      "evidence_ids": [
+        "course-8"
+      ],
+      "id": "course_contains:course:8:project:380",
+      "source": "course:8",
+      "target": "project:380",
+      "type": "course_contains"
+    },
+    {
+      "evidence_ids": [
+        "course-8"
+      ],
+      "id": "course_contains:course:8:project:383",
+      "source": "course:8",
+      "target": "project:383",
+      "type": "course_contains"
+    },
+    {
+      "evidence_ids": [
+        "course-8"
+      ],
+      "id": "course_contains:course:8:project:48",
+      "source": "course:8",
+      "target": "project:48",
+      "type": "course_contains"
+    },
+    {
+      "evidence_ids": [
+        "course-8"
+      ],
+      "id": "course_contains:course:8:project:53",
+      "source": "course:8",
+      "target": "project:53",
+      "type": "course_contains"
+    },
+    {
+      "evidence_ids": [
+        "topic-1033"
+      ],
+      "id": "dependent:topic:1033:topic:37",
+      "source": "topic:1033",
+      "target": "topic:37",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-1033"
+      ],
+      "id": "dependent:topic:1033:topic:4",
+      "source": "topic:1033",
+      "target": "topic:4",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-1038"
+      ],
+      "id": "dependent:topic:1038:topic:1",
+      "source": "topic:1038",
+      "target": "topic:1",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-1038"
+      ],
+      "id": "dependent:topic:1038:topic:1033",
+      "source": "topic:1038",
+      "target": "topic:1033",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-1038"
+      ],
+      "id": "dependent:topic:1038:topic:116",
+      "source": "topic:1038",
+      "target": "topic:116",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-1038"
+      ],
+      "id": "dependent:topic:1038:topic:17",
+      "source": "topic:1038",
+      "target": "topic:17",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-1038"
+      ],
+      "id": "dependent:topic:1038:topic:985",
+      "source": "topic:1038",
+      "target": "topic:985",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-1038"
+      ],
+      "id": "dependent:topic:1038:topic:99",
+      "source": "topic:1038",
+      "target": "topic:99",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-1087"
+      ],
+      "id": "dependent:topic:1087:topic:1088",
+      "source": "topic:1087",
+      "target": "topic:1088",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-112"
+      ],
+      "id": "dependent:topic:112:topic:27",
+      "source": "topic:112",
+      "target": "topic:27",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-113"
+      ],
+      "id": "dependent:topic:113:topic:163",
+      "source": "topic:113",
+      "target": "topic:163",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-113"
+      ],
+      "id": "dependent:topic:113:topic:27",
+      "source": "topic:113",
+      "target": "topic:27",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-115"
+      ],
+      "id": "dependent:topic:115:topic:116",
+      "source": "topic:115",
+      "target": "topic:116",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-115"
+      ],
+      "id": "dependent:topic:115:topic:17",
+      "source": "topic:115",
+      "target": "topic:17",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-115"
+      ],
+      "id": "dependent:topic:115:topic:7",
+      "source": "topic:115",
+      "target": "topic:7",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-115"
+      ],
+      "id": "dependent:topic:115:topic:96",
+      "source": "topic:115",
+      "target": "topic:96",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-116"
+      ],
+      "id": "dependent:topic:116:topic:28",
+      "source": "topic:116",
+      "target": "topic:28",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-116"
+      ],
+      "id": "dependent:topic:116:topic:38",
+      "source": "topic:116",
+      "target": "topic:38",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-116"
+      ],
+      "id": "dependent:topic:116:topic:78",
+      "source": "topic:116",
+      "target": "topic:78",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-117"
+      ],
+      "id": "dependent:topic:117:topic:115",
+      "source": "topic:117",
+      "target": "topic:115",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-120"
+      ],
+      "id": "dependent:topic:120:topic:127",
+      "source": "topic:120",
+      "target": "topic:127",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-1248"
+      ],
+      "id": "dependent:topic:1248:topic:112",
+      "source": "topic:1248",
+      "target": "topic:112",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-127"
+      ],
+      "id": "dependent:topic:127:topic:5",
+      "source": "topic:127",
+      "target": "topic:5",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-127"
+      ],
+      "id": "dependent:topic:127:topic:59",
+      "source": "topic:127",
+      "target": "topic:59",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-128"
+      ],
+      "id": "dependent:topic:128:topic:2",
+      "source": "topic:128",
+      "target": "topic:2",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-146"
+      ],
+      "id": "dependent:topic:146:topic:27",
+      "source": "topic:146",
+      "target": "topic:27",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-1476"
+      ],
+      "id": "dependent:topic:1476:topic:3538",
+      "source": "topic:1476",
+      "target": "topic:3538",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-147"
+      ],
+      "id": "dependent:topic:147:topic:148",
+      "source": "topic:147",
+      "target": "topic:148",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-148"
+      ],
+      "id": "dependent:topic:148:topic:193",
+      "source": "topic:148",
+      "target": "topic:193",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-149"
+      ],
+      "id": "dependent:topic:149:topic:192",
+      "source": "topic:149",
+      "target": "topic:192",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-14"
+      ],
+      "id": "dependent:topic:14:topic:112",
+      "source": "topic:14",
+      "target": "topic:112",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-14"
+      ],
+      "id": "dependent:topic:14:topic:113",
+      "source": "topic:14",
+      "target": "topic:113",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-14"
+      ],
+      "id": "dependent:topic:14:topic:161",
+      "source": "topic:14",
+      "target": "topic:161",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-14"
+      ],
+      "id": "dependent:topic:14:topic:309",
+      "source": "topic:14",
+      "target": "topic:309",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-14"
+      ],
+      "id": "dependent:topic:14:topic:87",
+      "source": "topic:14",
+      "target": "topic:87",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-152"
+      ],
+      "id": "dependent:topic:152:topic:164",
+      "source": "topic:152",
+      "target": "topic:164",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-152"
+      ],
+      "id": "dependent:topic:152:topic:89",
+      "source": "topic:152",
+      "target": "topic:89",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-152"
+      ],
+      "id": "dependent:topic:152:topic:90",
+      "source": "topic:152",
+      "target": "topic:90",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-15"
+      ],
+      "id": "dependent:topic:15:topic:147",
+      "source": "topic:15",
+      "target": "topic:147",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-161"
+      ],
+      "id": "dependent:topic:161:topic:32",
+      "source": "topic:161",
+      "target": "topic:32",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-163"
+      ],
+      "id": "dependent:topic:163:topic:60",
+      "source": "topic:163",
+      "target": "topic:60",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-164"
+      ],
+      "id": "dependent:topic:164:topic:165",
+      "source": "topic:164",
+      "target": "topic:165",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-1761"
+      ],
+      "id": "dependent:topic:1761:topic:4635",
+      "source": "topic:1761",
+      "target": "topic:4635",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-17"
+      ],
+      "id": "dependent:topic:17:topic:1087",
+      "source": "topic:17",
+      "target": "topic:1087",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-17"
+      ],
+      "id": "dependent:topic:17:topic:1088",
+      "source": "topic:17",
+      "target": "topic:1088",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-17"
+      ],
+      "id": "dependent:topic:17:topic:120",
+      "source": "topic:17",
+      "target": "topic:120",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-17"
+      ],
+      "id": "dependent:topic:17:topic:28",
+      "source": "topic:17",
+      "target": "topic:28",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-17"
+      ],
+      "id": "dependent:topic:17:topic:38",
+      "source": "topic:17",
+      "target": "topic:38",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-17"
+      ],
+      "id": "dependent:topic:17:topic:8",
+      "source": "topic:17",
+      "target": "topic:8",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-191"
+      ],
+      "id": "dependent:topic:191:topic:115",
+      "source": "topic:191",
+      "target": "topic:115",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-191"
+      ],
+      "id": "dependent:topic:191:topic:149",
+      "source": "topic:191",
+      "target": "topic:149",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-191"
+      ],
+      "id": "dependent:topic:191:topic:163",
+      "source": "topic:191",
+      "target": "topic:163",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-193"
+      ],
+      "id": "dependent:topic:193:topic:1248",
+      "source": "topic:193",
+      "target": "topic:1248",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-193"
+      ],
+      "id": "dependent:topic:193:topic:14",
+      "source": "topic:193",
+      "target": "topic:14",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-193"
+      ],
+      "id": "dependent:topic:193:topic:146",
+      "source": "topic:193",
+      "target": "topic:146",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-193"
+      ],
+      "id": "dependent:topic:193:topic:30",
+      "source": "topic:193",
+      "target": "topic:30",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-19"
+      ],
+      "id": "dependent:topic:19:topic:1038",
+      "source": "topic:19",
+      "target": "topic:1038",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-19"
+      ],
+      "id": "dependent:topic:19:topic:33",
+      "source": "topic:19",
+      "target": "topic:33",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-19"
+      ],
+      "id": "dependent:topic:19:topic:97",
+      "source": "topic:19",
+      "target": "topic:97",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-19"
+      ],
+      "id": "dependent:topic:19:topic:98",
+      "source": "topic:19",
+      "target": "topic:98",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-1"
+      ],
+      "id": "dependent:topic:1:topic:985",
+      "source": "topic:1",
+      "target": "topic:985",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-24"
+      ],
+      "id": "dependent:topic:24:topic:8",
+      "source": "topic:24",
+      "target": "topic:8",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-259"
+      ],
+      "id": "dependent:topic:259:topic:260",
+      "source": "topic:259",
+      "target": "topic:260",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-25"
+      ],
+      "id": "dependent:topic:25:topic:152",
+      "source": "topic:25",
+      "target": "topic:152",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-25"
+      ],
+      "id": "dependent:topic:25:topic:60",
+      "source": "topic:25",
+      "target": "topic:60",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-260"
+      ],
+      "id": "dependent:topic:260:topic:1761",
+      "source": "topic:260",
+      "target": "topic:1761",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-260"
+      ],
+      "id": "dependent:topic:260:topic:3538",
+      "source": "topic:260",
+      "target": "topic:3538",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-260"
+      ],
+      "id": "dependent:topic:260:topic:387",
+      "source": "topic:260",
+      "target": "topic:387",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-260"
+      ],
+      "id": "dependent:topic:260:topic:999",
+      "source": "topic:260",
+      "target": "topic:999",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-27"
+      ],
+      "id": "dependent:topic:27:topic:307",
+      "source": "topic:27",
+      "target": "topic:307",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-27"
+      ],
+      "id": "dependent:topic:27:topic:36",
+      "source": "topic:27",
+      "target": "topic:36",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-27"
+      ],
+      "id": "dependent:topic:27:topic:88",
+      "source": "topic:27",
+      "target": "topic:88",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-28"
+      ],
+      "id": "dependent:topic:28:topic:24",
+      "source": "topic:28",
+      "target": "topic:24",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-28"
+      ],
+      "id": "dependent:topic:28:topic:491",
+      "source": "topic:28",
+      "target": "topic:491",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-2"
+      ],
+      "id": "dependent:topic:2:topic:122",
+      "source": "topic:2",
+      "target": "topic:122",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-307"
+      ],
+      "id": "dependent:topic:307:topic:31",
+      "source": "topic:307",
+      "target": "topic:31",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-307"
+      ],
+      "id": "dependent:topic:307:topic:89",
+      "source": "topic:307",
+      "target": "topic:89",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-307"
+      ],
+      "id": "dependent:topic:307:topic:90",
+      "source": "topic:307",
+      "target": "topic:90",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-309"
+      ],
+      "id": "dependent:topic:309:topic:4",
+      "source": "topic:309",
+      "target": "topic:4",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-309"
+      ],
+      "id": "dependent:topic:309:topic:571",
+      "source": "topic:309",
+      "target": "topic:571",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-309"
+      ],
+      "id": "dependent:topic:309:topic:96",
+      "source": "topic:309",
+      "target": "topic:96",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-30"
+      ],
+      "id": "dependent:topic:30:topic:113",
+      "source": "topic:30",
+      "target": "topic:113",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-31"
+      ],
+      "id": "dependent:topic:31:topic:9",
+      "source": "topic:31",
+      "target": "topic:9",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-32"
+      ],
+      "id": "dependent:topic:32:topic:1033",
+      "source": "topic:32",
+      "target": "topic:1033",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-33"
+      ],
+      "id": "dependent:topic:33:topic:985",
+      "source": "topic:33",
+      "target": "topic:985",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-348"
+      ],
+      "id": "dependent:topic:348:topic:1425",
+      "source": "topic:348",
+      "target": "topic:1425",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-348"
+      ],
+      "id": "dependent:topic:348:topic:1476",
+      "source": "topic:348",
+      "target": "topic:1476",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-3538"
+      ],
+      "id": "dependent:topic:3538:topic:1761",
+      "source": "topic:3538",
+      "target": "topic:1761",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-3538"
+      ],
+      "id": "dependent:topic:3538:topic:999",
+      "source": "topic:3538",
+      "target": "topic:999",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-360"
+      ],
+      "id": "dependent:topic:360:topic:1425",
+      "source": "topic:360",
+      "target": "topic:1425",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-36"
+      ],
+      "id": "dependent:topic:36:topic:87",
+      "source": "topic:36",
+      "target": "topic:87",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-37"
+      ],
+      "id": "dependent:topic:37:topic:120",
+      "source": "topic:37",
+      "target": "topic:120",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-387"
+      ],
+      "id": "dependent:topic:387:topic:5107",
+      "source": "topic:387",
+      "target": "topic:5107",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-38"
+      ],
+      "id": "dependent:topic:38:topic:1087",
+      "source": "topic:38",
+      "target": "topic:1087",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-38"
+      ],
+      "id": "dependent:topic:38:topic:1088",
+      "source": "topic:38",
+      "target": "topic:1088",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-38"
+      ],
+      "id": "dependent:topic:38:topic:4635",
+      "source": "topic:38",
+      "target": "topic:4635",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-38"
+      ],
+      "id": "dependent:topic:38:topic:5",
+      "source": "topic:38",
+      "target": "topic:5",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-4510"
+      ],
+      "id": "dependent:topic:4510:topic:5028",
+      "source": "topic:4510",
+      "target": "topic:5028",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-480"
+      ],
+      "id": "dependent:topic:480:topic:876",
+      "source": "topic:480",
+      "target": "topic:876",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-491"
+      ],
+      "id": "dependent:topic:491:topic:128",
+      "source": "topic:491",
+      "target": "topic:128",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-4"
+      ],
+      "id": "dependent:topic:4:topic:165",
+      "source": "topic:4",
+      "target": "topic:165",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-4"
+      ],
+      "id": "dependent:topic:4:topic:2108",
+      "source": "topic:4",
+      "target": "topic:2108",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-4"
+      ],
+      "id": "dependent:topic:4:topic:97",
+      "source": "topic:4",
+      "target": "topic:97",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-4"
+      ],
+      "id": "dependent:topic:4:topic:98",
+      "source": "topic:4",
+      "target": "topic:98",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-4"
+      ],
+      "id": "dependent:topic:4:topic:99",
+      "source": "topic:4",
+      "target": "topic:99",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-5028"
+      ],
+      "id": "dependent:topic:5028:topic:4533",
+      "source": "topic:5028",
+      "target": "topic:4533",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-571"
+      ],
+      "id": "dependent:topic:571:topic:38",
+      "source": "topic:571",
+      "target": "topic:38",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-59"
+      ],
+      "id": "dependent:topic:59:topic:1425",
+      "source": "topic:59",
+      "target": "topic:1425",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-59"
+      ],
+      "id": "dependent:topic:59:topic:65",
+      "source": "topic:59",
+      "target": "topic:65",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-5"
+      ],
+      "id": "dependent:topic:5:topic:2",
+      "source": "topic:5",
+      "target": "topic:2",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-60"
+      ],
+      "id": "dependent:topic:60:topic:164",
+      "source": "topic:60",
+      "target": "topic:164",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-60"
+      ],
+      "id": "dependent:topic:60:topic:59",
+      "source": "topic:60",
+      "target": "topic:59",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-78"
+      ],
+      "id": "dependent:topic:78:topic:5",
+      "source": "topic:78",
+      "target": "topic:5",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-7"
+      ],
+      "id": "dependent:topic:7:topic:28",
+      "source": "topic:7",
+      "target": "topic:28",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-851"
+      ],
+      "id": "dependent:topic:851:topic:480",
+      "source": "topic:851",
+      "target": "topic:480",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-872"
+      ],
+      "id": "dependent:topic:872:topic:851",
+      "source": "topic:872",
+      "target": "topic:851",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-876"
+      ],
+      "id": "dependent:topic:876:topic:192",
+      "source": "topic:876",
+      "target": "topic:192",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-876"
+      ],
+      "id": "dependent:topic:876:topic:999",
+      "source": "topic:876",
+      "target": "topic:999",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-87"
+      ],
+      "id": "dependent:topic:87:topic:88",
+      "source": "topic:87",
+      "target": "topic:88",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-88"
+      ],
+      "id": "dependent:topic:88:topic:25",
+      "source": "topic:88",
+      "target": "topic:25",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-89"
+      ],
+      "id": "dependent:topic:89:topic:1761",
+      "source": "topic:89",
+      "target": "topic:1761",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-89"
+      ],
+      "id": "dependent:topic:89:topic:19",
+      "source": "topic:89",
+      "target": "topic:19",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-8"
+      ],
+      "id": "dependent:topic:8:topic:127",
+      "source": "topic:8",
+      "target": "topic:127",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-8"
+      ],
+      "id": "dependent:topic:8:topic:491",
+      "source": "topic:8",
+      "target": "topic:491",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-8"
+      ],
+      "id": "dependent:topic:8:topic:59",
+      "source": "topic:8",
+      "target": "topic:59",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-90"
+      ],
+      "id": "dependent:topic:90:topic:19",
+      "source": "topic:90",
+      "target": "topic:19",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-96"
+      ],
+      "id": "dependent:topic:96:topic:201",
+      "source": "topic:96",
+      "target": "topic:201",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-96"
+      ],
+      "id": "dependent:topic:96:topic:38",
+      "source": "topic:96",
+      "target": "topic:38",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-97"
+      ],
+      "id": "dependent:topic:97:topic:1087",
+      "source": "topic:97",
+      "target": "topic:1087",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-97"
+      ],
+      "id": "dependent:topic:97:topic:12",
+      "source": "topic:97",
+      "target": "topic:12",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-985"
+      ],
+      "id": "dependent:topic:985:topic:115",
+      "source": "topic:985",
+      "target": "topic:115",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-99"
+      ],
+      "id": "dependent:topic:99:topic:116",
+      "source": "topic:99",
+      "target": "topic:116",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-9"
+      ],
+      "id": "dependent:topic:9:topic:115",
+      "source": "topic:9",
+      "target": "topic:115",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-9"
+      ],
+      "id": "dependent:topic:9:topic:201",
+      "source": "topic:9",
+      "target": "topic:201",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-9"
+      ],
+      "id": "dependent:topic:9:topic:518",
+      "source": "topic:9",
+      "target": "topic:518",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-9"
+      ],
+      "id": "dependent:topic:9:topic:571",
+      "source": "topic:9",
+      "target": "topic:571",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "topic-9"
+      ],
+      "id": "dependent:topic:9:topic:98",
+      "source": "topic:9",
+      "target": "topic:98",
+      "type": "dependent"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:1162:category:1163",
+      "source": "category:1162",
+      "target": "category:1163",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:1162:category:1164",
+      "source": "category:1162",
+      "target": "category:1164",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:1162:category:2679",
+      "source": "category:1162",
+      "target": "category:2679",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:1163:category:126",
+      "source": "category:1163",
+      "target": "category:126",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:1163:category:258",
+      "source": "category:1163",
+      "target": "category:258",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:1163:category:357",
+      "source": "category:1163",
+      "target": "category:357",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:1164:category:73",
+      "source": "category:1164",
+      "target": "category:73",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:1186:category:516",
+      "source": "category:1186",
+      "target": "category:516",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:1188:category:679",
+      "source": "category:1188",
+      "target": "category:679",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:1215:category:187",
+      "source": "category:1215",
+      "target": "category:187",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:1258:category:196",
+      "source": "category:1258",
+      "target": "category:196",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:1258:category:251",
+      "source": "category:1258",
+      "target": "category:251",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:1258:category:95",
+      "source": "category:1258",
+      "target": "category:95",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:1260:category:1423",
+      "source": "category:1260",
+      "target": "category:1423",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:1260:category:61",
+      "source": "category:1260",
+      "target": "category:61",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:1260:topic:1425",
+      "source": "category:1260",
+      "target": "topic:1425",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:1262:topic:115",
+      "source": "category:1262",
+      "target": "topic:115",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:1262:topic:116",
+      "source": "category:1262",
+      "target": "topic:116",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:1262:topic:120",
+      "source": "category:1262",
+      "target": "topic:120",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:1262:topic:17",
+      "source": "category:1262",
+      "target": "topic:17",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:1262:topic:38",
+      "source": "category:1262",
+      "target": "topic:38",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:1262:topic:7",
+      "source": "category:1262",
+      "target": "topic:7",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:1262:topic:96",
+      "source": "category:1262",
+      "target": "topic:96",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:1263:topic:24",
+      "source": "category:1263",
+      "target": "topic:24",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:1263:topic:28",
+      "source": "category:1263",
+      "target": "topic:28",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:1263:topic:491",
+      "source": "category:1263",
+      "target": "topic:491",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:1264:topic:127",
+      "source": "category:1264",
+      "target": "topic:127",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:1264:topic:128",
+      "source": "category:1264",
+      "target": "topic:128",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:1264:topic:8",
+      "source": "category:1264",
+      "target": "topic:8",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:1265:topic:2",
+      "source": "category:1265",
+      "target": "topic:2",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:1265:topic:5",
+      "source": "category:1265",
+      "target": "topic:5",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:1265:topic:78",
+      "source": "category:1265",
+      "target": "topic:78",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:1267:topic:122",
+      "source": "category:1267",
+      "target": "topic:122",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:1268:category:1269",
+      "source": "category:1268",
+      "target": "category:1269",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:1269:topic:1087",
+      "source": "category:1269",
+      "target": "topic:1087",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:1269:topic:1088",
+      "source": "category:1269",
+      "target": "topic:1088",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:126:category:2944",
+      "source": "category:126",
+      "target": "category:2944",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:1356:topic:480",
+      "source": "category:1356",
+      "target": "topic:480",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:1356:topic:876",
+      "source": "category:1356",
+      "target": "topic:876",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:13:category:1262",
+      "source": "category:13",
+      "target": "category:1262",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:13:category:1263",
+      "source": "category:13",
+      "target": "category:1263",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:1423:topic:1425",
+      "source": "category:1423",
+      "target": "topic:1425",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:1423:topic:1761",
+      "source": "category:1423",
+      "target": "topic:1761",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:1423:topic:4635",
+      "source": "category:1423",
+      "target": "topic:4635",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:1432:topic:851",
+      "source": "category:1432",
+      "target": "topic:851",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:153:topic:113",
+      "source": "category:153",
+      "target": "topic:113",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:153:topic:163",
+      "source": "category:153",
+      "target": "topic:163",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:153:topic:518",
+      "source": "category:153",
+      "target": "topic:518",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:187:topic:12",
+      "source": "category:187",
+      "target": "topic:12",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:187:topic:2108",
+      "source": "category:187",
+      "target": "topic:2108",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:187:topic:4",
+      "source": "category:187",
+      "target": "topic:4",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:187:topic:97",
+      "source": "category:187",
+      "target": "topic:97",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:188:topic:201",
+      "source": "category:188",
+      "target": "topic:201",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:188:topic:9",
+      "source": "category:188",
+      "target": "topic:9",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:188:topic:98",
+      "source": "category:188",
+      "target": "topic:98",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:195:category:1264",
+      "source": "category:195",
+      "target": "category:1264",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:195:category:1265",
+      "source": "category:195",
+      "target": "category:1265",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:195:category:1267",
+      "source": "category:195",
+      "target": "category:1267",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:196:topic:112",
+      "source": "category:196",
+      "target": "topic:112",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:196:topic:1248",
+      "source": "category:196",
+      "target": "topic:1248",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:196:topic:30",
+      "source": "category:196",
+      "target": "topic:30",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:251:category:1268",
+      "source": "category:251",
+      "target": "category:1268",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:251:category:13",
+      "source": "category:251",
+      "target": "category:13",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:251:category:195",
+      "source": "category:251",
+      "target": "category:195",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:252:category:153",
+      "source": "category:252",
+      "target": "category:153",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:252:category:188",
+      "source": "category:252",
+      "target": "category:188",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:252:category:3",
+      "source": "category:252",
+      "target": "category:3",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:252:category:306",
+      "source": "category:252",
+      "target": "category:306",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:252:category:35",
+      "source": "category:252",
+      "target": "category:35",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:252:category:74",
+      "source": "category:252",
+      "target": "category:74",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:258:category:262",
+      "source": "category:258",
+      "target": "category:262",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:258:category:4502",
+      "source": "category:258",
+      "target": "category:4502",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:262:category:386",
+      "source": "category:262",
+      "target": "category:386",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:262:topic:259",
+      "source": "category:262",
+      "target": "topic:259",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:2679:category:477",
+      "source": "category:2679",
+      "target": "category:477",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:2944:topic:149",
+      "source": "category:2944",
+      "target": "topic:149",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:2944:topic:191",
+      "source": "category:2944",
+      "target": "topic:191",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:2944:topic:192",
+      "source": "category:2944",
+      "target": "topic:192",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:306:topic:146",
+      "source": "category:306",
+      "target": "topic:146",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:306:topic:27",
+      "source": "category:306",
+      "target": "topic:27",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:306:topic:307",
+      "source": "category:306",
+      "target": "topic:307",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:306:topic:31",
+      "source": "category:306",
+      "target": "topic:31",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:306:topic:36",
+      "source": "category:306",
+      "target": "topic:36",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:306:topic:87",
+      "source": "category:306",
+      "target": "topic:87",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:306:topic:88",
+      "source": "category:306",
+      "target": "topic:88",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:357:category:1186",
+      "source": "category:357",
+      "target": "category:1186",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:357:category:1188",
+      "source": "category:357",
+      "target": "category:1188",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:357:category:850",
+      "source": "category:357",
+      "target": "category:850",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:35:topic:14",
+      "source": "category:35",
+      "target": "topic:14",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:35:topic:161",
+      "source": "category:35",
+      "target": "topic:161",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:35:topic:308",
+      "source": "category:35",
+      "target": "topic:308",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:35:topic:309",
+      "source": "category:35",
+      "target": "topic:309",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:35:topic:32",
+      "source": "category:35",
+      "target": "topic:32",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:35:topic:36",
+      "source": "category:35",
+      "target": "topic:36",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:35:topic:571",
+      "source": "category:35",
+      "target": "topic:571",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:386:topic:260",
+      "source": "category:386",
+      "target": "topic:260",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:386:topic:3538",
+      "source": "category:386",
+      "target": "topic:3538",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:386:topic:387",
+      "source": "category:386",
+      "target": "topic:387",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:386:topic:5107",
+      "source": "category:386",
+      "target": "topic:5107",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:386:topic:999",
+      "source": "category:386",
+      "target": "topic:999",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:3:topic:152",
+      "source": "category:3",
+      "target": "topic:152",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:3:topic:19",
+      "source": "category:3",
+      "target": "topic:19",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:3:topic:25",
+      "source": "category:3",
+      "target": "topic:25",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:3:topic:33",
+      "source": "category:3",
+      "target": "topic:33",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:3:topic:89",
+      "source": "category:3",
+      "target": "topic:89",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:3:topic:90",
+      "source": "category:3",
+      "target": "topic:90",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:4502:category:4503",
+      "source": "category:4502",
+      "target": "category:4503",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:4503:topic:4510",
+      "source": "category:4503",
+      "target": "topic:4510",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:4503:topic:4533",
+      "source": "category:4503",
+      "target": "topic:4533",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:4503:topic:5028",
+      "source": "category:4503",
+      "target": "topic:5028",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:477:category:1356",
+      "source": "category:477",
+      "target": "category:1356",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:516:topic:1476",
+      "source": "category:516",
+      "target": "topic:1476",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:516:topic:348",
+      "source": "category:516",
+      "target": "topic:348",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:516:topic:360",
+      "source": "category:516",
+      "target": "topic:360",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:61:topic:164",
+      "source": "category:61",
+      "target": "topic:164",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:61:topic:165",
+      "source": "category:61",
+      "target": "topic:165",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:61:topic:59",
+      "source": "category:61",
+      "target": "topic:59",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:61:topic:60",
+      "source": "category:61",
+      "target": "topic:60",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:61:topic:65",
+      "source": "category:61",
+      "target": "topic:65",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:679:topic:117",
+      "source": "category:679",
+      "target": "topic:117",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:73:category:1215",
+      "source": "category:73",
+      "target": "category:1215",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:73:category:1258",
+      "source": "category:73",
+      "target": "category:1258",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:73:category:1260",
+      "source": "category:73",
+      "target": "category:1260",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:73:category:252",
+      "source": "category:73",
+      "target": "category:252",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:74:topic:147",
+      "source": "category:74",
+      "target": "topic:147",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:74:topic:148",
+      "source": "category:74",
+      "target": "topic:148",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:74:topic:15",
+      "source": "category:74",
+      "target": "topic:15",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:74:topic:193",
+      "source": "category:74",
+      "target": "topic:193",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:850:category:1432",
+      "source": "category:850",
+      "target": "category:1432",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:850:topic:872",
+      "source": "category:850",
+      "target": "topic:872",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:95:topic:1",
+      "source": "category:95",
+      "target": "topic:1",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:95:topic:1033",
+      "source": "category:95",
+      "target": "topic:1033",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:95:topic:1038",
+      "source": "category:95",
+      "target": "topic:1038",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:95:topic:37",
+      "source": "category:95",
+      "target": "topic:37",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:95:topic:985",
+      "source": "category:95",
+      "target": "topic:985",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "id": "hierarchy:category:95:topic:99",
+      "source": "category:95",
+      "target": "topic:99",
+      "type": "hierarchy"
+    },
+    {
+      "evidence_ids": [
+        "topic-37"
+      ],
+      "id": "prerequisite:topic:1033:topic:37",
+      "source": "topic:1033",
+      "target": "topic:37",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-4"
+      ],
+      "id": "prerequisite:topic:1033:topic:4",
+      "source": "topic:1033",
+      "target": "topic:4",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-1"
+      ],
+      "id": "prerequisite:topic:1038:topic:1",
+      "source": "topic:1038",
+      "target": "topic:1",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-1033"
+      ],
+      "id": "prerequisite:topic:1038:topic:1033",
+      "source": "topic:1038",
+      "target": "topic:1033",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-116"
+      ],
+      "id": "prerequisite:topic:1038:topic:116",
+      "source": "topic:1038",
+      "target": "topic:116",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-17"
+      ],
+      "id": "prerequisite:topic:1038:topic:17",
+      "source": "topic:1038",
+      "target": "topic:17",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-985"
+      ],
+      "id": "prerequisite:topic:1038:topic:985",
+      "source": "topic:1038",
+      "target": "topic:985",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-99"
+      ],
+      "id": "prerequisite:topic:1038:topic:99",
+      "source": "topic:1038",
+      "target": "topic:99",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-1088"
+      ],
+      "id": "prerequisite:topic:1087:topic:1088",
+      "source": "topic:1087",
+      "target": "topic:1088",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-27"
+      ],
+      "id": "prerequisite:topic:112:topic:27",
+      "source": "topic:112",
+      "target": "topic:27",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-163"
+      ],
+      "id": "prerequisite:topic:113:topic:163",
+      "source": "topic:113",
+      "target": "topic:163",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-27"
+      ],
+      "id": "prerequisite:topic:113:topic:27",
+      "source": "topic:113",
+      "target": "topic:27",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-116"
+      ],
+      "id": "prerequisite:topic:115:topic:116",
+      "source": "topic:115",
+      "target": "topic:116",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-17"
+      ],
+      "id": "prerequisite:topic:115:topic:17",
+      "source": "topic:115",
+      "target": "topic:17",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-7"
+      ],
+      "id": "prerequisite:topic:115:topic:7",
+      "source": "topic:115",
+      "target": "topic:7",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-96"
+      ],
+      "id": "prerequisite:topic:115:topic:96",
+      "source": "topic:115",
+      "target": "topic:96",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-28"
+      ],
+      "id": "prerequisite:topic:116:topic:28",
+      "source": "topic:116",
+      "target": "topic:28",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-38"
+      ],
+      "id": "prerequisite:topic:116:topic:38",
+      "source": "topic:116",
+      "target": "topic:38",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-78"
+      ],
+      "id": "prerequisite:topic:116:topic:78",
+      "source": "topic:116",
+      "target": "topic:78",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-115"
+      ],
+      "id": "prerequisite:topic:117:topic:115",
+      "source": "topic:117",
+      "target": "topic:115",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-127"
+      ],
+      "id": "prerequisite:topic:120:topic:127",
+      "source": "topic:120",
+      "target": "topic:127",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-112"
+      ],
+      "id": "prerequisite:topic:1248:topic:112",
+      "source": "topic:1248",
+      "target": "topic:112",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-5"
+      ],
+      "id": "prerequisite:topic:127:topic:5",
+      "source": "topic:127",
+      "target": "topic:5",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-59"
+      ],
+      "id": "prerequisite:topic:127:topic:59",
+      "source": "topic:127",
+      "target": "topic:59",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-2"
+      ],
+      "id": "prerequisite:topic:128:topic:2",
+      "source": "topic:128",
+      "target": "topic:2",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-27"
+      ],
+      "id": "prerequisite:topic:146:topic:27",
+      "source": "topic:146",
+      "target": "topic:27",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-3538"
+      ],
+      "id": "prerequisite:topic:1476:topic:3538",
+      "source": "topic:1476",
+      "target": "topic:3538",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-148"
+      ],
+      "id": "prerequisite:topic:147:topic:148",
+      "source": "topic:147",
+      "target": "topic:148",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-193"
+      ],
+      "id": "prerequisite:topic:148:topic:193",
+      "source": "topic:148",
+      "target": "topic:193",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-192"
+      ],
+      "id": "prerequisite:topic:149:topic:192",
+      "source": "topic:149",
+      "target": "topic:192",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-112"
+      ],
+      "id": "prerequisite:topic:14:topic:112",
+      "source": "topic:14",
+      "target": "topic:112",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-113"
+      ],
+      "id": "prerequisite:topic:14:topic:113",
+      "source": "topic:14",
+      "target": "topic:113",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-161"
+      ],
+      "id": "prerequisite:topic:14:topic:161",
+      "source": "topic:14",
+      "target": "topic:161",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-309"
+      ],
+      "id": "prerequisite:topic:14:topic:309",
+      "source": "topic:14",
+      "target": "topic:309",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-87"
+      ],
+      "id": "prerequisite:topic:14:topic:87",
+      "source": "topic:14",
+      "target": "topic:87",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-164"
+      ],
+      "id": "prerequisite:topic:152:topic:164",
+      "source": "topic:152",
+      "target": "topic:164",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-89"
+      ],
+      "id": "prerequisite:topic:152:topic:89",
+      "source": "topic:152",
+      "target": "topic:89",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-90"
+      ],
+      "id": "prerequisite:topic:152:topic:90",
+      "source": "topic:152",
+      "target": "topic:90",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-147"
+      ],
+      "id": "prerequisite:topic:15:topic:147",
+      "source": "topic:15",
+      "target": "topic:147",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-32"
+      ],
+      "id": "prerequisite:topic:161:topic:32",
+      "source": "topic:161",
+      "target": "topic:32",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-60"
+      ],
+      "id": "prerequisite:topic:163:topic:60",
+      "source": "topic:163",
+      "target": "topic:60",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-165"
+      ],
+      "id": "prerequisite:topic:164:topic:165",
+      "source": "topic:164",
+      "target": "topic:165",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-4635"
+      ],
+      "id": "prerequisite:topic:1761:topic:4635",
+      "source": "topic:1761",
+      "target": "topic:4635",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-1087"
+      ],
+      "id": "prerequisite:topic:17:topic:1087",
+      "source": "topic:17",
+      "target": "topic:1087",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-1088"
+      ],
+      "id": "prerequisite:topic:17:topic:1088",
+      "source": "topic:17",
+      "target": "topic:1088",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-120"
+      ],
+      "id": "prerequisite:topic:17:topic:120",
+      "source": "topic:17",
+      "target": "topic:120",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-28"
+      ],
+      "id": "prerequisite:topic:17:topic:28",
+      "source": "topic:17",
+      "target": "topic:28",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-38"
+      ],
+      "id": "prerequisite:topic:17:topic:38",
+      "source": "topic:17",
+      "target": "topic:38",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-8"
+      ],
+      "id": "prerequisite:topic:17:topic:8",
+      "source": "topic:17",
+      "target": "topic:8",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-115"
+      ],
+      "id": "prerequisite:topic:191:topic:115",
+      "source": "topic:191",
+      "target": "topic:115",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-149"
+      ],
+      "id": "prerequisite:topic:191:topic:149",
+      "source": "topic:191",
+      "target": "topic:149",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-163"
+      ],
+      "id": "prerequisite:topic:191:topic:163",
+      "source": "topic:191",
+      "target": "topic:163",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-1248"
+      ],
+      "id": "prerequisite:topic:193:topic:1248",
+      "source": "topic:193",
+      "target": "topic:1248",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-14"
+      ],
+      "id": "prerequisite:topic:193:topic:14",
+      "source": "topic:193",
+      "target": "topic:14",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-146"
+      ],
+      "id": "prerequisite:topic:193:topic:146",
+      "source": "topic:193",
+      "target": "topic:146",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-30"
+      ],
+      "id": "prerequisite:topic:193:topic:30",
+      "source": "topic:193",
+      "target": "topic:30",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-1038"
+      ],
+      "id": "prerequisite:topic:19:topic:1038",
+      "source": "topic:19",
+      "target": "topic:1038",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-33"
+      ],
+      "id": "prerequisite:topic:19:topic:33",
+      "source": "topic:19",
+      "target": "topic:33",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-97"
+      ],
+      "id": "prerequisite:topic:19:topic:97",
+      "source": "topic:19",
+      "target": "topic:97",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-98"
+      ],
+      "id": "prerequisite:topic:19:topic:98",
+      "source": "topic:19",
+      "target": "topic:98",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-985"
+      ],
+      "id": "prerequisite:topic:1:topic:985",
+      "source": "topic:1",
+      "target": "topic:985",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-8"
+      ],
+      "id": "prerequisite:topic:24:topic:8",
+      "source": "topic:24",
+      "target": "topic:8",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-260"
+      ],
+      "id": "prerequisite:topic:259:topic:260",
+      "source": "topic:259",
+      "target": "topic:260",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-152"
+      ],
+      "id": "prerequisite:topic:25:topic:152",
+      "source": "topic:25",
+      "target": "topic:152",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-60"
+      ],
+      "id": "prerequisite:topic:25:topic:60",
+      "source": "topic:25",
+      "target": "topic:60",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-1761"
+      ],
+      "id": "prerequisite:topic:260:topic:1761",
+      "source": "topic:260",
+      "target": "topic:1761",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-3538"
+      ],
+      "id": "prerequisite:topic:260:topic:3538",
+      "source": "topic:260",
+      "target": "topic:3538",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-387"
+      ],
+      "id": "prerequisite:topic:260:topic:387",
+      "source": "topic:260",
+      "target": "topic:387",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-999"
+      ],
+      "id": "prerequisite:topic:260:topic:999",
+      "source": "topic:260",
+      "target": "topic:999",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-307"
+      ],
+      "id": "prerequisite:topic:27:topic:307",
+      "source": "topic:27",
+      "target": "topic:307",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-36"
+      ],
+      "id": "prerequisite:topic:27:topic:36",
+      "source": "topic:27",
+      "target": "topic:36",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-88"
+      ],
+      "id": "prerequisite:topic:27:topic:88",
+      "source": "topic:27",
+      "target": "topic:88",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-24"
+      ],
+      "id": "prerequisite:topic:28:topic:24",
+      "source": "topic:28",
+      "target": "topic:24",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-491"
+      ],
+      "id": "prerequisite:topic:28:topic:491",
+      "source": "topic:28",
+      "target": "topic:491",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-122"
+      ],
+      "id": "prerequisite:topic:2:topic:122",
+      "source": "topic:2",
+      "target": "topic:122",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-31"
+      ],
+      "id": "prerequisite:topic:307:topic:31",
+      "source": "topic:307",
+      "target": "topic:31",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-89"
+      ],
+      "id": "prerequisite:topic:307:topic:89",
+      "source": "topic:307",
+      "target": "topic:89",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-90"
+      ],
+      "id": "prerequisite:topic:307:topic:90",
+      "source": "topic:307",
+      "target": "topic:90",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-4"
+      ],
+      "id": "prerequisite:topic:309:topic:4",
+      "source": "topic:309",
+      "target": "topic:4",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-571"
+      ],
+      "id": "prerequisite:topic:309:topic:571",
+      "source": "topic:309",
+      "target": "topic:571",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-96"
+      ],
+      "id": "prerequisite:topic:309:topic:96",
+      "source": "topic:309",
+      "target": "topic:96",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-113"
+      ],
+      "id": "prerequisite:topic:30:topic:113",
+      "source": "topic:30",
+      "target": "topic:113",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-9"
+      ],
+      "id": "prerequisite:topic:31:topic:9",
+      "source": "topic:31",
+      "target": "topic:9",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-1033"
+      ],
+      "id": "prerequisite:topic:32:topic:1033",
+      "source": "topic:32",
+      "target": "topic:1033",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-985"
+      ],
+      "id": "prerequisite:topic:33:topic:985",
+      "source": "topic:33",
+      "target": "topic:985",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-1425"
+      ],
+      "id": "prerequisite:topic:348:topic:1425",
+      "source": "topic:348",
+      "target": "topic:1425",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-1476"
+      ],
+      "id": "prerequisite:topic:348:topic:1476",
+      "source": "topic:348",
+      "target": "topic:1476",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-1761"
+      ],
+      "id": "prerequisite:topic:3538:topic:1761",
+      "source": "topic:3538",
+      "target": "topic:1761",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-999"
+      ],
+      "id": "prerequisite:topic:3538:topic:999",
+      "source": "topic:3538",
+      "target": "topic:999",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-1425"
+      ],
+      "id": "prerequisite:topic:360:topic:1425",
+      "source": "topic:360",
+      "target": "topic:1425",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-87"
+      ],
+      "id": "prerequisite:topic:36:topic:87",
+      "source": "topic:36",
+      "target": "topic:87",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-120"
+      ],
+      "id": "prerequisite:topic:37:topic:120",
+      "source": "topic:37",
+      "target": "topic:120",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-5107"
+      ],
+      "id": "prerequisite:topic:387:topic:5107",
+      "source": "topic:387",
+      "target": "topic:5107",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-1087"
+      ],
+      "id": "prerequisite:topic:38:topic:1087",
+      "source": "topic:38",
+      "target": "topic:1087",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-1088"
+      ],
+      "id": "prerequisite:topic:38:topic:1088",
+      "source": "topic:38",
+      "target": "topic:1088",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-4635"
+      ],
+      "id": "prerequisite:topic:38:topic:4635",
+      "source": "topic:38",
+      "target": "topic:4635",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-5"
+      ],
+      "id": "prerequisite:topic:38:topic:5",
+      "source": "topic:38",
+      "target": "topic:5",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-5028"
+      ],
+      "id": "prerequisite:topic:4510:topic:5028",
+      "source": "topic:4510",
+      "target": "topic:5028",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-876"
+      ],
+      "id": "prerequisite:topic:480:topic:876",
+      "source": "topic:480",
+      "target": "topic:876",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-128"
+      ],
+      "id": "prerequisite:topic:491:topic:128",
+      "source": "topic:491",
+      "target": "topic:128",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-165"
+      ],
+      "id": "prerequisite:topic:4:topic:165",
+      "source": "topic:4",
+      "target": "topic:165",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-2108"
+      ],
+      "id": "prerequisite:topic:4:topic:2108",
+      "source": "topic:4",
+      "target": "topic:2108",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-97"
+      ],
+      "id": "prerequisite:topic:4:topic:97",
+      "source": "topic:4",
+      "target": "topic:97",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-98"
+      ],
+      "id": "prerequisite:topic:4:topic:98",
+      "source": "topic:4",
+      "target": "topic:98",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-99"
+      ],
+      "id": "prerequisite:topic:4:topic:99",
+      "source": "topic:4",
+      "target": "topic:99",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-4533"
+      ],
+      "id": "prerequisite:topic:5028:topic:4533",
+      "source": "topic:5028",
+      "target": "topic:4533",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-38"
+      ],
+      "id": "prerequisite:topic:571:topic:38",
+      "source": "topic:571",
+      "target": "topic:38",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-1425"
+      ],
+      "id": "prerequisite:topic:59:topic:1425",
+      "source": "topic:59",
+      "target": "topic:1425",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-65"
+      ],
+      "id": "prerequisite:topic:59:topic:65",
+      "source": "topic:59",
+      "target": "topic:65",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-2"
+      ],
+      "id": "prerequisite:topic:5:topic:2",
+      "source": "topic:5",
+      "target": "topic:2",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-164"
+      ],
+      "id": "prerequisite:topic:60:topic:164",
+      "source": "topic:60",
+      "target": "topic:164",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-59"
+      ],
+      "id": "prerequisite:topic:60:topic:59",
+      "source": "topic:60",
+      "target": "topic:59",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-5"
+      ],
+      "id": "prerequisite:topic:78:topic:5",
+      "source": "topic:78",
+      "target": "topic:5",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-28"
+      ],
+      "id": "prerequisite:topic:7:topic:28",
+      "source": "topic:7",
+      "target": "topic:28",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-480"
+      ],
+      "id": "prerequisite:topic:851:topic:480",
+      "source": "topic:851",
+      "target": "topic:480",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-851"
+      ],
+      "id": "prerequisite:topic:872:topic:851",
+      "source": "topic:872",
+      "target": "topic:851",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-192"
+      ],
+      "id": "prerequisite:topic:876:topic:192",
+      "source": "topic:876",
+      "target": "topic:192",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-999"
+      ],
+      "id": "prerequisite:topic:876:topic:999",
+      "source": "topic:876",
+      "target": "topic:999",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-88"
+      ],
+      "id": "prerequisite:topic:87:topic:88",
+      "source": "topic:87",
+      "target": "topic:88",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-25"
+      ],
+      "id": "prerequisite:topic:88:topic:25",
+      "source": "topic:88",
+      "target": "topic:25",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-1761"
+      ],
+      "id": "prerequisite:topic:89:topic:1761",
+      "source": "topic:89",
+      "target": "topic:1761",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-19"
+      ],
+      "id": "prerequisite:topic:89:topic:19",
+      "source": "topic:89",
+      "target": "topic:19",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-127"
+      ],
+      "id": "prerequisite:topic:8:topic:127",
+      "source": "topic:8",
+      "target": "topic:127",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-491"
+      ],
+      "id": "prerequisite:topic:8:topic:491",
+      "source": "topic:8",
+      "target": "topic:491",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-59"
+      ],
+      "id": "prerequisite:topic:8:topic:59",
+      "source": "topic:8",
+      "target": "topic:59",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-19"
+      ],
+      "id": "prerequisite:topic:90:topic:19",
+      "source": "topic:90",
+      "target": "topic:19",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-201"
+      ],
+      "id": "prerequisite:topic:96:topic:201",
+      "source": "topic:96",
+      "target": "topic:201",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-38"
+      ],
+      "id": "prerequisite:topic:96:topic:38",
+      "source": "topic:96",
+      "target": "topic:38",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-1087"
+      ],
+      "id": "prerequisite:topic:97:topic:1087",
+      "source": "topic:97",
+      "target": "topic:1087",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-12"
+      ],
+      "id": "prerequisite:topic:97:topic:12",
+      "source": "topic:97",
+      "target": "topic:12",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-115"
+      ],
+      "id": "prerequisite:topic:985:topic:115",
+      "source": "topic:985",
+      "target": "topic:115",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-116"
+      ],
+      "id": "prerequisite:topic:99:topic:116",
+      "source": "topic:99",
+      "target": "topic:116",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-115"
+      ],
+      "id": "prerequisite:topic:9:topic:115",
+      "source": "topic:9",
+      "target": "topic:115",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-201"
+      ],
+      "id": "prerequisite:topic:9:topic:201",
+      "source": "topic:9",
+      "target": "topic:201",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-518"
+      ],
+      "id": "prerequisite:topic:9:topic:518",
+      "source": "topic:9",
+      "target": "topic:518",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-571"
+      ],
+      "id": "prerequisite:topic:9:topic:571",
+      "source": "topic:9",
+      "target": "topic:571",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "topic-98"
+      ],
+      "id": "prerequisite:topic:9:topic:98",
+      "source": "topic:9",
+      "target": "topic:98",
+      "type": "prerequisite"
+    },
+    {
+      "evidence_ids": [
+        "stage-615"
+      ],
+      "id": "project_requires:project:113:topic:112",
+      "source": "project:113",
+      "stage_id": 615,
+      "target": "topic:112",
+      "type": "project_requires"
+    },
+    {
+      "evidence_ids": [
+        "stage-615"
+      ],
+      "id": "project_requires:project:113:topic:113",
+      "source": "project:113",
+      "stage_id": 615,
+      "target": "topic:113",
+      "type": "project_requires"
+    },
+    {
+      "evidence_ids": [
+        "stage-615"
+      ],
+      "id": "project_requires:project:113:topic:1248",
+      "source": "project:113",
+      "stage_id": 615,
+      "target": "topic:1248",
+      "type": "project_requires"
+    },
+    {
+      "evidence_ids": [
+        "stage-615"
+      ],
+      "id": "project_requires:project:113:topic:14",
+      "source": "project:113",
+      "stage_id": 615,
+      "target": "topic:14",
+      "type": "project_requires"
+    },
+    {
+      "evidence_ids": [
+        "stage-616"
+      ],
+      "id": "project_requires:project:113:topic:146",
+      "source": "project:113",
+      "stage_id": 616,
+      "target": "topic:146",
+      "type": "project_requires"
+    },
+    {
+      "evidence_ids": [
+        "stage-614"
+      ],
+      "id": "project_requires:project:113:topic:147",
+      "source": "project:113",
+      "stage_id": 614,
+      "target": "topic:147",
+      "type": "project_requires"
+    },
+    {
+      "evidence_ids": [
+        "stage-617"
+      ],
+      "id": "project_requires:project:113:topic:1476",
+      "source": "project:113",
+      "stage_id": 617,
+      "target": "topic:1476",
+      "type": "project_requires"
+    },
+    {
+      "evidence_ids": [
+        "stage-614"
+      ],
+      "id": "project_requires:project:113:topic:148",
+      "source": "project:113",
+      "stage_id": 614,
+      "target": "topic:148",
+      "type": "project_requires"
+    },
+    {
+      "evidence_ids": [
+        "stage-614"
+      ],
+      "id": "project_requires:project:113:topic:15",
+      "source": "project:113",
+      "stage_id": 614,
+      "target": "topic:15",
+      "type": "project_requires"
+    },
+    {
+      "evidence_ids": [
+        "stage-617"
+      ],
+      "id": "project_requires:project:113:topic:152",
+      "source": "project:113",
+      "stage_id": 617,
+      "target": "topic:152",
+      "type": "project_requires"
+    },
+    {
+      "evidence_ids": [
+        "stage-617"
+      ],
+      "id": "project_requires:project:113:topic:1761",
+      "source": "project:113",
+      "stage_id": 617,
+      "target": "topic:1761",
+      "type": "project_requires"
+    },
+    {
+      "evidence_ids": [
+        "stage-614"
+      ],
+      "id": "project_requires:project:113:topic:193",
+      "source": "project:113",
+      "stage_id": 614,
+      "target": "topic:193",
+      "type": "project_requires"
+    },
+    {
+      "evidence_ids": [
+        "stage-617"
+      ],
+      "id": "project_requires:project:113:topic:25",
+      "source": "project:113",
+      "stage_id": 617,
+      "target": "topic:25",
+      "type": "project_requires"
+    },
+    {
+      "evidence_ids": [
+        "stage-617"
+      ],
+      "id": "project_requires:project:113:topic:259",
+      "source": "project:113",
+      "stage_id": 617,
+      "target": "topic:259",
+      "type": "project_requires"
+    },
+    {
+      "evidence_ids": [
+        "stage-617"
+      ],
+      "id": "project_requires:project:113:topic:260",
+      "source": "project:113",
+      "stage_id": 617,
+      "target": "topic:260",
+      "type": "project_requires"
+    },
+    {
+      "evidence_ids": [
+        "stage-616"
+      ],
+      "id": "project_requires:project:113:topic:27",
+      "source": "project:113",
+      "stage_id": 616,
+      "target": "topic:27",
+      "type": "project_requires"
+    },
+    {
+      "evidence_ids": [
+        "stage-615"
+      ],
+      "id": "project_requires:project:113:topic:30",
+      "source": "project:113",
+      "stage_id": 615,
+      "target": "topic:30",
+      "type": "project_requires"
+    },
+    {
+      "evidence_ids": [
+        "stage-616"
+      ],
+      "id": "project_requires:project:113:topic:307",
+      "source": "project:113",
+      "stage_id": 616,
+      "target": "topic:307",
+      "type": "project_requires"
+    },
+    {
+      "evidence_ids": [
+        "stage-616"
+      ],
+      "id": "project_requires:project:113:topic:31",
+      "source": "project:113",
+      "stage_id": 616,
+      "target": "topic:31",
+      "type": "project_requires"
+    },
+    {
+      "evidence_ids": [
+        "stage-617"
+      ],
+      "id": "project_requires:project:113:topic:348",
+      "source": "project:113",
+      "stage_id": 617,
+      "target": "topic:348",
+      "type": "project_requires"
+    },
+    {
+      "evidence_ids": [
+        "stage-617"
+      ],
+      "id": "project_requires:project:113:topic:3538",
+      "source": "project:113",
+      "stage_id": 617,
+      "target": "topic:3538",
+      "type": "project_requires"
+    },
+    {
+      "evidence_ids": [
+        "stage-617"
+      ],
+      "id": "project_requires:project:113:topic:36",
+      "source": "project:113",
+      "stage_id": 617,
+      "target": "topic:36",
+      "type": "project_requires"
+    },
+    {
+      "evidence_ids": [
+        "stage-617"
+      ],
+      "id": "project_requires:project:113:topic:87",
+      "source": "project:113",
+      "stage_id": 617,
+      "target": "topic:87",
+      "type": "project_requires"
+    },
+    {
+      "evidence_ids": [
+        "stage-617"
+      ],
+      "id": "project_requires:project:113:topic:88",
+      "source": "project:113",
+      "stage_id": 617,
+      "target": "topic:88",
+      "type": "project_requires"
+    },
+    {
+      "evidence_ids": [
+        "stage-617"
+      ],
+      "id": "project_requires:project:113:topic:89",
+      "source": "project:113",
+      "stage_id": 617,
+      "target": "topic:89",
+      "type": "project_requires"
+    },
+    {
+      "evidence_ids": [
+        "stage-616"
+      ],
+      "id": "project_requires:project:113:topic:9",
+      "source": "project:113",
+      "stage_id": 616,
+      "target": "topic:9",
+      "type": "project_requires"
+    }
+  ],
+  "evidence": [
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "topics_count",
+        "capstone_topics_count",
+        "projects"
+      ],
+      "id": "course-8",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/tracks/8"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "parent_id",
+        "children",
+        "descendants"
+      ],
+      "id": "map-8",
+      "method": "public_json",
+      "note": "Course-scoped hierarchy; retain multiple category memberships.",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topic-relations?track_id=8&page_size=100"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "learned_topics_count=31",
+        "skipped_topics_count=0",
+        "applied_capstone_topics_count=26",
+        "completed_projects=[113]"
+      ],
+      "id": "personal-course-8",
+      "method": "user_supplied_authenticated_excerpt",
+      "note": "User-supplied authenticated track-8 response; only whitelisted values retained.",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "track_id=8",
+        "project_id=380",
+        "mode=track"
+      ],
+      "id": "personal-plan",
+      "method": "user_supplied_authenticated_excerpt",
+      "note": "User-supplied current study-plan response; no account or plan ID retained.",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "is_completed=false",
+        "completed_stages=[]"
+      ],
+      "id": "personal-project-380",
+      "method": "user_supplied_authenticated_excerpt",
+      "note": "User-supplied authenticated project-380 response.",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "is_learned=true",
+        "is_completed=true",
+        "is_skipped=false",
+        "verification_status=verified",
+        "stage_position=1"
+      ],
+      "id": "personal-topic-15",
+      "method": "user_supplied_authenticated_excerpt",
+      "note": "User-supplied authenticated topic-15 response. Stage position does not establish project application.",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "language",
+        "stages_ids"
+      ],
+      "id": "project-113",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/projects/113"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "language",
+        "stages_ids"
+      ],
+      "id": "project-133",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/projects/133"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "language",
+        "stages_ids"
+      ],
+      "id": "project-184",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/projects/184"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "language",
+        "stages_ids"
+      ],
+      "id": "project-229",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/projects/229"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "language",
+        "stages_ids"
+      ],
+      "id": "project-293",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/projects/293"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "language",
+        "stages_ids"
+      ],
+      "id": "project-33",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/projects/33"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "language",
+        "stages_ids"
+      ],
+      "id": "project-341",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/projects/341"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "language",
+        "stages_ids"
+      ],
+      "id": "project-380",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/projects/380"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "language",
+        "stages_ids"
+      ],
+      "id": "project-383",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/projects/383"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "language",
+        "stages_ids"
+      ],
+      "id": "project-48",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/projects/48"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "language",
+        "stages_ids"
+      ],
+      "id": "project-53",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/projects/53"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "project",
+        "step",
+        "step_index",
+        "prerequisites",
+        "all_prerequisites"
+      ],
+      "id": "stage-614",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/stages/614"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "project",
+        "step",
+        "step_index",
+        "prerequisites",
+        "all_prerequisites"
+      ],
+      "id": "stage-615",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/stages/615"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "project",
+        "step",
+        "step_index",
+        "prerequisites",
+        "all_prerequisites"
+      ],
+      "id": "stage-616",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/stages/616"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "project",
+        "step",
+        "step_index",
+        "prerequisites",
+        "all_prerequisites"
+      ],
+      "id": "stage-617",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/stages/617"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "project",
+        "step",
+        "step_index",
+        "prerequisites",
+        "all_prerequisites"
+      ],
+      "id": "stage-618",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/stages/618"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-1",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/1"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-1033",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/1033"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-1038",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/1038"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-1087",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/1087"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-1088",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/1088"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-112",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/112"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-113",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/113"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-115",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/115"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-116",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/116"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-117",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/117"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-12",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/12"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-120",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/120"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-122",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/122"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-1248",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/1248"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-127",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/127"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-128",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/128"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-14",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/14"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-1425",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/1425"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-146",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/146"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-147",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/147"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-1476",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/1476"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-148",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/148"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-149",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/149"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-15",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/15"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-152",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/152"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-161",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/161"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-163",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/163"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-164",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/164"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-165",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/165"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-17",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/17"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-1761",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/1761"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-19",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/19"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-191",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/191"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-192",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/192"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-193",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/193"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-2",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/2"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-201",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/201"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-2108",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/2108"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-24",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/24"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-25",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/25"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-259",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/259"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-260",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/260"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-27",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/27"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-28",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/28"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-30",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/30"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-307",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/307"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-308",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/308"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-309",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/309"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-31",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/31"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-32",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/32"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-33",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/33"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-348",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/348"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-3538",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/3538"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-36",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/36"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-360",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/360"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-37",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/37"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-38",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/38"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-387",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/387"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-4",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/4"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-4510",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/4510"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-4533",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/4533"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-4635",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/4635"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-480",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/480"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-491",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/491"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-5",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/5"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-5028",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/5028"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-5107",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/5107"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-518",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/518"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-571",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/571"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-59",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/59"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-60",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/60"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-65",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/65"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-7",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/7"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-78",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/78"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-8",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/8"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-851",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/851"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-87",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/87"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-872",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/872"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-876",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/876"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-88",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/88"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-89",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/89"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-9",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/9"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-90",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/90"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-96",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/96"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-97",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/97"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-98",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/98"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-985",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/985"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-99",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/99"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
+        "id",
+        "title",
+        "theory",
+        "parent_id",
+        "prerequisites",
+        "followers"
+      ],
+      "id": "topic-999",
+      "method": "public_json",
+      "note": "",
+      "observed_on": "2026-10-01",
+      "source": "hyperskill",
+      "url": "https://hyperskill.org/api/topics/999"
+    }
+  ],
+  "nodes": [
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "hyperskill_id": 1162,
+      "id": "category:1162",
+      "title": "Computer science",
+      "type": "category",
+      "url": "https://hyperskill.org/knowledge-map/1162?track=8",
+      "x": 359.039,
+      "y": -94.693
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "hyperskill_id": 1163,
+      "id": "category:1163",
+      "title": "Software development foundations",
+      "type": "category",
+      "url": "https://hyperskill.org/knowledge-map/1163?track=8",
+      "x": -54.415,
+      "y": -438.839
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "hyperskill_id": 1164,
+      "id": "category:1164",
+      "title": "Programming languages",
+      "type": "category",
+      "url": "https://hyperskill.org/knowledge-map/1164?track=8",
+      "x": 749.769,
+      "y": -359.828
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "hyperskill_id": 1186,
+      "id": "category:1186",
+      "title": "Software construction",
+      "type": "category",
+      "url": "https://hyperskill.org/knowledge-map/1186?track=8",
+      "x": 871.444,
+      "y": -564.715
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "hyperskill_id": 1188,
+      "id": "category:1188",
+      "title": "Programming concepts",
+      "type": "category",
+      "url": "https://hyperskill.org/knowledge-map/1188?track=8",
+      "x": 100.872,
+      "y": -802.392
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "hyperskill_id": 1215,
+      "id": "category:1215",
+      "title": "Working with data",
+      "type": "category",
+      "url": "https://hyperskill.org/knowledge-map/1215?track=8",
+      "x": 908.976,
+      "y": 186.4
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "hyperskill_id": 1258,
+      "id": "category:1258",
+      "title": "Code organization",
+      "type": "category",
+      "url": "https://hyperskill.org/knowledge-map/1258?track=8",
+      "x": 493.81,
+      "y": 602.575
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "hyperskill_id": 126,
+      "id": "category:126",
+      "title": "JVM",
+      "type": "category",
+      "url": "https://hyperskill.org/knowledge-map/126?track=8",
+      "x": -716.781,
+      "y": -772.606
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "hyperskill_id": 1260,
+      "id": "category:1260",
+      "title": "Errorless code",
+      "type": "category",
+      "url": "https://hyperskill.org/knowledge-map/1260?track=8",
+      "x": -108.305,
+      "y": -467.802
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "hyperskill_id": 1262,
+      "id": "category:1262",
+      "title": "Classes and members",
+      "type": "category",
+      "url": "https://hyperskill.org/knowledge-map/1262?track=8",
+      "x": -553.876,
+      "y": 18.801
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "hyperskill_id": 1263,
+      "id": "category:1263",
+      "title": "Access control",
+      "type": "category",
+      "url": "https://hyperskill.org/knowledge-map/1263?track=8",
+      "x": -648.442,
+      "y": -316.686
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "hyperskill_id": 1264,
+      "id": "category:1264",
+      "title": "Building class hierarchies",
+      "type": "category",
+      "url": "https://hyperskill.org/knowledge-map/1264?track=8",
+      "x": -649.475,
+      "y": -218.139
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "hyperskill_id": 1265,
+      "id": "category:1265",
+      "title": "Overriding methods",
+      "type": "category",
+      "url": "https://hyperskill.org/knowledge-map/1265?track=8",
+      "x": -533.487,
+      "y": -537.751
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "hyperskill_id": 1267,
+      "id": "category:1267",
+      "title": "Interfaces and abstract classes",
+      "type": "category",
+      "url": "https://hyperskill.org/knowledge-map/1267?track=8",
+      "x": 259.255,
+      "y": -872.426
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "hyperskill_id": 1268,
+      "id": "category:1268",
+      "title": "Other concepts",
+      "type": "category",
+      "url": "https://hyperskill.org/knowledge-map/1268?track=8",
+      "x": -890.408,
+      "y": 347.051
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "hyperskill_id": 1269,
+      "id": "category:1269",
+      "title": "Enumerations",
+      "type": "category",
+      "url": "https://hyperskill.org/knowledge-map/1269?track=8",
+      "x": -768.781,
+      "y": 19.375
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "hyperskill_id": 13,
+      "id": "category:13",
+      "title": "Classes and objects",
+      "type": "category",
+      "url": "https://hyperskill.org/knowledge-map/13?track=8",
+      "x": -443.868,
+      "y": -27.206
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "hyperskill_id": 1356,
+      "id": "category:1356",
+      "title": "Command line basics",
+      "type": "category",
+      "url": "https://hyperskill.org/knowledge-map/1356?track=8",
+      "x": 72.088,
+      "y": -801.352
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "hyperskill_id": 1423,
+      "id": "category:1423",
+      "title": "Debugging",
+      "type": "category",
+      "url": "https://hyperskill.org/knowledge-map/1423?track=8",
+      "x": -476.173,
+      "y": -674.088
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "hyperskill_id": 1432,
+      "id": "category:1432",
+      "title": "Unix",
+      "type": "category",
+      "url": "https://hyperskill.org/knowledge-map/1432?track=8",
+      "x": 695.828,
+      "y": -346.841
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "hyperskill_id": 153,
+      "id": "category:153",
+      "title": "Simple programs",
+      "type": "category",
+      "url": "https://hyperskill.org/knowledge-map/153?track=8",
+      "x": 504.572,
+      "y": -86.273
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "hyperskill_id": 187,
+      "id": "category:187",
+      "title": "Arrays",
+      "type": "category",
+      "url": "https://hyperskill.org/knowledge-map/187?track=8",
+      "x": 687.474,
+      "y": 664.652
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "hyperskill_id": 188,
+      "id": "category:188",
+      "title": "Strings",
+      "type": "category",
+      "url": "https://hyperskill.org/knowledge-map/188?track=8",
+      "x": 416.674,
+      "y": -120.158
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "hyperskill_id": 195,
+      "id": "category:195",
+      "title": "Class hierarchies",
+      "type": "category",
+      "url": "https://hyperskill.org/knowledge-map/195?track=8",
+      "x": -336.527,
+      "y": -531.343
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "hyperskill_id": 196,
+      "id": "category:196",
+      "title": "Code style",
+      "type": "category",
+      "url": "https://hyperskill.org/knowledge-map/196?track=8",
+      "x": 907.948,
+      "y": 870.881
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "hyperskill_id": 251,
+      "id": "category:251",
+      "title": "Object-oriented programming",
+      "type": "category",
+      "url": "https://hyperskill.org/knowledge-map/251?track=8",
+      "x": -426.577,
+      "y": 201.18
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "hyperskill_id": 252,
+      "id": "category:252",
+      "title": "Basics",
+      "type": "category",
+      "url": "https://hyperskill.org/knowledge-map/252?track=8",
+      "x": 440.089,
+      "y": 285.791
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "hyperskill_id": 258,
+      "id": "category:258",
+      "title": "Dev tools",
+      "type": "category",
+      "url": "https://hyperskill.org/knowledge-map/258?track=8",
+      "x": -388.08,
+      "y": -364.025
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "hyperskill_id": 262,
+      "id": "category:262",
+      "title": "IDE",
+      "type": "category",
+      "url": "https://hyperskill.org/knowledge-map/262?track=8",
+      "x": -626.63,
+      "y": -427.892
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "hyperskill_id": 2679,
+      "id": "category:2679",
+      "title": "System administration and DevOps",
+      "type": "category",
+      "url": "https://hyperskill.org/knowledge-map/2679?track=8",
+      "x": 117.654,
+      "y": 69.222
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "hyperskill_id": 2944,
+      "id": "category:2944",
+      "title": "JVM basics",
+      "type": "category",
+      "url": "https://hyperskill.org/knowledge-map/2944?track=8",
+      "x": -936.548,
+      "y": -508.327
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "hyperskill_id": 3,
+      "id": "category:3",
+      "title": "Control flow statements",
+      "type": "category",
+      "url": "https://hyperskill.org/knowledge-map/3?track=8",
+      "x": -35.883,
+      "y": 573.723
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "hyperskill_id": 306,
+      "id": "category:306",
+      "title": "Operations on primitive types",
+      "type": "category",
+      "url": "https://hyperskill.org/knowledge-map/306?track=8",
+      "x": 52.689,
+      "y": 916.51
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "hyperskill_id": 35,
+      "id": "category:35",
+      "title": "Data types and variables",
+      "type": "category",
+      "url": "https://hyperskill.org/knowledge-map/35?track=8",
+      "x": 443.034,
+      "y": 59.91
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "hyperskill_id": 357,
+      "id": "category:357",
+      "title": "Computer science fundamentals",
+      "type": "category",
+      "url": "https://hyperskill.org/knowledge-map/357?track=8",
+      "x": 514.007,
+      "y": -702.344
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "hyperskill_id": 386,
+      "id": "category:386",
+      "title": "IntelliJ IDEA",
+      "type": "category",
+      "url": "https://hyperskill.org/knowledge-map/386?track=8",
+      "x": 137.835,
+      "y": -410.242
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "hyperskill_id": 4502,
+      "id": "category:4502",
+      "title": "AI tools",
+      "type": "category",
+      "url": "https://hyperskill.org/knowledge-map/4502?track=8",
+      "x": 225.619,
+      "y": -726.857
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "hyperskill_id": 4503,
+      "id": "category:4503",
+      "title": "Coding with AI tools",
+      "type": "category",
+      "url": "https://hyperskill.org/knowledge-map/4503?track=8",
+      "x": 874.982,
+      "y": -498.185
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "hyperskill_id": 477,
+      "id": "category:477",
+      "title": "Command line",
+      "type": "category",
+      "url": "https://hyperskill.org/knowledge-map/477?track=8",
+      "x": -413.683,
+      "y": -239.671
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "hyperskill_id": 516,
+      "id": "category:516",
+      "title": "Software quality",
+      "type": "category",
+      "url": "https://hyperskill.org/knowledge-map/516?track=8",
+      "x": 518.934,
+      "y": -942.679
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "hyperskill_id": 61,
+      "id": "category:61",
+      "title": "Exception handling",
+      "type": "category",
+      "url": "https://hyperskill.org/knowledge-map/61?track=8",
+      "x": -539.166,
+      "y": 309.893
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "hyperskill_id": 679,
+      "id": "category:679",
+      "title": "Object-oriented programming",
+      "type": "category",
+      "url": "https://hyperskill.org/knowledge-map/679?track=8",
+      "x": -697.444,
+      "y": -998.426
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "hyperskill_id": 73,
+      "id": "category:73",
+      "title": "Java",
+      "type": "category",
+      "url": "https://hyperskill.org/knowledge-map/73?track=8",
+      "x": 682.086,
+      "y": 27.329
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "hyperskill_id": 74,
+      "id": "category:74",
+      "title": "Introduction to Java",
+      "type": "category",
+      "url": "https://hyperskill.org/knowledge-map/74?track=8",
+      "x": 480.538,
+      "y": 787.137
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "hyperskill_id": 850,
+      "id": "category:850",
+      "title": "Operating systems",
+      "type": "category",
+      "url": "https://hyperskill.org/knowledge-map/850?track=8",
+      "x": 275.478,
+      "y": -903.596
+    },
+    {
+      "evidence_ids": [
+        "map-8"
+      ],
+      "hyperskill_id": 95,
+      "id": "category:95",
+      "title": "Methods",
+      "type": "category",
+      "url": "https://hyperskill.org/knowledge-map/95?track=8",
+      "x": 287.978,
+      "y": 967.943
+    },
+    {
+      "evidence_ids": [
+        "course-8",
+        "map-8"
+      ],
+      "hyperskill_id": 8,
+      "id": "course:8",
+      "title": "Introduction to Java",
+      "type": "course",
+      "url": "https://hyperskill.org/courses/8",
+      "x": -82.213,
+      "y": 66.631
+    },
+    {
+      "completed_stage_ids": null,
+      "evidence_ids": [
+        "project-113"
+      ],
+      "hyperskill_id": 113,
+      "id": "project:113",
+      "progress_evidence_ids": [
+        "personal-course-8"
+      ],
+      "required_topics_count": 26,
+      "status": "completed",
+      "title": "Simple Chat Bot with Java",
+      "type": "project",
+      "url": "https://hyperskill.org/projects/113",
+      "x": 230.424,
+      "y": 409.822
+    },
+    {
+      "completed_stage_ids": null,
+      "evidence_ids": [
+        "project-133"
+      ],
+      "hyperskill_id": 133,
+      "id": "project:133",
+      "progress_evidence_ids": [],
+      "required_topics_count": null,
+      "status": "available",
+      "title": "Cinema Room Manager",
+      "type": "project",
+      "url": "https://hyperskill.org/projects/133",
+      "x": -680.32,
+      "y": 906.885
+    },
+    {
+      "completed_stage_ids": null,
+      "evidence_ids": [
+        "project-184"
+      ],
+      "hyperskill_id": 184,
+      "id": "project:184",
+      "progress_evidence_ids": [],
+      "required_topics_count": null,
+      "status": "available",
+      "title": "Amazing Numbers",
+      "type": "project",
+      "url": "https://hyperskill.org/projects/184",
+      "x": -482.335,
+      "y": -985.58
+    },
+    {
+      "completed_stage_ids": null,
+      "evidence_ids": [
+        "project-229"
+      ],
+      "hyperskill_id": 229,
+      "id": "project:229",
+      "progress_evidence_ids": [],
+      "required_topics_count": null,
+      "status": "available",
+      "title": "Zookeeper with Java",
+      "type": "project",
+      "url": "https://hyperskill.org/projects/229",
+      "x": 952.617,
+      "y": 624.534
+    },
+    {
+      "completed_stage_ids": null,
+      "evidence_ids": [
+        "project-293"
+      ],
+      "hyperskill_id": 293,
+      "id": "project:293",
+      "progress_evidence_ids": [],
+      "required_topics_count": null,
+      "status": "available",
+      "title": "Chuck Norris Cipher Encoder (Java)",
+      "type": "project",
+      "url": "https://hyperskill.org/projects/293",
+      "x": -975.551,
+      "y": 565.83
+    },
+    {
+      "completed_stage_ids": null,
+      "evidence_ids": [
+        "project-33"
+      ],
+      "hyperskill_id": 33,
+      "id": "project:33",
+      "progress_evidence_ids": [],
+      "required_topics_count": null,
+      "status": "available",
+      "title": "Coffee Machine Simulator with Java",
+      "type": "project",
+      "url": "https://hyperskill.org/projects/33",
+      "x": 830.456,
+      "y": -734.533
+    },
+    {
+      "completed_stage_ids": null,
+      "evidence_ids": [
+        "project-341"
+      ],
+      "hyperskill_id": 341,
+      "id": "project:341",
+      "progress_evidence_ids": [],
+      "required_topics_count": null,
+      "status": "available",
+      "title": "Last Pencil (Java)",
+      "type": "project",
+      "url": "https://hyperskill.org/projects/341",
+      "x": -502.232,
+      "y": 972.347
+    },
+    {
+      "completed_stage_ids": [],
+      "evidence_ids": [
+        "project-380"
+      ],
+      "hyperskill_id": 380,
+      "id": "project:380",
+      "progress_evidence_ids": [
+        "personal-plan",
+        "personal-project-380"
+      ],
+      "required_topics_count": null,
+      "status": "active",
+      "title": "My First Project with Java",
+      "type": "project",
+      "url": "https://hyperskill.org/projects/380",
+      "x": -805.83,
+      "y": -645.725
+    },
+    {
+      "completed_stage_ids": null,
+      "evidence_ids": [
+        "project-383"
+      ],
+      "hyperskill_id": 383,
+      "id": "project:383",
+      "progress_evidence_ids": [],
+      "required_topics_count": null,
+      "status": "available",
+      "title": "Battleship with Java",
+      "type": "project",
+      "url": "https://hyperskill.org/projects/383",
+      "x": 959.324,
+      "y": 31.536
+    },
+    {
+      "completed_stage_ids": null,
+      "evidence_ids": [
+        "project-48"
+      ],
+      "hyperskill_id": 48,
+      "id": "project:48",
+      "progress_evidence_ids": [],
+      "required_topics_count": null,
+      "status": "available",
+      "title": "Simple Tic-Tac-Toe (Java)",
+      "type": "project",
+      "url": "https://hyperskill.org/projects/48",
+      "x": -922.081,
+      "y": 801.92
+    },
+    {
+      "completed_stage_ids": null,
+      "evidence_ids": [
+        "project-53"
+      ],
+      "hyperskill_id": 53,
+      "id": "project:53",
+      "progress_evidence_ids": [],
+      "required_topics_count": null,
+      "status": "available",
+      "title": "Bulls and Cows",
+      "type": "project",
+      "url": "https://hyperskill.org/projects/53",
+      "x": -10.611,
+      "y": -937.686
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-1"
+      ],
+      "hyperskill_id": 1,
+      "id": "topic:1",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Method \"main\"",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/3489",
+      "verified": null,
+      "x": 632.281,
+      "y": 1019.46
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-1033"
+      ],
+      "hyperskill_id": 1033,
+      "id": "topic:1033",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Calling methods",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/10973",
+      "verified": null,
+      "x": 150.169,
+      "y": 651.171
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-1038"
+      ],
+      "hyperskill_id": 1038,
+      "id": "topic:1038",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Declaring methods",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/10982",
+      "verified": null,
+      "x": 21.686,
+      "y": 713.409
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-1087"
+      ],
+      "hyperskill_id": 1087,
+      "id": "topic:1087",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Combining constants with enum",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/11514",
+      "verified": null,
+      "x": -645.007,
+      "y": 348.085
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-1088"
+      ],
+      "hyperskill_id": 1088,
+      "id": "topic:1088",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Fields and methods in enum",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/11523",
+      "verified": null,
+      "x": -855.723,
+      "y": -40.986
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-112"
+      ],
+      "hyperskill_id": 112,
+      "id": "topic:112",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Naming variables",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/3513",
+      "verified": null,
+      "x": 745.186,
+      "y": 802.828
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-113"
+      ],
+      "hyperskill_id": 113,
+      "id": "topic:113",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Reading user input with Scanner",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/9055",
+      "verified": null,
+      "x": 434.462,
+      "y": 461.854
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-115"
+      ],
+      "hyperskill_id": 115,
+      "id": "topic:115",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Defining classes",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/3618",
+      "verified": null,
+      "x": -351.342,
+      "y": -68.928
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-116"
+      ],
+      "hyperskill_id": 116,
+      "id": "topic:116",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Instance methods",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/3495",
+      "verified": null,
+      "x": -365.89,
+      "y": 277.112
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-117"
+      ],
+      "hyperskill_id": 117,
+      "id": "topic:117",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "What is object-oriented programming",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/3614",
+      "verified": null,
+      "x": -953.771,
+      "y": -829.985
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-12"
+      ],
+      "hyperskill_id": 12,
+      "id": "topic:12",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Multidimensional array",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/1933",
+      "verified": null,
+      "x": 1028.112,
+      "y": 530.518
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-120"
+      ],
+      "hyperskill_id": 120,
+      "id": "topic:120",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Multiple constructors",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/3538",
+      "verified": null,
+      "x": -752.319,
+      "y": 552.95
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-122"
+      ],
+      "hyperskill_id": 122,
+      "id": "topic:122",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Abstract class",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/3597",
+      "verified": null,
+      "x": -239.808,
+      "y": -1071.317
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-1248"
+      ],
+      "hyperskill_id": 1248,
+      "id": "topic:1248",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Coding style conventions",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/12411",
+      "verified": null,
+      "x": 922.832,
+      "y": 929.802
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-127"
+      ],
+      "hyperskill_id": 127,
+      "id": "topic:127",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Keyword \"super\"",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/3588",
+      "verified": null,
+      "x": -1045.736,
+      "y": 147.999
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-128"
+      ],
+      "hyperskill_id": 128,
+      "id": "topic:128",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Referencing subclass objects",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/3585",
+      "verified": null,
+      "x": -185.549,
+      "y": -299.142
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-14"
+      ],
+      "hyperskill_id": 14,
+      "id": "topic:14",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Types and variables",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/3518",
+      "verified": null,
+      "x": 541.471,
+      "y": 467.088
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-1425"
+      ],
+      "hyperskill_id": 1425,
+      "id": "topic:1425",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Debugging techniques",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/13775",
+      "verified": null,
+      "x": -289.81,
+      "y": -743.291
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-146"
+      ],
+      "hyperskill_id": 146,
+      "id": "topic:146",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Arithmetic operations",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/3519",
+      "verified": null,
+      "x": 470.337,
+      "y": 841.458
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-147"
+      ],
+      "hyperskill_id": 147,
+      "id": "topic:147",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Basic literals: numbers, strings and characters",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/3522",
+      "verified": null,
+      "x": 226.04,
+      "y": 828.126
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-1476"
+      ],
+      "hyperskill_id": 1476,
+      "id": "topic:1476",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Debugging overview",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/14368",
+      "verified": null,
+      "x": 379.118,
+      "y": -627.063
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-148"
+      ],
+      "hyperskill_id": 148,
+      "id": "topic:148",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Writing first program",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/3521",
+      "verified": null,
+      "x": 405.161,
+      "y": 1043.937
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-149"
+      ],
+      "hyperskill_id": 149,
+      "id": "topic:149",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Basic terms: JVM, JRE, JDK",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/3499",
+      "verified": null,
+      "x": -1068.089,
+      "y": -462.741
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-15"
+      ],
+      "hyperskill_id": 15,
+      "id": "topic:15",
+      "progress_evidence_ids": [
+        "personal-topic-15"
+      ],
+      "status": "learned",
+      "title": "Introduction to Java",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/38627",
+      "verified": true,
+      "x": 621.447,
+      "y": 465.754
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-152"
+      ],
+      "hyperskill_id": 152,
+      "id": "topic:152",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "One-line condition with ternary operator",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/3506",
+      "verified": null,
+      "x": -223.127,
+      "y": 534.865
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-161"
+      ],
+      "hyperskill_id": 161,
+      "id": "topic:161",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Primitive data types and their sizes",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/3532",
+      "verified": null,
+      "x": 363.706,
+      "y": -288.17
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-163"
+      ],
+      "hyperskill_id": 163,
+      "id": "topic:163",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Errors in programs",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/3536",
+      "verified": null,
+      "x": 140.055,
+      "y": 210.179
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-164"
+      ],
+      "hyperskill_id": 164,
+      "id": "topic:164",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "NullPointerException",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/1945",
+      "verified": null,
+      "x": -467.276,
+      "y": 455.332
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-165"
+      ],
+      "hyperskill_id": 165,
+      "id": "topic:165",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Array exceptions",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/1940",
+      "verified": null,
+      "x": -272.887,
+      "y": 252.615
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-17"
+      ],
+      "hyperskill_id": 17,
+      "id": "topic:17",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Initializing new instances. Constructor",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/3535",
+      "verified": null,
+      "x": -701.093,
+      "y": 206.468
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-1761"
+      ],
+      "hyperskill_id": 1761,
+      "id": "topic:1761",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Debugging simple constructs",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/16479",
+      "verified": null,
+      "x": -183.804,
+      "y": -335.608
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-19"
+      ],
+      "hyperskill_id": 19,
+      "id": "topic:19",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Break and continue. Branching",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/3507",
+      "verified": null,
+      "x": 41.055,
+      "y": 548.639
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-191"
+      ],
+      "hyperskill_id": 191,
+      "id": "topic:191",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Write, compile, and run",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/3739",
+      "verified": null,
+      "x": -799.098,
+      "y": -20.149
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-192"
+      ],
+      "hyperskill_id": 192,
+      "id": "topic:192",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Compile and run Java from CLI",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/3746",
+      "verified": null,
+      "x": -360.508,
+      "y": -905.414
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-193"
+      ],
+      "hyperskill_id": 193,
+      "id": "topic:193",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Printing data",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/3749",
+      "verified": null,
+      "x": 658.113,
+      "y": 834.723
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-2"
+      ],
+      "hyperskill_id": 2,
+      "id": "topic:2",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Polymorphism",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/3587",
+      "verified": null,
+      "x": -611.226,
+      "y": -691.252
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-201"
+      ],
+      "hyperskill_id": 201,
+      "id": "topic:201",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "StringBuilder",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/3812",
+      "verified": null,
+      "x": 737.276,
+      "y": -266.967
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-2108"
+      ],
+      "hyperskill_id": 2108,
+      "id": "topic:2108",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "java.util.Arrays",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/19365",
+      "verified": null,
+      "x": 163.568,
+      "y": 1099.742
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-24"
+      ],
+      "hyperskill_id": 24,
+      "id": "topic:24",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Getters and setters",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/3599",
+      "verified": null,
+      "x": -968.543,
+      "y": -516.438
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-25"
+      ],
+      "hyperskill_id": 25,
+      "id": "topic:25",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Conditional statement",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/3503",
+      "verified": null,
+      "x": 61.528,
+      "y": 601.945
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-259"
+      ],
+      "hyperskill_id": 259,
+      "id": "topic:259",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "IDE",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/10996",
+      "verified": null,
+      "x": -423.569,
+      "y": -114.031
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-260"
+      ],
+      "hyperskill_id": 260,
+      "id": "topic:260",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "IntelliJ IDEA",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/37202",
+      "verified": null,
+      "x": 202.807,
+      "y": -329.878
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-27"
+      ],
+      "hyperskill_id": 27,
+      "id": "topic:27",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Integer types and operations",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/3565",
+      "verified": null,
+      "x": 227.227,
+      "y": 891.013
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-28"
+      ],
+      "hyperskill_id": 28,
+      "id": "topic:28",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Access modifiers",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/3589",
+      "verified": null,
+      "x": -869.687,
+      "y": -160.818
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-30"
+      ],
+      "hyperskill_id": 30,
+      "id": "topic:30",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Comments",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/3520",
+      "verified": null,
+      "x": 817.395,
+      "y": 613.221
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-307"
+      ],
+      "hyperskill_id": 307,
+      "id": "topic:307",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Increment and decrement",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/5008",
+      "verified": null,
+      "x": -174.794,
+      "y": 770.224
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-308"
+      ],
+      "hyperskill_id": 308,
+      "id": "topic:308",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Numeric literals",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/10545",
+      "verified": null,
+      "x": 191.779,
+      "y": -1093.267
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-309"
+      ],
+      "hyperskill_id": 309,
+      "id": "topic:309",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Primitive and reference types",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/5035",
+      "verified": null,
+      "x": 604.999,
+      "y": 301.737
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-31"
+      ],
+      "hyperskill_id": 31,
+      "id": "topic:31",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Characters",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/3514",
+      "verified": null,
+      "x": -181.908,
+      "y": 659.184
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-32"
+      ],
+      "hyperskill_id": 32,
+      "id": "topic:32",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Type casting",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/3510",
+      "verified": null,
+      "x": 479.764,
+      "y": -257.783
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-33"
+      ],
+      "hyperskill_id": 33,
+      "id": "topic:33",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Multiple conditions: switch",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/3504",
+      "verified": null,
+      "x": 447.267,
+      "y": 996.699
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-348"
+      ],
+      "hyperskill_id": 348,
+      "id": "topic:348",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "What are bugs",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/5504",
+      "verified": null,
+      "x": 31.049,
+      "y": -704.576
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-3538"
+      ],
+      "hyperskill_id": 3538,
+      "id": "topic:3538",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Run and debug with IntelliJ IDEA",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/37206",
+      "verified": null,
+      "x": 330.247,
+      "y": -470.933
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-36"
+      ],
+      "hyperskill_id": 36,
+      "id": "topic:36",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Floating-point types and operations",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/3517",
+      "verified": null,
+      "x": 36.455,
+      "y": 807.446
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-360"
+      ],
+      "hyperskill_id": 360,
+      "id": "topic:360",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Introduction to logging",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/5538",
+      "verified": null,
+      "x": 283.687,
+      "y": -1122.287
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-37"
+      ],
+      "hyperskill_id": 37,
+      "id": "topic:37",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Overloading",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/3525",
+      "verified": null,
+      "x": -95.368,
+      "y": 1046.006
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-38"
+      ],
+      "hyperskill_id": 38,
+      "id": "topic:38",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Static members",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/3534",
+      "verified": null,
+      "x": -531.568,
+      "y": 96.82
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-387"
+      ],
+      "hyperskill_id": 387,
+      "id": "topic:387",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "IntelliJ IDEA basics",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/5819",
+      "verified": null,
+      "x": 477.774,
+      "y": -214.21
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-4"
+      ],
+      "hyperskill_id": 4,
+      "id": "topic:4",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Array",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/3511",
+      "verified": null,
+      "x": 215.268,
+      "y": 664.138
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-4510"
+      ],
+      "hyperskill_id": 4510,
+      "id": "topic:4510",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Introduction to AI in software development",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/49313",
+      "verified": null,
+      "x": 234.825,
+      "y": -1006.476
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-4533"
+      ],
+      "hyperskill_id": 4533,
+      "id": "topic:4533",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Integrating AI tools into your workflow",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/50011",
+      "verified": null,
+      "x": 1106.595,
+      "y": -114.917
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-4635"
+      ],
+      "hyperskill_id": 4635,
+      "id": "topic:4635",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Debugging methods",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/52095",
+      "verified": null,
+      "x": -886.5,
+      "y": -311.632
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-480"
+      ],
+      "hyperskill_id": 480,
+      "id": "topic:480",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Command line overview",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/8977",
+      "verified": null,
+      "x": 707.457,
+      "y": -1097.194
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-491"
+      ],
+      "hyperskill_id": 491,
+      "id": "topic:491",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Protected modifier",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/6692",
+      "verified": null,
+      "x": -497.238,
+      "y": 15.143
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-5"
+      ],
+      "hyperskill_id": 5,
+      "id": "topic:5",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Method overriding",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/3572",
+      "verified": null,
+      "x": -755.49,
+      "y": -280.608
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-5028"
+      ],
+      "hyperskill_id": 5028,
+      "id": "topic:5028",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Core workflows with AI tools",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/53230",
+      "verified": null,
+      "x": 1052.035,
+      "y": -572.825
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-5107"
+      ],
+      "hyperskill_id": 5107,
+      "id": "topic:5107",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Hyperskill Academy plugin",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/53354",
+      "verified": null,
+      "x": -21.048,
+      "y": 283.438
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-518"
+      ],
+      "hyperskill_id": 518,
+      "id": "topic:518",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Formatted output",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/7046",
+      "verified": null,
+      "x": 400.317,
+      "y": -794.504
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-571"
+      ],
+      "hyperskill_id": 571,
+      "id": "topic:571",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Constants. Final variables",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/7427",
+      "verified": null,
+      "x": 344.397,
+      "y": 309.385
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-59"
+      ],
+      "hyperskill_id": 59,
+      "id": "topic:59",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Hierarchy of exceptions",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/3570",
+      "verified": null,
+      "x": -827.338,
+      "y": 179.766
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-60"
+      ],
+      "hyperskill_id": 60,
+      "id": "topic:60",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "First glance at exceptions",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/3497",
+      "verified": null,
+      "x": -176.173,
+      "y": 321.848
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-65"
+      ],
+      "hyperskill_id": 65,
+      "id": "topic:65",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Exception handling",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/3552",
+      "verified": null,
+      "x": -886.461,
+      "y": 718.151
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-7"
+      ],
+      "hyperskill_id": 7,
+      "id": "topic:7",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Grouping classes with packages",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/3621",
+      "verified": null,
+      "x": -861.301,
+      "y": -500.738
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-78"
+      ],
+      "hyperskill_id": 78,
+      "id": "topic:78",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Adding annotations",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/3622",
+      "verified": null,
+      "x": 18.321,
+      "y": -200.822
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-8"
+      ],
+      "hyperskill_id": 8,
+      "id": "topic:8",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Inheritance",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/3583",
+      "verified": null,
+      "x": -997.958,
+      "y": -10.67
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-851"
+      ],
+      "hyperskill_id": 851,
+      "id": "topic:851",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Introduction to Linux",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/9526",
+      "verified": null,
+      "x": 467.77,
+      "y": -1105.013
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-87"
+      ],
+      "hyperskill_id": 87,
+      "id": "topic:87",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Boolean type and operations. True and false",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/3516",
+      "verified": null,
+      "x": 181.472,
+      "y": 1012.292
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-872"
+      ],
+      "hyperskill_id": 872,
+      "id": "topic:872",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Operating systems",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/9704",
+      "verified": null,
+      "x": -365.872,
+      "y": -977.771
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-876"
+      ],
+      "hyperskill_id": 876,
+      "id": "topic:876",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Parameters and options",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/9746",
+      "verified": null,
+      "x": 570.155,
+      "y": -948.067
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-88"
+      ],
+      "hyperskill_id": 88,
+      "id": "topic:88",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Comparing values. Relational operators",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/3512",
+      "verified": null,
+      "x": 14.781,
+      "y": 1067.631
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-89"
+      ],
+      "hyperskill_id": 89,
+      "id": "topic:89",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "For loop",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/3505",
+      "verified": null,
+      "x": -116.641,
+      "y": 137.251
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-9"
+      ],
+      "hyperskill_id": 9,
+      "id": "topic:9",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "String",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/3523",
+      "verified": null,
+      "x": 231.705,
+      "y": 5.848
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-90"
+      ],
+      "hyperskill_id": 90,
+      "id": "topic:90",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "While and do-while loops",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/3498",
+      "verified": null,
+      "x": -371.273,
+      "y": 770.599
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-96"
+      ],
+      "hyperskill_id": 96,
+      "id": "topic:96",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Objects and their properties",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/4727",
+      "verified": null,
+      "x": 118.289,
+      "y": -68.711
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-97"
+      ],
+      "hyperskill_id": 97,
+      "id": "topic:97",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Iterating over arrays",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/3602",
+      "verified": null,
+      "x": 332.737,
+      "y": 696.396
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-98"
+      ],
+      "hyperskill_id": 98,
+      "id": "topic:98",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Processing strings",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/3551",
+      "verified": null,
+      "x": 64.904,
+      "y": 175.507
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-985"
+      ],
+      "hyperskill_id": 985,
+      "id": "topic:985",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Functional decomposition",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/10570",
+      "verified": null,
+      "x": 452.939,
+      "y": 736.555
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-99"
+      ],
+      "hyperskill_id": 99,
+      "id": "topic:99",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "Arrays as parameters",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/3594",
+      "verified": null,
+      "x": -166.092,
+      "y": 933.592
+    },
+    {
+      "applied": null,
+      "evidence_ids": [
+        "topic-999"
+      ],
+      "hyperskill_id": 999,
+      "id": "topic:999",
+      "progress_evidence_ids": [],
+      "status": "unknown",
+      "title": "IntelliJ IDEA run configurations",
+      "type": "topic",
+      "url": "https://hyperskill.org/learn/step/10630",
+      "verified": null,
+      "x": 564.292,
+      "y": -762.37
+    }
+  ],
+  "progress": {
+    "courses": [
+      {
+        "active_project": 380,
+        "applied_topic_ids": null,
+        "applied_topics_count": 26,
+        "applied_topics_total": 85,
+        "completed_projects": [
+          113
+        ],
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-course-8",
+          "personal-plan"
+        ],
+        "learned_topic_ids": null,
+        "learned_topics_count": 31,
+        "learned_topics_total": 89,
+        "skipped_topics_count": 0,
+        "topic_status_coverage": "partial"
+      }
+    ],
+    "projects": [
+      {
+        "completed_stage_ids": null,
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-course-8"
+        ],
+        "project_id": 113,
+        "status": "completed"
+      },
+      {
+        "completed_stage_ids": [],
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-plan",
+          "personal-project-380"
+        ],
+        "project_id": 380,
+        "status": "active"
+      }
+    ],
+    "topics": [
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topic-15"
+        ],
+        "is_applied": null,
+        "is_learned": true,
+        "is_skipped": false,
+        "is_verified": true,
+        "observed_stage_position": 1,
+        "topic_id": 15,
+        "verification_status": "verified"
+      }
+    ]
+  },
+  "schema_version": 1,
+  "snapshot_date": "2026-10-01"
+}

@@ -1,0 +1,4060 @@
+[
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "course_contains:course:8:category:1162",
+    "source": "course:8",
+    "target": "category:1162",
+    "type": "course_contains"
+  },
+  {
+    "evidence_ids": [
+      "course-8"
+    ],
+    "id": "course_contains:course:8:project:113",
+    "source": "course:8",
+    "target": "project:113",
+    "type": "course_contains"
+  },
+  {
+    "evidence_ids": [
+      "course-8"
+    ],
+    "id": "course_contains:course:8:project:133",
+    "source": "course:8",
+    "target": "project:133",
+    "type": "course_contains"
+  },
+  {
+    "evidence_ids": [
+      "course-8"
+    ],
+    "id": "course_contains:course:8:project:184",
+    "source": "course:8",
+    "target": "project:184",
+    "type": "course_contains"
+  },
+  {
+    "evidence_ids": [
+      "course-8"
+    ],
+    "id": "course_contains:course:8:project:229",
+    "source": "course:8",
+    "target": "project:229",
+    "type": "course_contains"
+  },
+  {
+    "evidence_ids": [
+      "course-8"
+    ],
+    "id": "course_contains:course:8:project:293",
+    "source": "course:8",
+    "target": "project:293",
+    "type": "course_contains"
+  },
+  {
+    "evidence_ids": [
+      "course-8"
+    ],
+    "id": "course_contains:course:8:project:33",
+    "source": "course:8",
+    "target": "project:33",
+    "type": "course_contains"
+  },
+  {
+    "evidence_ids": [
+      "course-8"
+    ],
+    "id": "course_contains:course:8:project:341",
+    "source": "course:8",
+    "target": "project:341",
+    "type": "course_contains"
+  },
+  {
+    "evidence_ids": [
+      "course-8"
+    ],
+    "id": "course_contains:course:8:project:380",
+    "source": "course:8",
+    "target": "project:380",
+    "type": "course_contains"
+  },
+  {
+    "evidence_ids": [
+      "course-8"
+    ],
+    "id": "course_contains:course:8:project:383",
+    "source": "course:8",
+    "target": "project:383",
+    "type": "course_contains"
+  },
+  {
+    "evidence_ids": [
+      "course-8"
+    ],
+    "id": "course_contains:course:8:project:48",
+    "source": "course:8",
+    "target": "project:48",
+    "type": "course_contains"
+  },
+  {
+    "evidence_ids": [
+      "course-8"
+    ],
+    "id": "course_contains:course:8:project:53",
+    "source": "course:8",
+    "target": "project:53",
+    "type": "course_contains"
+  },
+  {
+    "evidence_ids": [
+      "topic-1033"
+    ],
+    "id": "dependent:topic:1033:topic:37",
+    "source": "topic:1033",
+    "target": "topic:37",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-1033"
+    ],
+    "id": "dependent:topic:1033:topic:4",
+    "source": "topic:1033",
+    "target": "topic:4",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-1038"
+    ],
+    "id": "dependent:topic:1038:topic:1",
+    "source": "topic:1038",
+    "target": "topic:1",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-1038"
+    ],
+    "id": "dependent:topic:1038:topic:1033",
+    "source": "topic:1038",
+    "target": "topic:1033",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-1038"
+    ],
+    "id": "dependent:topic:1038:topic:116",
+    "source": "topic:1038",
+    "target": "topic:116",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-1038"
+    ],
+    "id": "dependent:topic:1038:topic:17",
+    "source": "topic:1038",
+    "target": "topic:17",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-1038"
+    ],
+    "id": "dependent:topic:1038:topic:985",
+    "source": "topic:1038",
+    "target": "topic:985",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-1038"
+    ],
+    "id": "dependent:topic:1038:topic:99",
+    "source": "topic:1038",
+    "target": "topic:99",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-1087"
+    ],
+    "id": "dependent:topic:1087:topic:1088",
+    "source": "topic:1087",
+    "target": "topic:1088",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-112"
+    ],
+    "id": "dependent:topic:112:topic:27",
+    "source": "topic:112",
+    "target": "topic:27",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-113"
+    ],
+    "id": "dependent:topic:113:topic:163",
+    "source": "topic:113",
+    "target": "topic:163",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-113"
+    ],
+    "id": "dependent:topic:113:topic:27",
+    "source": "topic:113",
+    "target": "topic:27",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-115"
+    ],
+    "id": "dependent:topic:115:topic:116",
+    "source": "topic:115",
+    "target": "topic:116",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-115"
+    ],
+    "id": "dependent:topic:115:topic:17",
+    "source": "topic:115",
+    "target": "topic:17",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-115"
+    ],
+    "id": "dependent:topic:115:topic:7",
+    "source": "topic:115",
+    "target": "topic:7",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-115"
+    ],
+    "id": "dependent:topic:115:topic:96",
+    "source": "topic:115",
+    "target": "topic:96",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-116"
+    ],
+    "id": "dependent:topic:116:topic:28",
+    "source": "topic:116",
+    "target": "topic:28",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-116"
+    ],
+    "id": "dependent:topic:116:topic:38",
+    "source": "topic:116",
+    "target": "topic:38",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-116"
+    ],
+    "id": "dependent:topic:116:topic:78",
+    "source": "topic:116",
+    "target": "topic:78",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-117"
+    ],
+    "id": "dependent:topic:117:topic:115",
+    "source": "topic:117",
+    "target": "topic:115",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-120"
+    ],
+    "id": "dependent:topic:120:topic:127",
+    "source": "topic:120",
+    "target": "topic:127",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-1248"
+    ],
+    "id": "dependent:topic:1248:topic:112",
+    "source": "topic:1248",
+    "target": "topic:112",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-127"
+    ],
+    "id": "dependent:topic:127:topic:5",
+    "source": "topic:127",
+    "target": "topic:5",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-127"
+    ],
+    "id": "dependent:topic:127:topic:59",
+    "source": "topic:127",
+    "target": "topic:59",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-128"
+    ],
+    "id": "dependent:topic:128:topic:2",
+    "source": "topic:128",
+    "target": "topic:2",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-146"
+    ],
+    "id": "dependent:topic:146:topic:27",
+    "source": "topic:146",
+    "target": "topic:27",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-1476"
+    ],
+    "id": "dependent:topic:1476:topic:3538",
+    "source": "topic:1476",
+    "target": "topic:3538",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-147"
+    ],
+    "id": "dependent:topic:147:topic:148",
+    "source": "topic:147",
+    "target": "topic:148",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-148"
+    ],
+    "id": "dependent:topic:148:topic:193",
+    "source": "topic:148",
+    "target": "topic:193",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-149"
+    ],
+    "id": "dependent:topic:149:topic:192",
+    "source": "topic:149",
+    "target": "topic:192",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-14"
+    ],
+    "id": "dependent:topic:14:topic:112",
+    "source": "topic:14",
+    "target": "topic:112",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-14"
+    ],
+    "id": "dependent:topic:14:topic:113",
+    "source": "topic:14",
+    "target": "topic:113",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-14"
+    ],
+    "id": "dependent:topic:14:topic:161",
+    "source": "topic:14",
+    "target": "topic:161",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-14"
+    ],
+    "id": "dependent:topic:14:topic:309",
+    "source": "topic:14",
+    "target": "topic:309",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-14"
+    ],
+    "id": "dependent:topic:14:topic:87",
+    "source": "topic:14",
+    "target": "topic:87",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-152"
+    ],
+    "id": "dependent:topic:152:topic:164",
+    "source": "topic:152",
+    "target": "topic:164",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-152"
+    ],
+    "id": "dependent:topic:152:topic:89",
+    "source": "topic:152",
+    "target": "topic:89",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-152"
+    ],
+    "id": "dependent:topic:152:topic:90",
+    "source": "topic:152",
+    "target": "topic:90",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-15"
+    ],
+    "id": "dependent:topic:15:topic:147",
+    "source": "topic:15",
+    "target": "topic:147",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-161"
+    ],
+    "id": "dependent:topic:161:topic:32",
+    "source": "topic:161",
+    "target": "topic:32",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-163"
+    ],
+    "id": "dependent:topic:163:topic:60",
+    "source": "topic:163",
+    "target": "topic:60",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-164"
+    ],
+    "id": "dependent:topic:164:topic:165",
+    "source": "topic:164",
+    "target": "topic:165",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-1761"
+    ],
+    "id": "dependent:topic:1761:topic:4635",
+    "source": "topic:1761",
+    "target": "topic:4635",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-17"
+    ],
+    "id": "dependent:topic:17:topic:1087",
+    "source": "topic:17",
+    "target": "topic:1087",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-17"
+    ],
+    "id": "dependent:topic:17:topic:1088",
+    "source": "topic:17",
+    "target": "topic:1088",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-17"
+    ],
+    "id": "dependent:topic:17:topic:120",
+    "source": "topic:17",
+    "target": "topic:120",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-17"
+    ],
+    "id": "dependent:topic:17:topic:28",
+    "source": "topic:17",
+    "target": "topic:28",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-17"
+    ],
+    "id": "dependent:topic:17:topic:38",
+    "source": "topic:17",
+    "target": "topic:38",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-17"
+    ],
+    "id": "dependent:topic:17:topic:8",
+    "source": "topic:17",
+    "target": "topic:8",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-191"
+    ],
+    "id": "dependent:topic:191:topic:115",
+    "source": "topic:191",
+    "target": "topic:115",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-191"
+    ],
+    "id": "dependent:topic:191:topic:149",
+    "source": "topic:191",
+    "target": "topic:149",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-191"
+    ],
+    "id": "dependent:topic:191:topic:163",
+    "source": "topic:191",
+    "target": "topic:163",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-193"
+    ],
+    "id": "dependent:topic:193:topic:1248",
+    "source": "topic:193",
+    "target": "topic:1248",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-193"
+    ],
+    "id": "dependent:topic:193:topic:14",
+    "source": "topic:193",
+    "target": "topic:14",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-193"
+    ],
+    "id": "dependent:topic:193:topic:146",
+    "source": "topic:193",
+    "target": "topic:146",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-193"
+    ],
+    "id": "dependent:topic:193:topic:30",
+    "source": "topic:193",
+    "target": "topic:30",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-19"
+    ],
+    "id": "dependent:topic:19:topic:1038",
+    "source": "topic:19",
+    "target": "topic:1038",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-19"
+    ],
+    "id": "dependent:topic:19:topic:33",
+    "source": "topic:19",
+    "target": "topic:33",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-19"
+    ],
+    "id": "dependent:topic:19:topic:97",
+    "source": "topic:19",
+    "target": "topic:97",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-19"
+    ],
+    "id": "dependent:topic:19:topic:98",
+    "source": "topic:19",
+    "target": "topic:98",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-1"
+    ],
+    "id": "dependent:topic:1:topic:985",
+    "source": "topic:1",
+    "target": "topic:985",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-24"
+    ],
+    "id": "dependent:topic:24:topic:8",
+    "source": "topic:24",
+    "target": "topic:8",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-259"
+    ],
+    "id": "dependent:topic:259:topic:260",
+    "source": "topic:259",
+    "target": "topic:260",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-25"
+    ],
+    "id": "dependent:topic:25:topic:152",
+    "source": "topic:25",
+    "target": "topic:152",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-25"
+    ],
+    "id": "dependent:topic:25:topic:60",
+    "source": "topic:25",
+    "target": "topic:60",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-260"
+    ],
+    "id": "dependent:topic:260:topic:1761",
+    "source": "topic:260",
+    "target": "topic:1761",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-260"
+    ],
+    "id": "dependent:topic:260:topic:3538",
+    "source": "topic:260",
+    "target": "topic:3538",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-260"
+    ],
+    "id": "dependent:topic:260:topic:387",
+    "source": "topic:260",
+    "target": "topic:387",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-260"
+    ],
+    "id": "dependent:topic:260:topic:999",
+    "source": "topic:260",
+    "target": "topic:999",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-27"
+    ],
+    "id": "dependent:topic:27:topic:307",
+    "source": "topic:27",
+    "target": "topic:307",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-27"
+    ],
+    "id": "dependent:topic:27:topic:36",
+    "source": "topic:27",
+    "target": "topic:36",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-27"
+    ],
+    "id": "dependent:topic:27:topic:88",
+    "source": "topic:27",
+    "target": "topic:88",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-28"
+    ],
+    "id": "dependent:topic:28:topic:24",
+    "source": "topic:28",
+    "target": "topic:24",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-28"
+    ],
+    "id": "dependent:topic:28:topic:491",
+    "source": "topic:28",
+    "target": "topic:491",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-2"
+    ],
+    "id": "dependent:topic:2:topic:122",
+    "source": "topic:2",
+    "target": "topic:122",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-307"
+    ],
+    "id": "dependent:topic:307:topic:31",
+    "source": "topic:307",
+    "target": "topic:31",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-307"
+    ],
+    "id": "dependent:topic:307:topic:89",
+    "source": "topic:307",
+    "target": "topic:89",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-307"
+    ],
+    "id": "dependent:topic:307:topic:90",
+    "source": "topic:307",
+    "target": "topic:90",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-309"
+    ],
+    "id": "dependent:topic:309:topic:4",
+    "source": "topic:309",
+    "target": "topic:4",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-309"
+    ],
+    "id": "dependent:topic:309:topic:571",
+    "source": "topic:309",
+    "target": "topic:571",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-309"
+    ],
+    "id": "dependent:topic:309:topic:96",
+    "source": "topic:309",
+    "target": "topic:96",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-30"
+    ],
+    "id": "dependent:topic:30:topic:113",
+    "source": "topic:30",
+    "target": "topic:113",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-31"
+    ],
+    "id": "dependent:topic:31:topic:9",
+    "source": "topic:31",
+    "target": "topic:9",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-32"
+    ],
+    "id": "dependent:topic:32:topic:1033",
+    "source": "topic:32",
+    "target": "topic:1033",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-33"
+    ],
+    "id": "dependent:topic:33:topic:985",
+    "source": "topic:33",
+    "target": "topic:985",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-348"
+    ],
+    "id": "dependent:topic:348:topic:1425",
+    "source": "topic:348",
+    "target": "topic:1425",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-348"
+    ],
+    "id": "dependent:topic:348:topic:1476",
+    "source": "topic:348",
+    "target": "topic:1476",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-3538"
+    ],
+    "id": "dependent:topic:3538:topic:1761",
+    "source": "topic:3538",
+    "target": "topic:1761",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-3538"
+    ],
+    "id": "dependent:topic:3538:topic:999",
+    "source": "topic:3538",
+    "target": "topic:999",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-360"
+    ],
+    "id": "dependent:topic:360:topic:1425",
+    "source": "topic:360",
+    "target": "topic:1425",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-36"
+    ],
+    "id": "dependent:topic:36:topic:87",
+    "source": "topic:36",
+    "target": "topic:87",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-37"
+    ],
+    "id": "dependent:topic:37:topic:120",
+    "source": "topic:37",
+    "target": "topic:120",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-387"
+    ],
+    "id": "dependent:topic:387:topic:5107",
+    "source": "topic:387",
+    "target": "topic:5107",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-38"
+    ],
+    "id": "dependent:topic:38:topic:1087",
+    "source": "topic:38",
+    "target": "topic:1087",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-38"
+    ],
+    "id": "dependent:topic:38:topic:1088",
+    "source": "topic:38",
+    "target": "topic:1088",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-38"
+    ],
+    "id": "dependent:topic:38:topic:4635",
+    "source": "topic:38",
+    "target": "topic:4635",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-38"
+    ],
+    "id": "dependent:topic:38:topic:5",
+    "source": "topic:38",
+    "target": "topic:5",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-4510"
+    ],
+    "id": "dependent:topic:4510:topic:5028",
+    "source": "topic:4510",
+    "target": "topic:5028",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-480"
+    ],
+    "id": "dependent:topic:480:topic:876",
+    "source": "topic:480",
+    "target": "topic:876",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-491"
+    ],
+    "id": "dependent:topic:491:topic:128",
+    "source": "topic:491",
+    "target": "topic:128",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-4"
+    ],
+    "id": "dependent:topic:4:topic:165",
+    "source": "topic:4",
+    "target": "topic:165",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-4"
+    ],
+    "id": "dependent:topic:4:topic:2108",
+    "source": "topic:4",
+    "target": "topic:2108",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-4"
+    ],
+    "id": "dependent:topic:4:topic:97",
+    "source": "topic:4",
+    "target": "topic:97",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-4"
+    ],
+    "id": "dependent:topic:4:topic:98",
+    "source": "topic:4",
+    "target": "topic:98",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-4"
+    ],
+    "id": "dependent:topic:4:topic:99",
+    "source": "topic:4",
+    "target": "topic:99",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-5028"
+    ],
+    "id": "dependent:topic:5028:topic:4533",
+    "source": "topic:5028",
+    "target": "topic:4533",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-571"
+    ],
+    "id": "dependent:topic:571:topic:38",
+    "source": "topic:571",
+    "target": "topic:38",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-59"
+    ],
+    "id": "dependent:topic:59:topic:1425",
+    "source": "topic:59",
+    "target": "topic:1425",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-59"
+    ],
+    "id": "dependent:topic:59:topic:65",
+    "source": "topic:59",
+    "target": "topic:65",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-5"
+    ],
+    "id": "dependent:topic:5:topic:2",
+    "source": "topic:5",
+    "target": "topic:2",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-60"
+    ],
+    "id": "dependent:topic:60:topic:164",
+    "source": "topic:60",
+    "target": "topic:164",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-60"
+    ],
+    "id": "dependent:topic:60:topic:59",
+    "source": "topic:60",
+    "target": "topic:59",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-78"
+    ],
+    "id": "dependent:topic:78:topic:5",
+    "source": "topic:78",
+    "target": "topic:5",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-7"
+    ],
+    "id": "dependent:topic:7:topic:28",
+    "source": "topic:7",
+    "target": "topic:28",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-851"
+    ],
+    "id": "dependent:topic:851:topic:480",
+    "source": "topic:851",
+    "target": "topic:480",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-872"
+    ],
+    "id": "dependent:topic:872:topic:851",
+    "source": "topic:872",
+    "target": "topic:851",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-876"
+    ],
+    "id": "dependent:topic:876:topic:192",
+    "source": "topic:876",
+    "target": "topic:192",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-876"
+    ],
+    "id": "dependent:topic:876:topic:999",
+    "source": "topic:876",
+    "target": "topic:999",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-87"
+    ],
+    "id": "dependent:topic:87:topic:88",
+    "source": "topic:87",
+    "target": "topic:88",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-88"
+    ],
+    "id": "dependent:topic:88:topic:25",
+    "source": "topic:88",
+    "target": "topic:25",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-89"
+    ],
+    "id": "dependent:topic:89:topic:1761",
+    "source": "topic:89",
+    "target": "topic:1761",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-89"
+    ],
+    "id": "dependent:topic:89:topic:19",
+    "source": "topic:89",
+    "target": "topic:19",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-8"
+    ],
+    "id": "dependent:topic:8:topic:127",
+    "source": "topic:8",
+    "target": "topic:127",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-8"
+    ],
+    "id": "dependent:topic:8:topic:491",
+    "source": "topic:8",
+    "target": "topic:491",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-8"
+    ],
+    "id": "dependent:topic:8:topic:59",
+    "source": "topic:8",
+    "target": "topic:59",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-90"
+    ],
+    "id": "dependent:topic:90:topic:19",
+    "source": "topic:90",
+    "target": "topic:19",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-96"
+    ],
+    "id": "dependent:topic:96:topic:201",
+    "source": "topic:96",
+    "target": "topic:201",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-96"
+    ],
+    "id": "dependent:topic:96:topic:38",
+    "source": "topic:96",
+    "target": "topic:38",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-97"
+    ],
+    "id": "dependent:topic:97:topic:1087",
+    "source": "topic:97",
+    "target": "topic:1087",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-97"
+    ],
+    "id": "dependent:topic:97:topic:12",
+    "source": "topic:97",
+    "target": "topic:12",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-985"
+    ],
+    "id": "dependent:topic:985:topic:115",
+    "source": "topic:985",
+    "target": "topic:115",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-99"
+    ],
+    "id": "dependent:topic:99:topic:116",
+    "source": "topic:99",
+    "target": "topic:116",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-9"
+    ],
+    "id": "dependent:topic:9:topic:115",
+    "source": "topic:9",
+    "target": "topic:115",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-9"
+    ],
+    "id": "dependent:topic:9:topic:201",
+    "source": "topic:9",
+    "target": "topic:201",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-9"
+    ],
+    "id": "dependent:topic:9:topic:518",
+    "source": "topic:9",
+    "target": "topic:518",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-9"
+    ],
+    "id": "dependent:topic:9:topic:571",
+    "source": "topic:9",
+    "target": "topic:571",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "topic-9"
+    ],
+    "id": "dependent:topic:9:topic:98",
+    "source": "topic:9",
+    "target": "topic:98",
+    "type": "dependent"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:1162:category:1163",
+    "source": "category:1162",
+    "target": "category:1163",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:1162:category:1164",
+    "source": "category:1162",
+    "target": "category:1164",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:1162:category:2679",
+    "source": "category:1162",
+    "target": "category:2679",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:1163:category:126",
+    "source": "category:1163",
+    "target": "category:126",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:1163:category:258",
+    "source": "category:1163",
+    "target": "category:258",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:1163:category:357",
+    "source": "category:1163",
+    "target": "category:357",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:1164:category:73",
+    "source": "category:1164",
+    "target": "category:73",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:1186:category:516",
+    "source": "category:1186",
+    "target": "category:516",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:1188:category:679",
+    "source": "category:1188",
+    "target": "category:679",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:1215:category:187",
+    "source": "category:1215",
+    "target": "category:187",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:1258:category:196",
+    "source": "category:1258",
+    "target": "category:196",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:1258:category:251",
+    "source": "category:1258",
+    "target": "category:251",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:1258:category:95",
+    "source": "category:1258",
+    "target": "category:95",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:1260:category:1423",
+    "source": "category:1260",
+    "target": "category:1423",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:1260:category:61",
+    "source": "category:1260",
+    "target": "category:61",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:1260:topic:1425",
+    "source": "category:1260",
+    "target": "topic:1425",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:1262:topic:115",
+    "source": "category:1262",
+    "target": "topic:115",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:1262:topic:116",
+    "source": "category:1262",
+    "target": "topic:116",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:1262:topic:120",
+    "source": "category:1262",
+    "target": "topic:120",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:1262:topic:17",
+    "source": "category:1262",
+    "target": "topic:17",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:1262:topic:38",
+    "source": "category:1262",
+    "target": "topic:38",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:1262:topic:7",
+    "source": "category:1262",
+    "target": "topic:7",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:1262:topic:96",
+    "source": "category:1262",
+    "target": "topic:96",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:1263:topic:24",
+    "source": "category:1263",
+    "target": "topic:24",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:1263:topic:28",
+    "source": "category:1263",
+    "target": "topic:28",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:1263:topic:491",
+    "source": "category:1263",
+    "target": "topic:491",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:1264:topic:127",
+    "source": "category:1264",
+    "target": "topic:127",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:1264:topic:128",
+    "source": "category:1264",
+    "target": "topic:128",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:1264:topic:8",
+    "source": "category:1264",
+    "target": "topic:8",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:1265:topic:2",
+    "source": "category:1265",
+    "target": "topic:2",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:1265:topic:5",
+    "source": "category:1265",
+    "target": "topic:5",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:1265:topic:78",
+    "source": "category:1265",
+    "target": "topic:78",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:1267:topic:122",
+    "source": "category:1267",
+    "target": "topic:122",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:1268:category:1269",
+    "source": "category:1268",
+    "target": "category:1269",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:1269:topic:1087",
+    "source": "category:1269",
+    "target": "topic:1087",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:1269:topic:1088",
+    "source": "category:1269",
+    "target": "topic:1088",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:126:category:2944",
+    "source": "category:126",
+    "target": "category:2944",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:1356:topic:480",
+    "source": "category:1356",
+    "target": "topic:480",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:1356:topic:876",
+    "source": "category:1356",
+    "target": "topic:876",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:13:category:1262",
+    "source": "category:13",
+    "target": "category:1262",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:13:category:1263",
+    "source": "category:13",
+    "target": "category:1263",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:1423:topic:1425",
+    "source": "category:1423",
+    "target": "topic:1425",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:1423:topic:1761",
+    "source": "category:1423",
+    "target": "topic:1761",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:1423:topic:4635",
+    "source": "category:1423",
+    "target": "topic:4635",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:1432:topic:851",
+    "source": "category:1432",
+    "target": "topic:851",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:153:topic:113",
+    "source": "category:153",
+    "target": "topic:113",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:153:topic:163",
+    "source": "category:153",
+    "target": "topic:163",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:153:topic:518",
+    "source": "category:153",
+    "target": "topic:518",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:187:topic:12",
+    "source": "category:187",
+    "target": "topic:12",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:187:topic:2108",
+    "source": "category:187",
+    "target": "topic:2108",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:187:topic:4",
+    "source": "category:187",
+    "target": "topic:4",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:187:topic:97",
+    "source": "category:187",
+    "target": "topic:97",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:188:topic:201",
+    "source": "category:188",
+    "target": "topic:201",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:188:topic:9",
+    "source": "category:188",
+    "target": "topic:9",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:188:topic:98",
+    "source": "category:188",
+    "target": "topic:98",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:195:category:1264",
+    "source": "category:195",
+    "target": "category:1264",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:195:category:1265",
+    "source": "category:195",
+    "target": "category:1265",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:195:category:1267",
+    "source": "category:195",
+    "target": "category:1267",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:196:topic:112",
+    "source": "category:196",
+    "target": "topic:112",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:196:topic:1248",
+    "source": "category:196",
+    "target": "topic:1248",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:196:topic:30",
+    "source": "category:196",
+    "target": "topic:30",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:251:category:1268",
+    "source": "category:251",
+    "target": "category:1268",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:251:category:13",
+    "source": "category:251",
+    "target": "category:13",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:251:category:195",
+    "source": "category:251",
+    "target": "category:195",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:252:category:153",
+    "source": "category:252",
+    "target": "category:153",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:252:category:188",
+    "source": "category:252",
+    "target": "category:188",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:252:category:3",
+    "source": "category:252",
+    "target": "category:3",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:252:category:306",
+    "source": "category:252",
+    "target": "category:306",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:252:category:35",
+    "source": "category:252",
+    "target": "category:35",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:252:category:74",
+    "source": "category:252",
+    "target": "category:74",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:258:category:262",
+    "source": "category:258",
+    "target": "category:262",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:258:category:4502",
+    "source": "category:258",
+    "target": "category:4502",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:262:category:386",
+    "source": "category:262",
+    "target": "category:386",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:262:topic:259",
+    "source": "category:262",
+    "target": "topic:259",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:2679:category:477",
+    "source": "category:2679",
+    "target": "category:477",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:2944:topic:149",
+    "source": "category:2944",
+    "target": "topic:149",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:2944:topic:191",
+    "source": "category:2944",
+    "target": "topic:191",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:2944:topic:192",
+    "source": "category:2944",
+    "target": "topic:192",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:306:topic:146",
+    "source": "category:306",
+    "target": "topic:146",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:306:topic:27",
+    "source": "category:306",
+    "target": "topic:27",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:306:topic:307",
+    "source": "category:306",
+    "target": "topic:307",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:306:topic:31",
+    "source": "category:306",
+    "target": "topic:31",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:306:topic:36",
+    "source": "category:306",
+    "target": "topic:36",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:306:topic:87",
+    "source": "category:306",
+    "target": "topic:87",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:306:topic:88",
+    "source": "category:306",
+    "target": "topic:88",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:357:category:1186",
+    "source": "category:357",
+    "target": "category:1186",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:357:category:1188",
+    "source": "category:357",
+    "target": "category:1188",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:357:category:850",
+    "source": "category:357",
+    "target": "category:850",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:35:topic:14",
+    "source": "category:35",
+    "target": "topic:14",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:35:topic:161",
+    "source": "category:35",
+    "target": "topic:161",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:35:topic:308",
+    "source": "category:35",
+    "target": "topic:308",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:35:topic:309",
+    "source": "category:35",
+    "target": "topic:309",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:35:topic:32",
+    "source": "category:35",
+    "target": "topic:32",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:35:topic:36",
+    "source": "category:35",
+    "target": "topic:36",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:35:topic:571",
+    "source": "category:35",
+    "target": "topic:571",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:386:topic:260",
+    "source": "category:386",
+    "target": "topic:260",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:386:topic:3538",
+    "source": "category:386",
+    "target": "topic:3538",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:386:topic:387",
+    "source": "category:386",
+    "target": "topic:387",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:386:topic:5107",
+    "source": "category:386",
+    "target": "topic:5107",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:386:topic:999",
+    "source": "category:386",
+    "target": "topic:999",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:3:topic:152",
+    "source": "category:3",
+    "target": "topic:152",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:3:topic:19",
+    "source": "category:3",
+    "target": "topic:19",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:3:topic:25",
+    "source": "category:3",
+    "target": "topic:25",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:3:topic:33",
+    "source": "category:3",
+    "target": "topic:33",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:3:topic:89",
+    "source": "category:3",
+    "target": "topic:89",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:3:topic:90",
+    "source": "category:3",
+    "target": "topic:90",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:4502:category:4503",
+    "source": "category:4502",
+    "target": "category:4503",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:4503:topic:4510",
+    "source": "category:4503",
+    "target": "topic:4510",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:4503:topic:4533",
+    "source": "category:4503",
+    "target": "topic:4533",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:4503:topic:5028",
+    "source": "category:4503",
+    "target": "topic:5028",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:477:category:1356",
+    "source": "category:477",
+    "target": "category:1356",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:516:topic:1476",
+    "source": "category:516",
+    "target": "topic:1476",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:516:topic:348",
+    "source": "category:516",
+    "target": "topic:348",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:516:topic:360",
+    "source": "category:516",
+    "target": "topic:360",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:61:topic:164",
+    "source": "category:61",
+    "target": "topic:164",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:61:topic:165",
+    "source": "category:61",
+    "target": "topic:165",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:61:topic:59",
+    "source": "category:61",
+    "target": "topic:59",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:61:topic:60",
+    "source": "category:61",
+    "target": "topic:60",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:61:topic:65",
+    "source": "category:61",
+    "target": "topic:65",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:679:topic:117",
+    "source": "category:679",
+    "target": "topic:117",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:73:category:1215",
+    "source": "category:73",
+    "target": "category:1215",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:73:category:1258",
+    "source": "category:73",
+    "target": "category:1258",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:73:category:1260",
+    "source": "category:73",
+    "target": "category:1260",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:73:category:252",
+    "source": "category:73",
+    "target": "category:252",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:74:topic:147",
+    "source": "category:74",
+    "target": "topic:147",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:74:topic:148",
+    "source": "category:74",
+    "target": "topic:148",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:74:topic:15",
+    "source": "category:74",
+    "target": "topic:15",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:74:topic:193",
+    "source": "category:74",
+    "target": "topic:193",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:850:category:1432",
+    "source": "category:850",
+    "target": "category:1432",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:850:topic:872",
+    "source": "category:850",
+    "target": "topic:872",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:95:topic:1",
+    "source": "category:95",
+    "target": "topic:1",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:95:topic:1033",
+    "source": "category:95",
+    "target": "topic:1033",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:95:topic:1038",
+    "source": "category:95",
+    "target": "topic:1038",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:95:topic:37",
+    "source": "category:95",
+    "target": "topic:37",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:95:topic:985",
+    "source": "category:95",
+    "target": "topic:985",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "map-8"
+    ],
+    "id": "hierarchy:category:95:topic:99",
+    "source": "category:95",
+    "target": "topic:99",
+    "type": "hierarchy"
+  },
+  {
+    "evidence_ids": [
+      "topic-37"
+    ],
+    "id": "prerequisite:topic:1033:topic:37",
+    "source": "topic:1033",
+    "target": "topic:37",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-4"
+    ],
+    "id": "prerequisite:topic:1033:topic:4",
+    "source": "topic:1033",
+    "target": "topic:4",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-1"
+    ],
+    "id": "prerequisite:topic:1038:topic:1",
+    "source": "topic:1038",
+    "target": "topic:1",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-1033"
+    ],
+    "id": "prerequisite:topic:1038:topic:1033",
+    "source": "topic:1038",
+    "target": "topic:1033",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-116"
+    ],
+    "id": "prerequisite:topic:1038:topic:116",
+    "source": "topic:1038",
+    "target": "topic:116",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-17"
+    ],
+    "id": "prerequisite:topic:1038:topic:17",
+    "source": "topic:1038",
+    "target": "topic:17",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-985"
+    ],
+    "id": "prerequisite:topic:1038:topic:985",
+    "source": "topic:1038",
+    "target": "topic:985",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-99"
+    ],
+    "id": "prerequisite:topic:1038:topic:99",
+    "source": "topic:1038",
+    "target": "topic:99",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-1088"
+    ],
+    "id": "prerequisite:topic:1087:topic:1088",
+    "source": "topic:1087",
+    "target": "topic:1088",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-27"
+    ],
+    "id": "prerequisite:topic:112:topic:27",
+    "source": "topic:112",
+    "target": "topic:27",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-163"
+    ],
+    "id": "prerequisite:topic:113:topic:163",
+    "source": "topic:113",
+    "target": "topic:163",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-27"
+    ],
+    "id": "prerequisite:topic:113:topic:27",
+    "source": "topic:113",
+    "target": "topic:27",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-116"
+    ],
+    "id": "prerequisite:topic:115:topic:116",
+    "source": "topic:115",
+    "target": "topic:116",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-17"
+    ],
+    "id": "prerequisite:topic:115:topic:17",
+    "source": "topic:115",
+    "target": "topic:17",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-7"
+    ],
+    "id": "prerequisite:topic:115:topic:7",
+    "source": "topic:115",
+    "target": "topic:7",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-96"
+    ],
+    "id": "prerequisite:topic:115:topic:96",
+    "source": "topic:115",
+    "target": "topic:96",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-28"
+    ],
+    "id": "prerequisite:topic:116:topic:28",
+    "source": "topic:116",
+    "target": "topic:28",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-38"
+    ],
+    "id": "prerequisite:topic:116:topic:38",
+    "source": "topic:116",
+    "target": "topic:38",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-78"
+    ],
+    "id": "prerequisite:topic:116:topic:78",
+    "source": "topic:116",
+    "target": "topic:78",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-115"
+    ],
+    "id": "prerequisite:topic:117:topic:115",
+    "source": "topic:117",
+    "target": "topic:115",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-127"
+    ],
+    "id": "prerequisite:topic:120:topic:127",
+    "source": "topic:120",
+    "target": "topic:127",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-112"
+    ],
+    "id": "prerequisite:topic:1248:topic:112",
+    "source": "topic:1248",
+    "target": "topic:112",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-5"
+    ],
+    "id": "prerequisite:topic:127:topic:5",
+    "source": "topic:127",
+    "target": "topic:5",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-59"
+    ],
+    "id": "prerequisite:topic:127:topic:59",
+    "source": "topic:127",
+    "target": "topic:59",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-2"
+    ],
+    "id": "prerequisite:topic:128:topic:2",
+    "source": "topic:128",
+    "target": "topic:2",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-27"
+    ],
+    "id": "prerequisite:topic:146:topic:27",
+    "source": "topic:146",
+    "target": "topic:27",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-3538"
+    ],
+    "id": "prerequisite:topic:1476:topic:3538",
+    "source": "topic:1476",
+    "target": "topic:3538",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-148"
+    ],
+    "id": "prerequisite:topic:147:topic:148",
+    "source": "topic:147",
+    "target": "topic:148",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-193"
+    ],
+    "id": "prerequisite:topic:148:topic:193",
+    "source": "topic:148",
+    "target": "topic:193",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-192"
+    ],
+    "id": "prerequisite:topic:149:topic:192",
+    "source": "topic:149",
+    "target": "topic:192",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-112"
+    ],
+    "id": "prerequisite:topic:14:topic:112",
+    "source": "topic:14",
+    "target": "topic:112",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-113"
+    ],
+    "id": "prerequisite:topic:14:topic:113",
+    "source": "topic:14",
+    "target": "topic:113",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-161"
+    ],
+    "id": "prerequisite:topic:14:topic:161",
+    "source": "topic:14",
+    "target": "topic:161",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-309"
+    ],
+    "id": "prerequisite:topic:14:topic:309",
+    "source": "topic:14",
+    "target": "topic:309",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-87"
+    ],
+    "id": "prerequisite:topic:14:topic:87",
+    "source": "topic:14",
+    "target": "topic:87",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-164"
+    ],
+    "id": "prerequisite:topic:152:topic:164",
+    "source": "topic:152",
+    "target": "topic:164",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-89"
+    ],
+    "id": "prerequisite:topic:152:topic:89",
+    "source": "topic:152",
+    "target": "topic:89",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-90"
+    ],
+    "id": "prerequisite:topic:152:topic:90",
+    "source": "topic:152",
+    "target": "topic:90",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-147"
+    ],
+    "id": "prerequisite:topic:15:topic:147",
+    "source": "topic:15",
+    "target": "topic:147",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-32"
+    ],
+    "id": "prerequisite:topic:161:topic:32",
+    "source": "topic:161",
+    "target": "topic:32",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-60"
+    ],
+    "id": "prerequisite:topic:163:topic:60",
+    "source": "topic:163",
+    "target": "topic:60",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-165"
+    ],
+    "id": "prerequisite:topic:164:topic:165",
+    "source": "topic:164",
+    "target": "topic:165",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-4635"
+    ],
+    "id": "prerequisite:topic:1761:topic:4635",
+    "source": "topic:1761",
+    "target": "topic:4635",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-1087"
+    ],
+    "id": "prerequisite:topic:17:topic:1087",
+    "source": "topic:17",
+    "target": "topic:1087",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-1088"
+    ],
+    "id": "prerequisite:topic:17:topic:1088",
+    "source": "topic:17",
+    "target": "topic:1088",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-120"
+    ],
+    "id": "prerequisite:topic:17:topic:120",
+    "source": "topic:17",
+    "target": "topic:120",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-28"
+    ],
+    "id": "prerequisite:topic:17:topic:28",
+    "source": "topic:17",
+    "target": "topic:28",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-38"
+    ],
+    "id": "prerequisite:topic:17:topic:38",
+    "source": "topic:17",
+    "target": "topic:38",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-8"
+    ],
+    "id": "prerequisite:topic:17:topic:8",
+    "source": "topic:17",
+    "target": "topic:8",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-115"
+    ],
+    "id": "prerequisite:topic:191:topic:115",
+    "source": "topic:191",
+    "target": "topic:115",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-149"
+    ],
+    "id": "prerequisite:topic:191:topic:149",
+    "source": "topic:191",
+    "target": "topic:149",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-163"
+    ],
+    "id": "prerequisite:topic:191:topic:163",
+    "source": "topic:191",
+    "target": "topic:163",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-1248"
+    ],
+    "id": "prerequisite:topic:193:topic:1248",
+    "source": "topic:193",
+    "target": "topic:1248",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-14"
+    ],
+    "id": "prerequisite:topic:193:topic:14",
+    "source": "topic:193",
+    "target": "topic:14",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-146"
+    ],
+    "id": "prerequisite:topic:193:topic:146",
+    "source": "topic:193",
+    "target": "topic:146",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-30"
+    ],
+    "id": "prerequisite:topic:193:topic:30",
+    "source": "topic:193",
+    "target": "topic:30",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-1038"
+    ],
+    "id": "prerequisite:topic:19:topic:1038",
+    "source": "topic:19",
+    "target": "topic:1038",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-33"
+    ],
+    "id": "prerequisite:topic:19:topic:33",
+    "source": "topic:19",
+    "target": "topic:33",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-97"
+    ],
+    "id": "prerequisite:topic:19:topic:97",
+    "source": "topic:19",
+    "target": "topic:97",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-98"
+    ],
+    "id": "prerequisite:topic:19:topic:98",
+    "source": "topic:19",
+    "target": "topic:98",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-985"
+    ],
+    "id": "prerequisite:topic:1:topic:985",
+    "source": "topic:1",
+    "target": "topic:985",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-8"
+    ],
+    "id": "prerequisite:topic:24:topic:8",
+    "source": "topic:24",
+    "target": "topic:8",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-260"
+    ],
+    "id": "prerequisite:topic:259:topic:260",
+    "source": "topic:259",
+    "target": "topic:260",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-152"
+    ],
+    "id": "prerequisite:topic:25:topic:152",
+    "source": "topic:25",
+    "target": "topic:152",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-60"
+    ],
+    "id": "prerequisite:topic:25:topic:60",
+    "source": "topic:25",
+    "target": "topic:60",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-1761"
+    ],
+    "id": "prerequisite:topic:260:topic:1761",
+    "source": "topic:260",
+    "target": "topic:1761",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-3538"
+    ],
+    "id": "prerequisite:topic:260:topic:3538",
+    "source": "topic:260",
+    "target": "topic:3538",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-387"
+    ],
+    "id": "prerequisite:topic:260:topic:387",
+    "source": "topic:260",
+    "target": "topic:387",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-999"
+    ],
+    "id": "prerequisite:topic:260:topic:999",
+    "source": "topic:260",
+    "target": "topic:999",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-307"
+    ],
+    "id": "prerequisite:topic:27:topic:307",
+    "source": "topic:27",
+    "target": "topic:307",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-36"
+    ],
+    "id": "prerequisite:topic:27:topic:36",
+    "source": "topic:27",
+    "target": "topic:36",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-88"
+    ],
+    "id": "prerequisite:topic:27:topic:88",
+    "source": "topic:27",
+    "target": "topic:88",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-24"
+    ],
+    "id": "prerequisite:topic:28:topic:24",
+    "source": "topic:28",
+    "target": "topic:24",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-491"
+    ],
+    "id": "prerequisite:topic:28:topic:491",
+    "source": "topic:28",
+    "target": "topic:491",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-122"
+    ],
+    "id": "prerequisite:topic:2:topic:122",
+    "source": "topic:2",
+    "target": "topic:122",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-31"
+    ],
+    "id": "prerequisite:topic:307:topic:31",
+    "source": "topic:307",
+    "target": "topic:31",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-89"
+    ],
+    "id": "prerequisite:topic:307:topic:89",
+    "source": "topic:307",
+    "target": "topic:89",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-90"
+    ],
+    "id": "prerequisite:topic:307:topic:90",
+    "source": "topic:307",
+    "target": "topic:90",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-4"
+    ],
+    "id": "prerequisite:topic:309:topic:4",
+    "source": "topic:309",
+    "target": "topic:4",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-571"
+    ],
+    "id": "prerequisite:topic:309:topic:571",
+    "source": "topic:309",
+    "target": "topic:571",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-96"
+    ],
+    "id": "prerequisite:topic:309:topic:96",
+    "source": "topic:309",
+    "target": "topic:96",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-113"
+    ],
+    "id": "prerequisite:topic:30:topic:113",
+    "source": "topic:30",
+    "target": "topic:113",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-9"
+    ],
+    "id": "prerequisite:topic:31:topic:9",
+    "source": "topic:31",
+    "target": "topic:9",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-1033"
+    ],
+    "id": "prerequisite:topic:32:topic:1033",
+    "source": "topic:32",
+    "target": "topic:1033",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-985"
+    ],
+    "id": "prerequisite:topic:33:topic:985",
+    "source": "topic:33",
+    "target": "topic:985",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-1425"
+    ],
+    "id": "prerequisite:topic:348:topic:1425",
+    "source": "topic:348",
+    "target": "topic:1425",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-1476"
+    ],
+    "id": "prerequisite:topic:348:topic:1476",
+    "source": "topic:348",
+    "target": "topic:1476",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-1761"
+    ],
+    "id": "prerequisite:topic:3538:topic:1761",
+    "source": "topic:3538",
+    "target": "topic:1761",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-999"
+    ],
+    "id": "prerequisite:topic:3538:topic:999",
+    "source": "topic:3538",
+    "target": "topic:999",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-1425"
+    ],
+    "id": "prerequisite:topic:360:topic:1425",
+    "source": "topic:360",
+    "target": "topic:1425",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-87"
+    ],
+    "id": "prerequisite:topic:36:topic:87",
+    "source": "topic:36",
+    "target": "topic:87",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-120"
+    ],
+    "id": "prerequisite:topic:37:topic:120",
+    "source": "topic:37",
+    "target": "topic:120",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-5107"
+    ],
+    "id": "prerequisite:topic:387:topic:5107",
+    "source": "topic:387",
+    "target": "topic:5107",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-1087"
+    ],
+    "id": "prerequisite:topic:38:topic:1087",
+    "source": "topic:38",
+    "target": "topic:1087",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-1088"
+    ],
+    "id": "prerequisite:topic:38:topic:1088",
+    "source": "topic:38",
+    "target": "topic:1088",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-4635"
+    ],
+    "id": "prerequisite:topic:38:topic:4635",
+    "source": "topic:38",
+    "target": "topic:4635",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-5"
+    ],
+    "id": "prerequisite:topic:38:topic:5",
+    "source": "topic:38",
+    "target": "topic:5",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-5028"
+    ],
+    "id": "prerequisite:topic:4510:topic:5028",
+    "source": "topic:4510",
+    "target": "topic:5028",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-876"
+    ],
+    "id": "prerequisite:topic:480:topic:876",
+    "source": "topic:480",
+    "target": "topic:876",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-128"
+    ],
+    "id": "prerequisite:topic:491:topic:128",
+    "source": "topic:491",
+    "target": "topic:128",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-165"
+    ],
+    "id": "prerequisite:topic:4:topic:165",
+    "source": "topic:4",
+    "target": "topic:165",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-2108"
+    ],
+    "id": "prerequisite:topic:4:topic:2108",
+    "source": "topic:4",
+    "target": "topic:2108",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-97"
+    ],
+    "id": "prerequisite:topic:4:topic:97",
+    "source": "topic:4",
+    "target": "topic:97",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-98"
+    ],
+    "id": "prerequisite:topic:4:topic:98",
+    "source": "topic:4",
+    "target": "topic:98",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-99"
+    ],
+    "id": "prerequisite:topic:4:topic:99",
+    "source": "topic:4",
+    "target": "topic:99",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-4533"
+    ],
+    "id": "prerequisite:topic:5028:topic:4533",
+    "source": "topic:5028",
+    "target": "topic:4533",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-38"
+    ],
+    "id": "prerequisite:topic:571:topic:38",
+    "source": "topic:571",
+    "target": "topic:38",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-1425"
+    ],
+    "id": "prerequisite:topic:59:topic:1425",
+    "source": "topic:59",
+    "target": "topic:1425",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-65"
+    ],
+    "id": "prerequisite:topic:59:topic:65",
+    "source": "topic:59",
+    "target": "topic:65",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-2"
+    ],
+    "id": "prerequisite:topic:5:topic:2",
+    "source": "topic:5",
+    "target": "topic:2",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-164"
+    ],
+    "id": "prerequisite:topic:60:topic:164",
+    "source": "topic:60",
+    "target": "topic:164",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-59"
+    ],
+    "id": "prerequisite:topic:60:topic:59",
+    "source": "topic:60",
+    "target": "topic:59",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-5"
+    ],
+    "id": "prerequisite:topic:78:topic:5",
+    "source": "topic:78",
+    "target": "topic:5",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-28"
+    ],
+    "id": "prerequisite:topic:7:topic:28",
+    "source": "topic:7",
+    "target": "topic:28",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-480"
+    ],
+    "id": "prerequisite:topic:851:topic:480",
+    "source": "topic:851",
+    "target": "topic:480",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-851"
+    ],
+    "id": "prerequisite:topic:872:topic:851",
+    "source": "topic:872",
+    "target": "topic:851",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-192"
+    ],
+    "id": "prerequisite:topic:876:topic:192",
+    "source": "topic:876",
+    "target": "topic:192",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-999"
+    ],
+    "id": "prerequisite:topic:876:topic:999",
+    "source": "topic:876",
+    "target": "topic:999",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-88"
+    ],
+    "id": "prerequisite:topic:87:topic:88",
+    "source": "topic:87",
+    "target": "topic:88",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-25"
+    ],
+    "id": "prerequisite:topic:88:topic:25",
+    "source": "topic:88",
+    "target": "topic:25",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-1761"
+    ],
+    "id": "prerequisite:topic:89:topic:1761",
+    "source": "topic:89",
+    "target": "topic:1761",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-19"
+    ],
+    "id": "prerequisite:topic:89:topic:19",
+    "source": "topic:89",
+    "target": "topic:19",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-127"
+    ],
+    "id": "prerequisite:topic:8:topic:127",
+    "source": "topic:8",
+    "target": "topic:127",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-491"
+    ],
+    "id": "prerequisite:topic:8:topic:491",
+    "source": "topic:8",
+    "target": "topic:491",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-59"
+    ],
+    "id": "prerequisite:topic:8:topic:59",
+    "source": "topic:8",
+    "target": "topic:59",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-19"
+    ],
+    "id": "prerequisite:topic:90:topic:19",
+    "source": "topic:90",
+    "target": "topic:19",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-201"
+    ],
+    "id": "prerequisite:topic:96:topic:201",
+    "source": "topic:96",
+    "target": "topic:201",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-38"
+    ],
+    "id": "prerequisite:topic:96:topic:38",
+    "source": "topic:96",
+    "target": "topic:38",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-1087"
+    ],
+    "id": "prerequisite:topic:97:topic:1087",
+    "source": "topic:97",
+    "target": "topic:1087",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-12"
+    ],
+    "id": "prerequisite:topic:97:topic:12",
+    "source": "topic:97",
+    "target": "topic:12",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-115"
+    ],
+    "id": "prerequisite:topic:985:topic:115",
+    "source": "topic:985",
+    "target": "topic:115",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-116"
+    ],
+    "id": "prerequisite:topic:99:topic:116",
+    "source": "topic:99",
+    "target": "topic:116",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-115"
+    ],
+    "id": "prerequisite:topic:9:topic:115",
+    "source": "topic:9",
+    "target": "topic:115",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-201"
+    ],
+    "id": "prerequisite:topic:9:topic:201",
+    "source": "topic:9",
+    "target": "topic:201",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-518"
+    ],
+    "id": "prerequisite:topic:9:topic:518",
+    "source": "topic:9",
+    "target": "topic:518",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-571"
+    ],
+    "id": "prerequisite:topic:9:topic:571",
+    "source": "topic:9",
+    "target": "topic:571",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "topic-98"
+    ],
+    "id": "prerequisite:topic:9:topic:98",
+    "source": "topic:9",
+    "target": "topic:98",
+    "type": "prerequisite"
+  },
+  {
+    "evidence_ids": [
+      "stage-615"
+    ],
+    "id": "project_requires:project:113:topic:112",
+    "source": "project:113",
+    "stage_id": 615,
+    "target": "topic:112",
+    "type": "project_requires"
+  },
+  {
+    "evidence_ids": [
+      "stage-615"
+    ],
+    "id": "project_requires:project:113:topic:113",
+    "source": "project:113",
+    "stage_id": 615,
+    "target": "topic:113",
+    "type": "project_requires"
+  },
+  {
+    "evidence_ids": [
+      "stage-615"
+    ],
+    "id": "project_requires:project:113:topic:1248",
+    "source": "project:113",
+    "stage_id": 615,
+    "target": "topic:1248",
+    "type": "project_requires"
+  },
+  {
+    "evidence_ids": [
+      "stage-615"
+    ],
+    "id": "project_requires:project:113:topic:14",
+    "source": "project:113",
+    "stage_id": 615,
+    "target": "topic:14",
+    "type": "project_requires"
+  },
+  {
+    "evidence_ids": [
+      "stage-616"
+    ],
+    "id": "project_requires:project:113:topic:146",
+    "source": "project:113",
+    "stage_id": 616,
+    "target": "topic:146",
+    "type": "project_requires"
+  },
+  {
+    "evidence_ids": [
+      "stage-614"
+    ],
+    "id": "project_requires:project:113:topic:147",
+    "source": "project:113",
+    "stage_id": 614,
+    "target": "topic:147",
+    "type": "project_requires"
+  },
+  {
+    "evidence_ids": [
+      "stage-617"
+    ],
+    "id": "project_requires:project:113:topic:1476",
+    "source": "project:113",
+    "stage_id": 617,
+    "target": "topic:1476",
+    "type": "project_requires"
+  },
+  {
+    "evidence_ids": [
+      "stage-614"
+    ],
+    "id": "project_requires:project:113:topic:148",
+    "source": "project:113",
+    "stage_id": 614,
+    "target": "topic:148",
+    "type": "project_requires"
+  },
+  {
+    "evidence_ids": [
+      "stage-614"
+    ],
+    "id": "project_requires:project:113:topic:15",
+    "source": "project:113",
+    "stage_id": 614,
+    "target": "topic:15",
+    "type": "project_requires"
+  },
+  {
+    "evidence_ids": [
+      "stage-617"
+    ],
+    "id": "project_requires:project:113:topic:152",
+    "source": "project:113",
+    "stage_id": 617,
+    "target": "topic:152",
+    "type": "project_requires"
+  },
+  {
+    "evidence_ids": [
+      "stage-617"
+    ],
+    "id": "project_requires:project:113:topic:1761",
+    "source": "project:113",
+    "stage_id": 617,
+    "target": "topic:1761",
+    "type": "project_requires"
+  },
+  {
+    "evidence_ids": [
+      "stage-614"
+    ],
+    "id": "project_requires:project:113:topic:193",
+    "source": "project:113",
+    "stage_id": 614,
+    "target": "topic:193",
+    "type": "project_requires"
+  },
+  {
+    "evidence_ids": [
+      "stage-617"
+    ],
+    "id": "project_requires:project:113:topic:25",
+    "source": "project:113",
+    "stage_id": 617,
+    "target": "topic:25",
+    "type": "project_requires"
+  },
+  {
+    "evidence_ids": [
+      "stage-617"
+    ],
+    "id": "project_requires:project:113:topic:259",
+    "source": "project:113",
+    "stage_id": 617,
+    "target": "topic:259",
+    "type": "project_requires"
+  },
+  {
+    "evidence_ids": [
+      "stage-617"
+    ],
+    "id": "project_requires:project:113:topic:260",
+    "source": "project:113",
+    "stage_id": 617,
+    "target": "topic:260",
+    "type": "project_requires"
+  },
+  {
+    "evidence_ids": [
+      "stage-616"
+    ],
+    "id": "project_requires:project:113:topic:27",
+    "source": "project:113",
+    "stage_id": 616,
+    "target": "topic:27",
+    "type": "project_requires"
+  },
+  {
+    "evidence_ids": [
+      "stage-615"
+    ],
+    "id": "project_requires:project:113:topic:30",
+    "source": "project:113",
+    "stage_id": 615,
+    "target": "topic:30",
+    "type": "project_requires"
+  },
+  {
+    "evidence_ids": [
+      "stage-616"
+    ],
+    "id": "project_requires:project:113:topic:307",
+    "source": "project:113",
+    "stage_id": 616,
+    "target": "topic:307",
+    "type": "project_requires"
+  },
+  {
+    "evidence_ids": [
+      "stage-616"
+    ],
+    "id": "project_requires:project:113:topic:31",
+    "source": "project:113",
+    "stage_id": 616,
+    "target": "topic:31",
+    "type": "project_requires"
+  },
+  {
+    "evidence_ids": [
+      "stage-617"
+    ],
+    "id": "project_requires:project:113:topic:348",
+    "source": "project:113",
+    "stage_id": 617,
+    "target": "topic:348",
+    "type": "project_requires"
+  },
+  {
+    "evidence_ids": [
+      "stage-617"
+    ],
+    "id": "project_requires:project:113:topic:3538",
+    "source": "project:113",
+    "stage_id": 617,
+    "target": "topic:3538",
+    "type": "project_requires"
+  },
+  {
+    "evidence_ids": [
+      "stage-617"
+    ],
+    "id": "project_requires:project:113:topic:36",
+    "source": "project:113",
+    "stage_id": 617,
+    "target": "topic:36",
+    "type": "project_requires"
+  },
+  {
+    "evidence_ids": [
+      "stage-617"
+    ],
+    "id": "project_requires:project:113:topic:87",
+    "source": "project:113",
+    "stage_id": 617,
+    "target": "topic:87",
+    "type": "project_requires"
+  },
+  {
+    "evidence_ids": [
+      "stage-617"
+    ],
+    "id": "project_requires:project:113:topic:88",
+    "source": "project:113",
+    "stage_id": 617,
+    "target": "topic:88",
+    "type": "project_requires"
+  },
+  {
+    "evidence_ids": [
+      "stage-617"
+    ],
+    "id": "project_requires:project:113:topic:89",
+    "source": "project:113",
+    "stage_id": 617,
+    "target": "topic:89",
+    "type": "project_requires"
+  },
+  {
+    "evidence_ids": [
+      "stage-616"
+    ],
+    "id": "project_requires:project:113:topic:9",
+    "source": "project:113",
+    "stage_id": 616,
+    "target": "topic:9",
+    "type": "project_requires"
+  }
+]
