@@ -1,42 +1,32 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark light">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'none'">
-  <title>Knowledge Map · Anton</title>
-  <link rel="icon" href="data:,">
+  <link rel="icon" href="data:,"><title>Introduction to Java · Knowledge Map</title>
   <link rel="stylesheet" href="style.css">
   <script defer src="vendor/d3-7.9.0.min.js"></script>
   <script defer src="app.js"></script>
 </head>
 <body>
-  <header>
-    <p class="eyebrow">ANTON / KNOWLEDGE MAP</p>
-    <h1>Ideas, connected.</h1>
-    <p id="totals" aria-live="polite">Loading the recorded learning snapshot…</p>
-  </header>
+  <header><p class="eyebrow">PERSONAL KNOWLEDGE / COURSE 08</p><h1>Introduction to Java</h1><p id="metrics">Loading evidenced knowledge…</p></header>
   <main>
-    <section class="explorer" aria-label="Knowledge explorer">
-      <div class="toolbar">
-        <div role="group" aria-label="Scope"><button id="my" aria-pressed="true">My Knowledge</button><button id="roadmap" aria-pressed="false">Course Roadmap</button></div>
-        <label>Course <select id="course"><option value="all">All recorded courses</option></select></label>
-        <label class="search">Find a topic, area or project<input id="search" type="search" autocomplete="off" placeholder="Try “For loop” or “Simple Chat”…"></label>
-      </div>
-      <div id="results" aria-label="Search results" aria-live="polite"></div>
-      <button id="back">Back</button><nav id="breadcrumbs" aria-label="Map location"></nav>
-      <div class="map-controls"><span id="level" aria-live="polite"></span><div><button id="out" aria-label="Zoom out">−</button><button id="in" aria-label="Zoom in">+</button><button id="reset">Overview</button></div></div>
-      <div id="canvas"><svg id="map" role="group" aria-label="Knowledge map. Search and area buttons provide keyboard navigation."></svg></div>
-      <div id="area-nav" aria-label="Open a knowledge area"></div>
-      <div class="foot"><p id="visible" aria-live="polite"></p><div id="pagination"><button id="previous">Previous topics</button><button id="next">Next topics</button></div></div>
-      <p class="legend"><span class="learned">● Learned</span> · ring = verified · hollow = not learned · dashed ring = unknown<br>Arrows appear on selection. Area placement is display grouping, not a prerequisite.</p>
-      <p class="hint">Choose an area, then zoom or open a subdomain. Drag background to pan; + / − change detail. Touch users can use the same area buttons.</p>
-      <section class="projects" aria-label="Project evidence"><h2>Project evidence</h2><div id="projects"></div><p class="hint">Requirements are a separate relation. Applied topic IDs remain unknown.</p></section>
+    <section class="workspace" aria-label="Global knowledge landscape">
+      <nav aria-label="Graph controls">
+        <div><button id="my" aria-pressed="true">My Knowledge</button><button id="roadmap" aria-pressed="false">Course Roadmap</button></div>
+        <label>Find a topic or project<input id="search" type="search" autocomplete="off" placeholder="Search the landscape…" aria-controls="results"></label>
+        <div><button id="fit">Fit</button><button id="closer">Zoom in</button><button id="clear">Clear selection</button></div>
+      </nav>
+      <div id="results" aria-label="Search results"></div>
+      <p id="coverage" aria-live="polite"></p>
+      <div id="canvas"><svg id="graph" role="group" aria-label="Global graph. Search or Tab to select a topic. Scroll or pinch to zoom; drag background to pan."></svg></div>
+      <p class="legend">● Learned · ◎ Verified · ○ Not learned · ◇ Project evidence · Arrow: prerequisite → dependent</p>
+      <p class="hint">Scroll / pinch to zoom · drag to pan · drag nodes · Escape to clear. On small screens zoom in to read labels.</p>
     </section>
-    <aside id="details" aria-label="Selection details" aria-live="polite"></aside>
+    <aside aria-label="Selected knowledge evidence"><p class="eyebrow">INSPECT / EVIDENCE</p><div id="details" aria-live="polite"></div></aside>
   </main>
   <p id="error" role="alert" hidden></p>
-  <noscript>This explorer requires JavaScript. The repository provides a static learning summary.</noscript>
+  <noscript>JavaScript is required for this interactive Knowledge Map.</noscript>
 </body>
 </html>

@@ -74,6 +74,26 @@ def project_model(root=REPO):
 
     domains = [{**d, **counts([t for t in topics if t['domain_id'] == d['id']])} for d in mapping['domains']]
     subdomains = [{**s, **counts([t for t in topics if t['subdomain_id'] == s['id']])} for s in mapping['subdomains']]
+    # Presentation only: real ancestor memberships, never new knowledge edges.
+    definitions = load(CONFIG / 'clusters.json')['clusters']
+    if len({g['id'] for g in definitions}) != len(definitions):
+        raise ValueError('Duplicate layout cluster IDs')
+    for group in definitions:
+        ids = group['category_ids']
+        if not ids or len(set(ids)) != len(ids) or any(id not in categories for id in ids):
+            raise ValueError('Invalid layout cluster categories')
+    clusters = {g['id']: {**g, 'policy': 'Layout grouping only; membership follows canonical ancestry.'}
+                for g in definitions}
+    for topic in topics:
+        matches = [g for g in definitions if set(g['category_ids']) & set(topic['canonical_ancestry'])]
+        if len(matches) > 1:
+            raise ValueError(f'Ambiguous layout cluster for topic {topic["id"]}')
+        key = matches[0]['id'] if matches else topic['subdomain_id']
+        if key not in clusters:
+            area = next(s for s in subdomains if s['id'] == key)
+            clusters[key] = {'id': key, 'title': area['title'], 'category_ids': area['category_ids'],
+                             'policy': 'Fallback to existing curated hierarchy projection; not a knowledge edge.'}
+        topic['cluster_id'] = key
     state = {p['project_id']: p for p in tables['progress']['projects']}
     projects = []
     for project in tables['projects']:
@@ -106,6 +126,7 @@ def project_model(root=REPO):
                   'connections': len(connections), 'completed_projects': sum(p['status'] == 'completed' for p in projects),
                   'active_projects': sum(p['status'] == 'active' for p in projects)}
     return {**tables, 'topics': topics, 'projects': projects, 'domains': domains, 'subdomains': subdomains,
+            'layout_clusters': list(clusters.values()),
             'connections': connections, 'capability_evidence': capability_results, 'statistics': statistics,
             'summary_policy': mapping['summary'],
             'source_hashes': {str(p.relative_to(root)): hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(data.rglob('*')) if p.is_file()}}

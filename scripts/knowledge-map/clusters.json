@@ -1,0 +1,10 @@
+{
+  "clusters": [
+    {"id": "category-group:74", "title": "Introduction to Java", "category_ids": [74]},
+    {"id": "category-group:196", "title": "Code style / Simple programs", "category_ids": [196, 153]},
+    {"id": "category-group:35", "title": "Data types and variables", "category_ids": [35]},
+    {"id": "category-group:306", "title": "Operations / Strings", "category_ids": [306, 188]},
+    {"id": "category-group:3", "title": "Control flow statements", "category_ids": [3]},
+    {"id": "category-group:258", "title": "Dev tools / Debugging", "category_ids": [258, 516, 1423]}
+  ]
+}

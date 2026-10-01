@@ -1,4 +1,4 @@
-"""Production V2 projection contract; fixtures are disposable roots only."""
+"""Production source/projection contract; fixtures are disposable roots only."""
 import hashlib
 import importlib.util
 import json
@@ -47,7 +47,11 @@ class KnowledgeMapTests(unittest.TestCase):
         source_ids = {e['id'] for e in m['edges']}
         keys = {t['key'] for t in m['topics']}
         self.assertEqual(len(m['connections']), 137)
+        learned = {t['key'] for t in m['topics'] if t['is_learned'] is True}
+        self.assertEqual(sum(c['source'] in learned and c['target'] in learned for c in m['connections']), 38)
+        self.assertEqual(len({(c['source'], c['target']) for c in m['connections']}), 137)
         for c in m['connections']:
+            self.assertEqual({e['type'] for e in c['records']}, {'prerequisite', 'dependent'})
             self.assertIn(c['source'], keys)
             self.assertIn(c['target'], keys)
             for e in c['records']:
@@ -58,6 +62,29 @@ class KnowledgeMapTests(unittest.TestCase):
         self.assertEqual(p[380]['completed_stage_ids'], [])
         self.assertIsNone(p[380]['required_topic_ids'])
         self.assertFalse(any(e['type'] == 'project_applies' for e in m['edges']))
+
+    def test_clusters_are_only_ancestry_based_presentation(self):
+        groups = {g['id']: g for g in self.model['layout_clusters']}
+        learned_groups = set()
+        for topic in self.model['topics']:
+            self.assertTrue(set(groups[topic['cluster_id']]['category_ids']) & set(topic['canonical_ancestry']))
+            if topic['is_learned'] is True:
+                learned_groups.add(topic['cluster_id'])
+        self.assertEqual(len(learned_groups), 6)
+        self.assertEqual(self.model['evidence'], build.load(ROOT / 'data/knowledge/evidence.json'))
+        allowed = {'id', 'title', 'category_ids'}
+        self.assertTrue(all(set(g) == allowed for g in build.load(build.CONFIG / 'clusters.json')['clusters']))
+
+    def test_invalid_cluster_configuration_fails_closed(self):
+        original = build.load
+        def read(path):
+            value = original(path)
+            if path.name == 'clusters.json':
+                value['clusters'][0]['category_ids'] = [999999]
+            return value
+        with patch.object(build, 'load', side_effect=read):
+            with self.assertRaisesRegex(ValueError, 'Invalid layout cluster'):
+                build.project_model()
 
     def test_bounded_production_summary_and_capability(self):
         m = self.model
@@ -90,7 +117,7 @@ class KnowledgeMapTests(unittest.TestCase):
             old.parent.mkdir(parents=True)
             old.write_text('Legacy route must remain untouched.')
             before = old.read_bytes()
-            # No V2 artifact exists: generation must read normalized sources.
+            # No runtime artifact exists: generation must read normalized sources.
             self.assertFalse((root / 'docs/knowledge-map/model.json').exists())
             self.assertEqual(build.encode(build.render(root)), build.encode(self.model))
             self.assertEqual(old.read_bytes(), before)

@@ -1,83 +1,102 @@
-# Knowledge Map build contract
+# Knowledge Map V3 build contract
 
-This directory contains **curated display configuration**, not Hyperskill facts.
-Domain → Subdomain → Topic follows the existing canonical category ancestry.
-Secondary hierarchy relations remain preserved in the raw tables. Counts use
-unique stable topic IDs. The only capability definition is Control Flow evidence,
-IDs 25, 89, 87, 88: currently 4/4 learned and 3/4 verified, never proficiency.
+This directory contains display configuration, not Hyperskill facts.
+display-map.json supplies ancestry-based domains/subdomains for the bounded
+profile summary. clusters.json defines six layout groups by category ancestor
+IDs and display titles. Remaining roadmap topics use the existing subdomain
+projection. Invalid or ambiguous cluster membership fails closed.
+
+Learned/verified, prerequisite/dependent, requirements and progress are never
+duplicated here. The existing Control Flow capability remains topic evidence
+IDs 25, 89, 87, 88: 4/4 learned and 3/4 verified, not proficiency.
 
 ## Rebuild / verify
 
-From repository root, with Python 3.10+:
+From repository root, Python 3.10+:
 
 ~~~bash
-PYTHONDONTWRITEBYTECODE=1 python3 scripts/build-knowledge-map.py
-PYTHONDONTWRITEBYTECODE=1 python3 scripts/build-knowledge-map.py --check
-PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s scripts/tests -p 'test_*.py'
+python3 scripts/build-knowledge-map.py
+python3 scripts/build-knowledge-map.py --check
+python3 -m unittest discover -s scripts/tests -p 'test_*.py'
 ~~~
 
-The generator reads normalized data/knowledge tables, the complete observations
-used by the existing validator, display-map.json and capabilities.json. It reuses
-the existing Knowledge Graph source validator without running that generator.
-Outputs are docs/knowledge-map/model.json and generated/profile-learning-summary.md.
---check validates and compares them without writes. --root supports isolated roots.
-No network, credentials, sessions or account access are needed.
+Normalized data/knowledge and observations pass the existing source validator.
+Outputs: docs/knowledge-map/model.json and the unchanged bounded
+generated/profile-learning-summary.md. --check compares deterministic artifacts
+without writes; --root supports isolated test roots. No API/session access.
+The model is never source-of-truth or an input to its own rebuild.
 
-Unmapped topics, missing evidence, dangling edges, invalid personal/application
-assertions and conflicting equally recent progress observations fail generation.
-Do not silently invent display placements or infer applied topics.
+## Runtime reference
 
-Runtime files are separately maintained under docs/knowledge-map. They were
-reviewed from preview commit 81d979c719b251356a77861cf454780a30c6338f; D3 7.9.0
-and its license are vendored locally. The generated model is not source-of-truth.
-It currently matches the public preview's model byte-for-byte.
+V3 app/style come from accepted preview commit
+3c1539db481159e2cf45eb2f69d5410f15dc0bd0; index branding is production-specific.
+Local D3 7.9.0 and its license are retained. Source generation reproduces the
+accepted preview model byte-for-byte without reading that artifact.
+docs/knowledge-graph remains unchanged as the historical/fallback route.
 
-## UI contract
+## Global graph contract
 
-Overview renders domains only, domain focus subdomains, subdomain focus paged
-topics. Topic focus replaces the scene with the selection and direct evidenced
-neighbors. Project evidence is separate; project_requires renders only after
-Show project connections. Unknown requirements are not an empty known set.
+Default My Knowledge shows only is_learned === true topics plus completed/active
+project diamonds. Every learned name is permanent and word-wrapped, not truncated.
+Verified is a separate ring. Failed/evaluation assessment does not reverse
+explicit learning. Roadmap includes all 89 course topics, with weaker hollow
+not-learned nodes. Applied IDs are unknown; only the aggregate is reported.
 
-My Knowledge draws only is_learned === true topics. Verification is additional
-evidence, not proficiency; failed assessment does not reverse explicit learning.
-Applied IDs remain null, with only the recorded aggregate shown.
+There are no visible category nodes or hierarchy edges. Real ancestry drives
+cluster forces and quiet captions. Ordered seeded starts, fixed simulation
+ticks, rectangle collisions and settling produce repeatable positions.
+Manual drag positions persist only within the page. Fit includes label bounds.
+Drag can reintroduce overlaps; no idle animation runs, including Reduced Motion.
 
-Wheel zoom >1.8 enters the nearest visible structural area; <0.75 returns up.
-Buttons and breadcrumbs provide equivalent accessible navigation. Query links
-encode domain/subdomain/topic/project, mode, course, page and connection opt-in.
-History pushState/popstate restores semantic context; camera and inspector
-pagination are transient. Topic scenes cap at 24 desktop / 6 mobile plus an
-optional project hub. Tablet columns adapt to width; rows adapt to label wrapping.
-Focus outline is rectangular, distinct from the small Verified ring.
+Prerequisite/dependent records with identical directed endpoints draw one arrow;
+all source records/provenance stay in Advanced / Evidence. Selection emphasizes
+direct neighbors and incident edges. Projects add no requirements by default.
+Explicit Show project connections reveals project_requires, never project_applies.
+Search centers/selects/opens the inspector; unlearned results switch to Roadmap.
+Clear removes selection/requirements; Fit separately restores the viewport.
 
-## Local runtime tests
+Zoom changes label density, not scene membership. Learned/project/selected/hover
+labels remain visible. Additional roadmap labels: degree >=7 below 0.65;
+in-view degree >=3 at 0.65–1.15; all in-view topics at >=1.15. Degree is a
+display priority, not proficiency. Mobile Fit is overview-only; zoom/search
+provides readable neighborhoods.
+
+Above 1200 px inspector/graph are side by side; at <=1200 inspector is below.
+ResizeObserver automatically recalculates Fit. Keyboard Tab/Enter/Space,
+search ArrowDown/Enter, Escape, dedicated focus ring and shapes/status text
+supplement pointer input and colors. Touch pinch/pan is supported.
+
+## Navigation compatibility
+
+The route remains unchanged, so existing profile CTA links open the map.
+As in the accepted preview, previous V2 domain/subdomain/topic/project query
+parameters and browser history do not restore drilldown/focus state.
+No new URL-state contract or profile changes are bundled into V3.
+
+## Local browser regression
 
 ~~~bash
 python3 -m http.server 8000 --bind 127.0.0.1 --directory docs
-~~~
-
-Install Playwright outside the repository or provide PLAYWRIGHT_MODULE and
-CHROMIUM_EXECUTABLE. No storage state or account sessions are used.
-
-~~~bash
 node scripts/tests/knowledge_map_browser.cjs http://127.0.0.1:8000/knowledge-map/
+ENGINE=firefox node scripts/tests/knowledge_map_browser.cjs http://127.0.0.1:8000/knowledge-map/
 node scripts/tests/knowledge_graph_browser.cjs http://127.0.0.1:8000/knowledge-graph/
 ~~~
 
-The V2 test visits every real topic, deep links, project requirements, keyboard
-and history in 1440/768/390/320 widths and both themes. Optional SCREENSHOT_DIR
-writes screenshots only to a caller-supplied local directory. No fixtures or
-screenshots are published.
+Supply Playwright externally through PLAYWRIGHT_MODULE, optionally
+CHROMIUM_EXECUTABLE/FIREFOX_EXECUTABLE. No saved account/session state.
+V3 tests widths 1440/1280/1200/1024/768/430/390/320 in both themes:
+exact counts, every learned name, four topic selections, search centering,
+project opt-in, roadmap density, keyboard, reload stability, breakpoint resizing,
+pan/zoom/touch, request failures and overflow. Optional SCREENSHOT_DIR and
+RESULTS_PATH write only to caller-supplied paths; no fixtures/screenshots publish.
 
-## Release isolation
+## Limits / release isolation
 
-The legacy docs/knowledge-graph and the normalized dataset must remain unchanged
-in this release. The production URL after reviewed merge is:
-https://planton361.github.io/hyperskill-projects/knowledge-map/
+Real-device/Safari and large dense graph testing remain separate. Layout is
+synchronous and may later need a worker. Resize restores Fit. The V2 drilldown
+browser contract is replaced by V3 global-scene assertions; all source-data
+contracts remain active.
 
-Current Pages publishes main/docs: pushing knowledge-map-release alone does NOT
-make this production route live. No automatic merge, Pages-setting change or
-profile integration belongs to this build process. The generated Markdown is only
-a proposal; it uses absolute production links and at most four knowledge-area rows
-(including Other), one course and one completed-project evidence item.
+Pages publishes main/docs. Release-branch push alone does not deploy production.
+Do not merge, change Pages settings, or modify the profile automatically.
+Normalized sources, prototypes and the old graph route are outside this release.
