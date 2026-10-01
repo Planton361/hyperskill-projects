@@ -225,11 +225,55 @@ def check_existing(target, payload, update):
         fail("Update ohne gültiges Importmanifest abgelehnt")
     old = json.loads(marker.read_text())["files"]
     actual = {str(p) for p in entries if (target / p).is_file()} - {MANIFEST}
-    if actual != set(old) or not set(old).issubset(payload):
+    expected = set(old) | {"README.md"}
+    if actual != expected or not set(old).issubset(payload):
         fail("Dateien fehlen, wurden ergänzt oder müssten gelöscht werden; manuelle Prüfung nötig")
     for name, sha in old.items():
         if digest((target / name).read_bytes()) != sha:
             fail(f"Lokale Änderung geschützt: {name}")
+
+
+def title_from_source(source, override):
+    if override:
+        return override
+    course = source / "course-info.yaml"
+    if not course.is_file() or course.is_symlink():
+        fail("Projekttitel konnte nicht zuverlässig erkannt werden; bitte --title angeben")
+    matches = re.findall(r"(?m)^title:\s*(.*?)\s*$", course.read_text(encoding="utf-8"))
+    if len(matches) != 1:
+        fail("Eindeutiger title-Eintrag in course-info.yaml fehlt; bitte --title angeben")
+    value = matches[0]
+    try:
+        if value.startswith('"'):
+            title = json.loads(value)
+        elif value.startswith("'"):
+            if not value.endswith("'"):
+                fail("Ungültiger YAML-Titel; bitte --title angeben")
+            title = value[1:-1].replace("''", "'")
+        else:
+            title = re.split(r"\s+#", value, maxsplit=1)[0].strip()
+    except (json.JSONDecodeError, TypeError):
+        fail("Ungültiger YAML-Titel; bitte --title angeben")
+    if not isinstance(title, str) or not title.strip():
+        fail("Leerer Hyperskill-Projekttitel; bitte --title angeben")
+    return title
+
+
+def safe_directory_name(title):
+    """Preserve normal titles; visibly replace unsafe cross-platform characters."""
+    safe = "".join("／" if ch == "/" else "＼" if ch == "\\"
+                   else "�" if ord(ch) < 32 or ord(ch) == 127 else ch for ch in title)
+    if safe in {"", ".", ".."} or len(safe.encode("utf-8")) > 240:
+        fail("Projekttitel ergibt keinen sicheren Verzeichnisnamen")
+    if safe != title:
+        print(f"WARNUNG: unsicheres Zeichen im Projekttitel; Ersetzung angewandt. "
+              f"Originalname={title!r}, Verzeichnisname={safe!r}.")
+    return safe
+
+
+def kotlin_string(value):
+    # JSON string escapes are valid Kotlin escapes except that '$' starts interpolation.
+    return json.dumps(value, ensure_ascii=False).replace("$", r"\$")
 
 
 def execute(args):
@@ -238,9 +282,9 @@ def execute(args):
         fail("Quelle und Repository müssen getrennte, nicht ineinander liegende Verzeichnisse sein")
     if args.language != "java":
         fail("Version 1 unterstützt nur einfache Java-Projekte; andere Sprachen benötigen einen geprüften Adapter")
-    if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", args.project_name):
-        fail("Projektname muss ein einfacher lowercase-kebab-case Name sein")
-    target = REPO / args.language / args.project_name
+    title = title_from_source(source, args.title)
+    directory_name = safe_directory_name(title)
+    target = REPO / args.language / directory_name
     if target.parent.is_symlink() or target.is_symlink():
         fail("Ziel darf kein Symlink sein")
     if git("rev-parse", "--show-toplevel", capture=True).stdout.strip() != str(REPO):
@@ -251,7 +295,7 @@ def execute(args):
     for name in ("build.gradle.kts", "settings.gradle.kts"):
         content = (TEMPLATES / "java-gradle" / (name + ".in")).read_text()
         for key, value in {"JAVA_VERSION": str(version), "MAIN_CLASS": main,
-                           "PROJECT_NAME": args.project_name}.items():
+                           "PROJECT_NAME": kotlin_string(directory_name)}.items():
             content = content.replace("@" + key + "@", value)
         payload[name] = content.encode()
     checksums = json.loads((TEMPLATES / "wrapper-sha256.json").read_text())
@@ -260,7 +304,6 @@ def execute(args):
         if digest(data) != checksums[name]:
             fail(f"Wrapper-Prüfsumme falsch: {name}")
         payload[name] = data
-    title = args.title or args.project_name.replace("-", " ").title()
     for field in (title, args.concepts):
         if any(ord(char) < 32 for char in field):
             fail("README-Felder dürfen keine Steuerzeichen enthalten")
@@ -270,15 +313,20 @@ def execute(args):
                 or urlsplit(url).query or urlsplit(url).fragment):
         fail("Projektlink muss https://hyperskill.org/projects/NUMMER sein")
     payload["README.md"] = (
-        f"# {title}\n\nSprache: Java {version}\n\nKonzepte: {args.concepts}\n\n"
-        f"Build: `./gradlew build`\n\nStart: `./gradlew run`\n\n"
-        f"Voraussetzung: JDK {max(17, version)} oder neuer für Gradle; Java-Zielversion {version}.\n"
+        f"# {title}\n\nLanguage: Java {version}\n\nTopics: {args.concepts}\n\n"
+        f"Build: `./gradlew build`\n\nRun: `./gradlew run`\n\n"
+        f"Requirement: JDK {max(17, version)} or newer for Gradle; Java target {version}.\n"
         + (f"\nHyperskill: {url}\n" if url else "")
     ).encode()
     validate(payload)
     check_existing(target, payload, args.update)
-    manifest = {"schema": 1, "language": "java", "java_version": version,
-                "files": {name: digest(data) for name, data in sorted(payload.items())}}
+    # README is intentionally user-maintained; the manifest protects generated
+    # files without preventing later documentation edits.
+    manifest = {"schema": 2, "language": "java", "java_version": version,
+                "original_project_name": title, "directory_name": directory_name,
+                "files": {name: digest(data) for name, data in sorted(payload.items())
+                          if name != "README.md"}}
+    print(f"Hyperskill-Titel: {title!r}; Zielordner: {directory_name!r}")
     payload[MANIFEST] = (json.dumps(manifest, indent=2) + "\n").encode()
     print(f"\nZiel: {target}")
     for name in sorted(payload):
@@ -296,14 +344,19 @@ def execute(args):
         with tempfile.TemporaryDirectory(prefix=".import-", dir=target.parent) as temporary:
             stage = Path(temporary) / "project"
             for name, data in payload.items():
+                if target.exists() and name == "README.md":
+                    continue
                 path = stage / name
                 path.parent.mkdir(parents=True, exist_ok=True)
                 path.write_bytes(data)
             (stage / "gradlew").chmod(0o755)
-            validate({name: (stage / name).read_bytes() for name in payload})
+            validate({name: (stage / name).read_bytes() for name in payload
+                       if (stage / name).is_file()})
             if target.exists():
                 # All old paths are retained. No source/target files are deleted.
                 for name in payload:
+                    if name == "README.md":
+                        continue
                     dest = target / name
                     dest.parent.mkdir(parents=True, exist_ok=True)
                     os.replace(stage / name, dest)
@@ -318,18 +371,19 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("source")
     parser.add_argument("language")
-    parser.add_argument("project_name")
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--update", action="store_true")
     parser.add_argument("--java-version", type=int)
     parser.add_argument("--main-class")
-    parser.add_argument("--title")
+    parser.add_argument("--title", help="override the title detected in course-info.yaml")
     parser.add_argument("--concepts", default="Konsolenein-/ausgabe, Kontrollfluss und Methoden")
     parser.add_argument("--project-url")
     args = parser.parse_args()
     try:
         if args.java_version is not None and not 8 <= args.java_version <= 99:
             fail("Ungültige Java-Version")
+        if not re.fullmatch(r"[a-z]+", args.language):
+            fail("Sprache muss ein einfaches Verzeichniskennzeichen sein, z. B. java")
         execute(args)
     except (ValueError, OSError, subprocess.CalledProcessError, KeyError) as error:
         print(f"ABBRUCH: {error}", file=sys.stderr)

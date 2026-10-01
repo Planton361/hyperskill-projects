@@ -24,7 +24,7 @@ def snapshot(root):
 
 class ImportTests(unittest.TestCase):
     def setUp(self):
-        self.tmp = tempfile.TemporaryDirectory()
+        self.tmp = tempfile.TemporaryDirectory(prefix="hyperskill paths ")
         self.addCleanup(self.tmp.cleanup)
         base = Path(self.tmp.name)
         self.repo = base / "repo"
@@ -42,8 +42,9 @@ class ImportTests(unittest.TestCase):
         self.build.write_text("def userJava = JavaVersion.current()\n")
         self.settings = self.source / "settings.gradle"
         self.settings.write_text("include 'util'\n")
+        (self.source / "course-info.yaml").write_text("title: Demo Project\n")
         self.approve_fixture_profile()
-        self.target = self.repo / "java/demo"
+        self.target = self.repo / "java/Demo Project"
 
     def approve_fixture_profile(self):
         data = {"files": {p.name: hashlib.sha256(p.read_bytes()).hexdigest()
@@ -55,7 +56,7 @@ class ImportTests(unittest.TestCase):
         cmd = ["python3", "-B", str(self.repo / "scripts/import-hyperskill-project")]
         if version:
             cmd += ["--java-version", "23"]
-        result = subprocess.run(cmd + list(flags) + [str(self.source), "java", "demo"],
+        result = subprocess.run(cmd + list(flags) + [str(self.source), "java"],
                                 text=True, capture_output=True)
         self.assertEqual(snapshot(self.source), before, "Importer modified its source")
         self.assertEqual(result.returncode, 0 if success else 2, result.stdout + result.stderr)
@@ -83,6 +84,12 @@ class ImportTests(unittest.TestCase):
                     "gradle/wrapper/gradle-wrapper.properties", "src/main/java/bot/Main.java"}
         self.assertEqual(set(snapshot(self.target)), expected)
         self.assertEqual((self.target / "src/main/java/bot/Main.java").read_bytes(), SIMPLE)
+        manifest = json.loads((self.target / ".hyperskill-import.json").read_text())
+        self.assertEqual(manifest["original_project_name"], "Demo Project")
+        self.assertEqual(manifest["directory_name"], "Demo Project")
+        self.assertNotIn("README.md", manifest["files"])
+        self.assertEqual((self.target / "settings.gradle.kts").read_text(),
+                         'rootProject.name = "Demo Project"\n')
         self.assertTrue(os.access(self.target / "gradlew", os.X_OK))
         self.assertEqual(subprocess.run(["git", "-C", str(self.repo), "rev-parse", "--verify", "HEAD"],
                                        capture_output=True).returncode, 128)
@@ -98,6 +105,30 @@ class ImportTests(unittest.TestCase):
         before = snapshot(self.target)
         self.assertIn("Lokale Änderung", self.invoke("--update", success=False))
         self.assertEqual(snapshot(self.target), before)
+
+    def test_project_title_override_and_safe_filename_documentation(self):
+        (self.source / "course-info.yaml").write_text("title: Original / Name\n")
+        output = self.invoke("--dry-run")
+        self.assertIn("WARNUNG", output)
+        self.assertIn("Original ／ Name", output)
+        self.invoke()
+        manifest = json.loads((self.repo / "java/Original ／ Name/.hyperskill-import.json").read_text())
+        self.assertEqual(manifest["original_project_name"], "Original / Name")
+        self.assertEqual(manifest["directory_name"], "Original ／ Name")
+        output = self.invoke("--dry-run", "--title", "Coffee Machine")
+        self.assertIn("Ziel: " + str(self.repo / "java/Coffee Machine"), output)
+
+    def test_title_is_required_when_not_reliably_detectable(self):
+        (self.source / "course-info.yaml").unlink()
+        self.assertIn("--title", self.invoke(success=False))
+
+    def test_update_preserves_user_edited_readme(self):
+        self.invoke()
+        readme = self.target / "README.md"
+        readme.write_text("Curated project documentation\n")
+        self.src.write_bytes(SIMPLE.replace(b"Hello", b"Updated"))
+        self.invoke("--update")
+        self.assertEqual(readme.read_text(), "Curated project documentation\n")
 
     def test_update_does_not_delete_missing_files(self):
         helper = self.src.with_name("Helper.java")
