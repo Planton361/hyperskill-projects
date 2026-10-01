@@ -5,7 +5,7 @@
     "project_requirements": [
       113
     ],
-    "topic_progress": "partial"
+    "topic_progress": "complete"
   },
   "edges": [
     {
@@ -4157,6 +4157,24 @@
     {
       "confidence": "explicit",
       "fields": [
+        "topic_id",
+        "is_learned",
+        "is_completed",
+        "is_skipped",
+        "verification_status",
+        "learned_topics_count"
+      ],
+      "id": "personal-topics-8-20261001",
+      "method": "user_supplied_authenticated_excerpt",
+      "note": "Owner-supplied sanitized JSON from authenticated progresses batch covering all 89 course topics, cross-checked against track-8. Learned is is_learned === true; verified is verification_status === \"verified\". No application claims.",
+      "observed_at": "2026-10-01T13:57:59.083Z",
+      "observed_on": "2026-10-01",
+      "snapshot_file": "observations/learned-2026-10-01.json",
+      "source": "hyperskill"
+    },
+    {
+      "confidence": "explicit",
+      "fields": [
         "id",
         "title",
         "language",
@@ -6677,12 +6695,15 @@
       ],
       "hyperskill_id": 1,
       "id": "topic:1",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "Method \"main\"",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/3489",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": 632.281,
       "y": 1019.46
     },
@@ -6693,12 +6714,15 @@
       ],
       "hyperskill_id": 1033,
       "id": "topic:1033",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "Calling methods",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/10973",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": 150.169,
       "y": 651.171
     },
@@ -6709,12 +6733,15 @@
       ],
       "hyperskill_id": 1038,
       "id": "topic:1038",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "Declaring methods",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/10982",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": 21.686,
       "y": 713.409
     },
@@ -6725,12 +6752,15 @@
       ],
       "hyperskill_id": 1087,
       "id": "topic:1087",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "Combining constants with enum",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/11514",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": -645.007,
       "y": 348.085
     },
@@ -6741,12 +6771,15 @@
       ],
       "hyperskill_id": 1088,
       "id": "topic:1088",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "Fields and methods in enum",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/11523",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": -855.723,
       "y": -40.986
     },
@@ -6757,12 +6790,15 @@
       ],
       "hyperskill_id": 112,
       "id": "topic:112",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "learned",
       "title": "Naming variables",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/3513",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": 745.186,
       "y": 802.828
     },
@@ -6773,12 +6809,15 @@
       ],
       "hyperskill_id": 113,
       "id": "topic:113",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "learned",
       "title": "Reading user input with Scanner",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/9055",
-      "verified": null,
+      "verification_status": "failed",
+      "verified": false,
       "x": 434.462,
       "y": 461.854
     },
@@ -6789,12 +6828,15 @@
       ],
       "hyperskill_id": 115,
       "id": "topic:115",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "Defining classes",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/3618",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": -351.342,
       "y": -68.928
     },
@@ -6805,12 +6847,15 @@
       ],
       "hyperskill_id": 116,
       "id": "topic:116",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "Instance methods",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/3495",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": -365.89,
       "y": 277.112
     },
@@ -6821,12 +6866,15 @@
       ],
       "hyperskill_id": 117,
       "id": "topic:117",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "What is object-oriented programming",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/3614",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": -953.771,
       "y": -829.985
     },
@@ -6837,12 +6885,15 @@
       ],
       "hyperskill_id": 12,
       "id": "topic:12",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "Multidimensional array",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/1933",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": 1028.112,
       "y": 530.518
     },
@@ -6853,12 +6904,15 @@
       ],
       "hyperskill_id": 120,
       "id": "topic:120",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "Multiple constructors",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/3538",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": -752.319,
       "y": 552.95
     },
@@ -6869,12 +6923,15 @@
       ],
       "hyperskill_id": 122,
       "id": "topic:122",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "Abstract class",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/3597",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": -239.808,
       "y": -1071.317
     },
@@ -6885,12 +6942,15 @@
       ],
       "hyperskill_id": 1248,
       "id": "topic:1248",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "learned",
       "title": "Coding style conventions",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/12411",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": 922.832,
       "y": 929.802
     },
@@ -6901,12 +6961,15 @@
       ],
       "hyperskill_id": 127,
       "id": "topic:127",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "Keyword \"super\"",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/3588",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": -1045.736,
       "y": 147.999
     },
@@ -6917,12 +6980,15 @@
       ],
       "hyperskill_id": 128,
       "id": "topic:128",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "Referencing subclass objects",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/3585",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": -185.549,
       "y": -299.142
     },
@@ -6933,12 +6999,15 @@
       ],
       "hyperskill_id": 14,
       "id": "topic:14",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "learned",
       "title": "Types and variables",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/3518",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": 541.471,
       "y": 467.088
     },
@@ -6949,12 +7018,15 @@
       ],
       "hyperskill_id": 1425,
       "id": "topic:1425",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "Debugging techniques",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/13775",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": -289.81,
       "y": -743.291
     },
@@ -6965,12 +7037,15 @@
       ],
       "hyperskill_id": 146,
       "id": "topic:146",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "learned",
       "title": "Arithmetic operations",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/3519",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": 470.337,
       "y": 841.458
     },
@@ -6981,12 +7056,15 @@
       ],
       "hyperskill_id": 147,
       "id": "topic:147",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "learned",
       "title": "Basic literals: numbers, strings and characters",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/3522",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": 226.04,
       "y": 828.126
     },
@@ -6997,12 +7075,15 @@
       ],
       "hyperskill_id": 1476,
       "id": "topic:1476",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "learned",
       "title": "Debugging overview",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/14368",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": 379.118,
       "y": -627.063
     },
@@ -7013,12 +7094,15 @@
       ],
       "hyperskill_id": 148,
       "id": "topic:148",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "learned",
       "title": "Writing first program",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/3521",
-      "verified": null,
+      "verification_status": "verified",
+      "verified": true,
       "x": 405.161,
       "y": 1043.937
     },
@@ -7029,12 +7113,15 @@
       ],
       "hyperskill_id": 149,
       "id": "topic:149",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "Basic terms: JVM, JRE, JDK",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/3499",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": -1068.089,
       "y": -462.741
     },
@@ -7046,12 +7133,13 @@
       "hyperskill_id": 15,
       "id": "topic:15",
       "progress_evidence_ids": [
-        "personal-topic-15"
+        "personal-topics-8-20261001"
       ],
       "status": "learned",
       "title": "Introduction to Java",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/38627",
+      "verification_status": "verified",
       "verified": true,
       "x": 621.447,
       "y": 465.754
@@ -7063,12 +7151,15 @@
       ],
       "hyperskill_id": 152,
       "id": "topic:152",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "learned",
       "title": "One-line condition with ternary operator",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/3506",
-      "verified": null,
+      "verification_status": "verified",
+      "verified": true,
       "x": -223.127,
       "y": 534.865
     },
@@ -7079,12 +7170,15 @@
       ],
       "hyperskill_id": 161,
       "id": "topic:161",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "learned",
       "title": "Primitive data types and their sizes",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/3532",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": 363.706,
       "y": -288.17
     },
@@ -7095,12 +7189,15 @@
       ],
       "hyperskill_id": 163,
       "id": "topic:163",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "Errors in programs",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/3536",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": 140.055,
       "y": 210.179
     },
@@ -7111,12 +7208,15 @@
       ],
       "hyperskill_id": 164,
       "id": "topic:164",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "NullPointerException",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/1945",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": -467.276,
       "y": 455.332
     },
@@ -7127,12 +7227,15 @@
       ],
       "hyperskill_id": 165,
       "id": "topic:165",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "Array exceptions",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/1940",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": -272.887,
       "y": 252.615
     },
@@ -7143,12 +7246,15 @@
       ],
       "hyperskill_id": 17,
       "id": "topic:17",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "Initializing new instances. Constructor",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/3535",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": -701.093,
       "y": 206.468
     },
@@ -7159,12 +7265,15 @@
       ],
       "hyperskill_id": 1761,
       "id": "topic:1761",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "learned",
       "title": "Debugging simple constructs",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/16479",
-      "verified": null,
+      "verification_status": "verified",
+      "verified": true,
       "x": -183.804,
       "y": -335.608
     },
@@ -7175,12 +7284,15 @@
       ],
       "hyperskill_id": 19,
       "id": "topic:19",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "Break and continue. Branching",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/3507",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": 41.055,
       "y": 548.639
     },
@@ -7191,12 +7303,15 @@
       ],
       "hyperskill_id": 191,
       "id": "topic:191",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "Write, compile, and run",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/3739",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": -799.098,
       "y": -20.149
     },
@@ -7207,12 +7322,15 @@
       ],
       "hyperskill_id": 192,
       "id": "topic:192",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "Compile and run Java from CLI",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/3746",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": -360.508,
       "y": -905.414
     },
@@ -7223,12 +7341,15 @@
       ],
       "hyperskill_id": 193,
       "id": "topic:193",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "learned",
       "title": "Printing data",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/3749",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": 658.113,
       "y": 834.723
     },
@@ -7239,12 +7360,15 @@
       ],
       "hyperskill_id": 2,
       "id": "topic:2",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "Polymorphism",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/3587",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": -611.226,
       "y": -691.252
     },
@@ -7255,12 +7379,15 @@
       ],
       "hyperskill_id": 201,
       "id": "topic:201",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "StringBuilder",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/3812",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": 737.276,
       "y": -266.967
     },
@@ -7271,12 +7398,15 @@
       ],
       "hyperskill_id": 2108,
       "id": "topic:2108",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "java.util.Arrays",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/19365",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": 163.568,
       "y": 1099.742
     },
@@ -7287,12 +7417,15 @@
       ],
       "hyperskill_id": 24,
       "id": "topic:24",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "Getters and setters",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/3599",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": -968.543,
       "y": -516.438
     },
@@ -7303,12 +7436,15 @@
       ],
       "hyperskill_id": 25,
       "id": "topic:25",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "learned",
       "title": "Conditional statement",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/3503",
-      "verified": null,
+      "verification_status": "verified",
+      "verified": true,
       "x": 61.528,
       "y": 601.945
     },
@@ -7319,12 +7455,15 @@
       ],
       "hyperskill_id": 259,
       "id": "topic:259",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "learned",
       "title": "IDE",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/10996",
-      "verified": null,
+      "verification_status": "verified",
+      "verified": true,
       "x": -423.569,
       "y": -114.031
     },
@@ -7335,12 +7474,15 @@
       ],
       "hyperskill_id": 260,
       "id": "topic:260",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "learned",
       "title": "IntelliJ IDEA",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/37202",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": 202.807,
       "y": -329.878
     },
@@ -7351,12 +7493,15 @@
       ],
       "hyperskill_id": 27,
       "id": "topic:27",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "learned",
       "title": "Integer types and operations",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/3565",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": 227.227,
       "y": 891.013
     },
@@ -7367,12 +7512,15 @@
       ],
       "hyperskill_id": 28,
       "id": "topic:28",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "Access modifiers",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/3589",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": -869.687,
       "y": -160.818
     },
@@ -7383,12 +7531,15 @@
       ],
       "hyperskill_id": 30,
       "id": "topic:30",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "learned",
       "title": "Comments",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/3520",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": 817.395,
       "y": 613.221
     },
@@ -7399,12 +7550,15 @@
       ],
       "hyperskill_id": 307,
       "id": "topic:307",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "learned",
       "title": "Increment and decrement",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/5008",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": -174.794,
       "y": 770.224
     },
@@ -7415,12 +7569,15 @@
       ],
       "hyperskill_id": 308,
       "id": "topic:308",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "learned",
       "title": "Numeric literals",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/10545",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": 191.779,
       "y": -1093.267
     },
@@ -7431,12 +7588,15 @@
       ],
       "hyperskill_id": 309,
       "id": "topic:309",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "learned",
       "title": "Primitive and reference types",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/5035",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": 604.999,
       "y": 301.737
     },
@@ -7447,12 +7607,15 @@
       ],
       "hyperskill_id": 31,
       "id": "topic:31",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "learned",
       "title": "Characters",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/3514",
-      "verified": null,
+      "verification_status": "verified",
+      "verified": true,
       "x": -181.908,
       "y": 659.184
     },
@@ -7463,12 +7626,15 @@
       ],
       "hyperskill_id": 32,
       "id": "topic:32",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "learned",
       "title": "Type casting",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/3510",
-      "verified": null,
+      "verification_status": "verified",
+      "verified": true,
       "x": 479.764,
       "y": -257.783
     },
@@ -7479,12 +7645,15 @@
       ],
       "hyperskill_id": 33,
       "id": "topic:33",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "Multiple conditions: switch",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/3504",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": 447.267,
       "y": 996.699
     },
@@ -7495,12 +7664,15 @@
       ],
       "hyperskill_id": 348,
       "id": "topic:348",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "learned",
       "title": "What are bugs",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/5504",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": 31.049,
       "y": -704.576
     },
@@ -7511,12 +7683,15 @@
       ],
       "hyperskill_id": 3538,
       "id": "topic:3538",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "learned",
       "title": "Run and debug with IntelliJ IDEA",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/37206",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": 330.247,
       "y": -470.933
     },
@@ -7527,12 +7702,15 @@
       ],
       "hyperskill_id": 36,
       "id": "topic:36",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "learned",
       "title": "Floating-point types and operations",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/3517",
-      "verified": null,
+      "verification_status": "verified",
+      "verified": true,
       "x": 36.455,
       "y": 807.446
     },
@@ -7543,12 +7721,15 @@
       ],
       "hyperskill_id": 360,
       "id": "topic:360",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "Introduction to logging",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/5538",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": 283.687,
       "y": -1122.287
     },
@@ -7559,12 +7740,15 @@
       ],
       "hyperskill_id": 37,
       "id": "topic:37",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "Overloading",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/3525",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": -95.368,
       "y": 1046.006
     },
@@ -7575,12 +7759,15 @@
       ],
       "hyperskill_id": 38,
       "id": "topic:38",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "Static members",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/3534",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": -531.568,
       "y": 96.82
     },
@@ -7591,12 +7778,15 @@
       ],
       "hyperskill_id": 387,
       "id": "topic:387",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "IntelliJ IDEA basics",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/5819",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": 477.774,
       "y": -214.21
     },
@@ -7607,12 +7797,15 @@
       ],
       "hyperskill_id": 4,
       "id": "topic:4",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "Array",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/3511",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": 215.268,
       "y": 664.138
     },
@@ -7623,12 +7816,15 @@
       ],
       "hyperskill_id": 4510,
       "id": "topic:4510",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "Introduction to AI in software development",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/49313",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": 234.825,
       "y": -1006.476
     },
@@ -7639,12 +7835,15 @@
       ],
       "hyperskill_id": 4533,
       "id": "topic:4533",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "Integrating AI tools into your workflow",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/50011",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": 1106.595,
       "y": -114.917
     },
@@ -7655,12 +7854,15 @@
       ],
       "hyperskill_id": 4635,
       "id": "topic:4635",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "Debugging methods",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/52095",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": -886.5,
       "y": -311.632
     },
@@ -7671,12 +7873,15 @@
       ],
       "hyperskill_id": 480,
       "id": "topic:480",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "Command line overview",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/8977",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": 707.457,
       "y": -1097.194
     },
@@ -7687,12 +7892,15 @@
       ],
       "hyperskill_id": 491,
       "id": "topic:491",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "Protected modifier",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/6692",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": -497.238,
       "y": 15.143
     },
@@ -7703,12 +7911,15 @@
       ],
       "hyperskill_id": 5,
       "id": "topic:5",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "Method overriding",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/3572",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": -755.49,
       "y": -280.608
     },
@@ -7719,12 +7930,15 @@
       ],
       "hyperskill_id": 5028,
       "id": "topic:5028",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "Core workflows with AI tools",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/53230",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": 1052.035,
       "y": -572.825
     },
@@ -7735,12 +7949,15 @@
       ],
       "hyperskill_id": 5107,
       "id": "topic:5107",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "Hyperskill Academy plugin",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/53354",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": -21.048,
       "y": 283.438
     },
@@ -7751,12 +7968,15 @@
       ],
       "hyperskill_id": 518,
       "id": "topic:518",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "Formatted output",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/7046",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": 400.317,
       "y": -794.504
     },
@@ -7767,12 +7987,15 @@
       ],
       "hyperskill_id": 571,
       "id": "topic:571",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "learned",
       "title": "Constants. Final variables",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/7427",
-      "verified": null,
+      "verification_status": "verified",
+      "verified": true,
       "x": 344.397,
       "y": 309.385
     },
@@ -7783,12 +8006,15 @@
       ],
       "hyperskill_id": 59,
       "id": "topic:59",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "Hierarchy of exceptions",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/3570",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": -827.338,
       "y": 179.766
     },
@@ -7799,12 +8025,15 @@
       ],
       "hyperskill_id": 60,
       "id": "topic:60",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "First glance at exceptions",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/3497",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": -176.173,
       "y": 321.848
     },
@@ -7815,12 +8044,15 @@
       ],
       "hyperskill_id": 65,
       "id": "topic:65",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "Exception handling",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/3552",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": -886.461,
       "y": 718.151
     },
@@ -7831,12 +8063,15 @@
       ],
       "hyperskill_id": 7,
       "id": "topic:7",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "Grouping classes with packages",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/3621",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": -861.301,
       "y": -500.738
     },
@@ -7847,12 +8082,15 @@
       ],
       "hyperskill_id": 78,
       "id": "topic:78",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "Adding annotations",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/3622",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": 18.321,
       "y": -200.822
     },
@@ -7863,12 +8101,15 @@
       ],
       "hyperskill_id": 8,
       "id": "topic:8",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "Inheritance",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/3583",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": -997.958,
       "y": -10.67
     },
@@ -7879,12 +8120,15 @@
       ],
       "hyperskill_id": 851,
       "id": "topic:851",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "Introduction to Linux",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/9526",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": 467.77,
       "y": -1105.013
     },
@@ -7895,12 +8139,15 @@
       ],
       "hyperskill_id": 87,
       "id": "topic:87",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "learned",
       "title": "Boolean type and operations. True and false",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/3516",
-      "verified": null,
+      "verification_status": "verified",
+      "verified": true,
       "x": 181.472,
       "y": 1012.292
     },
@@ -7911,12 +8158,15 @@
       ],
       "hyperskill_id": 872,
       "id": "topic:872",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "Operating systems",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/9704",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": -365.872,
       "y": -977.771
     },
@@ -7927,12 +8177,15 @@
       ],
       "hyperskill_id": 876,
       "id": "topic:876",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "Parameters and options",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/9746",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": 570.155,
       "y": -948.067
     },
@@ -7943,12 +8196,15 @@
       ],
       "hyperskill_id": 88,
       "id": "topic:88",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "learned",
       "title": "Comparing values. Relational operators",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/3512",
-      "verified": null,
+      "verification_status": "verified",
+      "verified": true,
       "x": 14.781,
       "y": 1067.631
     },
@@ -7959,12 +8215,15 @@
       ],
       "hyperskill_id": 89,
       "id": "topic:89",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "learned",
       "title": "For loop",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/3505",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": -116.641,
       "y": 137.251
     },
@@ -7975,12 +8234,15 @@
       ],
       "hyperskill_id": 9,
       "id": "topic:9",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "learned",
       "title": "String",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/3523",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": 231.705,
       "y": 5.848
     },
@@ -7991,12 +8253,15 @@
       ],
       "hyperskill_id": 90,
       "id": "topic:90",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "While and do-while loops",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/3498",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": -371.273,
       "y": 770.599
     },
@@ -8007,12 +8272,15 @@
       ],
       "hyperskill_id": 96,
       "id": "topic:96",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "Objects and their properties",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/4727",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": 118.289,
       "y": -68.711
     },
@@ -8023,12 +8291,15 @@
       ],
       "hyperskill_id": 97,
       "id": "topic:97",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "Iterating over arrays",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/3602",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": 332.737,
       "y": 696.396
     },
@@ -8039,12 +8310,15 @@
       ],
       "hyperskill_id": 98,
       "id": "topic:98",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "Processing strings",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/3551",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": 64.904,
       "y": 175.507
     },
@@ -8055,12 +8329,15 @@
       ],
       "hyperskill_id": 985,
       "id": "topic:985",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "Functional decomposition",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/10570",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": 452.939,
       "y": 736.555
     },
@@ -8071,12 +8348,15 @@
       ],
       "hyperskill_id": 99,
       "id": "topic:99",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "Arrays as parameters",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/3594",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": -166.092,
       "y": 933.592
     },
@@ -8087,12 +8367,15 @@
       ],
       "hyperskill_id": 999,
       "id": "topic:999",
-      "progress_evidence_ids": [],
-      "status": "unknown",
+      "progress_evidence_ids": [
+        "personal-topics-8-20261001"
+      ],
+      "status": "not_learned",
       "title": "IntelliJ IDEA run configurations",
       "type": "topic",
       "url": "https://hyperskill.org/learn/step/10630",
-      "verified": null,
+      "verification_status": "evaluation",
+      "verified": false,
       "x": 564.292,
       "y": -762.37
     }
@@ -8110,13 +8393,61 @@
         "course_id": 8,
         "evidence_ids": [
           "personal-course-8",
-          "personal-plan"
+          "personal-plan",
+          "personal-topics-8-20261001"
         ],
-        "learned_topic_ids": null,
+        "learned_observed_at": "2026-10-01T13:57:59.083Z",
+        "learned_topic_ids": [
+          9,
+          14,
+          15,
+          25,
+          27,
+          30,
+          31,
+          32,
+          36,
+          87,
+          88,
+          89,
+          112,
+          113,
+          146,
+          147,
+          148,
+          152,
+          161,
+          193,
+          259,
+          260,
+          307,
+          308,
+          309,
+          348,
+          571,
+          1248,
+          1476,
+          1761,
+          3538
+        ],
         "learned_topics_count": 31,
         "learned_topics_total": 89,
         "skipped_topics_count": 0,
-        "topic_status_coverage": "partial"
+        "topic_status_coverage": "complete",
+        "verified_topic_ids": [
+          15,
+          25,
+          31,
+          32,
+          36,
+          87,
+          88,
+          148,
+          152,
+          259,
+          571,
+          1761
+        ]
       }
     ],
     "projects": [
@@ -8144,15 +8475,1248 @@
       {
         "course_id": 8,
         "evidence_ids": [
-          "personal-topic-15"
+          "personal-topics-8-20261001"
         ],
         "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 1,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 2,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 4,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 5,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 7,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 8,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": true,
+        "is_learned": true,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 9,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 12,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": true,
+        "is_learned": true,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 14,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": true,
         "is_learned": true,
         "is_skipped": false,
         "is_verified": true,
-        "observed_stage_position": 1,
+        "observed_at": "2026-10-01T13:57:59.083Z",
         "topic_id": 15,
         "verification_status": "verified"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 17,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 19,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 24,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": true,
+        "is_learned": true,
+        "is_skipped": false,
+        "is_verified": true,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 25,
+        "verification_status": "verified"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": true,
+        "is_learned": true,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 27,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 28,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": true,
+        "is_learned": true,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 30,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": true,
+        "is_learned": true,
+        "is_skipped": false,
+        "is_verified": true,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 31,
+        "verification_status": "verified"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": true,
+        "is_learned": true,
+        "is_skipped": false,
+        "is_verified": true,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 32,
+        "verification_status": "verified"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 33,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": true,
+        "is_learned": true,
+        "is_skipped": false,
+        "is_verified": true,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 36,
+        "verification_status": "verified"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 37,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 38,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 59,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 60,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 65,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 78,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": true,
+        "is_learned": true,
+        "is_skipped": false,
+        "is_verified": true,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 87,
+        "verification_status": "verified"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": true,
+        "is_learned": true,
+        "is_skipped": false,
+        "is_verified": true,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 88,
+        "verification_status": "verified"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": true,
+        "is_learned": true,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 89,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 90,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 96,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 97,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 98,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 99,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": true,
+        "is_learned": true,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 112,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": true,
+        "is_learned": true,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 113,
+        "verification_status": "failed"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 115,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 116,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 117,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 120,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 122,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 127,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 128,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": true,
+        "is_learned": true,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 146,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": true,
+        "is_learned": true,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 147,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": true,
+        "is_learned": true,
+        "is_skipped": false,
+        "is_verified": true,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 148,
+        "verification_status": "verified"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 149,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": true,
+        "is_learned": true,
+        "is_skipped": false,
+        "is_verified": true,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 152,
+        "verification_status": "verified"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": true,
+        "is_learned": true,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 161,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 163,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 164,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 165,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 191,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 192,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": true,
+        "is_learned": true,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 193,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 201,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": true,
+        "is_learned": true,
+        "is_skipped": false,
+        "is_verified": true,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 259,
+        "verification_status": "verified"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": true,
+        "is_learned": true,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 260,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": true,
+        "is_learned": true,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 307,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": true,
+        "is_learned": true,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 308,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": true,
+        "is_learned": true,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 309,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": true,
+        "is_learned": true,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 348,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 360,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 387,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 480,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 491,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 518,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": true,
+        "is_learned": true,
+        "is_skipped": false,
+        "is_verified": true,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 571,
+        "verification_status": "verified"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 851,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 872,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 876,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 985,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 999,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 1033,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 1038,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 1087,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 1088,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": true,
+        "is_learned": true,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 1248,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 1425,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": true,
+        "is_learned": true,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 1476,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": true,
+        "is_learned": true,
+        "is_skipped": false,
+        "is_verified": true,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 1761,
+        "verification_status": "verified"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 2108,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": true,
+        "is_learned": true,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 3538,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 4510,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 4533,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 4635,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 5028,
+        "verification_status": "evaluation"
+      },
+      {
+        "course_id": 8,
+        "evidence_ids": [
+          "personal-topics-8-20261001"
+        ],
+        "is_applied": null,
+        "is_completed": false,
+        "is_learned": false,
+        "is_skipped": false,
+        "is_verified": false,
+        "observed_at": "2026-10-01T13:57:59.083Z",
+        "topic_id": 5107,
+        "verification_status": "evaluation"
       }
     ]
   },

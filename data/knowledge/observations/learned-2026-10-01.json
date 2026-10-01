@@ -1,0 +1,665 @@
+{
+  "applied_topic_ids": null,
+  "course_id": 8,
+  "learned_topic_ids": [
+    9,
+    14,
+    15,
+    25,
+    27,
+    30,
+    31,
+    32,
+    36,
+    87,
+    88,
+    89,
+    112,
+    113,
+    146,
+    147,
+    148,
+    152,
+    161,
+    193,
+    259,
+    260,
+    307,
+    308,
+    309,
+    348,
+    571,
+    1248,
+    1476,
+    1761,
+    3538
+  ],
+  "learned_topics_count": 31,
+  "observed_at": "2026-10-01T13:57:59.083Z",
+  "skipped_topics_count": 0,
+  "topics": [
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 1,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 2,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 4,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 5,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 7,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 8,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": true,
+      "is_learned": true,
+      "is_skipped": false,
+      "topic_id": 9,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 12,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": true,
+      "is_learned": true,
+      "is_skipped": false,
+      "topic_id": 14,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": true,
+      "is_learned": true,
+      "is_skipped": false,
+      "topic_id": 15,
+      "verification_status": "verified"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 17,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 19,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 24,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": true,
+      "is_learned": true,
+      "is_skipped": false,
+      "topic_id": 25,
+      "verification_status": "verified"
+    },
+    {
+      "is_completed": true,
+      "is_learned": true,
+      "is_skipped": false,
+      "topic_id": 27,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 28,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": true,
+      "is_learned": true,
+      "is_skipped": false,
+      "topic_id": 30,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": true,
+      "is_learned": true,
+      "is_skipped": false,
+      "topic_id": 31,
+      "verification_status": "verified"
+    },
+    {
+      "is_completed": true,
+      "is_learned": true,
+      "is_skipped": false,
+      "topic_id": 32,
+      "verification_status": "verified"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 33,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": true,
+      "is_learned": true,
+      "is_skipped": false,
+      "topic_id": 36,
+      "verification_status": "verified"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 37,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 38,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 59,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 60,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 65,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 78,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": true,
+      "is_learned": true,
+      "is_skipped": false,
+      "topic_id": 87,
+      "verification_status": "verified"
+    },
+    {
+      "is_completed": true,
+      "is_learned": true,
+      "is_skipped": false,
+      "topic_id": 88,
+      "verification_status": "verified"
+    },
+    {
+      "is_completed": true,
+      "is_learned": true,
+      "is_skipped": false,
+      "topic_id": 89,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 90,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 96,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 97,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 98,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 99,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": true,
+      "is_learned": true,
+      "is_skipped": false,
+      "topic_id": 112,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": true,
+      "is_learned": true,
+      "is_skipped": false,
+      "topic_id": 113,
+      "verification_status": "failed"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 115,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 116,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 117,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 120,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 122,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 127,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 128,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": true,
+      "is_learned": true,
+      "is_skipped": false,
+      "topic_id": 146,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": true,
+      "is_learned": true,
+      "is_skipped": false,
+      "topic_id": 147,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": true,
+      "is_learned": true,
+      "is_skipped": false,
+      "topic_id": 148,
+      "verification_status": "verified"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 149,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": true,
+      "is_learned": true,
+      "is_skipped": false,
+      "topic_id": 152,
+      "verification_status": "verified"
+    },
+    {
+      "is_completed": true,
+      "is_learned": true,
+      "is_skipped": false,
+      "topic_id": 161,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 163,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 164,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 165,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 191,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 192,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": true,
+      "is_learned": true,
+      "is_skipped": false,
+      "topic_id": 193,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 201,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": true,
+      "is_learned": true,
+      "is_skipped": false,
+      "topic_id": 259,
+      "verification_status": "verified"
+    },
+    {
+      "is_completed": true,
+      "is_learned": true,
+      "is_skipped": false,
+      "topic_id": 260,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": true,
+      "is_learned": true,
+      "is_skipped": false,
+      "topic_id": 307,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": true,
+      "is_learned": true,
+      "is_skipped": false,
+      "topic_id": 308,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": true,
+      "is_learned": true,
+      "is_skipped": false,
+      "topic_id": 309,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": true,
+      "is_learned": true,
+      "is_skipped": false,
+      "topic_id": 348,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 360,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 387,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 480,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 491,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 518,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": true,
+      "is_learned": true,
+      "is_skipped": false,
+      "topic_id": 571,
+      "verification_status": "verified"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 851,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 872,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 876,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 985,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 999,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 1033,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 1038,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 1087,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 1088,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": true,
+      "is_learned": true,
+      "is_skipped": false,
+      "topic_id": 1248,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 1425,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": true,
+      "is_learned": true,
+      "is_skipped": false,
+      "topic_id": 1476,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": true,
+      "is_learned": true,
+      "is_skipped": false,
+      "topic_id": 1761,
+      "verification_status": "verified"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 2108,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": true,
+      "is_learned": true,
+      "is_skipped": false,
+      "topic_id": 3538,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 4510,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 4533,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 4635,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 5028,
+      "verification_status": "evaluation"
+    },
+    {
+      "is_completed": false,
+      "is_learned": false,
+      "is_skipped": false,
+      "topic_id": 5107,
+      "verification_status": "evaluation"
+    }
+  ]
+}

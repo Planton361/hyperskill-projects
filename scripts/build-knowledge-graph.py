@@ -8,10 +8,12 @@ from pathlib import Path
 
 TABLES = ('courses', 'categories', 'topics', 'projects', 'stages', 'edges', 'progress', 'evidence')
 TYPES = {'courses': 'course', 'categories': 'category', 'topics': 'topic', 'projects': 'project', 'stages': 'stage'}
-COLORS = {'course': '#c9afff', 'category': '#818da9', 'unknown': '#647087', 'learned': '#79dcb4', 'completed': '#79dcb4', 'active': '#efbb79', 'available': '#9aa8ed'}
+COLORS = {'course': '#c9afff', 'category': '#818da9', 'unknown': '#647087', 'not_learned': '#647087', 'learned': '#79dcb4', 'completed': '#79dcb4', 'active': '#efbb79', 'available': '#9aa8ed'}
 
 def load(root):
-    return {name: json.loads((root / 'data/knowledge' / (name + '.json')).read_text()) for name in TABLES}
+    data = {name: json.loads((root / 'data/knowledge' / (name + '.json')).read_text()) for name in TABLES}
+    data['observations'] = {'observations/'+p.name: json.loads(p.read_text()) for p in sorted((root/'data/knowledge/observations').glob('*.json'))}
+    return data
 
 def validate(data):
     def require(ok, message):
@@ -66,12 +68,36 @@ def validate(data):
         for field in ('required_topic_ids','cumulative_required_topic_ids'):
             require(all(f'topic:{i}' in entities for i in stage[field]), 'missing stage topic')
     p = data['progress']
+    for snapshot in data.get('observations', {}).values():
+        course = entities.get(f"course:{snapshot['course_id']}")
+        require(course is not None, 'unknown observation course')
+        rows = snapshot['topics']
+        ids = [r['topic_id'] for r in rows]
+        require(len(ids) == len(set(ids)) and set(ids) == set(course['topic_ids']), 'observation coverage mismatch')
+        require(all(type(r['is_learned']) is bool and type(r['is_skipped']) is bool for r in rows), 'invalid observation booleans')
+        learned = sorted(r['topic_id'] for r in rows if r['is_learned'])
+        require(snapshot['learned_topic_ids'] == learned and len(learned) == snapshot['learned_topics_count'], 'observation learned mismatch')
+        require(sum(r['is_skipped'] for r in rows) == snapshot['skipped_topics_count'], 'observation skipped mismatch')
     for table, kind in [('courses','course'),('topics','topic'),('projects','project')]:
         require(len({x[kind+'_id'] for x in p[table]}) == len(p[table]), 'duplicate progress')
         for item in p[table]:
             require(f"{kind}:{item[kind+'_id']}" in entities, 'unknown progress entity')
             check_evidence(item)
     for item in p['topics']:
+        require(type(item.get('is_learned')) is bool, 'non-boolean learned status')
+        require(type(item.get('is_skipped')) is bool, 'non-boolean skipped status')
+        expected_verified = None if item.get('verification_status') is None else item['verification_status'] == 'verified'
+        require(item.get('is_verified') is expected_verified, 'verification status mismatch')
+        for ref in item['evidence_ids']:
+            filename = evidence[ref].get('snapshot_file')
+            if filename:
+                snapshot = data.get('observations', {}).get(filename)
+                require(snapshot is not None, 'missing observation snapshot')
+                matches = [t for t in snapshot['topics'] if t['topic_id'] == item['topic_id']]
+                require(len(matches) == 1, 'missing or duplicate observation topic')
+                require(snapshot['course_id'] == item['course_id'], 'observation course mismatch')
+                require(item.get('observed_at') == snapshot['observed_at'], 'observation timestamp mismatch')
+                require(all(item.get(k) == matches[0].get(k) for k in ('is_learned','is_skipped','is_completed','verification_status')), 'status disagrees with observation')
         if item.get('is_applied') is True:
             assertion = {'type':'topic_applied','topic_id':item['topic_id']}
             require(any(evidence[e].get('assertion') == assertion for e in item['evidence_ids']), 'unproven applied topic')
@@ -83,8 +109,17 @@ def validate(data):
         for field, count, status in [('learned_topic_ids','learned_topics_count','is_learned'),('applied_topic_ids','applied_topics_count','is_applied')]:
             if item[field] is not None:
                 require(len(set(item[field])) == len(item[field]) == item[count], 'incomplete full status set')
-                explicit = {t['topic_id'] for t in p['topics'] if t.get(status) is True}
-                require(set(item[field]) <= explicit, 'unproven full status set')
+                explicit = {t['topic_id'] for t in p['topics'] if t.get(status) is True and t['course_id'] == item['course_id']}
+                require(set(item[field]) == explicit, 'unproven full status set')
+        if item.get('topic_status_coverage') == 'complete':
+            rows = [t for t in p['topics'] if t['course_id'] == item['course_id']]
+            require({t['topic_id'] for t in rows} == set(course['topic_ids']), 'incomplete topic coverage')
+            require(sum(t['is_learned'] for t in rows) == item['learned_topics_count'], 'learned count mismatch')
+            require(sum(t['is_skipped'] for t in rows) == item['skipped_topics_count'], 'skipped count mismatch')
+            verified = sorted(t['topic_id'] for t in rows if t['is_verified'] is True)
+            require(item.get('verified_topic_ids') == verified, 'verified IDs mismatch')
+            for t in rows:
+                require(any(evidence[e].get('snapshot_file') for e in t['evidence_ids']), 'complete status needs observation evidence')
     targets = {e['target'] for e in data['edges'] if e['type'] == 'project_requires' and e['source'] == 'project:113'}
     require(len(targets) == 26, 'project 113 must have 26 distinct required topics')
     active = next(x for x in p['projects'] if x['project_id'] == 380)
@@ -133,7 +168,8 @@ def build(data):
             node=dict(id=f"{kind}:{row['id']}",hyperskill_id=row['id'],type=kind,title=row['title'],url=row['url'],evidence_ids=row['evidence_ids'])
             if kind == 'topic':
                 p=topic_progress.get(row['id'],{})
-                node.update(status='learned' if p.get('is_learned') else 'unknown', verified=p.get('is_verified'), applied=p.get('is_applied'), progress_evidence_ids=p.get('evidence_ids',[]))
+                status = 'learned' if p.get('is_learned') is True else 'not_learned' if p.get('is_learned') is False else 'unknown'
+                node.update(status=status, verified=p.get('is_verified'), verification_status=p.get('verification_status'), applied=p.get('is_applied'), progress_evidence_ids=p.get('evidence_ids',[]))
             if kind == 'project':
                 p=project_progress.get(row['id'],{})
                 node.update(status=p.get('status','available'), progress_evidence_ids=p.get('evidence_ids',[]))
@@ -143,7 +179,7 @@ def build(data):
     nodes.sort(key=lambda x:x['id'])
     links=sorted(data['edges'],key=lambda x:x['id'])
     layout(nodes,links)
-    return dict(schema_version=1,snapshot_date='2026-10-01',nodes=nodes,edges=links,progress=data['progress'],evidence=data['evidence'],coverage=dict(course_topics='complete',topic_progress='partial',project_requirements=[113],project_applies='unknown'))
+    return dict(schema_version=1,snapshot_date='2026-10-01',nodes=nodes,edges=links,progress=data['progress'],evidence=data['evidence'],coverage=dict(course_topics='complete',topic_progress=data['progress']['courses'][0]['topic_status_coverage'],project_requirements=[113],project_applies='unknown'))
 
 def color(node):
     return COLORS[node.get('status',node['type'])]
@@ -155,7 +191,9 @@ def preview(graph):
     scale=min(820/(highx-lowx),430/(highy-lowy))
     pos={n['id']:(450+(n['x']-(lowx+highx)/2)*scale,350+(n['y']-(lowy+highy)/2)*scale) for n in nodes}
     p=graph['progress']['courses'][0]
-    parts=['<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="660" viewBox="0 0 1200 660" role="img" aria-labelledby="title desc">', '<title id="title">Introduction to Java — personal knowledge graph</title>', '<desc id="desc">89 course topics. One explicitly known learned topic. Project 113 requires 26 topics; their applied status is unknown. Aggregate progress: 31 of 89 learned, 26 of 85 applied.</desc>', '<rect width="1200" height="660" fill="#101319"/>', '<g font-family="system-ui,sans-serif" fill="#e4e8f1">', '<text x="38" y="43" font-size="13" fill="#98a5bc" letter-spacing="3">PERSONAL KNOWLEDGE / COURSE 08</text>', '<text x="38" y="85" font-size="30">Introduction to Java</text>', f'<text x="38" y="115" font-size="15" fill="#aeb9cc">{p["learned_topics_count"]} / {p["learned_topics_total"]} learned · {p["applied_topics_count"]} / {p["applied_topics_total"]} applied — aggregate only</text>']
+    learned=sum(n.get('status')=='learned' for n in nodes)
+    verified=sum(n.get('verified') is True for n in nodes)
+    parts=['<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="660" viewBox="0 0 1200 660" role="img" aria-labelledby="title desc">', '<title id="title">Introduction to Java — personal knowledge graph</title>', f'<desc id="desc">89 course topics. {learned} explicitly learned topics, including {verified} with verified status. Project 113 requires 26 topics; their applied status is unknown. Aggregate progress: 31 of 89 learned, 26 of 85 applied.</desc>', '<rect width="1200" height="660" fill="#101319"/>', '<g font-family="system-ui,sans-serif" fill="#e4e8f1">', '<text x="38" y="43" font-size="13" fill="#98a5bc" letter-spacing="3">PERSONAL KNOWLEDGE / COURSE 08</text>', '<text x="38" y="85" font-size="30">Introduction to Java</text>', f'<text x="38" y="115" font-size="15" fill="#aeb9cc">{p["learned_topics_count"]} / {p["learned_topics_total"]} learned · {p["applied_topics_count"]} / {p["applied_topics_total"]} applied — aggregate only</text>']
     drawn=set()
     for edge in graph['edges']:
         pair=(edge['source'],edge['target'])
@@ -174,7 +212,7 @@ def preview(graph):
             parts.append(f'<rect x="{x-5:.2f}" y="{y-5:.2f}" width="10" height="10" rx="2" fill="{fill}" stroke="{c}"><title>{title}</title></rect>')
         else:
             parts.append(f'<circle cx="{x:.2f}" cy="{y:.2f}" r="{r}" fill="{fill}" stroke="{c}"><title>{title}</title></circle>')
-    parts.extend(['<text x="905" y="225" font-size="13" fill="#79dcb4">COMPLETED PROJECT</text>','<text x="905" y="257" font-size="18">Simple Chat Bot</text>','<text x="905" y="282" font-size="18">with Java</text>','<text x="905" y="322" font-size="15">26 required topics</text>','<text x="905" y="348" font-size="13" fill="#aeb9cc">project_requires ≠ project_applies</text>','<text x="905" y="401" font-size="14" fill="#79dcb4">● Learned / verified</text>','<text x="905" y="429" font-size="14" fill="#aeb9cc">● Unknown topic status</text>','<text x="905" y="457" font-size="14" fill="#efbb79">■ Active project</text>','<text x="905" y="485" font-size="14" fill="#9aa8ed">■ Available project</text>','<text x="38" y="620" font-size="14" fill="#aeb9cc">COURSE ROADMAP · 89 topics · 46 categories · partial personal evidence · snapshot 2026-10-01</text>','</g></svg>'])
+    parts.extend(['<text x="905" y="225" font-size="13" fill="#79dcb4">COMPLETED PROJECT</text>','<text x="905" y="257" font-size="18">Simple Chat Bot</text>','<text x="905" y="282" font-size="18">with Java</text>','<text x="905" y="322" font-size="15">26 required topics</text>','<text x="905" y="348" font-size="13" fill="#aeb9cc">project_requires ≠ project_applies</text>',f'<text x="905" y="401" font-size="14" fill="#79dcb4">● Learned ({verified} verified)</text>','<text x="905" y="429" font-size="14" fill="#aeb9cc">● Not learned / unknown</text>','<text x="905" y="457" font-size="14" fill="#efbb79">■ Active project</text>','<text x="905" y="485" font-size="14" fill="#9aa8ed">■ Available project</text>','<text x="38" y="620" font-size="14" fill="#aeb9cc">COURSE ROADMAP · 89 topics · 46 categories · complete Learned status · Applied unknown · snapshot 2026-10-01</text>','</g></svg>'])
     return '\n'.join(parts)+'\n'
 
 def render(root, check=False):

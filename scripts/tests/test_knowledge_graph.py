@@ -7,6 +7,8 @@ import unittest
 import xml.etree.ElementTree as ET
 
 ROOT=Path(__file__).resolve().parents[2]
+LEARNED=[9,14,15,25,27,30,31,32,36,87,88,89,112,113,146,147,148,152,161,193,259,260,307,308,309,348,571,1248,1476,1761,3538]
+VERIFIED=[15,25,31,32,36,87,88,148,152,259,571,1761]
 spec=importlib.util.spec_from_file_location('knowledge',ROOT/'scripts/build-knowledge-graph.py')
 kg=importlib.util.module_from_spec(spec)
 spec.loader.exec_module(kg)
@@ -51,13 +53,50 @@ class KnowledgeGraphTests(unittest.TestCase):
         p['completed_stage_ids']=[1];self.rejects('no completed-stage evidence')
     def test_unknown_progress_preserved(self):
         course=self.data['progress']['courses'][0]
-        self.assertIsNone(course['learned_topic_ids']);self.assertIsNone(course['applied_topic_ids'])
+        self.assertEqual(course['learned_topic_ids'],LEARNED);self.assertIsNone(course['applied_topic_ids'])
         topics=[n for n in self.graph['nodes'] if n['type']=='topic']
-        self.assertEqual([n['hyperskill_id'] for n in topics if n['status']=='learned'],[15])
+        self.assertEqual(sorted(n['hyperskill_id'] for n in topics if n['status']=='learned'),LEARNED)
+        self.assertEqual(sum(n['status']=='not_learned' for n in topics),58)
         self.assertTrue(all(n['applied'] is None for n in topics))
         self.assertFalse(any(e['type']=='project_applies' for e in self.graph['edges']))
     def test_unproven_full_set_rejected(self):
         self.data['progress']['courses'][0]['learned_topic_ids']=[15];self.rejects('incomplete full status set')
+    def test_full_snapshot_coverage(self):
+        rows=self.data['progress']['topics']
+        self.assertEqual(len(rows),89)
+        self.assertEqual({r['topic_id'] for r in rows},set(self.data['courses'][0]['topic_ids']))
+        self.assertEqual(sum(r['is_learned'] for r in rows),31)
+        self.assertEqual(sum(r['is_skipped'] for r in rows),0)
+        self.assertEqual(self.graph['coverage']['topic_progress'],'complete')
+    def test_verified_is_separate_from_learned(self):
+        rows=self.data['progress']['topics']
+        self.assertEqual([r['topic_id'] for r in rows if r['is_verified']],VERIFIED)
+        failed=next(r for r in rows if r['topic_id']==113)
+        self.assertTrue(failed['is_learned']);self.assertFalse(failed['is_verified'])
+        self.assertEqual(failed['verification_status'],'failed')
+        evaluation=next(r for r in rows if r['topic_id']==9)
+        self.assertTrue(evaluation['is_learned']);self.assertFalse(evaluation['is_verified'])
+    def test_cannot_mark_open_topic_learned(self):
+        self.data['progress']['topics'][0]['is_learned']=True
+        self.rejects('status disagrees with observation')
+    def test_cannot_upgrade_verification(self):
+        row=next(r for r in self.data['progress']['topics'] if r['topic_id']==113)
+        row['is_verified']=True
+        self.rejects('verification status mismatch')
+    def test_missing_open_topic_is_incomplete(self):
+        self.data['progress']['topics'].pop(0)
+        self.rejects('incomplete topic coverage')
+    def test_missing_snapshot_rejected(self):
+        self.data['observations']={}
+        self.rejects('missing observation snapshot')
+    def test_duplicate_progress_rejected(self):
+        self.data['progress']['topics'].append(self.data['progress']['topics'][0])
+        self.rejects('duplicate progress')
+    def test_preview_reflects_complete_learned_data(self):
+        svg=kg.preview(self.graph)
+        self.assertIn('31 explicitly learned topics, including 12 with verified status',svg)
+        self.assertNotIn('One explicitly known',svg)
+        self.assertNotIn('partial personal evidence',svg)
     def test_deterministic(self):
         other=kg.build(copy.deepcopy(self.original))
         self.assertEqual(json.dumps(self.graph,sort_keys=True),json.dumps(other,sort_keys=True))

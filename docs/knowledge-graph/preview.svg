@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="660" viewBox="0 0 1200 660" role="img" aria-labelledby="title desc">
 <title id="title">Introduction to Java — personal knowledge graph</title>
-<desc id="desc">89 course topics. One explicitly known learned topic. Project 113 requires 26 topics; their applied status is unknown. Aggregate progress: 31 of 89 learned, 26 of 85 applied.</desc>
+<desc id="desc">89 course topics. 31 explicitly learned topics, including 12 with verified status. Project 113 requires 26 topics; their applied status is unknown. Aggregate progress: 31 of 89 learned, 26 of 85 applied.</desc>
 <rect width="1200" height="660" fill="#101319"/>
 <g font-family="system-ui,sans-serif" fill="#e4e8f1">
 <text x="38" y="43" font-size="13" fill="#98a5bc" letter-spacing="3">PERSONAL KNOWLEDGE / COURSE 08</text>
@@ -380,55 +380,55 @@
 <circle cx="450.47" cy="490.24" r="4" fill="#647087" stroke="#647087"><title>Declaring methods</title></circle>
 <circle cx="321.45" cy="419.54" r="4" fill="#647087" stroke="#647087"><title>Combining constants with enum</title></circle>
 <circle cx="280.68" cy="344.25" r="4" fill="#647087" stroke="#647087"><title>Fields and methods in enum</title></circle>
-<circle cx="590.48" cy="507.54" r="4" fill="#647087" stroke="#647087"><title>Naming variables</title></circle>
-<circle cx="530.35" cy="441.56" r="4" fill="#647087" stroke="#647087"><title>Reading user input with Scanner</title></circle>
+<circle cx="590.48" cy="507.54" r="4" fill="#79dcb4" stroke="#79dcb4"><title>Naming variables</title></circle>
+<circle cx="530.35" cy="441.56" r="4" fill="#79dcb4" stroke="#79dcb4"><title>Reading user input with Scanner</title></circle>
 <circle cx="378.28" cy="338.84" r="4" fill="#647087" stroke="#647087"><title>Defining classes</title></circle>
 <circle cx="375.47" cy="405.81" r="4" fill="#647087" stroke="#647087"><title>Instance methods</title></circle>
 <circle cx="261.70" cy="191.57" r="4" fill="#647087" stroke="#647087"><title>What is object-oriented programming</title></circle>
 <circle cx="645.23" cy="454.85" r="4" fill="#647087" stroke="#647087"><title>Multidimensional array</title></circle>
 <circle cx="300.69" cy="459.19" r="4" fill="#647087" stroke="#647087"><title>Multiple constructors</title></circle>
 <circle cx="399.87" cy="144.86" r="4" fill="#647087" stroke="#647087"><title>Abstract class</title></circle>
-<circle cx="624.86" cy="532.11" r="4" fill="#647087" stroke="#647087"><title>Coding style conventions</title></circle>
+<circle cx="624.86" cy="532.11" r="4" fill="#79dcb4" stroke="#79dcb4"><title>Coding style conventions</title></circle>
 <circle cx="243.91" cy="380.82" r="4" fill="#647087" stroke="#647087"><title>Keyword &quot;super&quot;</title></circle>
 <circle cx="410.37" cy="294.29" r="4" fill="#647087" stroke="#647087"><title>Referencing subclass objects</title></circle>
-<circle cx="551.06" cy="442.57" r="4" fill="#647087" stroke="#647087"><title>Types and variables</title></circle>
+<circle cx="551.06" cy="442.57" r="4" fill="#79dcb4" stroke="#79dcb4"><title>Types and variables</title></circle>
 <circle cx="390.19" cy="208.34" r="4" fill="#647087" stroke="#647087"><title>Debugging techniques</title></circle>
-<circle cx="537.29" cy="515.02" r="4" fill="#647087" stroke="#647087"><title>Arithmetic operations</title></circle>
-<circle cx="490.02" cy="512.44" r="4" fill="#647087" stroke="#647087"><title>Basic literals: numbers, strings and characters</title></circle>
-<circle cx="519.64" cy="230.83" r="4" fill="#647087" stroke="#647087"><title>Debugging overview</title></circle>
-<circle cx="524.68" cy="554.20" r="4" fill="#647087" stroke="#647087"><title>Writing first program</title></circle>
+<circle cx="537.29" cy="515.02" r="4" fill="#79dcb4" stroke="#79dcb4"><title>Arithmetic operations</title></circle>
+<circle cx="490.02" cy="512.44" r="4" fill="#79dcb4" stroke="#79dcb4"><title>Basic literals: numbers, strings and characters</title></circle>
+<circle cx="519.64" cy="230.83" r="4" fill="#79dcb4" stroke="#79dcb4"><title>Debugging overview</title></circle>
+<circle cx="524.68" cy="554.20" r="4" fill="#79dcb4" stroke="#79dcb4"><title>Writing first program</title></circle>
 <circle cx="239.58" cy="262.63" r="4" fill="#647087" stroke="#647087"><title>Basic terms: JVM, JRE, JDK</title></circle>
 <circle cx="566.53" cy="442.31" r="4" fill="#79dcb4" stroke="#79dcb4"><title>Introduction to Java</title></circle>
-<circle cx="403.10" cy="455.69" r="4" fill="#647087" stroke="#647087"><title>One-line condition with ternary operator</title></circle>
-<circle cx="516.66" cy="296.42" r="4" fill="#647087" stroke="#647087"><title>Primitive data types and their sizes</title></circle>
+<circle cx="403.10" cy="455.69" r="4" fill="#79dcb4" stroke="#79dcb4"><title>One-line condition with ternary operator</title></circle>
+<circle cx="516.66" cy="296.42" r="4" fill="#79dcb4" stroke="#79dcb4"><title>Primitive data types and their sizes</title></circle>
 <circle cx="473.38" cy="392.85" r="4" fill="#647087" stroke="#647087"><title>Errors in programs</title></circle>
 <circle cx="355.85" cy="440.30" r="4" fill="#647087" stroke="#647087"><title>NullPointerException</title></circle>
 <circle cx="393.47" cy="401.07" r="4" fill="#647087" stroke="#647087"><title>Array exceptions</title></circle>
 <circle cx="310.60" cy="392.14" r="4" fill="#647087" stroke="#647087"><title>Initializing new instances. Constructor</title></circle>
-<circle cx="410.71" cy="287.24" r="4" fill="#647087" stroke="#647087"><title>Debugging simple constructs</title></circle>
+<circle cx="410.71" cy="287.24" r="4" fill="#79dcb4" stroke="#79dcb4"><title>Debugging simple constructs</title></circle>
 <circle cx="454.22" cy="458.35" r="4" fill="#647087" stroke="#647087"><title>Break and continue. Branching</title></circle>
 <circle cx="291.64" cy="348.28" r="4" fill="#647087" stroke="#647087"><title>Write, compile, and run</title></circle>
 <circle cx="376.51" cy="176.97" r="4" fill="#647087" stroke="#647087"><title>Compile and run Java from CLI</title></circle>
-<circle cx="573.63" cy="513.71" r="4" fill="#647087" stroke="#647087"><title>Printing data</title></circle>
+<circle cx="573.63" cy="513.71" r="4" fill="#79dcb4" stroke="#79dcb4"><title>Printing data</title></circle>
 <circle cx="327.99" cy="218.41" r="4" fill="#647087" stroke="#647087"><title>Polymorphism</title></circle>
 <circle cx="588.95" cy="300.52" r="4" fill="#647087" stroke="#647087"><title>StringBuilder</title></circle>
 <circle cx="477.93" cy="565.00" r="4" fill="#647087" stroke="#647087"><title>java.util.Arrays</title></circle>
 <circle cx="258.84" cy="252.24" r="4" fill="#647087" stroke="#647087"><title>Getters and setters</title></circle>
-<circle cx="458.18" cy="468.67" r="4" fill="#647087" stroke="#647087"><title>Conditional statement</title></circle>
-<circle cx="364.31" cy="330.11" r="4" fill="#647087" stroke="#647087"><title>IDE</title></circle>
-<circle cx="485.52" cy="288.34" r="4" fill="#647087" stroke="#647087"><title>IntelliJ IDEA</title></circle>
-<circle cx="490.25" cy="524.61" r="4" fill="#647087" stroke="#647087"><title>Integer types and operations</title></circle>
+<circle cx="458.18" cy="468.67" r="4" fill="#79dcb4" stroke="#79dcb4"><title>Conditional statement</title></circle>
+<circle cx="364.31" cy="330.11" r="4" fill="#79dcb4" stroke="#79dcb4"><title>IDE</title></circle>
+<circle cx="485.52" cy="288.34" r="4" fill="#79dcb4" stroke="#79dcb4"><title>IntelliJ IDEA</title></circle>
+<circle cx="490.25" cy="524.61" r="4" fill="#79dcb4" stroke="#79dcb4"><title>Integer types and operations</title></circle>
 <circle cx="277.98" cy="321.06" r="4" fill="#647087" stroke="#647087"><title>Access modifiers</title></circle>
-<circle cx="604.45" cy="470.85" r="4" fill="#647087" stroke="#647087"><title>Comments</title></circle>
-<circle cx="412.45" cy="501.23" r="4" fill="#647087" stroke="#647087"><title>Increment and decrement</title></circle>
-<circle cx="483.39" cy="140.62" r="4" fill="#647087" stroke="#647087"><title>Numeric literals</title></circle>
-<circle cx="563.35" cy="410.57" r="4" fill="#647087" stroke="#647087"><title>Primitive and reference types</title></circle>
-<circle cx="411.07" cy="479.74" r="4" fill="#647087" stroke="#647087"><title>Characters</title></circle>
-<circle cx="539.12" cy="302.30" r="4" fill="#647087" stroke="#647087"><title>Type casting</title></circle>
+<circle cx="604.45" cy="470.85" r="4" fill="#79dcb4" stroke="#79dcb4"><title>Comments</title></circle>
+<circle cx="412.45" cy="501.23" r="4" fill="#79dcb4" stroke="#79dcb4"><title>Increment and decrement</title></circle>
+<circle cx="483.39" cy="140.62" r="4" fill="#79dcb4" stroke="#79dcb4"><title>Numeric literals</title></circle>
+<circle cx="563.35" cy="410.57" r="4" fill="#79dcb4" stroke="#79dcb4"><title>Primitive and reference types</title></circle>
+<circle cx="411.07" cy="479.74" r="4" fill="#79dcb4" stroke="#79dcb4"><title>Characters</title></circle>
+<circle cx="539.12" cy="302.30" r="4" fill="#79dcb4" stroke="#79dcb4"><title>Type casting</title></circle>
 <circle cx="532.83" cy="545.06" r="4" fill="#647087" stroke="#647087"><title>Multiple conditions: switch</title></circle>
-<circle cx="452.28" cy="215.83" r="4" fill="#647087" stroke="#647087"><title>What are bugs</title></circle>
-<circle cx="510.18" cy="261.05" r="4" fill="#647087" stroke="#647087"><title>Run and debug with IntelliJ IDEA</title></circle>
-<circle cx="453.33" cy="508.44" r="4" fill="#647087" stroke="#647087"><title>Floating-point types and operations</title></circle>
+<circle cx="452.28" cy="215.83" r="4" fill="#79dcb4" stroke="#79dcb4"><title>What are bugs</title></circle>
+<circle cx="510.18" cy="261.05" r="4" fill="#79dcb4" stroke="#79dcb4"><title>Run and debug with IntelliJ IDEA</title></circle>
+<circle cx="453.33" cy="508.44" r="4" fill="#79dcb4" stroke="#79dcb4"><title>Floating-point types and operations</title></circle>
 <circle cx="501.17" cy="135.00" r="4" fill="#647087" stroke="#647087"><title>Introduction to logging</title></circle>
 <circle cx="427.82" cy="554.60" r="4" fill="#647087" stroke="#647087"><title>Overloading</title></circle>
 <circle cx="343.41" cy="370.92" r="4" fill="#647087" stroke="#647087"><title>Static members</title></circle>
@@ -443,7 +443,7 @@
 <circle cx="649.86" cy="241.33" r="4" fill="#647087" stroke="#647087"><title>Core workflows with AI tools</title></circle>
 <circle cx="442.20" cy="407.03" r="4" fill="#647087" stroke="#647087"><title>Hyperskill Academy plugin</title></circle>
 <circle cx="523.74" cy="198.43" r="4" fill="#647087" stroke="#647087"><title>Formatted output</title></circle>
-<circle cx="512.92" cy="412.05" r="4" fill="#647087" stroke="#647087"><title>Constants. Final variables</title></circle>
+<circle cx="512.92" cy="412.05" r="4" fill="#79dcb4" stroke="#79dcb4"><title>Constants. Final variables</title></circle>
 <circle cx="286.17" cy="386.97" r="4" fill="#647087" stroke="#647087"><title>Hierarchy of exceptions</title></circle>
 <circle cx="412.18" cy="414.46" r="4" fill="#647087" stroke="#647087"><title>First glance at exceptions</title></circle>
 <circle cx="274.73" cy="491.16" r="4" fill="#647087" stroke="#647087"><title>Exception handling</title></circle>
@@ -451,12 +451,12 @@
 <circle cx="449.82" cy="313.32" r="4" fill="#647087" stroke="#647087"><title>Adding annotations</title></circle>
 <circle cx="253.15" cy="350.12" r="4" fill="#647087" stroke="#647087"><title>Inheritance</title></circle>
 <circle cx="536.80" cy="138.34" r="4" fill="#647087" stroke="#647087"><title>Introduction to Linux</title></circle>
-<circle cx="481.39" cy="548.08" r="4" fill="#647087" stroke="#647087"><title>Boolean type and operations. True and false</title></circle>
+<circle cx="481.39" cy="548.08" r="4" fill="#79dcb4" stroke="#79dcb4"><title>Boolean type and operations. True and false</title></circle>
 <circle cx="375.47" cy="162.97" r="4" fill="#647087" stroke="#647087"><title>Operating systems</title></circle>
 <circle cx="556.61" cy="168.71" r="4" fill="#647087" stroke="#647087"><title>Parameters and options</title></circle>
-<circle cx="449.13" cy="558.79" r="4" fill="#647087" stroke="#647087"><title>Comparing values. Relational operators</title></circle>
-<circle cx="423.70" cy="378.74" r="4" fill="#647087" stroke="#647087"><title>For loop</title></circle>
-<circle cx="491.11" cy="353.31" r="4" fill="#647087" stroke="#647087"><title>String</title></circle>
+<circle cx="449.13" cy="558.79" r="4" fill="#79dcb4" stroke="#79dcb4"><title>Comparing values. Relational operators</title></circle>
+<circle cx="423.70" cy="378.74" r="4" fill="#79dcb4" stroke="#79dcb4"><title>For loop</title></circle>
+<circle cx="491.11" cy="353.31" r="4" fill="#79dcb4" stroke="#79dcb4"><title>String</title></circle>
 <circle cx="374.43" cy="501.31" r="4" fill="#647087" stroke="#647087"><title>While and do-while loops</title></circle>
 <circle cx="469.17" cy="338.88" r="4" fill="#647087" stroke="#647087"><title>Objects and their properties</title></circle>
 <circle cx="510.66" cy="486.95" r="4" fill="#647087" stroke="#647087"><title>Iterating over arrays</title></circle>
@@ -469,9 +469,9 @@
 <text x="905" y="282" font-size="18">with Java</text>
 <text x="905" y="322" font-size="15">26 required topics</text>
 <text x="905" y="348" font-size="13" fill="#aeb9cc">project_requires ≠ project_applies</text>
-<text x="905" y="401" font-size="14" fill="#79dcb4">● Learned / verified</text>
-<text x="905" y="429" font-size="14" fill="#aeb9cc">● Unknown topic status</text>
+<text x="905" y="401" font-size="14" fill="#79dcb4">● Learned (12 verified)</text>
+<text x="905" y="429" font-size="14" fill="#aeb9cc">● Not learned / unknown</text>
 <text x="905" y="457" font-size="14" fill="#efbb79">■ Active project</text>
 <text x="905" y="485" font-size="14" fill="#9aa8ed">■ Available project</text>
-<text x="38" y="620" font-size="14" fill="#aeb9cc">COURSE ROADMAP · 89 topics · 46 categories · partial personal evidence · snapshot 2026-10-01</text>
+<text x="38" y="620" font-size="14" fill="#aeb9cc">COURSE ROADMAP · 89 topics · 46 categories · complete Learned status · Applied unknown · snapshot 2026-10-01</text>
 </g></svg>

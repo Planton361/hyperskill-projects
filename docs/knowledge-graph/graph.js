@@ -11,7 +11,7 @@
   const el = id => document.getElementById(id);
   const text = (tag, value, parent) => { const n=document.createElement(tag); n.textContent=value; parent.append(n); return n; };
   el('metrics').textContent = `${progress.learned_topics_count} / ${progress.learned_topics_total} learned · ${progress.applied_topics_count} / ${progress.applied_topics_total} applied (aggregate only)`;
-  const colors = {course:'#c9afff',category:'#818da9',unknown:'#647087',learned:'#79dcb4',completed:'#79dcb4',active:'#efbb79',available:'#9aa8ed'};
+  const colors = {course:'#c9afff',category:'#818da9',unknown:'#647087',not_learned:'#647087',learned:'#79dcb4',completed:'#79dcb4',active:'#efbb79',available:'#9aa8ed'};
   const svg=d3.select('#graph'), world=svg.append('g'), edgeLayer=world.append('g'), nodeLayer=world.append('g');
   let mode='roadmap', selected=null, hovered=null, nodeSelection, edgeSelection, visibleNodes=[], simulation;
   function screenSizes(k){
@@ -53,7 +53,8 @@
       if(node.completed_stage_ids!==null)text('p',`Completed stages: ${node.completed_stage_ids.length}`,panel);
       text('small','Available means listed in the course, not a verified personal access entitlement.',panel);
     } else if(node.type==='topic') {
-      text('p',node.status==='learned'?`Learned${node.verified?' / verified':''}`:'Knowledge status: unknown',panel);
+      text('p',node.status==='learned'?'Learned':node.status==='not_learned'?'Not learned (explicit)':'Knowledge status: unknown',panel);
+      text('p',`Verification: ${node.verification_status ?? 'unknown'}`,panel);
       text('p',node.applied===true?'Applied: explicitly evidenced':node.applied===false?'Applied: explicitly not applied':'Applied: unknown',panel);
     }
     const a=text('a','Open on Hyperskill ↗',panel);a.href=node.url;a.target='_blank';a.rel='noopener noreferrer';
@@ -95,7 +96,12 @@
     simulation=d3.forceSimulation(visibleNodes).randomSource(d3.randomLcg(.42)).force('link',d3.forceLink(visibleLinks).id(n=>n.id).distance(65).strength(.12)).force('charge',d3.forceManyBody().strength(-80)).force('collision',d3.forceCollide(13)).force('x',d3.forceX(0).strength(.012)).force('y',d3.forceY(0).strength(.012)).alpha(.12).on('tick',tick);
     nodeSelection.call(d3.drag().on('start',(event,n)=>{if(!event.active&&!reduced)simulation.alphaTarget(.12).restart();n.fx=n.x;n.fy=n.y;}).on('drag',(event,n)=>{n.fx=event.x;n.fy=event.y;n.x=event.x;n.y=event.y;tick();}).on('end',(event,n)=>{simulation.alphaTarget(0);n.fx=null;n.fy=null;}));
     if(reduced)simulation.stop();tick();paint();fit();
-    el('coverage').textContent=mode==='roadmap'?`${graph.nodes.filter(n=>n.type==='topic').length} course topics · only ${graph.progress.topics.filter(n=>n.is_learned).length} explicitly learned topic recorded · unknown ≠ not learned`:'Partial My Knowledge: one evidenced learned topic, completed/active projects and category context. Other learned IDs are unknown.';
+    const learned=graph.progress.topics.filter(n=>n.is_learned===true).length;
+    const verified=graph.progress.topics.filter(n=>n.is_verified===true).length;
+    const complete=progress.topic_status_coverage==='complete';
+    el('coverage').textContent=mode==='roadmap'
+      ? `${graph.nodes.filter(n=>n.type==='topic').length} course topics · ${learned} learned · ${verified} verified · Learned coverage: ${complete?'complete':'partial'} · Applied IDs unknown`
+      : `My Knowledge: ${learned} explicitly learned topics (${verified} verified), completed/active projects and category context.${complete?'':' Other learned IDs are unknown.'}`;
   }
   function setMode(value){mode=value;selected=null;hovered=null;el('roadmap').setAttribute('aria-pressed',String(mode==='roadmap'));el('knowledge').setAttribute('aria-pressed',String(mode==='knowledge'));draw();showDetails(null);}
   el('roadmap').onclick=()=>setMode('roadmap');el('knowledge').onclick=()=>setMode('knowledge');el('fit').onclick=fit;el('clear').onclick=()=>choose(null);

@@ -88,6 +88,24 @@
   {
     "confidence": "explicit",
     "fields": [
+      "topic_id",
+      "is_learned",
+      "is_completed",
+      "is_skipped",
+      "verification_status",
+      "learned_topics_count"
+    ],
+    "id": "personal-topics-8-20261001",
+    "method": "user_supplied_authenticated_excerpt",
+    "note": "Owner-supplied sanitized JSON from authenticated progresses batch covering all 89 course topics, cross-checked against track-8. Learned is is_learned === true; verified is verification_status === \"verified\". No application claims.",
+    "observed_at": "2026-10-01T13:57:59.083Z",
+    "observed_on": "2026-10-01",
+    "snapshot_file": "observations/learned-2026-10-01.json",
+    "source": "hyperskill"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
       "id",
       "title",
       "language",
