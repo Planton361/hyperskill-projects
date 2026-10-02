@@ -1,0 +1,15 @@
+# Generated validation evidence stays local.
+*-results.json
+*-console.*
+*.png
+files-added.json
+commit-scope.txt
+git-status-before.txt
+profile-readme-after.json
+protected-after.json
+source-after.json
+source-current.json
+app-before-coverage.js
+style-before-coverage.css
+node_modules/
+package-lock.json

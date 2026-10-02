@@ -1,0 +1,63 @@
+{
+  "sourceVersion": "accepted V5.2 + Project Coverage overlay/reveal/fit",
+  "deploymentPath": "docs/knowledge-map-preview/",
+  "layoutSchemaVersion": 2,
+  "layoutAlgorithmVersion": "persistent-geography-2",
+  "data": {
+    "course": "Introduction to Java",
+    "courseTopics": 89,
+    "learned": 31,
+    "verified": 12,
+    "project113": {
+      "title": "Simple Chat Bot with Java",
+      "status": "completed",
+      "distinctRequiredTopics": 26
+    },
+    "project380": {
+      "completed_stage_ids": [],
+      "course_id": 8,
+      "evidence_ids": [
+        "personal-plan",
+        "personal-project-380"
+      ],
+      "project_id": 380,
+      "status": "active"
+    },
+    "projectApplies": 0,
+    "source_sha256": {
+      "categories": "3c761e7b1815f37700b714b45d40458737df26a953831032a135c68352ded980",
+      "topics": "21d303692e46700805cc37849e4c6397902202aa2625e38592de6db063f68e93",
+      "edges": "d4e5a3e3b209425b6d4e71744975d2edb74a27824d84e9abca79c080082e0be5",
+      "projects": "d9c0fad9b70fb6c9a3a3b9348d13795bcdc0918780161370675399265e245184",
+      "stages": "3a5aa2e3ebdbaa4e0f9b4cd3836882ea264512690b02b1d0cf456c148667e1c6",
+      "courses": "e4e2f71107a8512f865c6ea4c20a855bf732364781ec662aa35782eaf35c5ed9",
+      "progress": "4444f13bd7450713ff7058b74383a822fe07a889703b132cfacd791b63044ed6",
+      "evidence": "7abb2ebaf3f9e11ac71c17cf38d8cccda1726aa923afd039dbe34a4fc27d7a0e"
+    }
+  },
+  "assets": {
+    "app.js": "e68d1141cd7eb19bd9b681b5d8b9fdcaf9df9f6d65bea82a1ec4014b8117f81c",
+    "index.html": "32068db3d39f168a7a4808e32eb90fdf15a2e19162059943668fdf21261bc5b3",
+    "layout-checkpoint.json": "9a784438824ada6169221011ecc317e6aa299233fca56df5bafe86b86270a890",
+    "layout-checkpoint.schema.json": "725775507cce6d93b75f5063a140d308b4203c549f372c0641f21c9e8285cee3",
+    "layout.js": "1564754623b76582722b4dcfc9c96cf1b317663bdd0eff076c718de20c9235bc",
+    "model.json": "fc77df54d290c60a1294505e2e51896117c808709f6c4e37095023724bf3db46",
+    "routing.js": "f6d7295081fc665b63b306b85cd1804ad3b8281ef27c70bfb9fd32d08db76d8b",
+    "style.css": "292ce94e89f0463991b11b1c94fc0cda1d6820271a4fc324295abe9575358a3c",
+    "vendor/D3-LICENSE": "3e6849627f74ff73c257a3ae1efb574015d94fc1035c05ec3c15805165efcbc4",
+    "vendor/d3-7.9.0.min.js": "f2094bbf6141b359722c4fe454eb6c4b0f0e42cc10cc7af921fc158fceb86539"
+  },
+  "sourceAssets": {
+    "app.js": "e68d1141cd7eb19bd9b681b5d8b9fdcaf9df9f6d65bea82a1ec4014b8117f81c",
+    "index.html": "61af96e01674829d66acd31ac0c9f2e05c5aad296cc0dba46b55d25aa96e9914",
+    "layout-checkpoint.json": "9a784438824ada6169221011ecc317e6aa299233fca56df5bafe86b86270a890",
+    "layout-checkpoint.schema.json": "725775507cce6d93b75f5063a140d308b4203c549f372c0641f21c9e8285cee3",
+    "layout.js": "1564754623b76582722b4dcfc9c96cf1b317663bdd0eff076c718de20c9235bc",
+    "model.json": "fc77df54d290c60a1294505e2e51896117c808709f6c4e37095023724bf3db46",
+    "routing.js": "f6d7295081fc665b63b306b85cd1804ad3b8281ef27c70bfb9fd32d08db76d8b",
+    "style.css": "292ce94e89f0463991b11b1c94fc0cda1d6820271a4fc324295abe9575358a3c",
+    "vendor/D3-LICENSE": "3e6849627f74ff73c257a3ae1efb574015d94fc1035c05ec3c15805165efcbc4",
+    "vendor/d3-7.9.0.min.js": "f2094bbf6141b359722c4fe454eb6c4b0f0e42cc10cc7af921fc158fceb86539"
+  },
+  "brandingOnlyDifference": "index title and quiet preview eyebrow"
+}
