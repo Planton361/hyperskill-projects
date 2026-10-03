@@ -52,3 +52,44 @@ aside.project-focus .inspector-top{border-color:var(--amber)}
 .mini-selection{stroke:var(--accent);stroke-width:1.3;vector-effect:non-scaling-stroke;fill:none}
 @media(max-width:700px){#view-status{left:12px;top:46px;font-size:10px}#overview-guide{left:12px;right:12px;top:70px}#overview-guide>div{gap:5px}#overview-guide>span{font-size:12px}#overview-guide button{font-size:10px;padding:6px 4px}#minimap{display:none}}
 #overview-guide p{font-size:11px;color:var(--muted);text-align:center;line-height:1.5;margin:8px 0 0}
+
+/* Topic relations color existing taxonomy segments; no additional edge geometry. */
+:root{--prerequisite:#a1a8d7;--dependent:#86c9bd;--relation-shared:#a7bfcf;--selected-topic:#d2e7ed}
+body.light{--prerequisite:#555a95;--dependent:#226d68;--relation-shared:#506879;--selected-topic:#294f65}
+.relations-active .taxonomy:not(.relation-path){stroke-opacity:.28}
+.relations-active .taxonomy.relation-path{stroke-width:1.35;stroke-opacity:.58}
+.relations-active .taxonomy.relation-prerequisite{stroke:var(--prerequisite);stroke-dasharray:4 2}
+.relations-active .taxonomy.relation-dependent{stroke:var(--dependent);stroke-dasharray:none}
+.relations-active .taxonomy.relation-shared{stroke:var(--relation-shared);stroke-dasharray:5 2 1 2}
+.relations-active .taxonomy.relation-strong{stroke-opacity:1;stroke-width:2}
+#canvas[data-view=topic] .relations-active .taxonomy.relation-path{stroke-width:1.55}
+#canvas[data-view=topic] .relations-active .taxonomy.relation-strong{stroke-width:2.2}
+#canvas[data-view=overview] .relations-active .taxonomy.relation-path{stroke-width:1.1}
+.relations-active .taxonomy.relation-muted{stroke-opacity:.17}
+.relations-active .node.relation-path,.relations-active .node.selected,.relations-active .tray-surface.relation-path{opacity:1}
+.relations-active .node.relation-path .card,.relations-active .tray-surface.relation-path{stroke-opacity:.65;stroke-width:1;fill:var(--category);fill-opacity:.45}
+.relations-active .node.relation-prerequisite .card,.relations-active .tray-surface.relation-prerequisite{stroke:var(--prerequisite);stroke-dasharray:3 2}
+.relations-active .node.relation-dependent .card,.relations-active .tray-surface.relation-dependent{stroke:var(--dependent);stroke-dasharray:none}
+.relations-active .node.relation-shared .card,.relations-active .tray-surface.relation-shared{stroke:var(--relation-shared);stroke-dasharray:5 2 1 2}
+.relations-active .node.relation-strong .card,.relations-active .tray-surface.relation-strong{stroke-width:1.6;stroke-opacity:1;fill-opacity:.7}
+.relations-active .node.relation-muted,.relations-active .tray-surface.relation-muted{opacity:.4}
+.relations-active .node.topic.selected .card{stroke:var(--selected-topic);stroke-width:2;stroke-dasharray:none;fill:var(--category);fill-opacity:1}
+.relations-active .node.topic.selected .label{fill:var(--text)}
+.relation-endpoint{pointer-events:none;vector-effect:non-scaling-stroke;stroke-width:1}
+.relation-endpoint.prerequisite{fill:var(--bg);stroke:var(--prerequisite)}
+.relation-endpoint.dependent{fill:var(--dependent);stroke:var(--dependent)}
+.relation-symbol.prerequisite,.relation-legend .prerequisite{color:var(--prerequisite)}
+.relation-symbol.dependent,.relation-legend .dependent{color:var(--dependent)}
+#inspector [data-relation]{line-height:1.5}
+#inspector [data-relation].relation-preview{border-color:var(--selected-topic);background:var(--category)}
+#inspector [data-relation][aria-pressed=true]{border-width:2;font-weight:600}
+#inspector #clear-relation:disabled{opacity:.45;cursor:default}
+.relations-active.coverage-active .taxonomy.covered:not(.relation-path){stroke:var(--amber);stroke-opacity:.22}
+.relations-active.coverage-active .evidence{opacity:.35}
+.relations-active.coverage-active .node.covered:not(.relation-path):not(.selected) .card{stroke-opacity:.4;fill-opacity:.35}
+.relations-active.coverage-active .tray-surface.covered:not(.relation-path){stroke-opacity:.3}
+/* Relation endpoints take visual priority over retained amber coverage classes. */
+.relations-active.coverage-active .node.relation-prerequisite .card{stroke:var(--prerequisite);stroke-dasharray:3 2}
+.relations-active.coverage-active .node.relation-dependent .card{stroke:var(--dependent);stroke-dasharray:none}
+.relations-active.coverage-active .node.relation-shared .card{stroke:var(--relation-shared);stroke-dasharray:5 2 1 2}
+.node.topic.selected .card,.coverage-active .node.topic.selected .card{stroke:var(--selected-topic);stroke-width:2;stroke-dasharray:none;fill:var(--category)}
