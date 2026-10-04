@@ -83,8 +83,13 @@ Learned and verified are separate: only 12 records have
 not project 113) is learned/completed but has verification status `failed`.
 Other learned records can have `evaluation`; preserve the literal status.
 `is_verified` is true only for the exact status `verified`. `My Knowledge`
-contains exactly the 31 learned topics plus category/project context. The
-roadmap distinguishes explicit `not_learned` from missing/unknown status.
+in the accepted V6 Atlas includes the revealed Course landscape: all 89 Course-8
+Topics, with 31 learned and 12 verified styled independently. The older graph
+learned-only view is not the V6 visibility contract. Explicit `not_learned`
+remains distinct from missing/unknown status. The read-only
+[Activation / Reveal planner](../../scripts/knowledge_atlas/ACTIVATION.md)
+describes future relevance and presentation candidates without changing these
+personal facts or accepted geometry.
 
 `applied_topic_ids` and every topic-level `is_applied` remain null. The earlier
 aggregate 26/85 is not a new topic-level observation and is not inferred from

@@ -4,6 +4,7 @@ on:
     paths:
       - 'data/knowledge/**'
       - 'scripts/update-knowledge-atlas.py'
+      - 'scripts/plan-knowledge-atlas-activation.py'
       - 'scripts/sanitize-hyperskill-knowledge-map.py'
       - 'scripts/knowledge_atlas/**'
       - 'scripts/tests/test_knowledge_atlas*.py'
@@ -24,6 +25,7 @@ on:
     paths:
       - 'data/knowledge/**'
       - 'scripts/update-knowledge-atlas.py'
+      - 'scripts/plan-knowledge-atlas-activation.py'
       - 'scripts/sanitize-hyperskill-knowledge-map.py'
       - 'scripts/knowledge_atlas/**'
       - 'scripts/tests/test_knowledge_atlas*.py'

@@ -138,6 +138,11 @@ or global renderer mode are introduced here.
 
 ## Why Global Catalog Does Not Automatically Change Production
 
+The [Activation / Reveal contract](ACTIVATION.md) now supplies pure planning of
+evidenced relevance, renderability and candidate presentation impact. Planning
+retains accepted history and does not activate dormant geography or acquire
+Topic metadata. Existing Course/project projection APIs remain compatible.
+
 Typed loaders dispatch `global_knowledge_catalog` separately from
 `personal_progress` (missing type retains legacy semantics). Global observations
 are validated but excluded from the active source fingerprint and `model.json`.

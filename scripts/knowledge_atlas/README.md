@@ -32,6 +32,14 @@ data; future targeted metadata acquisition is unimplemented and should be
 limited to IDs made relevant by explicit course/project evidence. No repeated
 Category pilot or mass Topic crawling is planned.
 
+The [Activation / Reveal planner](ACTIVATION.md) separates evidenced relevance,
+minimum display metadata and accepted geometry. Use the read-only
+`python -B scripts/plan-knowledge-atlas-activation.py --course 8` command for a
+plan; `--project 113` selects explicit Project requirements and `--json` prints
+the complete deterministic plan. The default accumulated `MY_ATLAS` includes
+historical Courses, Project evidence and personal relevance without hiding
+accepted presentation history. This planner has no apply or geometry writer.
+
 ## Normal operator workflow
 
 ```bash
