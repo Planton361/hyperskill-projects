@@ -70,3 +70,56 @@ def preview_outputs(outputs):
     result['release-manifest.json'] = encode({'pipeline_version': 1, 'assets': {
         k: hashlib.sha256(v).hexdigest() for k, v in sorted(result.items())}})
     return result
+
+
+def production_outputs(outputs, preview):
+    """Package the accepted persistent-state build; branding is the only UI edit."""
+    result = preview_outputs(outputs)
+    result.pop('release-manifest.json')
+    html = result['index.html'].decode().replace('<title>Knowledge Atlas · Preview</title>', '<title>Knowledge Atlas</title>')
+    html = html.replace('Knowledge Atlas <small>· Preview</small>', 'Knowledge Atlas')
+    if 'Preview' in html or 'Prototype' in html: raise ValueError('production branding mismatch')
+    result['index.html'] = html.encode()
+    unchanged = ('style.css','model.js','routing.js','taxonomy-relations.js','vendor/D3-LICENSE','vendor/d3-7.9.0.min.js')
+    for name in unchanged:
+        if result[name] != (preview/name).read_bytes(): raise ValueError('accepted runtime changed: '+name)
+    expected_app=(preview/'app.js').read_text().replace('known=ss.length>0,','known=ss.length>0||m.raw.indexes.projects[String(p.id)].requirements_loaded,')
+    if result['app.js'] != expected_app.encode(): raise ValueError('unexpected project adapter change')
+    expected_layout=(preview/'layout.js').read_bytes()+b'\n'+(Path(__file__).parent/'layout_update.js').read_bytes()+b'\nAtlasLayout.build=(m,measure,cp)=>AtlasIncremental.hydrate(m,AtlasBuildGeometry,cp);\n'
+    if result['layout.js'] != expected_layout: raise ValueError('unexpected geometry adapter change')
+    expected_html=(preview/'index.html').read_text().replace('<title>Knowledge Atlas · Preview</title>','<title>Knowledge Atlas</title>')
+    expected_html=expected_html.replace('Knowledge Atlas <small>· Preview</small>','Knowledge Atlas').replace('<script src="app.js">','<script src="geometry.js"></script><script src="app.js">')
+    if result['index.html'] != expected_html.encode(): raise ValueError('unexpected production HTML change')
+    reasons={'index.html':'Preview title/header removed; accepted geometry.js hydration script loaded',
+             'app.js':'Already accepted generic project-requirement index adapter; no project-specific code',
+             'layout.js':'Already accepted deterministic hydration adapter; same frozen node/tray/hierarchy geometry',
+             'model.json':'Canonical knowledge serialization, deterministic hashes and derived evidence/membership indexes',
+             'layout-checkpoint.json':'Accepted persistent presentation state schema 2 replaces legacy preview schema 5',
+             'layout-checkpoint.schema.json':'Schema for accepted persistent state',
+             'geometry.js':'Runtime-required geometry derived from persistent state; no fresh layout generation'}
+    comparisons=[]
+    for name,content in sorted(result.items()):
+        reference=preview/name
+        equal=reference.is_file() and reference.read_bytes()==content
+        if not equal and name not in reasons:raise ValueError('unexplained production asset difference: '+name)
+        comparisons.append({'asset':name,'identical':equal,'reason':'byte-identical accepted asset' if equal else reasons[name],
+                            'preview_sha256':hashlib.sha256(reference.read_bytes()).hexdigest() if reference.is_file() else None,
+                            'production_sha256':hashlib.sha256(content).hexdigest()})
+    cp=json.loads(result['layout-checkpoint.json'])
+    result['release-manifest.json']=encode({'pipeline_version':2,'target':'production','deployment_path':'docs/knowledge-map/',
+        'public_url':'https://planton361.github.io/hyperskill-projects/knowledge-map/',
+        'state_schema_version':cp['state_schema_version'],'layout_schema_version':cp['layout_schema_version'],
+        'layout_algorithm_version':cp['layout_algorithm_version'],'generation':cp['presentation_generation'],
+        'preview_comparison':comparisons,'assets':{n:hashlib.sha256(b).hexdigest() for n,b in sorted(result.items())}})
+    return result
+
+
+def verify_release(path, expected=None):
+    manifest=json.loads((path/'release-manifest.json').read_text())
+    if manifest.get('target')!='production':raise ValueError('invalid production release manifest')
+    names={p.relative_to(path).as_posix() for p in path.rglob('*') if p.is_file()}
+    if names != set(manifest['assets'])|{'release-manifest.json'}:raise ValueError('stale/missing production files')
+    for name,sha in manifest['assets'].items():
+        if hashlib.sha256((path/name).read_bytes()).hexdigest()!=sha:raise ValueError('production integrity mismatch: '+name)
+    if expected is not None and any((path/n).read_bytes()!=b for n,b in expected.items()):
+        raise ValueError('production is not reproducible from current data/state')

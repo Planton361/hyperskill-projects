@@ -1,6 +1,7 @@
 /* Adapt the accepted V6 relation/navigation checks to a read-only offline harness. */
 const fs=require('fs'),path=require('path'),assert=require('assert/strict');
 const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
+const {execFileSync}=require('child_process');
 (async()=>{
  const runtime=path.resolve(__dirname,'../../prototypes/knowledge-atlas-v6');
  const options={headless:true};if(process.env.CHROMIUM_EXECUTABLE)options.executablePath=process.env.CHROMIUM_EXECUTABLE;
@@ -30,4 +31,14 @@ const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
   });
   assert.deepEqual(errors,[]);console.log(JSON.stringify(result,null,2));
  }finally{await browser.close();}
+ // The same read-only CI step validates the installed production package after
+ // promotion, including the exact accepted Preview scene comparison.
+ const root=path.resolve(__dirname,'../..'),production=path.join(root,'docs/knowledge-map');
+ if(fs.existsSync(path.join(production,'release-manifest.json'))){
+  // Packaging/rollback fixtures use the OS temporary directory, never docs/state.
+  execFileSync('python',['-B','-m','unittest','knowledge_atlas.test_production','-v'],{env:{...process.env,PYTHONPATH:path.join(root,'scripts')},stdio:'inherit',timeout:60000});
+  const assets={};const walk=dir=>{for(const entry of fs.readdirSync(dir,{withFileTypes:true})){const p=path.join(dir,entry.name);if(entry.isDirectory())walk(p);else assets[path.relative(production,p).split(path.sep).join('/')]=fs.readFileSync(p,'utf8');}};walk(production);
+  const result=execFileSync(process.execPath,[path.join(__dirname,'production_regression.cjs')],{input:JSON.stringify({root,assets}),encoding:'utf8',timeout:240000,maxBuffer:4*1024*1024});
+  console.log(result);
+ }
 })().catch(e=>{console.error(e);process.exit(1);});

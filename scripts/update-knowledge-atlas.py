@@ -17,6 +17,7 @@ def main():
     modes.add_argument('--build', action='store_true')
     parser.add_argument('--rebalance', action='store_true', help='explicit geography migration; combine with --dry-run to review')
     parser.add_argument('--preview', action='store_true', help='package validated build into docs/knowledge-atlas-preview; no deployment')
+    parser.add_argument('--production', action='store_true', help='package SAFE_TO_APPLY Atlas into docs/knowledge-map; no commit/push/deploy')
     parser.add_argument('--source', type=Path, help='normalized data directory (default data/knowledge)')
     parser.add_argument('--output', type=Path, help='isolated managed build directory below prototypes/')
     parser.add_argument('--state', type=Path, help='isolated test state below prototypes/ (default state/knowledge-atlas)')
@@ -28,6 +29,8 @@ def main():
     parser.add_argument('--json', action='store_true', help='print only machine-readable report to stdout')
     args = parser.parse_args()
     if args.preview and (args.check or args.dry_run): parser.error('--preview requires build mode')
+    if args.production and (args.preview or args.bootstrap_state or args.recover_transaction or args.migrate_state or args.rebalance or args.approve_review or args.source or args.state or args.output):
+        parser.error('--production requires canonical data/state and SAFE_TO_APPLY; use separate reviewed state migration first')
     if sum([args.bootstrap_state,args.recover_transaction,args.migrate_state])>1:parser.error('choose one bootstrap/recovery/migration operation')
     if (args.bootstrap_state or args.recover_transaction or args.migrate_state) and (args.check or args.dry_run or args.preview or args.rebalance or args.approve_review):
         parser.error('bootstrap/recovery are separate explicit writer operations')
@@ -42,7 +45,7 @@ def main():
     try:
         report = run(root, args.output, args.source, mode, args.rebalance, args.preview,
                      state=args.state, approve_review=args.approve_review, bootstrap=args.bootstrap_state,
-                     recover=args.recover_transaction,migrate=args.migrate_state)
+                     recover=args.recover_transaction,migrate=args.migrate_state,production=args.production)
     except (ValueError, KeyError, TypeError, OSError, json.JSONDecodeError) as e:
         marker = next((m for m in ('FONT_METRICS_MISMATCH','STATE_MIGRATION_REQUIRED','REBALANCE_REQUIRED',
                        'RECOVERY_REQUIRED') if m in str(e)), 'VALIDATION_FAILED')

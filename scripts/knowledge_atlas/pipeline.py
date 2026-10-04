@@ -7,15 +7,17 @@ from .classify import MIGRATIONS
 
 
 def run(root, output=None, source=None, mode='build', rebalance=False, preview=False, budget=None,
-        state=None, approve_review=False, bootstrap=False, recover=False, fault=None, migrate=False):
+        state=None, approve_review=False, bootstrap=False, recover=False, fault=None, migrate=False, production=False):
     root = Path(root).resolve()
     if mode not in ('build','dry-run','check'):raise ValueError('unknown pipeline mode')
     if mode != 'build' and (bootstrap or recover or migrate or preview):raise ValueError('explicit writer operation requires build mode')
+    if production and (preview or rebalance or approve_review or bootstrap or recover or migrate or source or state or output):
+        raise ValueError('production requires canonical source/state and SAFE_TO_APPLY; separate review/migration first')
     with transaction.lock(root, write=mode == 'build' or bootstrap or recover):
-        return _run(root, output, source, mode, rebalance, preview, budget, state, approve_review, bootstrap, recover, fault, migrate)
+        return _run(root, output, source, mode, rebalance, preview, budget, state, approve_review, bootstrap, recover, fault, migrate, production)
 
 
-def _run(root, output, source, mode, rebalance, preview, budget, state_path, approve_review, bootstrap, recover, fault, migrate):
+def _run(root, output, source, mode, rebalance, preview, budget, state_path, approve_review, bootstrap, recover, fault, migrate, production):
     runtime = root / 'prototypes/knowledge-atlas-v6'
     output = Path(output or runtime/'build').resolve()
     state_path = Path(state_path or root/'state/knowledge-atlas').resolve()
@@ -32,6 +34,8 @@ def _run(root, output, source, mode, rebalance, preview, budget, state_path, app
         if not (output/'build-manifest.json').is_file(): raise ValueError('refusing to replace unmanaged output')
         build.verify_state(output)
     original_build = transaction.inventory(output)
+    production_path=root/'docs/knowledge-map'
+    original_production=transaction.inventory(production_path) if production else None
     journal = state_path.parent/'.knowledge-atlas-transaction.json'
     if recover:
         transaction.recover(journal,root)
@@ -123,6 +127,14 @@ def _run(root, output, source, mode, rebalance, preview, budget, state_path, app
     outputs = build.artifacts(runtime,data,new_cp,new_geom,candidate)
     if fault: fault('during_browser_validation')
     runtime_validation = layout_update.bridge(runtime,action='runtime-test',assets={n:b.decode() for n,b in outputs.items()})
+    installed_production=(production_path/'release-manifest.json').is_file()
+    canonical_state=state_path==root/'state/knowledge-atlas' and source==root/'data/knowledge'
+    production_outputs=build.production_outputs(outputs,root/'docs/knowledge-atlas-preview') if production or (mode=='check' and canonical_state and installed_production) else None
+    production_validation=None
+    if production and region['outcome']=='SAFE_TO_APPLY':
+        production_validation=layout_update.production_regression(root,production_outputs)
+    if mode=='check' and canonical_state and installed_production:
+        build.verify_release(production_path,production_outputs)
     if mode == 'check':
         state_store.baseline(runtime,data)
         if before['fingerprint'] != after['fingerprint']:
@@ -136,6 +148,7 @@ def _run(root, output, source, mode, rebalance, preview, budget, state_path, app
                     raise ValueError('stale build artifact: '+name+'; run --build')
     outcome = region['outcome']
     permitted = outcome == 'SAFE_TO_APPLY' or (outcome == 'REVIEW_REQUIRED' and approve_review) or rebalance
+    if production: permitted=outcome=='SAFE_TO_APPLY'
     report = {'report_schema_version':2,'status':outcome,'outcome':outcome,'mode':mode,'diff':changes,'region_impact':region,
               'applied':False,'authorization':'rebalance' if rebalance else 'approve-review' if approve_review else 'normal',
               'presentation':{'category_displacement':layout_update.displacement(geom,new_geom,'category'),
@@ -158,6 +171,9 @@ def _run(root, output, source, mode, rebalance, preview, budget, state_path, app
               'safe_to_build_preview':permitted,'state_changed':state_store.outputs(state_path,new_cp,candidate)!=state_store.outputs(state_path,cp,before),
               'installed_build':'present' if output.exists() else 'absent; validated in memory',
               'message':'Validated candidate; '+('authorized for apply' if permitted else 'publication blocked pending explicit authorization')}
+    if production:
+        report['production']={'target':'docs/knowledge-map/','validation':production_validation,
+            'files':sorted(production_outputs),'manifest':json.loads(production_outputs['release-manifest.json'])}
     origin=region['origins'][0] if region['origins'] else None
     report.update({'affected_region':origin,'affected_categories':report['presentation']['category_displacement']['affected_nodes'],
                    'estimated_displacement':report['presentation']['category_displacement']['max'],
@@ -173,7 +189,11 @@ def _run(root, output, source, mode, rebalance, preview, budget, state_path, app
         destinations=[]
         candidate_state=state_store.outputs(state_path,new_cp,candidate)
         if any((state_path/n).read_bytes()!=candidate_state[n] for n in state_store.NAMES): destinations.append((state_path,candidate_state))
-        if not output.exists() or any(not (output/n).is_file() or (output/n).read_bytes()!=b for n,b in outputs.items()): destinations.append((output,outputs))
+        if not production and (not output.exists() or any(not (output/n).is_file() or (output/n).read_bytes()!=b for n,b in outputs.items())): destinations.append((output,outputs))
+        if production:
+            if installed_production:build.verify_release(production_path)
+            existing={p.relative_to(production_path).as_posix():p.read_bytes() for p in production_path.rglob('*') if p.is_file()}
+            if existing!=production_outputs:destinations.append((production_path,production_outputs))
         if preview:
             dest=root/'docs/knowledge-atlas-preview'; published=build.preview_outputs(outputs)
             if (dest/'PREVIEW-NOTES.md').exists(): published['PREVIEW-NOTES.md']=(dest/'PREVIEW-NOTES.md').read_bytes()
@@ -185,5 +205,9 @@ def _run(root, output, source, mode, rebalance, preview, budget, state_path, app
                 raise ValueError('SOURCE_CHANGED_DURING_UPDATE: aborting publication')
             if transaction.inventory(output) != original_build:
                 raise ValueError('BUILD_CHANGED_DURING_UPDATE: aborting publication')
-        if destinations: transaction.publish(root,destinations,fault=fault,preflight=preflight,journal=journal)
+            if production and transaction.inventory(production_path)!=original_production:
+                raise ValueError('PRODUCTION_CHANGED_DURING_UPDATE: aborting publication')
+        def final_verify():
+            if production:build.verify_release(production_path,production_outputs)
+        if destinations: transaction.publish(root,destinations,fault=fault,preflight=preflight,journal=journal,verify=final_verify)
     return report

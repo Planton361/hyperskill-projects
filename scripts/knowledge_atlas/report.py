@@ -30,4 +30,9 @@ def human(report):
               'Applied: '+('yes' if report['applied'] else 'no'),
               'Safe to build preview: '+('YES' if report['safe_to_build_preview'] else 'NO'),
               'Mode: ' + report['mode']]
+    if report.get('production'):
+        production = report['production']
+        lines += ['', 'Production', '----------', 'Target: ' + production['target'],
+                  'Publication: ' + ('APPLIED' if report['applied'] else 'NOT APPLIED'),
+                  'Browser regression: ' + ((production.get('validation') or {}).get('status', 'BLOCKED'))]
     return '\n'.join(lines)

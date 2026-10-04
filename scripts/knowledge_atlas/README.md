@@ -1,6 +1,7 @@
 # Knowledge Atlas production hardening (pipeline v2)
 
-The accepted V6 UI, public URLs and `/knowledge-map/` are unchanged. This offline
+The accepted V6 UI and public URLs are unchanged. `/knowledge-map/` is the
+production Atlas target. This offline
 pipeline reads normalized knowledge and persistent presentation history. It
 never collects authenticated data, infers evidence, creates `project_applies`,
 commits, pushes or deploys.
@@ -18,15 +19,73 @@ comparison.
 
 ```bash
 python -B scripts/update-knowledge-atlas.py --dry-run
-python -B scripts/update-knowledge-atlas.py
+python -B scripts/update-knowledge-atlas.py --production
 python -B scripts/update-knowledge-atlas.py --check
+git diff
 ```
 
 Default / `--build` publishes validated prototype artifacts and, when needed,
 updates both persistent state files as one transaction. Output remains
 `prototypes/knowledge-atlas-v6/build/` (ignored). The state lives in
 `state/knowledge-atlas/` (intentionally version controlled). Review the state diff
-and commit it yourself when appropriate. No product files are migrated.
+and commit it yourself when appropriate. The default remains an isolated build;
+only explicit `--production` packages `/knowledge-map/`. The updater never
+commits, pushes or deploys.
+
+## Production packaging and rollback
+
+`--production` requires canonical `data/knowledge/` and `state/knowledge-atlas/`
+and strictly SAFE_TO_APPLY. REVIEW_REQUIRED and REBALANCE_REQUIRED cannot be
+bypassed with production flags. It builds in memory, validates source/state,
+font canary, geometry and runtime, verifies the accepted runtime assets, then
+runs all nine widths (1920, 1440, 1280, 1200, 1024, 768, 430, 390, 320) in both
+themes. The initial generation-0 baseline additionally compares complete scene
+sequences against the retained accepted public Preview: exact node/tray/path
+geometry, rendered SVG text metrics, navigation, relations and Inspector data.
+The binary spelling of derived line-height metadata is not a rendered metric;
+SVG text bounds are compared exactly, with no added font/geometry tolerance.
+
+Only title/header Preview wording is removed. The persistent-state hydration and
+generic project index adapters were already part of the accepted pipeline.
+Their hashes and every difference from the historical Preview are explained in
+`release-manifest.json`. No CSS, routing, relation, model-runtime or vendor edit
+is permitted. The production file set must equal the manifest plus the manifest
+itself; old assets are replaced as a directory, never left alongside the Atlas.
+`geometry.js` is a required runtime asset. Snapshots, fixtures, notes and reports
+are not deployed.
+
+The existing durable directory-exchange transaction publishes production and,
+only if changed, persistent state together. Final file-set/hash/byte verification
+occurs before the durable COMMITTED marker; any failure rolls back all targets.
+The same Linux `renameat2`/crash-recovery limitations as prototype transactions
+apply. Previews, the historical graph, normalized knowledge and Profile README
+are never production targets. `--production --dry-run` performs the complete
+candidate regression without final writes. `--check` additionally checks the
+installed Atlas package against regenerated production bytes. A second unchanged
+production build preserves all state and production bytes.
+
+After a Hyperskill project completion: update normalized knowledge through the
+existing import workflow, dry-run, inspect the report, build production only for
+SAFE_TO_APPLY, inspect `git diff`, commit and push manually, then confirm hosted
+Atlas CI, Pages deployment and public assets/behavior. Project/progress-only
+updates must have zero structural displacement and no checkpoint/generation
+change.
+
+For REVIEW_REQUIRED: inspect the candidate report and an isolated candidate or
+explicit Preview; obtain human review, then run `--approve-review` separately to
+persist the reviewed presentation state/prototype. Re-run dry-run; only the now
+SAFE_TO_APPLY production candidate may be packaged. For REBALANCE_REQUIRED:
+simulate `--dry-run --rebalance`, visually review the geography, explicitly
+approve and run `--rebalance`, inspect the new generation, perform full
+regressions, then package production separately. Production never authorizes a
+geography migration implicitly.
+
+The pre-promotion production commit is
+`044f4d1a99d840bdae6e85dafff4457d055d2b74`. Git history is the rollback archive;
+no V3 copy is deployed. To roll back, `git revert <migration-commit>`, review,
+run applicable validation and commit/push the revert through the normal release
+process. This restores the prior production assets and packaging changes. Never
+rewrite history or run rollback automatically.
 
 `--dry-run` performs full diff, classification, semantic-region analysis,
 candidate reconstruction, geometry validation and in-memory browser validation.
@@ -191,6 +250,7 @@ The guards fail visibly on drift. The pipeline itself downloads no dependencies.
 ```bash
 python -B -m unittest discover -s scripts/tests -p 'test_knowledge_atlas*.py' -v
 node scripts/knowledge_atlas/browser-regression.cjs
+PYTHONPATH=scripts python -B -m unittest knowledge_atlas.test_production -v
 ```
 
 Existing knowledge schema/evidence rules, IDs, references, canonical parents,
@@ -200,7 +260,9 @@ by course membership. Nonstructural geometry/checkpoint identity is exact.
 Geometry checks cover every node/tray, region containment, hierarchy endpoints,
 zero semantic overlap and zero hierarchy crossings. The in-memory runtime checks
 all projects and loaded stages; the separate read-only accepted browser harness
-covers Project 113/Stage 4 and taxonomy-route/navigation preservation.
+covers Project 113/Stage 4 and taxonomy-route/navigation preservation. When a
+production manifest is installed, the existing read-only CI browser step also
+runs the full production viewport/theme matrix and accepted Preview comparison.
 
 CI triggers on pushes/pull requests affecting knowledge/pipeline/state and relevant V6 runtime files, plus manual dispatch. It
 installs exact browser dependencies/fonts, runs canary, check, dry-run, unit

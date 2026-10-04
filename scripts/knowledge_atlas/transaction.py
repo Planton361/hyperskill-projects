@@ -71,7 +71,7 @@ def recover(journal, root=None):
             raise ValueError('RECOVERY_REQUIRED: invalid candidate directory')
         if root:
             root = Path(root).resolve()
-            if not (target == root/'state/knowledge-atlas' or target == root/'docs/knowledge-atlas-preview' or
+            if not (target == root/'state/knowledge-atlas' or target == root/'docs/knowledge-atlas-preview' or target == root/'docs/knowledge-map' or
                     target.is_relative_to(root/'prototypes')):
                 raise ValueError('RECOVERY_REQUIRED: unauthorized journal target')
     if value['phase'] != 'COMMITTED':
@@ -92,7 +92,7 @@ def recover(journal, root=None):
     journal.unlink(); sync_dir(journal.parent)
 
 
-def publish(root, destinations, fault=None, preflight=None, journal=None):
+def publish(root, destinations, fault=None, preflight=None, journal=None, verify=None):
     """All candidates validated before entry. All visible targets rollback on failure."""
     root = Path(root)
     journal = Path(journal or root / 'state/.knowledge-atlas-transaction.json')
@@ -119,6 +119,7 @@ def publish(root, destinations, fault=None, preflight=None, journal=None):
             else: os.replace(stage, target)
             sync_dir(target.parent)
             if fault: fault('after_publish_' + str(i))
+        if verify: verify()
         value['phase'] = 'COMMITTED'; journal_write(journal, value)
     except BaseException:
         if journal.exists(): recover(journal,root)

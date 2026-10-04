@@ -19,6 +19,17 @@ def bridge(runtime, **payload):
     return json.loads(result.stdout)
 
 
+def production_regression(root, assets):
+    try:
+        result=subprocess.run(['node',str(Path(__file__).with_name('production_regression.cjs'))],
+            input=json.dumps({'root':str(root),'assets':{n:b.decode() for n,b in assets.items()}}),
+            text=True,capture_output=True,timeout=240)
+    except subprocess.TimeoutExpired as e:
+        raise ValueError('production browser validation timed out; no update installed') from e
+    if result.returncode:raise ValueError('production browser regression failed: '+result.stderr.strip())
+    return json.loads(result.stdout)
+
+
 def update(runtime, data, cp, geom, diff, rebalance=False, budget=None, active_keys=None):
     if not rebalance and not (set(diff['change_types']) & STRUCTURAL) and not diff.get('label_changes'):
         return {'checkpoint': cp, 'geometry': geom, 'events': [], 'repacked_trays': []}

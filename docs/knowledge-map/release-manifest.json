@@ -1,0 +1,118 @@
+{
+  "assets": {
+    "app.js": "af365f95cb2f2f35777c19959266d7ebede9e023d51bd2937823413a97ba8a42",
+    "geometry.js": "0ec2c2374471be6e63e5144de284cacdf08a82a028648f064fe720fcb35d369b",
+    "index.html": "79603aac244c7e4593b3a6354e6ff35fd2112c5ea53894d877fb1c2f9062d9e8",
+    "layout-checkpoint.json": "64c219ed63c6ad34fd42a365f4df91d13d9dd37bbaa54a0197beabf351dc0bd9",
+    "layout-checkpoint.schema.json": "98b1bde9c1603e3d53db654e0e81a21d83308b3f07991dd0075b1dcf2fb33501",
+    "layout.js": "96a1a495d52b854788819c786ad607e2cd3353178b012ef046371dcd1b82593c",
+    "model.js": "25b846e3d1316e69b56b5c4a7f7b2cda8bb72ea6852503ab0a236c56d2254018",
+    "model.json": "a9152b4dee5ede117fe3c8f4c1d3f19b4ee53b7abae220aaaa30573fec93bd2b",
+    "routing.js": "31f5f2f996a77500634a46b8814fd930c61746b0e082afca4305bdc35aba1d16",
+    "style.css": "87ec20e8cdc8cc894004cd137ed18d5d5d278daa2c84e2476d6498ca54da9b9e",
+    "taxonomy-relations.js": "2ccf78c7b1a2fc418317e59c35690b82c0ee241665ee6b3843d99face7c94f90",
+    "vendor/D3-LICENSE": "3e6849627f74ff73c257a3ae1efb574015d94fc1035c05ec3c15805165efcbc4",
+    "vendor/d3-7.9.0.min.js": "f2094bbf6141b359722c4fe454eb6c4b0f0e42cc10cc7af921fc158fceb86539"
+  },
+  "deployment_path": "docs/knowledge-map/",
+  "generation": 0,
+  "layout_algorithm_version": "atlas-incremental-2",
+  "layout_schema_version": 2,
+  "pipeline_version": 2,
+  "preview_comparison": [
+    {
+      "asset": "app.js",
+      "identical": false,
+      "preview_sha256": "995634885a5f5c31f05856015a0ddd0d59fd7f8725cba5edf4a17056f06d4cab",
+      "production_sha256": "af365f95cb2f2f35777c19959266d7ebede9e023d51bd2937823413a97ba8a42",
+      "reason": "Already accepted generic project-requirement index adapter; no project-specific code"
+    },
+    {
+      "asset": "geometry.js",
+      "identical": false,
+      "preview_sha256": null,
+      "production_sha256": "0ec2c2374471be6e63e5144de284cacdf08a82a028648f064fe720fcb35d369b",
+      "reason": "Runtime-required geometry derived from persistent state; no fresh layout generation"
+    },
+    {
+      "asset": "index.html",
+      "identical": false,
+      "preview_sha256": "4b74e16e94b64156768f24df5a533469d8691b3b650d26914edb5ed80d261ffc",
+      "production_sha256": "79603aac244c7e4593b3a6354e6ff35fd2112c5ea53894d877fb1c2f9062d9e8",
+      "reason": "Preview title/header removed; accepted geometry.js hydration script loaded"
+    },
+    {
+      "asset": "layout-checkpoint.json",
+      "identical": false,
+      "preview_sha256": "ec12df3fde2dfeacd8c8216cbe38e2cae653a065a9bb427eaaf92b66e18562de",
+      "production_sha256": "64c219ed63c6ad34fd42a365f4df91d13d9dd37bbaa54a0197beabf351dc0bd9",
+      "reason": "Accepted persistent presentation state schema 2 replaces legacy preview schema 5"
+    },
+    {
+      "asset": "layout-checkpoint.schema.json",
+      "identical": false,
+      "preview_sha256": "35d27628dde89adbcc1d8297c037173371a6d554b2fa51ff22095a6c422000b8",
+      "production_sha256": "98b1bde9c1603e3d53db654e0e81a21d83308b3f07991dd0075b1dcf2fb33501",
+      "reason": "Schema for accepted persistent state"
+    },
+    {
+      "asset": "layout.js",
+      "identical": false,
+      "preview_sha256": "78f268906b0aaa349e8091c18a4b06158bc70f4129a0f73cae4d256b0d7428fc",
+      "production_sha256": "96a1a495d52b854788819c786ad607e2cd3353178b012ef046371dcd1b82593c",
+      "reason": "Already accepted deterministic hydration adapter; same frozen node/tray/hierarchy geometry"
+    },
+    {
+      "asset": "model.js",
+      "identical": true,
+      "preview_sha256": "25b846e3d1316e69b56b5c4a7f7b2cda8bb72ea6852503ab0a236c56d2254018",
+      "production_sha256": "25b846e3d1316e69b56b5c4a7f7b2cda8bb72ea6852503ab0a236c56d2254018",
+      "reason": "byte-identical accepted asset"
+    },
+    {
+      "asset": "model.json",
+      "identical": false,
+      "preview_sha256": "42c343d66e6e3d8ae853db01719aca61bd647b40a634dbaa2a021bfc57ff6ef8",
+      "production_sha256": "a9152b4dee5ede117fe3c8f4c1d3f19b4ee53b7abae220aaaa30573fec93bd2b",
+      "reason": "Canonical knowledge serialization, deterministic hashes and derived evidence/membership indexes"
+    },
+    {
+      "asset": "routing.js",
+      "identical": true,
+      "preview_sha256": "31f5f2f996a77500634a46b8814fd930c61746b0e082afca4305bdc35aba1d16",
+      "production_sha256": "31f5f2f996a77500634a46b8814fd930c61746b0e082afca4305bdc35aba1d16",
+      "reason": "byte-identical accepted asset"
+    },
+    {
+      "asset": "style.css",
+      "identical": true,
+      "preview_sha256": "87ec20e8cdc8cc894004cd137ed18d5d5d278daa2c84e2476d6498ca54da9b9e",
+      "production_sha256": "87ec20e8cdc8cc894004cd137ed18d5d5d278daa2c84e2476d6498ca54da9b9e",
+      "reason": "byte-identical accepted asset"
+    },
+    {
+      "asset": "taxonomy-relations.js",
+      "identical": true,
+      "preview_sha256": "2ccf78c7b1a2fc418317e59c35690b82c0ee241665ee6b3843d99face7c94f90",
+      "production_sha256": "2ccf78c7b1a2fc418317e59c35690b82c0ee241665ee6b3843d99face7c94f90",
+      "reason": "byte-identical accepted asset"
+    },
+    {
+      "asset": "vendor/D3-LICENSE",
+      "identical": true,
+      "preview_sha256": "3e6849627f74ff73c257a3ae1efb574015d94fc1035c05ec3c15805165efcbc4",
+      "production_sha256": "3e6849627f74ff73c257a3ae1efb574015d94fc1035c05ec3c15805165efcbc4",
+      "reason": "byte-identical accepted asset"
+    },
+    {
+      "asset": "vendor/d3-7.9.0.min.js",
+      "identical": true,
+      "preview_sha256": "f2094bbf6141b359722c4fe454eb6c4b0f0e42cc10cc7af921fc158fceb86539",
+      "production_sha256": "f2094bbf6141b359722c4fe454eb6c4b0f0e42cc10cc7af921fc158fceb86539",
+      "reason": "byte-identical accepted asset"
+    }
+  ],
+  "public_url": "https://planton361.github.io/hyperskill-projects/knowledge-map/",
+  "state_schema_version": 2,
+  "target": "production"
+}
