@@ -1,0 +1,88 @@
+name: Knowledge Atlas read-only validation
+on:
+  push:
+    paths:
+      - 'data/knowledge/**'
+      - 'scripts/update-knowledge-atlas.py'
+      - 'scripts/knowledge_atlas/**'
+      - 'scripts/tests/test_knowledge_atlas*.py'
+      - 'state/knowledge-atlas/**'
+      - 'prototypes/knowledge-atlas-v6/*.js'
+      - 'prototypes/knowledge-atlas-v6/*.json'
+      - 'prototypes/knowledge-atlas-v6/*.html'
+      - 'prototypes/knowledge-atlas-v6/*.css'
+      - 'prototypes/knowledge-atlas-v6/vendor/**'
+      - '.github/workflows/knowledge-atlas-check.yml'
+  pull_request:
+    paths:
+      - 'data/knowledge/**'
+      - 'scripts/update-knowledge-atlas.py'
+      - 'scripts/knowledge_atlas/**'
+      - 'scripts/tests/test_knowledge_atlas*.py'
+      - 'state/knowledge-atlas/**'
+      - 'prototypes/knowledge-atlas-v6/*.js'
+      - 'prototypes/knowledge-atlas-v6/*.json'
+      - 'prototypes/knowledge-atlas-v6/*.html'
+      - 'prototypes/knowledge-atlas-v6/*.css'
+      - 'prototypes/knowledge-atlas-v6/vendor/**'
+      - '.github/workflows/knowledge-atlas-check.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    env:
+      LANG: en_US.UTF-8
+      LC_ALL: en_US.UTF-8
+      PLAYWRIGHT_BROWSERS_PATH: /tmp/atlas-pinned-browsers
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.16.0'
+      - name: Exact browser and font environment
+        run: |
+          npm install --prefix "$RUNNER_TEMP/atlas-browser" --ignore-scripts playwright@1.62.1
+          "$RUNNER_TEMP/atlas-browser/node_modules/.bin/playwright" install --with-deps chromium
+          mkdir -p "$HOME/.local/share/fonts/knowledge-atlas"
+          cp scripts/knowledge_atlas/fonts/*.ttf "$HOME/.local/share/fonts/knowledge-atlas/"
+          fc-cache -f
+          echo "PLAYWRIGHT_MODULE=$RUNNER_TEMP/atlas-browser/node_modules/playwright" >> "$GITHUB_ENV"
+          echo "FONTCONFIG_FILE=$GITHUB_WORKSPACE/scripts/knowledge_atlas/fontconfig.xml" >> "$GITHUB_ENV"
+          node - <<'JS'
+          const fs=require('fs');
+          const policy=require(process.env.RUNNER_TEMP+'/atlas-browser/node_modules/playwright-core/browsers.json');
+          const browser=policy.browsers.find(b=>b.name==='chromium');
+          if(browser.revision!=='1234'||browser.browserVersion!=='151.0.7922.34')throw Error('BROWSER_REVISION_MISMATCH');
+          const {chromium}=require(process.env.RUNNER_TEMP+'/atlas-browser/node_modules/playwright');
+          fs.appendFileSync(process.env.GITHUB_ENV,'CHROMIUM_EXECUTABLE='+chromium.executablePath()+'\n');
+          JS
+      - name: Fonts and text-metric canary
+        run: python -B scripts/knowledge_atlas/verify_environment.py
+      - name: Preserve repository state hashes
+        run: sha256sum state/knowledge-atlas/*.json > "$RUNNER_TEMP/atlas-state-before.sha256"
+      - name: Check current persistent state and reproduce accepted geography
+        run: python -B scripts/update-knowledge-atlas.py --check
+      - name: Simulate and report (never apply)
+        if: always()
+        run: python -B scripts/update-knowledge-atlas.py --dry-run --report-json "$RUNNER_TEMP/knowledge-atlas-update-report.json"
+      - name: Unit contracts and fault injection in disposable test directories
+        run: python -B -m unittest discover -s scripts/tests -p 'test_knowledge_atlas*.py' -v
+      - name: Accepted Atlas browser regression without artifact writes
+        run: node scripts/knowledge_atlas/browser-regression.cjs
+      - name: Verify read-only state contract
+        if: always()
+        run: |
+          sha256sum --check "$RUNNER_TEMP/atlas-state-before.sha256"
+          git diff --exit-code -- data/knowledge state docs generated README.md
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: knowledge-atlas-update-report
+          path: |
+            ${{ runner.temp }}/knowledge-atlas-update-report.json
+            ${{ runner.temp }}/knowledge-atlas-update-report.txt

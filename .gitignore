@@ -44,3 +44,14 @@ venv/
 
 # Import transaction lock
 .import-hyperskill.lock
+
+# Atlas transaction journal/candidates (persistent JSON under state/ is tracked)
+.atlas-candidate-*/
+state/.knowledge-atlas-transaction.json
+state/.knowledge-atlas-transaction.tmp
+
+# Atlas/browser validation output (baseline fixtures are versioned separately)
+build.tmp/
+playwright-report/
+test-results/
+blob-report/

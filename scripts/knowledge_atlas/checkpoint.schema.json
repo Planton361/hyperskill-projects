@@ -1,0 +1,221 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "state_schema_version",
+    "layout_schema_version",
+    "layout_algorithm_version",
+    "presentation_generation",
+    "categories"
+  ],
+  "properties": {
+    "state_schema_version": {
+      "const": 2
+    },
+    "layout_schema_version": {
+      "const": 2
+    },
+    "layout_algorithm_version": {
+      "const": "atlas-incremental-2"
+    },
+    "presentation_generation": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "categories": {
+      "type": "object",
+      "patternProperties": {
+        "^category:[0-9]+$": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "slot_anchor",
+            "slot_row",
+            "visible_extent",
+            "allocated_width",
+            "allocated_height",
+            "reserved_capacity",
+            "sibling_order",
+            "topic_order",
+            "card_allocation",
+            "tray_allocation"
+          ],
+          "properties": {
+            "slot_anchor": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "x",
+                "y"
+              ],
+              "properties": {
+                "x": {
+                  "type": "number"
+                },
+                "y": {
+                  "type": "number"
+                }
+              }
+            },
+            "slot_row": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "visible_extent": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "left",
+                "top",
+                "width",
+                "height"
+              ],
+              "properties": {
+                "left": {
+                  "type": "number"
+                },
+                "top": {
+                  "type": "number"
+                },
+                "width": {
+                  "type": "number"
+                },
+                "height": {
+                  "type": "number"
+                }
+              }
+            },
+            "allocated_width": {
+              "type": "number"
+            },
+            "allocated_height": {
+              "type": "number"
+            },
+            "reserved_capacity": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "width",
+                "height"
+              ],
+              "properties": {
+                "width": {
+                  "type": "number"
+                },
+                "height": {
+                  "type": "number"
+                }
+              }
+            },
+            "sibling_order": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "pattern": "^category:[0-9]+$"
+              }
+            },
+            "topic_order": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "pattern": "^topic:[0-9]+$"
+              }
+            },
+            "card_allocation": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "width",
+                "height",
+                "font",
+                "line"
+              ],
+              "properties": {
+                "width": {
+                  "type": "number"
+                },
+                "height": {
+                  "type": "number"
+                },
+                "font": {
+                  "type": "number"
+                },
+                "line": {
+                  "type": "number"
+                }
+              }
+            },
+            "tray_allocation": {
+              "anyOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "left",
+                    "top",
+                    "width",
+                    "height",
+                    "padding",
+                    "row_gap",
+                    "rows"
+                  ],
+                  "properties": {
+                    "left": {
+                      "type": "number"
+                    },
+                    "top": {
+                      "type": "number"
+                    },
+                    "width": {
+                      "type": "number"
+                    },
+                    "height": {
+                      "type": "number"
+                    },
+                    "padding": {
+                      "type": "number"
+                    },
+                    "row_gap": {
+                      "type": "number"
+                    },
+                    "rows": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": [
+                          "key",
+                          "width",
+                          "height"
+                        ],
+                        "properties": {
+                          "key": {
+                            "type": "string",
+                            "pattern": "^topic:[0-9]+$"
+                          },
+                          "width": {
+                            "type": "number"
+                          },
+                          "height": {
+                            "type": "number"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}
