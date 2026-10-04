@@ -2,6 +2,12 @@
 import math
 TYPES = {'courses': 'course', 'categories': 'category', 'topics': 'topic', 'projects': 'project', 'stages': 'stage'}
 
+
+def validate_global_catalog(observation):
+    """Separate data-forest contract; V6's active single-root contract is intact."""
+    from .catalog_observation import validate_observation
+    return validate_observation(observation)
+
 def validate_evidence(data):
     def require(ok, message):
         if not ok:

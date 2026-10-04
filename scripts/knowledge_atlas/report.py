@@ -30,6 +30,13 @@ def human(report):
               'Applied: '+('yes' if report['applied'] else 'no'),
               'Safe to build preview: '+('YES' if report['safe_to_build_preview'] else 'NO'),
               'Mode: ' + report['mode']]
+    if report.get('global_catalog', {}).get('observation_count'):
+        catalog = report['global_catalog']
+        lines += ['', 'Global catalog (data only)', '--------------------------',
+                  f"{catalog['categories']} categories; {catalog['described_topics']} described Topics; {catalog['unresolved_references']} unresolved references",
+                  'Global change types: ' + ', '.join(catalog['change_types']),
+                  'Active projection changed: ' + ('yes' if catalog['active_projection_changed'] else 'no'),
+                  'Geometry activation: no']
     if report.get('production'):
         production = report['production']
         lines += ['', 'Production', '----------', 'Target: ' + production['target'],

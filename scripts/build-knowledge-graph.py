@@ -4,7 +4,11 @@ import argparse
 import html
 import json
 import math
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from knowledge_atlas.observations import load as load_observations
 
 TABLES = ('courses', 'categories', 'topics', 'projects', 'stages', 'edges', 'progress', 'evidence')
 TYPES = {'courses': 'course', 'categories': 'category', 'topics': 'topic', 'projects': 'project', 'stages': 'stage'}
@@ -12,7 +16,7 @@ COLORS = {'course': '#c9afff', 'category': '#818da9', 'unknown': '#647087', 'not
 
 def load(root):
     data = {name: json.loads((root / 'data/knowledge' / (name + '.json')).read_text()) for name in TABLES}
-    data['observations'] = {'observations/'+p.name: json.loads(p.read_text()) for p in sorted((root/'data/knowledge/observations').glob('*.json'))}
+    data['observations'], data['catalog_observations'] = load_observations(root/'data/knowledge/observations')
     return data
 
 def validate(data):

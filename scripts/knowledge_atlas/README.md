@@ -15,6 +15,23 @@ Dry-run/check reports include the actual font measurements/browser version and
 source, checkpoint, geometry, build-manifest and asset hashes for hosted parity
 comparison.
 
+## Global catalog foundation
+
+The offline [global catalog contract](GLOBAL-CATALOG.md) adds typed sanitized
+observations, explicit unresolved references, a five-root data forest and pure
+course/project/relevance queries. Global facts are joined with accepted entities
+by stable ID; dormant additions are excluded from the V6 active projection and
+source fingerprint. `--dry-run` reports catalog changes separately. Global
+ingestion alone does not allocate geometry, update state, alter progress or
+publish production. The sanitizer is invoked separately with explicit
+`--dry-run` or `--write-observation`.
+
+The normal Python Simple programs Category-428 pilot did not bulk-resolve its
+six leaf references. The 3,017 unresolved global references remain valid dormant
+data; future targeted metadata acquisition is unimplemented and should be
+limited to IDs made relevant by explicit course/project evidence. No repeated
+Category pilot or mass Topic crawling is planned.
+
 ## Normal operator workflow
 
 ```bash

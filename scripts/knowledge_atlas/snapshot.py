@@ -48,10 +48,13 @@ def ordered_digest(value):
 
 
 def load_source(path):
+    from .observations import load
     data = {t: json.loads((Path(path) / (t + '.json')).read_text()) for t in TABLES}
-    data['observations'] = {'observations/' + p.name: json.loads(p.read_text())
-                            for p in sorted((Path(path) / 'observations').glob('*.json'))}
-    return canonical(data)
+    data['observations'], data['catalog_observations'] = load(Path(path) / 'observations')
+    catalogs = data.pop('catalog_observations')
+    data = canonical(data)
+    data['catalog_observations'] = catalogs
+    return data
 
 
 def index(data):

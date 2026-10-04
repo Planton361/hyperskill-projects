@@ -4,8 +4,15 @@ on:
     paths:
       - 'data/knowledge/**'
       - 'scripts/update-knowledge-atlas.py'
+      - 'scripts/sanitize-hyperskill-knowledge-map.py'
       - 'scripts/knowledge_atlas/**'
       - 'scripts/tests/test_knowledge_atlas*.py'
+      - 'scripts/tests/test_global_catalog.py'
+      - 'scripts/tests/test_knowledge_graph.py'
+      - 'scripts/tests/test_knowledge_map.py'
+      - 'scripts/tests/test_import.py'
+      - 'scripts/build-knowledge-graph.py'
+      - 'scripts/build-knowledge-map.py'
       - 'state/knowledge-atlas/**'
       - 'prototypes/knowledge-atlas-v6/*.js'
       - 'prototypes/knowledge-atlas-v6/*.json'
@@ -17,8 +24,15 @@ on:
     paths:
       - 'data/knowledge/**'
       - 'scripts/update-knowledge-atlas.py'
+      - 'scripts/sanitize-hyperskill-knowledge-map.py'
       - 'scripts/knowledge_atlas/**'
       - 'scripts/tests/test_knowledge_atlas*.py'
+      - 'scripts/tests/test_global_catalog.py'
+      - 'scripts/tests/test_knowledge_graph.py'
+      - 'scripts/tests/test_knowledge_map.py'
+      - 'scripts/tests/test_import.py'
+      - 'scripts/build-knowledge-graph.py'
+      - 'scripts/build-knowledge-map.py'
       - 'state/knowledge-atlas/**'
       - 'prototypes/knowledge-atlas-v6/*.js'
       - 'prototypes/knowledge-atlas-v6/*.json'
@@ -63,8 +77,9 @@ jobs:
           JS
       - name: Fonts and text-metric canary
         run: python -B scripts/knowledge_atlas/verify_environment.py
-      - name: Preserve repository state hashes
-        run: sha256sum state/knowledge-atlas/*.json > "$RUNNER_TEMP/atlas-state-before.sha256"
+      - name: Preserve Production and persistent state hashes
+        run: |
+          find docs/knowledge-map state/knowledge-atlas -type f -print0 | sort -z | xargs -0 sha256sum > "$RUNNER_TEMP/atlas-protected-before.sha256"
       - name: Check current persistent state and reproduce accepted geography
         run: python -B scripts/update-knowledge-atlas.py --check
       - name: Simulate and report (never apply)
@@ -72,13 +87,25 @@ jobs:
         run: python -B scripts/update-knowledge-atlas.py --dry-run --report-json "$RUNNER_TEMP/knowledge-atlas-update-report.json"
       - name: Unit contracts and fault injection in disposable test directories
         run: python -B -m unittest discover -s scripts/tests -p 'test_knowledge_atlas*.py' -v
+      - name: Global Catalog security, forest, references and active projection
+        run: python -B -m unittest discover -s scripts/tests -p 'test_global_catalog.py' -v
+      - name: Graph, importer, current Map and Packaging contracts
+        run: |
+          python -B -m unittest discover -s scripts/tests -p 'test_knowledge_graph.py' -v
+          python -B -m unittest discover -s scripts/tests -p 'test_import.py' -v
+          python -B -m unittest discover -s scripts/tests -p 'test_knowledge_map.py' -v
+          PYTHONPATH=scripts python -B -m unittest knowledge_atlas.test_production -v
       - name: Accepted Atlas browser regression without artifact writes
         run: node scripts/knowledge_atlas/browser-regression.cjs
       - name: Verify read-only state contract
         if: always()
         run: |
-          sha256sum --check "$RUNNER_TEMP/atlas-state-before.sha256"
+          sha256sum --check "$RUNNER_TEMP/atlas-protected-before.sha256"
+          find docs/knowledge-map state/knowledge-atlas -type f -print0 | sort -z | xargs -0 sha256sum > "$RUNNER_TEMP/atlas-protected-after.sha256"
+          cmp "$RUNNER_TEMP/atlas-protected-before.sha256" "$RUNNER_TEMP/atlas-protected-after.sha256"
           git diff --exit-code -- data/knowledge state docs generated README.md
+          test -z "$(git ls-files --others --exclude-standard -- data/knowledge state docs generated README.md)"
+          test -z "$(git ls-files '*.har' '*.HAR')"
       - uses: actions/upload-artifact@v4
         if: always()
         with:

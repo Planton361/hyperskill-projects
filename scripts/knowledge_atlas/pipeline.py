@@ -4,6 +4,7 @@ import hashlib
 from pathlib import Path
 from . import build, diff, layout_update, snapshot, validate, state as state_store, regions, transaction
 from .classify import MIGRATIONS
+from .catalog import active_projection, summary as catalog_summary
 
 
 def run(root, output=None, source=None, mode='build', rebalance=False, preview=False, budget=None,
@@ -41,7 +42,9 @@ def _run(root, output, source, mode, rebalance, preview, budget, state_path, app
         transaction.recover(journal,root)
         return {'status':'SAFE_TO_APPLY','outcome':'SAFE_TO_APPLY','applied':True,'message':'Transaction recovery complete'}
     if journal.exists(): raise ValueError('RECOVERY_REQUIRED: pending transaction; run --recover-transaction')
-    data = snapshot.load_source(source)
+    loaded = snapshot.load_source(source)
+    global_catalog = catalog_summary(loaded)
+    data = active_projection(loaded)
     validate.validate(data)
     environment = layout_update.bridge(runtime, action='canary')
     if migrate:
@@ -174,6 +177,7 @@ def _run(root, output, source, mode, rebalance, preview, budget, state_path, app
     if production:
         report['production']={'target':'docs/knowledge-map/','validation':production_validation,
             'files':sorted(production_outputs),'manifest':json.loads(production_outputs['release-manifest.json'])}
+    report['global_catalog'] = global_catalog
     origin=region['origins'][0] if region['origins'] else None
     report.update({'affected_region':origin,'affected_categories':report['presentation']['category_displacement']['affected_nodes'],
                    'estimated_displacement':report['presentation']['category_displacement']['max'],

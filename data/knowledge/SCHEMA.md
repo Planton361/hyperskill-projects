@@ -1,9 +1,32 @@
-# Knowledge snapshot contract (v1)
+# Knowledge snapshot contract (v1 active tables, v1 typed global observations)
 
 This directory is the renderer-independent source of truth. The 2026-10-01
 snapshot contains public metadata plus explicitly whitelisted personal facts
 provided by the owner. It contains no session, account ID, certificate URL,
 lesson content, solutions, platform tests, or authentication data.
+
+The active normalized tables remain the accepted Course-8 projection. Global
+catalog facts are now supplied by typed sanitized observations and joined by
+stable identity in one internal catalog. They are not automatically inputs to
+the production renderer or its persistent geometry. See the
+[global catalog contract](../../scripts/knowledge_atlas/GLOBAL-CATALOG.md) for
+the strict observation schema, resolution/reference model, five-root forest
+validator, per-field provenance, projection API and security allowlist.
+
+`global_knowledge_catalog` observations carry separate completeness status for
+taxonomy pagination, categories, leaf references, Topic metadata, prerequisites
+and followers. The current global snapshot is PARTIAL: 849 described categories,
+89 described Topics and 3,017 unresolved references. Structural leaves without
+explicit Topic identity are never fake Topic entities. Legacy progress
+observations remain unchanged; typed loader dispatch keeps personal state and
+global facts independent. Only accepted active tables/personal observations
+contribute to the presentation source fingerprint.
+
+The normal global Category-428 display did not resolve its six Python leaf
+references into Topic metadata. Unresolved references are intentional valid
+state. Future targeted acquisition is not implemented and is limited to IDs
+made relevant by explicit course/project evidence; no mass Topic crawling is
+planned. Category display must not be assumed to provide bulk Topic metadata.
 
 ## Tables and keys
 

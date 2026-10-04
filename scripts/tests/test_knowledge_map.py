@@ -5,6 +5,7 @@ import json
 import re
 from pathlib import Path
 import shutil
+import sys
 import tempfile
 import unittest
 from unittest.mock import patch
@@ -13,6 +14,9 @@ ROOT = Path(__file__).resolve().parents[2]
 spec = importlib.util.spec_from_file_location('knowledge_map', ROOT / 'scripts/build-knowledge-map.py')
 build = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(build)
+sys.path.insert(0, str(ROOT / 'scripts'))
+from knowledge_atlas import build as atlas_build, snapshot, state
+from knowledge_atlas.catalog import active_projection
 
 
 class KnowledgeMapTests(unittest.TestCase):
@@ -114,7 +118,21 @@ class KnowledgeMapTests(unittest.TestCase):
 
     def test_deterministic_outputs_and_source_integrity(self):
         self.assertEqual(build.encode(self.model), build.encode(build.project_model()))
-        build.render(check=True)
+        # The editorial legacy builder is covered in disposable roots below.
+        # Installed /knowledge-map/ now uses V6, not that historical format.
+        # Reproduce its complete current package without writing docs or state.
+        data = active_projection(snapshot.load_source(ROOT / 'data/knowledge'))
+        checkpoint, accepted = state.read(ROOT / 'state/knowledge-atlas')
+        production_path = ROOT / 'docs/knowledge-map'
+        geometry = json.loads((production_path / 'geometry.js').read_text()
+                              .removeprefix('globalThis.AtlasBuildGeometry=').strip().removesuffix(';'))
+        candidate = state.complete(data, checkpoint, geometry)
+        self.assertEqual(candidate, accepted)
+        outputs = atlas_build.artifacts(ROOT / 'prototypes/knowledge-atlas-v6', data, checkpoint, geometry, candidate)
+        package = atlas_build.production_outputs(outputs, ROOT / 'docs/knowledge-atlas-preview')
+        atlas_build.verify_release(production_path, package)
+        for name, payload in package.items():
+            self.assertEqual((production_path / name).read_bytes(), payload, name)
         for name, digest in self.model['source_hashes'].items():
             self.assertEqual(hashlib.sha256((ROOT / name).read_bytes()).hexdigest(), digest)
 
