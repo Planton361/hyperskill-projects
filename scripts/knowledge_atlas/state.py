@@ -63,6 +63,8 @@ def baseline(runtime, source_data):
 
 def outputs(path, cp, previous):
     result = {NAMES[0]: snapshot.encode(cp), NAMES[1]: snapshot.encode(previous)}
+    activation = path/'activation-state.json'
+    if activation.exists(): result['activation-state.json'] = activation.read_bytes()
     readme = path/'README.md'
     if readme.exists(): result['README.md'] = readme.read_bytes()
     return result

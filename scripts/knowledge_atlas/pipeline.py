@@ -4,6 +4,9 @@ import hashlib
 from pathlib import Path
 from . import build, diff, layout_update, snapshot, validate, state as state_store, regions, transaction
 from .classify import MIGRATIONS
+from . import activation_persistence as activation_store
+from .activation import ActivationPlanner
+from .catalog import Catalog
 from .catalog import active_projection, summary as catalog_summary
 
 
@@ -45,7 +48,7 @@ def _run(root, output, source, mode, rebalance, preview, budget, state_path, app
     loaded = snapshot.load_source(source)
     global_catalog = catalog_summary(loaded)
     data = active_projection(loaded)
-    validate.validate(data)
+    if not (state_path/activation_store.NAME).exists(): validate.validate(data)
     environment = layout_update.bridge(runtime, action='canary')
     if migrate:
         original_state={n:(state_path/n).read_bytes() for n in state_store.NAMES}
@@ -85,9 +88,23 @@ def _run(root, output, source, mode, rebalance, preview, budget, state_path, app
                 'generation':cp['presentation_generation'],'validation':{'status':'PASS','atlas_runtime':runtime_result}}
     cp, before = state_store.read(state_path, allow_layout_migration=rebalance)
     original_state = {n:(state_path/n).read_bytes() for n in state_store.NAMES}
+    original_state_inventory = transaction.inventory(state_path)
     active_keys = [f'{kind}:{k}' for table,kind in [('categories','category'),('topics','topic')] for k in before[table]]
     restored = layout_update.bridge(runtime, action='restore', data=data, checkpoint=cp, activeKeys=active_keys)
     geom = restored['geometry']
+    history_file = state_path/activation_store.NAME
+    history = activation_store.read_history(state_path,cp,geom)
+    if history_file.exists():
+        geom = history['accepted_geometry']
+    if history_file.exists() or state_path==root/'state/knowledge-atlas' or production:
+        activation_plan = ActivationPlanner(Catalog(loaded),cp,geom).plan()
+        if activation_plan['recommended_outcome'] != 'NO_CHANGE':
+            status = activation_plan['pipeline_outcome'] or 'METADATA_REQUIRED'
+            return {'status':status,'outcome':status,'applied':False,'activation_plan':activation_plan,
+                    'message':'Create --activation-preview and review an exact manifest; normal updates cannot activate geometry',
+                    'safe_to_build_preview':False}
+        data = activation_store.projection(loaded,set(history['active_categories']+history['active_topics']))
+    validate.validate(data)
     after = snapshot.index(data)
     changes = diff.compare(before,after)
     if changes['change_types'] == ['NO_CHANGE'] and not rebalance and snapshot.ordered_digest(geom) != before['geometry_fingerprint']:
@@ -105,10 +122,15 @@ def _run(root, output, source, mode, rebalance, preview, budget, state_path, app
         return {**result,'outcome':'REBALANCE_REQUIRED','applied':False,'diff':changes,
                 'safe_to_build_preview':False,'validation':{'status':'SOURCE_VALID'},
                 'message':'Candidate stopped at explicit displacement budget; no publication'}
-    new_cp = snapshot.presentation(result['checkpoint'])
+    new_cp = result['checkpoint'] if history_file.exists() else snapshot.presentation(result['checkpoint'])
     # Generation tracks ALL presentation allocation/order mutations, including tray rows.
     new_cp['presentation_generation'] = cp['presentation_generation'] + (new_cp['categories'] != cp['categories'])
     new_geom = layout_update.bridge(runtime, action='restore',data=data,checkpoint=new_cp)['geometry']
+    if history_file.exists():
+        if new_cp != cp:
+            return {'status':'REVIEW_REQUIRED','outcome':'REVIEW_REQUIRED','applied':False,
+                    'message':'Accepted activation history is immutable; presentation mutation requires a dedicated reviewed workflow'}
+        new_geom = geom
     if fault: fault('after_candidate_checkpoint')
     region = regions.impact(data,geom,new_geom,changes,result['events'],result['repacked_trays'],cp)
     try: validate.geometry(data,new_cp,new_geom)
@@ -139,7 +161,7 @@ def _run(root, output, source, mode, rebalance, preview, budget, state_path, app
     if mode=='check' and canonical_state and installed_production:
         build.verify_release(production_path,production_outputs)
     if mode == 'check':
-        state_store.baseline(runtime,data)
+        if history['history_version']==0: state_store.baseline(runtime,data)
         if before['fingerprint'] != after['fingerprint']:
             raise ValueError('STATE_OUT_OF_DATE: knowledge differs from persistent update snapshot; use --dry-run')
         if snapshot.ordered_digest(new_geom) != before['geometry_fingerprint']:
@@ -203,9 +225,9 @@ def _run(root, output, source, mode, rebalance, preview, budget, state_path, app
             if (dest/'PREVIEW-NOTES.md').exists(): published['PREVIEW-NOTES.md']=(dest/'PREVIEW-NOTES.md').read_bytes()
             destinations.append((dest,published))
         def preflight():
-            if original_state!={n:(state_path/n).read_bytes() for n in state_store.NAMES}:
+            if original_state!={n:(state_path/n).read_bytes() for n in state_store.NAMES} or transaction.inventory(state_path)!=original_state_inventory:
                 raise ValueError('STATE_CHANGED_DURING_UPDATE: aborting publication')
-            if snapshot.index(snapshot.load_source(source))['fingerprint'] != after['fingerprint']:
+            if snapshot.digest(snapshot.load_source(source)) != snapshot.digest(loaded):
                 raise ValueError('SOURCE_CHANGED_DURING_UPDATE: aborting publication')
             if transaction.inventory(output) != original_build:
                 raise ValueError('BUILD_CHANGED_DURING_UPDATE: aborting publication')

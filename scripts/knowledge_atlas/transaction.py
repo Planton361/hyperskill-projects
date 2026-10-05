@@ -109,6 +109,7 @@ def publish(root, destinations, fault=None, preflight=None, journal=None, verify
                 p = stage / name; p.parent.mkdir(parents=True, exist_ok=True); durable_file(p, content)
             for directory in sorted((p for p in stage.rglob('*') if p.is_dir()), reverse=True): sync_dir(directory)
             sync_dir(stage); entry['candidate'] = inventory(stage)
+            if fault: fault('after_candidate_write')
         if preflight: preflight()
         value = {'schema_version': 1, 'phase': 'COMMITTING', 'entries': entries}
         journal_write(journal, value)
@@ -120,6 +121,7 @@ def publish(root, destinations, fault=None, preflight=None, journal=None, verify
             sync_dir(target.parent)
             if fault: fault('after_publish_' + str(i))
         if verify: verify()
+        if fault: fault('before_journal_completion')
         value['phase'] = 'COMMITTED'; journal_write(journal, value)
     except BaseException:
         if journal.exists(): recover(journal,root)

@@ -306,3 +306,7 @@ The inherited V6 Inspector/course context still uses the first course. Global
 membership indexes are prepared for future overlays/filters; no UI redesign or
 course selector is part of this work. Physical-device/screen-reader certification
 is not established by headless pipeline tests.
+
+## Exact activation persistence
+
+See [ACTIVATION-PERSISTENCE.md](ACTIVATION-PERSISTENCE.md) for baseline ACTIVE_HISTORY, local previews, manifest-bound approval, transaction recovery and the Production no-auto-activation gate.

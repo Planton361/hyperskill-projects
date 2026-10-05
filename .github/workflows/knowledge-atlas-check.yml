@@ -8,6 +8,7 @@ on:
       - 'scripts/sanitize-hyperskill-knowledge-map.py'
       - 'scripts/knowledge_atlas/**'
       - 'scripts/tests/test_knowledge_atlas*.py'
+      - 'scripts/tests/fixtures/activation/**'
       - 'scripts/tests/test_global_catalog.py'
       - 'scripts/tests/test_knowledge_graph.py'
       - 'scripts/tests/test_knowledge_map.py'
@@ -29,6 +30,7 @@ on:
       - 'scripts/sanitize-hyperskill-knowledge-map.py'
       - 'scripts/knowledge_atlas/**'
       - 'scripts/tests/test_knowledge_atlas*.py'
+      - 'scripts/tests/fixtures/activation/**'
       - 'scripts/tests/test_global_catalog.py'
       - 'scripts/tests/test_knowledge_graph.py'
       - 'scripts/tests/test_knowledge_map.py'
@@ -87,7 +89,7 @@ jobs:
       - name: Simulate and report (never apply)
         if: always()
         run: python -B scripts/update-knowledge-atlas.py --dry-run --report-json "$RUNNER_TEMP/knowledge-atlas-update-report.json"
-      - name: Unit contracts and fault injection in disposable test directories
+      - name: Unit contracts, exact activation approval and recovery in disposable test directories
         run: python -B -m unittest discover -s scripts/tests -p 'test_knowledge_atlas*.py' -v
       - name: Global Catalog security, forest, references and active projection
         run: python -B -m unittest discover -s scripts/tests -p 'test_global_catalog.py' -v

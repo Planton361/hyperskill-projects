@@ -7,6 +7,7 @@ from pathlib import Path
 import sys
 from knowledge_atlas.pipeline import run
 from knowledge_atlas.report import human
+from knowledge_atlas.activation import OUTCOMES
 
 
 def main():
@@ -26,8 +27,24 @@ def main():
     parser.add_argument('--recover-transaction', action='store_true', help='recover interrupted publication under exclusive lock')
     parser.add_argument('--migrate-state', action='store_true', help='explicit supported state-schema 1 to 2 ordered-hash migration')
     parser.add_argument('--report-json', type=Path, help='write this run JSON and sibling .txt report (explicit diagnostic output)')
+    activation = parser.add_mutually_exclusive_group()
+    activation.add_argument('--bootstrap-activation-state',action='store_true')
+    activation.add_argument('--activation-preview',type=Path,metavar='DIRECTORY',help='write a new local exact candidate preview')
+    activation.add_argument('--approve-activation',type=Path,metavar='MANIFEST',help='approve only this exact reviewed manifest')
+    parser.add_argument('--reviewed-fingerprint',help='manifest fingerprint copied from the exact reviewed preview')
+    scope=parser.add_mutually_exclusive_group()
+    scope.add_argument('--course',type=int)
+    scope.add_argument('--project',type=int)
+    parser.add_argument('--variant',choices=['current','parent-distance','centering','connector','balanced'],default='current')
     parser.add_argument('--json', action='store_true', help='print only machine-readable report to stdout')
     args = parser.parse_args()
+    if args.approve_activation and not args.reviewed_fingerprint: parser.error('--approve-activation requires --reviewed-fingerprint from human review')
+    if args.reviewed_fingerprint and not args.approve_activation: parser.error('--reviewed-fingerprint requires --approve-activation')
+    activation_operation=args.bootstrap_activation_state or args.activation_preview or args.approve_activation
+    if activation_operation and (args.check or args.dry_run or args.build or args.production or args.preview or args.rebalance or args.approve_review or args.bootstrap_state or args.recover_transaction or args.migrate_state or args.source or args.state or args.output):
+        parser.error('activation operations are separate canonical operations')
+    if (args.course is not None or args.project is not None) and not args.activation_preview:
+        parser.error('activation scope requires --activation-preview')
     if args.preview and (args.check or args.dry_run): parser.error('--preview requires build mode')
     if args.production and (args.preview or args.bootstrap_state or args.recover_transaction or args.migrate_state or args.rebalance or args.approve_review or args.source or args.state or args.output):
         parser.error('--production requires canonical data/state and SAFE_TO_APPLY; use separate reviewed state migration first')
@@ -43,12 +60,22 @@ def main():
             parser.error('--report-json must not overwrite source, state, runtime or build trees')
     mode = 'check' if args.check else 'dry-run' if args.dry_run else 'build'
     try:
-        report = run(root, args.output, args.source, mode, args.rebalance, args.preview,
+        if activation_operation:
+            from knowledge_atlas import activation_persistence as ap
+            context={'mode':'CURRENT_COURSE','course_ids':[args.course]} if args.course is not None else {'mode':'PROJECT_FOCUS','project_ids':[args.project]} if args.project is not None else {}
+            if args.bootstrap_activation_state: report=ap.bootstrap(root)
+            elif args.activation_preview:
+                manifest=ap.package_preview(root,args.activation_preview,args.variant,context)
+                report={'status':OUTCOMES[manifest['outcome']] or 'METADATA_REQUIRED','manifest':manifest,
+                        'metrics':json.loads((args.activation_preview/'metrics.json').read_text()),'applied':False}
+            else: report=ap.approve(root,args.approve_activation,reviewed_fingerprint=args.reviewed_fingerprint)
+        else:
+            report = run(root, args.output, args.source, mode, args.rebalance, args.preview,
                      state=args.state, approve_review=args.approve_review, bootstrap=args.bootstrap_state,
                      recover=args.recover_transaction,migrate=args.migrate_state,production=args.production)
     except (ValueError, KeyError, TypeError, OSError, json.JSONDecodeError) as e:
-        marker = next((m for m in ('FONT_METRICS_MISMATCH','STATE_MIGRATION_REQUIRED','REBALANCE_REQUIRED',
-                       'RECOVERY_REQUIRED') if m in str(e)), 'VALIDATION_FAILED')
+        marker = next((m for m in ('STALE_ACTIVATION_PREVIEW','ACTIVATION_STATE_MIGRATION_REQUIRED','METADATA_REQUIRED',
+                       'FONT_METRICS_MISMATCH','STATE_MIGRATION_REQUIRED','REBALANCE_REQUIRED','RECOVERY_REQUIRED') if m in str(e)), 'VALIDATION_FAILED')
         report = {'status': marker, 'message': str(e), 'safe_to_build_preview': False, 'applied':False}
     if args.report_json:
         from knowledge_atlas.transaction import durable_file, sync_dir

@@ -89,3 +89,5 @@ refuses unknown journals and externally modified targets instead of overwriting
 them. Keep the journal/backups until recovery succeeds. The supported writer
 platform is Linux on a local filesystem with working rename exchange, flock and
 fsync; NFS/Windows/macOS parity is not asserted.
+
+`activation-state.json` (schema 1) is presentation-only ACTIVE_HISTORY. Its baseline records the authoritative accepted geometry at Generation 0. It carries no Course/Project/Progress truth. New geometry requires exact manifest approval; see `scripts/knowledge_atlas/ACTIVATION-PERSISTENCE.md`.

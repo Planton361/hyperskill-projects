@@ -57,8 +57,18 @@ if(!chromium){console.error('Playwright required. Set PLAYWRIGHT_MODULE to an in
   for(const name of ['model.js','layout.js','routing.js'])await page.addScriptTag({content:fs.readFileSync(path.join(input.runtime,name),'utf8')});
   await page.addScriptTag({content:fs.readFileSync(path.join(__dirname,'layout_update.js'),'utf8')});
   await page.addScriptTag({content:fs.readFileSync(path.join(__dirname,'persistent_layout.js'),'utf8')});
+  if(input.action.startsWith('activation-')){
+   for(const name of ['activation_geometry.js','activation_variants.js'])await page.addScriptTag({content:fs.readFileSync(path.join(__dirname,name),'utf8')});
+  }
   const out=await page.evaluate(input=>{
    const ctx=document.querySelector('canvas').getContext('2d'),measure=(t,font=14,weight=400)=>{ctx.font=weight+' '+font+'px system-ui';return ctx.measureText(t).width;};
+   if(input.action==='activation-validate')return ActivationGeometry.validate(input.frozen,input.geometry);
+   if(input.action==='activation-preview'){
+    const initial=ActivationGeometry.plan(input.geometry,input.fixture,measure);
+    let result=input.variant==='current'||initial.report.outcome!=='ACTIVATION_REVIEW_REQUIRED'?initial:SmallActivationVariants.build(input.geometry,input.fixture,measure).selected[input.variant];
+    if(!result)throw Error('Unknown placement variant');
+    return result;
+   }
    const m=AtlasModel.model(input.data);
    if(input.action==='bootstrap'){
     const result=AtlasIncremental.bootstrap(m,measure,input.legacy);result.checkpoint=AtlasPersistent.capture(m,result.geometry,result.checkpoint);

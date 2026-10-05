@@ -2,6 +2,19 @@
 
 
 def human(report):
+    if 'manifest' in report:
+        m=report['manifest'];v=report.get('metrics',{});b=m['bindings']
+        return '\n'.join(['Knowledge Atlas Activation Preview','Context: '+str(m['context']),
+            'New Categories: '+str(m['new_categories']),'New Topics: '+str(m['new_topics']),
+            'Blocked references: '+str(m['blocked_references']),'Selected variant: '+m['selected_variant'],
+            'Existing nodes moved: '+str(v.get('existing_nodes_moved')),
+            'Canvas growth: '+str(v.get('width_growth'))+' / '+str(v.get('height_growth')),
+            'Overlaps / crossings: '+str(v.get('overlaps'))+' / '+str(v.get('hierarchy_crossings')),
+            'Maximum parent drift: '+str(v.get('parent_centering_drift')),
+            'Expected Generation change: '+str(m['expected_generation_change']),
+            'Plan fingerprint: '+b['plan'],'Candidate fingerprint: '+b['candidate'],
+            'Existing geometry fingerprint: '+b['existing_geometry']['geometry'],
+            'Manifest fingerprint: '+m['manifest_fingerprint'],'Outcome: '+m['outcome']])
     if 'diff' not in report or 'presentation' not in report:
         return 'Knowledge Atlas Update\n' + report['status'] + '\n' + report.get('message', '')
     d, p = report['diff'], report['presentation']

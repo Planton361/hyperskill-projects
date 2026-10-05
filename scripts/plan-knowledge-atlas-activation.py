@@ -18,11 +18,9 @@ def main():
     args = parser.parse_args()
     root = Path(__file__).resolve().parents[1]
     try:
-        cp, previous = state.read(root / 'state/knowledge-atlas')
-        geometry = json.loads((root / 'docs/knowledge-map/geometry.js').read_text().split('=', 1)[1].rstrip(';\n'))
-        if snapshot.ordered_digest(geometry) != previous['geometry_fingerprint']:
-            raise ValueError('Accepted geometry fingerprint disagrees with persistent state')
-        planner = ActivationPlanner(Catalog(snapshot.load_source(root / 'data/knowledge')), cp, geometry)
+        from knowledge_atlas.activation_persistence import accepted
+        cp,previous,history,geometry,loaded=accepted(root)
+        planner = ActivationPlanner(Catalog(loaded), cp, geometry)
         kwargs = {'mode': 'CURRENT_COURSE', 'course_ids': [args.course]} if args.course is not None else \
                  {'mode': 'PROJECT_FOCUS', 'project_ids': [args.project]} if args.project is not None else {}
         plan = planner.plan(**kwargs)
