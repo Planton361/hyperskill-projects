@@ -1,0 +1,66 @@
+{
+  "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/149.0.0.0 Safari/537.36",
+  "viewport": [
+    1440,
+    900
+  ],
+  "overview": {
+    "loadMs": 25.599999994039536,
+    "layoutMs": 6,
+    "initMs": 34.899999998509884,
+    "drawMs": 2.100000001490116,
+    "objects": 3947,
+    "labels": 21
+  },
+  "deepBranch": {
+    "key": "category:2930",
+    "loadMs": 25.599999994039536,
+    "layoutMs": 6,
+    "initMs": 34.899999998509884,
+    "drawMs": 0.10000000149011612,
+    "objects": 10,
+    "labels": 2,
+    "searchMs": 0.29999999701976776,
+    "scopeMs": 0,
+    "zoom": 33.89745411416073
+  },
+  "deepFocus": {
+    "key": "reference:2931",
+    "loadMs": 25.599999994039536,
+    "layoutMs": 6,
+    "initMs": 34.899999998509884,
+    "drawMs": 0.20000000298023224,
+    "objects": 10,
+    "labels": 1,
+    "searchMs": 0.29999999701976776,
+    "scopeMs": 0,
+    "zoom": 42.884469871585814
+  },
+  "searchMs": {
+    "min": 0,
+    "median": 0.20000000298023224,
+    "p95": 0.30000000447034836,
+    "max": 0.3999999985098839
+  },
+  "scopeMs": {
+    "min": 0,
+    "median": 0,
+    "p95": 0.10000000149011612,
+    "max": 0.19999999552965164
+  },
+  "drawMs": {
+    "min": 1.5,
+    "median": 1.7000000029802322,
+    "p95": 2.1999999955296516,
+    "max": 4.199999995529652
+  },
+  "scopeToPaintMs": {
+    "min": 30.700000002980232,
+    "median": 33.100000001490116,
+    "p95": 33.20000000298023,
+    "max": 33.29999999701977
+  },
+  "domElements": 77,
+  "heapBytes": 9639043,
+  "checks": "PASS: real forest, all scopes, stage requirements, UNKNOWN project, shared memberships, deep focus, search, pan/zoom, keyboard, progress, no errors/external requests/storage"
+}
