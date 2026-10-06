@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "browser": "149.0.7827.55",
+  "viewport": [
+    1440,
+    900
+  ],
+  "manifest_fingerprint": "b1597b5ea86c481a855bcc6fe6c5a7f3380300b39262bb8faa0a9b729320a069",
+  "defaultMyKnowledge": {
+    "topics": 31,
+    "cards": 52,
+    "verified": 12
+  },
+  "acceptedLandscape": 89,
+  "contexts": [
+    {
+      "mode": "course",
+      "topics": 89,
+      "highlightNoRelayout": true
+    },
+    {
+      "mode": "project",
+      "topics": 26,
+      "highlightNoRelayout": true
+    }
+  ],
+  "stage617": 12,
+  "globalCards": 3955,
+  "globalSearchShowInGlobal": true,
+  "learnedVerifiedStyling": true,
+  "globalReferenceUnchanged": true,
+  "reviewBindingsAndFiveViews": true,
+  "errors": [],
+  "failed": [],
+  "external": []
+}

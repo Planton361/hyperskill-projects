@@ -1,0 +1,123 @@
+path	class	decision	reason
+.github/workflows/knowledge-atlas-check.yml	C	stage	Current source/checks; historical review tools retained without duplicated outputs
+docs/ADAPTIVE-PRODUCTION-ADOPTION.md	D	stage	Portable current architecture or bounded audit evidence
+docs/adaptive-production-final-inventory.tsv	D	stage	Portable current architecture or bounded audit evidence
+docs/knowledge-map-adaptive-preview/adaptive.cjs	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+docs/knowledge-map-adaptive-preview/app.js	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+docs/knowledge-map-adaptive-preview/atlas.js	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+docs/knowledge-map-adaptive-preview/global-reference.json	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+docs/knowledge-map-adaptive-preview/index.html	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+docs/knowledge-map-adaptive-preview/labels.js	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+docs/knowledge-map-adaptive-preview/model.json	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+docs/knowledge-map-adaptive-preview/preview-manifest.json	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+docs/knowledge-map-adaptive-preview/registry.cjs	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+docs/knowledge-map-adaptive-preview/style.css	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+docs/knowledge-map-adaptive-preview/ux.js	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+docs/knowledge-map-adaptive-preview/vendor/d3-flextree-2.1.2.cjs	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+docs/knowledge-map-adaptive-preview/vendor/d3-flextree-LICENSE	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+docs/knowledge-map-adaptive-preview/vendor/d3-hierarchy-LICENSE	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+docs/knowledge-map-adaptive-preview/views.cjs	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+docs/knowledge-map/adaptive.cjs	B	stage	Exact reviewed Production replacement
+docs/knowledge-map/app.js	B	stage	Exact reviewed Production replacement
+docs/knowledge-map/atlas.js	B	stage	Exact reviewed Production replacement
+docs/knowledge-map/geometry.js	B	stage	Exact reviewed Production replacement
+docs/knowledge-map/global-reference.json	B	stage	Exact reviewed Production replacement
+docs/knowledge-map/index.html	B	stage	Exact reviewed Production replacement
+docs/knowledge-map/labels.js	B	stage	Exact reviewed Production replacement
+docs/knowledge-map/layout-checkpoint.json	B	stage	Exact reviewed Production replacement
+docs/knowledge-map/layout-checkpoint.schema.json	B	stage	Exact reviewed Production replacement
+docs/knowledge-map/layout.js	B	stage	Exact reviewed Production replacement
+docs/knowledge-map/model.js	B	stage	Exact reviewed Production replacement
+docs/knowledge-map/model.json	B	stage	Exact reviewed Production replacement
+docs/knowledge-map/registry.cjs	B	stage	Exact reviewed Production replacement
+docs/knowledge-map/release-manifest.json	B	stage	Exact reviewed Production replacement
+docs/knowledge-map/routing.js	B	stage	Exact reviewed Production replacement
+docs/knowledge-map/style.css	B	stage	Exact reviewed Production replacement
+docs/knowledge-map/taxonomy-relations.js	B	stage	Exact reviewed Production replacement
+docs/knowledge-map/ux.js	B	stage	Exact reviewed Production replacement
+docs/knowledge-map/vendor/D3-LICENSE	B	stage	Exact reviewed Production replacement
+docs/knowledge-map/vendor/d3-7.9.0.min.js	B	stage	Exact reviewed Production replacement
+docs/knowledge-map/vendor/d3-flextree-2.1.2.cjs	B	stage	Exact reviewed Production replacement
+docs/knowledge-map/vendor/d3-flextree-LICENSE	B	stage	Exact reviewed Production replacement
+docs/knowledge-map/vendor/d3-hierarchy-LICENSE	B	stage	Exact reviewed Production replacement
+docs/knowledge-map/views.cjs	B	stage	Exact reviewed Production replacement
+prototypes/adaptive-pyramid/FINAL-PRODUCTION-REVIEW.md	D	stage	Portable current architecture or bounded audit evidence
+prototypes/adaptive-pyramid/PRODUCTION-MIGRATION-PREVIEW.md	D	stage	Portable current architecture or bounded audit evidence
+prototypes/adaptive-pyramid/REAL-PRODUCTION-APPLY-VALIDATION.md	D	stage	Portable current architecture or bounded audit evidence
+prototypes/adaptive-pyramid/production-preview/browser-results.json	D	stage	Portable current architecture or bounded audit evidence
+prototypes/adaptive-pyramid/production-preview/build-results.json	D	stage	Portable current architecture or bounded audit evidence
+prototypes/adaptive-pyramid/production-preview/build.py	A	stage	Required packaging/operator/atomic helper
+prototypes/adaptive-pyramid/production-preview/course.png	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+prototypes/adaptive-pyramid/production-preview/current-production.png	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+prototypes/adaptive-pyramid/production-preview/current/app.js	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+prototypes/adaptive-pyramid/production-preview/current/geometry.js	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+prototypes/adaptive-pyramid/production-preview/current/index.html	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+prototypes/adaptive-pyramid/production-preview/current/layout-checkpoint.json	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+prototypes/adaptive-pyramid/production-preview/current/layout-checkpoint.schema.json	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+prototypes/adaptive-pyramid/production-preview/current/layout.js	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+prototypes/adaptive-pyramid/production-preview/current/model.js	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+prototypes/adaptive-pyramid/production-preview/current/model.json	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+prototypes/adaptive-pyramid/production-preview/current/release-manifest.json	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+prototypes/adaptive-pyramid/production-preview/current/routing.js	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+prototypes/adaptive-pyramid/production-preview/current/style.css	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+prototypes/adaptive-pyramid/production-preview/current/taxonomy-relations.js	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+prototypes/adaptive-pyramid/production-preview/current/vendor/D3-LICENSE	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+prototypes/adaptive-pyramid/production-preview/current/vendor/d3-7.9.0.min.js	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+prototypes/adaptive-pyramid/production-preview/focused-results.json	D	stage	Portable current architecture or bounded audit evidence
+prototypes/adaptive-pyramid/production-preview/focused.cjs	C	stage	Current source/checks; historical review tools retained without duplicated outputs
+prototypes/adaptive-pyramid/production-preview/global.png	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+prototypes/adaptive-pyramid/production-preview/index.html	C	stage	Current source/checks; historical review tools retained without duplicated outputs
+prototypes/adaptive-pyramid/production-preview/learning-growth.png	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+prototypes/adaptive-pyramid/production-preview/my-knowledge.png	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+prototypes/adaptive-pyramid/production-preview/project.png	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+prototypes/adaptive-pyramid/production-preview/protected-before.json	D	stage	Portable current architecture or bounded audit evidence
+prototypes/adaptive-pyramid/production-preview/protected-head-check.json	D	stage	Portable current architecture or bounded audit evidence
+prototypes/adaptive-pyramid/production-preview/smoke.cjs	C	stage	Current source/checks; historical review tools retained without duplicated outputs
+prototypes/adaptive-pyramid/production-preview/stage.png	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+prototypes/adaptive-pyramid/production-preview/topic-group.png	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+prototypes/adaptive-pyramid/production-review/browser-results.json	D	stage	Portable current architecture or bounded audit evidence
+prototypes/adaptive-pyramid/production-review/exact-course.png	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+prototypes/adaptive-pyramid/production-review/exact-global.png	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+prototypes/adaptive-pyramid/production-review/exact-my-knowledge.png	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+prototypes/adaptive-pyramid/production-review/exact-project.png	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+prototypes/adaptive-pyramid/production-review/exact-review.png	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+prototypes/adaptive-pyramid/production-review/final-v1/README.md	D	stage	Portable current architecture or bounded audit evidence
+prototypes/adaptive-pyramid/production-review/final-v1/apply-manifest.json	D	stage	Portable current architecture or bounded audit evidence
+prototypes/adaptive-pyramid/production-review/final-v1/production-diff.json	D	stage	Portable current architecture or bounded audit evidence
+prototypes/adaptive-pyramid/production-review/final-v1/semantic-invariance.json	D	stage	Portable current architecture or bounded audit evidence
+prototypes/adaptive-pyramid/production-review/final-v1/source-production-inventory.json	D	stage	Portable current architecture or bounded audit evidence
+prototypes/adaptive-pyramid/production-review/final-v1/target-production-inventory.json	D	stage	Portable current architecture or bounded audit evidence
+prototypes/adaptive-pyramid/production-review/final-v1/view/current/app.js	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+prototypes/adaptive-pyramid/production-review/final-v1/view/current/geometry.js	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+prototypes/adaptive-pyramid/production-review/final-v1/view/current/index.html	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+prototypes/adaptive-pyramid/production-review/final-v1/view/current/layout-checkpoint.json	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+prototypes/adaptive-pyramid/production-review/final-v1/view/current/layout-checkpoint.schema.json	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+prototypes/adaptive-pyramid/production-review/final-v1/view/current/layout.js	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+prototypes/adaptive-pyramid/production-review/final-v1/view/current/model.js	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+prototypes/adaptive-pyramid/production-review/final-v1/view/current/model.json	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+prototypes/adaptive-pyramid/production-review/final-v1/view/current/release-manifest.json	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+prototypes/adaptive-pyramid/production-review/final-v1/view/current/routing.js	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+prototypes/adaptive-pyramid/production-review/final-v1/view/current/style.css	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+prototypes/adaptive-pyramid/production-review/final-v1/view/current/taxonomy-relations.js	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+prototypes/adaptive-pyramid/production-review/final-v1/view/current/vendor/D3-LICENSE	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+prototypes/adaptive-pyramid/production-review/final-v1/view/current/vendor/d3-7.9.0.min.js	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+prototypes/adaptive-pyramid/production-review/final-v1/view/index.html	E	exclude	Derived duplicate package/screenshots; preserved locally, excluded
+prototypes/adaptive-pyramid/production-review/final-validation.json	D	stage	Portable current architecture or bounded audit evidence
+prototypes/adaptive-pyramid/production-review/freeze.py	C	stage	Current source/checks; historical review tools retained without duplicated outputs
+prototypes/adaptive-pyramid/production-review/proof-results.json	D	stage	Portable current architecture or bounded audit evidence
+prototypes/adaptive-pyramid/production-review/proof.py	C	stage	Current source/checks; historical review tools retained without duplicated outputs
+prototypes/adaptive-pyramid/production-review/smoke.cjs	C	stage	Current source/checks; historical review tools retained without duplicated outputs
+prototypes/adaptive-pyramid/real-production-apply/browser-results.json	D	stage	Portable current architecture or bounded audit evidence
+prototypes/adaptive-pyramid/real-production-apply/final-results.json	H	exclude	Machine-local working inventory/status; preserved locally, excluded
+prototypes/adaptive-pyramid/real-production-apply/focused-results.json	D	stage	Portable current architecture or bounded audit evidence
+prototypes/adaptive-pyramid/real-production-apply/focused.cjs	C	stage	Current source/checks; historical review tools retained without duplicated outputs
+prototypes/adaptive-pyramid/real-production-apply/global.png	D	stage	Portable current architecture or bounded audit evidence
+prototypes/adaptive-pyramid/real-production-apply/my-knowledge.png	D	stage	Portable current architecture or bounded audit evidence
+prototypes/adaptive-pyramid/real-production-apply/post-apply.json	D	stage	Portable current architecture or bounded audit evidence
+prototypes/adaptive-pyramid/real-production-apply/preflight.json	H	exclude	Machine-local working inventory/status; preserved locally, excluded
+prototypes/adaptive-pyramid/real-production-apply/smoke.cjs	C	stage	Current source/checks; historical review tools retained without duplicated outputs
+prototypes/adaptive-pyramid/real-production-apply/stage617.png	D	stage	Portable current architecture or bounded audit evidence
+scripts/check-adaptive-production.py	C	stage	Current source/checks; historical review tools retained without duplicated outputs
+scripts/knowledge_atlas/adaptive_production.py	A	stage	Required packaging/operator/atomic helper
+scripts/knowledge_atlas/transaction.py	A	stage	Required packaging/operator/atomic helper
+scripts/update-knowledge-atlas.py	A	stage	Required packaging/operator/atomic helper

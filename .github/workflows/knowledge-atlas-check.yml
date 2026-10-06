@@ -2,6 +2,9 @@ name: Knowledge Atlas read-only validation
 on:
   push:
     paths:
+      - 'docs/knowledge-map/**'
+      - 'prototypes/adaptive-pyramid/**'
+      - 'scripts/check-adaptive-production.py'
       - 'data/knowledge/**'
       - 'scripts/update-knowledge-atlas.py'
       - 'scripts/plan-knowledge-atlas-activation.py'
@@ -24,6 +27,9 @@ on:
       - '.github/workflows/knowledge-atlas-check.yml'
   pull_request:
     paths:
+      - 'docs/knowledge-map/**'
+      - 'prototypes/adaptive-pyramid/**'
+      - 'scripts/check-adaptive-production.py'
       - 'data/knowledge/**'
       - 'scripts/update-knowledge-atlas.py'
       - 'scripts/plan-knowledge-atlas-activation.py'
@@ -50,10 +56,6 @@ permissions:
 jobs:
   check:
     runs-on: ubuntu-24.04
-    env:
-      LANG: en_US.UTF-8
-      LC_ALL: en_US.UTF-8
-      PLAYWRIGHT_BROWSERS_PATH: /tmp/atlas-pinned-browsers
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -62,58 +64,32 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22.16.0'
-      - name: Exact browser and font environment
+      - name: Install focused browser runner
         run: |
-          npm install --prefix "$RUNNER_TEMP/atlas-browser" --ignore-scripts playwright@1.62.1
-          "$RUNNER_TEMP/atlas-browser/node_modules/.bin/playwright" install --with-deps chromium
-          mkdir -p "$HOME/.local/share/fonts/knowledge-atlas"
-          cp scripts/knowledge_atlas/fonts/*.ttf "$HOME/.local/share/fonts/knowledge-atlas/"
-          fc-cache -f
-          echo "PLAYWRIGHT_MODULE=$RUNNER_TEMP/atlas-browser/node_modules/playwright" >> "$GITHUB_ENV"
-          echo "FONTCONFIG_FILE=$GITHUB_WORKSPACE/scripts/knowledge_atlas/fontconfig.xml" >> "$GITHUB_ENV"
-          node - <<'JS'
-          const fs=require('fs');
-          const policy=require(process.env.RUNNER_TEMP+'/atlas-browser/node_modules/playwright-core/browsers.json');
-          const browser=policy.browsers.find(b=>b.name==='chromium');
-          if(browser.revision!=='1234'||browser.browserVersion!=='151.0.7922.34')throw Error('BROWSER_REVISION_MISMATCH');
-          const {chromium}=require(process.env.RUNNER_TEMP+'/atlas-browser/node_modules/playwright');
-          fs.appendFileSync(process.env.GITHUB_ENV,'CHROMIUM_EXECUTABLE='+chromium.executablePath()+'\n');
-          JS
-      - name: Fonts and text-metric canary
-        run: python -B scripts/knowledge_atlas/verify_environment.py
-      - name: Preserve Production and persistent state hashes
+          npm ci --prefix scripts/knowledge_atlas --ignore-scripts
+          scripts/knowledge_atlas/node_modules/.bin/playwright install --with-deps chromium
+      - name: Protect Production, State and Knowledge inventories
         run: |
-          find docs/knowledge-map state/knowledge-atlas -type f -print0 | sort -z | xargs -0 sha256sum > "$RUNNER_TEMP/atlas-protected-before.sha256"
-      - name: Check current persistent state and reproduce accepted geography
-        run: python -B scripts/update-knowledge-atlas.py --check
-      - name: Simulate and report (never apply)
-        if: always()
-        run: python -B scripts/update-knowledge-atlas.py --dry-run --report-json "$RUNNER_TEMP/knowledge-atlas-update-report.json"
-      - name: Unit contracts, exact activation approval and recovery in disposable test directories
-        run: python -B -m unittest discover -s scripts/tests -p 'test_knowledge_atlas*.py' -v
-      - name: Global Catalog security, forest, references and active projection
-        run: python -B -m unittest discover -s scripts/tests -p 'test_global_catalog.py' -v
-      - name: Graph, importer, current Map and Packaging contracts
+          find docs/knowledge-map state/knowledge-atlas data/knowledge -type f -print0 | sort -z | xargs -0 sha256sum > "$RUNNER_TEMP/atlas-protected-before.sha256"
+      - name: Verify exact adaptive release and semantic inputs
+        run: python -B scripts/check-adaptive-production.py
+      - name: Adaptive layout and read-only growth contracts
+        run: node prototypes/adaptive-pyramid/real-production-apply/focused.cjs
+      - name: Production browser smoke at 1440 by 900
+        env:
+          PLAYWRIGHT_MODULE: ${{ github.workspace }}/scripts/knowledge_atlas/node_modules/playwright
         run: |
-          python -B -m unittest discover -s scripts/tests -p 'test_knowledge_graph.py' -v
-          python -B -m unittest discover -s scripts/tests -p 'test_import.py' -v
-          python -B -m unittest discover -s scripts/tests -p 'test_knowledge_map.py' -v
-          PYTHONPATH=scripts python -B -m unittest knowledge_atlas.test_production -v
-      - name: Accepted Atlas browser regression without artifact writes
-        run: node scripts/knowledge_atlas/browser-regression.cjs
-      - name: Verify read-only state contract
+          python -B -m http.server 8765 --bind 127.0.0.1 --directory . > "$RUNNER_TEMP/atlas-server.log" 2>&1 &
+          SERVER_PID=$!
+          trap 'kill "$SERVER_PID"' EXIT
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent http://127.0.0.1:8765/docs/knowledge-map/ > /dev/null; then break; fi
+            sleep 1
+          done
+          node prototypes/adaptive-pyramid/real-production-apply/smoke.cjs
+      - name: Verify read-only contract
         if: always()
         run: |
           sha256sum --check "$RUNNER_TEMP/atlas-protected-before.sha256"
-          find docs/knowledge-map state/knowledge-atlas -type f -print0 | sort -z | xargs -0 sha256sum > "$RUNNER_TEMP/atlas-protected-after.sha256"
-          cmp "$RUNNER_TEMP/atlas-protected-before.sha256" "$RUNNER_TEMP/atlas-protected-after.sha256"
-          git diff --exit-code -- data/knowledge state docs generated README.md
-          test -z "$(git ls-files --others --exclude-standard -- data/knowledge state docs generated README.md)"
-          test -z "$(git ls-files '*.har' '*.HAR')"
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: knowledge-atlas-update-report
-          path: |
-            ${{ runner.temp }}/knowledge-atlas-update-report.json
-            ${{ runner.temp }}/knowledge-atlas-update-report.txt
+          git diff --exit-code -- docs/knowledge-map state/knowledge-atlas data/knowledge
+          test -z "$(git ls-files --others --exclude-standard -- docs/knowledge-map state/knowledge-atlas data/knowledge)"

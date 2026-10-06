@@ -33,6 +33,8 @@ def main():
     activation.add_argument('--activation-preview',type=Path,metavar='DIRECTORY',help='write a new local exact candidate preview')
     activation.add_argument('--approve-activation',type=Path,metavar='MANIFEST',help='approve only this exact reviewed manifest')
     activation.add_argument('--apply-spatial-migration',type=Path,metavar='ABSOLUTE_MANIFEST',help='apply only the exact reviewed spatial migration')
+    activation.add_argument('--apply-adaptive-production',type=Path,metavar='ABSOLUTE_MANIFEST',help='replace only Production with the exact human-reviewed adaptive package')
+    parser.add_argument('--confirm-production-replacement',action='store_true',help='explicit confirmation of reviewed Production-only replacement')
     parser.add_argument('--confirm-real-spatial-migration',action='store_true',help='explicit authorization for real spatial migration; never implied by review')
     parser.add_argument('--reviewed-fingerprint',help='manifest fingerprint copied from the exact reviewed preview')
     scope=parser.add_mutually_exclusive_group()
@@ -41,6 +43,20 @@ def main():
     parser.add_argument('--variant',choices=['current','parent-distance','centering','connector','balanced'],default='current')
     parser.add_argument('--json', action='store_true', help='print only machine-readable report to stdout')
     args = parser.parse_args()
+    if args.confirm_production_replacement and not args.apply_adaptive_production:
+        parser.error('--confirm-production-replacement requires --apply-adaptive-production')
+    if args.apply_adaptive_production:
+        allowed={'--apply-adaptive-production','--reviewed-fingerprint','--confirm-production-replacement','--json'}
+        if any(arg.split('=',1)[0] not in allowed for arg in sys.argv[1:] if arg.startswith('--')):
+            parser.error('adaptive Production apply is a separate exact operator command')
+        from knowledge_atlas.adaptive_production import apply
+        try:
+            report=apply(Path(__file__).resolve().parents[1],args.apply_adaptive_production,
+                         args.reviewed_fingerprint,args.confirm_production_replacement)
+        except (ValueError, KeyError, TypeError, OSError, json.JSONDecodeError) as e:
+            report={'status':'ADAPTIVE_PRODUCTION_REJECTED','applied':False,'message':str(e)}
+        print(json.dumps(report,ensure_ascii=False,sort_keys=True,indent=2))
+        return 0 if report['status'] in ('APPLIED','ALREADY_APPLIED') else 1
     if args.adaptive_preview and any((args.production,args.preview,args.rebalance,args.approve_review,args.bootstrap_state,args.recover_transaction,args.migrate_state,args.source,args.state,args.output,args.bootstrap_activation_state,args.activation_preview,args.approve_activation,args.apply_spatial_migration,args.confirm_real_spatial_migration,args.reviewed_fingerprint,args.course,args.project,args.report_json,args.dry_run)):
         parser.error('--adaptive-preview is a separate read-only-source packaging operation; only --check/--build/--json may accompany it')
     if args.adaptive_preview and args.variant!='current':

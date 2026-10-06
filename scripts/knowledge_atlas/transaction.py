@@ -7,6 +7,7 @@ import json
 import os
 from pathlib import Path
 import shutil
+import sys
 import tempfile
 
 
@@ -43,8 +44,18 @@ def lock(root, write=False):
 
 
 def exchange(a, b):
-    """Linux renameat2 exchange is atomic even for non-empty directories."""
+    """Atomically exchange non-empty directories; never fall back to two renames."""
     libc = ctypes.CDLL(None, use_errno=True)
+    if sys.platform == 'darwin':
+        fn = getattr(libc, 'renamex_np', None)
+        if fn is None: raise ValueError('ATOMIC_EXCHANGE_UNSUPPORTED: renamex_np required')
+        fn.argtypes = [ctypes.c_char_p, ctypes.c_char_p, ctypes.c_uint]
+        fn.restype = ctypes.c_int
+        result = fn(os.fsencode(a), os.fsencode(b), 2)  # RENAME_SWAP
+        if result:
+            code = ctypes.get_errno()
+            raise OSError(code, os.strerror(code))
+        return
     fn = getattr(libc, 'renameat2', None)
     if fn is None: raise ValueError('ATOMIC_EXCHANGE_UNSUPPORTED: Linux renameat2 required')
     if fn(-100, os.fsencode(a), -100, os.fsencode(b), 2):
