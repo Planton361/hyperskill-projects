@@ -7,6 +7,10 @@ NAMES = ('layout-checkpoint.json', 'update-snapshot.json')
 
 
 def read(path, allow_layout_migration=False):
+    from . import canonical
+    if canonical.installed(path):
+        cp, previous, _, _, _ = canonical.restore(path)
+        return cp, previous
     present = [(path / n).is_file() for n in NAMES]
     if not all(present):
         raise ValueError('STATE_MIGRATION_REQUIRED: persistent state missing/partial; use --bootstrap-state only when both files are absent')

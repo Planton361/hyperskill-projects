@@ -19,6 +19,7 @@ def main():
     parser.add_argument('--rebalance', action='store_true', help='explicit geography migration; combine with --dry-run to review')
     parser.add_argument('--preview', action='store_true', help='package validated build into docs/knowledge-atlas-preview; no deployment')
     parser.add_argument('--production', action='store_true', help='package SAFE_TO_APPLY Atlas into docs/knowledge-map; no commit/push/deploy')
+    parser.add_argument('--adaptive-preview', action='store_true', help='read canonical Knowledge into isolated dual-view preview; no State/Production writes')
     parser.add_argument('--source', type=Path, help='normalized data directory (default data/knowledge)')
     parser.add_argument('--output', type=Path, help='isolated managed build directory below prototypes/')
     parser.add_argument('--state', type=Path, help='isolated test state below prototypes/ (default state/knowledge-atlas)')
@@ -31,6 +32,8 @@ def main():
     activation.add_argument('--bootstrap-activation-state',action='store_true')
     activation.add_argument('--activation-preview',type=Path,metavar='DIRECTORY',help='write a new local exact candidate preview')
     activation.add_argument('--approve-activation',type=Path,metavar='MANIFEST',help='approve only this exact reviewed manifest')
+    activation.add_argument('--apply-spatial-migration',type=Path,metavar='ABSOLUTE_MANIFEST',help='apply only the exact reviewed spatial migration')
+    parser.add_argument('--confirm-real-spatial-migration',action='store_true',help='explicit authorization for real spatial migration; never implied by review')
     parser.add_argument('--reviewed-fingerprint',help='manifest fingerprint copied from the exact reviewed preview')
     scope=parser.add_mutually_exclusive_group()
     scope.add_argument('--course',type=int)
@@ -38,10 +41,15 @@ def main():
     parser.add_argument('--variant',choices=['current','parent-distance','centering','connector','balanced'],default='current')
     parser.add_argument('--json', action='store_true', help='print only machine-readable report to stdout')
     args = parser.parse_args()
+    if args.adaptive_preview and any((args.production,args.preview,args.rebalance,args.approve_review,args.bootstrap_state,args.recover_transaction,args.migrate_state,args.source,args.state,args.output,args.bootstrap_activation_state,args.activation_preview,args.approve_activation,args.apply_spatial_migration,args.confirm_real_spatial_migration,args.reviewed_fingerprint,args.course,args.project,args.report_json,args.dry_run)):
+        parser.error('--adaptive-preview is a separate read-only-source packaging operation; only --check/--build/--json may accompany it')
+    if args.adaptive_preview and args.variant!='current':
+        parser.error('--adaptive-preview uses the validated adaptive layout; --variant is unavailable')
     if args.approve_activation and not args.reviewed_fingerprint: parser.error('--approve-activation requires --reviewed-fingerprint from human review')
-    if args.reviewed_fingerprint and not args.approve_activation: parser.error('--reviewed-fingerprint requires --approve-activation')
+    if args.reviewed_fingerprint and not (args.approve_activation or args.apply_spatial_migration): parser.error('--reviewed-fingerprint requires an exact approval/apply operation')
+    if args.confirm_real_spatial_migration and not args.apply_spatial_migration: parser.error('--confirm-real-spatial-migration requires --apply-spatial-migration')
     activation_operation=args.bootstrap_activation_state or args.activation_preview or args.approve_activation
-    if activation_operation and (args.check or args.dry_run or args.build or args.production or args.preview or args.rebalance or args.approve_review or args.bootstrap_state or args.recover_transaction or args.migrate_state or args.source or args.state or args.output):
+    if (activation_operation or args.apply_spatial_migration) and (args.check or args.dry_run or args.build or args.production or args.preview or args.rebalance or args.approve_review or args.bootstrap_state or args.recover_transaction or args.migrate_state or args.source or args.state or args.output):
         parser.error('activation operations are separate canonical operations')
     if (args.course is not None or args.project is not None) and not args.activation_preview:
         parser.error('activation scope requires --activation-preview')
@@ -60,7 +68,17 @@ def main():
             parser.error('--report-json must not overwrite source, state, runtime or build trees')
     mode = 'check' if args.check else 'dry-run' if args.dry_run else 'build'
     try:
-        if activation_operation:
+        if args.adaptive_preview:
+            from knowledge_atlas.adaptive_preview import run as adaptive_run
+            report=adaptive_run(root,check=args.check)
+        elif args.apply_spatial_migration:
+            from knowledge_atlas.architecture import require_strict_migration_approval
+            require_strict_migration_approval()
+            import importlib.util
+            spec=importlib.util.spec_from_file_location('spatial_migration_operator',root/'prototypes/global-pyramid/migration-review/review.py')
+            operator=importlib.util.module_from_spec(spec);spec.loader.exec_module(operator)
+            report=operator.apply_real(root,args.apply_spatial_migration,args.reviewed_fingerprint,confirmation=args.confirm_real_spatial_migration)
+        elif activation_operation:
             from knowledge_atlas import activation_persistence as ap
             context={'mode':'CURRENT_COURSE','course_ids':[args.course]} if args.course is not None else {'mode':'PROJECT_FOCUS','project_ids':[args.project]} if args.project is not None else {}
             if args.bootstrap_activation_state: report=ap.bootstrap(root)
@@ -74,7 +92,7 @@ def main():
                      state=args.state, approve_review=args.approve_review, bootstrap=args.bootstrap_state,
                      recover=args.recover_transaction,migrate=args.migrate_state,production=args.production)
     except (ValueError, KeyError, TypeError, OSError, json.JSONDecodeError) as e:
-        marker = next((m for m in ('STALE_ACTIVATION_PREVIEW','ACTIVATION_STATE_MIGRATION_REQUIRED','METADATA_REQUIRED',
+        marker = next((m for m in ('STRICT_GLOBAL_MIGRATION_PAUSED','STALE_SPATIAL_MIGRATION_PREVIEW','REAL_SPATIAL_MIGRATION_FORBIDDEN','FIXTURE_SPATIAL_MIGRATION_FORBIDDEN','SPATIAL_RECOVERY_REQUIRED','REVIEWED_SPATIAL_FINGERPRINT_REQUIRED','STALE_ACTIVATION_PREVIEW','SPATIAL_AUTHORITY_EXTENSION_REQUIRED','SPATIAL_AUTHORITY_MIGRATION_REQUIRED','REAL_CANONICAL_PUBLICATION_FORBIDDEN','ACTIVATION_STATE_MIGRATION_REQUIRED','METADATA_REQUIRED',
                        'FONT_METRICS_MISMATCH','STATE_MIGRATION_REQUIRED','REBALANCE_REQUIRED','RECOVERY_REQUIRED') if m in str(e)), 'VALIDATION_FAILED')
         report = {'status': marker, 'message': str(e), 'safe_to_build_preview': False, 'applied':False}
     if args.report_json:
@@ -83,9 +101,9 @@ def main():
         for p,content in [(path,(json.dumps(report,ensure_ascii=False,sort_keys=True,indent=2)+'\n').encode()),
                           (path.with_suffix('.txt'),(human(report)+'\n').encode())]:
             tmp=p.with_name(p.name+'.tmp'); durable_file(tmp,content); os.replace(tmp,p); sync_dir(p.parent)
-    if not args.json: print(human(report) + '\n\nJSON report:')
+    if not args.json: print(('Adaptive dual-view preview · Production migration PAUSED' if args.adaptive_preview else human(report)) + '\n\nJSON report:')
     print(json.dumps(report, ensure_ascii=False, sort_keys=True, indent=2))
-    if report.get('applied') or report['status']=='SAFE_TO_APPLY': return 0
+    if report.get('applied') or report['status'] in ('SAFE_TO_APPLY','ALREADY_APPLIED','SAFE_TO_BUILD_PREVIEW'): return 0
     return 3 if report['status']=='REVIEW_REQUIRED' else 2 if report['status']=='REBALANCE_REQUIRED' else 1
 
 

@@ -1,0 +1,1155 @@
+{
+  "layout_schema_version": 2,
+  "layout_algorithm_version": "atlas-readable-2",
+  "categories": {
+    "category:2944": {
+      "anchor": 86.73995208740234,
+      "width": 173.4799041748047,
+      "labelLines": [
+        "JVM",
+        "basic",
+        "s"
+      ],
+      "head": 243.79999999999998,
+      "band": {
+        "left": 12,
+        "top": 267.79999999999995,
+        "width": 157.4799041748047,
+        "height": 1052
+      },
+      "childTop": 1409.8,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:126": {
+      "anchor": 94.73995208740234,
+      "width": 189.4799041748047,
+      "labelLines": [
+        "JVM"
+      ],
+      "head": 169.20000000000002,
+      "band": {
+        "left": 94.73995208740234,
+        "top": 193.20000000000002,
+        "width": 0,
+        "height": 0
+      },
+      "childTop": 283.20000000000005,
+      "children": {
+        "category:2944": {
+          "left": 0,
+          "width": 173.4799041748047
+        }
+      },
+      "sibling_order": [
+        "category:2944"
+      ]
+    },
+    "category:386": {
+      "anchor": 86.93994140625,
+      "width": 173.8798828125,
+      "labelLines": [
+        "IntelliJ",
+        "IDEA"
+      ],
+      "head": 168.99999999999997,
+      "band": {
+        "left": 12,
+        "top": 192.99999999999997,
+        "width": 157.8798828125,
+        "height": 1564
+      },
+      "childTop": 1847,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:262": {
+      "anchor": 94.93994140625,
+      "width": 189.8798828125,
+      "labelLines": [
+        "IDE"
+      ],
+      "head": 138.2,
+      "band": {
+        "left": 16.93994140625,
+        "top": 162.2,
+        "width": 156,
+        "height": 124
+      },
+      "childTop": 376.2,
+      "children": {
+        "category:386": {
+          "left": 0,
+          "width": 173.8798828125
+        }
+      },
+      "sibling_order": [
+        "category:386"
+      ]
+    },
+    "category:4503": {
+      "anchor": 86,
+      "width": 172,
+      "labelLines": [
+        "Codin",
+        "g with",
+        "AI",
+        "tools"
+      ],
+      "head": 255.39999999999998,
+      "band": {
+        "left": 12,
+        "top": 279.4,
+        "width": 156,
+        "height": 1364
+      },
+      "childTop": 1733.4,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:4502": {
+      "anchor": 94,
+      "width": 188,
+      "labelLines": [
+        "AI",
+        "tools"
+      ],
+      "head": 191,
+      "band": {
+        "left": 94,
+        "top": 215,
+        "width": 0,
+        "height": 0
+      },
+      "childTop": 305,
+      "children": {
+        "category:4503": {
+          "left": 0,
+          "width": 172
+        }
+      },
+      "sibling_order": [
+        "category:4503"
+      ]
+    },
+    "category:258": {
+      "anchor": 212.93994140625,
+      "width": 425.8798828125,
+      "labelLines": [
+        "Dev",
+        "tools"
+      ],
+      "head": 246,
+      "band": {
+        "left": 212.93994140625,
+        "top": 270,
+        "width": 0,
+        "height": 0
+      },
+      "childTop": 360,
+      "children": {
+        "category:262": {
+          "left": 0,
+          "width": 189.8798828125
+        },
+        "category:4502": {
+          "left": 221.8798828125,
+          "width": 188
+        }
+      },
+      "sibling_order": [
+        "category:262",
+        "category:4502"
+      ]
+    },
+    "category:1432": {
+      "anchor": 86,
+      "width": 172,
+      "labelLines": [
+        "Unix"
+      ],
+      "head": 125.79999999999998,
+      "band": {
+        "left": 12,
+        "top": 149.79999999999998,
+        "width": 156,
+        "height": 280
+      },
+      "childTop": 519.8,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:850": {
+      "anchor": 94,
+      "width": 188,
+      "labelLines": [
+        "Oper",
+        "ating",
+        "syste",
+        "ms"
+      ],
+      "head": 296.59999999999997,
+      "band": {
+        "left": 16,
+        "top": 320.59999999999997,
+        "width": 156,
+        "height": 280
+      },
+      "childTop": 690.5999999999999,
+      "children": {
+        "category:1432": {
+          "left": 0,
+          "width": 172
+        }
+      },
+      "sibling_order": [
+        "category:1432"
+      ]
+    },
+    "category:516": {
+      "anchor": 89.7079475402832,
+      "width": 179.4158950805664,
+      "labelLines": [
+        "Softwa",
+        "re",
+        "quality"
+      ],
+      "head": 212.2,
+      "band": {
+        "left": 12,
+        "top": 236.2,
+        "width": 156,
+        "height": 792
+      },
+      "childTop": 1118.2,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:1186": {
+      "anchor": 97.7079475402832,
+      "width": 195.4158950805664,
+      "labelLines": [
+        "Softw",
+        "are",
+        "const",
+        "ructi",
+        "on"
+      ],
+      "head": 349.4,
+      "band": {
+        "left": 97.7079475402832,
+        "top": 373.4,
+        "width": 0,
+        "height": 0
+      },
+      "childTop": 463.4,
+      "children": {
+        "category:516": {
+          "left": 0,
+          "width": 179.4158950805664
+        }
+      },
+      "sibling_order": [
+        "category:516"
+      ]
+    },
+    "category:679": {
+      "anchor": 89.27594451904297,
+      "width": 178.55188903808593,
+      "labelLines": [
+        "Object",
+        "-orient",
+        "ed",
+        "progra",
+        "mmin",
+        "g"
+      ],
+      "head": 341.8,
+      "band": {
+        "left": 12,
+        "top": 365.8,
+        "width": 156,
+        "height": 488
+      },
+      "childTop": 943.8,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:1188": {
+      "anchor": 97.27594451904297,
+      "width": 194.55188903808593,
+      "labelLines": [
+        "Progr",
+        "ammi",
+        "ng",
+        "conc",
+        "epts"
+      ],
+      "head": 349.4,
+      "band": {
+        "left": 97.27594451904297,
+        "top": 373.4,
+        "width": 0,
+        "height": 0
+      },
+      "childTop": 463.4,
+      "children": {
+        "category:679": {
+          "left": 0,
+          "width": 178.55188903808593
+        }
+      },
+      "sibling_order": [
+        "category:679"
+      ]
+    },
+    "category:357": {
+      "anchor": 328.9838920593262,
+      "width": 657.9677841186524,
+      "labelLines": [
+        "Computer",
+        "science",
+        "fundamentals"
+      ],
+      "head": 322.79999999999995,
+      "band": {
+        "left": 328.9838920593262,
+        "top": 346.79999999999995,
+        "width": 0,
+        "height": 0
+      },
+      "childTop": 436.79999999999995,
+      "children": {
+        "category:850": {
+          "left": 0,
+          "width": 188
+        },
+        "category:1186": {
+          "left": 220,
+          "width": 195.4158950805664
+        },
+        "category:1188": {
+          "left": 447.41589508056643,
+          "width": 194.55188903808593
+        }
+      },
+      "sibling_order": [
+        "category:850",
+        "category:1186",
+        "category:1188"
+      ]
+    },
+    "category:1163": {
+      "anchor": 676.6637855529785,
+      "width": 1353.327571105957,
+      "labelLines": [
+        "Software",
+        "development",
+        "foundations"
+      ],
+      "head": 449.19999999999993,
+      "band": {
+        "left": 676.6637855529785,
+        "top": 473.19999999999993,
+        "width": 0,
+        "height": 0
+      },
+      "childTop": 563.1999999999999,
+      "children": {
+        "category:126": {
+          "left": 0,
+          "width": 189.4799041748047
+        },
+        "category:258": {
+          "left": 221.4799041748047,
+          "width": 425.8798828125
+        },
+        "category:357": {
+          "left": 679.3597869873047,
+          "width": 657.9677841186524
+        }
+      },
+      "sibling_order": [
+        "category:126",
+        "category:258",
+        "category:357"
+      ]
+    },
+    "category:3": {
+      "anchor": 184,
+      "width": 368,
+      "labelLines": [
+        "Contro",
+        "l flow",
+        "statem",
+        "ents"
+      ],
+      "head": 255.39999999999998,
+      "band": {
+        "left": 12,
+        "top": 279.4,
+        "width": 352,
+        "height": 1000
+      },
+      "childTop": 1369.4,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:35": {
+      "anchor": 184.13994598388672,
+      "width": 368.27989196777344,
+      "labelLines": [
+        "Data",
+        "types",
+        "and",
+        "variabl",
+        "es"
+      ],
+      "head": 298.6,
+      "band": {
+        "left": 12,
+        "top": 322.6,
+        "width": 352.27989196777344,
+        "height": 948
+      },
+      "childTop": 1360.6,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:74": {
+      "anchor": 88.32193984985352,
+      "width": 176.64387969970704,
+      "labelLines": [
+        "Introd",
+        "uction",
+        "to Java"
+      ],
+      "head": 212.2,
+      "band": {
+        "left": 12,
+        "top": 236.2,
+        "width": 157.43988037109375,
+        "height": 1308
+      },
+      "childTop": 1634.2,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:153": {
+      "anchor": 89.27594451904297,
+      "width": 178.55188903808593,
+      "labelLines": [
+        "Simple",
+        "progra",
+        "ms"
+      ],
+      "head": 212.2,
+      "band": {
+        "left": 12,
+        "top": 236.2,
+        "width": 156,
+        "height": 948
+      },
+      "childTop": 1274.2,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:188": {
+      "anchor": 91.27394561767578,
+      "width": 182.54789123535156,
+      "labelLines": [
+        "Strings"
+      ],
+      "head": 125.79999999999998,
+      "band": {
+        "left": 13.273945617675778,
+        "top": 149.79999999999998,
+        "width": 156,
+        "height": 636
+      },
+      "childTop": 875.8,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:306": {
+      "anchor": 185.23989868164062,
+      "width": 370.47979736328125,
+      "labelLines": [
+        "Operat",
+        "ions",
+        "on",
+        "primiti",
+        "ve",
+        "types"
+      ],
+      "head": 341.8,
+      "band": {
+        "left": 12,
+        "top": 365.8,
+        "width": 354.47979736328125,
+        "height": 1464
+      },
+      "childTop": 1919.8,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:252": {
+      "anchor": 910.2516746520995,
+      "width": 1820.503349304199,
+      "labelLines": [
+        "Basic",
+        "s"
+      ],
+      "head": 191,
+      "band": {
+        "left": 910.2516746520995,
+        "top": 215,
+        "width": 0,
+        "height": 0
+      },
+      "childTop": 305,
+      "children": {
+        "category:3": {
+          "left": 0,
+          "width": 368
+        },
+        "category:35": {
+          "left": 400,
+          "width": 368.27989196777344
+        },
+        "category:74": {
+          "left": 800.2798919677734,
+          "width": 176.64387969970704
+        },
+        "category:153": {
+          "left": 1008.9237716674804,
+          "width": 178.55188903808593
+        },
+        "category:188": {
+          "left": 1219.4756607055663,
+          "width": 182.54789123535156
+        },
+        "category:306": {
+          "left": 1434.0235519409177,
+          "width": 370.47979736328125
+        }
+      },
+      "sibling_order": [
+        "category:3",
+        "category:35",
+        "category:74",
+        "category:153",
+        "category:188",
+        "category:306"
+      ]
+    },
+    "category:187": {
+      "anchor": 86.47993469238281,
+      "width": 172.95986938476562,
+      "labelLines": [
+        "Arrays"
+      ],
+      "head": 125.79999999999998,
+      "band": {
+        "left": 12,
+        "top": 149.79999999999998,
+        "width": 156.95986938476562,
+        "height": 944
+      },
+      "childTop": 1183.8,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:1215": {
+      "anchor": 94.47993469238281,
+      "width": 188.95986938476562,
+      "labelLines": [
+        "Worki",
+        "ng",
+        "with",
+        "data"
+      ],
+      "head": 296.59999999999997,
+      "band": {
+        "left": 94.47993469238281,
+        "top": 320.59999999999997,
+        "width": 0,
+        "height": 0
+      },
+      "childTop": 410.59999999999997,
+      "children": {
+        "category:187": {
+          "left": 0,
+          "width": 172.95986938476562
+        }
+      },
+      "sibling_order": [
+        "category:187"
+      ]
+    },
+    "category:95": {
+      "anchor": 184,
+      "width": 368,
+      "labelLines": [
+        "Metho",
+        "ds"
+      ],
+      "head": 168.99999999999997,
+      "band": {
+        "left": 12,
+        "top": 192.99999999999997,
+        "width": 352,
+        "height": 844
+      },
+      "childTop": 1127,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:196": {
+      "anchor": 86.49994659423828,
+      "width": 172.99989318847656,
+      "labelLines": [
+        "Code",
+        "style"
+      ],
+      "head": 168.99999999999997,
+      "band": {
+        "left": 12,
+        "top": 192.99999999999997,
+        "width": 156.99989318847656,
+        "height": 844
+      },
+      "childTop": 1127,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:1262": {
+      "anchor": 185.27989196777344,
+      "width": 370.5597839355469,
+      "labelLines": [
+        "Classe",
+        "s and",
+        "memb",
+        "ers"
+      ],
+      "head": 255.39999999999998,
+      "band": {
+        "left": 12,
+        "top": 279.4,
+        "width": 354.5597839355469,
+        "height": 1464
+      },
+      "childTop": 1833.4,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:1263": {
+      "anchor": 91.75994644165038,
+      "width": 183.51989288330077,
+      "labelLines": [
+        "Access",
+        "control"
+      ],
+      "head": 168.99999999999997,
+      "band": {
+        "left": 13.619992828369135,
+        "top": 192.99999999999997,
+        "width": 156.2799072265625,
+        "height": 844
+      },
+      "childTop": 1127,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:13": {
+      "anchor": 301.03983840942385,
+      "width": 602.0796768188477,
+      "labelLines": [
+        "Classe",
+        "s and",
+        "object",
+        "s"
+      ],
+      "head": 255.39999999999998,
+      "band": {
+        "left": 301.03983840942385,
+        "top": 279.4,
+        "width": 0,
+        "height": 0
+      },
+      "childTop": 369.4,
+      "children": {
+        "category:1262": {
+          "left": 0,
+          "width": 370.5597839355469
+        },
+        "category:1263": {
+          "left": 402.5597839355469,
+          "width": 183.51989288330077
+        }
+      },
+      "sibling_order": [
+        "category:1262",
+        "category:1263"
+      ]
+    },
+    "category:1264": {
+      "anchor": 90.9499382019043,
+      "width": 181.8998764038086,
+      "labelLines": [
+        "Buildin",
+        "g class",
+        "hierarc",
+        "hies"
+      ],
+      "head": 255.39999999999998,
+      "band": {
+        "left": 12.949938201904303,
+        "top": 279.4,
+        "width": 156,
+        "height": 896
+      },
+      "childTop": 1265.4,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:1265": {
+      "anchor": 87.49394836425782,
+      "width": 174.98789672851564,
+      "labelLines": [
+        "Overri",
+        "ding",
+        "metho",
+        "ds"
+      ],
+      "head": 255.39999999999998,
+      "band": {
+        "left": 12,
+        "top": 279.4,
+        "width": 156.51988220214844,
+        "height": 792
+      },
+      "childTop": 1161.4,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:1267": {
+      "anchor": 91.39995193481445,
+      "width": 182.7999038696289,
+      "labelLines": [
+        "Interfa",
+        "ces",
+        "and",
+        "abstra",
+        "ct",
+        "classes"
+      ],
+      "head": 341.8,
+      "band": {
+        "left": 13.399951934814453,
+        "top": 365.8,
+        "width": 156,
+        "height": 228
+      },
+      "childTop": 683.8,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:195": {
+      "anchor": 309.8438385009766,
+      "width": 619.6876770019531,
+      "labelLines": [
+        "Class",
+        "hierarc",
+        "hies"
+      ],
+      "head": 212.2,
+      "band": {
+        "left": 309.8438385009766,
+        "top": 236.2,
+        "width": 0,
+        "height": 0
+      },
+      "childTop": 326.2,
+      "children": {
+        "category:1264": {
+          "left": 0,
+          "width": 181.8998764038086
+        },
+        "category:1265": {
+          "left": 213.8998764038086,
+          "width": 174.98789672851564
+        },
+        "category:1267": {
+          "left": 420.88777313232424,
+          "width": 182.7999038696289
+        }
+      },
+      "sibling_order": [
+        "category:1264",
+        "category:1265",
+        "category:1267"
+      ]
+    },
+    "category:1269": {
+      "anchor": 91.2379379272461,
+      "width": 182.4758758544922,
+      "labelLines": [
+        "Enume",
+        "rations"
+      ],
+      "head": 168.99999999999997,
+      "band": {
+        "left": 12.49798583984375,
+        "top": 192.99999999999997,
+        "width": 157.4799041748047,
+        "height": 744
+      },
+      "childTop": 1027,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:1268": {
+      "anchor": 99.2379379272461,
+      "width": 198.4758758544922,
+      "labelLines": [
+        "Other",
+        "conce",
+        "pts"
+      ],
+      "head": 212.2,
+      "band": {
+        "left": 99.2379379272461,
+        "top": 236.2,
+        "width": 0,
+        "height": 0
+      },
+      "childTop": 326.2,
+      "children": {
+        "category:1269": {
+          "left": 0,
+          "width": 182.4758758544922
+        }
+      },
+      "sibling_order": [
+        "category:1269"
+      ]
+    },
+    "category:251": {
+      "anchor": 750.1216148376466,
+      "width": 1500.2432296752932,
+      "labelLines": [
+        "Object",
+        "-orient",
+        "ed",
+        "progra",
+        "mmin",
+        "g"
+      ],
+      "head": 341.8,
+      "band": {
+        "left": 750.1216148376466,
+        "top": 365.8,
+        "width": 0,
+        "height": 0
+      },
+      "childTop": 455.8,
+      "children": {
+        "category:13": {
+          "left": 0,
+          "width": 602.0796768188477
+        },
+        "category:195": {
+          "left": 634.0796768188477,
+          "width": 619.6876770019531
+        },
+        "category:1268": {
+          "left": 1285.767353820801,
+          "width": 198.4758758544922
+        }
+      },
+      "sibling_order": [
+        "category:13",
+        "category:195",
+        "category:1268"
+      ]
+    },
+    "category:1258": {
+      "anchor": 1060.6215614318849,
+      "width": 2121.2431228637697,
+      "labelLines": [
+        "Code",
+        "orga",
+        "nizati",
+        "on"
+      ],
+      "head": 296.59999999999997,
+      "band": {
+        "left": 1060.6215614318849,
+        "top": 320.59999999999997,
+        "width": 0,
+        "height": 0
+      },
+      "childTop": 410.59999999999997,
+      "children": {
+        "category:95": {
+          "left": 0,
+          "width": 368
+        },
+        "category:196": {
+          "left": 400,
+          "width": 172.99989318847656
+        },
+        "category:251": {
+          "left": 604.9998931884766,
+          "width": 1500.2432296752932
+        }
+      },
+      "sibling_order": [
+        "category:95",
+        "category:196",
+        "category:251"
+      ]
+    },
+    "category:61": {
+      "anchor": 87.52994232177734,
+      "width": 175.05988464355468,
+      "labelLines": [
+        "Except",
+        "ion",
+        "handli",
+        "ng"
+      ],
+      "head": 255.39999999999998,
+      "band": {
+        "left": 12,
+        "top": 279.4,
+        "width": 156,
+        "height": 1356
+      },
+      "childTop": 1725.4,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:1423": {
+      "anchor": 88.55594177246094,
+      "width": 177.11188354492188,
+      "labelLines": [
+        "Debug",
+        "ging"
+      ],
+      "head": 168.99999999999997,
+      "band": {
+        "left": 12,
+        "top": 192.99999999999997,
+        "width": 156,
+        "height": 896
+      },
+      "childTop": 1179,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:1260": {
+      "anchor": 200.08588409423828,
+      "width": 400.17176818847656,
+      "labelLines": [
+        "Errorl",
+        "ess",
+        "code"
+      ],
+      "head": 243.79999999999998,
+      "band": {
+        "left": 200.08588409423828,
+        "top": 267.79999999999995,
+        "width": 0,
+        "height": 0
+      },
+      "childTop": 357.79999999999995,
+      "children": {
+        "category:61": {
+          "left": 0,
+          "width": 175.05988464355468
+        },
+        "category:1423": {
+          "left": 207.05988464355468,
+          "width": 177.11188354492188
+        }
+      },
+      "sibling_order": [
+        "category:61",
+        "category:1423"
+      ]
+    },
+    "category:73": {
+      "anchor": 2321.4390548706056,
+      "width": 4642.878109741211,
+      "labelLines": [
+        "Java"
+      ],
+      "head": 169.20000000000002,
+      "band": {
+        "left": 2321.4390548706056,
+        "top": 193.20000000000002,
+        "width": 0,
+        "height": 0
+      },
+      "childTop": 283.20000000000005,
+      "children": {
+        "category:252": {
+          "left": 0,
+          "width": 1820.503349304199
+        },
+        "category:1215": {
+          "left": 1852.503349304199,
+          "width": 188.95986938476562
+        },
+        "category:1258": {
+          "left": 2073.463218688965,
+          "width": 2121.2431228637697
+        },
+        "category:1260": {
+          "left": 4226.706341552735,
+          "width": 400.17176818847656
+        }
+      },
+      "sibling_order": [
+        "category:252",
+        "category:1215",
+        "category:1258",
+        "category:1260"
+      ]
+    },
+    "category:1164": {
+      "anchor": 2329.4390548706056,
+      "width": 4658.878109741211,
+      "labelLines": [
+        "Programming",
+        "languages"
+      ],
+      "head": 334,
+      "band": {
+        "left": 2329.4390548706056,
+        "top": 358,
+        "width": 0,
+        "height": 0
+      },
+      "childTop": 448,
+      "children": {
+        "category:73": {
+          "left": 0,
+          "width": 4642.878109741211
+        }
+      },
+      "sibling_order": [
+        "category:73"
+      ]
+    },
+    "category:1356": {
+      "anchor": 88.60594863891602,
+      "width": 177.21189727783204,
+      "labelLines": [
+        "Com",
+        "man",
+        "d line",
+        "basic",
+        "s"
+      ],
+      "head": 349.4,
+      "band": {
+        "left": 12,
+        "top": 373.4,
+        "width": 156,
+        "height": 692
+      },
+      "childTop": 1155.4,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:477": {
+      "anchor": 188.83184814453125,
+      "width": 377.6636962890625,
+      "labelLines": [
+        "Command",
+        "line"
+      ],
+      "head": 246,
+      "band": {
+        "left": 188.83184814453125,
+        "top": 270,
+        "width": 0,
+        "height": 0
+      },
+      "childTop": 360,
+      "children": {
+        "category:1356": {
+          "left": 0,
+          "width": 177.21189727783204
+        }
+      },
+      "sibling_order": [
+        "category:1356"
+      ]
+    },
+    "category:2679": {
+      "anchor": 362.2876953125,
+      "width": 724.575390625,
+      "labelLines": [
+        "System",
+        "administration",
+        "and DevOps"
+      ],
+      "head": 449.19999999999993,
+      "band": {
+        "left": 362.2876953125,
+        "top": 473.19999999999993,
+        "width": 0,
+        "height": 0
+      },
+      "childTop": 563.1999999999999,
+      "children": {
+        "category:477": {
+          "left": 0,
+          "width": 377.6636962890625
+        }
+      },
+      "sibling_order": [
+        "category:477"
+      ]
+    },
+    "category:1162": {
+      "anchor": 3408.390535736084,
+      "width": 6816.781071472168,
+      "labelLines": [
+        "Computer",
+        "science"
+      ],
+      "head": 465.99999999999994,
+      "band": {
+        "left": 3408.390535736084,
+        "top": 489.99999999999994,
+        "width": 0,
+        "height": 0
+      },
+      "childTop": 580,
+      "children": {
+        "category:1163": {
+          "left": 0,
+          "width": 1353.327571105957
+        },
+        "category:1164": {
+          "left": 1385.327571105957,
+          "width": 4658.878109741211
+        },
+        "category:2679": {
+          "left": 6076.205680847168,
+          "width": 724.575390625
+        }
+      },
+      "sibling_order": [
+        "category:1163",
+        "category:1164",
+        "category:2679"
+      ]
+    }
+  }
+}

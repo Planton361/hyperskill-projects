@@ -1,0 +1,1834 @@
+{
+  "layout_schema_version": 5,
+  "layout_algorithm_version": "atlas-trays-3",
+  "categories": {
+    "category:2944": {
+      "anchor": 0,
+      "width": 178,
+      "height": 209.06,
+      "box": {
+        "width": 133,
+        "height": 45.06,
+        "font": 17,
+        "line": 20.06,
+        "labelLines": [
+          "JVM basics"
+        ],
+        "metaFont": 10
+      },
+      "band": {
+        "left": -89,
+        "top": 57.06,
+        "width": 178,
+        "height": 152,
+        "columns": [
+          172
+        ],
+        "rows": 3,
+        "gapX": 8,
+        "gapY": 4,
+        "padding": 3
+      },
+      "childTop": 233.06,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:126": {
+      "anchor": 0,
+      "width": 178,
+      "height": 262.12,
+      "box": {
+        "width": 115,
+        "height": 45.06,
+        "font": 17,
+        "line": 20.06,
+        "labelLines": [
+          "JVM"
+        ],
+        "metaFont": 10
+      },
+      "band": {
+        "left": 0,
+        "top": 57.06,
+        "width": 0,
+        "height": 0,
+        "columns": [],
+        "rows": 0,
+        "gapX": 8,
+        "gapY": 4,
+        "padding": 3
+      },
+      "childTop": 53.06,
+      "children": {
+        "category:2944": {
+          "x": 0,
+          "y": 53.06,
+          "width": 178,
+          "height": 209.06,
+          "overflow": false
+        }
+      },
+      "sibling_order": [
+        "category:2944"
+      ]
+    },
+    "category:386": {
+      "anchor": 0,
+      "width": 358,
+      "height": 175.06,
+      "box": {
+        "width": 145,
+        "height": 45.06,
+        "font": 17,
+        "line": 20.06,
+        "labelLines": [
+          "IntelliJ IDEA"
+        ],
+        "metaFont": 10
+      },
+      "band": {
+        "left": -179,
+        "top": 57.06,
+        "width": 358,
+        "height": 118,
+        "columns": [
+          172,
+          172
+        ],
+        "rows": 3,
+        "gapX": 8,
+        "gapY": 4,
+        "padding": 3
+      },
+      "childTop": 199.06,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:262": {
+      "anchor": 0,
+      "width": 358,
+      "height": 291.12,
+      "box": {
+        "width": 115,
+        "height": 45.06,
+        "font": 17,
+        "line": 20.06,
+        "labelLines": [
+          "IDE"
+        ],
+        "metaFont": 10
+      },
+      "band": {
+        "left": -89,
+        "top": 57.06,
+        "width": 178,
+        "height": 35,
+        "columns": [
+          172
+        ],
+        "rows": 1,
+        "gapX": 8,
+        "gapY": 4,
+        "padding": 3
+      },
+      "childTop": 116.06,
+      "children": {
+        "category:386": {
+          "x": 0,
+          "y": 116.06,
+          "width": 358,
+          "height": 175.06,
+          "overflow": false
+        }
+      },
+      "sibling_order": [
+        "category:386"
+      ]
+    },
+    "category:4503": {
+      "anchor": 0,
+      "width": 178,
+      "height": 266.18,
+      "box": {
+        "width": 115,
+        "height": 85.17999999999999,
+        "font": 17,
+        "line": 20.06,
+        "labelLines": [
+          "Coding",
+          "with AI",
+          "tools"
+        ],
+        "metaFont": 10
+      },
+      "band": {
+        "left": -89,
+        "top": 97.17999999999999,
+        "width": 178,
+        "height": 169,
+        "columns": [
+          172
+        ],
+        "rows": 3,
+        "gapX": 8,
+        "gapY": 4,
+        "padding": 3
+      },
+      "childTop": 290.18,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:4502": {
+      "anchor": 0,
+      "width": 178,
+      "height": 319.24,
+      "box": {
+        "width": 115,
+        "height": 45.06,
+        "font": 17,
+        "line": 20.06,
+        "labelLines": [
+          "AI tools"
+        ],
+        "metaFont": 10
+      },
+      "band": {
+        "left": 0,
+        "top": 57.06,
+        "width": 0,
+        "height": 0,
+        "columns": [],
+        "rows": 0,
+        "gapX": 8,
+        "gapY": 4,
+        "padding": 3
+      },
+      "childTop": 53.06,
+      "children": {
+        "category:4503": {
+          "x": 0,
+          "y": 53.06,
+          "width": 178,
+          "height": 266.18,
+          "overflow": false
+        }
+      },
+      "sibling_order": [
+        "category:4503"
+      ]
+    },
+    "category:258": {
+      "anchor": 0,
+      "width": 544,
+      "height": 372.3,
+      "box": {
+        "width": 123,
+        "height": 45.06,
+        "font": 17,
+        "line": 20.06,
+        "labelLines": [
+          "Dev tools"
+        ],
+        "metaFont": 10
+      },
+      "band": {
+        "left": 0,
+        "top": 57.06,
+        "width": 0,
+        "height": 0,
+        "columns": [],
+        "rows": 0,
+        "gapX": 8,
+        "gapY": 4,
+        "padding": 3
+      },
+      "childTop": 53.06,
+      "children": {
+        "category:262": {
+          "x": -93,
+          "y": 53.06,
+          "width": 358,
+          "height": 291.12,
+          "overflow": false
+        },
+        "category:4502": {
+          "x": 183,
+          "y": 53.06,
+          "width": 178,
+          "height": 319.24,
+          "overflow": false
+        }
+      },
+      "sibling_order": [
+        "category:262",
+        "category:4502"
+      ]
+    },
+    "category:1432": {
+      "anchor": 0,
+      "width": 178,
+      "height": 109.06,
+      "box": {
+        "width": 115,
+        "height": 45.06,
+        "font": 17,
+        "line": 20.06,
+        "labelLines": [
+          "Unix"
+        ],
+        "metaFont": 10
+      },
+      "band": {
+        "left": -89,
+        "top": 57.06,
+        "width": 178,
+        "height": 52,
+        "columns": [
+          172
+        ],
+        "rows": 1,
+        "gapX": 8,
+        "gapY": 4,
+        "padding": 3
+      },
+      "childTop": 133.06,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:850": {
+      "anchor": 0,
+      "width": 178,
+      "height": 245.18,
+      "box": {
+        "width": 131,
+        "height": 65.12,
+        "font": 17,
+        "line": 20.06,
+        "labelLines": [
+          "Operating",
+          "systems"
+        ],
+        "metaFont": 10
+      },
+      "band": {
+        "left": -89,
+        "top": 77.12,
+        "width": 178,
+        "height": 35,
+        "columns": [
+          172
+        ],
+        "rows": 1,
+        "gapX": 8,
+        "gapY": 4,
+        "padding": 3
+      },
+      "childTop": 136.12,
+      "children": {
+        "category:1432": {
+          "x": 0,
+          "y": 136.12,
+          "width": 178,
+          "height": 109.06,
+          "overflow": false
+        }
+      },
+      "sibling_order": [
+        "category:1432"
+      ]
+    },
+    "category:516": {
+      "anchor": 0,
+      "width": 178,
+      "height": 212.12,
+      "box": {
+        "width": 121,
+        "height": 65.12,
+        "font": 17,
+        "line": 20.06,
+        "labelLines": [
+          "Software",
+          "quality"
+        ],
+        "metaFont": 10
+      },
+      "band": {
+        "left": -89,
+        "top": 77.12,
+        "width": 178,
+        "height": 135,
+        "columns": [
+          172
+        ],
+        "rows": 3,
+        "gapX": 8,
+        "gapY": 4,
+        "padding": 3
+      },
+      "childTop": 236.12,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:1186": {
+      "anchor": 0,
+      "width": 178,
+      "height": 285.24,
+      "box": {
+        "width": 152,
+        "height": 65.12,
+        "font": 17,
+        "line": 20.06,
+        "labelLines": [
+          "Software",
+          "construction"
+        ],
+        "metaFont": 10
+      },
+      "band": {
+        "left": 0,
+        "top": 77.12,
+        "width": 0,
+        "height": 0,
+        "columns": [],
+        "rows": 0,
+        "gapX": 8,
+        "gapY": 4,
+        "padding": 3
+      },
+      "childTop": 73.12,
+      "children": {
+        "category:516": {
+          "x": 0,
+          "y": 73.12,
+          "width": 178,
+          "height": 212.12,
+          "overflow": false
+        }
+      },
+      "sibling_order": [
+        "category:516"
+      ]
+    },
+    "category:679": {
+      "anchor": 0,
+      "width": 178,
+      "height": 146.12,
+      "box": {
+        "width": 178,
+        "height": 65.12,
+        "font": 17,
+        "line": 20.06,
+        "labelLines": [
+          "Object-oriented",
+          "programming"
+        ],
+        "metaFont": 10
+      },
+      "band": {
+        "left": -89,
+        "top": 77.12,
+        "width": 178,
+        "height": 69,
+        "columns": [
+          172
+        ],
+        "rows": 1,
+        "gapX": 8,
+        "gapY": 4,
+        "padding": 3
+      },
+      "childTop": 170.12,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:1188": {
+      "anchor": 0,
+      "width": 178,
+      "height": 219.24,
+      "box": {
+        "width": 161,
+        "height": 65.12,
+        "font": 17,
+        "line": 20.06,
+        "labelLines": [
+          "Programming",
+          "concepts"
+        ],
+        "metaFont": 10
+      },
+      "band": {
+        "left": 0,
+        "top": 77.12,
+        "width": 0,
+        "height": 0,
+        "columns": [],
+        "rows": 0,
+        "gapX": 8,
+        "gapY": 4,
+        "padding": 3
+      },
+      "childTop": 73.12,
+      "children": {
+        "category:679": {
+          "x": 0,
+          "y": 73.12,
+          "width": 178,
+          "height": 146.12,
+          "overflow": false
+        }
+      },
+      "sibling_order": [
+        "category:679"
+      ]
+    },
+    "category:357": {
+      "anchor": 0,
+      "width": 550,
+      "height": 358.36,
+      "box": {
+        "width": 196,
+        "height": 65.12,
+        "font": 17,
+        "line": 20.06,
+        "labelLines": [
+          "Computer science",
+          "fundamentals"
+        ],
+        "metaFont": 10
+      },
+      "band": {
+        "left": 0,
+        "top": 77.12,
+        "width": 0,
+        "height": 0,
+        "columns": [],
+        "rows": 0,
+        "gapX": 8,
+        "gapY": 4,
+        "padding": 3
+      },
+      "childTop": 73.12,
+      "children": {
+        "category:850": {
+          "x": -186,
+          "y": 73.12,
+          "width": 178,
+          "height": 245.18,
+          "overflow": false
+        },
+        "category:1186": {
+          "x": 0,
+          "y": 73.12,
+          "width": 178,
+          "height": 285.24,
+          "overflow": false
+        },
+        "category:1188": {
+          "x": 186,
+          "y": 73.12,
+          "width": 178,
+          "height": 219.24,
+          "overflow": false
+        }
+      },
+      "sibling_order": [
+        "category:850",
+        "category:1186",
+        "category:1188"
+      ]
+    },
+    "category:1163": {
+      "anchor": 0,
+      "width": 550,
+      "height": 1078.06,
+      "box": {
+        "width": 190,
+        "height": 104.33999999999999,
+        "font": 21,
+        "line": 24.779999999999998,
+        "labelLines": [
+          "Software",
+          "development",
+          "foundations"
+        ],
+        "metaFont": 10
+      },
+      "band": {
+        "left": 0,
+        "top": 116.33999999999999,
+        "width": 0,
+        "height": 0,
+        "columns": [],
+        "rows": 0,
+        "gapX": 8,
+        "gapY": 4,
+        "padding": 3
+      },
+      "childTop": 122.33999999999999,
+      "children": {
+        "category:126": {
+          "x": -186,
+          "y": 122.33999999999999,
+          "width": 178,
+          "height": 262.12,
+          "overflow": false
+        },
+        "category:258": {
+          "x": -3,
+          "y": 339.4,
+          "width": 544,
+          "height": 372.3,
+          "overflow": false
+        },
+        "category:357": {
+          "x": 0,
+          "y": 719.7,
+          "width": 550,
+          "height": 358.36,
+          "overflow": false
+        }
+      },
+      "sibling_order": [
+        "category:126",
+        "category:258",
+        "category:357"
+      ]
+    },
+    "category:3": {
+      "anchor": 0,
+      "width": 358,
+      "height": 246.12,
+      "box": {
+        "width": 148,
+        "height": 65.12,
+        "font": 17,
+        "line": 20.06,
+        "labelLines": [
+          "Control flow",
+          "statements"
+        ],
+        "metaFont": 10
+      },
+      "band": {
+        "left": -179,
+        "top": 77.12,
+        "width": 358,
+        "height": 169,
+        "columns": [
+          172,
+          172
+        ],
+        "rows": 3,
+        "gapX": 8,
+        "gapY": 4,
+        "padding": 3
+      },
+      "childTop": 270.12,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:35": {
+      "anchor": 0,
+      "width": 358,
+      "height": 229.12,
+      "box": {
+        "width": 158,
+        "height": 65.12,
+        "font": 17,
+        "line": 20.06,
+        "labelLines": [
+          "Data types",
+          "and variables"
+        ],
+        "metaFont": 10
+      },
+      "band": {
+        "left": -179,
+        "top": 77.12,
+        "width": 358,
+        "height": 152,
+        "columns": [
+          172,
+          172
+        ],
+        "rows": 3,
+        "gapX": 8,
+        "gapY": 4,
+        "padding": 3
+      },
+      "childTop": 253.12,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:74": {
+      "anchor": 0,
+      "width": 178,
+      "height": 279.12,
+      "box": {
+        "width": 152,
+        "height": 65.12,
+        "font": 17,
+        "line": 20.06,
+        "labelLines": [
+          "Introduction",
+          "to Java"
+        ],
+        "metaFont": 10
+      },
+      "band": {
+        "left": -89,
+        "top": 77.12,
+        "width": 178,
+        "height": 202,
+        "columns": [
+          172
+        ],
+        "rows": 4,
+        "gapX": 8,
+        "gapY": 4,
+        "padding": 3
+      },
+      "childTop": 303.12,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:153": {
+      "anchor": 0,
+      "width": 178,
+      "height": 195.12,
+      "box": {
+        "width": 126,
+        "height": 65.12,
+        "font": 17,
+        "line": 20.06,
+        "labelLines": [
+          "Simple",
+          "programs"
+        ],
+        "metaFont": 10
+      },
+      "band": {
+        "left": -89,
+        "top": 77.12,
+        "width": 178,
+        "height": 118,
+        "columns": [
+          172
+        ],
+        "rows": 3,
+        "gapX": 8,
+        "gapY": 4,
+        "padding": 3
+      },
+      "childTop": 219.12,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:188": {
+      "anchor": 0,
+      "width": 178,
+      "height": 158.06,
+      "box": {
+        "width": 115,
+        "height": 45.06,
+        "font": 17,
+        "line": 20.06,
+        "labelLines": [
+          "Strings"
+        ],
+        "metaFont": 10
+      },
+      "band": {
+        "left": -89,
+        "top": 57.06,
+        "width": 178,
+        "height": 101,
+        "columns": [
+          172
+        ],
+        "rows": 3,
+        "gapX": 8,
+        "gapY": 4,
+        "padding": 3
+      },
+      "childTop": 182.06,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:306": {
+      "anchor": 0,
+      "width": 538,
+      "height": 263.12,
+      "box": {
+        "width": 173,
+        "height": 65.12,
+        "font": 17,
+        "line": 20.06,
+        "labelLines": [
+          "Operations on",
+          "primitive types"
+        ],
+        "metaFont": 10
+      },
+      "band": {
+        "left": -269,
+        "top": 77.12,
+        "width": 538,
+        "height": 186,
+        "columns": [
+          172,
+          172,
+          172
+        ],
+        "rows": 3,
+        "gapX": 8,
+        "gapY": 4,
+        "padding": 3
+      },
+      "childTop": 287.12,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:252": {
+      "anchor": 0,
+      "width": 724,
+      "height": 840.42,
+      "box": {
+        "width": 115,
+        "height": 45.06,
+        "font": 17,
+        "line": 20.06,
+        "labelLines": [
+          "Basics"
+        ],
+        "metaFont": 10
+      },
+      "band": {
+        "left": 0,
+        "top": 57.06,
+        "width": 0,
+        "height": 0,
+        "columns": [],
+        "rows": 0,
+        "gapX": 8,
+        "gapY": 4,
+        "padding": 3
+      },
+      "childTop": 53.06,
+      "children": {
+        "category:3": {
+          "x": -183,
+          "y": 53.06,
+          "width": 358,
+          "height": 246.12,
+          "overflow": false
+        },
+        "category:35": {
+          "x": 183,
+          "y": 53.06,
+          "width": 358,
+          "height": 229.12,
+          "overflow": false
+        },
+        "category:74": {
+          "x": 80,
+          "y": 290.18,
+          "width": 178,
+          "height": 279.12,
+          "overflow": false
+        },
+        "category:153": {
+          "x": 266,
+          "y": 290.18,
+          "width": 178,
+          "height": 195.12,
+          "overflow": false
+        },
+        "category:188": {
+          "x": -273,
+          "y": 307.18,
+          "width": 178,
+          "height": 158.06,
+          "overflow": false
+        },
+        "category:306": {
+          "x": -93,
+          "y": 577.3,
+          "width": 538,
+          "height": 263.12,
+          "overflow": false
+        }
+      },
+      "sibling_order": [
+        "category:3",
+        "category:35",
+        "category:74",
+        "category:153",
+        "category:188",
+        "category:306"
+      ]
+    },
+    "category:187": {
+      "anchor": 0,
+      "width": 178,
+      "height": 225.06,
+      "box": {
+        "width": 115,
+        "height": 45.06,
+        "font": 17,
+        "line": 20.06,
+        "labelLines": [
+          "Arrays"
+        ],
+        "metaFont": 10
+      },
+      "band": {
+        "left": -89,
+        "top": 57.06,
+        "width": 178,
+        "height": 168,
+        "columns": [
+          172
+        ],
+        "rows": 4,
+        "gapX": 8,
+        "gapY": 4,
+        "padding": 3
+      },
+      "childTop": 249.06,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:1215": {
+      "anchor": 0,
+      "width": 178,
+      "height": 298.18,
+      "box": {
+        "width": 125,
+        "height": 65.12,
+        "font": 17,
+        "line": 20.06,
+        "labelLines": [
+          "Working",
+          "with data"
+        ],
+        "metaFont": 10
+      },
+      "band": {
+        "left": 0,
+        "top": 77.12,
+        "width": 0,
+        "height": 0,
+        "columns": [],
+        "rows": 0,
+        "gapX": 8,
+        "gapY": 4,
+        "padding": 3
+      },
+      "childTop": 73.12,
+      "children": {
+        "category:187": {
+          "x": 0,
+          "y": 73.12,
+          "width": 178,
+          "height": 225.06,
+          "overflow": false
+        }
+      },
+      "sibling_order": [
+        "category:187"
+      ]
+    },
+    "category:95": {
+      "anchor": 0,
+      "width": 358,
+      "height": 175.06,
+      "box": {
+        "width": 119,
+        "height": 45.06,
+        "font": 17,
+        "line": 20.06,
+        "labelLines": [
+          "Methods"
+        ],
+        "metaFont": 10
+      },
+      "band": {
+        "left": -179,
+        "top": 57.06,
+        "width": 358,
+        "height": 118,
+        "columns": [
+          172,
+          172
+        ],
+        "rows": 3,
+        "gapX": 8,
+        "gapY": 4,
+        "padding": 3
+      },
+      "childTop": 199.06,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:196": {
+      "anchor": 0,
+      "width": 178,
+      "height": 175.06,
+      "box": {
+        "width": 132,
+        "height": 45.06,
+        "font": 17,
+        "line": 20.06,
+        "labelLines": [
+          "Code style"
+        ],
+        "metaFont": 10
+      },
+      "band": {
+        "left": -89,
+        "top": 57.06,
+        "width": 178,
+        "height": 118,
+        "columns": [
+          172
+        ],
+        "rows": 3,
+        "gapX": 8,
+        "gapY": 4,
+        "padding": 3
+      },
+      "childTop": 199.06,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:1262": {
+      "anchor": 0,
+      "width": 358,
+      "height": 279.12,
+      "box": {
+        "width": 143,
+        "height": 65.12,
+        "font": 17,
+        "line": 20.06,
+        "labelLines": [
+          "Classes and",
+          "members"
+        ],
+        "metaFont": 10
+      },
+      "band": {
+        "left": -179,
+        "top": 77.12,
+        "width": 358,
+        "height": 202,
+        "columns": [
+          172,
+          172
+        ],
+        "rows": 4,
+        "gapX": 8,
+        "gapY": 4,
+        "padding": 3
+      },
+      "childTop": 303.12,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:1263": {
+      "anchor": 0,
+      "width": 178,
+      "height": 178.12,
+      "box": {
+        "width": 115,
+        "height": 65.12,
+        "font": 17,
+        "line": 20.06,
+        "labelLines": [
+          "Access",
+          "control"
+        ],
+        "metaFont": 10
+      },
+      "band": {
+        "left": -89,
+        "top": 77.12,
+        "width": 178,
+        "height": 101,
+        "columns": [
+          172
+        ],
+        "rows": 3,
+        "gapX": 8,
+        "gapY": 4,
+        "padding": 3
+      },
+      "childTop": 202.12,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:13": {
+      "anchor": 0,
+      "width": 544,
+      "height": 352.24,
+      "box": {
+        "width": 143,
+        "height": 65.12,
+        "font": 17,
+        "line": 20.06,
+        "labelLines": [
+          "Classes and",
+          "objects"
+        ],
+        "metaFont": 10
+      },
+      "band": {
+        "left": 0,
+        "top": 77.12,
+        "width": 0,
+        "height": 0,
+        "columns": [],
+        "rows": 0,
+        "gapX": 8,
+        "gapY": 4,
+        "padding": 3
+      },
+      "childTop": 73.12,
+      "children": {
+        "category:1262": {
+          "x": -93,
+          "y": 73.12,
+          "width": 358,
+          "height": 279.12,
+          "overflow": false
+        },
+        "category:1263": {
+          "x": 183,
+          "y": 73.12,
+          "width": 178,
+          "height": 178.12,
+          "overflow": false
+        }
+      },
+      "sibling_order": [
+        "category:1262",
+        "category:1263"
+      ]
+    },
+    "category:1264": {
+      "anchor": 0,
+      "width": 178,
+      "height": 195.12,
+      "box": {
+        "width": 160,
+        "height": 65.12,
+        "font": 17,
+        "line": 20.06,
+        "labelLines": [
+          "Building class",
+          "hierarchies"
+        ],
+        "metaFont": 10
+      },
+      "band": {
+        "left": -89,
+        "top": 77.12,
+        "width": 178,
+        "height": 118,
+        "columns": [
+          172
+        ],
+        "rows": 3,
+        "gapX": 8,
+        "gapY": 4,
+        "padding": 3
+      },
+      "childTop": 219.12,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:1265": {
+      "anchor": 0,
+      "width": 178,
+      "height": 195.12,
+      "box": {
+        "width": 136,
+        "height": 65.12,
+        "font": 17,
+        "line": 20.06,
+        "labelLines": [
+          "Overriding",
+          "methods"
+        ],
+        "metaFont": 10
+      },
+      "band": {
+        "left": -89,
+        "top": 77.12,
+        "width": 178,
+        "height": 118,
+        "columns": [
+          172
+        ],
+        "rows": 3,
+        "gapX": 8,
+        "gapY": 4,
+        "padding": 3
+      },
+      "childTop": 219.12,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:1267": {
+      "anchor": 0,
+      "width": 179,
+      "height": 112.12,
+      "box": {
+        "width": 179,
+        "height": 65.12,
+        "font": 17,
+        "line": 20.06,
+        "labelLines": [
+          "Interfaces and",
+          "abstract classes"
+        ],
+        "metaFont": 10
+      },
+      "band": {
+        "left": -89,
+        "top": 77.12,
+        "width": 178,
+        "height": 35,
+        "columns": [
+          172
+        ],
+        "rows": 1,
+        "gapX": 8,
+        "gapY": 4,
+        "padding": 3
+      },
+      "childTop": 136.12,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:195": {
+      "anchor": 0,
+      "width": 550.5,
+      "height": 268.24,
+      "box": {
+        "width": 139,
+        "height": 65.12,
+        "font": 17,
+        "line": 20.06,
+        "labelLines": [
+          "Class",
+          "hierarchies"
+        ],
+        "metaFont": 10
+      },
+      "band": {
+        "left": 0,
+        "top": 77.12,
+        "width": 0,
+        "height": 0,
+        "columns": [],
+        "rows": 0,
+        "gapX": 8,
+        "gapY": 4,
+        "padding": 3
+      },
+      "childTop": 73.12,
+      "children": {
+        "category:1264": {
+          "x": -186.25,
+          "y": 73.12,
+          "width": 178,
+          "height": 195.12,
+          "overflow": false
+        },
+        "category:1265": {
+          "x": -0.25,
+          "y": 73.12,
+          "width": 178,
+          "height": 195.12,
+          "overflow": false
+        },
+        "category:1267": {
+          "x": 185.75,
+          "y": 73.12,
+          "width": 179,
+          "height": 112.12,
+          "overflow": false
+        }
+      },
+      "sibling_order": [
+        "category:1264",
+        "category:1265",
+        "category:1267"
+      ]
+    },
+    "category:1269": {
+      "anchor": 0,
+      "width": 178,
+      "height": 176.06,
+      "box": {
+        "width": 163,
+        "height": 45.06,
+        "font": 17,
+        "line": 20.06,
+        "labelLines": [
+          "Enumerations"
+        ],
+        "metaFont": 10
+      },
+      "band": {
+        "left": -89,
+        "top": 57.06,
+        "width": 178,
+        "height": 119,
+        "columns": [
+          172
+        ],
+        "rows": 2,
+        "gapX": 8,
+        "gapY": 4,
+        "padding": 3
+      },
+      "childTop": 200.06,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:1268": {
+      "anchor": 0,
+      "width": 178,
+      "height": 249.18,
+      "box": {
+        "width": 121,
+        "height": 65.12,
+        "font": 17,
+        "line": 20.06,
+        "labelLines": [
+          "Other",
+          "concepts"
+        ],
+        "metaFont": 10
+      },
+      "band": {
+        "left": 0,
+        "top": 77.12,
+        "width": 0,
+        "height": 0,
+        "columns": [],
+        "rows": 0,
+        "gapX": 8,
+        "gapY": 4,
+        "padding": 3
+      },
+      "childTop": 73.12,
+      "children": {
+        "category:1269": {
+          "x": 0,
+          "y": 73.12,
+          "width": 178,
+          "height": 176.06,
+          "overflow": false
+        }
+      },
+      "sibling_order": [
+        "category:1269"
+      ]
+    },
+    "category:251": {
+      "anchor": 0,
+      "width": 730,
+      "height": 701.6,
+      "box": {
+        "width": 178,
+        "height": 65.12,
+        "font": 17,
+        "line": 20.06,
+        "labelLines": [
+          "Object-oriented",
+          "programming"
+        ],
+        "metaFont": 10
+      },
+      "band": {
+        "left": 0,
+        "top": 77.12,
+        "width": 0,
+        "height": 0,
+        "columns": [],
+        "rows": 0,
+        "gapX": 8,
+        "gapY": 4,
+        "padding": 3
+      },
+      "childTop": 73.12,
+      "children": {
+        "category:13": {
+          "x": -93,
+          "y": 73.12,
+          "width": 544,
+          "height": 352.24,
+          "overflow": false
+        },
+        "category:195": {
+          "x": -89.75,
+          "y": 433.36,
+          "width": 550.5,
+          "height": 268.24,
+          "overflow": false
+        },
+        "category:1268": {
+          "x": 276,
+          "y": 73.12,
+          "width": 178,
+          "height": 249.18,
+          "overflow": false
+        }
+      },
+      "sibling_order": [
+        "category:13",
+        "category:195",
+        "category:1268"
+      ]
+    },
+    "category:1258": {
+      "anchor": 0,
+      "width": 730,
+      "height": 937.72,
+      "box": {
+        "width": 199,
+        "height": 45.06,
+        "font": 17,
+        "line": 20.06,
+        "labelLines": [
+          "Code organization"
+        ],
+        "metaFont": 10
+      },
+      "band": {
+        "left": 0,
+        "top": 57.06,
+        "width": 0,
+        "height": 0,
+        "columns": [],
+        "rows": 0,
+        "gapX": 8,
+        "gapY": 4,
+        "padding": 3
+      },
+      "childTop": 53.06,
+      "children": {
+        "category:95": {
+          "x": -186,
+          "y": 53.06,
+          "width": 358,
+          "height": 175.06,
+          "overflow": false
+        },
+        "category:196": {
+          "x": 90,
+          "y": 53.06,
+          "width": 178,
+          "height": 175.06,
+          "overflow": false
+        },
+        "category:251": {
+          "x": 0,
+          "y": 236.12,
+          "width": 730,
+          "height": 701.6,
+          "overflow": false
+        }
+      },
+      "sibling_order": [
+        "category:95",
+        "category:196",
+        "category:251"
+      ]
+    },
+    "category:61": {
+      "anchor": 0,
+      "width": 188.37545776367188,
+      "height": 278.12,
+      "box": {
+        "width": 127,
+        "height": 65.12,
+        "font": 17,
+        "line": 20.06,
+        "labelLines": [
+          "Exception",
+          "handling"
+        ],
+        "metaFont": 10
+      },
+      "band": {
+        "left": -94.18772888183594,
+        "top": 77.12,
+        "width": 188.37545776367188,
+        "height": 201,
+        "columns": [
+          182.37545776367188
+        ],
+        "rows": 5,
+        "gapX": 8,
+        "gapY": 4,
+        "padding": 3
+      },
+      "childTop": 302.12,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:1423": {
+      "anchor": 0,
+      "width": 178,
+      "height": 209.06,
+      "box": {
+        "width": 137,
+        "height": 45.06,
+        "font": 17,
+        "line": 20.06,
+        "labelLines": [
+          "Debugging"
+        ],
+        "metaFont": 10
+      },
+      "band": {
+        "left": -89,
+        "top": 57.06,
+        "width": 178,
+        "height": 152,
+        "columns": [
+          172
+        ],
+        "rows": 3,
+        "gapX": 8,
+        "gapY": 4,
+        "padding": 3
+      },
+      "childTop": 233.06,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:1260": {
+      "anchor": 0,
+      "width": 374.3754577636719,
+      "height": 351.24,
+      "box": {
+        "width": 119,
+        "height": 65.12,
+        "font": 17,
+        "line": 20.06,
+        "labelLines": [
+          "Errorless",
+          "code"
+        ],
+        "metaFont": 10
+      },
+      "band": {
+        "left": 0,
+        "top": 77.12,
+        "width": 0,
+        "height": 0,
+        "columns": [],
+        "rows": 0,
+        "gapX": 8,
+        "gapY": 4,
+        "padding": 3
+      },
+      "childTop": 73.12,
+      "children": {
+        "category:61": {
+          "x": -93,
+          "y": 73.12,
+          "width": 188.37545776367188,
+          "height": 278.12,
+          "overflow": false
+        },
+        "category:1423": {
+          "x": 98.18772888183594,
+          "y": 73.12,
+          "width": 178,
+          "height": 209.06,
+          "overflow": false
+        }
+      },
+      "sibling_order": [
+        "category:61",
+        "category:1423"
+      ]
+    },
+    "category:73": {
+      "anchor": 0,
+      "width": 1664.8754577636719,
+      "height": 990.78,
+      "box": {
+        "width": 115,
+        "height": 45.06,
+        "font": 17,
+        "line": 20.06,
+        "labelLines": [
+          "Java"
+        ],
+        "metaFont": 10
+      },
+      "band": {
+        "left": 0,
+        "top": 57.06,
+        "width": 0,
+        "height": 0,
+        "columns": [],
+        "rows": 0,
+        "gapX": 8,
+        "gapY": 4,
+        "padding": 3
+      },
+      "childTop": 53.06,
+      "children": {
+        "category:252": {
+          "x": -470.43772888183594,
+          "y": 53.06,
+          "width": 724,
+          "height": 840.42,
+          "overflow": false
+        },
+        "category:1215": {
+          "x": -197.43772888183594,
+          "y": 546.36,
+          "width": 178,
+          "height": 298.18,
+          "overflow": false
+        },
+        "category:1258": {
+          "x": 264.56227111816406,
+          "y": 53.06,
+          "width": 730,
+          "height": 937.72,
+          "overflow": false
+        },
+        "category:1260": {
+          "x": 645.25,
+          "y": 619.48,
+          "width": 374.3754577636719,
+          "height": 351.24,
+          "overflow": false
+        }
+      },
+      "sibling_order": [
+        "category:252",
+        "category:1215",
+        "category:1258",
+        "category:1260"
+      ]
+    },
+    "category:1164": {
+      "anchor": 0,
+      "width": 1664.8754577636719,
+      "height": 1088.34,
+      "box": {
+        "width": 190,
+        "height": 79.56,
+        "font": 21,
+        "line": 24.779999999999998,
+        "labelLines": [
+          "Programming",
+          "languages"
+        ],
+        "metaFont": 10
+      },
+      "band": {
+        "left": 0,
+        "top": 91.56,
+        "width": 0,
+        "height": 0,
+        "columns": [],
+        "rows": 0,
+        "gapX": 8,
+        "gapY": 4,
+        "padding": 3
+      },
+      "childTop": 97.56,
+      "children": {
+        "category:73": {
+          "x": 0,
+          "y": 97.56,
+          "width": 1664.8754577636719,
+          "height": 990.78,
+          "overflow": false
+        }
+      },
+      "sibling_order": [
+        "category:73"
+      ]
+    },
+    "category:1356": {
+      "anchor": 0,
+      "width": 178,
+      "height": 179.12,
+      "box": {
+        "width": 132,
+        "height": 65.12,
+        "font": 17,
+        "line": 20.06,
+        "labelLines": [
+          "Command",
+          "line basics"
+        ],
+        "metaFont": 10
+      },
+      "band": {
+        "left": -89,
+        "top": 77.12,
+        "width": 178,
+        "height": 102,
+        "columns": [
+          172
+        ],
+        "rows": 2,
+        "gapX": 8,
+        "gapY": 4,
+        "padding": 3
+      },
+      "childTop": 203.12,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:477": {
+      "anchor": 0,
+      "width": 178,
+      "height": 232.18,
+      "box": {
+        "width": 167,
+        "height": 45.06,
+        "font": 17,
+        "line": 20.06,
+        "labelLines": [
+          "Command line"
+        ],
+        "metaFont": 10
+      },
+      "band": {
+        "left": 0,
+        "top": 57.06,
+        "width": 0,
+        "height": 0,
+        "columns": [],
+        "rows": 0,
+        "gapX": 8,
+        "gapY": 4,
+        "padding": 3
+      },
+      "childTop": 53.06,
+      "children": {
+        "category:1356": {
+          "x": 0,
+          "y": 53.06,
+          "width": 178,
+          "height": 179.12,
+          "overflow": false
+        }
+      },
+      "sibling_order": [
+        "category:1356"
+      ]
+    },
+    "category:2679": {
+      "anchor": 0,
+      "width": 200,
+      "height": 354.52,
+      "box": {
+        "width": 200,
+        "height": 104.33999999999999,
+        "font": 21,
+        "line": 24.779999999999998,
+        "labelLines": [
+          "System",
+          "administration",
+          "and DevOps"
+        ],
+        "metaFont": 10
+      },
+      "band": {
+        "left": 0,
+        "top": 116.33999999999999,
+        "width": 0,
+        "height": 0,
+        "columns": [],
+        "rows": 0,
+        "gapX": 8,
+        "gapY": 4,
+        "padding": 3
+      },
+      "childTop": 122.33999999999999,
+      "children": {
+        "category:477": {
+          "x": 0,
+          "y": 122.33999999999999,
+          "width": 178,
+          "height": 232.18,
+          "overflow": false
+        }
+      },
+      "sibling_order": [
+        "category:477"
+      ]
+    },
+    "category:1162": {
+      "anchor": 0,
+      "width": 2242.937728881836,
+      "height": 1175.3799999999999,
+      "box": {
+        "width": 295,
+        "height": 63.04,
+        "font": 28,
+        "line": 33.04,
+        "labelLines": [
+          "Computer science"
+        ],
+        "metaFont": 10
+      },
+      "band": {
+        "left": 0,
+        "top": 75.03999999999999,
+        "width": 0,
+        "height": 0,
+        "columns": [],
+        "rows": 0,
+        "gapX": 8,
+        "gapY": 4,
+        "padding": 3
+      },
+      "childTop": 87.03999999999999,
+      "children": {
+        "category:1163": {
+          "x": -887,
+          "y": 87.03999999999999,
+          "width": 550,
+          "height": 1078.06,
+          "overflow": false
+        },
+        "category:1164": {
+          "x": 248.5,
+          "y": 87.03999999999999,
+          "width": 1664.8754577636719,
+          "height": 1088.34,
+          "overflow": false
+        },
+        "category:2679": {
+          "x": 887,
+          "y": 87.03999999999999,
+          "width": 200,
+          "height": 354.52,
+          "overflow": false
+        }
+      },
+      "sibling_order": [
+        "category:1163",
+        "category:1164",
+        "category:2679"
+      ]
+    }
+  }
+}

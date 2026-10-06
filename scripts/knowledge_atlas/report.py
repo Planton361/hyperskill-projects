@@ -2,8 +2,19 @@
 
 
 def human(report):
+    if report.get('spatial_authority'):
+        return '\n'.join(['Knowledge Atlas Update',report['status'],report.get('message',''),
+            'Spatial authority: global-canonical-pyramid',
+            'Generation: '+str(report['generation'])+' · Activation history: '+str(report['history_version']),
+            'Existing displacement: 0 px · placement search: none', 'Applied: '+str(report['applied'])])
     if 'manifest' in report:
         m=report['manifest'];v=report.get('metrics',{});b=m['bindings']
+        if m.get('selected_variant')=='CANONICAL_REVEAL':
+            return '\n'.join(['Knowledge Atlas Canonical Reveal Preview', 'Outcome: '+m['outcome'],
+                'New Categories: '+str(m['new_categories']), 'New Topics: '+str(m['new_topics']),
+                'Existing displacement: 0 px · no placement search', 'Generation change: 0',
+                'Activation history change: '+str(m['expected_history_change']),
+                'Manifest fingerprint: '+m['manifest_fingerprint']])
         return '\n'.join(['Knowledge Atlas Activation Preview','Context: '+str(m['context']),
             'New Categories: '+str(m['new_categories']),'New Topics: '+str(m['new_topics']),
             'Blocked references: '+str(m['blocked_references']),'Selected variant: '+m['selected_variant'],

@@ -121,7 +121,7 @@ def require(ok, message):
         raise ValueError(message)
 
 
-def validate(data):
+def validate(data, canonical=False):
     """Validate normalized v1 tables before any layout or write."""
     for table in (*TYPES, 'edges', 'evidence'):
         require(isinstance(data.get(table), list), 'schema: expected array ' + table)
@@ -137,7 +137,7 @@ def validate(data):
     categories = {r['id']: r for r in data['categories']}
     require(len(categories) == len(data['categories']), 'duplicate IDs: categories')
     roots = [r for r in categories.values() if r['canonical_parent_id'] is None]
-    require(len(roots) == 1, 'taxonomy must have exactly one canonical root')
+    require(bool(roots) if canonical else len(roots) == 1, 'taxonomy must have canonical roots')
     for row in data['categories'] + data['topics']:
         parent = row['canonical_parent_id']
         require(parent in categories or (row in roots), 'missing canonical parent ' + str(row['id']))

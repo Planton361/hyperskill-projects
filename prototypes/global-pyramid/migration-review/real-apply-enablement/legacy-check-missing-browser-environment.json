@@ -1,0 +1,6 @@
+{
+  "applied": false,
+  "message": "layout bridge failed: Playwright required. Set PLAYWRIGHT_MODULE to an installed module; no dependency is downloaded.",
+  "safe_to_build_preview": false,
+  "status": "VALIDATION_FAILED"
+}

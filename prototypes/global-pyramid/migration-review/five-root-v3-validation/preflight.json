@@ -1,0 +1,13 @@
+{
+  "authority": "LEGACY",
+  "generation": 0,
+  "counts": {
+    "categories": 46,
+    "topics": 89,
+    "learned": 31,
+    "verified": 12,
+    "project113": 26,
+    "stage617": 12
+  },
+  "canonical_fingerprint": "0946f17af8229463757cda209a1307cd86449bfb5b54258d4aa5f14189310d29"
+}

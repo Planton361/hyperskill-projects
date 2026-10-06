@@ -1,0 +1,3318 @@
+{
+  "url": "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/",
+  "publicRun": false,
+  "checks": [
+    "HTTP 200 1920 dark",
+    "quiet preview label",
+    "overlaps zero 1920 dark",
+    "hits zero 1920 dark",
+    "crossings zero 1920 dark",
+    "safeHits zero 1920 dark",
+    "spacingErrors zero 1920 dark",
+    "regionErrors zero 1920 dark",
+    "trayPortErrors zero 1920 dark",
+    "exact ports",
+    "89/46 and all labels",
+    "31 learned / 12 verified",
+    "full overview fits",
+    "overview has no relations",
+    "category search -> subtree Java",
+    "category search -> subtree Basics",
+    "For loop focus >=13px + direct relations",
+    "Inspector context + topic card fits",
+    "theme selection preserved",
+    "minimap contract",
+    "Project 113 exact completed/26",
+    "project fit contains target regions",
+    "amber minimap reuses evidence",
+    "Stage 4 exact 12",
+    "Topic click focuses",
+    "keyboard topic focus",
+    "search reveals manual collapse",
+    "Reduced Motion instant + no global relations",
+    "no layout/geometry/checkpoint displacement",
+    "no horizontal overflow + responsive inspector",
+    "relative asset style.css",
+    "relative asset app.js",
+    "relative asset layout.js",
+    "relative asset routing.js",
+    "relative asset model.js",
+    "relative asset model.json",
+    "relative asset layout-checkpoint.json",
+    "relative asset vendor/d3-7.9.0.min.js",
+    "no external runtime requests",
+    "reload geometry exact",
+    "reload all content",
+    "HTTP 200 1920 light",
+    "quiet preview label",
+    "overlaps zero 1920 light",
+    "hits zero 1920 light",
+    "crossings zero 1920 light",
+    "safeHits zero 1920 light",
+    "spacingErrors zero 1920 light",
+    "regionErrors zero 1920 light",
+    "trayPortErrors zero 1920 light",
+    "exact ports",
+    "89/46 and all labels",
+    "31 learned / 12 verified",
+    "full overview fits",
+    "overview has no relations",
+    "category search -> subtree Java",
+    "category search -> subtree Basics",
+    "For loop focus >=13px + direct relations",
+    "Inspector context + topic card fits",
+    "theme selection preserved",
+    "minimap contract",
+    "Project 113 exact completed/26",
+    "project fit contains target regions",
+    "amber minimap reuses evidence",
+    "Stage 4 exact 12",
+    "Topic click focuses",
+    "keyboard topic focus",
+    "search reveals manual collapse",
+    "Reduced Motion instant + no global relations",
+    "no layout/geometry/checkpoint displacement",
+    "no horizontal overflow + responsive inspector",
+    "relative asset style.css",
+    "relative asset app.js",
+    "relative asset layout.js",
+    "relative asset routing.js",
+    "relative asset model.js",
+    "relative asset model.json",
+    "relative asset layout-checkpoint.json",
+    "relative asset vendor/d3-7.9.0.min.js",
+    "no external runtime requests",
+    "reload geometry exact",
+    "reload all content",
+    "HTTP 200 1440 dark",
+    "quiet preview label",
+    "overlaps zero 1440 dark",
+    "hits zero 1440 dark",
+    "crossings zero 1440 dark",
+    "safeHits zero 1440 dark",
+    "spacingErrors zero 1440 dark",
+    "regionErrors zero 1440 dark",
+    "trayPortErrors zero 1440 dark",
+    "exact ports",
+    "89/46 and all labels",
+    "31 learned / 12 verified",
+    "full overview fits",
+    "overview has no relations",
+    "category search -> subtree Java",
+    "category search -> subtree Basics",
+    "For loop focus >=13px + direct relations",
+    "Inspector context + topic card fits",
+    "theme selection preserved",
+    "minimap contract",
+    "Project 113 exact completed/26",
+    "project fit contains target regions",
+    "amber minimap reuses evidence",
+    "Stage 4 exact 12",
+    "Topic click focuses",
+    "keyboard topic focus",
+    "search reveals manual collapse",
+    "Reduced Motion instant + no global relations",
+    "no layout/geometry/checkpoint displacement",
+    "no horizontal overflow + responsive inspector",
+    "relative asset style.css",
+    "relative asset app.js",
+    "relative asset layout.js",
+    "relative asset routing.js",
+    "relative asset model.js",
+    "relative asset model.json",
+    "relative asset layout-checkpoint.json",
+    "relative asset vendor/d3-7.9.0.min.js",
+    "no external runtime requests",
+    "reload geometry exact",
+    "reload all content",
+    "HTTP 200 1440 light",
+    "quiet preview label",
+    "overlaps zero 1440 light",
+    "hits zero 1440 light",
+    "crossings zero 1440 light",
+    "safeHits zero 1440 light",
+    "spacingErrors zero 1440 light",
+    "regionErrors zero 1440 light",
+    "trayPortErrors zero 1440 light",
+    "exact ports",
+    "89/46 and all labels",
+    "31 learned / 12 verified",
+    "full overview fits",
+    "overview has no relations",
+    "category search -> subtree Java",
+    "category search -> subtree Basics",
+    "For loop focus >=13px + direct relations",
+    "Inspector context + topic card fits",
+    "theme selection preserved",
+    "minimap contract",
+    "Project 113 exact completed/26",
+    "project fit contains target regions",
+    "amber minimap reuses evidence",
+    "Stage 4 exact 12",
+    "Topic click focuses",
+    "keyboard topic focus",
+    "search reveals manual collapse",
+    "Reduced Motion instant + no global relations",
+    "no layout/geometry/checkpoint displacement",
+    "no horizontal overflow + responsive inspector",
+    "relative asset style.css",
+    "relative asset app.js",
+    "relative asset layout.js",
+    "relative asset routing.js",
+    "relative asset model.js",
+    "relative asset model.json",
+    "relative asset layout-checkpoint.json",
+    "relative asset vendor/d3-7.9.0.min.js",
+    "no external runtime requests",
+    "reload geometry exact",
+    "reload all content",
+    "HTTP 200 1280 dark",
+    "quiet preview label",
+    "overlaps zero 1280 dark",
+    "hits zero 1280 dark",
+    "crossings zero 1280 dark",
+    "safeHits zero 1280 dark",
+    "spacingErrors zero 1280 dark",
+    "regionErrors zero 1280 dark",
+    "trayPortErrors zero 1280 dark",
+    "exact ports",
+    "89/46 and all labels",
+    "31 learned / 12 verified",
+    "full overview fits",
+    "overview has no relations",
+    "category search -> subtree Java",
+    "category search -> subtree Basics",
+    "For loop focus >=13px + direct relations",
+    "Inspector context + topic card fits",
+    "theme selection preserved",
+    "minimap contract",
+    "Project 113 exact completed/26",
+    "project fit contains target regions",
+    "amber minimap reuses evidence",
+    "Stage 4 exact 12",
+    "Topic click focuses",
+    "keyboard topic focus",
+    "search reveals manual collapse",
+    "Reduced Motion instant + no global relations",
+    "no layout/geometry/checkpoint displacement",
+    "no horizontal overflow + responsive inspector",
+    "relative asset style.css",
+    "relative asset app.js",
+    "relative asset layout.js",
+    "relative asset routing.js",
+    "relative asset model.js",
+    "relative asset model.json",
+    "relative asset layout-checkpoint.json",
+    "relative asset vendor/d3-7.9.0.min.js",
+    "no external runtime requests",
+    "reload geometry exact",
+    "reload all content",
+    "HTTP 200 1280 light",
+    "quiet preview label",
+    "overlaps zero 1280 light",
+    "hits zero 1280 light",
+    "crossings zero 1280 light",
+    "safeHits zero 1280 light",
+    "spacingErrors zero 1280 light",
+    "regionErrors zero 1280 light",
+    "trayPortErrors zero 1280 light",
+    "exact ports",
+    "89/46 and all labels",
+    "31 learned / 12 verified",
+    "full overview fits",
+    "overview has no relations",
+    "category search -> subtree Java",
+    "category search -> subtree Basics",
+    "For loop focus >=13px + direct relations",
+    "Inspector context + topic card fits",
+    "theme selection preserved",
+    "minimap contract",
+    "Project 113 exact completed/26",
+    "project fit contains target regions",
+    "amber minimap reuses evidence",
+    "Stage 4 exact 12",
+    "Topic click focuses",
+    "keyboard topic focus",
+    "search reveals manual collapse",
+    "Reduced Motion instant + no global relations",
+    "no layout/geometry/checkpoint displacement",
+    "no horizontal overflow + responsive inspector",
+    "relative asset style.css",
+    "relative asset app.js",
+    "relative asset layout.js",
+    "relative asset routing.js",
+    "relative asset model.js",
+    "relative asset model.json",
+    "relative asset layout-checkpoint.json",
+    "relative asset vendor/d3-7.9.0.min.js",
+    "no external runtime requests",
+    "reload geometry exact",
+    "reload all content",
+    "HTTP 200 1200 dark",
+    "quiet preview label",
+    "overlaps zero 1200 dark",
+    "hits zero 1200 dark",
+    "crossings zero 1200 dark",
+    "safeHits zero 1200 dark",
+    "spacingErrors zero 1200 dark",
+    "regionErrors zero 1200 dark",
+    "trayPortErrors zero 1200 dark",
+    "exact ports",
+    "89/46 and all labels",
+    "31 learned / 12 verified",
+    "full overview fits",
+    "overview has no relations",
+    "category search -> subtree Java",
+    "category search -> subtree Basics",
+    "For loop focus >=13px + direct relations",
+    "Inspector context + topic card fits",
+    "theme selection preserved",
+    "minimap contract",
+    "Project 113 exact completed/26",
+    "project fit contains target regions",
+    "amber minimap reuses evidence",
+    "Stage 4 exact 12",
+    "Topic click focuses",
+    "keyboard topic focus",
+    "search reveals manual collapse",
+    "Reduced Motion instant + no global relations",
+    "no layout/geometry/checkpoint displacement",
+    "no horizontal overflow + responsive inspector",
+    "relative asset style.css",
+    "relative asset app.js",
+    "relative asset layout.js",
+    "relative asset routing.js",
+    "relative asset model.js",
+    "relative asset model.json",
+    "relative asset layout-checkpoint.json",
+    "relative asset vendor/d3-7.9.0.min.js",
+    "no external runtime requests",
+    "reload geometry exact",
+    "reload all content",
+    "HTTP 200 1200 light",
+    "quiet preview label",
+    "overlaps zero 1200 light",
+    "hits zero 1200 light",
+    "crossings zero 1200 light",
+    "safeHits zero 1200 light",
+    "spacingErrors zero 1200 light",
+    "regionErrors zero 1200 light",
+    "trayPortErrors zero 1200 light",
+    "exact ports",
+    "89/46 and all labels",
+    "31 learned / 12 verified",
+    "full overview fits",
+    "overview has no relations",
+    "category search -> subtree Java",
+    "category search -> subtree Basics",
+    "For loop focus >=13px + direct relations",
+    "Inspector context + topic card fits",
+    "theme selection preserved",
+    "minimap contract",
+    "Project 113 exact completed/26",
+    "project fit contains target regions",
+    "amber minimap reuses evidence",
+    "Stage 4 exact 12",
+    "Topic click focuses",
+    "keyboard topic focus",
+    "search reveals manual collapse",
+    "Reduced Motion instant + no global relations",
+    "no layout/geometry/checkpoint displacement",
+    "no horizontal overflow + responsive inspector",
+    "relative asset style.css",
+    "relative asset app.js",
+    "relative asset layout.js",
+    "relative asset routing.js",
+    "relative asset model.js",
+    "relative asset model.json",
+    "relative asset layout-checkpoint.json",
+    "relative asset vendor/d3-7.9.0.min.js",
+    "no external runtime requests",
+    "reload geometry exact",
+    "reload all content",
+    "HTTP 200 1024 dark",
+    "quiet preview label",
+    "overlaps zero 1024 dark",
+    "hits zero 1024 dark",
+    "crossings zero 1024 dark",
+    "safeHits zero 1024 dark",
+    "spacingErrors zero 1024 dark",
+    "regionErrors zero 1024 dark",
+    "trayPortErrors zero 1024 dark",
+    "exact ports",
+    "89/46 and all labels",
+    "31 learned / 12 verified",
+    "full overview fits",
+    "overview has no relations",
+    "category search -> subtree Java",
+    "category search -> subtree Basics",
+    "For loop focus >=13px + direct relations",
+    "Inspector context + topic card fits",
+    "theme selection preserved",
+    "minimap contract",
+    "Project 113 exact completed/26",
+    "project fit contains target regions",
+    "amber minimap reuses evidence",
+    "Stage 4 exact 12",
+    "Topic click focuses",
+    "keyboard topic focus",
+    "search reveals manual collapse",
+    "Reduced Motion instant + no global relations",
+    "no layout/geometry/checkpoint displacement",
+    "no horizontal overflow + responsive inspector",
+    "relative asset style.css",
+    "relative asset app.js",
+    "relative asset layout.js",
+    "relative asset routing.js",
+    "relative asset model.js",
+    "relative asset model.json",
+    "relative asset layout-checkpoint.json",
+    "relative asset vendor/d3-7.9.0.min.js",
+    "no external runtime requests",
+    "reload geometry exact",
+    "reload all content",
+    "HTTP 200 1024 light",
+    "quiet preview label",
+    "overlaps zero 1024 light",
+    "hits zero 1024 light",
+    "crossings zero 1024 light",
+    "safeHits zero 1024 light",
+    "spacingErrors zero 1024 light",
+    "regionErrors zero 1024 light",
+    "trayPortErrors zero 1024 light",
+    "exact ports",
+    "89/46 and all labels",
+    "31 learned / 12 verified",
+    "full overview fits",
+    "overview has no relations",
+    "category search -> subtree Java",
+    "category search -> subtree Basics",
+    "For loop focus >=13px + direct relations",
+    "Inspector context + topic card fits",
+    "theme selection preserved",
+    "minimap contract",
+    "Project 113 exact completed/26",
+    "project fit contains target regions",
+    "amber minimap reuses evidence",
+    "Stage 4 exact 12",
+    "Topic click focuses",
+    "keyboard topic focus",
+    "search reveals manual collapse",
+    "Reduced Motion instant + no global relations",
+    "no layout/geometry/checkpoint displacement",
+    "no horizontal overflow + responsive inspector",
+    "relative asset style.css",
+    "relative asset app.js",
+    "relative asset layout.js",
+    "relative asset routing.js",
+    "relative asset model.js",
+    "relative asset model.json",
+    "relative asset layout-checkpoint.json",
+    "relative asset vendor/d3-7.9.0.min.js",
+    "no external runtime requests",
+    "reload geometry exact",
+    "reload all content",
+    "HTTP 200 768 dark",
+    "quiet preview label",
+    "overlaps zero 768 dark",
+    "hits zero 768 dark",
+    "crossings zero 768 dark",
+    "safeHits zero 768 dark",
+    "spacingErrors zero 768 dark",
+    "regionErrors zero 768 dark",
+    "trayPortErrors zero 768 dark",
+    "exact ports",
+    "89/46 and all labels",
+    "31 learned / 12 verified",
+    "full overview fits",
+    "overview has no relations",
+    "category search -> subtree Java",
+    "category search -> subtree Basics",
+    "For loop focus >=13px + direct relations",
+    "Inspector context + topic card fits",
+    "theme selection preserved",
+    "minimap contract",
+    "Project 113 exact completed/26",
+    "project fit contains target regions",
+    "amber minimap reuses evidence",
+    "Stage 4 exact 12",
+    "Topic click focuses",
+    "keyboard topic focus",
+    "search reveals manual collapse",
+    "Reduced Motion instant + no global relations",
+    "no layout/geometry/checkpoint displacement",
+    "no horizontal overflow + responsive inspector",
+    "relative asset style.css",
+    "relative asset app.js",
+    "relative asset layout.js",
+    "relative asset routing.js",
+    "relative asset model.js",
+    "relative asset model.json",
+    "relative asset layout-checkpoint.json",
+    "relative asset vendor/d3-7.9.0.min.js",
+    "no external runtime requests",
+    "reload geometry exact",
+    "reload all content",
+    "HTTP 200 768 light",
+    "quiet preview label",
+    "overlaps zero 768 light",
+    "hits zero 768 light",
+    "crossings zero 768 light",
+    "safeHits zero 768 light",
+    "spacingErrors zero 768 light",
+    "regionErrors zero 768 light",
+    "trayPortErrors zero 768 light",
+    "exact ports",
+    "89/46 and all labels",
+    "31 learned / 12 verified",
+    "full overview fits",
+    "overview has no relations",
+    "category search -> subtree Java",
+    "category search -> subtree Basics",
+    "For loop focus >=13px + direct relations",
+    "Inspector context + topic card fits",
+    "theme selection preserved",
+    "minimap contract",
+    "Project 113 exact completed/26",
+    "project fit contains target regions",
+    "amber minimap reuses evidence",
+    "Stage 4 exact 12",
+    "Topic click focuses",
+    "keyboard topic focus",
+    "search reveals manual collapse",
+    "Reduced Motion instant + no global relations",
+    "no layout/geometry/checkpoint displacement",
+    "no horizontal overflow + responsive inspector",
+    "relative asset style.css",
+    "relative asset app.js",
+    "relative asset layout.js",
+    "relative asset routing.js",
+    "relative asset model.js",
+    "relative asset model.json",
+    "relative asset layout-checkpoint.json",
+    "relative asset vendor/d3-7.9.0.min.js",
+    "no external runtime requests",
+    "reload geometry exact",
+    "reload all content",
+    "HTTP 200 430 dark",
+    "quiet preview label",
+    "overlaps zero 430 dark",
+    "hits zero 430 dark",
+    "crossings zero 430 dark",
+    "safeHits zero 430 dark",
+    "spacingErrors zero 430 dark",
+    "regionErrors zero 430 dark",
+    "trayPortErrors zero 430 dark",
+    "exact ports",
+    "89/46 and all labels",
+    "31 learned / 12 verified",
+    "full overview fits",
+    "overview has no relations",
+    "category search -> subtree Java",
+    "category search -> subtree Basics",
+    "For loop focus >=13px + direct relations",
+    "Inspector context + topic card fits",
+    "theme selection preserved",
+    "minimap contract",
+    "Project 113 exact completed/26",
+    "project fit contains target regions",
+    "amber minimap reuses evidence",
+    "Stage 4 exact 12",
+    "Topic click focuses",
+    "keyboard topic focus",
+    "search reveals manual collapse",
+    "Reduced Motion instant + no global relations",
+    "no layout/geometry/checkpoint displacement",
+    "no horizontal overflow + responsive inspector",
+    "relative asset style.css",
+    "relative asset app.js",
+    "relative asset layout.js",
+    "relative asset routing.js",
+    "relative asset model.js",
+    "relative asset model.json",
+    "relative asset layout-checkpoint.json",
+    "relative asset vendor/d3-7.9.0.min.js",
+    "no external runtime requests",
+    "reload geometry exact",
+    "reload all content",
+    "HTTP 200 430 light",
+    "quiet preview label",
+    "overlaps zero 430 light",
+    "hits zero 430 light",
+    "crossings zero 430 light",
+    "safeHits zero 430 light",
+    "spacingErrors zero 430 light",
+    "regionErrors zero 430 light",
+    "trayPortErrors zero 430 light",
+    "exact ports",
+    "89/46 and all labels",
+    "31 learned / 12 verified",
+    "full overview fits",
+    "overview has no relations",
+    "category search -> subtree Java",
+    "category search -> subtree Basics",
+    "For loop focus >=13px + direct relations",
+    "Inspector context + topic card fits",
+    "theme selection preserved",
+    "minimap contract",
+    "Project 113 exact completed/26",
+    "project fit contains target regions",
+    "amber minimap reuses evidence",
+    "Stage 4 exact 12",
+    "Topic click focuses",
+    "keyboard topic focus",
+    "search reveals manual collapse",
+    "Reduced Motion instant + no global relations",
+    "no layout/geometry/checkpoint displacement",
+    "no horizontal overflow + responsive inspector",
+    "relative asset style.css",
+    "relative asset app.js",
+    "relative asset layout.js",
+    "relative asset routing.js",
+    "relative asset model.js",
+    "relative asset model.json",
+    "relative asset layout-checkpoint.json",
+    "relative asset vendor/d3-7.9.0.min.js",
+    "no external runtime requests",
+    "reload geometry exact",
+    "reload all content",
+    "HTTP 200 390 dark",
+    "quiet preview label",
+    "overlaps zero 390 dark",
+    "hits zero 390 dark",
+    "crossings zero 390 dark",
+    "safeHits zero 390 dark",
+    "spacingErrors zero 390 dark",
+    "regionErrors zero 390 dark",
+    "trayPortErrors zero 390 dark",
+    "exact ports",
+    "89/46 and all labels",
+    "31 learned / 12 verified",
+    "full overview fits",
+    "overview has no relations",
+    "category search -> subtree Java",
+    "category search -> subtree Basics",
+    "For loop focus >=13px + direct relations",
+    "Inspector context + topic card fits",
+    "theme selection preserved",
+    "minimap contract",
+    "Project 113 exact completed/26",
+    "project fit contains target regions",
+    "amber minimap reuses evidence",
+    "Stage 4 exact 12",
+    "Topic click focuses",
+    "keyboard topic focus",
+    "search reveals manual collapse",
+    "Reduced Motion instant + no global relations",
+    "no layout/geometry/checkpoint displacement",
+    "no horizontal overflow + responsive inspector",
+    "relative asset style.css",
+    "relative asset app.js",
+    "relative asset layout.js",
+    "relative asset routing.js",
+    "relative asset model.js",
+    "relative asset model.json",
+    "relative asset layout-checkpoint.json",
+    "relative asset vendor/d3-7.9.0.min.js",
+    "no external runtime requests",
+    "reload geometry exact",
+    "reload all content",
+    "HTTP 200 390 light",
+    "quiet preview label",
+    "overlaps zero 390 light",
+    "hits zero 390 light",
+    "crossings zero 390 light",
+    "safeHits zero 390 light",
+    "spacingErrors zero 390 light",
+    "regionErrors zero 390 light",
+    "trayPortErrors zero 390 light",
+    "exact ports",
+    "89/46 and all labels",
+    "31 learned / 12 verified",
+    "full overview fits",
+    "overview has no relations",
+    "category search -> subtree Java",
+    "category search -> subtree Basics",
+    "For loop focus >=13px + direct relations",
+    "Inspector context + topic card fits",
+    "theme selection preserved",
+    "minimap contract",
+    "Project 113 exact completed/26",
+    "project fit contains target regions",
+    "amber minimap reuses evidence",
+    "Stage 4 exact 12",
+    "Topic click focuses",
+    "keyboard topic focus",
+    "search reveals manual collapse",
+    "Reduced Motion instant + no global relations",
+    "no layout/geometry/checkpoint displacement",
+    "no horizontal overflow + responsive inspector",
+    "relative asset style.css",
+    "relative asset app.js",
+    "relative asset layout.js",
+    "relative asset routing.js",
+    "relative asset model.js",
+    "relative asset model.json",
+    "relative asset layout-checkpoint.json",
+    "relative asset vendor/d3-7.9.0.min.js",
+    "no external runtime requests",
+    "reload geometry exact",
+    "reload all content",
+    "HTTP 200 320 dark",
+    "quiet preview label",
+    "overlaps zero 320 dark",
+    "hits zero 320 dark",
+    "crossings zero 320 dark",
+    "safeHits zero 320 dark",
+    "spacingErrors zero 320 dark",
+    "regionErrors zero 320 dark",
+    "trayPortErrors zero 320 dark",
+    "exact ports",
+    "89/46 and all labels",
+    "31 learned / 12 verified",
+    "full overview fits",
+    "overview has no relations",
+    "category search -> subtree Java",
+    "category search -> subtree Basics",
+    "For loop focus >=13px + direct relations",
+    "Inspector context + topic card fits",
+    "theme selection preserved",
+    "minimap contract",
+    "Project 113 exact completed/26",
+    "project fit contains target regions",
+    "amber minimap reuses evidence",
+    "Stage 4 exact 12",
+    "Topic click focuses",
+    "keyboard topic focus",
+    "search reveals manual collapse",
+    "Reduced Motion instant + no global relations",
+    "no layout/geometry/checkpoint displacement",
+    "no horizontal overflow + responsive inspector",
+    "relative asset style.css",
+    "relative asset app.js",
+    "relative asset layout.js",
+    "relative asset routing.js",
+    "relative asset model.js",
+    "relative asset model.json",
+    "relative asset layout-checkpoint.json",
+    "relative asset vendor/d3-7.9.0.min.js",
+    "no external runtime requests",
+    "reload geometry exact",
+    "reload all content",
+    "HTTP 200 320 light",
+    "quiet preview label",
+    "overlaps zero 320 light",
+    "hits zero 320 light",
+    "crossings zero 320 light",
+    "safeHits zero 320 light",
+    "spacingErrors zero 320 light",
+    "regionErrors zero 320 light",
+    "trayPortErrors zero 320 light",
+    "exact ports",
+    "89/46 and all labels",
+    "31 learned / 12 verified",
+    "full overview fits",
+    "overview has no relations",
+    "category search -> subtree Java",
+    "category search -> subtree Basics",
+    "For loop focus >=13px + direct relations",
+    "Inspector context + topic card fits",
+    "theme selection preserved",
+    "minimap contract",
+    "Project 113 exact completed/26",
+    "project fit contains target regions",
+    "amber minimap reuses evidence",
+    "Stage 4 exact 12",
+    "Topic click focuses",
+    "keyboard topic focus",
+    "search reveals manual collapse",
+    "Reduced Motion instant + no global relations",
+    "no layout/geometry/checkpoint displacement",
+    "no horizontal overflow + responsive inspector",
+    "relative asset style.css",
+    "relative asset app.js",
+    "relative asset layout.js",
+    "relative asset routing.js",
+    "relative asset model.js",
+    "relative asset model.json",
+    "relative asset layout-checkpoint.json",
+    "relative asset vendor/d3-7.9.0.min.js",
+    "no external runtime requests",
+    "reload geometry exact",
+    "reload all content",
+    "asset HTTP/hash app.js",
+    "asset HTTP/hash index.html",
+    "asset HTTP/hash layout-checkpoint.json",
+    "asset HTTP/hash layout-checkpoint.schema.json",
+    "asset HTTP/hash layout.js",
+    "asset HTTP/hash model.js",
+    "asset HTTP/hash model.json",
+    "asset HTTP/hash routing.js",
+    "asset HTTP/hash style.css",
+    "asset HTTP/hash vendor/D3-LICENSE",
+    "asset HTTP/hash vendor/d3-7.9.0.min.js",
+    "slash redirect"
+  ],
+  "runs": [
+    {
+      "width": 1920,
+      "theme": "dark",
+      "views": [
+        {
+          "title": "Initial Overview",
+          "scale": 0.18192014356213548,
+          "rootFont": 5.093764019739794,
+          "majorFont": 3.820323014804845,
+          "categoryFont": 3.092642440556303,
+          "topicFont": 2.546882009869897,
+          "map": {
+            "width": 1670,
+            "height": 945
+          },
+          "state": "overview"
+        },
+        {
+          "title": "Fit all",
+          "scale": 0.18192014356213548,
+          "rootFont": 5.093764019739794,
+          "majorFont": 3.820323014804845,
+          "categoryFont": 3.092642440556303,
+          "topicFont": 2.546882009869897,
+          "map": {
+            "width": 1670,
+            "height": 945
+          },
+          "state": "overview"
+        },
+        {
+          "title": "Java",
+          "scale": 0.2849613492621223,
+          "rootFont": 7.978917779339424,
+          "majorFont": 5.9841883345045686,
+          "categoryFont": 4.844342937456079,
+          "topicFont": 3.989458889669712,
+          "map": {
+            "width": 1670,
+            "height": 945
+          },
+          "state": "subtree"
+        },
+        {
+          "title": "Basics",
+          "scale": 0.8309426229508197,
+          "rootFont": 23.26639344262295,
+          "majorFont": 17.449795081967213,
+          "categoryFont": 14.126024590163935,
+          "topicFont": 11.633196721311474,
+          "map": {
+            "width": 1670,
+            "height": 945
+          },
+          "state": "subtree"
+        },
+        {
+          "title": "Search For loop",
+          "scale": 1.1428571428571428,
+          "rootFont": 32,
+          "majorFont": 24,
+          "categoryFont": 19.428571428571427,
+          "topicFont": 16,
+          "map": {
+            "width": 1670,
+            "height": 945
+          },
+          "state": "topic"
+        },
+        {
+          "title": "Project Coverage Fit",
+          "scale": 0.19975369458128078,
+          "rootFont": 5.593103448275862,
+          "majorFont": 4.194827586206896,
+          "categoryFont": 3.3958128078817733,
+          "topicFont": 2.796551724137931,
+          "map": {
+            "width": 1670,
+            "height": 945
+          },
+          "state": "subtree"
+        }
+      ],
+      "geometry": {
+        "overlaps": [],
+        "hits": [],
+        "safeHits": [],
+        "crossings": [],
+        "spacingErrors": [],
+        "regionErrors": [],
+        "trayPortErrors": [],
+        "minimumCardGap": 128.5,
+        "minimumTrayGap": 104,
+        "minimumConnectorClearance": 48,
+        "bounds": {
+          "width": 8916,
+          "height": 1867.1399999999999
+        },
+        "ports": true,
+        "siblings": true
+      },
+      "metrics": {
+        "model parse": 4.399999998509884,
+        "layout": 5.100000001490116,
+        "tray packing": 1.6000000052154064,
+        "project coverage": 0.29999999701976776,
+        "knowledge relation routing": 0.9000000022351742,
+        "initial render": 12,
+        "Fit all": 2.7999999970197678,
+        "search": 0.10000000149011612,
+        "Fit subtree": 0.6999999992549419,
+        "topic selection": 7.600000001490116,
+        "Search navigation": 7.600000001490116,
+        "Topic focus": 0.4000000022351742,
+        "Project fit": 0.5999999977648258
+      },
+      "errors": [],
+      "failed": [],
+      "requests": [
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/style.css",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/vendor/d3-7.9.0.min.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/routing.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/app.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout-checkpoint.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/style.css",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/vendor/d3-7.9.0.min.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/routing.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/app.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout-checkpoint.json"
+      ]
+    },
+    {
+      "width": 1920,
+      "theme": "light",
+      "views": [
+        {
+          "title": "Initial Overview",
+          "scale": 0.18192014356213548,
+          "rootFont": 5.093764019739794,
+          "majorFont": 3.820323014804845,
+          "categoryFont": 3.092642440556303,
+          "topicFont": 2.546882009869897,
+          "map": {
+            "width": 1670,
+            "height": 945
+          },
+          "state": "overview"
+        },
+        {
+          "title": "Fit all",
+          "scale": 0.18192014356213548,
+          "rootFont": 5.093764019739794,
+          "majorFont": 3.820323014804845,
+          "categoryFont": 3.092642440556303,
+          "topicFont": 2.546882009869897,
+          "map": {
+            "width": 1670,
+            "height": 945
+          },
+          "state": "overview"
+        },
+        {
+          "title": "Java",
+          "scale": 0.2849613492621223,
+          "rootFont": 7.978917779339424,
+          "majorFont": 5.9841883345045686,
+          "categoryFont": 4.844342937456079,
+          "topicFont": 3.989458889669712,
+          "map": {
+            "width": 1670,
+            "height": 945
+          },
+          "state": "subtree"
+        },
+        {
+          "title": "Basics",
+          "scale": 0.8309426229508197,
+          "rootFont": 23.26639344262295,
+          "majorFont": 17.449795081967213,
+          "categoryFont": 14.126024590163935,
+          "topicFont": 11.633196721311474,
+          "map": {
+            "width": 1670,
+            "height": 945
+          },
+          "state": "subtree"
+        },
+        {
+          "title": "Search For loop",
+          "scale": 1.1428571428571428,
+          "rootFont": 32,
+          "majorFont": 24,
+          "categoryFont": 19.428571428571427,
+          "topicFont": 16,
+          "map": {
+            "width": 1670,
+            "height": 945
+          },
+          "state": "topic"
+        },
+        {
+          "title": "Project Coverage Fit",
+          "scale": 0.19975369458128078,
+          "rootFont": 5.593103448275862,
+          "majorFont": 4.194827586206896,
+          "categoryFont": 3.3958128078817733,
+          "topicFont": 2.796551724137931,
+          "map": {
+            "width": 1670,
+            "height": 945
+          },
+          "state": "subtree"
+        }
+      ],
+      "geometry": {
+        "overlaps": [],
+        "hits": [],
+        "safeHits": [],
+        "crossings": [],
+        "spacingErrors": [],
+        "regionErrors": [],
+        "trayPortErrors": [],
+        "minimumCardGap": 128.5,
+        "minimumTrayGap": 104,
+        "minimumConnectorClearance": 48,
+        "bounds": {
+          "width": 8916,
+          "height": 1867.1399999999999
+        },
+        "ports": true,
+        "siblings": true
+      },
+      "metrics": {
+        "model parse": 4,
+        "layout": 5.599999997764826,
+        "tray packing": 1.1000000089406967,
+        "project coverage": 0.20000000298023224,
+        "knowledge relation routing": 0.8000000007450581,
+        "initial render": 12.100000001490116,
+        "Fit all": 2.7999999970197678,
+        "search": 0,
+        "Fit subtree": 1,
+        "topic selection": 7.100000001490116,
+        "Search navigation": 7.199999999254942,
+        "Topic focus": 0.3999999985098839,
+        "Project fit": 0.6999999992549419
+      },
+      "errors": [],
+      "failed": [],
+      "requests": [
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/style.css",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/vendor/d3-7.9.0.min.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/routing.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/app.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout-checkpoint.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/style.css",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/vendor/d3-7.9.0.min.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/routing.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/app.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout-checkpoint.json"
+      ]
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "views": [
+        {
+          "title": "Initial Overview",
+          "scale": 0.12808434275459848,
+          "rootFont": 3.5863615971287577,
+          "majorFont": 2.6897711978465684,
+          "categoryFont": 2.177433826828174,
+          "topicFont": 1.7931807985643788,
+          "map": {
+            "width": 1190,
+            "height": 765
+          },
+          "state": "overview"
+        },
+        {
+          "title": "Fit all",
+          "scale": 0.12808434275459848,
+          "rootFont": 3.5863615971287577,
+          "majorFont": 2.6897711978465684,
+          "categoryFont": 2.177433826828174,
+          "topicFont": 1.7931807985643788,
+          "map": {
+            "width": 1190,
+            "height": 765
+          },
+          "state": "overview"
+        },
+        {
+          "title": "Java",
+          "scale": 0.2006324666198173,
+          "rootFont": 5.617709065354884,
+          "majorFont": 4.213281799016163,
+          "categoryFont": 3.410751932536894,
+          "topicFont": 2.808854532677442,
+          "map": {
+            "width": 1190,
+            "height": 765
+          },
+          "state": "subtree"
+        },
+        {
+          "title": "Basics",
+          "scale": 0.5850409836065574,
+          "rootFont": 16.38114754098361,
+          "majorFont": 12.285860655737705,
+          "categoryFont": 9.945696721311476,
+          "topicFont": 8.190573770491804,
+          "map": {
+            "width": 1190,
+            "height": 765
+          },
+          "state": "subtree"
+        },
+        {
+          "title": "Search For loop",
+          "scale": 1.1428571428571428,
+          "rootFont": 32,
+          "majorFont": 24,
+          "categoryFont": 19.428571428571427,
+          "topicFont": 16,
+          "map": {
+            "width": 1190,
+            "height": 765
+          },
+          "state": "topic"
+        },
+        {
+          "title": "Project Coverage Fit",
+          "scale": 0.14064039408866996,
+          "rootFont": 3.9379310344827587,
+          "majorFont": 2.953448275862069,
+          "categoryFont": 2.3908866995073894,
+          "topicFont": 1.9689655172413794,
+          "map": {
+            "width": 1190,
+            "height": 765
+          },
+          "state": "subtree"
+        }
+      ],
+      "geometry": {
+        "overlaps": [],
+        "hits": [],
+        "safeHits": [],
+        "crossings": [],
+        "spacingErrors": [],
+        "regionErrors": [],
+        "trayPortErrors": [],
+        "minimumCardGap": 128.5,
+        "minimumTrayGap": 104,
+        "minimumConnectorClearance": 48,
+        "bounds": {
+          "width": 8916,
+          "height": 1867.1399999999999
+        },
+        "ports": true,
+        "siblings": true
+      },
+      "metrics": {
+        "model parse": 4,
+        "layout": 5,
+        "tray packing": 1.4999999962747097,
+        "project coverage": 0.29999999701976776,
+        "knowledge relation routing": 0.9000000022351742,
+        "initial render": 9.5,
+        "Fit all": 2.7999999970197678,
+        "search": 0.10000000149011612,
+        "Fit subtree": 0.7000000029802322,
+        "topic selection": 7,
+        "Search navigation": 7,
+        "Topic focus": 0.30000000074505806,
+        "Project fit": 0.7999999970197678
+      },
+      "errors": [],
+      "failed": [],
+      "requests": [
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/style.css",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/vendor/d3-7.9.0.min.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/routing.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/app.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout-checkpoint.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/style.css",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/vendor/d3-7.9.0.min.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/routing.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/app.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout-checkpoint.json"
+      ]
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "views": [
+        {
+          "title": "Initial Overview",
+          "scale": 0.12808434275459848,
+          "rootFont": 3.5863615971287577,
+          "majorFont": 2.6897711978465684,
+          "categoryFont": 2.177433826828174,
+          "topicFont": 1.7931807985643788,
+          "map": {
+            "width": 1190,
+            "height": 765
+          },
+          "state": "overview"
+        },
+        {
+          "title": "Fit all",
+          "scale": 0.12808434275459848,
+          "rootFont": 3.5863615971287577,
+          "majorFont": 2.6897711978465684,
+          "categoryFont": 2.177433826828174,
+          "topicFont": 1.7931807985643788,
+          "map": {
+            "width": 1190,
+            "height": 765
+          },
+          "state": "overview"
+        },
+        {
+          "title": "Java",
+          "scale": 0.2006324666198173,
+          "rootFont": 5.617709065354884,
+          "majorFont": 4.213281799016163,
+          "categoryFont": 3.410751932536894,
+          "topicFont": 2.808854532677442,
+          "map": {
+            "width": 1190,
+            "height": 765
+          },
+          "state": "subtree"
+        },
+        {
+          "title": "Basics",
+          "scale": 0.5850409836065574,
+          "rootFont": 16.38114754098361,
+          "majorFont": 12.285860655737705,
+          "categoryFont": 9.945696721311476,
+          "topicFont": 8.190573770491804,
+          "map": {
+            "width": 1190,
+            "height": 765
+          },
+          "state": "subtree"
+        },
+        {
+          "title": "Search For loop",
+          "scale": 1.1428571428571428,
+          "rootFont": 32,
+          "majorFont": 24,
+          "categoryFont": 19.428571428571427,
+          "topicFont": 16,
+          "map": {
+            "width": 1190,
+            "height": 765
+          },
+          "state": "topic"
+        },
+        {
+          "title": "Project Coverage Fit",
+          "scale": 0.14064039408866996,
+          "rootFont": 3.9379310344827587,
+          "majorFont": 2.953448275862069,
+          "categoryFont": 2.3908866995073894,
+          "topicFont": 1.9689655172413794,
+          "map": {
+            "width": 1190,
+            "height": 765
+          },
+          "state": "subtree"
+        }
+      ],
+      "geometry": {
+        "overlaps": [],
+        "hits": [],
+        "safeHits": [],
+        "crossings": [],
+        "spacingErrors": [],
+        "regionErrors": [],
+        "trayPortErrors": [],
+        "minimumCardGap": 128.5,
+        "minimumTrayGap": 104,
+        "minimumConnectorClearance": 48,
+        "bounds": {
+          "width": 8916,
+          "height": 1867.1399999999999
+        },
+        "ports": true,
+        "siblings": true
+      },
+      "metrics": {
+        "model parse": 6.900000002235174,
+        "layout": 5,
+        "tray packing": 1.3999999985098839,
+        "project coverage": 0.30000000074505806,
+        "knowledge relation routing": 0.8000000007450581,
+        "initial render": 9.199999999254942,
+        "Fit all": 2.800000000745058,
+        "search": 0,
+        "Fit subtree": 0.8000000007450581,
+        "topic selection": 7.400000002235174,
+        "Search navigation": 7.400000002235174,
+        "Topic focus": 0.4000000022351742,
+        "Project fit": 0.8000000007450581
+      },
+      "errors": [],
+      "failed": [],
+      "requests": [
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/style.css",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/vendor/d3-7.9.0.min.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/routing.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/app.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout-checkpoint.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/style.css",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/vendor/d3-7.9.0.min.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/routing.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/app.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout-checkpoint.json"
+      ]
+    },
+    {
+      "width": 1280,
+      "theme": "dark",
+      "views": [
+        {
+          "title": "Initial Overview",
+          "scale": 0.1101390758187528,
+          "rootFont": 3.0838941229250785,
+          "majorFont": 2.3129205921938087,
+          "categoryFont": 1.8723642889187977,
+          "topicFont": 1.5419470614625392,
+          "map": {
+            "width": 1030,
+            "height": 765
+          },
+          "state": "overview"
+        },
+        {
+          "title": "Fit all",
+          "scale": 0.1101390758187528,
+          "rootFont": 3.0838941229250785,
+          "majorFont": 2.3129205921938087,
+          "categoryFont": 1.8723642889187977,
+          "topicFont": 1.5419470614625392,
+          "map": {
+            "width": 1030,
+            "height": 765
+          },
+          "state": "overview"
+        },
+        {
+          "title": "Java",
+          "scale": 0.17252283907238228,
+          "rootFont": 4.830639494026704,
+          "majorFont": 3.6229796205200278,
+          "categoryFont": 2.9328882642304985,
+          "topicFont": 2.415319747013352,
+          "map": {
+            "width": 1030,
+            "height": 765
+          },
+          "state": "subtree"
+        },
+        {
+          "title": "Basics",
+          "scale": 0.5030737704918032,
+          "rootFont": 14.08606557377049,
+          "majorFont": 10.564549180327868,
+          "categoryFont": 8.552254098360654,
+          "topicFont": 7.043032786885245,
+          "map": {
+            "width": 1030,
+            "height": 765
+          },
+          "state": "subtree"
+        },
+        {
+          "title": "Search For loop",
+          "scale": 1.1428571428571428,
+          "rootFont": 32,
+          "majorFont": 24,
+          "categoryFont": 19.428571428571427,
+          "topicFont": 16,
+          "map": {
+            "width": 1030,
+            "height": 765
+          },
+          "state": "topic"
+        },
+        {
+          "title": "Project Coverage Fit",
+          "scale": 0.120935960591133,
+          "rootFont": 3.386206896551724,
+          "majorFont": 2.539655172413793,
+          "categoryFont": 2.055911330049261,
+          "topicFont": 1.693103448275862,
+          "map": {
+            "width": 1030,
+            "height": 765
+          },
+          "state": "subtree"
+        }
+      ],
+      "geometry": {
+        "overlaps": [],
+        "hits": [],
+        "safeHits": [],
+        "crossings": [],
+        "spacingErrors": [],
+        "regionErrors": [],
+        "trayPortErrors": [],
+        "minimumCardGap": 128.5,
+        "minimumTrayGap": 104,
+        "minimumConnectorClearance": 48,
+        "bounds": {
+          "width": 8916,
+          "height": 1867.1399999999999
+        },
+        "ports": true,
+        "siblings": true
+      },
+      "metrics": {
+        "model parse": 3.900000002235174,
+        "layout": 4.800000000745058,
+        "tray packing": 1.2000000029802322,
+        "project coverage": 0.3999999985098839,
+        "knowledge relation routing": 1.199999999254942,
+        "initial render": 9.100000001490116,
+        "Fit all": 2.900000002235174,
+        "search": 0,
+        "Fit subtree": 0.7000000029802322,
+        "topic selection": 7.899999998509884,
+        "Search navigation": 7.899999998509884,
+        "Topic focus": 0.6999999992549419,
+        "Project fit": 0.7000000029802322
+      },
+      "errors": [],
+      "failed": [],
+      "requests": [
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/style.css",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/vendor/d3-7.9.0.min.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/routing.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/app.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout-checkpoint.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/style.css",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/vendor/d3-7.9.0.min.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/routing.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/app.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout-checkpoint.json"
+      ]
+    },
+    {
+      "width": 1280,
+      "theme": "light",
+      "views": [
+        {
+          "title": "Initial Overview",
+          "scale": 0.1101390758187528,
+          "rootFont": 3.0838941229250785,
+          "majorFont": 2.3129205921938087,
+          "categoryFont": 1.8723642889187977,
+          "topicFont": 1.5419470614625392,
+          "map": {
+            "width": 1030,
+            "height": 765
+          },
+          "state": "overview"
+        },
+        {
+          "title": "Fit all",
+          "scale": 0.1101390758187528,
+          "rootFont": 3.0838941229250785,
+          "majorFont": 2.3129205921938087,
+          "categoryFont": 1.8723642889187977,
+          "topicFont": 1.5419470614625392,
+          "map": {
+            "width": 1030,
+            "height": 765
+          },
+          "state": "overview"
+        },
+        {
+          "title": "Java",
+          "scale": 0.17252283907238228,
+          "rootFont": 4.830639494026704,
+          "majorFont": 3.6229796205200278,
+          "categoryFont": 2.9328882642304985,
+          "topicFont": 2.415319747013352,
+          "map": {
+            "width": 1030,
+            "height": 765
+          },
+          "state": "subtree"
+        },
+        {
+          "title": "Basics",
+          "scale": 0.5030737704918032,
+          "rootFont": 14.08606557377049,
+          "majorFont": 10.564549180327868,
+          "categoryFont": 8.552254098360654,
+          "topicFont": 7.043032786885245,
+          "map": {
+            "width": 1030,
+            "height": 765
+          },
+          "state": "subtree"
+        },
+        {
+          "title": "Search For loop",
+          "scale": 1.1428571428571428,
+          "rootFont": 32,
+          "majorFont": 24,
+          "categoryFont": 19.428571428571427,
+          "topicFont": 16,
+          "map": {
+            "width": 1030,
+            "height": 765
+          },
+          "state": "topic"
+        },
+        {
+          "title": "Project Coverage Fit",
+          "scale": 0.120935960591133,
+          "rootFont": 3.386206896551724,
+          "majorFont": 2.539655172413793,
+          "categoryFont": 2.055911330049261,
+          "topicFont": 1.693103448275862,
+          "map": {
+            "width": 1030,
+            "height": 765
+          },
+          "state": "subtree"
+        }
+      ],
+      "geometry": {
+        "overlaps": [],
+        "hits": [],
+        "safeHits": [],
+        "crossings": [],
+        "spacingErrors": [],
+        "regionErrors": [],
+        "trayPortErrors": [],
+        "minimumCardGap": 128.5,
+        "minimumTrayGap": 104,
+        "minimumConnectorClearance": 48,
+        "bounds": {
+          "width": 8916,
+          "height": 1867.1399999999999
+        },
+        "ports": true,
+        "siblings": true
+      },
+      "metrics": {
+        "model parse": 3.900000002235174,
+        "layout": 5.099999997764826,
+        "tray packing": 1.4000000059604645,
+        "project coverage": 0.29999999701976776,
+        "knowledge relation routing": 0.8000000007450581,
+        "initial render": 9.400000002235174,
+        "Fit all": 2.899999998509884,
+        "search": 0,
+        "Fit subtree": 0.6999999992549419,
+        "topic selection": 6.900000002235174,
+        "Search navigation": 6.900000002235174,
+        "Topic focus": 0.30000000074505806,
+        "Project fit": 0.6999999992549419
+      },
+      "errors": [],
+      "failed": [],
+      "requests": [
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/style.css",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/vendor/d3-7.9.0.min.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/routing.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/app.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout-checkpoint.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/style.css",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/vendor/d3-7.9.0.min.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/routing.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/app.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout-checkpoint.json"
+      ]
+    },
+    {
+      "width": 1200,
+      "theme": "dark",
+      "views": [
+        {
+          "title": "Initial Overview",
+          "scale": 0.12920592193808883,
+          "rootFont": 3.6177658142664875,
+          "majorFont": 2.7133243606998656,
+          "categoryFont": 2.19650067294751,
+          "topicFont": 1.8088829071332437,
+          "map": {
+            "width": 1200,
+            "height": 594
+          },
+          "state": "overview"
+        },
+        {
+          "title": "Fit all",
+          "scale": 0.12920592193808883,
+          "rootFont": 3.6177658142664875,
+          "majorFont": 2.7133243606998656,
+          "categoryFont": 2.19650067294751,
+          "topicFont": 1.8088829071332437,
+          "map": {
+            "width": 1200,
+            "height": 594
+          },
+          "state": "overview"
+        },
+        {
+          "title": "Java",
+          "scale": 0.20238931834153198,
+          "rootFont": 5.666900913562896,
+          "majorFont": 4.250175685172172,
+          "categoryFont": 3.4406184118060437,
+          "topicFont": 2.833450456781448,
+          "map": {
+            "width": 1200,
+            "height": 594
+          },
+          "state": "subtree"
+        },
+        {
+          "title": "Basics",
+          "scale": 0.5901639344262295,
+          "rootFont": 16.524590163934427,
+          "majorFont": 12.39344262295082,
+          "categoryFont": 10.032786885245901,
+          "topicFont": 8.262295081967213,
+          "map": {
+            "width": 1200,
+            "height": 594
+          },
+          "state": "subtree"
+        },
+        {
+          "title": "Search For loop",
+          "scale": 1.1428571428571428,
+          "rootFont": 32,
+          "majorFont": 24,
+          "categoryFont": 19.428571428571427,
+          "topicFont": 16,
+          "map": {
+            "width": 1200,
+            "height": 594
+          },
+          "state": "topic"
+        },
+        {
+          "title": "Project Coverage Fit",
+          "scale": 0.14187192118226602,
+          "rootFont": 3.9724137931034487,
+          "majorFont": 2.9793103448275864,
+          "categoryFont": 2.4118226600985224,
+          "topicFont": 1.9862068965517243,
+          "map": {
+            "width": 1200,
+            "height": 594
+          },
+          "state": "subtree"
+        }
+      ],
+      "geometry": {
+        "overlaps": [],
+        "hits": [],
+        "safeHits": [],
+        "crossings": [],
+        "spacingErrors": [],
+        "regionErrors": [],
+        "trayPortErrors": [],
+        "minimumCardGap": 128.5,
+        "minimumTrayGap": 104,
+        "minimumConnectorClearance": 48,
+        "bounds": {
+          "width": 8916,
+          "height": 1867.1399999999999
+        },
+        "ports": true,
+        "siblings": true
+      },
+      "metrics": {
+        "model parse": 7.099999997764826,
+        "layout": 5,
+        "tray packing": 1.5,
+        "project coverage": 0.3999999985098839,
+        "knowledge relation routing": 0.8000000007450581,
+        "initial render": 9.400000002235174,
+        "Fit all": 2.800000000745058,
+        "search": 0.10000000149011612,
+        "Fit subtree": 0.8000000007450581,
+        "topic selection": 7.399999998509884,
+        "Search navigation": 7.399999998509884,
+        "Topic focus": 0.6999999992549419,
+        "Project fit": 0.6000000014901161
+      },
+      "errors": [],
+      "failed": [],
+      "requests": [
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/style.css",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/vendor/d3-7.9.0.min.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/routing.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/app.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout-checkpoint.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/style.css",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/vendor/d3-7.9.0.min.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/routing.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/app.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout-checkpoint.json"
+      ]
+    },
+    {
+      "width": 1200,
+      "theme": "light",
+      "views": [
+        {
+          "title": "Initial Overview",
+          "scale": 0.12920592193808883,
+          "rootFont": 3.6177658142664875,
+          "majorFont": 2.7133243606998656,
+          "categoryFont": 2.19650067294751,
+          "topicFont": 1.8088829071332437,
+          "map": {
+            "width": 1200,
+            "height": 594
+          },
+          "state": "overview"
+        },
+        {
+          "title": "Fit all",
+          "scale": 0.12920592193808883,
+          "rootFont": 3.6177658142664875,
+          "majorFont": 2.7133243606998656,
+          "categoryFont": 2.19650067294751,
+          "topicFont": 1.8088829071332437,
+          "map": {
+            "width": 1200,
+            "height": 594
+          },
+          "state": "overview"
+        },
+        {
+          "title": "Java",
+          "scale": 0.20238931834153198,
+          "rootFont": 5.666900913562896,
+          "majorFont": 4.250175685172172,
+          "categoryFont": 3.4406184118060437,
+          "topicFont": 2.833450456781448,
+          "map": {
+            "width": 1200,
+            "height": 594
+          },
+          "state": "subtree"
+        },
+        {
+          "title": "Basics",
+          "scale": 0.5901639344262295,
+          "rootFont": 16.524590163934427,
+          "majorFont": 12.39344262295082,
+          "categoryFont": 10.032786885245901,
+          "topicFont": 8.262295081967213,
+          "map": {
+            "width": 1200,
+            "height": 594
+          },
+          "state": "subtree"
+        },
+        {
+          "title": "Search For loop",
+          "scale": 1.1428571428571428,
+          "rootFont": 32,
+          "majorFont": 24,
+          "categoryFont": 19.428571428571427,
+          "topicFont": 16,
+          "map": {
+            "width": 1200,
+            "height": 594
+          },
+          "state": "topic"
+        },
+        {
+          "title": "Project Coverage Fit",
+          "scale": 0.14187192118226602,
+          "rootFont": 3.9724137931034487,
+          "majorFont": 2.9793103448275864,
+          "categoryFont": 2.4118226600985224,
+          "topicFont": 1.9862068965517243,
+          "map": {
+            "width": 1200,
+            "height": 594
+          },
+          "state": "subtree"
+        }
+      ],
+      "geometry": {
+        "overlaps": [],
+        "hits": [],
+        "safeHits": [],
+        "crossings": [],
+        "spacingErrors": [],
+        "regionErrors": [],
+        "trayPortErrors": [],
+        "minimumCardGap": 128.5,
+        "minimumTrayGap": 104,
+        "minimumConnectorClearance": 48,
+        "bounds": {
+          "width": 8916,
+          "height": 1867.1399999999999
+        },
+        "ports": true,
+        "siblings": true
+      },
+      "metrics": {
+        "model parse": 7,
+        "layout": 5.199999999254942,
+        "tray packing": 1.300000000745058,
+        "project coverage": 0.20000000298023224,
+        "knowledge relation routing": 0.9000000022351742,
+        "initial render": 9.399999998509884,
+        "Fit all": 2.900000002235174,
+        "search": 0,
+        "Fit subtree": 0.5999999977648258,
+        "topic selection": 7.199999999254942,
+        "Search navigation": 7.199999999254942,
+        "Topic focus": 0.30000000074505806,
+        "Project fit": 0.8000000007450581
+      },
+      "errors": [],
+      "failed": [],
+      "requests": [
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/style.css",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/vendor/d3-7.9.0.min.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/routing.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/app.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout-checkpoint.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/style.css",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/vendor/d3-7.9.0.min.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/routing.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/app.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout-checkpoint.json"
+      ]
+    },
+    {
+      "width": 1024,
+      "theme": "dark",
+      "views": [
+        {
+          "title": "Initial Overview",
+          "scale": 0.1094661283086586,
+          "rootFont": 3.0650515926424404,
+          "majorFont": 2.2987886944818303,
+          "categoryFont": 1.8609241812471962,
+          "topicFont": 1.5325257963212202,
+          "map": {
+            "width": 1024,
+            "height": 594
+          },
+          "state": "overview"
+        },
+        {
+          "title": "Fit all",
+          "scale": 0.1094661283086586,
+          "rootFont": 3.0650515926424404,
+          "majorFont": 2.2987886944818303,
+          "categoryFont": 1.8609241812471962,
+          "topicFont": 1.5325257963212202,
+          "map": {
+            "width": 1024,
+            "height": 594
+          },
+          "state": "overview"
+        },
+        {
+          "title": "Java",
+          "scale": 0.17146872803935348,
+          "rootFont": 4.801124385101898,
+          "majorFont": 3.600843288826423,
+          "categoryFont": 2.9149683766690093,
+          "topicFont": 2.400562192550949,
+          "map": {
+            "width": 1024,
+            "height": 594
+          },
+          "state": "subtree"
+        },
+        {
+          "title": "Basics",
+          "scale": 0.5,
+          "rootFont": 14,
+          "majorFont": 10.5,
+          "categoryFont": 8.5,
+          "topicFont": 7,
+          "map": {
+            "width": 1024,
+            "height": 594
+          },
+          "state": "subtree"
+        },
+        {
+          "title": "Search For loop",
+          "scale": 1.1428571428571428,
+          "rootFont": 32,
+          "majorFont": 24,
+          "categoryFont": 19.428571428571427,
+          "topicFont": 16,
+          "map": {
+            "width": 1024,
+            "height": 594
+          },
+          "state": "topic"
+        },
+        {
+          "title": "Project Coverage Fit",
+          "scale": 0.12019704433497537,
+          "rootFont": 3.3655172413793104,
+          "majorFont": 2.524137931034483,
+          "categoryFont": 2.0433497536945815,
+          "topicFont": 1.6827586206896552,
+          "map": {
+            "width": 1024,
+            "height": 594
+          },
+          "state": "subtree"
+        }
+      ],
+      "geometry": {
+        "overlaps": [],
+        "hits": [],
+        "safeHits": [],
+        "crossings": [],
+        "spacingErrors": [],
+        "regionErrors": [],
+        "trayPortErrors": [],
+        "minimumCardGap": 128.5,
+        "minimumTrayGap": 104,
+        "minimumConnectorClearance": 48,
+        "bounds": {
+          "width": 8916,
+          "height": 1867.1399999999999
+        },
+        "ports": true,
+        "siblings": true
+      },
+      "metrics": {
+        "model parse": 3.899999998509884,
+        "layout": 5.199999999254942,
+        "tray packing": 1.5999999940395355,
+        "project coverage": 0.4000000022351742,
+        "knowledge relation routing": 0.8000000007450581,
+        "initial render": 9.200000002980232,
+        "Fit all": 2.800000000745058,
+        "search": 0.10000000149011612,
+        "Fit subtree": 0.8000000007450581,
+        "topic selection": 6.899999998509884,
+        "Search navigation": 6.899999998509884,
+        "Topic focus": 0.29999999701976776,
+        "Project fit": 0.7999999970197678
+      },
+      "errors": [],
+      "failed": [],
+      "requests": [
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/style.css",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/vendor/d3-7.9.0.min.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/routing.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/app.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout-checkpoint.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/style.css",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/vendor/d3-7.9.0.min.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/routing.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/app.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout-checkpoint.json"
+      ]
+    },
+    {
+      "width": 1024,
+      "theme": "light",
+      "views": [
+        {
+          "title": "Initial Overview",
+          "scale": 0.1094661283086586,
+          "rootFont": 3.0650515926424404,
+          "majorFont": 2.2987886944818303,
+          "categoryFont": 1.8609241812471962,
+          "topicFont": 1.5325257963212202,
+          "map": {
+            "width": 1024,
+            "height": 594
+          },
+          "state": "overview"
+        },
+        {
+          "title": "Fit all",
+          "scale": 0.1094661283086586,
+          "rootFont": 3.0650515926424404,
+          "majorFont": 2.2987886944818303,
+          "categoryFont": 1.8609241812471962,
+          "topicFont": 1.5325257963212202,
+          "map": {
+            "width": 1024,
+            "height": 594
+          },
+          "state": "overview"
+        },
+        {
+          "title": "Java",
+          "scale": 0.17146872803935348,
+          "rootFont": 4.801124385101898,
+          "majorFont": 3.600843288826423,
+          "categoryFont": 2.9149683766690093,
+          "topicFont": 2.400562192550949,
+          "map": {
+            "width": 1024,
+            "height": 594
+          },
+          "state": "subtree"
+        },
+        {
+          "title": "Basics",
+          "scale": 0.5,
+          "rootFont": 14,
+          "majorFont": 10.5,
+          "categoryFont": 8.5,
+          "topicFont": 7,
+          "map": {
+            "width": 1024,
+            "height": 594
+          },
+          "state": "subtree"
+        },
+        {
+          "title": "Search For loop",
+          "scale": 1.1428571428571428,
+          "rootFont": 32,
+          "majorFont": 24,
+          "categoryFont": 19.428571428571427,
+          "topicFont": 16,
+          "map": {
+            "width": 1024,
+            "height": 594
+          },
+          "state": "topic"
+        },
+        {
+          "title": "Project Coverage Fit",
+          "scale": 0.12019704433497537,
+          "rootFont": 3.3655172413793104,
+          "majorFont": 2.524137931034483,
+          "categoryFont": 2.0433497536945815,
+          "topicFont": 1.6827586206896552,
+          "map": {
+            "width": 1024,
+            "height": 594
+          },
+          "state": "subtree"
+        }
+      ],
+      "geometry": {
+        "overlaps": [],
+        "hits": [],
+        "safeHits": [],
+        "crossings": [],
+        "spacingErrors": [],
+        "regionErrors": [],
+        "trayPortErrors": [],
+        "minimumCardGap": 128.5,
+        "minimumTrayGap": 104,
+        "minimumConnectorClearance": 48,
+        "bounds": {
+          "width": 8916,
+          "height": 1867.1399999999999
+        },
+        "ports": true,
+        "siblings": true
+      },
+      "metrics": {
+        "model parse": 7.199999999254942,
+        "layout": 4.899999998509884,
+        "tray packing": 1.5999999977648258,
+        "project coverage": 0.4000000022351742,
+        "knowledge relation routing": 0.7999999970197678,
+        "initial render": 9.300000000745058,
+        "Fit all": 2.699999999254942,
+        "search": 0.09999999776482582,
+        "Fit subtree": 0.8000000007450581,
+        "topic selection": 7.599999997764826,
+        "Search navigation": 7.599999997764826,
+        "Topic focus": 0.30000000074505806,
+        "Project fit": 0.6000000014901161
+      },
+      "errors": [],
+      "failed": [],
+      "requests": [
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/style.css",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/vendor/d3-7.9.0.min.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/routing.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/app.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout-checkpoint.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/style.css",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/vendor/d3-7.9.0.min.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/routing.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/app.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout-checkpoint.json"
+      ]
+    },
+    {
+      "width": 768,
+      "theme": "dark",
+      "views": [
+        {
+          "title": "Initial Overview",
+          "scale": 0.08075370121130551,
+          "rootFont": 2.2611036339165542,
+          "majorFont": 1.6958277254374157,
+          "categoryFont": 1.3728129205921937,
+          "topicFont": 1.1305518169582771,
+          "map": {
+            "width": 768,
+            "height": 594
+          },
+          "state": "overview"
+        },
+        {
+          "title": "Fit all",
+          "scale": 0.08075370121130551,
+          "rootFont": 2.2611036339165542,
+          "majorFont": 1.6958277254374157,
+          "categoryFont": 1.3728129205921937,
+          "topicFont": 1.1305518169582771,
+          "map": {
+            "width": 768,
+            "height": 594
+          },
+          "state": "overview"
+        },
+        {
+          "title": "Java",
+          "scale": 0.12649332396345747,
+          "rootFont": 3.541813070976809,
+          "majorFont": 2.656359803232607,
+          "categoryFont": 2.150386507378777,
+          "topicFont": 1.7709065354884046,
+          "map": {
+            "width": 768,
+            "height": 594
+          },
+          "state": "subtree"
+        },
+        {
+          "title": "Basics",
+          "scale": 0.36885245901639346,
+          "rootFont": 10.327868852459018,
+          "majorFont": 7.745901639344263,
+          "categoryFont": 6.270491803278689,
+          "topicFont": 5.163934426229509,
+          "map": {
+            "width": 768,
+            "height": 594
+          },
+          "state": "subtree"
+        },
+        {
+          "title": "Search For loop",
+          "scale": 1.1428571428571428,
+          "rootFont": 32,
+          "majorFont": 24,
+          "categoryFont": 19.428571428571427,
+          "topicFont": 16,
+          "map": {
+            "width": 768,
+            "height": 594
+          },
+          "state": "topic"
+        },
+        {
+          "title": "Project Coverage Fit",
+          "scale": 0.08866995073891626,
+          "rootFont": 2.4827586206896552,
+          "majorFont": 1.8620689655172415,
+          "categoryFont": 1.5073891625615765,
+          "topicFont": 1.2413793103448276,
+          "map": {
+            "width": 768,
+            "height": 594
+          },
+          "state": "subtree"
+        }
+      ],
+      "geometry": {
+        "overlaps": [],
+        "hits": [],
+        "safeHits": [],
+        "crossings": [],
+        "spacingErrors": [],
+        "regionErrors": [],
+        "trayPortErrors": [],
+        "minimumCardGap": 128.5,
+        "minimumTrayGap": 104,
+        "minimumConnectorClearance": 48,
+        "bounds": {
+          "width": 8916,
+          "height": 1867.1399999999999
+        },
+        "ports": true,
+        "siblings": true
+      },
+      "metrics": {
+        "model parse": 7,
+        "layout": 5,
+        "tray packing": 1.2000000029802322,
+        "project coverage": 0.30000000074505806,
+        "knowledge relation routing": 0.8000000007450581,
+        "initial render": 9.199999999254942,
+        "Fit all": 2.7999999970197678,
+        "search": 0.10000000149011612,
+        "Fit subtree": 0.7000000029802322,
+        "topic selection": 7.599999997764826,
+        "Search navigation": 7.699999999254942,
+        "Topic focus": 0.5,
+        "Project fit": 0.6999999992549419
+      },
+      "errors": [],
+      "failed": [],
+      "requests": [
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/style.css",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/vendor/d3-7.9.0.min.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/routing.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/app.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout-checkpoint.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/style.css",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/vendor/d3-7.9.0.min.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/routing.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/app.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout-checkpoint.json"
+      ]
+    },
+    {
+      "width": 768,
+      "theme": "light",
+      "views": [
+        {
+          "title": "Initial Overview",
+          "scale": 0.08075370121130551,
+          "rootFont": 2.2611036339165542,
+          "majorFont": 1.6958277254374157,
+          "categoryFont": 1.3728129205921937,
+          "topicFont": 1.1305518169582771,
+          "map": {
+            "width": 768,
+            "height": 594
+          },
+          "state": "overview"
+        },
+        {
+          "title": "Fit all",
+          "scale": 0.08075370121130551,
+          "rootFont": 2.2611036339165542,
+          "majorFont": 1.6958277254374157,
+          "categoryFont": 1.3728129205921937,
+          "topicFont": 1.1305518169582771,
+          "map": {
+            "width": 768,
+            "height": 594
+          },
+          "state": "overview"
+        },
+        {
+          "title": "Java",
+          "scale": 0.12649332396345747,
+          "rootFont": 3.541813070976809,
+          "majorFont": 2.656359803232607,
+          "categoryFont": 2.150386507378777,
+          "topicFont": 1.7709065354884046,
+          "map": {
+            "width": 768,
+            "height": 594
+          },
+          "state": "subtree"
+        },
+        {
+          "title": "Basics",
+          "scale": 0.36885245901639346,
+          "rootFont": 10.327868852459018,
+          "majorFont": 7.745901639344263,
+          "categoryFont": 6.270491803278689,
+          "topicFont": 5.163934426229509,
+          "map": {
+            "width": 768,
+            "height": 594
+          },
+          "state": "subtree"
+        },
+        {
+          "title": "Search For loop",
+          "scale": 1.1428571428571428,
+          "rootFont": 32,
+          "majorFont": 24,
+          "categoryFont": 19.428571428571427,
+          "topicFont": 16,
+          "map": {
+            "width": 768,
+            "height": 594
+          },
+          "state": "topic"
+        },
+        {
+          "title": "Project Coverage Fit",
+          "scale": 0.08866995073891626,
+          "rootFont": 2.4827586206896552,
+          "majorFont": 1.8620689655172415,
+          "categoryFont": 1.5073891625615765,
+          "topicFont": 1.2413793103448276,
+          "map": {
+            "width": 768,
+            "height": 594
+          },
+          "state": "subtree"
+        }
+      ],
+      "geometry": {
+        "overlaps": [],
+        "hits": [],
+        "safeHits": [],
+        "crossings": [],
+        "spacingErrors": [],
+        "regionErrors": [],
+        "trayPortErrors": [],
+        "minimumCardGap": 128.5,
+        "minimumTrayGap": 104,
+        "minimumConnectorClearance": 48,
+        "bounds": {
+          "width": 8916,
+          "height": 1867.1399999999999
+        },
+        "ports": true,
+        "siblings": true
+      },
+      "metrics": {
+        "model parse": 4.399999998509884,
+        "layout": 4.899999998509884,
+        "tray packing": 1.7000000067055225,
+        "project coverage": 0.3999999985098839,
+        "knowledge relation routing": 0.7000000029802322,
+        "initial render": 9.399999998509884,
+        "Fit all": 3,
+        "search": 0.19999999925494194,
+        "Fit subtree": 0.6999999992549419,
+        "topic selection": 8.299999997019768,
+        "Search navigation": 8.299999997019768,
+        "Topic focus": 0.3999999985098839,
+        "Project fit": 0.7000000029802322
+      },
+      "errors": [],
+      "failed": [],
+      "requests": [
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/style.css",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/vendor/d3-7.9.0.min.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/routing.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/app.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout-checkpoint.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/style.css",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/vendor/d3-7.9.0.min.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/routing.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/app.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout-checkpoint.json"
+      ]
+    },
+    {
+      "width": 430,
+      "theme": "dark",
+      "views": [
+        {
+          "title": "Initial Overview",
+          "scale": 0.042844324809331535,
+          "rootFont": 1.199641094661283,
+          "majorFont": 0.8997308209959622,
+          "categoryFont": 0.7283535217586361,
+          "topicFont": 0.5998205473306415,
+          "map": {
+            "width": 430,
+            "height": 523.265625
+          },
+          "state": "overview"
+        },
+        {
+          "title": "Fit all",
+          "scale": 0.042844324809331535,
+          "rootFont": 1.199641094661283,
+          "majorFont": 0.8997308209959622,
+          "categoryFont": 0.7283535217586361,
+          "topicFont": 0.5998205473306415,
+          "map": {
+            "width": 430,
+            "height": 523.265625
+          },
+          "state": "overview"
+        },
+        {
+          "title": "Java",
+          "scale": 0.9285714285714286,
+          "rootFont": 26,
+          "majorFont": 19.5,
+          "categoryFont": 15.785714285714286,
+          "topicFont": 13,
+          "map": {
+            "width": 430,
+            "height": 523.265625
+          },
+          "state": "subtree"
+        },
+        {
+          "title": "Basics",
+          "scale": 0.9285714285714286,
+          "rootFont": 26,
+          "majorFont": 19.5,
+          "categoryFont": 15.785714285714286,
+          "topicFont": 13,
+          "map": {
+            "width": 430,
+            "height": 523.265625
+          },
+          "state": "subtree"
+        },
+        {
+          "title": "Search For loop",
+          "scale": 1.1428571428571428,
+          "rootFont": 32,
+          "majorFont": 24,
+          "categoryFont": 19.428571428571427,
+          "topicFont": 16,
+          "map": {
+            "width": 430,
+            "height": 523.265625
+          },
+          "state": "topic"
+        },
+        {
+          "title": "Project Coverage Fit",
+          "scale": 0.04704433497536946,
+          "rootFont": 1.3172413793103448,
+          "majorFont": 0.9879310344827587,
+          "categoryFont": 0.7997536945812808,
+          "topicFont": 0.6586206896551724,
+          "map": {
+            "width": 430,
+            "height": 523.265625
+          },
+          "state": "subtree"
+        }
+      ],
+      "geometry": {
+        "overlaps": [],
+        "hits": [],
+        "safeHits": [],
+        "crossings": [],
+        "spacingErrors": [],
+        "regionErrors": [],
+        "trayPortErrors": [],
+        "minimumCardGap": 128.5,
+        "minimumTrayGap": 104,
+        "minimumConnectorClearance": 48,
+        "bounds": {
+          "width": 8916,
+          "height": 1867.1399999999999
+        },
+        "ports": true,
+        "siblings": true
+      },
+      "metrics": {
+        "model parse": 3.900000002235174,
+        "layout": 5.100000001490116,
+        "tray packing": 1.5999999977648258,
+        "project coverage": 0.4000000022351742,
+        "knowledge relation routing": 0.5999999977648258,
+        "initial render": 9.599999997764826,
+        "Fit all": 3.300000000745058,
+        "search": 0,
+        "Fit subtree": 0.6999999992549419,
+        "topic selection": 7,
+        "Search navigation": 7,
+        "Topic focus": 0.3999999985098839,
+        "Project fit": 0.5999999977648258
+      },
+      "errors": [],
+      "failed": [],
+      "requests": [
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/style.css",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/vendor/d3-7.9.0.min.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/routing.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/app.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout-checkpoint.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/style.css",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/vendor/d3-7.9.0.min.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/routing.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/app.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout-checkpoint.json"
+      ]
+    },
+    {
+      "width": 430,
+      "theme": "light",
+      "views": [
+        {
+          "title": "Initial Overview",
+          "scale": 0.042844324809331535,
+          "rootFont": 1.199641094661283,
+          "majorFont": 0.8997308209959622,
+          "categoryFont": 0.7283535217586361,
+          "topicFont": 0.5998205473306415,
+          "map": {
+            "width": 430,
+            "height": 523.265625
+          },
+          "state": "overview"
+        },
+        {
+          "title": "Fit all",
+          "scale": 0.042844324809331535,
+          "rootFont": 1.199641094661283,
+          "majorFont": 0.8997308209959622,
+          "categoryFont": 0.7283535217586361,
+          "topicFont": 0.5998205473306415,
+          "map": {
+            "width": 430,
+            "height": 523.265625
+          },
+          "state": "overview"
+        },
+        {
+          "title": "Java",
+          "scale": 0.9285714285714286,
+          "rootFont": 26,
+          "majorFont": 19.5,
+          "categoryFont": 15.785714285714286,
+          "topicFont": 13,
+          "map": {
+            "width": 430,
+            "height": 523.265625
+          },
+          "state": "subtree"
+        },
+        {
+          "title": "Basics",
+          "scale": 0.9285714285714286,
+          "rootFont": 26,
+          "majorFont": 19.5,
+          "categoryFont": 15.785714285714286,
+          "topicFont": 13,
+          "map": {
+            "width": 430,
+            "height": 523.265625
+          },
+          "state": "subtree"
+        },
+        {
+          "title": "Search For loop",
+          "scale": 1.1428571428571428,
+          "rootFont": 32,
+          "majorFont": 24,
+          "categoryFont": 19.428571428571427,
+          "topicFont": 16,
+          "map": {
+            "width": 430,
+            "height": 523.265625
+          },
+          "state": "topic"
+        },
+        {
+          "title": "Project Coverage Fit",
+          "scale": 0.04704433497536946,
+          "rootFont": 1.3172413793103448,
+          "majorFont": 0.9879310344827587,
+          "categoryFont": 0.7997536945812808,
+          "topicFont": 0.6586206896551724,
+          "map": {
+            "width": 430,
+            "height": 523.265625
+          },
+          "state": "subtree"
+        }
+      ],
+      "geometry": {
+        "overlaps": [],
+        "hits": [],
+        "safeHits": [],
+        "crossings": [],
+        "spacingErrors": [],
+        "regionErrors": [],
+        "trayPortErrors": [],
+        "minimumCardGap": 128.5,
+        "minimumTrayGap": 104,
+        "minimumConnectorClearance": 48,
+        "bounds": {
+          "width": 8916,
+          "height": 1867.1399999999999
+        },
+        "ports": true,
+        "siblings": true
+      },
+      "metrics": {
+        "model parse": 7.100000001490116,
+        "layout": 5,
+        "tray packing": 1.6000000014901161,
+        "project coverage": 0.19999999925494194,
+        "knowledge relation routing": 0.7999999970197678,
+        "initial render": 9.5,
+        "Fit all": 2.800000000745058,
+        "search": 0,
+        "Fit subtree": 0.7000000029802322,
+        "topic selection": 7.100000001490116,
+        "Search navigation": 7.100000001490116,
+        "Topic focus": 0.30000000074505806,
+        "Project fit": 0.6000000014901161
+      },
+      "errors": [],
+      "failed": [],
+      "requests": [
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/style.css",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/vendor/d3-7.9.0.min.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/routing.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/app.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout-checkpoint.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/style.css",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/vendor/d3-7.9.0.min.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/routing.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/app.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout-checkpoint.json"
+      ]
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "views": [
+        {
+          "title": "Initial Overview",
+          "scale": 0.03835800807537012,
+          "rootFont": 1.0740242261103634,
+          "majorFont": 0.8055181695827724,
+          "categoryFont": 0.652086137281292,
+          "topicFont": 0.5370121130551817,
+          "map": {
+            "width": 390,
+            "height": 523.265625
+          },
+          "state": "overview"
+        },
+        {
+          "title": "Fit all",
+          "scale": 0.03835800807537012,
+          "rootFont": 1.0740242261103634,
+          "majorFont": 0.8055181695827724,
+          "categoryFont": 0.652086137281292,
+          "topicFont": 0.5370121130551817,
+          "map": {
+            "width": 390,
+            "height": 523.265625
+          },
+          "state": "overview"
+        },
+        {
+          "title": "Java",
+          "scale": 0.9285714285714286,
+          "rootFont": 26,
+          "majorFont": 19.5,
+          "categoryFont": 15.785714285714286,
+          "topicFont": 13,
+          "map": {
+            "width": 390,
+            "height": 523.265625
+          },
+          "state": "subtree"
+        },
+        {
+          "title": "Basics",
+          "scale": 0.9285714285714286,
+          "rootFont": 26,
+          "majorFont": 19.5,
+          "categoryFont": 15.785714285714286,
+          "topicFont": 13,
+          "map": {
+            "width": 390,
+            "height": 523.265625
+          },
+          "state": "subtree"
+        },
+        {
+          "title": "Search For loop",
+          "scale": 1.1428571428571428,
+          "rootFont": 32,
+          "majorFont": 24,
+          "categoryFont": 19.428571428571427,
+          "topicFont": 16,
+          "map": {
+            "width": 390,
+            "height": 523.265625
+          },
+          "state": "topic"
+        },
+        {
+          "title": "Project Coverage Fit",
+          "scale": 0.04211822660098522,
+          "rootFont": 1.1793103448275861,
+          "majorFont": 0.8844827586206897,
+          "categoryFont": 0.7160098522167487,
+          "topicFont": 0.5896551724137931,
+          "map": {
+            "width": 390,
+            "height": 523.265625
+          },
+          "state": "subtree"
+        }
+      ],
+      "geometry": {
+        "overlaps": [],
+        "hits": [],
+        "safeHits": [],
+        "crossings": [],
+        "spacingErrors": [],
+        "regionErrors": [],
+        "trayPortErrors": [],
+        "minimumCardGap": 128.5,
+        "minimumTrayGap": 104,
+        "minimumConnectorClearance": 48,
+        "bounds": {
+          "width": 8916,
+          "height": 1867.1399999999999
+        },
+        "ports": true,
+        "siblings": true
+      },
+      "metrics": {
+        "model parse": 3.899999998509884,
+        "layout": 5.199999999254942,
+        "tray packing": 1.4000000096857548,
+        "project coverage": 0.29999999701976776,
+        "knowledge relation routing": 1.1000000014901161,
+        "initial render": 9.199999999254942,
+        "Fit all": 2.899999998509884,
+        "search": 0.10000000149011612,
+        "Fit subtree": 0.6999999992549419,
+        "topic selection": 7.600000001490116,
+        "Search navigation": 7.600000001490116,
+        "Topic focus": 0.5,
+        "Project fit": 0.5
+      },
+      "errors": [],
+      "failed": [],
+      "requests": [
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/style.css",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/vendor/d3-7.9.0.min.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/routing.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/app.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout-checkpoint.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/style.css",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/vendor/d3-7.9.0.min.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/routing.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/app.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout-checkpoint.json"
+      ]
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "views": [
+        {
+          "title": "Initial Overview",
+          "scale": 0.03835800807537012,
+          "rootFont": 1.0740242261103634,
+          "majorFont": 0.8055181695827724,
+          "categoryFont": 0.652086137281292,
+          "topicFont": 0.5370121130551817,
+          "map": {
+            "width": 390,
+            "height": 523.265625
+          },
+          "state": "overview"
+        },
+        {
+          "title": "Fit all",
+          "scale": 0.03835800807537012,
+          "rootFont": 1.0740242261103634,
+          "majorFont": 0.8055181695827724,
+          "categoryFont": 0.652086137281292,
+          "topicFont": 0.5370121130551817,
+          "map": {
+            "width": 390,
+            "height": 523.265625
+          },
+          "state": "overview"
+        },
+        {
+          "title": "Java",
+          "scale": 0.9285714285714286,
+          "rootFont": 26,
+          "majorFont": 19.5,
+          "categoryFont": 15.785714285714286,
+          "topicFont": 13,
+          "map": {
+            "width": 390,
+            "height": 523.265625
+          },
+          "state": "subtree"
+        },
+        {
+          "title": "Basics",
+          "scale": 0.9285714285714286,
+          "rootFont": 26,
+          "majorFont": 19.5,
+          "categoryFont": 15.785714285714286,
+          "topicFont": 13,
+          "map": {
+            "width": 390,
+            "height": 523.265625
+          },
+          "state": "subtree"
+        },
+        {
+          "title": "Search For loop",
+          "scale": 1.1428571428571428,
+          "rootFont": 32,
+          "majorFont": 24,
+          "categoryFont": 19.428571428571427,
+          "topicFont": 16,
+          "map": {
+            "width": 390,
+            "height": 523.265625
+          },
+          "state": "topic"
+        },
+        {
+          "title": "Project Coverage Fit",
+          "scale": 0.04211822660098522,
+          "rootFont": 1.1793103448275861,
+          "majorFont": 0.8844827586206897,
+          "categoryFont": 0.7160098522167487,
+          "topicFont": 0.5896551724137931,
+          "map": {
+            "width": 390,
+            "height": 523.265625
+          },
+          "state": "subtree"
+        }
+      ],
+      "geometry": {
+        "overlaps": [],
+        "hits": [],
+        "safeHits": [],
+        "crossings": [],
+        "spacingErrors": [],
+        "regionErrors": [],
+        "trayPortErrors": [],
+        "minimumCardGap": 128.5,
+        "minimumTrayGap": 104,
+        "minimumConnectorClearance": 48,
+        "bounds": {
+          "width": 8916,
+          "height": 1867.1399999999999
+        },
+        "ports": true,
+        "siblings": true
+      },
+      "metrics": {
+        "model parse": 4,
+        "layout": 4.899999998509884,
+        "tray packing": 1.0000000037252903,
+        "project coverage": 0.29999999701976776,
+        "knowledge relation routing": 0.8000000007450581,
+        "initial render": 9.200000002980232,
+        "Fit all": 2.699999999254942,
+        "search": 0.09999999776482582,
+        "Fit subtree": 0.5999999977648258,
+        "topic selection": 7,
+        "Search navigation": 7,
+        "Topic focus": 0.30000000074505806,
+        "Project fit": 0.6000000014901161
+      },
+      "errors": [],
+      "failed": [],
+      "requests": [
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/style.css",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/vendor/d3-7.9.0.min.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/routing.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/app.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout-checkpoint.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/style.css",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/vendor/d3-7.9.0.min.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/routing.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/app.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout-checkpoint.json"
+      ]
+    },
+    {
+      "width": 320,
+      "theme": "dark",
+      "views": [
+        {
+          "title": "Initial Overview",
+          "scale": 0.03050695379093764,
+          "rootFont": 0.8541947061462539,
+          "majorFont": 0.6406460296096905,
+          "categoryFont": 0.5186182144459399,
+          "topicFont": 0.42709735307312696,
+          "map": {
+            "width": 320,
+            "height": 523.265625
+          },
+          "state": "overview"
+        },
+        {
+          "title": "Fit all",
+          "scale": 0.03050695379093764,
+          "rootFont": 0.8541947061462539,
+          "majorFont": 0.6406460296096905,
+          "categoryFont": 0.5186182144459399,
+          "topicFont": 0.42709735307312696,
+          "map": {
+            "width": 320,
+            "height": 523.265625
+          },
+          "state": "overview"
+        },
+        {
+          "title": "Java",
+          "scale": 0.9285714285714286,
+          "rootFont": 26,
+          "majorFont": 19.5,
+          "categoryFont": 15.785714285714286,
+          "topicFont": 13,
+          "map": {
+            "width": 320,
+            "height": 523.265625
+          },
+          "state": "subtree"
+        },
+        {
+          "title": "Basics",
+          "scale": 0.9285714285714286,
+          "rootFont": 26,
+          "majorFont": 19.5,
+          "categoryFont": 15.785714285714286,
+          "topicFont": 13,
+          "map": {
+            "width": 320,
+            "height": 523.265625
+          },
+          "state": "subtree"
+        },
+        {
+          "title": "Search For loop",
+          "scale": 1.1428571428571428,
+          "rootFont": 32,
+          "majorFont": 24,
+          "categoryFont": 19.428571428571427,
+          "topicFont": 16,
+          "map": {
+            "width": 320,
+            "height": 523.265625
+          },
+          "state": "topic"
+        },
+        {
+          "title": "Project Coverage Fit",
+          "scale": 0.033497536945812804,
+          "rootFont": 0.9379310344827585,
+          "majorFont": 0.7034482758620689,
+          "categoryFont": 0.5694581280788177,
+          "topicFont": 0.46896551724137925,
+          "map": {
+            "width": 320,
+            "height": 523.265625
+          },
+          "state": "subtree"
+        }
+      ],
+      "geometry": {
+        "overlaps": [],
+        "hits": [],
+        "safeHits": [],
+        "crossings": [],
+        "spacingErrors": [],
+        "regionErrors": [],
+        "trayPortErrors": [],
+        "minimumCardGap": 128.5,
+        "minimumTrayGap": 104,
+        "minimumConnectorClearance": 48,
+        "bounds": {
+          "width": 8916,
+          "height": 1867.1399999999999
+        },
+        "ports": true,
+        "siblings": true
+      },
+      "metrics": {
+        "model parse": 4,
+        "layout": 6.199999999254942,
+        "tray packing": 1.6999999955296516,
+        "project coverage": 0.4000000022351742,
+        "knowledge relation routing": 0.5999999977648258,
+        "initial render": 9.100000001490116,
+        "Fit all": 2.800000000745058,
+        "search": 0,
+        "Fit subtree": 0.6000000014901161,
+        "topic selection": 7,
+        "Search navigation": 7,
+        "Topic focus": 0.30000000074505806,
+        "Project fit": 0.6999999992549419
+      },
+      "errors": [],
+      "failed": [],
+      "requests": [
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/style.css",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/vendor/d3-7.9.0.min.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/routing.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/app.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout-checkpoint.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/style.css",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/vendor/d3-7.9.0.min.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/routing.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/app.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout-checkpoint.json"
+      ]
+    },
+    {
+      "width": 320,
+      "theme": "light",
+      "views": [
+        {
+          "title": "Initial Overview",
+          "scale": 0.03050695379093764,
+          "rootFont": 0.8541947061462539,
+          "majorFont": 0.6406460296096905,
+          "categoryFont": 0.5186182144459399,
+          "topicFont": 0.42709735307312696,
+          "map": {
+            "width": 320,
+            "height": 523.265625
+          },
+          "state": "overview"
+        },
+        {
+          "title": "Fit all",
+          "scale": 0.03050695379093764,
+          "rootFont": 0.8541947061462539,
+          "majorFont": 0.6406460296096905,
+          "categoryFont": 0.5186182144459399,
+          "topicFont": 0.42709735307312696,
+          "map": {
+            "width": 320,
+            "height": 523.265625
+          },
+          "state": "overview"
+        },
+        {
+          "title": "Java",
+          "scale": 0.9285714285714286,
+          "rootFont": 26,
+          "majorFont": 19.5,
+          "categoryFont": 15.785714285714286,
+          "topicFont": 13,
+          "map": {
+            "width": 320,
+            "height": 523.265625
+          },
+          "state": "subtree"
+        },
+        {
+          "title": "Basics",
+          "scale": 0.9285714285714286,
+          "rootFont": 26,
+          "majorFont": 19.5,
+          "categoryFont": 15.785714285714286,
+          "topicFont": 13,
+          "map": {
+            "width": 320,
+            "height": 523.265625
+          },
+          "state": "subtree"
+        },
+        {
+          "title": "Search For loop",
+          "scale": 1.1428571428571428,
+          "rootFont": 32,
+          "majorFont": 24,
+          "categoryFont": 19.428571428571427,
+          "topicFont": 16,
+          "map": {
+            "width": 320,
+            "height": 523.265625
+          },
+          "state": "topic"
+        },
+        {
+          "title": "Project Coverage Fit",
+          "scale": 0.033497536945812804,
+          "rootFont": 0.9379310344827585,
+          "majorFont": 0.7034482758620689,
+          "categoryFont": 0.5694581280788177,
+          "topicFont": 0.46896551724137925,
+          "map": {
+            "width": 320,
+            "height": 523.265625
+          },
+          "state": "subtree"
+        }
+      ],
+      "geometry": {
+        "overlaps": [],
+        "hits": [],
+        "safeHits": [],
+        "crossings": [],
+        "spacingErrors": [],
+        "regionErrors": [],
+        "trayPortErrors": [],
+        "minimumCardGap": 128.5,
+        "minimumTrayGap": 104,
+        "minimumConnectorClearance": 48,
+        "bounds": {
+          "width": 8916,
+          "height": 1867.1399999999999
+        },
+        "ports": true,
+        "siblings": true
+      },
+      "metrics": {
+        "model parse": 6.800000000745058,
+        "layout": 5,
+        "tray packing": 1.4000000022351742,
+        "project coverage": 0.29999999701976776,
+        "knowledge relation routing": 0.8000000007450581,
+        "initial render": 9.300000000745058,
+        "Fit all": 2.800000000745058,
+        "search": 0,
+        "Fit subtree": 0.6999999992549419,
+        "topic selection": 8,
+        "Search navigation": 8,
+        "Topic focus": 0.6999999992549419,
+        "Project fit": 0.6000000014901161
+      },
+      "errors": [],
+      "failed": [],
+      "requests": [
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/style.css",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/vendor/d3-7.9.0.min.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/routing.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/app.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout-checkpoint.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/style.css",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/vendor/d3-7.9.0.min.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/routing.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/app.js",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/model.json",
+        "http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/layout-checkpoint.json"
+      ]
+    }
+  ],
+  "assetResults": [
+    {
+      "name": "app.js",
+      "status": 200,
+      "sha256": "87951c94a1040246b1bfce4cbb9b7d06fc88fa56b668ab5311effca21f72bbab"
+    },
+    {
+      "name": "index.html",
+      "status": 200,
+      "sha256": "1d171358376d060ac8f16665187aee35566d668a232db3f5ae33c7376c9af6fe"
+    },
+    {
+      "name": "layout-checkpoint.json",
+      "status": 200,
+      "sha256": "ec12df3fde2dfeacd8c8216cbe38e2cae653a065a9bb427eaaf92b66e18562de"
+    },
+    {
+      "name": "layout-checkpoint.schema.json",
+      "status": 200,
+      "sha256": "35d27628dde89adbcc1d8297c037173371a6d554b2fa51ff22095a6c422000b8"
+    },
+    {
+      "name": "layout.js",
+      "status": 200,
+      "sha256": "78f268906b0aaa349e8091c18a4b06158bc70f4129a0f73cae4d256b0d7428fc"
+    },
+    {
+      "name": "model.js",
+      "status": 200,
+      "sha256": "25b846e3d1316e69b56b5c4a7f7b2cda8bb72ea6852503ab0a236c56d2254018"
+    },
+    {
+      "name": "model.json",
+      "status": 200,
+      "sha256": "42c343d66e6e3d8ae853db01719aca61bd647b40a634dbaa2a021bfc57ff6ef8"
+    },
+    {
+      "name": "routing.js",
+      "status": 200,
+      "sha256": "31f5f2f996a77500634a46b8814fd930c61746b0e082afca4305bdc35aba1d16"
+    },
+    {
+      "name": "style.css",
+      "status": 200,
+      "sha256": "80db86c68197a16671b3159948123310f5eef2673335bc6798818f4212ee411c"
+    },
+    {
+      "name": "vendor/D3-LICENSE",
+      "status": 200,
+      "sha256": "3e6849627f74ff73c257a3ae1efb574015d94fc1035c05ec3c15805165efcbc4"
+    },
+    {
+      "name": "vendor/d3-7.9.0.min.js",
+      "status": 200,
+      "sha256": "f2094bbf6141b359722c4fe454eb6c4b0f0e42cc10cc7af921fc158fceb86539"
+    }
+  ],
+  "physicalDeviceTests": "not performed; outstanding"
+}

@@ -1,0 +1,175 @@
+{
+  "checks": 30,
+  "geometry": {
+    "overlaps": [],
+    "hits": [],
+    "minimumWidth": 172,
+    "maxLines": 3,
+    "bounds": {
+      "x0": -1171.2,
+      "x1": 1088.937728881836,
+      "y0": -8,
+      "y1": 1183.38
+    },
+    "font": 10.117678658362571,
+    "zoom": 0.7226913327401836,
+    "majorAnchors": [
+      [
+        "category:1163",
+        -887,
+        87.03999999999999
+      ],
+      [
+        "category:1164",
+        248.5,
+        87.03999999999999
+      ],
+      [
+        "category:2679",
+        887,
+        87.03999999999999
+      ]
+    ],
+    "longLabels": [
+      {
+        "title": "Run and debug with IntelliJ IDEA",
+        "width": 172,
+        "lines": [
+          "Run and debug",
+          "with IntelliJ IDEA"
+        ]
+      },
+      {
+        "title": "Basic literals: numbers, strings and characters",
+        "width": 172,
+        "lines": [
+          "Basic literals:",
+          "numbers, strings",
+          "and characters"
+        ]
+      },
+      {
+        "title": "Reading user input with Scanner",
+        "width": 172,
+        "lines": [
+          "Reading user input",
+          "with Scanner"
+        ]
+      },
+      {
+        "title": "Floating-point types and operations",
+        "width": 172,
+        "lines": [
+          "Floating-point",
+          "types and",
+          "operations"
+        ]
+      },
+      {
+        "title": "Boolean type and operations. True and false",
+        "width": 172,
+        "lines": [
+          "Boolean type and",
+          "operations. True",
+          "and false"
+        ]
+      },
+      {
+        "title": "Comparing values. Relational operators",
+        "width": 172,
+        "lines": [
+          "Comparing values.",
+          "Relational",
+          "operators"
+        ]
+      }
+    ]
+  },
+  "growth": [
+    {
+      "name": "advanced-oop",
+      "majorMoves": [],
+      "overlaps": [],
+      "events": [
+        {
+          "kind": "local-new-branch",
+          "key": "category:90000",
+          "parent": "category:73"
+        }
+      ],
+      "bounds": {
+        "x0": -1167,
+        "x1": 1085.937728881836,
+        "y0": -8,
+        "y1": 1494.4399999999998
+      }
+    },
+    {
+      "name": "basics-growth",
+      "majorMoves": [],
+      "overlaps": [],
+      "events": [
+        {
+          "kind": "local-vertical-growth",
+          "key": "category:74",
+          "parent": "category:252"
+        },
+        {
+          "kind": "local-vertical-growth",
+          "key": "category:153",
+          "parent": "category:252"
+        },
+        {
+          "kind": "local-vertical-growth",
+          "key": "category:188",
+          "parent": "category:252"
+        },
+        {
+          "kind": "local-vertical-growth",
+          "key": "category:306",
+          "parent": "category:252"
+        },
+        {
+          "kind": "local-vertical-growth",
+          "key": "category:1215",
+          "parent": "category:73"
+        }
+      ],
+      "bounds": {
+        "x0": -1167,
+        "x1": 1085.937728881836,
+        "y0": -8,
+        "y1": 1467.08
+      }
+    },
+    {
+      "name": "databases",
+      "majorMoves": [],
+      "overlaps": [],
+      "events": [
+        {
+          "kind": "local-new-branch",
+          "key": "category:90000",
+          "parent": "category:1162"
+        }
+      ],
+      "bounds": {
+        "x0": -1167,
+        "x1": 1085.937728881836,
+        "y0": -8,
+        "y1": 1783.2799999999997
+      }
+    }
+  ],
+  "before": {
+    "bounds": {
+      "x0": -1182,
+      "x1": 1087,
+      "y0": -8,
+      "y1": 1178.8599999999997
+    },
+    "font": 10.076804915514593,
+    "zoom": 0.7197717796796138,
+    "maxLines": 3
+  }
+}

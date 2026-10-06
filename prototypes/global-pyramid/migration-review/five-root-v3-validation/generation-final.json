@@ -1,0 +1,9 @@
+{
+  "applied": false,
+  "build_ms": 2829.4396569981473,
+  "diff_ms": 34.30088200548198,
+  "manifest": "/home/anton/IdeaProjects/hyperskill-projects/prototypes/global-pyramid/migration-review/real-five-root-v3-final/migration-manifest.json",
+  "manifest_fingerprint": "658998a4f9cf2b9d44fd308e210af9e7b6a40d26f05556d340e1b94cd2a1b993",
+  "package": "/home/anton/IdeaProjects/hyperskill-projects/prototypes/global-pyramid/migration-review/real-five-root-v3-final",
+  "status": "AWAITING_EXPLICIT_HUMAN_REVIEW"
+}

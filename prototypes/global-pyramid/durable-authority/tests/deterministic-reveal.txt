@@ -1,0 +1,6 @@
+test_deterministic_reveal_and_missing_token (test_durable.Durable.test_deterministic_reveal_and_missing_token) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 17.055s
+
+OK

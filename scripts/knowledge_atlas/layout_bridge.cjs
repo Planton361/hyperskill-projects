@@ -6,11 +6,24 @@ if(!chromium){console.error('Playwright required. Set PLAYWRIGHT_MODULE to an in
 (async()=>{
  const input=JSON.parse(fs.readFileSync(0,'utf8'));
  const options={headless:true};if(process.env.CHROMIUM_EXECUTABLE)options.executablePath=process.env.CHROMIUM_EXECUTABLE;
- else if(fs.existsSync('/opt/google/chrome/chrome'))options.executablePath='/opt/google/chrome/chrome';
  const browser=await chromium.launch(options);
  try{
   const page=await browser.newPage({viewport:{width:1440,height:900},deviceScaleFactor:1,locale:'en-US',reducedMotion:'reduce'});
   await page.setContent('<canvas></canvas>');
+  if(input.action==='canonical-runtime-test'){
+   const errors=[];page.on('pageerror',e=>errors.push(e.message));
+   await page.route('**/*',r=>{const u=new URL(r.request().url()),n=u.pathname.slice(1)||'index.html';if(u.origin!=='http://atlas.invalid'||!(n in input.assets))return r.abort();return r.fulfill({body:input.assets[n],contentType:n.endsWith('.js')?'application/javascript':n.endsWith('.json')?'application/json':n.endsWith('.css')?'text/css':'text/html'});});
+   await page.goto('http://atlas.invalid/');await page.waitForFunction(()=>window.GlobalAtlas,{},{timeout:15000});
+   const result=await page.evaluate(()=>{
+    const A=GlobalAtlas,m=A.m,checks=[];const check=(ok,label)=>{if(!ok)throw Error('Canonical runtime: '+label);checks.push(label);};
+    for(const n of SpatialAuthority.target.positions){const p=m.nodes.get(n.key);check(!!p&&['x','y','w','h'].every(k=>p[k]===n[k]),'slot '+n.key);}
+    A.switchScope('my');check(A.state().explicit.length===m.raw.personal.length,'accepted personal inventory');A.fitScope();
+    for(const c of m.raw.courses){A.switchScope('course',c.id);check(c.topic_ids.every(id=>A.state().explicit.includes('topic:'+id)),'Course explicit membership');}
+    for(const p of m.raw.projects){A.switchScope('project',p.id);if(p.requirements_status==='LOADED'){check(A.state().explicit.length===p.required.length,'Project requirements');for(const stage of p.stages){A.switchScope('project',p.id,stage.id);check(A.state().explicit.length===new Set(stage.required_topic_ids).size,'Stage requirements');}}else check(document.querySelector('#scope-info').textContent.includes('UNKNOWN'),'Unknown requirements');}
+    check(A.search('leaf:333').some(n=>n.slot==='leaf:333'),'global search');A.focus(m.raw.personal.find(k=>k.startsWith('topic:')));check(document.querySelector('#details h2').textContent.length>0,'Topic inspector');check(document.querySelector('#mini').width>0,'minimap');A.switchScope('my');A.fitScope();return {status:'PASS',checks:checks.length,nodes:m.raw.personal.length};
+   });
+   if(errors.length)throw Error(errors.join('\n'));process.stdout.write(JSON.stringify(result));return;
+  }
   const policy=input.canary||JSON.parse(fs.readFileSync(path.join(__dirname,'font-canary.json'),'utf8'));
   const canary=await page.evaluate(policy=>{
    const ctx=document.querySelector('canvas').getContext('2d');ctx.font=policy.font;

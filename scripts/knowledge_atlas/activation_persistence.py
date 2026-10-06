@@ -97,6 +97,8 @@ def baseline(cp, geometry):
 
 
 def read_history(path, cp, geometry=None):
+    from . import canonical
+    if canonical.installed(path): return canonical.restore(path)[2]
     p = Path(path)/NAME
     value = check_history(json.loads(p.read_text())) if p.exists() else baseline(cp, geometry)
     if value['layout_generation'] != cp['presentation_generation'] or set(value['active_categories']) != set(cp['categories']):
@@ -106,6 +108,10 @@ def read_history(path, cp, geometry=None):
 
 def accepted(root, loaded=None):
     root = Path(root)
+    from . import canonical
+    if canonical.installed(root/'state/knowledge-atlas'):
+        cp, previous, history, geom, _ = canonical.restore(root/'state/knowledge-atlas')
+        return cp, previous, history, geom, loaded or snapshot.load_source(root/'data/knowledge')
     cp, previous = state.read(root/'state/knowledge-atlas')
     loaded = loaded or snapshot.load_source(root/'data/knowledge')
     history_path = root/'state/knowledge-atlas'/NAME
@@ -181,6 +187,10 @@ def test_only_root(root):
 def package_preview(root, destination, variant='current', context=None, *, fixture=None):
     """fixture override is an internal disposable-test adapter, never a CLI option."""
     root=Path(root); destination=Path(destination).resolve()
+    from . import canonical, canonical_activation
+    if canonical.installed(root/'state/knowledge-atlas'):
+        if fixture: raise ValueError('Canonical reveal requires real disposable Knowledge inputs, not a fixture plan override')
+        return canonical_activation.package_preview(root, destination, variant, context)
     if destination.is_relative_to(root.resolve()) and not destination.is_relative_to(root.resolve()/'prototypes/activation-previews'):
         raise ValueError('Preview destination must be external or below prototypes/activation-previews')
     if destination.exists(): raise ValueError('PREVIEW_ALREADY_EXISTS: never overwrite reviewed artifacts')
@@ -268,6 +278,10 @@ def projection(loaded, keys):
 
 def approve(root, manifest_path, *, reviewed_fingerprint=None, fault=None, test_context=None):
     root=Path(root).resolve();path=Path(manifest_path);folder=path.parent
+    from . import canonical, canonical_activation
+    if canonical.installed(root/'state/knowledge-atlas'):
+        if test_context: raise ValueError('Canonical reveal requires normal Knowledge inputs')
+        return canonical_activation.approve(root, path, reviewed_fingerprint=reviewed_fingerprint, fault=fault)
     with transaction.lock(root,write=True):
         journal=root/'state/.knowledge-atlas-transaction.json'
         if journal.exists(): raise ValueError('RECOVERY_REQUIRED')

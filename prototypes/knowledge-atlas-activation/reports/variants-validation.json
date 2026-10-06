@@ -1,0 +1,202 @@
+{
+  "status": "PASS",
+  "checks": 95,
+  "tests": [
+    "five valid objective selections",
+    "multiple distinct candidate placements",
+    "valid growth probe 128",
+    "valid growth probe 256",
+    "valid growth probe 384",
+    "current 1291 drift explained",
+    "current source 1164/Programming languages",
+    "normalized comparison uses accepted subtree width",
+    "centering lowers overall maximum drift",
+    "parent distance exposes internal tradeoff",
+    "growth did not improve minimum parent distance",
+    "growth increases hierarchy route length",
+    "semantic plan/fixture input immutable",
+    "comparison serialization order-independent",
+    "comparison serialization byte-idempotent",
+    "current: exact frozen nodes",
+    "current: exact 26 trays",
+    "current: exact 119 segments",
+    "current: all hard constraints",
+    "current: review, three categories/six topics",
+    "current: no false project-focus label",
+    "parent-distance: exact frozen nodes",
+    "parent-distance: exact 26 trays",
+    "parent-distance: exact 119 segments",
+    "parent-distance: all hard constraints",
+    "parent-distance: review, three categories/six topics",
+    "parent-distance: identical comparison camera",
+    "parent-distance: no false project-focus label",
+    "centering: exact frozen nodes",
+    "centering: exact 26 trays",
+    "centering: exact 119 segments",
+    "centering: all hard constraints",
+    "centering: review, three categories/six topics",
+    "centering: identical comparison camera",
+    "centering: no false project-focus label",
+    "connector: exact frozen nodes",
+    "connector: exact 26 trays",
+    "connector: exact 119 segments",
+    "connector: all hard constraints",
+    "connector: review, three categories/six topics",
+    "connector: identical comparison camera",
+    "connector: no false project-focus label",
+    "balanced: exact frozen nodes",
+    "balanced: exact 26 trays",
+    "balanced: exact 119 segments",
+    "balanced: all hard constraints",
+    "balanced: review, three categories/six topics",
+    "balanced: identical comparison camera",
+    "balanced: no false project-focus label",
+    "baseline: unchanged expected outcome",
+    "small: unchanged expected outcome",
+    "large: unchanged expected outcome",
+    "blocked: unchanged expected outcome",
+    "new-root: unchanged expected outcome",
+    "1920/false: variant controls/viewport",
+    "1920/false: immutable valid geometry",
+    "1920/true: variant controls/viewport",
+    "1920/true: immutable valid geometry",
+    "1440/false: variant controls/viewport",
+    "1440/false: immutable valid geometry",
+    "1440/true: variant controls/viewport",
+    "1440/true: immutable valid geometry",
+    "1280/false: variant controls/viewport",
+    "1280/false: immutable valid geometry",
+    "1280/true: variant controls/viewport",
+    "1280/true: immutable valid geometry",
+    "1200/false: variant controls/viewport",
+    "1200/false: immutable valid geometry",
+    "1200/true: variant controls/viewport",
+    "1200/true: immutable valid geometry",
+    "1024/false: variant controls/viewport",
+    "1024/false: immutable valid geometry",
+    "1024/true: variant controls/viewport",
+    "1024/true: immutable valid geometry",
+    "768/false: variant controls/viewport",
+    "768/false: immutable valid geometry",
+    "768/true: variant controls/viewport",
+    "768/true: immutable valid geometry",
+    "430/false: variant controls/viewport",
+    "430/false: immutable valid geometry",
+    "430/true: variant controls/viewport",
+    "430/true: immutable valid geometry",
+    "390/false: variant controls/viewport",
+    "390/false: immutable valid geometry",
+    "390/true: variant controls/viewport",
+    "390/true: immutable valid geometry",
+    "320/false: variant controls/viewport",
+    "320/false: immutable valid geometry",
+    "320/true: variant controls/viewport",
+    "320/true: immutable valid geometry",
+    "fixture JSON never rewritten",
+    "default small report byte-identical",
+    "all 732 pre-existing files unchanged",
+    "no browser runtime errors",
+    "no external network"
+  ],
+  "viewports": [
+    {
+      "width": 1920,
+      "light": false,
+      "page_overflow": false
+    },
+    {
+      "width": 1920,
+      "light": true,
+      "page_overflow": false
+    },
+    {
+      "width": 1440,
+      "light": false,
+      "page_overflow": false
+    },
+    {
+      "width": 1440,
+      "light": true,
+      "page_overflow": false
+    },
+    {
+      "width": 1280,
+      "light": false,
+      "page_overflow": false
+    },
+    {
+      "width": 1280,
+      "light": true,
+      "page_overflow": false
+    },
+    {
+      "width": 1200,
+      "light": false,
+      "page_overflow": false
+    },
+    {
+      "width": 1200,
+      "light": true,
+      "page_overflow": false
+    },
+    {
+      "width": 1024,
+      "light": false,
+      "page_overflow": false
+    },
+    {
+      "width": 1024,
+      "light": true,
+      "page_overflow": false
+    },
+    {
+      "width": 768,
+      "light": false,
+      "page_overflow": false
+    },
+    {
+      "width": 768,
+      "light": true,
+      "page_overflow": false
+    },
+    {
+      "width": 430,
+      "light": false,
+      "page_overflow": false
+    },
+    {
+      "width": 430,
+      "light": true,
+      "page_overflow": false
+    },
+    {
+      "width": 390,
+      "light": false,
+      "page_overflow": false
+    },
+    {
+      "width": 390,
+      "light": true,
+      "page_overflow": false
+    },
+    {
+      "width": 320,
+      "light": false,
+      "page_overflow": false
+    },
+    {
+      "width": 320,
+      "light": true,
+      "page_overflow": false
+    }
+  ],
+  "outcomes": {
+    "baseline": "NO_CHANGE",
+    "small": "ACTIVATION_REVIEW_REQUIRED",
+    "large": "ACTIVATION_REBALANCE_REQUIRED",
+    "blocked": "METADATA_REQUIRED",
+    "new-root": "ACTIVATION_REBALANCE_REQUIRED"
+  },
+  "frozen_files": 732,
+  "generation": 0
+}

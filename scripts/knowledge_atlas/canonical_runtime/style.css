@@ -1,0 +1,36 @@
+:root{color-scheme:dark;font:14px system-ui;color:#e1e9f1;background:#0b1421}*{box-sizing:border-box}body{margin:0}header{padding:18px 24px;border-bottom:1px solid #344459}h1{font-size:24px;margin:0}h1 small{font-size:11px;color:#ffd18c;margin-left:14px}p{line-height:1.5;margin:8px 0}header p{color:#a7b9ce;font-size:12px}nav{display:flex;gap:8px;padding:12px 24px;flex-wrap:wrap}button,select,input{font:inherit;background:#16263b;color:#e1e9f1;border:1px solid #496078;border-radius:6px;padding:7px 10px}button{cursor:pointer}button:hover,button[aria-pressed=true]{border-color:#91d3ff;background:#274565}button:focus-visible,input:focus-visible,canvas:focus-visible{outline:2px solid #ffd18c}main{display:grid;grid-template-columns:minmax(0,1fr) 320px;height:calc(100vh - 151px);min-height:480px}#map{position:relative;overflow:hidden;border-top:1px solid #344459}#canvas{width:100%;height:100%;display:block;touch-action:none}#toolbar,#roots{position:absolute;left:12px;display:flex;gap:5px;z-index:1;flex-wrap:wrap}#toolbar{top:12px}#roots{top:55px}#roots button{font-size:11px;background:#152539eb}#status{position:absolute;bottom:12px;left:12px;right:170px;font-size:12px;background:#0b1421df;padding:8px;pointer-events:none}#mini{position:absolute;right:12px;bottom:12px;width:150px;height:90px;background:#101d2e;border:1px solid #60738b;cursor:pointer}aside{border-left:1px solid #344459;padding:18px;overflow:auto}aside input[type=search]{width:100%;margin:10px 0}#results{max-height:210px;overflow:auto}#results button,#details button{display:block;text-align:left;width:100%;margin:5px 0}h2{font-size:18px}.legend{border-top:1px solid #344459;margin-top:20px;font-size:12px;color:#b9c9db}.personal{color:#86bff5}.course{color:#c3a5ff}.project{color:#f5bf6c}.note{color:#9db0c5;font-size:12px}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:11px monospace}#details{overflow-wrap:anywhere}#context:empty{display:none}@media(max-width:800px){main{grid-template-columns:1fr;height:auto}#map{height:65vh}aside{border-left:0}header{padding:12px}h1 small{display:block;margin:4px 0}nav{padding:8px}#roots{top:85px}}
+
+/* Strict-projection orientation and focus controls. */
+#scope-summary{position:absolute;left:14px;right:240px;top:100px;color:#b5c9dd;font-size:12px;pointer-events:none}
+#breadcrumbs{position:absolute;left:14px;right:14px;top:126px;display:flex;gap:4px;flex-wrap:wrap;z-index:1}
+#breadcrumbs button{font-size:11px;padding:3px 6px;background:#122237e8}
+#mini{width:220px;height:130px;bottom:34px;background:#0b1626}
+#mini-legend{position:absolute;right:12px;bottom:12px;font-size:9px;color:#b5c9dd;pointer-events:none}#mini-legend span{color:#f5bf6c}
+#scope-info{font-size:12px;color:#abc0d5}#scope-heading{margin-top:0}#ghost{display:block;width:100%;margin:7px 0 14px}
+#branches{display:flex;gap:5px;flex-wrap:wrap;margin:10px 0 20px}#branches button{font-size:11px;padding:5px 7px;text-align:left}
+#details h2{margin-bottom:5px}#results button{font-size:12px}#status{right:245px;font-size:11px}
+@media(max-width:1100px){main{grid-template-columns:minmax(0,1fr) 280px}#roots button{font-size:10px;padding:5px 7px}#scope-summary{right:12px;font-size:11px}#mini{width:190px;height:112px}#status{right:215px}}
+
+#topic-groups{width:100%;margin:0 0 18px;font-size:12px}#branches p{width:100%;margin:0 0 3px}#topic-groups[hidden]{display:none}
+/* Fit the actual desktop viewport even when Course/Stage controls wrap. */
+body{height:100vh;display:flex;flex-direction:column}header,nav{flex:none}main{flex:1;min-height:0;height:auto}#map,aside{min-height:0}
+
+/* Final desktop polish: a single breadcrumb row and camera-only region navigation. */
+#scope-summary{top:98px;right:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#region-navigation{position:absolute;top:125px;left:12px;right:12px;display:flex;align-items:center;gap:6px;z-index:2}
+#region-navigation button,#region-select{padding:5px 8px;font-size:11px}#region-select{max-width:42%;min-width:100px}#region-indicator{font-size:11px;color:#9db5cd;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+#breadcrumbs{top:163px;flex-wrap:nowrap;align-items:center;max-height:30px;overflow:hidden;white-space:nowrap;background:#0b1421e8;border-radius:5px;padding:3px}
+#breadcrumbs:empty{display:none}#breadcrumbs button{flex-shrink:0;max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}#breadcrumbs button[aria-current=page]{font-weight:650;color:#fff;border-color:#91d3ff;max-width:48%}
+#breadcrumbs details{position:relative;flex-shrink:0}#breadcrumbs summary{cursor:pointer;padding:3px 8px;background:#16263b;border:1px solid #496078;border-radius:5px}
+#ancestor-jump{position:absolute;top:196px;left:14px;right:14px;z-index:5;max-height:160px;overflow:auto;padding:10px;background:#132337;border:1px solid #607a96;border-radius:7px;display:flex;gap:5px;flex-wrap:wrap}#ancestor-jump[hidden]{display:none}#ancestor-jump button{font-size:12px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+button:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible,canvas:focus-visible{outline:3px solid #ffd18c;outline-offset:2px}button:disabled{opacity:.45;cursor:default}
+#roots button.dormant-root{color:#8796aa;border-color:#344459}#roots button.relevant-root{border-color:#86bff5}
+#scope-info{padding:9px 10px;background:#142238;border-left:3px solid #86bff5;border-radius:4px}body[data-scope=course] #scope-info{border-color:#c3a5ff}body[data-scope=project] #scope-info{border-color:#f5bf6c}#scope-info.unknown{border-color:#ffd18c;background:#35271a;color:#ffe0ac}
+#stage:not([hidden]){border-color:#f5bf6c}#stage.stage-selected{background:#4b3520;border-width:2px}
+#branches button{line-height:1.5}#branches button span{display:block;color:#a9bed3;font-size:10px}#results button strong{display:block;font-weight:550}#results button span{display:block;font-size:10px;color:#acc0d5}
+#label-tooltip{position:absolute;z-index:4;max-width:340px;pointer-events:none;padding:7px 10px;border:1px solid #91b6d8;border-radius:5px;background:#132337;color:#fff;font-size:12px;line-height:1.4}#label-tooltip[hidden]{display:none}
+#mini-legend{font-size:10px;max-width:220px;text-align:right}#mini-legend .focus-color{color:#72e0c9}#mini-legend .viewport-color{color:#fff}
+@media(max-width:1100px){#breadcrumbs button{max-width:170px}#region-indicator{display:none}#region-select{max-width:55%}}
+
+#scope-semantics{font-size:11px;line-height:1.5;color:#b3c7dc;margin:0 0 14px}

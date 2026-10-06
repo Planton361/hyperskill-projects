@@ -26,6 +26,8 @@ def evidence_index(data):
 
 
 def artifacts(runtime, data, cp, geom, snapshot):
+    if cp.get('spatial_authority'):
+        return canonical_artifacts(runtime.parents[1], data, cp, geom, snapshot)
     out = {name: (runtime / name).read_bytes() for name in ASSETS}
     raw = {t: data[t] for t in TABLES}
     raw['source_hashes'] = {t: digest(data[t]) for t in TABLES}
@@ -74,6 +76,11 @@ def preview_outputs(outputs):
 
 def production_outputs(outputs, preview):
     """Package the accepted persistent-state build; branding is the only UI edit."""
+    if 'spatial-authority.json' in outputs:
+        result={k:v for k,v in outputs.items() if k not in ('build-manifest.json','update-snapshot.json')}
+        cp=json.loads(result['layout-checkpoint.json'])
+        result['release-manifest.json']=encode(dict(pipeline_version=3,target='production',runtime_contract='global-canonical-1',generation=cp['presentation_generation'],assets={n:hashlib.sha256(b).hexdigest() for n,b in sorted(result.items())}))
+        return result
     result = preview_outputs(outputs)
     result.pop('release-manifest.json')
     html = result['index.html'].decode().replace('<title>Knowledge Atlas · Preview</title>', '<title>Knowledge Atlas</title>')
@@ -123,3 +130,21 @@ def verify_release(path, expected=None):
         if hashlib.sha256((path/name).read_bytes()).hexdigest()!=sha:raise ValueError('production integrity mismatch: '+name)
     if expected is not None and any((path/n).read_bytes()!=b for n,b in expected.items()):
         raise ValueError('production is not reproducible from current data/state')
+
+
+def canonical_artifacts(root, data, cp, geom, previous):
+    """Package installed immutable master plus current semantic projection."""
+    from . import canonical, catalog_projection, snapshot as snapshots
+    root=Path(root);runtime=Path(__file__).parent/'canonical_runtime'
+    loaded=snapshots.load_source(root/'data/knowledge')
+    history={'active_categories':[k for k in cp['accepted_inventory'] if k.startswith('category:')],
+             'active_topics':[k for k in cp['accepted_inventory'] if k.startswith('topic:')]}
+    out={p.relative_to(runtime).as_posix():p.read_bytes() for p in runtime.rglob('*') if p.is_file()}
+    master=canonical.master(root,cp['spatial_authority']);canonical.validate_geometry(master,geom,cp['accepted_inventory'])
+    raw={t:data[t] for t in TABLES};raw['source_hashes']={t:digest(data[t]) for t in TABLES};raw['source_hash_policy']='sha256 canonical normalized JSON; independent of input ordering';raw['indexes']=evidence_index(data)
+    out.update({'model.json':encode(raw),'layout-checkpoint.json':encode(cp),'spatial-authority.json':encode(cp['spatial_authority']),
+                'target-geometry.json':encode(geom),'update-snapshot.json':encode(previous),
+                'generated/global-geometry.json':(root/'docs/knowledge-map/generated/global-geometry.json').read_bytes(),
+                'generated/catalog.json':encode(catalog_projection.project(loaded,history))})
+    out['build-manifest.json']=encode(dict(pipeline_version=3,state_schema_version=3,layout_schema_version=cp['layout_schema_version'],layout_algorithm_version=cp['layout_algorithm_version'],assets={n:hashlib.sha256(v).hexdigest() for n,v in sorted(out.items())}))
+    return out

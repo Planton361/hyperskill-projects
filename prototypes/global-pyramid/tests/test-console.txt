@@ -1,0 +1,12 @@
+test_byte_determinism_and_progress_independence (test_model.Contracts.test_byte_determinism_and_progress_independence) ... ok
+test_counts_semantics (test_model.Contracts.test_counts_semantics) ... ok
+test_no_card_overlaps (test_model.Contracts.test_no_card_overlaps) ... ok
+test_regions_order_routes (test_model.Contracts.test_regions_order_routes) ... ok
+test_runtime_projections_and_activations (test_model.Contracts.test_runtime_projections_and_activations) ... {"scopeCoordinateComparisons":4272,"activations":2,"added":["reference:333","category:428","reference:2931","category:2930"],"maximumDisplacementPx":0,"geometryFrozen":true}
+ok
+test_valid_reference_promotion (test_model.Contracts.test_valid_reference_promotion) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 6.005s
+
+OK

@@ -1,3 +1,9 @@
+> **Current decision:** Production migration is **PAUSED_PENDING_ADAPTIVE_VIEW_ACCEPTANCE**.
+> Strict-global Version-A packages are non-applicable. The isolated normal-stack
+> candidate uses `--adaptive-preview` (optionally `--check --json`).
+> See [ARCHITECTURE-DECISION.md](ARCHITECTURE-DECISION.md).
+> Existing Production and historical pipeline documentation below remain unchanged.
+
 # Knowledge Atlas production hardening (pipeline v2)
 
 The accepted V6 UI and public URLs are unchanged. `/knowledge-map/` is the

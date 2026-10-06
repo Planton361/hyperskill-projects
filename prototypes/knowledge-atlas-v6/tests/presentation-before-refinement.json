@@ -1,0 +1,1057 @@
+{
+  "layout_schema_version": 1,
+  "layout_algorithm_version": "atlas-packed-1",
+  "categories": {
+    "category:2944": {
+      "anchor": 518,
+      "width": 1036,
+      "labelLines": [
+        "JVM basics"
+      ],
+      "head": 90,
+      "band": {
+        "left": 48,
+        "top": 122,
+        "width": 940,
+        "height": 816
+      },
+      "childTop": 1048,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:126": {
+      "anchor": 566,
+      "width": 1132,
+      "labelLines": [
+        "JVM"
+      ],
+      "head": 90,
+      "band": {
+        "left": 96,
+        "top": 122,
+        "width": 940,
+        "height": 680
+      },
+      "childTop": 912,
+      "children": {
+        "category:2944": {
+          "left": 0,
+          "width": 1036
+        }
+      },
+      "sibling_order": [
+        "category:2944"
+      ]
+    },
+    "category:386": {
+      "anchor": 518,
+      "width": 1036,
+      "labelLines": [
+        "IntelliJ IDEA"
+      ],
+      "head": 90,
+      "band": {
+        "left": 48,
+        "top": 122,
+        "width": 940,
+        "height": 884
+      },
+      "childTop": 1116,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:262": {
+      "anchor": 566,
+      "width": 1132,
+      "labelLines": [
+        "IDE"
+      ],
+      "head": 90,
+      "band": {
+        "left": 96,
+        "top": 122,
+        "width": 940,
+        "height": 748
+      },
+      "childTop": 980,
+      "children": {
+        "category:386": {
+          "left": 0,
+          "width": 1036
+        }
+      },
+      "sibling_order": [
+        "category:386"
+      ]
+    },
+    "category:4503": {
+      "anchor": 518,
+      "width": 1036,
+      "labelLines": [
+        "Coding with AI tools"
+      ],
+      "head": 90,
+      "band": {
+        "left": 48,
+        "top": 122,
+        "width": 940,
+        "height": 816
+      },
+      "childTop": 1048,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:4502": {
+      "anchor": 566,
+      "width": 1132,
+      "labelLines": [
+        "AI tools"
+      ],
+      "head": 90,
+      "band": {
+        "left": 96,
+        "top": 122,
+        "width": 940,
+        "height": 680
+      },
+      "childTop": 912,
+      "children": {
+        "category:4503": {
+          "left": 0,
+          "width": 1036
+        }
+      },
+      "sibling_order": [
+        "category:4503"
+      ]
+    },
+    "category:258": {
+      "anchor": 1212,
+      "width": 2424,
+      "labelLines": [
+        "Dev tools"
+      ],
+      "head": 90,
+      "band": {
+        "left": 742,
+        "top": 122,
+        "width": 940,
+        "height": 680
+      },
+      "childTop": 912,
+      "children": {
+        "category:262": {
+          "left": 0,
+          "width": 1132
+        },
+        "category:4502": {
+          "left": 1196,
+          "width": 1132
+        }
+      },
+      "sibling_order": [
+        "category:262",
+        "category:4502"
+      ]
+    },
+    "category:1432": {
+      "anchor": 518,
+      "width": 1036,
+      "labelLines": [
+        "Unix"
+      ],
+      "head": 90,
+      "band": {
+        "left": 48,
+        "top": 122,
+        "width": 940,
+        "height": 748
+      },
+      "childTop": 980,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:850": {
+      "anchor": 566,
+      "width": 1132,
+      "labelLines": [
+        "Operating systems"
+      ],
+      "head": 90,
+      "band": {
+        "left": 96,
+        "top": 122,
+        "width": 940,
+        "height": 748
+      },
+      "childTop": 980,
+      "children": {
+        "category:1432": {
+          "left": 0,
+          "width": 1036
+        }
+      },
+      "sibling_order": [
+        "category:1432"
+      ]
+    },
+    "category:516": {
+      "anchor": 518,
+      "width": 1036,
+      "labelLines": [
+        "Software quality"
+      ],
+      "head": 90,
+      "band": {
+        "left": 48,
+        "top": 122,
+        "width": 940,
+        "height": 816
+      },
+      "childTop": 1048,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:1186": {
+      "anchor": 566,
+      "width": 1132,
+      "labelLines": [
+        "Software construction"
+      ],
+      "head": 90,
+      "band": {
+        "left": 96,
+        "top": 122,
+        "width": 940,
+        "height": 680
+      },
+      "childTop": 912,
+      "children": {
+        "category:516": {
+          "left": 0,
+          "width": 1036
+        }
+      },
+      "sibling_order": [
+        "category:516"
+      ]
+    },
+    "category:679": {
+      "anchor": 518,
+      "width": 1036,
+      "labelLines": [
+        "Object-oriented programming"
+      ],
+      "head": 90,
+      "band": {
+        "left": 48,
+        "top": 122,
+        "width": 940,
+        "height": 748
+      },
+      "childTop": 980,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:1188": {
+      "anchor": 566,
+      "width": 1132,
+      "labelLines": [
+        "Programming concepts"
+      ],
+      "head": 90,
+      "band": {
+        "left": 96,
+        "top": 122,
+        "width": 940,
+        "height": 680
+      },
+      "childTop": 912,
+      "children": {
+        "category:679": {
+          "left": 0,
+          "width": 1036
+        }
+      },
+      "sibling_order": [
+        "category:679"
+      ]
+    },
+    "category:357": {
+      "anchor": 1810,
+      "width": 3620,
+      "labelLines": [
+        "Computer science fundamentals"
+      ],
+      "head": 90,
+      "band": {
+        "left": 1340,
+        "top": 122,
+        "width": 940,
+        "height": 680
+      },
+      "childTop": 912,
+      "children": {
+        "category:850": {
+          "left": 0,
+          "width": 1132
+        },
+        "category:1186": {
+          "left": 1196,
+          "width": 1132
+        },
+        "category:1188": {
+          "left": 2392,
+          "width": 1132
+        }
+      },
+      "sibling_order": [
+        "category:850",
+        "category:1186",
+        "category:1188"
+      ]
+    },
+    "category:1163": {
+      "anchor": 3700,
+      "width": 7400,
+      "labelLines": [
+        "Software development foundations"
+      ],
+      "head": 90,
+      "band": {
+        "left": 3230,
+        "top": 122,
+        "width": 940,
+        "height": 680
+      },
+      "childTop": 912,
+      "children": {
+        "category:126": {
+          "left": 0,
+          "width": 1132
+        },
+        "category:258": {
+          "left": 1196,
+          "width": 2424
+        },
+        "category:357": {
+          "left": 3684,
+          "width": 3620
+        }
+      },
+      "sibling_order": [
+        "category:126",
+        "category:258",
+        "category:357"
+      ]
+    },
+    "category:3": {
+      "anchor": 518,
+      "width": 1036,
+      "labelLines": [
+        "Control flow statements"
+      ],
+      "head": 90,
+      "band": {
+        "left": 48,
+        "top": 122,
+        "width": 940,
+        "height": 884
+      },
+      "childTop": 1116,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:35": {
+      "anchor": 518,
+      "width": 1036,
+      "labelLines": [
+        "Data types and variables"
+      ],
+      "head": 90,
+      "band": {
+        "left": 48,
+        "top": 122,
+        "width": 940,
+        "height": 884
+      },
+      "childTop": 1116,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:74": {
+      "anchor": 518,
+      "width": 1036,
+      "labelLines": [
+        "Introduction to Java"
+      ],
+      "head": 90,
+      "band": {
+        "left": 48,
+        "top": 122,
+        "width": 940,
+        "height": 816
+      },
+      "childTop": 1048,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:153": {
+      "anchor": 518,
+      "width": 1036,
+      "labelLines": [
+        "Simple programs"
+      ],
+      "head": 90,
+      "band": {
+        "left": 48,
+        "top": 122,
+        "width": 940,
+        "height": 816
+      },
+      "childTop": 1048,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:188": {
+      "anchor": 518,
+      "width": 1036,
+      "labelLines": [
+        "Strings"
+      ],
+      "head": 90,
+      "band": {
+        "left": 48,
+        "top": 122,
+        "width": 940,
+        "height": 816
+      },
+      "childTop": 1048,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:306": {
+      "anchor": 518,
+      "width": 1036,
+      "labelLines": [
+        "Operations on primitive types"
+      ],
+      "head": 90,
+      "band": {
+        "left": 48,
+        "top": 122,
+        "width": 940,
+        "height": 952
+      },
+      "childTop": 1184,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:252": {
+      "anchor": 3316,
+      "width": 6632,
+      "labelLines": [
+        "Basics"
+      ],
+      "head": 90,
+      "band": {
+        "left": 2846,
+        "top": 122,
+        "width": 940,
+        "height": 680
+      },
+      "childTop": 912,
+      "children": {
+        "category:3": {
+          "left": 0,
+          "width": 1036
+        },
+        "category:35": {
+          "left": 1100,
+          "width": 1036
+        },
+        "category:74": {
+          "left": 2200,
+          "width": 1036
+        },
+        "category:153": {
+          "left": 3300,
+          "width": 1036
+        },
+        "category:188": {
+          "left": 4400,
+          "width": 1036
+        },
+        "category:306": {
+          "left": 5500,
+          "width": 1036
+        }
+      },
+      "sibling_order": [
+        "category:3",
+        "category:35",
+        "category:74",
+        "category:153",
+        "category:188",
+        "category:306"
+      ]
+    },
+    "category:187": {
+      "anchor": 518,
+      "width": 1036,
+      "labelLines": [
+        "Arrays"
+      ],
+      "head": 90,
+      "band": {
+        "left": 48,
+        "top": 122,
+        "width": 940,
+        "height": 816
+      },
+      "childTop": 1048,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:1215": {
+      "anchor": 566,
+      "width": 1132,
+      "labelLines": [
+        "Working with data"
+      ],
+      "head": 90,
+      "band": {
+        "left": 96,
+        "top": 122,
+        "width": 940,
+        "height": 680
+      },
+      "childTop": 912,
+      "children": {
+        "category:187": {
+          "left": 0,
+          "width": 1036
+        }
+      },
+      "sibling_order": [
+        "category:187"
+      ]
+    },
+    "category:95": {
+      "anchor": 518,
+      "width": 1036,
+      "labelLines": [
+        "Methods"
+      ],
+      "head": 90,
+      "band": {
+        "left": 48,
+        "top": 122,
+        "width": 940,
+        "height": 884
+      },
+      "childTop": 1116,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:196": {
+      "anchor": 518,
+      "width": 1036,
+      "labelLines": [
+        "Code style"
+      ],
+      "head": 90,
+      "band": {
+        "left": 48,
+        "top": 122,
+        "width": 940,
+        "height": 816
+      },
+      "childTop": 1048,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:1262": {
+      "anchor": 518,
+      "width": 1036,
+      "labelLines": [
+        "Classes and members"
+      ],
+      "head": 90,
+      "band": {
+        "left": 48,
+        "top": 122,
+        "width": 940,
+        "height": 952
+      },
+      "childTop": 1184,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:1263": {
+      "anchor": 518,
+      "width": 1036,
+      "labelLines": [
+        "Access control"
+      ],
+      "head": 90,
+      "band": {
+        "left": 48,
+        "top": 122,
+        "width": 940,
+        "height": 816
+      },
+      "childTop": 1048,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:13": {
+      "anchor": 1116,
+      "width": 2232,
+      "labelLines": [
+        "Classes and objects"
+      ],
+      "head": 90,
+      "band": {
+        "left": 646,
+        "top": 122,
+        "width": 940,
+        "height": 680
+      },
+      "childTop": 912,
+      "children": {
+        "category:1262": {
+          "left": 0,
+          "width": 1036
+        },
+        "category:1263": {
+          "left": 1100,
+          "width": 1036
+        }
+      },
+      "sibling_order": [
+        "category:1262",
+        "category:1263"
+      ]
+    },
+    "category:1264": {
+      "anchor": 518,
+      "width": 1036,
+      "labelLines": [
+        "Building class hierarchies"
+      ],
+      "head": 90,
+      "band": {
+        "left": 48,
+        "top": 122,
+        "width": 940,
+        "height": 816
+      },
+      "childTop": 1048,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:1265": {
+      "anchor": 518,
+      "width": 1036,
+      "labelLines": [
+        "Overriding methods"
+      ],
+      "head": 90,
+      "band": {
+        "left": 48,
+        "top": 122,
+        "width": 940,
+        "height": 816
+      },
+      "childTop": 1048,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:1267": {
+      "anchor": 518,
+      "width": 1036,
+      "labelLines": [
+        "Interfaces and abstract classes"
+      ],
+      "head": 90,
+      "band": {
+        "left": 48,
+        "top": 122,
+        "width": 940,
+        "height": 748
+      },
+      "childTop": 980,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:195": {
+      "anchor": 1666,
+      "width": 3332,
+      "labelLines": [
+        "Class hierarchies"
+      ],
+      "head": 90,
+      "band": {
+        "left": 1196,
+        "top": 122,
+        "width": 940,
+        "height": 680
+      },
+      "childTop": 912,
+      "children": {
+        "category:1264": {
+          "left": 0,
+          "width": 1036
+        },
+        "category:1265": {
+          "left": 1100,
+          "width": 1036
+        },
+        "category:1267": {
+          "left": 2200,
+          "width": 1036
+        }
+      },
+      "sibling_order": [
+        "category:1264",
+        "category:1265",
+        "category:1267"
+      ]
+    },
+    "category:1269": {
+      "anchor": 518,
+      "width": 1036,
+      "labelLines": [
+        "Enumerations"
+      ],
+      "head": 90,
+      "band": {
+        "left": 48,
+        "top": 122,
+        "width": 940,
+        "height": 748
+      },
+      "childTop": 980,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:1268": {
+      "anchor": 566,
+      "width": 1132,
+      "labelLines": [
+        "Other concepts"
+      ],
+      "head": 90,
+      "band": {
+        "left": 96,
+        "top": 122,
+        "width": 940,
+        "height": 680
+      },
+      "childTop": 912,
+      "children": {
+        "category:1269": {
+          "left": 0,
+          "width": 1036
+        }
+      },
+      "sibling_order": [
+        "category:1269"
+      ]
+    },
+    "category:251": {
+      "anchor": 3460,
+      "width": 6920,
+      "labelLines": [
+        "Object-oriented programming"
+      ],
+      "head": 90,
+      "band": {
+        "left": 2990,
+        "top": 122,
+        "width": 940,
+        "height": 680
+      },
+      "childTop": 912,
+      "children": {
+        "category:13": {
+          "left": 0,
+          "width": 2232
+        },
+        "category:195": {
+          "left": 2296,
+          "width": 3332
+        },
+        "category:1268": {
+          "left": 5692,
+          "width": 1132
+        }
+      },
+      "sibling_order": [
+        "category:13",
+        "category:195",
+        "category:1268"
+      ]
+    },
+    "category:1258": {
+      "anchor": 4608,
+      "width": 9216,
+      "labelLines": [
+        "Code organization"
+      ],
+      "head": 90,
+      "band": {
+        "left": 4138,
+        "top": 122,
+        "width": 940,
+        "height": 680
+      },
+      "childTop": 912,
+      "children": {
+        "category:95": {
+          "left": 0,
+          "width": 1036
+        },
+        "category:196": {
+          "left": 1100,
+          "width": 1036
+        },
+        "category:251": {
+          "left": 2200,
+          "width": 6920
+        }
+      },
+      "sibling_order": [
+        "category:95",
+        "category:196",
+        "category:251"
+      ]
+    },
+    "category:61": {
+      "anchor": 518,
+      "width": 1036,
+      "labelLines": [
+        "Exception handling"
+      ],
+      "head": 90,
+      "band": {
+        "left": 48,
+        "top": 122,
+        "width": 940,
+        "height": 884
+      },
+      "childTop": 1116,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:1423": {
+      "anchor": 518,
+      "width": 1036,
+      "labelLines": [
+        "Debugging"
+      ],
+      "head": 90,
+      "band": {
+        "left": 48,
+        "top": 122,
+        "width": 940,
+        "height": 816
+      },
+      "childTop": 1048,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:1260": {
+      "anchor": 1116,
+      "width": 2232,
+      "labelLines": [
+        "Errorless code"
+      ],
+      "head": 90,
+      "band": {
+        "left": 646,
+        "top": 122,
+        "width": 940,
+        "height": 680
+      },
+      "childTop": 912,
+      "children": {
+        "category:61": {
+          "left": 0,
+          "width": 1036
+        },
+        "category:1423": {
+          "left": 1100,
+          "width": 1036
+        }
+      },
+      "sibling_order": [
+        "category:61",
+        "category:1423"
+      ]
+    },
+    "category:73": {
+      "anchor": 9750,
+      "width": 19500,
+      "labelLines": [
+        "Java"
+      ],
+      "head": 90,
+      "band": {
+        "left": 9280,
+        "top": 122,
+        "width": 940,
+        "height": 680
+      },
+      "childTop": 912,
+      "children": {
+        "category:252": {
+          "left": 0,
+          "width": 6632
+        },
+        "category:1215": {
+          "left": 6696,
+          "width": 1132
+        },
+        "category:1258": {
+          "left": 7892,
+          "width": 9216
+        },
+        "category:1260": {
+          "left": 17172,
+          "width": 2232
+        }
+      },
+      "sibling_order": [
+        "category:252",
+        "category:1215",
+        "category:1258",
+        "category:1260"
+      ]
+    },
+    "category:1164": {
+      "anchor": 9798,
+      "width": 19596,
+      "labelLines": [
+        "Programming languages"
+      ],
+      "head": 90,
+      "band": {
+        "left": 9328,
+        "top": 122,
+        "width": 940,
+        "height": 680
+      },
+      "childTop": 912,
+      "children": {
+        "category:73": {
+          "left": 0,
+          "width": 19500
+        }
+      },
+      "sibling_order": [
+        "category:73"
+      ]
+    },
+    "category:1356": {
+      "anchor": 518,
+      "width": 1036,
+      "labelLines": [
+        "Command line basics"
+      ],
+      "head": 90,
+      "band": {
+        "left": 48,
+        "top": 122,
+        "width": 940,
+        "height": 748
+      },
+      "childTop": 980,
+      "children": {},
+      "sibling_order": []
+    },
+    "category:477": {
+      "anchor": 566,
+      "width": 1132,
+      "labelLines": [
+        "Command line"
+      ],
+      "head": 90,
+      "band": {
+        "left": 96,
+        "top": 122,
+        "width": 940,
+        "height": 680
+      },
+      "childTop": 912,
+      "children": {
+        "category:1356": {
+          "left": 0,
+          "width": 1036
+        }
+      },
+      "sibling_order": [
+        "category:1356"
+      ]
+    },
+    "category:2679": {
+      "anchor": 614,
+      "width": 1228,
+      "labelLines": [
+        "System administration and DevOps"
+      ],
+      "head": 90,
+      "band": {
+        "left": 144,
+        "top": 122,
+        "width": 940,
+        "height": 680
+      },
+      "childTop": 912,
+      "children": {
+        "category:477": {
+          "left": 0,
+          "width": 1132
+        }
+      },
+      "sibling_order": [
+        "category:477"
+      ]
+    },
+    "category:1162": {
+      "anchor": 14224,
+      "width": 28448,
+      "labelLines": [
+        "Computer science"
+      ],
+      "head": 90,
+      "band": {
+        "left": 13754,
+        "top": 122,
+        "width": 940,
+        "height": 680
+      },
+      "childTop": 912,
+      "children": {
+        "category:1163": {
+          "left": 0,
+          "width": 7400
+        },
+        "category:1164": {
+          "left": 7464,
+          "width": 19596
+        },
+        "category:2679": {
+          "left": 27124,
+          "width": 1228
+        }
+      },
+      "sibling_order": [
+        "category:1163",
+        "category:1164",
+        "category:2679"
+      ]
+    }
+  }
+}

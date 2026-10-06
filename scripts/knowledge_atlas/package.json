@@ -1,0 +1,6 @@
+{
+  "name": "knowledge-atlas-focused-browser-checks",
+  "private": true,
+  "description": "Optional development dependency; static previews require no npm runtime",
+  "devDependencies": { "playwright": "1.62.1" }
+}

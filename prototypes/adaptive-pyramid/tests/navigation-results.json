@@ -1,0 +1,37 @@
+{
+  "viewport": [
+    1440,
+    900
+  ],
+  "focus": [
+    {
+      "key": "category:35",
+      "durationMs": 0.4000000059604645,
+      "camera": {
+        "k": 1.25,
+        "x": -1099.25,
+        "y": -593.5
+      }
+    },
+    {
+      "key": "topic:15",
+      "durationMs": 0.4000000059604645,
+      "camera": {
+        "k": 1.25,
+        "x": -1545.5,
+        "y": -532.25
+      }
+    }
+  ],
+  "branchFilter": {
+    "topics": 7,
+    "confirmationRequired": true
+  },
+  "secondaryMembershipsAccessible": 2,
+  "animation": {
+    "optionalMs": 180,
+    "reducedMotionMs": 0,
+    "type": "fade at validated final coordinates"
+  },
+  "checks": "PASS focus timing / no layout, confirmed branch filter, aliases / secondary memberships, optional fade / reduced motion"
+}

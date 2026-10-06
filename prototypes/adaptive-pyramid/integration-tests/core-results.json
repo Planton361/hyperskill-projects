@@ -1,0 +1,500 @@
+{
+  "scenes": [
+    {
+      "options": {
+        "mode": "learned"
+      },
+      "topics": 31,
+      "visible": 52,
+      "unknown": false,
+      "candidatePairs": 95,
+      "segmentCandidates": 421,
+      "strictGlobalCollisions": {
+        "candidatePairs": 60,
+        "segmentCandidates": 376
+      }
+    },
+    {
+      "options": {
+        "mode": "accepted"
+      },
+      "topics": 89,
+      "visible": 135,
+      "unknown": false,
+      "candidatePairs": 238,
+      "segmentCandidates": 963,
+      "strictGlobalCollisions": {
+        "candidatePairs": 195,
+        "segmentCandidates": 1040
+      }
+    },
+    {
+      "options": {
+        "mode": "course",
+        "id": 8
+      },
+      "topics": 89,
+      "visible": 135,
+      "unknown": false,
+      "candidatePairs": 238,
+      "segmentCandidates": 963,
+      "strictGlobalCollisions": {
+        "candidatePairs": 195,
+        "segmentCandidates": 1040
+      }
+    },
+    {
+      "options": {
+        "mode": "course",
+        "id": 8,
+        "onlyLearned": true
+      },
+      "topics": 31,
+      "visible": 52,
+      "unknown": false,
+      "candidatePairs": 95,
+      "segmentCandidates": 421,
+      "strictGlobalCollisions": {
+        "candidatePairs": 60,
+        "segmentCandidates": 376
+      }
+    },
+    {
+      "options": {
+        "mode": "project",
+        "id": 113
+      },
+      "topics": 26,
+      "visible": 47,
+      "unknown": false,
+      "candidatePairs": 86,
+      "segmentCandidates": 362,
+      "strictGlobalCollisions": {
+        "candidatePairs": 36,
+        "segmentCandidates": 232
+      }
+    },
+    {
+      "options": {
+        "mode": "project",
+        "id": 113,
+        "stage": 617
+      },
+      "topics": 12,
+      "visible": 28,
+      "unknown": false,
+      "candidatePairs": 51,
+      "segmentCandidates": 199,
+      "strictGlobalCollisions": {
+        "candidatePairs": 6,
+        "segmentCandidates": 46
+      }
+    },
+    {
+      "options": {
+        "mode": "project",
+        "id": 113,
+        "stage": 617,
+        "onlyLearned": true
+      },
+      "topics": 12,
+      "visible": 28,
+      "unknown": false,
+      "candidatePairs": 51,
+      "segmentCandidates": 199,
+      "strictGlobalCollisions": {
+        "candidatePairs": 6,
+        "segmentCandidates": 46
+      }
+    },
+    {
+      "options": {
+        "mode": "project",
+        "id": 380
+      },
+      "topics": 0,
+      "visible": 0,
+      "unknown": true,
+      "candidatePairs": 0,
+      "segmentCandidates": 0,
+      "strictGlobalCollisions": {
+        "candidatePairs": 0,
+        "segmentCandidates": 0
+      }
+    },
+    {
+      "options": {
+        "mode": "fixture:load-100"
+      },
+      "topics": 100,
+      "visible": 125,
+      "unknown": false,
+      "candidatePairs": 212,
+      "segmentCandidates": 1213,
+      "strictGlobalCollisions": null
+    },
+    {
+      "options": {
+        "mode": "fixture:load-300"
+      },
+      "topics": 300,
+      "visible": 382,
+      "unknown": false,
+      "candidatePairs": 666,
+      "segmentCandidates": 3978,
+      "strictGlobalCollisions": null
+    },
+    {
+      "options": {
+        "mode": "fixture:load-1000"
+      },
+      "topics": 1000,
+      "visible": 1285,
+      "unknown": false,
+      "candidatePairs": 2321,
+      "segmentCandidates": 13242,
+      "strictGlobalCollisions": null
+    },
+    {
+      "options": {
+        "mode": "fixture:broad"
+      },
+      "topics": 100,
+      "visible": 137,
+      "unknown": false,
+      "candidatePairs": 274,
+      "segmentCandidates": 1254,
+      "strictGlobalCollisions": null
+    }
+  ],
+  "semanticFixture": {
+    "addedTopic": 1,
+    "learnedBefore": 31,
+    "learnedAfter": 32,
+    "verified": 12,
+    "presentationOnly": true,
+    "movement": {
+      "existing": 52,
+      "moved": 11,
+      "average": 37.27403846153846,
+      "median": 0,
+      "max": 228,
+      "entities": [
+        {
+          "key": "category:1162",
+          "dx": 57,
+          "dy": 0,
+          "distance": 57
+        },
+        {
+          "key": "category:1163",
+          "dx": 0,
+          "dy": 0,
+          "distance": 0
+        },
+        {
+          "key": "category:258",
+          "dx": 0,
+          "dy": 0,
+          "distance": 0
+        },
+        {
+          "key": "category:262",
+          "dx": 0,
+          "dy": 0,
+          "distance": 0
+        },
+        {
+          "key": "topic:259",
+          "dx": 0,
+          "dy": 0,
+          "distance": 0
+        },
+        {
+          "key": "category:386",
+          "dx": 0,
+          "dy": 0,
+          "distance": 0
+        },
+        {
+          "key": "topic:260",
+          "dx": 0,
+          "dy": 0,
+          "distance": 0
+        },
+        {
+          "key": "topic:3538",
+          "dx": 0,
+          "dy": 0,
+          "distance": 0
+        },
+        {
+          "key": "category:357",
+          "dx": 0,
+          "dy": 0,
+          "distance": 0
+        },
+        {
+          "key": "category:1186",
+          "dx": 0,
+          "dy": 0,
+          "distance": 0
+        },
+        {
+          "key": "category:516",
+          "dx": 0,
+          "dy": 0,
+          "distance": 0
+        },
+        {
+          "key": "topic:348",
+          "dx": 0,
+          "dy": 0,
+          "distance": 0
+        },
+        {
+          "key": "topic:1476",
+          "dx": 0,
+          "dy": 0,
+          "distance": 0
+        },
+        {
+          "key": "category:1164",
+          "dx": 114,
+          "dy": 0,
+          "distance": 114
+        },
+        {
+          "key": "category:73",
+          "dx": 114,
+          "dy": 0,
+          "distance": 114
+        },
+        {
+          "key": "category:252",
+          "dx": 0,
+          "dy": 0,
+          "distance": 0
+        },
+        {
+          "key": "category:3",
+          "dx": 0,
+          "dy": 0,
+          "distance": 0
+        },
+        {
+          "key": "topic:25",
+          "dx": 0,
+          "dy": 0,
+          "distance": 0
+        },
+        {
+          "key": "topic:89",
+          "dx": 0,
+          "dy": 0,
+          "distance": 0
+        },
+        {
+          "key": "topic:152",
+          "dx": 0,
+          "dy": 0,
+          "distance": 0
+        },
+        {
+          "key": "category:35",
+          "dx": 0,
+          "dy": 0,
+          "distance": 0
+        },
+        {
+          "key": "topic:14",
+          "dx": 0,
+          "dy": 0,
+          "distance": 0
+        },
+        {
+          "key": "topic:32",
+          "dx": 0,
+          "dy": 0,
+          "distance": 0
+        },
+        {
+          "key": "topic:36",
+          "dx": 0,
+          "dy": 0,
+          "distance": 0
+        },
+        {
+          "key": "topic:161",
+          "dx": 0,
+          "dy": 0,
+          "distance": 0
+        },
+        {
+          "key": "topic:308",
+          "dx": 0,
+          "dy": 0,
+          "distance": 0
+        },
+        {
+          "key": "topic:309",
+          "dx": 0,
+          "dy": 0,
+          "distance": 0
+        },
+        {
+          "key": "topic:571",
+          "dx": 0,
+          "dy": 0,
+          "distance": 0
+        },
+        {
+          "key": "category:74",
+          "dx": 0,
+          "dy": 0,
+          "distance": 0
+        },
+        {
+          "key": "topic:15",
+          "dx": 0,
+          "dy": 0,
+          "distance": 0
+        },
+        {
+          "key": "topic:147",
+          "dx": 0,
+          "dy": 0,
+          "distance": 0
+        },
+        {
+          "key": "topic:148",
+          "dx": 0,
+          "dy": 0,
+          "distance": 0
+        },
+        {
+          "key": "topic:193",
+          "dx": 0,
+          "dy": 0,
+          "distance": 0
+        },
+        {
+          "key": "category:153",
+          "dx": 0,
+          "dy": 0,
+          "distance": 0
+        },
+        {
+          "key": "topic:113",
+          "dx": 0,
+          "dy": 0,
+          "distance": 0
+        },
+        {
+          "key": "category:188",
+          "dx": 0,
+          "dy": 0,
+          "distance": 0
+        },
+        {
+          "key": "topic:9",
+          "dx": 0,
+          "dy": 0,
+          "distance": 0
+        },
+        {
+          "key": "category:306",
+          "dx": 0,
+          "dy": 0,
+          "distance": 0
+        },
+        {
+          "key": "topic:27",
+          "dx": 0,
+          "dy": 0,
+          "distance": 0
+        },
+        {
+          "key": "topic:31",
+          "dx": 0,
+          "dy": 0,
+          "distance": 0
+        },
+        {
+          "key": "topic:87",
+          "dx": 0,
+          "dy": 0,
+          "distance": 0
+        },
+        {
+          "key": "topic:88",
+          "dx": 0,
+          "dy": 0,
+          "distance": 0
+        },
+        {
+          "key": "topic:146",
+          "dx": 0,
+          "dy": 0,
+          "distance": 0
+        },
+        {
+          "key": "topic:307",
+          "dx": 0,
+          "dy": 0,
+          "distance": 0
+        },
+        {
+          "key": "category:1258",
+          "dx": 57.25,
+          "dy": 0,
+          "distance": 57.25
+        },
+        {
+          "key": "category:196",
+          "dx": 228,
+          "dy": 0,
+          "distance": 228
+        },
+        {
+          "key": "topic:30",
+          "dx": 228,
+          "dy": 0,
+          "distance": 228
+        },
+        {
+          "key": "topic:112",
+          "dx": 228,
+          "dy": 0,
+          "distance": 228
+        },
+        {
+          "key": "topic:1248",
+          "dx": 228,
+          "dy": 0,
+          "distance": 228
+        },
+        {
+          "key": "category:1260",
+          "dx": 228,
+          "dy": 0,
+          "distance": 228
+        },
+        {
+          "key": "category:1423",
+          "dx": 228,
+          "dy": 0,
+          "distance": 228
+        },
+        {
+          "key": "topic:1761",
+          "dx": 228,
+          "dy": 0,
+          "distance": 228
+        }
+      ]
+    }
+  },
+  "globalComparisons": 3955,
+  "checks": "PASS IDs, registry/geometry separation, original algorithm parity, hierarchy/order, overlaps/routes, highlight no layout, explicit learning flow, unchanged verified/global data, UNKNOWN, determinism, collapse/open, reduced motion"
+}

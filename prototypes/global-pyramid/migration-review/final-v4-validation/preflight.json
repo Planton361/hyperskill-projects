@@ -1,0 +1,16 @@
+{
+  "authority": "LEGACY",
+  "generation": 0,
+  "real_apply_api_available": true,
+  "semantic_counts": {
+    "categories": 46,
+    "generation": 0,
+    "history_version": 0,
+    "learned": 31,
+    "project_113": 26,
+    "stage_617": 12,
+    "topics": 89,
+    "verified": 12
+  },
+  "status": "PASS"
+}

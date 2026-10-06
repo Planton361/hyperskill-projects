@@ -1,0 +1,44 @@
+[
+  {
+    "width": 430,
+    "theme": "dark",
+    "pinch": true,
+    "pan": true,
+    "geometry": true
+  },
+  {
+    "width": 430,
+    "theme": "light",
+    "pinch": true,
+    "pan": true,
+    "geometry": true
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "pinch": true,
+    "pan": true,
+    "geometry": true
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "pinch": true,
+    "pan": true,
+    "geometry": true
+  },
+  {
+    "width": 320,
+    "theme": "dark",
+    "pinch": true,
+    "pan": true,
+    "geometry": true
+  },
+  {
+    "width": 320,
+    "theme": "light",
+    "pinch": true,
+    "pan": true,
+    "geometry": true
+  }
+]

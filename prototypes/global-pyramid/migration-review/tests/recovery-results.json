@@ -1,0 +1,62 @@
+[
+  {
+    "boundary": "after_candidate_construction",
+    "knowledge_unchanged": true,
+    "result": "OLD_ROLLED_BACK"
+  },
+  {
+    "boundary": "after_approval_validation",
+    "knowledge_unchanged": true,
+    "result": "OLD_ROLLED_BACK"
+  },
+  {
+    "boundary": "before_state_staging",
+    "knowledge_unchanged": true,
+    "result": "OLD_ROLLED_BACK"
+  },
+  {
+    "boundary": "after_state_staging",
+    "knowledge_unchanged": true,
+    "result": "OLD_ROLLED_BACK"
+  },
+  {
+    "boundary": "after_production_staging",
+    "knowledge_unchanged": true,
+    "result": "OLD_ROLLED_BACK"
+  },
+  {
+    "boundary": "before_final_rename",
+    "knowledge_unchanged": true,
+    "result": "OLD_ROLLED_BACK"
+  },
+  {
+    "boundary": "after_state_swap",
+    "knowledge_unchanged": true,
+    "result": "OLD_ROLLED_BACK"
+  },
+  {
+    "boundary": "before_production_swap",
+    "knowledge_unchanged": true,
+    "result": "OLD_ROLLED_BACK"
+  },
+  {
+    "boundary": "after_production_swap",
+    "knowledge_unchanged": true,
+    "result": "OLD_ROLLED_BACK"
+  },
+  {
+    "boundary": "before_durable_commit",
+    "knowledge_unchanged": true,
+    "result": "OLD_ROLLED_BACK"
+  },
+  {
+    "boundary": "after_durable_commit",
+    "knowledge_unchanged": true,
+    "result": "NEW_COMMITTED"
+  },
+  {
+    "boundary": "after_cleanup",
+    "knowledge_unchanged": true,
+    "result": "NEW_COMMITTED"
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "path": "prototypes/global-pyramid/migration-review/packages/accepted-v6-to-canonical-a-r3/migration-manifest.json",
+    "reason": "Validation/runtime implementation changed",
+    "status": "STALE_SPATIAL_MIGRATION_PREVIEW"
+  },
+  {
+    "path": "prototypes/global-pyramid/migration-review/real-authorized-v2/migration-manifest.json",
+    "reason": "Validation/runtime implementation changed",
+    "status": "STALE_SPATIAL_MIGRATION_PREVIEW"
+  },
+  {
+    "path": "prototypes/global-pyramid/migration-review/real-current/migration-manifest.json",
+    "reason": "Validation/runtime implementation changed",
+    "status": "STALE_SPATIAL_MIGRATION_PREVIEW"
+  },
+  {
+    "path": "prototypes/global-pyramid/migration-review/real-five-root-v3/migration-manifest.json",
+    "reason": "Validation/runtime implementation changed",
+    "status": "STALE_SPATIAL_MIGRATION_PREVIEW"
+  },
+  {
+    "path": "prototypes/global-pyramid/migration-review/real-five-root-v3-final/migration-manifest.json",
+    "reason": "Validation/runtime implementation changed",
+    "status": "STALE_SPATIAL_MIGRATION_PREVIEW"
+  }
+]

@@ -1,0 +1,1043 @@
+[
+  {
+    "viewport": [
+      1440,
+      900
+    ],
+    "global": {
+      "loadMs": 42.599999994039536,
+      "hydrateMs": 16.80000000447035,
+      "fitMs": 0,
+      "initMs": 69.59999999403954,
+      "labelMs": 0.20000000298023224,
+      "labelBoxes": [
+        {
+          "key": "category:525",
+          "x": 37.109299950163205,
+          "y": 378,
+          "w": 50.138031005859375,
+          "h": 28,
+          "lines": [
+            "Math"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:1162",
+          "x": 483.2183438368786,
+          "y": 336,
+          "w": 132.20709228515625,
+          "h": 28,
+          "lines": [
+            "Computer science"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:2148",
+          "x": 964.7233922544339,
+          "y": 294,
+          "w": 116.84109497070312,
+          "h": 28,
+          "lines": [
+            "Natural science"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:3051",
+          "x": 956.2108917236328,
+          "y": 252,
+          "w": 155.7891082763672,
+          "h": 28,
+          "lines": [
+            "Product development"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:4055",
+          "x": 1007.1319427490234,
+          "y": 210,
+          "w": 104.86805725097656,
+          "h": 28,
+          "lines": [
+            "Generative AI"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:987",
+          "x": 8,
+          "y": 287.0203149965761,
+          "w": 102.83262634277344,
+          "h": 28,
+          "lines": [
+            "Number theory"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:610",
+          "x": 135.9484636081677,
+          "y": 392.91358137411544,
+          "w": 67.516357421875,
+          "h": 28,
+          "lines": [
+            "Frontend"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:1163",
+          "x": 260.65807693262025,
+          "y": 392.91358137411544,
+          "w": 214.6254119873047,
+          "h": 28,
+          "lines": [
+            "Software development foundations"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:1164",
+          "x": 538.7529855504805,
+          "y": 392.91358137411544,
+          "w": 156.18496704101562,
+          "h": 28,
+          "lines": [
+            "Programming languages"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:1165",
+          "x": 763.2929659504075,
+          "y": 392.91358137411544,
+          "w": 62.656341552734375,
+          "h": 28,
+          "lines": [
+            "Desktop"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:1167",
+          "x": 904.9490475025713,
+          "y": 392.91358137411544,
+          "w": 54.484283447265625,
+          "h": 28,
+          "lines": [
+            "Mobile"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:3472",
+          "x": 964.0984611554767,
+          "y": 392.91358137411544,
+          "w": 76.74441528320312,
+          "h": 28,
+          "lines": [
+            "Blockchain"
+          ],
+          "truncated": false
+        }
+      ],
+      "drawMs": 6.600000001490116,
+      "objects": 3955,
+      "activeObjects": 3955,
+      "ghostObjects": 0,
+      "labels": 12,
+      "labelKeys": [
+        "category:525",
+        "category:1162",
+        "category:2148",
+        "category:3051",
+        "category:4055",
+        "category:987",
+        "category:610",
+        "category:1163",
+        "category:1164",
+        "category:1165",
+        "category:1167",
+        "category:3472"
+      ],
+      "minimap": {
+        "scope": {
+          "x": 10,
+          "y": 732,
+          "w": 262840,
+          "h": 43811
+        },
+        "focus": null,
+        "world": {
+          "h": 44551,
+          "w": 262860,
+          "x": 0,
+          "y": 0
+        }
+      }
+    },
+    "my": {
+      "loadMs": 42.599999994039536,
+      "hydrateMs": 16.80000000447035,
+      "fitMs": 0,
+      "initMs": 69.59999999403954,
+      "labelMs": 0,
+      "labelBoxes": [
+        {
+          "key": "category:1163",
+          "x": 35.80184916388842,
+          "y": 295.6707361649244,
+          "w": 214.6254119873047,
+          "h": 44,
+          "lines": [
+            "Software development foundations"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:1164",
+          "x": 463.5599764546365,
+          "y": 295.6707361649244,
+          "w": 156.18496704101562,
+          "h": 44,
+          "lines": [
+            "Programming languages"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:2679",
+          "x": 897.8786163330078,
+          "y": 295.6707361649244,
+          "w": 214.1213836669922,
+          "h": 44,
+          "lines": [
+            "System administration and DevOps"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:73",
+          "x": 283.4488742492886,
+          "y": 366.23671321002996,
+          "w": 103.96064758300781,
+          "h": 44,
+          "lines": [
+            "Java"
+          ],
+          "truncated": false
+        }
+      ],
+      "drawMs": 1.7000000029802322,
+      "objects": 258,
+      "activeObjects": 134,
+      "ghostObjects": 124,
+      "labels": 4,
+      "labelKeys": [
+        "category:1163",
+        "category:1164",
+        "category:2679",
+        "category:73"
+      ],
+      "minimap": {
+        "scope": {
+          "x": 66358,
+          "y": 30043,
+          "w": 164148,
+          "h": 14380
+        },
+        "focus": null,
+        "world": {
+          "h": 44551,
+          "w": 262860,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "scopeMs": 1.6999999955296516,
+      "fitScopeMs": 0
+    },
+    "longLabel": {
+      "key": "category:3101",
+      "x": 454.12732696533203,
+      "y": 210.36595744681108,
+      "w": 211.74534606933594,
+      "h": 44,
+      "lines": [
+        "Fundamentals of data analysis and",
+        "business analytics"
+      ],
+      "truncated": false
+    },
+    "screenshots": [
+      "1440-global.png",
+      "1440-my-overview.png",
+      "1440-my-java.png",
+      "1440-my-region-navigation.png",
+      "1440-my-deep-topic.png",
+      "1440-deep-breadcrumb.png",
+      "1440-course-8.png",
+      "1440-project-113.png",
+      "1440-stage-617.png",
+      "1440-minimap-narrow.png",
+      "1440-dormant-reference.png",
+      "1440-long-label.png"
+    ],
+    "drawMs": {
+      "median": 1.3999999985098839,
+      "p95": 3.600000001490116
+    },
+    "scopeMs": {
+      "median": 0.8999999985098839,
+      "p95": 1.7000000029802322
+    },
+    "fitMs": {
+      "median": 0,
+      "p95": 0.10000000149011612
+    },
+    "searchMs": {
+      "median": 0.20000000298023224,
+      "p95": 0.3999999985098839
+    },
+    "navigationMs": {
+      "median": 0.3999999985098839,
+      "p95": 1.8000000044703484
+    },
+    "labelsMs": {
+      "median": 0.10000000149011612,
+      "p95": 0.19999999552965164
+    },
+    "comparisons": 355950,
+    "operations": {
+      "global": 1,
+      "keyboard-scope": 1,
+      "my-overview": 1,
+      "my-java": 1,
+      "my-region-navigation": 1,
+      "keyboard-region": 1,
+      "my-deep-topic": 1,
+      "deep-breadcrumb": 1,
+      "breadcrumb-menu": 1,
+      "breadcrumb-jump": 1,
+      "back-focus": 1,
+      "inspector-parent": 1,
+      "inspector-back": 1,
+      "escape-focus": 1,
+      "course-8": 1,
+      "project-113": 1,
+      "stage-617": 1,
+      "minimap-narrow": 1,
+      "unknown-project": 1,
+      "dormant-reference": 1,
+      "long-label": 1,
+      "search": 1,
+      "long-topic-focus": 1,
+      "ghost-none": 1,
+      "ghost-local": 1,
+      "progress-off": 1,
+      "progress-on": 1,
+      "viewport-resize": 1,
+      "viewport-restore": 1,
+      "repeated": 60,
+      "final": 1
+    },
+    "heapBytes": 21664595,
+    "domElements": 150,
+    "maximumDisplacementPx": 0,
+    "keyboardChecks": "PASS native Tab/Enter, search ArrowDown/Enter, breadcrumb menu/jump, Escape, Previous/Next and Alt+arrows",
+    "geometryUnchanged": true
+  },
+  {
+    "viewport": [
+      1920,
+      1080
+    ],
+    "global": {
+      "loadMs": 37.600000001490116,
+      "hydrateMs": 16.399999998509884,
+      "fitMs": 0.10000000149011612,
+      "initMs": 63.80000000447035,
+      "labelMs": 0.09999999403953552,
+      "labelBoxes": [
+        {
+          "key": "category:525",
+          "x": 50.82671606520543,
+          "y": 378,
+          "w": 50.138031005859375,
+          "h": 28,
+          "lines": [
+            "Math"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:1162",
+          "x": 718.3646574639043,
+          "y": 336,
+          "w": 132.20709228515625,
+          "h": 28,
+          "lines": [
+            "Computer science"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:2148",
+          "x": 1415.2433648634271,
+          "y": 294,
+          "w": 116.84109497070312,
+          "h": 28,
+          "lines": [
+            "Natural science"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:3051",
+          "x": 1436.2108917236328,
+          "y": 252,
+          "w": 155.7891082763672,
+          "h": 28,
+          "lines": [
+            "Product development"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:4055",
+          "x": 1487.1319427490234,
+          "y": 210,
+          "w": 104.86805725097656,
+          "h": 28,
+          "lines": [
+            "Generative AI"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:987",
+          "x": 8,
+          "y": 340.2113672677471,
+          "w": 102.83262634277344,
+          "h": 28,
+          "lines": [
+            "Number theory"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:521",
+          "x": 57.75828323172698,
+          "y": 494.23793654416795,
+          "w": 191.4292449951172,
+          "h": 28,
+          "lines": [
+            "Algorithms and data structures"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:962",
+          "x": 305.09996457286036,
+          "y": 494.23793654416795,
+          "w": 86.99249267578125,
+          "h": 28,
+          "lines": [
+            "Data science"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:1163",
+          "x": 413.37206917183494,
+          "y": 494.23793654416795,
+          "w": 214.6254119873047,
+          "h": 28,
+          "lines": [
+            "Software development foundations"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:1164",
+          "x": 804.5918351282024,
+          "y": 494.23793654416795,
+          "w": 156.18496704101562,
+          "h": 28,
+          "lines": [
+            "Programming languages"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:1165",
+          "x": 1109.9389371898505,
+          "y": 494.23793654416795,
+          "w": 62.656341552734375,
+          "h": 28,
+          "lines": [
+            "Desktop"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:1166",
+          "x": 1196.5991758752755,
+          "y": 494.23793654416795,
+          "w": 64.26432800292969,
+          "h": 28,
+          "lines": [
+            "Backend"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:1167",
+          "x": 1314.1268607872094,
+          "y": 494.23793654416795,
+          "w": 54.484283447265625,
+          "h": 28,
+          "lines": [
+            "Mobile"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:3389",
+          "x": 1387.5199055263968,
+          "y": 494.23793654416795,
+          "w": 93.00456237792969,
+          "h": 28,
+          "lines": [
+            "Cybersecurity"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:2180",
+          "x": 1412.4190732296347,
+          "y": 335.3671764437343,
+          "w": 97.90058898925781,
+          "h": 28,
+          "lines": [
+            "Bioinformatics"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:5030",
+          "x": 1532.9436950683594,
+          "y": 333.91800958685235,
+          "w": 59.056304931640625,
+          "h": 28,
+          "lines": [
+            "AI evals"
+          ],
+          "truncated": false
+        }
+      ],
+      "drawMs": 6.5,
+      "objects": 3955,
+      "activeObjects": 3955,
+      "ghostObjects": 0,
+      "labels": 16,
+      "labelKeys": [
+        "category:525",
+        "category:1162",
+        "category:2148",
+        "category:3051",
+        "category:4055",
+        "category:987",
+        "category:521",
+        "category:962",
+        "category:1163",
+        "category:1164",
+        "category:1165",
+        "category:1166",
+        "category:1167",
+        "category:3389",
+        "category:2180",
+        "category:5030"
+      ],
+      "minimap": {
+        "scope": {
+          "x": 10,
+          "y": 732,
+          "w": 262840,
+          "h": 43811
+        },
+        "focus": null,
+        "world": {
+          "h": 44551,
+          "w": 262860,
+          "x": 0,
+          "y": 0
+        }
+      }
+    },
+    "my": {
+      "loadMs": 37.600000001490116,
+      "hydrateMs": 16.399999998509884,
+      "fitMs": 0,
+      "initMs": 63.80000000447035,
+      "labelMs": 0.10000000149011612,
+      "labelBoxes": [
+        {
+          "key": "category:1163",
+          "x": 86.3084651445887,
+          "y": 360.06652533079904,
+          "w": 214.6254119873047,
+          "h": 44,
+          "lines": [
+            "Software development foundations"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:1164",
+          "x": 695.2201855342478,
+          "y": 360.06652533079904,
+          "w": 156.18496704101562,
+          "h": 44,
+          "lines": [
+            "Programming languages"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:2679",
+          "x": 1377.8786163330078,
+          "y": 360.06652533079904,
+          "w": 214.1213836669922,
+          "h": 44,
+          "lines": [
+            "System administration and DevOps"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:73",
+          "x": 421.37123699510335,
+          "y": 462.70794648731635,
+          "w": 103.96064758300781,
+          "h": 44,
+          "lines": [
+            "Java"
+          ],
+          "truncated": false
+        }
+      ],
+      "drawMs": 1.8000000044703484,
+      "objects": 257,
+      "activeObjects": 134,
+      "ghostObjects": 123,
+      "labels": 4,
+      "labelKeys": [
+        "category:1163",
+        "category:1164",
+        "category:2679",
+        "category:73"
+      ],
+      "minimap": {
+        "scope": {
+          "x": 66358,
+          "y": 30043,
+          "w": 164148,
+          "h": 14380
+        },
+        "focus": null,
+        "world": {
+          "h": 44551,
+          "w": 262860,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "scopeMs": 1.7999999970197678,
+      "fitScopeMs": 0
+    },
+    "longLabel": {
+      "key": "category:3101",
+      "x": 694.127326965332,
+      "y": 285.87338129496493,
+      "w": 211.74534606933594,
+      "h": 44,
+      "lines": [
+        "Fundamentals of data analysis and",
+        "business analytics"
+      ],
+      "truncated": false
+    },
+    "screenshots": [
+      "1920-global.png",
+      "1920-my-overview.png",
+      "1920-my-java.png",
+      "1920-my-region-navigation.png",
+      "1920-my-deep-topic.png",
+      "1920-deep-breadcrumb.png",
+      "1920-course-8.png",
+      "1920-project-113.png",
+      "1920-stage-617.png",
+      "1920-minimap-narrow.png",
+      "1920-dormant-reference.png",
+      "1920-long-label.png"
+    ],
+    "drawMs": {
+      "median": 1.3999999985098839,
+      "p95": 3.7000000029802322
+    },
+    "scopeMs": {
+      "median": 0.9000000059604645,
+      "p95": 1.7000000029802322
+    },
+    "fitMs": {
+      "median": 0,
+      "p95": 0.10000000149011612
+    },
+    "searchMs": {
+      "median": 0.20000000298023224,
+      "p95": 0.3999999985098839
+    },
+    "navigationMs": {
+      "median": 0.3999999985098839,
+      "p95": 1.8000000044703484
+    },
+    "labelsMs": {
+      "median": 0.10000000149011612,
+      "p95": 0.20000000298023224
+    },
+    "comparisons": 355950,
+    "operations": {
+      "global": 1,
+      "keyboard-scope": 1,
+      "my-overview": 1,
+      "my-java": 1,
+      "my-region-navigation": 1,
+      "keyboard-region": 1,
+      "my-deep-topic": 1,
+      "deep-breadcrumb": 1,
+      "breadcrumb-menu": 1,
+      "breadcrumb-jump": 1,
+      "back-focus": 1,
+      "inspector-parent": 1,
+      "inspector-back": 1,
+      "escape-focus": 1,
+      "course-8": 1,
+      "project-113": 1,
+      "stage-617": 1,
+      "minimap-narrow": 1,
+      "unknown-project": 1,
+      "dormant-reference": 1,
+      "long-label": 1,
+      "search": 1,
+      "long-topic-focus": 1,
+      "ghost-none": 1,
+      "ghost-local": 1,
+      "progress-off": 1,
+      "progress-on": 1,
+      "viewport-resize": 1,
+      "viewport-restore": 1,
+      "repeated": 60,
+      "final": 1
+    },
+    "heapBytes": 12537795,
+    "domElements": 150,
+    "maximumDisplacementPx": 0,
+    "keyboardChecks": "PASS native Tab/Enter, search ArrowDown/Enter, breadcrumb menu/jump, Escape, Previous/Next and Alt+arrows",
+    "geometryUnchanged": true
+  },
+  {
+    "viewport": [
+      1024,
+      768
+    ],
+    "global": {
+      "loadMs": 39.29999999701977,
+      "hydrateMs": 16.700000002980232,
+      "fitMs": 0,
+      "initMs": 66.19999999552965,
+      "labelMs": 0.20000000298023224,
+      "labelBoxes": [
+        {
+          "key": "category:525",
+          "x": 26.363990660046795,
+          "y": 378,
+          "w": 50.138031005859375,
+          "h": 28,
+          "lines": [
+            "Math"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:1162",
+          "x": 299.0203981623751,
+          "y": 336,
+          "w": 132.20709228515625,
+          "h": 28,
+          "lines": [
+            "Computer science"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:2148",
+          "x": 611.816080377389,
+          "y": 294,
+          "w": 116.84109497070312,
+          "h": 28,
+          "lines": [
+            "Natural science"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:3051",
+          "x": 580.2108917236328,
+          "y": 252,
+          "w": 155.7891082763672,
+          "h": 28,
+          "lines": [
+            "Product development"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:4055",
+          "x": 631.1319427490234,
+          "y": 210,
+          "w": 104.86805725097656,
+          "h": 28,
+          "lines": [
+            "Generative AI"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:987",
+          "x": 8,
+          "y": 249.85399071749225,
+          "w": 102.83262634277344,
+          "h": 28,
+          "lines": [
+            "Number theory"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:521",
+          "x": 8,
+          "y": 318.04283649090775,
+          "w": 191.4292449951172,
+          "h": 28,
+          "lines": [
+            "Algorithms and data structures"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:1165",
+          "x": 491.7536218128437,
+          "y": 318.04283649090775,
+          "w": 62.656341552734375,
+          "h": 28,
+          "lines": [
+            "Desktop"
+          ],
+          "truncated": false
+        }
+      ],
+      "drawMs": 6.399999998509884,
+      "objects": 3955,
+      "activeObjects": 3955,
+      "ghostObjects": 0,
+      "labels": 8,
+      "labelKeys": [
+        "category:525",
+        "category:1162",
+        "category:2148",
+        "category:3051",
+        "category:4055",
+        "category:987",
+        "category:521",
+        "category:1165"
+      ],
+      "minimap": {
+        "scope": {
+          "x": 10,
+          "y": 732,
+          "w": 262840,
+          "h": 43811
+        },
+        "focus": null,
+        "world": {
+          "h": 44551,
+          "w": 262860,
+          "x": 0,
+          "y": 0
+        }
+      }
+    },
+    "my": {
+      "loadMs": 39.29999999701977,
+      "hydrateMs": 16.700000002980232,
+      "fitMs": 0,
+      "initMs": 66.19999999552965,
+      "labelMs": 0,
+      "labelBoxes": [
+        {
+          "key": "category:1163",
+          "x": 8,
+          "y": 249.72736798498914,
+          "w": 214.6254119873047,
+          "h": 44,
+          "lines": [
+            "Software development foundations"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:1164",
+          "x": 282.09281267560783,
+          "y": 249.72736798498914,
+          "w": 156.18496704101562,
+          "h": 44,
+          "lines": [
+            "Programming languages"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:2679",
+          "x": 521.8786163330078,
+          "y": 249.72736798498914,
+          "w": 214.1213836669922,
+          "h": 44,
+          "lines": [
+            "System administration and DevOps"
+          ],
+          "truncated": false
+        }
+      ],
+      "drawMs": 1.8000000044703484,
+      "objects": 259,
+      "activeObjects": 134,
+      "ghostObjects": 125,
+      "labels": 3,
+      "labelKeys": [
+        "category:1163",
+        "category:1164",
+        "category:2679"
+      ],
+      "minimap": {
+        "scope": {
+          "x": 66358,
+          "y": 30043,
+          "w": 164148,
+          "h": 14380
+        },
+        "focus": null,
+        "world": {
+          "h": 44551,
+          "w": 262860,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "scopeMs": 1.8000000044703484,
+      "fitScopeMs": 0
+    },
+    "longLabel": {
+      "key": "category:3101",
+      "x": 266.1273269653466,
+      "y": 210,
+      "w": 211.74534606933594,
+      "h": 44,
+      "lines": [
+        "Fundamentals of data analysis and",
+        "business analytics"
+      ],
+      "truncated": false
+    },
+    "screenshots": [
+      "1024-global.png",
+      "1024-my-overview.png",
+      "1024-my-java.png",
+      "1024-my-region-navigation.png",
+      "1024-my-deep-topic.png",
+      "1024-deep-breadcrumb.png",
+      "1024-course-8.png",
+      "1024-project-113.png",
+      "1024-stage-617.png",
+      "1024-minimap-narrow.png",
+      "1024-dormant-reference.png",
+      "1024-long-label.png"
+    ],
+    "drawMs": {
+      "median": 1.3999999985098839,
+      "p95": 3.600000001490116
+    },
+    "scopeMs": {
+      "median": 0.8999999985098839,
+      "p95": 1.8999999985098839
+    },
+    "fitMs": {
+      "median": 0,
+      "p95": 0.10000000149011612
+    },
+    "searchMs": {
+      "median": 0.20000000298023224,
+      "p95": 0.3999999985098839
+    },
+    "navigationMs": {
+      "median": 0.3999999985098839,
+      "p95": 1.8999999985098839
+    },
+    "labelsMs": {
+      "median": 0.10000000149011612,
+      "p95": 0.19999999552965164
+    },
+    "comparisons": 355950,
+    "operations": {
+      "global": 1,
+      "keyboard-scope": 1,
+      "my-overview": 1,
+      "my-java": 1,
+      "my-region-navigation": 1,
+      "keyboard-region": 1,
+      "my-deep-topic": 1,
+      "deep-breadcrumb": 1,
+      "breadcrumb-menu": 1,
+      "breadcrumb-jump": 1,
+      "back-focus": 1,
+      "inspector-parent": 1,
+      "inspector-back": 1,
+      "escape-focus": 1,
+      "course-8": 1,
+      "project-113": 1,
+      "stage-617": 1,
+      "minimap-narrow": 1,
+      "unknown-project": 1,
+      "dormant-reference": 1,
+      "long-label": 1,
+      "search": 1,
+      "long-topic-focus": 1,
+      "ghost-none": 1,
+      "ghost-local": 1,
+      "progress-off": 1,
+      "progress-on": 1,
+      "viewport-resize": 1,
+      "viewport-restore": 1,
+      "repeated": 60,
+      "final": 1
+    },
+    "heapBytes": 12535600,
+    "domElements": 150,
+    "maximumDisplacementPx": 0,
+    "keyboardChecks": "PASS native Tab/Enter, search ArrowDown/Enter, breadcrumb menu/jump, Escape, Previous/Next and Alt+arrows",
+    "geometryUnchanged": true
+  }
+]

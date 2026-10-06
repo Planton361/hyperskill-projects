@@ -1,0 +1,22 @@
+{
+  "checks": [
+    "category click selects",
+    "category click preserves viewport",
+    "focus navigation animates",
+    "inspector focus subtree",
+    "overview topic click focuses at 16px",
+    "overview hides selected-topic cross links",
+    "keyboard focus enters topic reading view",
+    "chevron alone collapses",
+    "manual collapse reduces rendered descendants",
+    "search restores manual ancestors",
+    "reduced motion fit is synchronous",
+    "project styling stays camera neutral",
+    "topic click inside coverage preserves exact requirements",
+    "topic reading keeps coverage enabled",
+    "zoom output status and minimap hidden from AT",
+    "mobile pinch works",
+    "mobile pan works",
+    "mobile inspector below and minimap hidden"
+  ]
+}

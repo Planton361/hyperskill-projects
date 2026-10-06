@@ -1,0 +1,666 @@
+{
+  "scope": "Final UX polish only; compared to task-start hashes",
+  "changed_files": [
+    {
+      "path": "prototypes/global-pyramid/FINAL-UX-VALIDATION.md",
+      "status": "added",
+      "before": null,
+      "after": "60a007245f2a7532b589ddc8acffb1cf2378cca613094e4602dc5a2cdc3974fc"
+    },
+    {
+      "path": "prototypes/global-pyramid/README.md",
+      "status": "modified",
+      "before": "786848c4c0e1ec1c44440e30bf66f20bb0325876eec27998f46a1ee94accfbb7",
+      "after": "ea7e8bc65cc932b46479fdcfe24b5784cae4f88088974a80b50375cb403a9630"
+    },
+    {
+      "path": "prototypes/global-pyramid/app.js",
+      "status": "modified",
+      "before": "a4e508145ec8fbefd69d19011b9b25261edc016ff1a35240173810cd6940407c",
+      "after": "d05d4a6af53f2c05943a79d3d77a5cfd557193a841d3b15970e7fdcbb43bb926"
+    },
+    {
+      "path": "prototypes/global-pyramid/index.html",
+      "status": "modified",
+      "before": "2b95e5548f3b29b304044d882b25643455db03bea293c19ef2118695cb75419c",
+      "after": "a235993c7b6db691cec48966e1beb0030e227b03a7e4d9f48334731d6ddb2602"
+    },
+    {
+      "path": "prototypes/global-pyramid/labels.js",
+      "status": "added",
+      "before": null,
+      "after": "5774c5aa6e3dbd18f437d04aa934c43c88c5c37b103bfbece2aafd7eb304cf3b"
+    },
+    {
+      "path": "prototypes/global-pyramid/style.css",
+      "status": "modified",
+      "before": "755dd4d29a54f2e6f2d70de0a432bc57a80733d110b2b60f1488d0175c24aa80",
+      "after": "9924fbbd33ea4cd385cf9feaa3f9ec718e737fe3d1428603c3c828bc15271637"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/browser-final.cjs",
+      "status": "added",
+      "before": null,
+      "after": "4418f24614114fff5be0baa06ddb2efa5b8e93972712b8a93825f95157cebd01"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/browser-ux.cjs",
+      "status": "modified",
+      "before": "2cba4fc1ccdd4e8baae8b444f048f88608904ff36ce012fbd1fb91c36d93e769",
+      "after": "479212b52fde5cfd33f4f82b80f2beea65dde0f5ee03cf43c5d0eae43bedf3d3"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-labels.cjs",
+      "status": "added",
+      "before": null,
+      "after": "bc74942805fada6296a11e3224d0e46d8c2e74faed5f20d8508e77b2295e0e10"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/1024-course-8.png",
+      "status": "added",
+      "before": null,
+      "after": "201356eaf16f46ca9ab188891e8a6bf95174bdbe429727576760c0198f5ae500"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/1024-deep-breadcrumb.png",
+      "status": "added",
+      "before": null,
+      "after": "2ba7ee60b0ec2a2bdf5f38eb00ab4ed9d89c182645eef1f76adfdead57d8f95d"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/1024-dormant-reference.png",
+      "status": "added",
+      "before": null,
+      "after": "0f4f0043f554a8ee040da4ca4ce41ed7ecfb758dc5999480e8558a7233d8f9ab"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/1024-global.png",
+      "status": "added",
+      "before": null,
+      "after": "1e68aeab51159c95f5f63f34ca96730f0872d1ddc829f4f5faee15d296e0ac22"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/1024-long-label.png",
+      "status": "added",
+      "before": null,
+      "after": "1546e024e01038bdd10633f56ea8f9169d77fddeb71569bc0e5268e7db9037a8"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/1024-minimap-narrow.png",
+      "status": "added",
+      "before": null,
+      "after": "b48f9e2c3123bc73d597ef03a7a7364666efac720c07decdd7605b7d95f5450e"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/1024-my-deep-topic.png",
+      "status": "added",
+      "before": null,
+      "after": "2ba7ee60b0ec2a2bdf5f38eb00ab4ed9d89c182645eef1f76adfdead57d8f95d"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/1024-my-java.png",
+      "status": "added",
+      "before": null,
+      "after": "eddfc9e52b15e76a46dfdf3511dcfc13bcb9e6163704676ec457e71bd5c55e6f"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/1024-my-overview.png",
+      "status": "added",
+      "before": null,
+      "after": "31c6b1a1930992f0bfe5422e39a2843555248c396ca06818e2a0de821c7f760b"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/1024-my-region-navigation.png",
+      "status": "added",
+      "before": null,
+      "after": "dc88c64449e158c92d667ba05250d9516940e628adf1d6892ab76489d8992252"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/1024-project-113.png",
+      "status": "added",
+      "before": null,
+      "after": "cb1f1cc6ec8c5d1405295fb8bcbbfe45f292bcc7a44212a4671d371775086ef8"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/1024-stage-617.png",
+      "status": "added",
+      "before": null,
+      "after": "78a96c672c2f5f4d6ad558afea68a62425c5a2b15f6a0ce4e72ccc8a80ab94f0"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/1440-course-8.png",
+      "status": "added",
+      "before": null,
+      "after": "1fb788c29667ca2d1bb7334cdeb2a61ef6f43c858eb181b6612b9e04f6996d22"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/1440-deep-breadcrumb.png",
+      "status": "added",
+      "before": null,
+      "after": "c88bb2269abfb14497c07c8200dab1143c0671d91138678f9d7fe392520c003c"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/1440-dormant-reference.png",
+      "status": "added",
+      "before": null,
+      "after": "00641a7bdae0ad6310edceca457bcb76c8d64c46234ac67d3cc8f4f0c3548a97"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/1440-global.png",
+      "status": "added",
+      "before": null,
+      "after": "e52a0b15c407aebfe2a1306387a6cf1d6c937164a329ecc3b550fe8564e7daf9"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/1440-long-label.png",
+      "status": "added",
+      "before": null,
+      "after": "3512ea77ca8d742a25564b9581a9477d5fbe6952bb9ffc98908ec6f25fe2d77f"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/1440-minimap-narrow.png",
+      "status": "added",
+      "before": null,
+      "after": "34771f9ad8e805c1d929ddb045d9b73a21c605744a30e76fa2fbdd082b2709ba"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/1440-my-deep-topic.png",
+      "status": "added",
+      "before": null,
+      "after": "c88bb2269abfb14497c07c8200dab1143c0671d91138678f9d7fe392520c003c"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/1440-my-java.png",
+      "status": "added",
+      "before": null,
+      "after": "186008dde3539f5a946c6402c413e3198c009156eca9fc40a63dcc5f3a4b7c96"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/1440-my-overview.png",
+      "status": "added",
+      "before": null,
+      "after": "301e830cdc27d1c1cd3d47bc7a6f229ef8320f69a629a8209d041145efb04981"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/1440-my-region-navigation.png",
+      "status": "added",
+      "before": null,
+      "after": "26e79a17115c29094f1d27cfd6bd090ab9071fbfbdde54e1df95508547fb4acb"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/1440-project-113.png",
+      "status": "added",
+      "before": null,
+      "after": "bf3572e2cce85b59fa45452ec85f884a04586556c5c20a8f64140b48fa2bfe02"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/1440-stage-617.png",
+      "status": "added",
+      "before": null,
+      "after": "4534b45c481bdecbb79dc558f633825e6bdbfc581925b7ebdbfa0a7faf6381f3"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/1920-course-8.png",
+      "status": "added",
+      "before": null,
+      "after": "2907574270cd968b5029be1022687dd3607f481253eb58dc65a6d4a72ad8cd15"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/1920-deep-breadcrumb.png",
+      "status": "added",
+      "before": null,
+      "after": "e306ad1c6be9ebc34d71d855075151d1592e80b96366aec6b9a30ef7b3e5008b"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/1920-dormant-reference.png",
+      "status": "added",
+      "before": null,
+      "after": "f2659fdeece64db9aeb6b237f6898af3055c888dfab48303025abe2d9eb394b7"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/1920-global.png",
+      "status": "added",
+      "before": null,
+      "after": "bbeb97dd9b654a4052d7769846c1afc6e8d954401db78429f11772d95ec7a84c"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/1920-long-label.png",
+      "status": "added",
+      "before": null,
+      "after": "143f2b46127885d9466ed5c1c8fa6370735d5982cefd2ab6b86bddac6b611b45"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/1920-minimap-narrow.png",
+      "status": "added",
+      "before": null,
+      "after": "2e1d5ce390a4c98246da6084e84511a0827531d4c5d5ef5a7be071bc428bf819"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/1920-my-deep-topic.png",
+      "status": "added",
+      "before": null,
+      "after": "e306ad1c6be9ebc34d71d855075151d1592e80b96366aec6b9a30ef7b3e5008b"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/1920-my-java.png",
+      "status": "added",
+      "before": null,
+      "after": "8ec0b711b40c29c0982d31514c1c31cac9ce730d453929ea2deeba4a964b28e5"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/1920-my-overview.png",
+      "status": "added",
+      "before": null,
+      "after": "fafec2d0cd2796af82f1f6cd931a376805f7b2ddb46b97e47951ed22732c5129"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/1920-my-region-navigation.png",
+      "status": "added",
+      "before": null,
+      "after": "4a5194a9a1cce6f560713d1360c6261edfc7f94bf9cf98f0c011f20194ca72a7"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/1920-project-113.png",
+      "status": "added",
+      "before": null,
+      "after": "5476af210af265424de3f4aa9615abbebdce14300cb7193ed2d3957188cf83f3"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/1920-stage-617.png",
+      "status": "added",
+      "before": null,
+      "after": "b7fc7d971306be6a989e0619f8a7c97b91d94f481ebeac1e913c73065361d074"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/browser-console.txt",
+      "status": "added",
+      "before": null,
+      "after": "6661acebe3ec600912cd4a76987d3b9954e6b04ff20be852cf42ee050eaf6aef"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/browser-results.json",
+      "status": "added",
+      "before": null,
+      "after": "6661acebe3ec600912cd4a76987d3b9954e6b04ff20be852cf42ee050eaf6aef"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/catalog-regression.txt",
+      "status": "added",
+      "before": null,
+      "after": "8a4a2e95e28006e74f9c3271138dc4867d0c70b2ff38b6d90c311c2418c41d4a"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/integrity.json",
+      "status": "added",
+      "before": null,
+      "after": "89bab60bcb657872c69f9675b8a0140d1b2f1bad5eba273dab99a879f3902797"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/legacy-console.txt",
+      "status": "added",
+      "before": null,
+      "after": "ae9093c71e821244dbb1d98c1e9c57ee253febf0d807f7c44c92787dc5fa3fb7"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/legacy-smoke/browser-results.json",
+      "status": "added",
+      "before": null,
+      "after": "ae9093c71e821244dbb1d98c1e9c57ee253febf0d807f7c44c92787dc5fa3fb7"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/legacy-smoke/computer-science.png",
+      "status": "added",
+      "before": null,
+      "after": "690c6e5e391c3f304dc3653040c76e90488692c6841218f3a9ffe7e1d8f191fe"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/legacy-smoke/course-8.png",
+      "status": "added",
+      "before": null,
+      "after": "2663db144cf0eca82839d7936dd2f6a393ced57d35e7f4fd5edacc93e05b5170"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/legacy-smoke/deep-branch.png",
+      "status": "added",
+      "before": null,
+      "after": "4a628331225b40b0c0385081002f9f8178b6830a56955441b0dee747738e8e0e"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/legacy-smoke/deep-focus.png",
+      "status": "added",
+      "before": null,
+      "after": "604566f004ecc119c759285ecbce3bc1e604e6639ad305913f3107a75ff1a5a3"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/legacy-smoke/global-overview.png",
+      "status": "added",
+      "before": null,
+      "after": "e55e1460b1ef7917afbecb0893b39adabae668214488b376164e47dfd6f38b16"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/legacy-smoke/my-atlas-java-focus.png",
+      "status": "added",
+      "before": null,
+      "after": "febfc13c5c57baa2d7346b2bc7c6611e67745f04be9cd872ca493d99965808ed"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/legacy-smoke/my-atlas.png",
+      "status": "added",
+      "before": null,
+      "after": "f0c5a22929c0cebb04dccdca6148ababcce20d17a57c1f4280abd658fab1bb7a"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/legacy-smoke/project-113.png",
+      "status": "added",
+      "before": null,
+      "after": "e4c6fa5f340832a4d8c9e136e0abdac56007f0dc64c28b79917d21bcb92d2743"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/legacy-smoke/project-stage.png",
+      "status": "added",
+      "before": null,
+      "after": "b283e636080a95d6be7d9c2ea32d4006526478a82ca9e4ea3d41051bc0dd271b"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/legacy-smoke/unresolved-focus.png",
+      "status": "added",
+      "before": null,
+      "after": "5c667dadc533f7d04a70292194d92b0a788d999ceb84cf9422b9afb0b8fda5bc"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/prior-ux/1024-course-8.png",
+      "status": "added",
+      "before": null,
+      "after": "77668fcc15ada8ce8cb65babba4fb8d8483cc015644e3005b54be6d0b7dd927e"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/prior-ux/1024-deep-active-topic.png",
+      "status": "added",
+      "before": null,
+      "after": "30f081e4aa05e915d45ee350db4e10decd30ff4061367f3ddf09a4deec1c2961"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/prior-ux/1024-dormant-reference.png",
+      "status": "added",
+      "before": null,
+      "after": "cd16fd38ded86ed595b61738986858be6186c9ee05d933b0a538847fe6cdc010"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/prior-ux/1024-global.png",
+      "status": "added",
+      "before": null,
+      "after": "1e68aeab51159c95f5f63f34ca96730f0872d1ddc829f4f5faee15d296e0ac22"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/prior-ux/1024-minimap-narrow-project.png",
+      "status": "added",
+      "before": null,
+      "after": "b48f9e2c3123bc73d597ef03a7a7364666efac720c07decdd7605b7d95f5450e"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/prior-ux/1024-my-active-only.png",
+      "status": "added",
+      "before": null,
+      "after": "76f44b235a293fad6158096cab4e732ef42e2b23b05c65ae43f2c0cb03373984"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/prior-ux/1024-my-ancestors.png",
+      "status": "added",
+      "before": null,
+      "after": "b3df69a1e84b4e23d8b70ee8e997aab600a7e68cba3d32c5df5913c59dee40c4"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/prior-ux/1024-my-default.png",
+      "status": "added",
+      "before": null,
+      "after": "b0eeed84d880c6ca4a59d351c168b3e11795cf565224a901ab94aa0bb4846ef1"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/prior-ux/1024-my-ghosts.png",
+      "status": "added",
+      "before": null,
+      "after": "7f6e06854ef4708a99a6cc4812308fc786f85f367b27039e593ae5458a1ef793"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/prior-ux/1024-my-java.png",
+      "status": "added",
+      "before": null,
+      "after": "5925fd9bd5b293eaf30922f55c57e484aca23b6a4bfdae079423e53f136d5e7c"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/prior-ux/1024-project-113.png",
+      "status": "added",
+      "before": null,
+      "after": "cb1f1cc6ec8c5d1405295fb8bcbbfe45f292bcc7a44212a4671d371775086ef8"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/prior-ux/1024-project-topic-group.png",
+      "status": "added",
+      "before": null,
+      "after": "b48f9e2c3123bc73d597ef03a7a7364666efac720c07decdd7605b7d95f5450e"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/prior-ux/1024-stage-617.png",
+      "status": "added",
+      "before": null,
+      "after": "78a96c672c2f5f4d6ad558afea68a62425c5a2b15f6a0ce4e72ccc8a80ab94f0"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/prior-ux/1024-unknown-project.png",
+      "status": "added",
+      "before": null,
+      "after": "a09e72817cccd5b45371aa1c336c20288214cae1712f2c8fe2270bc4bd3b6ced"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/prior-ux/1440-course-8.png",
+      "status": "added",
+      "before": null,
+      "after": "2663db144cf0eca82839d7936dd2f6a393ced57d35e7f4fd5edacc93e05b5170"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/prior-ux/1440-deep-active-topic.png",
+      "status": "added",
+      "before": null,
+      "after": "5950b7807016d8f3e080da1531c999e8e21a469e6339f89a883e29f27aa0a772"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/prior-ux/1440-dormant-reference.png",
+      "status": "added",
+      "before": null,
+      "after": "26666093a1407d15a850ff08f4ef62639bba7453bf8b8af37b2130864d92e6d4"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/prior-ux/1440-global.png",
+      "status": "added",
+      "before": null,
+      "after": "e52a0b15c407aebfe2a1306387a6cf1d6c937164a329ecc3b550fe8564e7daf9"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/prior-ux/1440-minimap-narrow-project.png",
+      "status": "added",
+      "before": null,
+      "after": "9b9fece0305e47dba076f9cc7d857365eb7ec1aa6810f76be86619e3aacb6df6"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/prior-ux/1440-my-active-only.png",
+      "status": "added",
+      "before": null,
+      "after": "c43d2328ed9147a5c7216420b3206bf2de977f0eb41f0c242330c646155f8523"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/prior-ux/1440-my-ancestors.png",
+      "status": "added",
+      "before": null,
+      "after": "59abd124fa6ae8d8a67c63cc39e9e0955cd986906139b38a5dd6901920382a8a"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/prior-ux/1440-my-default.png",
+      "status": "added",
+      "before": null,
+      "after": "54ce0b4238a6d146e30b0b3d7e180ebbf092c15a954527ced7b6a51c8c4db228"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/prior-ux/1440-my-ghosts.png",
+      "status": "added",
+      "before": null,
+      "after": "9589e83710cf59f97810aa85fcca407382d240dfadb9550d72ff4a8cf68a55a0"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/prior-ux/1440-my-java.png",
+      "status": "added",
+      "before": null,
+      "after": "9d8625eabb4374cc8eaf2aaf9f4252aeaf02eeb31379d4266afe08c30a12ba90"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/prior-ux/1440-project-113.png",
+      "status": "added",
+      "before": null,
+      "after": "e4c6fa5f340832a4d8c9e136e0abdac56007f0dc64c28b79917d21bcb92d2743"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/prior-ux/1440-project-topic-group.png",
+      "status": "added",
+      "before": null,
+      "after": "9b9fece0305e47dba076f9cc7d857365eb7ec1aa6810f76be86619e3aacb6df6"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/prior-ux/1440-stage-617.png",
+      "status": "added",
+      "before": null,
+      "after": "b283e636080a95d6be7d9c2ea32d4006526478a82ca9e4ea3d41051bc0dd271b"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/prior-ux/1440-unknown-project.png",
+      "status": "added",
+      "before": null,
+      "after": "b27ded9d03b67caec24fb3e7ae0ec675e30ee09d933934be016c48c36b754e6d"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/prior-ux/1920-course-8.png",
+      "status": "added",
+      "before": null,
+      "after": "3645784b655563480afd3cb3d752779361fc220fa2cb862527a586e3bc0801d6"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/prior-ux/1920-deep-active-topic.png",
+      "status": "added",
+      "before": null,
+      "after": "d35c5549127fa596979df53462e716cae5692e538e2ebd6043cce69dfb501d49"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/prior-ux/1920-dormant-reference.png",
+      "status": "added",
+      "before": null,
+      "after": "4cd735df38c899ad2ab6508c749a126846c632934961192f5327fc43e75335e6"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/prior-ux/1920-global.png",
+      "status": "added",
+      "before": null,
+      "after": "bbeb97dd9b654a4052d7769846c1afc6e8d954401db78429f11772d95ec7a84c"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/prior-ux/1920-minimap-narrow-project.png",
+      "status": "added",
+      "before": null,
+      "after": "b298ca60d483fe0ce887bb6b94d3d71c0c0794717fd0e65819728ddeb7981c96"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/prior-ux/1920-my-active-only.png",
+      "status": "added",
+      "before": null,
+      "after": "148bf44c6c22203f93a133f3e604ed64f729a4c5a993ae059013cc61589ee1c1"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/prior-ux/1920-my-ancestors.png",
+      "status": "added",
+      "before": null,
+      "after": "a774bfcef44e6b04c6fed892f1fafb1cb53c616a34d8732a53c860a137204b08"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/prior-ux/1920-my-default.png",
+      "status": "added",
+      "before": null,
+      "after": "29752ad81fbb4df0360abdee57e8bd2d8caa26fd66e4f06873252089031c05da"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/prior-ux/1920-my-ghosts.png",
+      "status": "added",
+      "before": null,
+      "after": "c00d82aa4946c6fd4ccb84f850462250e3c335d37ca5de4651d8767fce3e5512"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/prior-ux/1920-my-java.png",
+      "status": "added",
+      "before": null,
+      "after": "7ca716d9e1a47683edd96eb3e3b55b7f4a46dc8b39e63858c9d2dd7bfde62806"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/prior-ux/1920-project-113.png",
+      "status": "added",
+      "before": null,
+      "after": "e696a9b7d3c75a661ec05a2daf94f74c7c0dbb094b9902acf1040a12d2086746"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/prior-ux/1920-project-topic-group.png",
+      "status": "added",
+      "before": null,
+      "after": "b298ca60d483fe0ce887bb6b94d3d71c0c0794717fd0e65819728ddeb7981c96"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/prior-ux/1920-stage-617.png",
+      "status": "added",
+      "before": null,
+      "after": "487a4b002174736fb2bd661bc5a194107caa6510e2da8a3fc08f1b46c9e674e1"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/prior-ux/1920-unknown-project.png",
+      "status": "added",
+      "before": null,
+      "after": "880b999798f78c9d19d26462def850d29137074574d7c0aa0e709ff603349dda"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/prior-ux/browser-results.json",
+      "status": "added",
+      "before": null,
+      "after": "a854162f8bda885fb4a4558e363ea4b7f6167782141e0c1e0db5a8f86b8287af"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/prior-ux-console.txt",
+      "status": "added",
+      "before": null,
+      "after": "a854162f8bda885fb4a4558e363ea4b7f6167782141e0c1e0db5a8f86b8287af"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/production-regression.txt",
+      "status": "added",
+      "before": null,
+      "after": "1075eb9ec82d2a701fbf003cf4c49d1738162c4ce8f8e36867a77e03b900819c"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux/test-console.txt",
+      "status": "added",
+      "before": null,
+      "after": "e41d75feb76249b27545387bcabcac01f9643df4a41d2b042a32f3239dd08401"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/final-ux-baseline.json",
+      "status": "added",
+      "before": null,
+      "after": "e6591bf958365d4d7eae5fb1d1ca3cdf99908ae6ad2c5188b4b62950dc642e36"
+    },
+    {
+      "path": "prototypes/global-pyramid/tests/test_final_ux.py",
+      "status": "added",
+      "before": null,
+      "after": "667a5c6c2661a20abc5b22b133362308d2dced97f562195bb76c84ef3f65fb33"
+    },
+    {
+      "path": "prototypes/global-pyramid/ux.js",
+      "status": "modified",
+      "before": "23fd7d0ba3f3127e1df1fb93b5812deaddaa43249cd2b7ab047ea7f8f4048ade",
+      "after": "8d4e89d408e420828b8941ca4a9d0f5950aceabeb00dbf2db1fad1d4964dcc10"
+    }
+  ],
+  "self": "prototypes/global-pyramid/tests/final-ux/files.json"
+}

@@ -1,0 +1,244 @@
+{
+  "scenes": [
+    {
+      "options": {
+        "mode": "learned"
+      },
+      "topics": 31,
+      "visible": 52,
+      "unknown": false,
+      "cards": 52,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 3680,
+        "h": 974
+      },
+      "layoutMs": 1.9347410000000025,
+      "candidatePairs": 95,
+      "segmentCandidates": 421
+    },
+    {
+      "options": {
+        "mode": "accepted"
+      },
+      "topics": 89,
+      "visible": 135,
+      "unknown": false,
+      "cards": 135,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 10181.5,
+        "h": 1234
+      },
+      "layoutMs": 0.7824899999999957,
+      "candidatePairs": 238,
+      "segmentCandidates": 963
+    },
+    {
+      "options": {
+        "mode": "course",
+        "id": 8
+      },
+      "topics": 89,
+      "visible": 135,
+      "unknown": false,
+      "cards": 135,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 10181.5,
+        "h": 1234
+      },
+      "layoutMs": 0.8972509999999971,
+      "candidatePairs": 238,
+      "segmentCandidates": 963
+    },
+    {
+      "options": {
+        "mode": "course",
+        "id": 8,
+        "onlyLearned": true
+      },
+      "topics": 31,
+      "visible": 52,
+      "unknown": false,
+      "cards": 52,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 3680,
+        "h": 974
+      },
+      "layoutMs": 0.3502210000000048,
+      "candidatePairs": 95,
+      "segmentCandidates": 421
+    },
+    {
+      "options": {
+        "mode": "project",
+        "id": 113
+      },
+      "topics": 26,
+      "visible": 47,
+      "unknown": false,
+      "cards": 47,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 3453,
+        "h": 924
+      },
+      "layoutMs": 0.3592599999999919,
+      "candidatePairs": 86,
+      "segmentCandidates": 362
+    },
+    {
+      "options": {
+        "mode": "project",
+        "id": 113,
+        "onlyLearned": true
+      },
+      "topics": 26,
+      "visible": 47,
+      "unknown": false,
+      "cards": 47,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 3453,
+        "h": 924
+      },
+      "layoutMs": 0.42024000000000683,
+      "candidatePairs": 86,
+      "segmentCandidates": 362
+    },
+    {
+      "options": {
+        "mode": "project",
+        "id": 113,
+        "stage": 617
+      },
+      "topics": 12,
+      "visible": 28,
+      "unknown": false,
+      "cards": 28,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 1801,
+        "h": 856
+      },
+      "layoutMs": 0.2224599999999981,
+      "candidatePairs": 51,
+      "segmentCandidates": 199
+    },
+    {
+      "options": {
+        "mode": "project",
+        "id": 113,
+        "stage": 617,
+        "onlyLearned": true
+      },
+      "topics": 12,
+      "visible": 28,
+      "unknown": false,
+      "cards": 28,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 1801,
+        "h": 856
+      },
+      "layoutMs": 0.27526000000000295,
+      "candidatePairs": 51,
+      "segmentCandidates": 199
+    },
+    {
+      "options": {
+        "mode": "project",
+        "id": 380
+      },
+      "topics": 0,
+      "visible": 0,
+      "unknown": true,
+      "cards": 0,
+      "bounds": null,
+      "layoutMs": 0.17802000000000362,
+      "candidatePairs": 0,
+      "segmentCandidates": 0
+    },
+    {
+      "options": {
+        "mode": "project",
+        "id": 113,
+        "stage": 618
+      },
+      "topics": 0,
+      "visible": 0,
+      "unknown": false,
+      "cards": 0,
+      "bounds": null,
+      "layoutMs": 0.032030000000006,
+      "candidatePairs": 0,
+      "segmentCandidates": 0
+    },
+    {
+      "options": {
+        "mode": "fixture:load-300"
+      },
+      "topics": 300,
+      "visible": 382,
+      "unknown": false,
+      "cards": 382,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 27428.5,
+        "h": 920
+      },
+      "layoutMs": 1.9805709999999976,
+      "candidatePairs": 666,
+      "segmentCandidates": 3978
+    },
+    {
+      "options": {
+        "mode": "fixture:load-1000"
+      },
+      "topics": 1000,
+      "visible": 1285,
+      "unknown": false,
+      "cards": 1285,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 96158,
+        "h": 1050
+      },
+      "layoutMs": 5.638152000000005,
+      "candidatePairs": 2321,
+      "segmentCandidates": 13242
+    },
+    {
+      "options": {
+        "mode": "fixture:full"
+      },
+      "topics": 3106,
+      "visible": 3955,
+      "unknown": false,
+      "cards": 3955,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 285730.25,
+        "h": 1180
+      },
+      "layoutMs": 14.892186999999993,
+      "candidatePairs": 8157,
+      "segmentCandidates": 43922
+    }
+  ],
+  "globalEntityComparisons": 3955,
+  "checks": "PASS"
+}

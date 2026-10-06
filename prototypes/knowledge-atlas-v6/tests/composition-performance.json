@@ -1,0 +1,102 @@
+{
+  "V6.3": {
+    "samples": [
+      {
+        "model parse": 3.899999998509884,
+        "layout": 20.099999997764826,
+        "tray packing": 2.0000000074505806,
+        "project coverage": 0.30000000074505806,
+        "knowledge relation routing": 0,
+        "initial render": 4.5,
+        "Fit all": 6.699999999254942
+      },
+      {
+        "model parse": 0.5,
+        "layout": 17.800000000745058,
+        "tray packing": 1.2999999932944775,
+        "project coverage": 0.19999999925494194,
+        "knowledge relation routing": 0,
+        "initial render": 3.199999999254942,
+        "Fit all": 3.2000000029802322
+      },
+      {
+        "model parse": 0.6999999992549419,
+        "layout": 16.399999998509884,
+        "tray packing": 0.9000000022351742,
+        "project coverage": 0.19999999925494194,
+        "knowledge relation routing": 0,
+        "initial render": 3.300000000745058,
+        "Fit all": 3.199999999254942
+      },
+      {
+        "model parse": 0.3999999985098839,
+        "layout": 17.400000002235174,
+        "tray packing": 1.2999999970197678,
+        "project coverage": 0.30000000074505806,
+        "knowledge relation routing": 0,
+        "initial render": 3.400000002235174,
+        "Fit all": 3.199999999254942
+      },
+      {
+        "model parse": 0.5,
+        "layout": 16.800000000745058,
+        "tray packing": 0.8000000044703484,
+        "project coverage": 0.19999999925494194,
+        "knowledge relation routing": 0,
+        "initial render": 3.099999997764826,
+        "Fit all": 3.100000001490116
+      }
+    ],
+    "medianLayout": 17.400000002235174
+  },
+  "V6.4": {
+    "samples": [
+      {
+        "model parse": 0.6999999992549419,
+        "layout": 78.90000000223517,
+        "tray packing": 1.0999999940395355,
+        "project coverage": 0.3999999985098839,
+        "knowledge relation routing": 0,
+        "initial render": 4.199999999254942,
+        "Fit all": 3.600000001490116
+      },
+      {
+        "model parse": 0.5,
+        "layout": 75.39999999850988,
+        "tray packing": 0.5999999977648258,
+        "project coverage": 0.30000000074505806,
+        "knowledge relation routing": 0,
+        "initial render": 3.5,
+        "Fit all": 3.399999998509884
+      },
+      {
+        "model parse": 0.3999999985098839,
+        "layout": 75.19999999925494,
+        "tray packing": 1.1999999955296516,
+        "project coverage": 0.30000000074505806,
+        "knowledge relation routing": 0,
+        "initial render": 3.600000001490116,
+        "Fit all": 3.7999999970197678
+      },
+      {
+        "model parse": 0.5,
+        "layout": 75,
+        "tray packing": 1,
+        "project coverage": 0.30000000074505806,
+        "knowledge relation routing": 0,
+        "initial render": 3.599999997764826,
+        "Fit all": 3.400000002235174
+      },
+      {
+        "model parse": 0.3999999985098839,
+        "layout": 72.5,
+        "tray packing": 0.6999999918043613,
+        "project coverage": 0.19999999925494194,
+        "knowledge relation routing": 0,
+        "initial render": 3.2000000029802322,
+        "Fit all": 7.399999998509884
+      }
+    ],
+    "medianLayout": 75.19999999925494
+  }
+}

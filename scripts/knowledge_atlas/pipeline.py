@@ -43,9 +43,16 @@ def _run(root, output, source, mode, rebalance, preview, budget, state_path, app
     journal = state_path.parent/'.knowledge-atlas-transaction.json'
     if recover:
         transaction.recover(journal,root)
+        from . import canonical
+        if canonical.installed(state_path): canonical.recover_staging(root)
         return {'status':'SAFE_TO_APPLY','outcome':'SAFE_TO_APPLY','applied':True,'message':'Transaction recovery complete'}
     if journal.exists(): raise ValueError('RECOVERY_REQUIRED: pending transaction; run --recover-transaction')
     loaded = snapshot.load_source(source)
+    from . import canonical
+    if canonical.installed(state_path):
+        if any((rebalance, preview, approve_review, bootstrap, migrate)) or state_path != root/'state/knowledge-atlas' or source != root/'data/knowledge':
+            raise ValueError('SPATIAL_AUTHORITY_MIGRATION_REQUIRED: canonical authority cannot use legacy/custom allocation operations')
+        return _canonical_run(root, output, mode, production, loaded, fault)
     global_catalog = catalog_summary(loaded)
     data = active_projection(loaded)
     if not (state_path/activation_store.NAME).exists(): validate.validate(data)
@@ -236,4 +243,59 @@ def _run(root, output, source, mode, rebalance, preview, budget, state_path, app
         def final_verify():
             if production:build.verify_release(production_path,production_outputs)
         if destinations: transaction.publish(root,destinations,fault=fault,preflight=preflight,journal=journal,verify=final_verify)
+    return report
+
+
+def _canonical_run(root, output, mode, production, loaded, fault):
+    """Normal updater branch: semantics may change, installed slots never do."""
+    from . import canonical, canonical_activation
+    path=root/'state/knowledge-atlas';prod=root/'docs/knowledge-map';journal=root/'state/.knowledge-atlas-transaction.json'
+    if fault:fault('before_authority_validation')
+    cp,before,h,geom,master=canonical.restore(path)
+    catalog=canonical.validate_structure(loaded,master,before)
+    plan=canonical_activation.plan(catalog,cp,h,geom)
+    if plan['recommended_outcome']!='NO_CHANGE':
+        status=plan['pipeline_outcome'] or 'METADATA_REQUIRED'
+        return dict(status=status,outcome=status,applied=False,activation_plan=plan,message='Review exact canonical reveal with --activation-preview; normal builds never activate geography')
+    keys=set(h['active_categories']+h['active_topics']);data=activation_store.projection(loaded,keys);validate.validate(data,canonical=True)
+    previous=canonical.complete(data,cp,geom);changes=diff.compare(before['source_index'],previous['source_index'])
+    outputs=build.artifacts(root/'prototypes/knowledge-atlas-v6',data,cp,geom,previous)
+    release=build.production_outputs(outputs,root/'docs/knowledge-atlas-preview')
+    runtime_result=layout_update.bridge(root/'prototypes/knowledge-atlas-v6',action='canonical-runtime-test',assets={n:b.decode() for n,b in release.items()})
+    if fault:fault('after_candidate_creation')
+    build.verify_release(prod)
+    installed=json.loads((prod/'release-manifest.json').read_bytes())
+    if mode=='check':
+        if before['source_index']['fingerprint']!=previous['source_index']['fingerprint']:raise ValueError('STATE_OUT_OF_DATE: Knowledge differs; run --dry-run')
+        # The exact migration adapter is a valid initial release; normal publication
+        # upgrades branding/runtime without changing spatial state or counters.
+        if installed.get('runtime_contract')=='global-canonical-1':build.verify_release(prod,release)
+        else:
+            if json.loads((prod/'target-geometry.json').read_bytes())!=geom:raise ValueError('SPATIAL_AUTHORITY_MIGRATION_REQUIRED: Production geometry mismatch')
+        if output.exists():
+            build.verify_state(output)
+            # A managed pre-migration/reveal cache is not spatial authority.
+            # Validate its own integrity, but never hydrate from it or let it
+            # invalidate coherent installed State + Production. --build refreshes it.
+    saved_state=canonical.outputs(path,cp,previous);original_state=transaction.inventory(path);original_prod=transaction.inventory(prod);original_output=transaction.inventory(output);source_hash=snapshot.digest(loaded)
+    report=dict(report_schema_version=2,status='SAFE_TO_APPLY',outcome='NO_CHANGE' if changes['change_types']==['NO_CHANGE'] else 'SAFE_TO_APPLY',applied=False,mode=mode,diff=changes,
+        generation=cp['presentation_generation'],history_version=h['history_version'],spatial_authority=cp['spatial_authority'],
+        presentation=dict(category_displacement={'max':0,'changed':0,'affected_nodes':[]},topic_displacement={'max':0,'changed':0,'affected_nodes':[]},generation=cp['presentation_generation'],generation_before=cp['presentation_generation'],checkpoint_changed=False),
+        validation=dict(status='PASS',atlas_runtime=runtime_result),state_changed=saved_state!=canonical.outputs(path,cp,before),message='Canonical restore: exact installed slots, no placement search',safe_to_build_preview=True)
+    report['derived_build_cache']='absent' if not output.exists() else 'current' if all((output/n).is_file() and (output/n).read_bytes()==b for n,b in outputs.items()) else 'stale; never used for hydration; --build refreshes'
+    if mode=='build':
+        canonical.writer_guard(root)
+        destinations=[]
+        if saved_state!={p.relative_to(path).as_posix():p.read_bytes() for p in path.rglob('*') if p.is_file()}:destinations.append((path,saved_state))
+        target=prod if production else output;content=release if production else outputs
+        existing={p.relative_to(target).as_posix():p.read_bytes() for p in target.rglob('*') if p.is_file()} if target.exists() else {}
+        if content!=existing:destinations.append((target,content))
+        def preflight():
+            if transaction.inventory(path)!=original_state or transaction.inventory(prod)!=original_prod or transaction.inventory(output)!=original_output or snapshot.digest(snapshot.load_source(root/'data/knowledge'))!=source_hash:raise ValueError('STATE_CHANGED_DURING_UPDATE')
+            canonical.master(root,cp['spatial_authority'])
+        def verify():
+            canonical.restore_after_swap(path)
+            if production:build.verify_release(prod,release)
+        if destinations:transaction.publish(root,destinations,fault=fault,preflight=preflight,journal=journal,verify=verify)
+        report['applied']=bool(destinations)
     return report

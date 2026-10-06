@@ -58,3 +58,6 @@ blob-report/
 
 # Exact local activation previews; never source truth
 prototypes/activation-previews/
+
+# Optional local Node/browser validation dependencies
+node_modules/

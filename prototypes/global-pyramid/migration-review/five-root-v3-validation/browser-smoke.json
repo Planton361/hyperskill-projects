@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "viewport": [
+    1440,
+    900
+  ],
+  "packageVerified": true,
+  "manifest_fingerprint": "658998a4f9cf2b9d44fd308e210af9e7b6a40d26f05556d340e1b94cd2a1b993",
+  "modes": [
+    "current",
+    "target",
+    "split",
+    "overlay"
+  ],
+  "mapped": 135,
+  "project113": 26,
+  "stage617": 12,
+  "errors": []
+}

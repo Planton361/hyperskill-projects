@@ -1,0 +1,634 @@
+{
+  "scenes": [
+    {
+      "name": "my-compact",
+      "options": {
+        "mode": "learned",
+        "id": 8,
+        "stage": null,
+        "onlyLearned": false,
+        "branch": null,
+        "step": 0
+      },
+      "topics": 31,
+      "visible": 52,
+      "unknown": false,
+      "layoutMs": 3.7999999970197678,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 3657,
+        "h": 956
+      },
+      "totalCards": 52,
+      "renderedCards": 52,
+      "labels": 10,
+      "readableLabels": 10,
+      "zoom": 0.29915231063713427
+    },
+    {
+      "name": "my-global-mask",
+      "bounds": {
+        "x": 53082,
+        "y": 43389,
+        "w": 76814,
+        "h": 43416
+      },
+      "layoutCalls": 1,
+      "renderedCards": 52,
+      "renderedLabels": 12,
+      "focusMs": 0,
+      "layoutMs": 3.7999999970197678,
+      "extent": {
+        "x": 0,
+        "y": 0,
+        "w": 3657,
+        "h": 956
+      },
+      "labelBoxes": [
+        {
+          "key": "category:1162",
+          "x": 894.836621889164,
+          "y": 33.12032430440391,
+          "w": 117.35273742675781,
+          "h": 38
+        },
+        {
+          "key": "category:1164",
+          "x": 993.8150329589844,
+          "y": 375.4324672931639,
+          "w": 156.18496704101562,
+          "h": 38
+        },
+        {
+          "key": "category:1163",
+          "x": 249.68153993864192,
+          "y": 360.4324672931639,
+          "w": 143.32090759277344,
+          "h": 53
+        },
+        {
+          "key": "category:73",
+          "x": 708.1808535981975,
+          "y": 529.0429334807444,
+          "w": 63.596649169921875,
+          "h": 38
+        },
+        {
+          "key": "category:258",
+          "x": 97.73894843612347,
+          "y": 438.47871752349363,
+          "w": 68.20037841796875,
+          "h": 38
+        },
+        {
+          "key": "category:357",
+          "x": 223.00614464575145,
+          "y": 491.5990418278975,
+          "w": 117.35273742675781,
+          "h": 53
+        },
+        {
+          "key": "category:35",
+          "x": 367.7432939196592,
+          "y": 574.1359867330017,
+          "w": 154.39695739746094,
+          "h": 38
+        },
+        {
+          "key": "category:262",
+          "x": 95.82065396425766,
+          "y": 503.4464713469688,
+          "w": 57.30470275878906,
+          "h": 38
+        },
+        {
+          "key": "category:196",
+          "x": 694.684583964435,
+          "y": 584.1908973650267,
+          "w": 74.17643737792969,
+          "h": 38
+        },
+        {
+          "key": "category:386",
+          "x": 4,
+          "y": 505.8131564400221,
+          "w": 81.43644714355469,
+          "h": 38
+        },
+        {
+          "key": "category:188",
+          "x": 583.5818479941083,
+          "y": 574.1359867330017,
+          "w": 57.30470275878906,
+          "h": 38
+        },
+        {
+          "key": "category:1423",
+          "x": 828.7961065595664,
+          "y": 573.4217799889442,
+          "w": 78.97642517089844,
+          "h": 38
+        }
+      ],
+      "readableLabels": 12,
+      "drawMs": 0.7000000029802322,
+      "camera": {
+        "k": 0.01400405380504883,
+        "x": -704.2168785701124,
+        "y": -582.6218905472637
+      },
+      "totalCards": 52
+    },
+    {
+      "name": "my-topic-group",
+      "options": {
+        "mode": "learned",
+        "id": 8,
+        "stage": null,
+        "onlyLearned": false,
+        "branch": null,
+        "step": 0
+      },
+      "topics": 31,
+      "visible": 52,
+      "unknown": false,
+      "layoutMs": 3.7999999970197678,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 3657,
+        "h": 956
+      },
+      "totalCards": 52,
+      "renderedCards": 13,
+      "labels": 13,
+      "readableLabels": 13,
+      "zoom": 1.25
+    },
+    {
+      "name": "accepted",
+      "options": {
+        "mode": "accepted",
+        "id": 8,
+        "stage": null,
+        "onlyLearned": false,
+        "branch": null,
+        "step": 0
+      },
+      "topics": 89,
+      "visible": 135,
+      "unknown": false,
+      "layoutMs": 1.9000000059604645,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 10049,
+        "h": 1234
+      },
+      "totalCards": 135,
+      "renderedCards": 135,
+      "labels": 9,
+      "readableLabels": 9,
+      "zoom": 0.1088665538859588
+    },
+    {
+      "name": "course-8",
+      "options": {
+        "mode": "course",
+        "id": 8,
+        "stage": null,
+        "onlyLearned": false,
+        "branch": null,
+        "step": 0
+      },
+      "topics": 89,
+      "visible": 135,
+      "unknown": false,
+      "layoutMs": 1.5,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 10049,
+        "h": 1234
+      },
+      "totalCards": 135,
+      "renderedCards": 135,
+      "labels": 9,
+      "readableLabels": 9,
+      "zoom": 0.1088665538859588
+    },
+    {
+      "name": "project-113",
+      "options": {
+        "mode": "project",
+        "id": 113,
+        "stage": null,
+        "onlyLearned": false,
+        "branch": null,
+        "step": 0
+      },
+      "topics": 26,
+      "visible": 47,
+      "unknown": false,
+      "layoutMs": 0.699999988079071,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 3433,
+        "h": 906
+      },
+      "totalCards": 47,
+      "renderedCards": 47,
+      "labels": 10,
+      "readableLabels": 10,
+      "zoom": 0.31867171570055347
+    },
+    {
+      "name": "project-topic-group",
+      "options": {
+        "mode": "project",
+        "id": 113,
+        "stage": null,
+        "onlyLearned": false,
+        "branch": null,
+        "step": 0
+      },
+      "topics": 26,
+      "visible": 47,
+      "unknown": false,
+      "layoutMs": 0.699999988079071,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 3433,
+        "h": 906
+      },
+      "totalCards": 47,
+      "renderedCards": 13,
+      "labels": 13,
+      "readableLabels": 13,
+      "zoom": 1.25
+    },
+    {
+      "name": "stage-617",
+      "options": {
+        "mode": "project",
+        "id": 113,
+        "stage": 617,
+        "onlyLearned": false,
+        "branch": null,
+        "step": 0
+      },
+      "topics": 12,
+      "visible": 28,
+      "unknown": false,
+      "layoutMs": 0.5999999940395355,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 1822,
+        "h": 838
+      },
+      "totalCards": 28,
+      "renderedCards": 28,
+      "labels": 11,
+      "readableLabels": 11,
+      "zoom": 0.6004390779363337
+    },
+    {
+      "name": "project-unknown",
+      "options": {
+        "mode": "project",
+        "id": 380,
+        "stage": null,
+        "onlyLearned": false,
+        "branch": null,
+        "step": 0
+      },
+      "topics": 0,
+      "visible": 0,
+      "unknown": true,
+      "layoutMs": 0.09999999403953552,
+      "bounds": null,
+      "totalCards": 0,
+      "renderedCards": 0,
+      "labels": 0,
+      "readableLabels": 0,
+      "zoom": 0.6004390779363337
+    },
+    {
+      "name": "known-empty-stage",
+      "options": {
+        "mode": "project",
+        "id": 113,
+        "stage": 618,
+        "onlyLearned": false,
+        "branch": null,
+        "step": 0
+      },
+      "topics": 0,
+      "visible": 0,
+      "unknown": false,
+      "layoutMs": 0.19999998807907104,
+      "bounds": null,
+      "totalCards": 0,
+      "renderedCards": 0,
+      "labels": 0,
+      "readableLabels": 0,
+      "zoom": 0.6004390779363337
+    },
+    {
+      "name": "style-check",
+      "options": {
+        "mode": "learned",
+        "id": 113,
+        "stage": null,
+        "onlyLearned": false,
+        "branch": null,
+        "step": 0
+      },
+      "topics": 31,
+      "visible": 52,
+      "unknown": false,
+      "layoutMs": 0.5999999940395355,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 3657,
+        "h": 956
+      },
+      "totalCards": 52,
+      "renderedCards": 52,
+      "labels": 10,
+      "readableLabels": 10,
+      "zoom": 0.29915231063713427
+    },
+    {
+      "name": "load-300",
+      "options": {
+        "mode": "fixture:load-300",
+        "id": 113,
+        "stage": null,
+        "onlyLearned": false,
+        "branch": null,
+        "step": 0
+      },
+      "topics": 300,
+      "visible": 382,
+      "unknown": false,
+      "layoutMs": 3.5,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 25660,
+        "h": 920
+      },
+      "totalCards": 382,
+      "renderedCards": 382,
+      "labels": 5,
+      "readableLabels": 5,
+      "zoom": 0.0426344505066251
+    },
+    {
+      "name": "load-300-summarized",
+      "options": {
+        "mode": "fixture:load-300",
+        "id": 113,
+        "stage": null,
+        "onlyLearned": false,
+        "branch": null,
+        "step": 0
+      },
+      "topics": 300,
+      "visible": 382,
+      "unknown": false,
+      "layoutMs": 0.5,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 422,
+        "h": 200
+      },
+      "totalCards": 3,
+      "renderedCards": 3,
+      "labels": 3,
+      "readableLabels": 3,
+      "zoom": 1.25
+    },
+    {
+      "name": "load-1000",
+      "options": {
+        "mode": "fixture:load-1000",
+        "id": 113,
+        "stage": null,
+        "onlyLearned": false,
+        "branch": null,
+        "step": 0
+      },
+      "topics": 1000,
+      "visible": 1285,
+      "unknown": false,
+      "layoutMs": 10.799999997019768,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 90114.5,
+        "h": 1050
+      },
+      "totalCards": 1285,
+      "renderedCards": 1285,
+      "labels": 9,
+      "readableLabels": 9,
+      "zoom": 0.012140110637022899
+    },
+    {
+      "name": "load-1000-summarized",
+      "options": {
+        "mode": "fixture:load-1000",
+        "id": 113,
+        "stage": null,
+        "onlyLearned": false,
+        "branch": null,
+        "step": 0
+      },
+      "topics": 1000,
+      "visible": 1285,
+      "unknown": false,
+      "layoutMs": 0.6000000089406967,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 1127,
+        "h": 200
+      },
+      "totalCards": 6,
+      "renderedCards": 6,
+      "labels": 6,
+      "readableLabels": 6,
+      "zoom": 0.9707187222715173
+    },
+    {
+      "name": "full",
+      "options": {
+        "mode": "fixture:full",
+        "id": 113,
+        "stage": null,
+        "onlyLearned": false,
+        "branch": null,
+        "step": 0
+      },
+      "topics": 3106,
+      "visible": 3955,
+      "unknown": false,
+      "layoutMs": 31,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 267700,
+        "h": 1180
+      },
+      "totalCards": 3955,
+      "renderedCards": 3955,
+      "labels": 12,
+      "readableLabels": 12,
+      "zoom": 0.004086664176316772
+    },
+    {
+      "name": "full-summarized",
+      "options": {
+        "mode": "fixture:full",
+        "id": 113,
+        "stage": null,
+        "onlyLearned": false,
+        "branch": null,
+        "step": 0
+      },
+      "topics": 3106,
+      "visible": 3955,
+      "unknown": false,
+      "layoutMs": 1.2999999970197678,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 1145,
+        "h": 70
+      },
+      "totalCards": 5,
+      "renderedCards": 5,
+      "labels": 5,
+      "readableLabels": 5,
+      "zoom": 0.9554585152838428
+    },
+    {
+      "name": "fixture:growth-branch",
+      "options": {
+        "mode": "fixture:growth-branch",
+        "id": 113,
+        "stage": null,
+        "onlyLearned": false,
+        "branch": null,
+        "step": 0
+      },
+      "topics": 1,
+      "visible": 6,
+      "unknown": false,
+      "layoutMs": 0.20000000298023224,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 202,
+        "h": 716
+      },
+      "totalCards": 6,
+      "renderedCards": 6,
+      "labels": 6,
+      "readableLabels": 6,
+      "zoom": 0.8491620111731844
+    },
+    {
+      "name": "fixture:growth-wide",
+      "options": {
+        "mode": "fixture:growth-wide",
+        "id": 113,
+        "stage": null,
+        "onlyLearned": false,
+        "branch": null,
+        "step": 0
+      },
+      "topics": 4,
+      "visible": 19,
+      "unknown": false,
+      "layoutMs": 0.30000001192092896,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 906.5,
+        "h": 846
+      },
+      "totalCards": 19,
+      "renderedCards": 19,
+      "labels": 6,
+      "readableLabels": 6,
+      "zoom": 0.7186761229314421
+    }
+  ],
+  "movement": [
+    {
+      "mode": "fixture:growth-branch",
+      "step": 1,
+      "existing": 6,
+      "moved": 6,
+      "median": 63,
+      "max": 63,
+      "anchorDelta": 0
+    },
+    {
+      "mode": "fixture:growth-branch",
+      "step": 2,
+      "existing": 8,
+      "moved": 0,
+      "median": 0,
+      "max": 0,
+      "anchorDelta": 0
+    },
+    {
+      "mode": "fixture:growth-branch",
+      "step": 3,
+      "existing": 11,
+      "moved": 9,
+      "median": 92,
+      "max": 374.22987587844983,
+      "anchorDelta": 0
+    },
+    {
+      "mode": "fixture:growth-wide",
+      "step": 1,
+      "existing": 19,
+      "moved": 2,
+      "median": 0,
+      "max": 357,
+      "anchorDelta": 0
+    },
+    {
+      "mode": "fixture:growth-wide",
+      "step": 2,
+      "existing": 34,
+      "moved": 29,
+      "median": 87,
+      "max": 92,
+      "anchorDelta": 0
+    },
+    {
+      "mode": "fixture:growth-wide",
+      "step": 3,
+      "existing": 46,
+      "moved": 33,
+      "median": 256,
+      "max": 612.2877183154992,
+      "anchorDelta": 0
+    }
+  ],
+  "screenshots": 26,
+  "checks": "PASS"
+}

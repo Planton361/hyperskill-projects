@@ -1,0 +1,1 @@
+[{"kind":"exact-review","viewport":[1440,900],"status":"PASS"},{"kind":"exact-review","viewport":[1920,1080],"status":"PASS"},{"kind":"exact-review","viewport":[1024,768],"status":"PASS"},{"kind":"corrupt-review-artifact","status":"BLOCKED_BEFORE_COMPARISON"}]

@@ -1,0 +1,785 @@
+{
+  "accepted_inventory": [
+    "category:1162",
+    "category:1163",
+    "category:1164",
+    "category:1186",
+    "category:1188",
+    "category:1215",
+    "category:1258",
+    "category:126",
+    "category:1260",
+    "category:1262",
+    "category:1263",
+    "category:1264",
+    "category:1265",
+    "category:1267",
+    "category:1268",
+    "category:1269",
+    "category:13",
+    "category:1356",
+    "category:1423",
+    "category:1432",
+    "category:153",
+    "category:187",
+    "category:188",
+    "category:195",
+    "category:196",
+    "category:251",
+    "category:252",
+    "category:258",
+    "category:262",
+    "category:2679",
+    "category:2944",
+    "category:3",
+    "category:306",
+    "category:35",
+    "category:357",
+    "category:386",
+    "category:4502",
+    "category:4503",
+    "category:477",
+    "category:516",
+    "category:61",
+    "category:679",
+    "category:73",
+    "category:74",
+    "category:850",
+    "category:95",
+    "topic:1",
+    "topic:1033",
+    "topic:1038",
+    "topic:1087",
+    "topic:1088",
+    "topic:112",
+    "topic:113",
+    "topic:115",
+    "topic:116",
+    "topic:117",
+    "topic:12",
+    "topic:120",
+    "topic:122",
+    "topic:1248",
+    "topic:127",
+    "topic:128",
+    "topic:14",
+    "topic:1425",
+    "topic:146",
+    "topic:147",
+    "topic:1476",
+    "topic:148",
+    "topic:149",
+    "topic:15",
+    "topic:152",
+    "topic:161",
+    "topic:163",
+    "topic:164",
+    "topic:165",
+    "topic:17",
+    "topic:1761",
+    "topic:19",
+    "topic:191",
+    "topic:192",
+    "topic:193",
+    "topic:2",
+    "topic:201",
+    "topic:2108",
+    "topic:24",
+    "topic:25",
+    "topic:259",
+    "topic:260",
+    "topic:27",
+    "topic:28",
+    "topic:30",
+    "topic:307",
+    "topic:308",
+    "topic:309",
+    "topic:31",
+    "topic:32",
+    "topic:33",
+    "topic:348",
+    "topic:3538",
+    "topic:36",
+    "topic:360",
+    "topic:37",
+    "topic:38",
+    "topic:387",
+    "topic:4",
+    "topic:4510",
+    "topic:4533",
+    "topic:4635",
+    "topic:480",
+    "topic:491",
+    "topic:5",
+    "topic:5028",
+    "topic:5107",
+    "topic:518",
+    "topic:571",
+    "topic:59",
+    "topic:60",
+    "topic:65",
+    "topic:7",
+    "topic:78",
+    "topic:8",
+    "topic:851",
+    "topic:87",
+    "topic:872",
+    "topic:876",
+    "topic:88",
+    "topic:89",
+    "topic:9",
+    "topic:90",
+    "topic:96",
+    "topic:97",
+    "topic:98",
+    "topic:985",
+    "topic:99",
+    "topic:999"
+  ],
+  "algorithm": "spatial-preview-1",
+  "artifact_hashes": {
+    "current-geometry.json": "db56e00e3b753bd3f3d960b30fdee801fcaf4b3d36e55508dd06989bea396d92",
+    "geometry-comparison.json": "ceb781a7db49323e81d8f1d5d7d3ed1d525ae8e1550a810c7f7f839e9cb53def",
+    "migration-diff.json": "b8b91537c4b3457b1cc7863b6f0428aadc7e88d0b0e7f9ffe3825654f188ac94",
+    "migration-metrics.json": "eda879834e96b6155fee9c6f8c77e6b4bb1956f0bce1a7245527821c7967b7d1",
+    "semantic-snapshot.json": "14f6be0f80dd2156c3db19a268ecea15642a38d937195b8dd9ec113085087740",
+    "target-geometry.json": "641d7d53c20037bac2a42dce1e362a64c67d9e3832e1277d12912198c939bd5f"
+  },
+  "bindings": {
+    "input_files": {
+      "data/knowledge/SCHEMA.md": "f07ea17d214f6e501822e90ac28c4f032c38b39d58f38c483d50c10aaaa0afe6",
+      "data/knowledge/categories.json": "3c761e7b1815f37700b714b45d40458737df26a953831032a135c68352ded980",
+      "data/knowledge/courses.json": "e4e2f71107a8512f865c6ea4c20a855bf732364781ec662aa35782eaf35c5ed9",
+      "data/knowledge/edges.json": "d4e5a3e3b209425b6d4e71744975d2edb74a27824d84e9abca79c080082e0be5",
+      "data/knowledge/evidence.json": "7abb2ebaf3f9e11ac71c17cf38d8cccda1726aa923afd039dbe34a4fc27d7a0e",
+      "data/knowledge/observations/global-knowledge-map-2026-10-04.json": "5d968b2213327be9342468fa4ed97c11cfb746b0250d5151d66724190dc6d6c5",
+      "data/knowledge/observations/learned-2026-10-01.json": "df781d2ffd8a403ff00c49373986383452da97e8977a7e7146c4bc6dbd3d438b",
+      "data/knowledge/progress.json": "4444f13bd7450713ff7058b74383a822fe07a889703b132cfacd791b63044ed6",
+      "data/knowledge/projects.json": "d9c0fad9b70fb6c9a3a3b9348d13795bcdc0918780161370675399265e245184",
+      "data/knowledge/stages.json": "3a5aa2e3ebdbaa4e0f9b4cd3836882ea264512690b02b1d0cf456c148667e1c6",
+      "data/knowledge/topics.json": "21d303692e46700805cc37849e4c6397902202aa2625e38592de6db063f68e93",
+      "docs/knowledge-map/app.js": "af365f95cb2f2f35777c19959266d7ebede9e023d51bd2937823413a97ba8a42",
+      "docs/knowledge-map/geometry.js": "0ec2c2374471be6e63e5144de284cacdf08a82a028648f064fe720fcb35d369b",
+      "docs/knowledge-map/index.html": "79603aac244c7e4593b3a6354e6ff35fd2112c5ea53894d877fb1c2f9062d9e8",
+      "docs/knowledge-map/layout-checkpoint.json": "64c219ed63c6ad34fd42a365f4df91d13d9dd37bbaa54a0197beabf351dc0bd9",
+      "docs/knowledge-map/layout-checkpoint.schema.json": "98b1bde9c1603e3d53db654e0e81a21d83308b3f07991dd0075b1dcf2fb33501",
+      "docs/knowledge-map/layout.js": "96a1a495d52b854788819c786ad607e2cd3353178b012ef046371dcd1b82593c",
+      "docs/knowledge-map/model.js": "25b846e3d1316e69b56b5c4a7f7b2cda8bb72ea6852503ab0a236c56d2254018",
+      "docs/knowledge-map/model.json": "a9152b4dee5ede117fe3c8f4c1d3f19b4ee53b7abae220aaaa30573fec93bd2b",
+      "docs/knowledge-map/release-manifest.json": "dc56826288bf20bf383003934f9826d666283a9b92a1af368c27f3af71370c8e",
+      "docs/knowledge-map/routing.js": "31f5f2f996a77500634a46b8814fd930c61746b0e082afca4305bdc35aba1d16",
+      "docs/knowledge-map/style.css": "87ec20e8cdc8cc894004cd137ed18d5d5d278daa2c84e2476d6498ca54da9b9e",
+      "docs/knowledge-map/taxonomy-relations.js": "2ccf78c7b1a2fc418317e59c35690b82c0ee241665ee6b3843d99face7c94f90",
+      "docs/knowledge-map/vendor/D3-LICENSE": "3e6849627f74ff73c257a3ae1efb574015d94fc1035c05ec3c15805165efcbc4",
+      "docs/knowledge-map/vendor/d3-7.9.0.min.js": "f2094bbf6141b359722c4fe454eb6c4b0f0e42cc10cc7af921fc158fceb86539",
+      "prototypes/global-pyramid/generated/catalog.json": "f760e1a99b60cf58ffea10eb95f13f12cfebd28a229b2e0ce77e2cb3c372ef80",
+      "prototypes/global-pyramid/generated/global-geometry.json": "9671e7ca5517c1f35e5ee3affac066362a2470d04ef6251cbe2faa6024572c44",
+      "scripts/knowledge_atlas/ACTIVATION-PERSISTENCE-VALIDATION.md": "ea3c6947d0e74b76045be85718d60ca3844e5f894f8c8816ee199faeee1d6095",
+      "scripts/knowledge_atlas/ACTIVATION-PERSISTENCE.md": "83a49d63c8db93d11f55c339fc1f1c178994368458b13e9e8a73127b5661c5f4",
+      "scripts/knowledge_atlas/ACTIVATION.md": "6f44fd72bc23005491de0c5c2ae68108da5b814c130d829f2b21bf8e5934c0d9",
+      "scripts/knowledge_atlas/GLOBAL-CATALOG.md": "f8b27c7e51631cc90820fb4d2268bcf3faf29ed450ad29a2ec41c4d8d1a9f8ab",
+      "scripts/knowledge_atlas/README.md": "41b93ae9668cb564718d8fffcc327401e676c45890d4a57c86de3b6ae0176b19",
+      "scripts/knowledge_atlas/__init__.py": "53cc8fa42db7f8f0b1cea60e35b8a5ad557061a3d11151879029b8aae494733a",
+      "scripts/knowledge_atlas/activation-state.schema.json": "a3dc5857ab3ed4cafc45dd6382a0b8eb9a6903f13722fd75aa451dd693c494a5",
+      "scripts/knowledge_atlas/activation.py": "af044b9d017d937c876e33a6f8264ee3aec8a1c81f565710d4f9e5287bfe766c",
+      "scripts/knowledge_atlas/activation_geometry.js": "f35804992b9404f5811a987ba8da5525b3627fd3a11bf3424070bf0bd4c0b862",
+      "scripts/knowledge_atlas/activation_persistence.py": "1576b491aa44508f50254218d60d7a7f7983cf9b8c37d59073ba53112674ad2c",
+      "scripts/knowledge_atlas/activation_variants.js": "31fc8b46e31391b06326874f6a839895cc0da23b2665321cab69634b1b79b610",
+      "scripts/knowledge_atlas/browser-regression.cjs": "0cc90e16f00bc8c91ed53132bd0dbde0cc9af04a73f4d826bec124999e78b46d",
+      "scripts/knowledge_atlas/build.py": "44bbcb38fcdfdaeed993c5b02e97f154551486c86b82c9d33ea612c102aa5cfd",
+      "scripts/knowledge_atlas/catalog.py": "1c01153f2e03e2e51bb41fd61875fa8b58112398b78ca83c0b4d3d5a3efea497",
+      "scripts/knowledge_atlas/catalog_observation.py": "b95bc6d2d1d3d5feb211edb5f7e622bfd4e1b553bda473a46ce902345e33368d",
+      "scripts/knowledge_atlas/checkpoint.schema.json": "98b1bde9c1603e3d53db654e0e81a21d83308b3f07991dd0075b1dcf2fb33501",
+      "scripts/knowledge_atlas/classify.py": "20a93b8ddb457d4e29a3a689eba0bc6adc7371b516edda9d6d4f8b20754725f6",
+      "scripts/knowledge_atlas/diff.py": "5d8c01e85fe8c25c68f002e05f213a244ecef4d8e9870c9a84e5858a004116e5",
+      "scripts/knowledge_atlas/fixtures/accepted-v6-geometry.json": "d12a78c72416174ac116ed7e5bf2fa6f23d4c1983afed06f62f1a81c71fa5fe3",
+      "scripts/knowledge_atlas/font-canary.json": "4d738ef3f1b8fb4064789ef2a05a19150130465c357b10d8cce34b38dc3b1390",
+      "scripts/knowledge_atlas/fontconfig.xml": "eb82eb5b149a1499402baa3e785426c77b4db7fb77202dbd772f00cb4bafa369",
+      "scripts/knowledge_atlas/fonts/NotoSans-Bold.ttf": "1df075a380fc7cb898acf64c1f7b3b4dd780de3caa860178bf929de35817a913",
+      "scripts/knowledge_atlas/fonts/NotoSans-Regular.ttf": "478c558ea716033cd60c03438f628dfa75694dcf6b5f6d505a2f05fd2b4f3823",
+      "scripts/knowledge_atlas/fonts/OFL.txt": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "scripts/knowledge_atlas/layout_bridge.cjs": "c47d9fb08de7acf7e0977242d44a386feed8cf9d9f2237b223e0ff99715a18a5",
+      "scripts/knowledge_atlas/layout_update.js": "6527f8d896334c4aab2dbd69d7df61d1d2bb71b1d8294218e062c963298c9515",
+      "scripts/knowledge_atlas/layout_update.py": "aad4ae845541d20b96da4bd79d7af26361dd996a699a7ce1408b4ff67f04de51",
+      "scripts/knowledge_atlas/observations.py": "d686023c1e9e49f4b453ec1c934779f867b09c88e3e7010082a5311289fd8e47",
+      "scripts/knowledge_atlas/persistent_layout.js": "ab57006881e8c6135b4980cc89f1536ed0877b450a034ce5eb037c58bd2e3db9",
+      "scripts/knowledge_atlas/pipeline.py": "e640b40b25fd5147ed392720597a120d99ca3965341288af510f24d7d4b3e1dd",
+      "scripts/knowledge_atlas/production_regression.cjs": "bf445dd90be910a0472e3f753e087c364e87888ee8cdc34644be3dcc43d7c3d8",
+      "scripts/knowledge_atlas/regions.py": "18762fdbdc787400c605639a5c673e37fbb0407e886ebbf69d8468c005cd786a",
+      "scripts/knowledge_atlas/report.py": "54873b18463e237eec94aa0a5ee0b9fa07961d6b4cbba6c35fb664724e0340c9",
+      "scripts/knowledge_atlas/snapshot.py": "3ccd9ab507cacf79f1e3eb78dca3b5a7300b9ae57e28347c00fb5bc230abd8f4",
+      "scripts/knowledge_atlas/state.py": "c83e8184495f4bd4d5b92131b691a1e7bbb3b095adbc9241a14afa79d80924fb",
+      "scripts/knowledge_atlas/test_production.py": "8e6efc899e5bf6e8f816ead3e2bea80847758ffb39f0ffab03b659490fa0dfde",
+      "scripts/knowledge_atlas/transaction.py": "4c5244c7af3d0bafb6afa84a4b35a9d6dcff51c11cb4b8b2dde2ede0d3c220df",
+      "scripts/knowledge_atlas/validate.py": "c2816b39309f0760c46bf8927a7b586c9918cc7df3070f28ce349f5a73267d7a",
+      "scripts/knowledge_atlas/verify_environment.py": "c6f1d30a987b4cd2b0c590c3491049bda1927c45a964fa8dc054cc49bc39fca8",
+      "state/knowledge-atlas/README.md": "9b08bd21fc0e9886499dcaaaabcfdd17e6fe10fb3085b43ab2ca530074421707",
+      "state/knowledge-atlas/activation-state.json": "a89d0846f57425c48f77c3dc604d29659b966867567b81c078233b39cf53d1fb",
+      "state/knowledge-atlas/layout-checkpoint.json": "64c219ed63c6ad34fd42a365f4df91d13d9dd37bbaa54a0197beabf351dc0bd9",
+      "state/knowledge-atlas/update-snapshot.json": "567a20a980b58e9b5d975d059a29108c556ca7792877cb652588e47382795c26"
+    },
+    "preview_runtime": "ccb2189c9ea41bde95b8337ff31a341365435e911782c3eddf681335ec8dbf81",
+    "runtime_files": {
+      "labels.js": "5774c5aa6e3dbd18f437d04aa934c43c88c5c37b103bfbece2aafd7eb304cf3b",
+      "migration-preview/build.py": "464e7544cb65b2908a59fbf0917fc0e71344d52e222de454fa7336db397d10ea",
+      "migration-preview/view/app.js": "2af387c64c01c642de7ca6bddbf61003559473791b79cf8ec90a0acd26aace81",
+      "migration-preview/view/index.html": "61540eeb3a16a4b3583dbdf393ca36e03e13a7fad34e915e36e2b749957c5e91",
+      "migration-preview/view/style.css": "4c9d1532e10e3c14809dbbfd6692984d8eccb3016910b052cec373fd1416e318"
+    },
+    "source_activation_state": "a89d0846f57425c48f77c3dc604d29659b966867567b81c078233b39cf53d1fb",
+    "source_checkpoint": "64c219ed63c6ad34fd42a365f4df91d13d9dd37bbaa54a0197beabf351dc0bd9",
+    "source_knowledge": "392db9773079c01173bf36d68267fe7f69611027985a7285d06c877ce47e17bb",
+    "source_production_geometry": "c8467c81b88d8e01351791cee448dc3509b95153bf3eb50bcf2d2f3412a07ec7",
+    "target_global_bytes": "9671e7ca5517c1f35e5ee3affac066362a2470d04ef6251cbe2faa6024572c44",
+    "target_global_geometry": "0c5171f3ea6ccd706b4c901c36aaea674a44a46818136b7b941dc1c7ef9d4194"
+  },
+  "dry_run": true,
+  "generation_change": 0,
+  "history_change": 0,
+  "manifest_fingerprint": "37acf036cfa931906847feeaf7c182a38f0a82d0083d26008e20dbc8154cb041",
+  "mapping_failures": [],
+  "schema_version": 1,
+  "status": "MIGRATION_PREVIEW_READY",
+  "target_mapping": [
+    {
+      "key": "category:1162",
+      "slot": "category:1162"
+    },
+    {
+      "key": "category:1163",
+      "slot": "category:1163"
+    },
+    {
+      "key": "category:1164",
+      "slot": "category:1164"
+    },
+    {
+      "key": "category:1186",
+      "slot": "category:1186"
+    },
+    {
+      "key": "category:1188",
+      "slot": "category:1188"
+    },
+    {
+      "key": "category:1215",
+      "slot": "category:1215"
+    },
+    {
+      "key": "category:1258",
+      "slot": "category:1258"
+    },
+    {
+      "key": "category:126",
+      "slot": "category:126"
+    },
+    {
+      "key": "category:1260",
+      "slot": "category:1260"
+    },
+    {
+      "key": "category:1262",
+      "slot": "category:1262"
+    },
+    {
+      "key": "category:1263",
+      "slot": "category:1263"
+    },
+    {
+      "key": "category:1264",
+      "slot": "category:1264"
+    },
+    {
+      "key": "category:1265",
+      "slot": "category:1265"
+    },
+    {
+      "key": "category:1267",
+      "slot": "category:1267"
+    },
+    {
+      "key": "category:1268",
+      "slot": "category:1268"
+    },
+    {
+      "key": "category:1269",
+      "slot": "category:1269"
+    },
+    {
+      "key": "category:13",
+      "slot": "category:13"
+    },
+    {
+      "key": "category:1356",
+      "slot": "category:1356"
+    },
+    {
+      "key": "category:1423",
+      "slot": "category:1423"
+    },
+    {
+      "key": "category:1432",
+      "slot": "category:1432"
+    },
+    {
+      "key": "category:153",
+      "slot": "category:153"
+    },
+    {
+      "key": "category:187",
+      "slot": "category:187"
+    },
+    {
+      "key": "category:188",
+      "slot": "category:188"
+    },
+    {
+      "key": "category:195",
+      "slot": "category:195"
+    },
+    {
+      "key": "category:196",
+      "slot": "category:196"
+    },
+    {
+      "key": "category:251",
+      "slot": "category:251"
+    },
+    {
+      "key": "category:252",
+      "slot": "category:252"
+    },
+    {
+      "key": "category:258",
+      "slot": "category:258"
+    },
+    {
+      "key": "category:262",
+      "slot": "category:262"
+    },
+    {
+      "key": "category:2679",
+      "slot": "category:2679"
+    },
+    {
+      "key": "category:2944",
+      "slot": "category:2944"
+    },
+    {
+      "key": "category:3",
+      "slot": "category:3"
+    },
+    {
+      "key": "category:306",
+      "slot": "category:306"
+    },
+    {
+      "key": "category:35",
+      "slot": "category:35"
+    },
+    {
+      "key": "category:357",
+      "slot": "category:357"
+    },
+    {
+      "key": "category:386",
+      "slot": "category:386"
+    },
+    {
+      "key": "category:4502",
+      "slot": "category:4502"
+    },
+    {
+      "key": "category:4503",
+      "slot": "category:4503"
+    },
+    {
+      "key": "category:477",
+      "slot": "category:477"
+    },
+    {
+      "key": "category:516",
+      "slot": "category:516"
+    },
+    {
+      "key": "category:61",
+      "slot": "category:61"
+    },
+    {
+      "key": "category:679",
+      "slot": "category:679"
+    },
+    {
+      "key": "category:73",
+      "slot": "category:73"
+    },
+    {
+      "key": "category:74",
+      "slot": "category:74"
+    },
+    {
+      "key": "category:850",
+      "slot": "category:850"
+    },
+    {
+      "key": "category:95",
+      "slot": "category:95"
+    },
+    {
+      "key": "topic:1",
+      "slot": "leaf:1"
+    },
+    {
+      "key": "topic:1033",
+      "slot": "leaf:1033"
+    },
+    {
+      "key": "topic:1038",
+      "slot": "leaf:1038"
+    },
+    {
+      "key": "topic:1087",
+      "slot": "leaf:1087"
+    },
+    {
+      "key": "topic:1088",
+      "slot": "leaf:1088"
+    },
+    {
+      "key": "topic:112",
+      "slot": "leaf:112"
+    },
+    {
+      "key": "topic:113",
+      "slot": "leaf:113"
+    },
+    {
+      "key": "topic:115",
+      "slot": "leaf:115"
+    },
+    {
+      "key": "topic:116",
+      "slot": "leaf:116"
+    },
+    {
+      "key": "topic:117",
+      "slot": "leaf:117"
+    },
+    {
+      "key": "topic:12",
+      "slot": "leaf:12"
+    },
+    {
+      "key": "topic:120",
+      "slot": "leaf:120"
+    },
+    {
+      "key": "topic:122",
+      "slot": "leaf:122"
+    },
+    {
+      "key": "topic:1248",
+      "slot": "leaf:1248"
+    },
+    {
+      "key": "topic:127",
+      "slot": "leaf:127"
+    },
+    {
+      "key": "topic:128",
+      "slot": "leaf:128"
+    },
+    {
+      "key": "topic:14",
+      "slot": "leaf:14"
+    },
+    {
+      "key": "topic:1425",
+      "slot": "leaf:1425"
+    },
+    {
+      "key": "topic:146",
+      "slot": "leaf:146"
+    },
+    {
+      "key": "topic:147",
+      "slot": "leaf:147"
+    },
+    {
+      "key": "topic:1476",
+      "slot": "leaf:1476"
+    },
+    {
+      "key": "topic:148",
+      "slot": "leaf:148"
+    },
+    {
+      "key": "topic:149",
+      "slot": "leaf:149"
+    },
+    {
+      "key": "topic:15",
+      "slot": "leaf:15"
+    },
+    {
+      "key": "topic:152",
+      "slot": "leaf:152"
+    },
+    {
+      "key": "topic:161",
+      "slot": "leaf:161"
+    },
+    {
+      "key": "topic:163",
+      "slot": "leaf:163"
+    },
+    {
+      "key": "topic:164",
+      "slot": "leaf:164"
+    },
+    {
+      "key": "topic:165",
+      "slot": "leaf:165"
+    },
+    {
+      "key": "topic:17",
+      "slot": "leaf:17"
+    },
+    {
+      "key": "topic:1761",
+      "slot": "leaf:1761"
+    },
+    {
+      "key": "topic:19",
+      "slot": "leaf:19"
+    },
+    {
+      "key": "topic:191",
+      "slot": "leaf:191"
+    },
+    {
+      "key": "topic:192",
+      "slot": "leaf:192"
+    },
+    {
+      "key": "topic:193",
+      "slot": "leaf:193"
+    },
+    {
+      "key": "topic:2",
+      "slot": "leaf:2"
+    },
+    {
+      "key": "topic:201",
+      "slot": "leaf:201"
+    },
+    {
+      "key": "topic:2108",
+      "slot": "leaf:2108"
+    },
+    {
+      "key": "topic:24",
+      "slot": "leaf:24"
+    },
+    {
+      "key": "topic:25",
+      "slot": "leaf:25"
+    },
+    {
+      "key": "topic:259",
+      "slot": "leaf:259"
+    },
+    {
+      "key": "topic:260",
+      "slot": "leaf:260"
+    },
+    {
+      "key": "topic:27",
+      "slot": "leaf:27"
+    },
+    {
+      "key": "topic:28",
+      "slot": "leaf:28"
+    },
+    {
+      "key": "topic:30",
+      "slot": "leaf:30"
+    },
+    {
+      "key": "topic:307",
+      "slot": "leaf:307"
+    },
+    {
+      "key": "topic:308",
+      "slot": "leaf:308"
+    },
+    {
+      "key": "topic:309",
+      "slot": "leaf:309"
+    },
+    {
+      "key": "topic:31",
+      "slot": "leaf:31"
+    },
+    {
+      "key": "topic:32",
+      "slot": "leaf:32"
+    },
+    {
+      "key": "topic:33",
+      "slot": "leaf:33"
+    },
+    {
+      "key": "topic:348",
+      "slot": "leaf:348"
+    },
+    {
+      "key": "topic:3538",
+      "slot": "leaf:3538"
+    },
+    {
+      "key": "topic:36",
+      "slot": "leaf:36"
+    },
+    {
+      "key": "topic:360",
+      "slot": "leaf:360"
+    },
+    {
+      "key": "topic:37",
+      "slot": "leaf:37"
+    },
+    {
+      "key": "topic:38",
+      "slot": "leaf:38"
+    },
+    {
+      "key": "topic:387",
+      "slot": "leaf:387"
+    },
+    {
+      "key": "topic:4",
+      "slot": "leaf:4"
+    },
+    {
+      "key": "topic:4510",
+      "slot": "leaf:4510"
+    },
+    {
+      "key": "topic:4533",
+      "slot": "leaf:4533"
+    },
+    {
+      "key": "topic:4635",
+      "slot": "leaf:4635"
+    },
+    {
+      "key": "topic:480",
+      "slot": "leaf:480"
+    },
+    {
+      "key": "topic:491",
+      "slot": "leaf:491"
+    },
+    {
+      "key": "topic:5",
+      "slot": "leaf:5"
+    },
+    {
+      "key": "topic:5028",
+      "slot": "leaf:5028"
+    },
+    {
+      "key": "topic:5107",
+      "slot": "leaf:5107"
+    },
+    {
+      "key": "topic:518",
+      "slot": "leaf:518"
+    },
+    {
+      "key": "topic:571",
+      "slot": "leaf:571"
+    },
+    {
+      "key": "topic:59",
+      "slot": "leaf:59"
+    },
+    {
+      "key": "topic:60",
+      "slot": "leaf:60"
+    },
+    {
+      "key": "topic:65",
+      "slot": "leaf:65"
+    },
+    {
+      "key": "topic:7",
+      "slot": "leaf:7"
+    },
+    {
+      "key": "topic:78",
+      "slot": "leaf:78"
+    },
+    {
+      "key": "topic:8",
+      "slot": "leaf:8"
+    },
+    {
+      "key": "topic:851",
+      "slot": "leaf:851"
+    },
+    {
+      "key": "topic:87",
+      "slot": "leaf:87"
+    },
+    {
+      "key": "topic:872",
+      "slot": "leaf:872"
+    },
+    {
+      "key": "topic:876",
+      "slot": "leaf:876"
+    },
+    {
+      "key": "topic:88",
+      "slot": "leaf:88"
+    },
+    {
+      "key": "topic:89",
+      "slot": "leaf:89"
+    },
+    {
+      "key": "topic:9",
+      "slot": "leaf:9"
+    },
+    {
+      "key": "topic:90",
+      "slot": "leaf:90"
+    },
+    {
+      "key": "topic:96",
+      "slot": "leaf:96"
+    },
+    {
+      "key": "topic:97",
+      "slot": "leaf:97"
+    },
+    {
+      "key": "topic:98",
+      "slot": "leaf:98"
+    },
+    {
+      "key": "topic:985",
+      "slot": "leaf:985"
+    },
+    {
+      "key": "topic:99",
+      "slot": "leaf:99"
+    },
+    {
+      "key": "topic:999",
+      "slot": "leaf:999"
+    }
+  ]
+}

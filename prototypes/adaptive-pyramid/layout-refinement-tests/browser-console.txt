@@ -1,0 +1,540 @@
+{
+  "scenes": [
+    {
+      "name": "my-knowledge",
+      "topics": 31,
+      "width": 4137,
+      "height": 1152,
+      "layoutMs": 3,
+      "cards": 52,
+      "labels": 10,
+      "readableTopicLabels": 0,
+      "fitScale": 0.2769269712694596,
+      "categories": 21,
+      "ranks": [
+        [
+          0,
+          16
+        ],
+        [
+          1,
+          158
+        ],
+        [
+          2,
+          318
+        ],
+        [
+          3,
+          478
+        ],
+        [
+          4,
+          698
+        ]
+      ],
+      "siblingPairs": 9,
+      "candidatePairs": 101,
+      "segmentCandidates": 320,
+      "cardOverlaps": 0,
+      "subtreeOverlaps": 0,
+      "routeCrossings": 0
+    },
+    {
+      "name": "java-focus",
+      "topics": 31,
+      "width": 4137,
+      "height": 1152,
+      "layoutMs": 3,
+      "cards": 40,
+      "labels": 10,
+      "readableTopicLabels": 0,
+      "fitScale": 0.3368226600985222,
+      "categories": 21,
+      "ranks": [
+        [
+          0,
+          16
+        ],
+        [
+          1,
+          158
+        ],
+        [
+          2,
+          318
+        ],
+        [
+          3,
+          478
+        ],
+        [
+          4,
+          698
+        ]
+      ],
+      "siblingPairs": 9,
+      "candidatePairs": 101,
+      "segmentCandidates": 320,
+      "cardOverlaps": 0,
+      "subtreeOverlaps": 0,
+      "routeCrossings": 0
+    },
+    {
+      "name": "topic-group",
+      "topics": 31,
+      "width": 4137,
+      "height": 1152,
+      "layoutMs": 3,
+      "cards": 13,
+      "labels": 13,
+      "readableTopicLabels": 10,
+      "fitScale": 1.1690140845070423,
+      "categories": 21,
+      "ranks": [
+        [
+          0,
+          16
+        ],
+        [
+          1,
+          158
+        ],
+        [
+          2,
+          318
+        ],
+        [
+          3,
+          478
+        ],
+        [
+          4,
+          698
+        ]
+      ],
+      "siblingPairs": 9,
+      "candidatePairs": 101,
+      "segmentCandidates": 320,
+      "cardOverlaps": 0,
+      "subtreeOverlaps": 0,
+      "routeCrossings": 0
+    },
+    {
+      "name": "course8",
+      "topics": 89,
+      "width": 11257,
+      "height": 1858,
+      "layoutMs": 1.7000000029802322,
+      "cards": 135,
+      "labels": 5,
+      "readableTopicLabels": 0,
+      "fitScale": 0.09862075182547553,
+      "categories": 46,
+      "ranks": [
+        [
+          0,
+          16
+        ],
+        [
+          1,
+          158
+        ],
+        [
+          2,
+          318
+        ],
+        [
+          3,
+          478
+        ],
+        [
+          4,
+          784
+        ],
+        [
+          5,
+          1262
+        ],
+        [
+          6,
+          1404
+        ]
+      ],
+      "siblingPairs": 23,
+      "candidatePairs": 207,
+      "segmentCandidates": 759,
+      "cardOverlaps": 0,
+      "subtreeOverlaps": 0,
+      "routeCrossings": 0
+    },
+    {
+      "name": "project113",
+      "topics": 26,
+      "width": 3913,
+      "height": 1084,
+      "layoutMs": 0.6000000089406967,
+      "cards": 47,
+      "labels": 11,
+      "readableTopicLabels": 0,
+      "fitScale": 0.2935730578290621,
+      "categories": 21,
+      "ranks": [
+        [
+          0,
+          16
+        ],
+        [
+          1,
+          158
+        ],
+        [
+          2,
+          318
+        ],
+        [
+          3,
+          478
+        ],
+        [
+          4,
+          698
+        ]
+      ],
+      "siblingPairs": 9,
+      "candidatePairs": 94,
+      "segmentCandidates": 261,
+      "cardOverlaps": 0,
+      "subtreeOverlaps": 0,
+      "routeCrossings": 0
+    },
+    {
+      "name": "stage617",
+      "topics": 12,
+      "width": 2142,
+      "height": 1016,
+      "layoutMs": 0.29999999701976776,
+      "cards": 28,
+      "labels": 13,
+      "readableTopicLabels": 0,
+      "fitScale": 0.5123456790123457,
+      "categories": 16,
+      "ranks": [
+        [
+          0,
+          16
+        ],
+        [
+          1,
+          158
+        ],
+        [
+          2,
+          318
+        ],
+        [
+          3,
+          478
+        ],
+        [
+          4,
+          698
+        ]
+      ],
+      "siblingPairs": 5,
+      "candidatePairs": 61,
+      "segmentCandidates": 120,
+      "cardOverlaps": 0,
+      "subtreeOverlaps": 0,
+      "routeCrossings": 0
+    },
+    {
+      "name": "load-100",
+      "topics": 100,
+      "width": 7734,
+      "height": 1422,
+      "layoutMs": 1.300000011920929,
+      "cards": 125,
+      "labels": 4,
+      "readableTopicLabels": 0,
+      "fitScale": 0.1448239343394228,
+      "categories": 25,
+      "ranks": [
+        [
+          0,
+          16
+        ],
+        [
+          1,
+          158
+        ],
+        [
+          2,
+          378
+        ],
+        [
+          3,
+          666
+        ],
+        [
+          4,
+          1022
+        ]
+      ],
+      "siblingPairs": 15,
+      "candidatePairs": 251,
+      "segmentCandidates": 1251,
+      "cardOverlaps": 0,
+      "subtreeOverlaps": 0,
+      "routeCrossings": 0
+    },
+    {
+      "name": "load-300",
+      "topics": 300,
+      "width": 26329,
+      "height": 1846,
+      "layoutMs": 3.1000000089406967,
+      "cards": 382,
+      "labels": 0,
+      "readableTopicLabels": 0,
+      "fitScale": 0.041837163945083945,
+      "categories": 82,
+      "ranks": [
+        [
+          0,
+          16
+        ],
+        [
+          1,
+          158
+        ],
+        [
+          2,
+          446
+        ],
+        [
+          3,
+          734
+        ],
+        [
+          4,
+          1226
+        ],
+        [
+          5,
+          1650
+        ]
+      ],
+      "siblingPairs": 60,
+      "candidatePairs": 918,
+      "segmentCandidates": 4372,
+      "cardOverlaps": 0,
+      "subtreeOverlaps": 0,
+      "routeCrossings": 0
+    },
+    {
+      "name": "load-1000",
+      "topics": 1000,
+      "width": 88591,
+      "height": 2406,
+      "layoutMs": 9.799999997019768,
+      "cards": 1285,
+      "labels": 0,
+      "readableTopicLabels": 0,
+      "fitScale": 0.012374025856511067,
+      "categories": 285,
+      "ranks": [
+        [
+          0,
+          16
+        ],
+        [
+          1,
+          158
+        ],
+        [
+          2,
+          446
+        ],
+        [
+          3,
+          802
+        ],
+        [
+          4,
+          1294
+        ],
+        [
+          5,
+          1718
+        ],
+        [
+          6,
+          2142
+        ]
+      ],
+      "siblingPairs": 211,
+      "candidatePairs": 3120,
+      "segmentCandidates": 12424,
+      "cardOverlaps": 0,
+      "subtreeOverlaps": 0,
+      "routeCrossings": 0
+    },
+    {
+      "name": "learning-1",
+      "topics": 32,
+      "width": 4397,
+      "height": 1152,
+      "layoutMs": 0.5,
+      "cards": 54,
+      "labels": 7,
+      "readableTopicLabels": 0,
+      "fitScale": 0.2769269712694596,
+      "categories": 22,
+      "ranks": [
+        [
+          0,
+          16
+        ],
+        [
+          1,
+          158
+        ],
+        [
+          2,
+          318
+        ],
+        [
+          3,
+          478
+        ],
+        [
+          4,
+          698
+        ]
+      ],
+      "siblingPairs": 10,
+      "candidatePairs": 100,
+      "segmentCandidates": 310,
+      "cardOverlaps": 0,
+      "subtreeOverlaps": 0,
+      "routeCrossings": 0
+    },
+    {
+      "name": "learning-2",
+      "topics": 33,
+      "width": 4397,
+      "height": 1152,
+      "layoutMs": 0.5,
+      "cards": 55,
+      "labels": 7,
+      "readableTopicLabels": 0,
+      "fitScale": 0.2769269712694596,
+      "categories": 22,
+      "ranks": [
+        [
+          0,
+          16
+        ],
+        [
+          1,
+          158
+        ],
+        [
+          2,
+          318
+        ],
+        [
+          3,
+          478
+        ],
+        [
+          4,
+          698
+        ]
+      ],
+      "siblingPairs": 10,
+      "candidatePairs": 102,
+      "segmentCandidates": 318,
+      "cardOverlaps": 0,
+      "subtreeOverlaps": 0,
+      "routeCrossings": 0
+    },
+    {
+      "name": "learning-3",
+      "topics": 34,
+      "width": 4581,
+      "height": 1152,
+      "layoutMs": 0.5,
+      "cards": 56,
+      "labels": 8,
+      "readableTopicLabels": 0,
+      "fitScale": 0.2769269712694596,
+      "categories": 22,
+      "ranks": [
+        [
+          0,
+          16
+        ],
+        [
+          1,
+          158
+        ],
+        [
+          2,
+          318
+        ],
+        [
+          3,
+          478
+        ],
+        [
+          4,
+          698
+        ]
+      ],
+      "siblingPairs": 10,
+      "candidatePairs": 112,
+      "segmentCandidates": 354,
+      "cardOverlaps": 0,
+      "subtreeOverlaps": 0,
+      "routeCrossings": 0
+    }
+  ],
+  "growth": [
+    {
+      "step": 1,
+      "addedTopic": 1,
+      "existing": 52,
+      "average": 45,
+      "max": 260,
+      "maxDX": 260,
+      "maxDY": 0,
+      "maxCategoryDY": 0,
+      "anchorDelta": 0
+    },
+    {
+      "step": 2,
+      "addedTopic": 1033,
+      "existing": 54,
+      "average": 0,
+      "max": 0,
+      "maxDX": 0,
+      "maxDY": 0,
+      "maxCategoryDY": 0,
+      "anchorDelta": 0
+    },
+    {
+      "step": 3,
+      "addedTopic": 1038,
+      "existing": 55,
+      "average": 35.34842177025141,
+      "max": 196.16319736382766,
+      "maxDX": 184,
+      "maxDY": 68,
+      "maxCategoryDY": 0,
+      "anchorDelta": 0
+    }
+  ],
+  "checks": "PASS"
+}

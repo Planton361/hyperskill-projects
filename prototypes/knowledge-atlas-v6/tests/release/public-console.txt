@@ -1,0 +1,5 @@
+{
+  url: 'https://planton361.github.io/hyperskill-projects/knowledge-atlas-preview/',
+  checks: 750,
+  runs: 18
+}

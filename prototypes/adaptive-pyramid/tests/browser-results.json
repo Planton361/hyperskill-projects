@@ -1,0 +1,1520 @@
+{
+  "viewport": [
+    1440,
+    900
+  ],
+  "scenes": [
+    {
+      "name": "my-compact",
+      "options": {
+        "mode": "learned",
+        "id": 8,
+        "stage": null,
+        "onlyLearned": false,
+        "branch": null,
+        "step": 0
+      },
+      "topics": 31,
+      "visible": 52,
+      "unknown": false,
+      "layoutMs": 3.7999999970197678,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 3657,
+        "h": 956
+      },
+      "totalCards": 52,
+      "renderedCards": 52,
+      "labels": 10,
+      "readableLabels": 10,
+      "zoom": 0.29915231063713427
+    },
+    {
+      "name": "my-global-mask",
+      "bounds": {
+        "x": 53082,
+        "y": 43389,
+        "w": 76814,
+        "h": 43416
+      },
+      "layoutCalls": 1,
+      "renderedCards": 52,
+      "renderedLabels": 12,
+      "focusMs": 0,
+      "layoutMs": 3.7999999970197678,
+      "extent": {
+        "x": 0,
+        "y": 0,
+        "w": 3657,
+        "h": 956
+      },
+      "labelBoxes": [
+        {
+          "key": "category:1162",
+          "x": 894.836621889164,
+          "y": 33.12032430440391,
+          "w": 117.35273742675781,
+          "h": 38
+        },
+        {
+          "key": "category:1164",
+          "x": 993.8150329589844,
+          "y": 375.4324672931639,
+          "w": 156.18496704101562,
+          "h": 38
+        },
+        {
+          "key": "category:1163",
+          "x": 249.68153993864192,
+          "y": 360.4324672931639,
+          "w": 143.32090759277344,
+          "h": 53
+        },
+        {
+          "key": "category:73",
+          "x": 708.1808535981975,
+          "y": 529.0429334807444,
+          "w": 63.596649169921875,
+          "h": 38
+        },
+        {
+          "key": "category:258",
+          "x": 97.73894843612347,
+          "y": 438.47871752349363,
+          "w": 68.20037841796875,
+          "h": 38
+        },
+        {
+          "key": "category:357",
+          "x": 223.00614464575145,
+          "y": 491.5990418278975,
+          "w": 117.35273742675781,
+          "h": 53
+        },
+        {
+          "key": "category:35",
+          "x": 367.7432939196592,
+          "y": 574.1359867330017,
+          "w": 154.39695739746094,
+          "h": 38
+        },
+        {
+          "key": "category:262",
+          "x": 95.82065396425766,
+          "y": 503.4464713469688,
+          "w": 57.30470275878906,
+          "h": 38
+        },
+        {
+          "key": "category:196",
+          "x": 694.684583964435,
+          "y": 584.1908973650267,
+          "w": 74.17643737792969,
+          "h": 38
+        },
+        {
+          "key": "category:386",
+          "x": 4,
+          "y": 505.8131564400221,
+          "w": 81.43644714355469,
+          "h": 38
+        },
+        {
+          "key": "category:188",
+          "x": 583.5818479941083,
+          "y": 574.1359867330017,
+          "w": 57.30470275878906,
+          "h": 38
+        },
+        {
+          "key": "category:1423",
+          "x": 828.7961065595664,
+          "y": 573.4217799889442,
+          "w": 78.97642517089844,
+          "h": 38
+        }
+      ],
+      "readableLabels": 12,
+      "drawMs": 0.7000000029802322,
+      "camera": {
+        "k": 0.01400405380504883,
+        "x": -704.2168785701124,
+        "y": -582.6218905472637
+      },
+      "totalCards": 52
+    },
+    {
+      "name": "my-topic-group",
+      "options": {
+        "mode": "learned",
+        "id": 8,
+        "stage": null,
+        "onlyLearned": false,
+        "branch": null,
+        "step": 0
+      },
+      "topics": 31,
+      "visible": 52,
+      "unknown": false,
+      "layoutMs": 3.7999999970197678,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 3657,
+        "h": 956
+      },
+      "totalCards": 52,
+      "renderedCards": 13,
+      "labels": 13,
+      "readableLabels": 13,
+      "zoom": 1.25
+    },
+    {
+      "name": "accepted",
+      "options": {
+        "mode": "accepted",
+        "id": 8,
+        "stage": null,
+        "onlyLearned": false,
+        "branch": null,
+        "step": 0
+      },
+      "topics": 89,
+      "visible": 135,
+      "unknown": false,
+      "layoutMs": 1.9000000059604645,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 10049,
+        "h": 1234
+      },
+      "totalCards": 135,
+      "renderedCards": 135,
+      "labels": 9,
+      "readableLabels": 9,
+      "zoom": 0.1088665538859588
+    },
+    {
+      "name": "course-8",
+      "options": {
+        "mode": "course",
+        "id": 8,
+        "stage": null,
+        "onlyLearned": false,
+        "branch": null,
+        "step": 0
+      },
+      "topics": 89,
+      "visible": 135,
+      "unknown": false,
+      "layoutMs": 1.5,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 10049,
+        "h": 1234
+      },
+      "totalCards": 135,
+      "renderedCards": 135,
+      "labels": 9,
+      "readableLabels": 9,
+      "zoom": 0.1088665538859588
+    },
+    {
+      "name": "project-113",
+      "options": {
+        "mode": "project",
+        "id": 113,
+        "stage": null,
+        "onlyLearned": false,
+        "branch": null,
+        "step": 0
+      },
+      "topics": 26,
+      "visible": 47,
+      "unknown": false,
+      "layoutMs": 0.699999988079071,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 3433,
+        "h": 906
+      },
+      "totalCards": 47,
+      "renderedCards": 47,
+      "labels": 10,
+      "readableLabels": 10,
+      "zoom": 0.31867171570055347
+    },
+    {
+      "name": "project-topic-group",
+      "options": {
+        "mode": "project",
+        "id": 113,
+        "stage": null,
+        "onlyLearned": false,
+        "branch": null,
+        "step": 0
+      },
+      "topics": 26,
+      "visible": 47,
+      "unknown": false,
+      "layoutMs": 0.699999988079071,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 3433,
+        "h": 906
+      },
+      "totalCards": 47,
+      "renderedCards": 13,
+      "labels": 13,
+      "readableLabels": 13,
+      "zoom": 1.25
+    },
+    {
+      "name": "stage-617",
+      "options": {
+        "mode": "project",
+        "id": 113,
+        "stage": 617,
+        "onlyLearned": false,
+        "branch": null,
+        "step": 0
+      },
+      "topics": 12,
+      "visible": 28,
+      "unknown": false,
+      "layoutMs": 0.5999999940395355,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 1822,
+        "h": 838
+      },
+      "totalCards": 28,
+      "renderedCards": 28,
+      "labels": 11,
+      "readableLabels": 11,
+      "zoom": 0.6004390779363337
+    },
+    {
+      "name": "project-unknown",
+      "options": {
+        "mode": "project",
+        "id": 380,
+        "stage": null,
+        "onlyLearned": false,
+        "branch": null,
+        "step": 0
+      },
+      "topics": 0,
+      "visible": 0,
+      "unknown": true,
+      "layoutMs": 0.09999999403953552,
+      "bounds": null,
+      "totalCards": 0,
+      "renderedCards": 0,
+      "labels": 0,
+      "readableLabels": 0,
+      "zoom": 0.6004390779363337
+    },
+    {
+      "name": "known-empty-stage",
+      "options": {
+        "mode": "project",
+        "id": 113,
+        "stage": 618,
+        "onlyLearned": false,
+        "branch": null,
+        "step": 0
+      },
+      "topics": 0,
+      "visible": 0,
+      "unknown": false,
+      "layoutMs": 0.19999998807907104,
+      "bounds": null,
+      "totalCards": 0,
+      "renderedCards": 0,
+      "labels": 0,
+      "readableLabels": 0,
+      "zoom": 0.6004390779363337
+    },
+    {
+      "name": "style-check",
+      "options": {
+        "mode": "learned",
+        "id": 113,
+        "stage": null,
+        "onlyLearned": false,
+        "branch": null,
+        "step": 0
+      },
+      "topics": 31,
+      "visible": 52,
+      "unknown": false,
+      "layoutMs": 0.5999999940395355,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 3657,
+        "h": 956
+      },
+      "totalCards": 52,
+      "renderedCards": 52,
+      "labels": 10,
+      "readableLabels": 10,
+      "zoom": 0.29915231063713427
+    },
+    {
+      "name": "load-300",
+      "options": {
+        "mode": "fixture:load-300",
+        "id": 113,
+        "stage": null,
+        "onlyLearned": false,
+        "branch": null,
+        "step": 0
+      },
+      "topics": 300,
+      "visible": 382,
+      "unknown": false,
+      "layoutMs": 3.5,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 25660,
+        "h": 920
+      },
+      "totalCards": 382,
+      "renderedCards": 382,
+      "labels": 5,
+      "readableLabels": 5,
+      "zoom": 0.0426344505066251
+    },
+    {
+      "name": "load-300-summarized",
+      "options": {
+        "mode": "fixture:load-300",
+        "id": 113,
+        "stage": null,
+        "onlyLearned": false,
+        "branch": null,
+        "step": 0
+      },
+      "topics": 300,
+      "visible": 382,
+      "unknown": false,
+      "layoutMs": 0.5,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 422,
+        "h": 200
+      },
+      "totalCards": 3,
+      "renderedCards": 3,
+      "labels": 3,
+      "readableLabels": 3,
+      "zoom": 1.25
+    },
+    {
+      "name": "load-1000",
+      "options": {
+        "mode": "fixture:load-1000",
+        "id": 113,
+        "stage": null,
+        "onlyLearned": false,
+        "branch": null,
+        "step": 0
+      },
+      "topics": 1000,
+      "visible": 1285,
+      "unknown": false,
+      "layoutMs": 10.799999997019768,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 90114.5,
+        "h": 1050
+      },
+      "totalCards": 1285,
+      "renderedCards": 1285,
+      "labels": 9,
+      "readableLabels": 9,
+      "zoom": 0.012140110637022899
+    },
+    {
+      "name": "load-1000-summarized",
+      "options": {
+        "mode": "fixture:load-1000",
+        "id": 113,
+        "stage": null,
+        "onlyLearned": false,
+        "branch": null,
+        "step": 0
+      },
+      "topics": 1000,
+      "visible": 1285,
+      "unknown": false,
+      "layoutMs": 0.6000000089406967,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 1127,
+        "h": 200
+      },
+      "totalCards": 6,
+      "renderedCards": 6,
+      "labels": 6,
+      "readableLabels": 6,
+      "zoom": 0.9707187222715173
+    },
+    {
+      "name": "full",
+      "options": {
+        "mode": "fixture:full",
+        "id": 113,
+        "stage": null,
+        "onlyLearned": false,
+        "branch": null,
+        "step": 0
+      },
+      "topics": 3106,
+      "visible": 3955,
+      "unknown": false,
+      "layoutMs": 31,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 267700,
+        "h": 1180
+      },
+      "totalCards": 3955,
+      "renderedCards": 3955,
+      "labels": 12,
+      "readableLabels": 12,
+      "zoom": 0.004086664176316772
+    },
+    {
+      "name": "full-summarized",
+      "options": {
+        "mode": "fixture:full",
+        "id": 113,
+        "stage": null,
+        "onlyLearned": false,
+        "branch": null,
+        "step": 0
+      },
+      "topics": 3106,
+      "visible": 3955,
+      "unknown": false,
+      "layoutMs": 1.2999999970197678,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 1145,
+        "h": 70
+      },
+      "totalCards": 5,
+      "renderedCards": 5,
+      "labels": 5,
+      "readableLabels": 5,
+      "zoom": 0.9554585152838428
+    },
+    {
+      "name": "fixture:growth-branch",
+      "options": {
+        "mode": "fixture:growth-branch",
+        "id": 113,
+        "stage": null,
+        "onlyLearned": false,
+        "branch": null,
+        "step": 0
+      },
+      "topics": 1,
+      "visible": 6,
+      "unknown": false,
+      "layoutMs": 0.20000000298023224,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 202,
+        "h": 716
+      },
+      "totalCards": 6,
+      "renderedCards": 6,
+      "labels": 6,
+      "readableLabels": 6,
+      "zoom": 0.8491620111731844
+    },
+    {
+      "name": "fixture:growth-wide",
+      "options": {
+        "mode": "fixture:growth-wide",
+        "id": 113,
+        "stage": null,
+        "onlyLearned": false,
+        "branch": null,
+        "step": 0
+      },
+      "topics": 4,
+      "visible": 19,
+      "unknown": false,
+      "layoutMs": 0.30000001192092896,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 906.5,
+        "h": 846
+      },
+      "totalCards": 19,
+      "renderedCards": 19,
+      "labels": 6,
+      "readableLabels": 6,
+      "zoom": 0.7186761229314421
+    }
+  ],
+  "movements": [
+    {
+      "mode": "fixture:growth-branch",
+      "step": 1,
+      "movement": {
+        "existing": 6,
+        "moved": 6,
+        "median": 63,
+        "max": 63,
+        "entities": [
+          {
+            "key": "category:1162",
+            "dx": 63,
+            "dy": 0,
+            "distance": 63
+          },
+          {
+            "key": "category:521",
+            "dx": 63,
+            "dy": 0,
+            "distance": 63
+          },
+          {
+            "key": "category:1606",
+            "dx": 63,
+            "dy": 0,
+            "distance": 63
+          },
+          {
+            "key": "category:1620",
+            "dx": 63,
+            "dy": 0,
+            "distance": 63
+          },
+          {
+            "key": "category:320",
+            "dx": 63,
+            "dy": 0,
+            "distance": 63
+          },
+          {
+            "key": "reference:321",
+            "dx": -29,
+            "dy": 0,
+            "distance": 29
+          }
+        ]
+      },
+      "anchorDelta": 0,
+      "layoutMs": 0.20000000298023224
+    },
+    {
+      "mode": "fixture:growth-branch",
+      "step": 2,
+      "movement": {
+        "existing": 8,
+        "moved": 0,
+        "median": 0,
+        "max": 0,
+        "entities": [
+          {
+            "key": "category:1162",
+            "dx": 0,
+            "dy": 0,
+            "distance": 0
+          },
+          {
+            "key": "category:521",
+            "dx": 0,
+            "dy": 0,
+            "distance": 0
+          },
+          {
+            "key": "category:1606",
+            "dx": 0,
+            "dy": 0,
+            "distance": 0
+          },
+          {
+            "key": "category:1620",
+            "dx": 0,
+            "dy": 0,
+            "distance": 0
+          },
+          {
+            "key": "category:320",
+            "dx": 0,
+            "dy": 0,
+            "distance": 0
+          },
+          {
+            "key": "reference:321",
+            "dx": 0,
+            "dy": 0,
+            "distance": 0
+          },
+          {
+            "key": "reference:338",
+            "dx": 0,
+            "dy": 0,
+            "distance": 0
+          },
+          {
+            "key": "reference:469",
+            "dx": 0,
+            "dy": 0,
+            "distance": 0
+          }
+        ]
+      },
+      "anchorDelta": 0,
+      "layoutMs": 0.20000000298023224
+    },
+    {
+      "mode": "fixture:growth-branch",
+      "step": 3,
+      "movement": {
+        "existing": 11,
+        "moved": 9,
+        "median": 92,
+        "max": 374.22987587844983,
+        "entities": [
+          {
+            "key": "category:1162",
+            "dx": 92,
+            "dy": 0,
+            "distance": 92
+          },
+          {
+            "key": "category:521",
+            "dx": 92,
+            "dy": 0,
+            "distance": 92
+          },
+          {
+            "key": "category:1606",
+            "dx": 92,
+            "dy": 0,
+            "distance": 92
+          },
+          {
+            "key": "category:1620",
+            "dx": 92,
+            "dy": 0,
+            "distance": 92
+          },
+          {
+            "key": "category:320",
+            "dx": 92,
+            "dy": 0,
+            "distance": 92
+          },
+          {
+            "key": "reference:321",
+            "dx": 0,
+            "dy": 0,
+            "distance": 0
+          },
+          {
+            "key": "reference:338",
+            "dx": 0,
+            "dy": 0,
+            "distance": 0
+          },
+          {
+            "key": "reference:469",
+            "dx": 368,
+            "dy": -68,
+            "distance": 374.22987587844983
+          },
+          {
+            "key": "reference:3315",
+            "dx": -184,
+            "dy": 0,
+            "distance": 184
+          },
+          {
+            "key": "reference:3316",
+            "dx": 184,
+            "dy": -68,
+            "distance": 196.16319736382766
+          },
+          {
+            "key": "reference:3345",
+            "dx": 184,
+            "dy": -68,
+            "distance": 196.16319736382766
+          }
+        ]
+      },
+      "anchorDelta": 0,
+      "layoutMs": 0.19999998807907104
+    },
+    {
+      "mode": "fixture:growth-wide",
+      "step": 1,
+      "movement": {
+        "existing": 19,
+        "moved": 2,
+        "median": 0,
+        "max": 357,
+        "entities": [
+          {
+            "key": "category:1162",
+            "dx": 357,
+            "dy": 0,
+            "distance": 357
+          },
+          {
+            "key": "category:521",
+            "dx": 0,
+            "dy": 0,
+            "distance": 0
+          },
+          {
+            "key": "reference:2483",
+            "dx": 0,
+            "dy": 0,
+            "distance": 0
+          },
+          {
+            "key": "category:962",
+            "dx": 0,
+            "dy": 0,
+            "distance": 0
+          },
+          {
+            "key": "category:907",
+            "dx": 0,
+            "dy": 0,
+            "distance": 0
+          },
+          {
+            "key": "category:2614",
+            "dx": 0,
+            "dy": 0,
+            "distance": 0
+          },
+          {
+            "key": "reference:2518",
+            "dx": 0,
+            "dy": 0,
+            "distance": 0
+          },
+          {
+            "key": "category:1163",
+            "dx": 0,
+            "dy": 0,
+            "distance": 0
+          },
+          {
+            "key": "category:357",
+            "dx": 0,
+            "dy": 0,
+            "distance": 0
+          },
+          {
+            "key": "category:1186",
+            "dx": 0,
+            "dy": 0,
+            "distance": 0
+          },
+          {
+            "key": "category:1730",
+            "dx": 0,
+            "dy": 0,
+            "distance": 0
+          },
+          {
+            "key": "category:1731",
+            "dx": 0,
+            "dy": 0,
+            "distance": 0
+          },
+          {
+            "key": "reference:1732",
+            "dx": 0,
+            "dy": 0,
+            "distance": 0
+          },
+          {
+            "key": "category:1164",
+            "dx": 242.5,
+            "dy": 0,
+            "distance": 242.5
+          },
+          {
+            "key": "category:73",
+            "dx": 0,
+            "dy": 0,
+            "distance": 0
+          },
+          {
+            "key": "category:1258",
+            "dx": 0,
+            "dy": 0,
+            "distance": 0
+          },
+          {
+            "key": "category:158",
+            "dx": 0,
+            "dy": 0,
+            "distance": 0
+          },
+          {
+            "key": "category:1765",
+            "dx": 0,
+            "dy": 0,
+            "distance": 0
+          },
+          {
+            "key": "reference:323",
+            "dx": 0,
+            "dy": 0,
+            "distance": 0
+          }
+        ]
+      },
+      "anchorDelta": 0,
+      "layoutMs": 0.4000000059604645
+    },
+    {
+      "mode": "fixture:growth-wide",
+      "step": 2,
+      "movement": {
+        "existing": 34,
+        "moved": 29,
+        "median": 87,
+        "max": 92,
+        "entities": [
+          {
+            "key": "category:1162",
+            "dx": 43.5,
+            "dy": 0,
+            "distance": 43.5
+          },
+          {
+            "key": "category:521",
+            "dx": 0,
+            "dy": 0,
+            "distance": 0
+          },
+          {
+            "key": "reference:2483",
+            "dx": 0,
+            "dy": 0,
+            "distance": 0
+          },
+          {
+            "key": "category:962",
+            "dx": 0,
+            "dy": 0,
+            "distance": 0
+          },
+          {
+            "key": "category:907",
+            "dx": 0,
+            "dy": 0,
+            "distance": 0
+          },
+          {
+            "key": "category:2614",
+            "dx": 0,
+            "dy": 0,
+            "distance": 0
+          },
+          {
+            "key": "reference:2518",
+            "dx": -92,
+            "dy": 0,
+            "distance": 92
+          },
+          {
+            "key": "category:1163",
+            "dx": 87,
+            "dy": 0,
+            "distance": 87
+          },
+          {
+            "key": "category:357",
+            "dx": 87,
+            "dy": 0,
+            "distance": 87
+          },
+          {
+            "key": "category:1186",
+            "dx": 87,
+            "dy": 0,
+            "distance": 87
+          },
+          {
+            "key": "category:1730",
+            "dx": 87,
+            "dy": 0,
+            "distance": 87
+          },
+          {
+            "key": "category:1731",
+            "dx": 87,
+            "dy": 0,
+            "distance": 87
+          },
+          {
+            "key": "reference:1732",
+            "dx": 87,
+            "dy": 0,
+            "distance": 87
+          },
+          {
+            "key": "category:1164",
+            "dx": 87,
+            "dy": 0,
+            "distance": 87
+          },
+          {
+            "key": "category:73",
+            "dx": 87,
+            "dy": 0,
+            "distance": 87
+          },
+          {
+            "key": "category:1258",
+            "dx": 87,
+            "dy": 0,
+            "distance": 87
+          },
+          {
+            "key": "category:158",
+            "dx": 87,
+            "dy": 0,
+            "distance": 87
+          },
+          {
+            "key": "category:1765",
+            "dx": 87,
+            "dy": 0,
+            "distance": 87
+          },
+          {
+            "key": "reference:323",
+            "dx": 87,
+            "dy": 0,
+            "distance": 87
+          },
+          {
+            "key": "category:209",
+            "dx": 87,
+            "dy": 0,
+            "distance": 87
+          },
+          {
+            "key": "category:4582",
+            "dx": 87,
+            "dy": 0,
+            "distance": 87
+          },
+          {
+            "key": "category:5504",
+            "dx": 87,
+            "dy": 0,
+            "distance": 87
+          },
+          {
+            "key": "category:5568",
+            "dx": 87,
+            "dy": 0,
+            "distance": 87
+          },
+          {
+            "key": "reference:5515",
+            "dx": 87,
+            "dy": 0,
+            "distance": 87
+          },
+          {
+            "key": "category:1492",
+            "dx": 87,
+            "dy": 0,
+            "distance": 87
+          },
+          {
+            "key": "category:1749",
+            "dx": 87,
+            "dy": 0,
+            "distance": 87
+          },
+          {
+            "key": "reference:1750",
+            "dx": 87,
+            "dy": 0,
+            "distance": 87
+          },
+          {
+            "key": "category:1166",
+            "dx": 87,
+            "dy": 0,
+            "distance": 87
+          },
+          {
+            "key": "category:1312",
+            "dx": 87,
+            "dy": 0,
+            "distance": 87
+          },
+          {
+            "key": "category:3583",
+            "dx": 87,
+            "dy": 0,
+            "distance": 87
+          },
+          {
+            "key": "reference:4031",
+            "dx": 87,
+            "dy": 0,
+            "distance": 87
+          },
+          {
+            "key": "category:525",
+            "dx": 87,
+            "dy": 0,
+            "distance": 87
+          },
+          {
+            "key": "category:987",
+            "dx": 87,
+            "dy": 0,
+            "distance": 87
+          },
+          {
+            "key": "reference:988",
+            "dx": 87,
+            "dy": 0,
+            "distance": 87
+          }
+        ]
+      },
+      "anchorDelta": 0,
+      "layoutMs": 0.7000000029802322
+    },
+    {
+      "mode": "fixture:growth-wide",
+      "step": 3,
+      "movement": {
+        "existing": 46,
+        "moved": 33,
+        "median": 256,
+        "max": 612.2877183154992,
+        "entities": [
+          {
+            "key": "category:1162",
+            "dx": 212.5,
+            "dy": 0,
+            "distance": 212.5
+          },
+          {
+            "key": "category:521",
+            "dx": 0,
+            "dy": 0,
+            "distance": 0
+          },
+          {
+            "key": "reference:2483",
+            "dx": 0,
+            "dy": 0,
+            "distance": 0
+          },
+          {
+            "key": "category:962",
+            "dx": 0,
+            "dy": 0,
+            "distance": 0
+          },
+          {
+            "key": "category:907",
+            "dx": 0,
+            "dy": 0,
+            "distance": 0
+          },
+          {
+            "key": "category:2614",
+            "dx": 0,
+            "dy": 0,
+            "distance": 0
+          },
+          {
+            "key": "reference:2518",
+            "dx": 0,
+            "dy": 0,
+            "distance": 0
+          },
+          {
+            "key": "reference:3116",
+            "dx": 0,
+            "dy": 0,
+            "distance": 0
+          },
+          {
+            "key": "reference:3117",
+            "dx": 0,
+            "dy": 0,
+            "distance": 0
+          },
+          {
+            "key": "category:1163",
+            "dx": 0,
+            "dy": 0,
+            "distance": 0
+          },
+          {
+            "key": "category:357",
+            "dx": 0,
+            "dy": 0,
+            "distance": 0
+          },
+          {
+            "key": "category:1186",
+            "dx": 0,
+            "dy": 0,
+            "distance": 0
+          },
+          {
+            "key": "category:1730",
+            "dx": 0,
+            "dy": 0,
+            "distance": 0
+          },
+          {
+            "key": "category:1731",
+            "dx": 0,
+            "dy": 0,
+            "distance": 0
+          },
+          {
+            "key": "reference:1732",
+            "dx": -92,
+            "dy": 0,
+            "distance": 92
+          },
+          {
+            "key": "reference:1756",
+            "dx": 92,
+            "dy": -68,
+            "distance": 114.40279716860073
+          },
+          {
+            "key": "category:1164",
+            "dx": 258.5,
+            "dy": 0,
+            "distance": 258.5
+          },
+          {
+            "key": "category:73",
+            "dx": 174,
+            "dy": 0,
+            "distance": 174
+          },
+          {
+            "key": "category:1258",
+            "dx": 174,
+            "dy": 0,
+            "distance": 174
+          },
+          {
+            "key": "category:158",
+            "dx": 174,
+            "dy": 0,
+            "distance": 174
+          },
+          {
+            "key": "category:1765",
+            "dx": 174,
+            "dy": 0,
+            "distance": 174
+          },
+          {
+            "key": "reference:323",
+            "dx": 82,
+            "dy": 0,
+            "distance": 82
+          },
+          {
+            "key": "reference:354",
+            "dx": 266,
+            "dy": -68,
+            "distance": 274.5541840875859
+          },
+          {
+            "key": "category:209",
+            "dx": 256,
+            "dy": 0,
+            "distance": 256
+          },
+          {
+            "key": "category:4582",
+            "dx": 256,
+            "dy": 0,
+            "distance": 256
+          },
+          {
+            "key": "category:5504",
+            "dx": 256,
+            "dy": 0,
+            "distance": 256
+          },
+          {
+            "key": "category:5568",
+            "dx": 256,
+            "dy": 0,
+            "distance": 256
+          },
+          {
+            "key": "reference:5515",
+            "dx": 256,
+            "dy": 0,
+            "distance": 256
+          },
+          {
+            "key": "reference:5519",
+            "dx": 256,
+            "dy": 0,
+            "distance": 256
+          },
+          {
+            "key": "category:1492",
+            "dx": 343,
+            "dy": 0,
+            "distance": 343
+          },
+          {
+            "key": "category:1749",
+            "dx": 343,
+            "dy": 0,
+            "distance": 343
+          },
+          {
+            "key": "reference:1750",
+            "dx": 251,
+            "dy": 0,
+            "distance": 251
+          },
+          {
+            "key": "reference:1893",
+            "dx": 435,
+            "dy": -68,
+            "distance": 440.28286362292135
+          },
+          {
+            "key": "category:1166",
+            "dx": 425,
+            "dy": 0,
+            "distance": 425
+          },
+          {
+            "key": "category:1312",
+            "dx": 425,
+            "dy": 0,
+            "distance": 425
+          },
+          {
+            "key": "category:3583",
+            "dx": 425,
+            "dy": 0,
+            "distance": 425
+          },
+          {
+            "key": "reference:4031",
+            "dx": 425,
+            "dy": 0,
+            "distance": 425
+          },
+          {
+            "key": "category:525",
+            "dx": 516.5,
+            "dy": 0,
+            "distance": 516.5
+          },
+          {
+            "key": "category:987",
+            "dx": 516.5,
+            "dy": 0,
+            "distance": 516.5
+          },
+          {
+            "key": "reference:988",
+            "dx": 424.5,
+            "dy": 0,
+            "distance": 424.5
+          },
+          {
+            "key": "reference:1402",
+            "dx": 608.5,
+            "dy": -68,
+            "distance": 612.2877183154992
+          },
+          {
+            "key": "category:4055",
+            "dx": 608,
+            "dy": 0,
+            "distance": 608
+          },
+          {
+            "key": "category:4699",
+            "dx": 608,
+            "dy": 0,
+            "distance": 608
+          },
+          {
+            "key": "category:4700",
+            "dx": 608,
+            "dy": 0,
+            "distance": 608
+          },
+          {
+            "key": "category:4701",
+            "dx": 608,
+            "dy": 0,
+            "distance": 608
+          },
+          {
+            "key": "reference:4697",
+            "dx": 608,
+            "dy": 0,
+            "distance": 608
+          }
+        ]
+      },
+      "anchorDelta": 0,
+      "layoutMs": 0.5999999940395355
+    }
+  ],
+  "screenshots": [
+    "my-compact.png",
+    "my-global-mask.png",
+    "my-topic-group.png",
+    "accepted.png",
+    "course-8.png",
+    "course-8-learned.png",
+    "project-113.png",
+    "project-topic-group.png",
+    "stage-617.png",
+    "project-unknown.png",
+    "atlas-project-highlight.png",
+    "atlas-topic-78.png",
+    "atlas-reference-333.png",
+    "load-300-expanded.png",
+    "load-300-summarized.png",
+    "load-300-opened.png",
+    "load-1000-expanded.png",
+    "load-1000-summarized.png",
+    "load-1000-opened.png",
+    "full-expanded.png",
+    "full-summarized.png",
+    "full-opened.png",
+    "growth-branch-0.png",
+    "growth-branch-3.png",
+    "growth-wide-0.png",
+    "growth-wide-3.png"
+  ],
+  "browserMeasuredChecks": [
+    {
+      "options": {
+        "mode": "learned"
+      },
+      "durationMs": 0.5,
+      "checks": {
+        "candidatePairs": 94,
+        "segmentCandidates": 410
+      }
+    },
+    {
+      "options": {
+        "mode": "accepted"
+      },
+      "durationMs": 1.1000000089406967,
+      "checks": {
+        "candidatePairs": 247,
+        "segmentCandidates": 1018
+      }
+    },
+    {
+      "options": {
+        "mode": "project",
+        "id": 113
+      },
+      "durationMs": 0.4000000059604645,
+      "checks": {
+        "candidatePairs": 84,
+        "segmentCandidates": 355
+      }
+    },
+    {
+      "options": {
+        "mode": "project",
+        "id": 113,
+        "stage": 617
+      },
+      "durationMs": 0.19999998807907104,
+      "checks": {
+        "candidatePairs": 51,
+        "segmentCandidates": 198
+      }
+    },
+    {
+      "options": {
+        "mode": "fixture:load-300"
+      },
+      "durationMs": 2.5999999940395355,
+      "checks": {
+        "candidatePairs": 702,
+        "segmentCandidates": 4206
+      }
+    },
+    {
+      "options": {
+        "mode": "fixture:load-1000"
+      },
+      "durationMs": 8.5,
+      "checks": {
+        "candidatePairs": 2364,
+        "segmentCandidates": 13666
+      }
+    },
+    {
+      "options": {
+        "mode": "fixture:full"
+      },
+      "durationMs": 27,
+      "checks": {
+        "candidatePairs": 8251,
+        "segmentCandidates": 45102
+      }
+    }
+  ],
+  "globalEntityComparisons": 3955,
+  "globalDisplacement": 0,
+  "highlightLayoutCalls": 0,
+  "stylingLayoutCalls": 0,
+  "errors": [],
+  "external": [],
+  "checks": "PASS explicit selection, filters, focus anchor, collapse/search, navigation, repeatability, browser-measured geometry, no overflow/storage/external requests"
+}

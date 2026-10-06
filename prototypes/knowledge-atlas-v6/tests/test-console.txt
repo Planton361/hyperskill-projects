@@ -1,0 +1,356 @@
+{
+  "viewports": [
+    {
+      "width": 1920,
+      "topics": 89,
+      "categories": 46,
+      "zoom": 0.7226913327401836,
+      "rootLabelPx": 20.235357316725143,
+      "majorLabelPx": 15.176517987543855,
+      "topicLabelPx": 10.117678658362571,
+      "overflow": false,
+      "fit": true,
+      "labels": true,
+      "metrics": {
+        "model parse": 5.099999997764826,
+        "layout": 98.90000000223517,
+        "tray packing": 2.099999997764826,
+        "project coverage": 0.5,
+        "knowledge relation routing": 0,
+        "initial render": 6.299999997019768,
+        "Fit all": 8.699999999254942
+      }
+    },
+    {
+      "width": 1440,
+      "topics": 89,
+      "categories": 46,
+      "zoom": 0.513243058233398,
+      "rootLabelPx": 14.370805630535145,
+      "majorLabelPx": 10.778104222901359,
+      "topicLabelPx": 7.185402815267572,
+      "overflow": false,
+      "fit": true,
+      "labels": true,
+      "metrics": {
+        "model parse": 4.800000000745058,
+        "layout": 101.69999999925494,
+        "tray packing": 1.7999999970197678,
+        "project coverage": 0.4000000022351742,
+        "knowledge relation routing": 0,
+        "initial render": 5.299999997019768,
+        "Fit all": 5.600000001490116
+      }
+    },
+    {
+      "width": 1280,
+      "topics": 89,
+      "categories": 46,
+      "zoom": 0.4424509122701707,
+      "rootLabelPx": 12.38862554356478,
+      "majorLabelPx": 9.291469157673584,
+      "topicLabelPx": 6.19431277178239,
+      "overflow": false,
+      "fit": true,
+      "labels": true,
+      "metrics": {
+        "model parse": 7.899999998509884,
+        "layout": 102.20000000298023,
+        "tray packing": 1.9000000022351742,
+        "project coverage": 0.5,
+        "knowledge relation routing": 0,
+        "initial render": 5.5,
+        "Fit all": 5.699999999254942
+      }
+    },
+    {
+      "width": 1200,
+      "topics": 89,
+      "categories": 46,
+      "zoom": 0.42807500545585786,
+      "rootLabelPx": 11.98610015276402,
+      "majorLabelPx": 8.989575114573015,
+      "topicLabelPx": 5.99305007638201,
+      "overflow": false,
+      "fit": true,
+      "labels": true,
+      "metrics": {
+        "model parse": 7.399999998509884,
+        "layout": 87.89999999850988,
+        "tray packing": 1.6000000052154064,
+        "project coverage": 0.5,
+        "knowledge relation routing": 0.10000000149011612,
+        "initial render": 4.699999999254942,
+        "Fit all": 5.5
+      }
+    },
+    {
+      "width": 1024,
+      "topics": 89,
+      "categories": 46,
+      "zoom": 0.42807500545585786,
+      "rootLabelPx": 11.98610015276402,
+      "majorLabelPx": 8.989575114573015,
+      "topicLabelPx": 5.99305007638201,
+      "overflow": false,
+      "fit": true,
+      "labels": true,
+      "metrics": {
+        "model parse": 4.200000002980232,
+        "layout": 89.39999999850988,
+        "tray packing": 1.6999999955296516,
+        "project coverage": 0.4000000022351742,
+        "knowledge relation routing": 0,
+        "initial render": 4.800000000745058,
+        "Fit all": 5.5
+      }
+    },
+    {
+      "width": 768,
+      "topics": 89,
+      "categories": 46,
+      "zoom": 0.326528773255386,
+      "rootLabelPx": 9.142805651150807,
+      "majorLabelPx": 6.857104238363106,
+      "topicLabelPx": 4.571402825575404,
+      "overflow": false,
+      "fit": true,
+      "labels": true,
+      "metrics": {
+        "model parse": 4,
+        "layout": 87.5,
+        "tray packing": 1.6999999955296516,
+        "project coverage": 0.5,
+        "knowledge relation routing": 0,
+        "initial render": 5.100000001490116,
+        "Fit all": 5.899999998509884
+      }
+    },
+    {
+      "width": 430,
+      "topics": 89,
+      "categories": 46,
+      "zoom": 0.1769803649080683,
+      "rootLabelPx": 4.955450217425912,
+      "majorLabelPx": 3.716587663069434,
+      "topicLabelPx": 2.477725108712956,
+      "overflow": false,
+      "fit": true,
+      "labels": true,
+      "metrics": {
+        "model parse": 4.100000001490116,
+        "layout": 85.30000000074506,
+        "tray packing": 1.8000000044703484,
+        "project coverage": 0.4000000022351742,
+        "knowledge relation routing": 0,
+        "initial render": 5,
+        "Fit all": 5.399999998509884
+      }
+    },
+    {
+      "width": 390,
+      "topics": 89,
+      "categories": 46,
+      "zoom": 0.15928232841726145,
+      "rootLabelPx": 4.45990519568332,
+      "majorLabelPx": 3.3449288967624904,
+      "topicLabelPx": 2.22995259784166,
+      "overflow": false,
+      "fit": true,
+      "labels": true,
+      "metrics": {
+        "model parse": 6.800000000745058,
+        "layout": 84.90000000223517,
+        "tray packing": 2.300000000745058,
+        "project coverage": 0.6000000014901161,
+        "knowledge relation routing": 0,
+        "initial render": 5.199999999254942,
+        "Fit all": 5.5
+      }
+    },
+    {
+      "width": 320,
+      "topics": 89,
+      "categories": 46,
+      "zoom": 0.1283107645583495,
+      "rootLabelPx": 3.592701407633786,
+      "majorLabelPx": 2.6945260557253397,
+      "topicLabelPx": 1.796350703816893,
+      "overflow": false,
+      "fit": true,
+      "labels": true,
+      "metrics": {
+        "model parse": 4.199999999254942,
+        "layout": 85.10000000149012,
+        "tray packing": 1.4999999962747097,
+        "project coverage": 0.29999999701976776,
+        "knowledge relation routing": 0,
+        "initial render": 5.199999999254942,
+        "Fit all": 5.399999998509884
+      }
+    }
+  ],
+  "checks": [
+    "full taxonomy + labels + fit at 1920",
+    "full taxonomy + labels + fit at 1440",
+    "checkpoint rebuild preserves baseline presentation",
+    "mode node IDs and coordinates identical",
+    "zoom never hides labels",
+    "category label single click selects without collapse",
+    "chevron collapses",
+    "search opens ancestors selects and retains My Knowledge",
+    "search centers complete card at readable scale",
+    "contextual knowledge routes",
+    "topic keyboard Enter selects",
+    "unlearned search selection keeps mode",
+    "project selection immediately enables exact 26 amber topics",
+    "project selection highlights ancestor paths and dims unrelated branches",
+    "coverage ancestor nodes and paths exactly match requirements",
+    "coverage is camera and geometry neutral; exact 26",
+    "reveal hidden when all required visible",
+    "hierarchical roll-up sums to 26",
+    "reveal offered after manual collapse",
+    "reveal restores required topics",
+    "stage 4 uses exact 12 new requirements",
+    "active project empty completed stages preserved",
+    "unloaded requirements do not dim or invent coverage",
+    "project list complete and selectable",
+    "no natural-scale label overlap or truncation",
+    "growth deterministic and local",
+    "drag pan changes viewport",
+    "wheel zoom changes scale without layout",
+    "full taxonomy + labels + fit at 1280",
+    "full taxonomy + labels + fit at 1200",
+    "full taxonomy + labels + fit at 1024",
+    "full taxonomy + labels + fit at 768",
+    "full taxonomy + labels + fit at 430",
+    "full taxonomy + labels + fit at 390",
+    "full taxonomy + labels + fit at 320",
+    "mobile search keeps readable zoom after Inspector resize",
+    "mobile search and below-map inspector",
+    "touch pinch zoom works",
+    "touch pan works",
+    "mobile exact project coverage and accessible controls",
+    "mobile Hide coverage retains full taxonomy",
+    "mobile Stage 4 exact coverage",
+    "reduced motion respected"
+  ],
+  "growth": [
+    {
+      "title": "advanced-oop",
+      "added": 5,
+      "movedExisting": 0,
+      "movedOutsideBasics": null,
+      "movedKeys": [],
+      "topics": 94,
+      "checkpointStable": true
+    },
+    {
+      "title": "basics-growth",
+      "added": 20,
+      "movedExisting": 41,
+      "movedOutsideBasics": 6,
+      "movedKeys": [
+        "category:3",
+        "topic:19",
+        "topic:25",
+        "topic:33",
+        "topic:89",
+        "topic:90",
+        "topic:152",
+        "category:35",
+        "topic:14",
+        "topic:32",
+        "topic:161",
+        "topic:308",
+        "topic:309",
+        "topic:571",
+        "category:74",
+        "topic:15",
+        "topic:147",
+        "topic:148",
+        "topic:193",
+        "category:153",
+        "topic:113",
+        "topic:163",
+        "topic:518",
+        "category:188",
+        "topic:9",
+        "topic:98",
+        "topic:201",
+        "category:306",
+        "topic:27",
+        "topic:31",
+        "topic:36",
+        "topic:87",
+        "topic:88",
+        "topic:146",
+        "topic:307",
+        "category:1215",
+        "category:187",
+        "topic:4",
+        "topic:12",
+        "topic:97",
+        "topic:2108"
+      ],
+      "topics": 109,
+      "checkpointStable": true
+    },
+    {
+      "title": "databases",
+      "added": 20,
+      "movedExisting": 0,
+      "movedOutsideBasics": null,
+      "movedKeys": [],
+      "topics": 109,
+      "checkpointStable": true
+    }
+  ],
+  "performance": {
+    "model parse": {
+      "last": 4.800000000745058,
+      "max": 4.800000000745058,
+      "samples": 1
+    },
+    "layout": {
+      "last": 101.69999999925494,
+      "max": 101.69999999925494,
+      "samples": 1
+    },
+    "tray packing": {
+      "last": 1.7999999970197678,
+      "max": 1.7999999970197678,
+      "samples": 1
+    },
+    "project coverage": {
+      "last": 0.20000000298023224,
+      "max": 1.199999999254942,
+      "samples": 18
+    },
+    "knowledge relation routing": {
+      "last": 0,
+      "max": 4.300000000745058,
+      "samples": 14
+    },
+    "initial render": {
+      "last": 5.299999997019768,
+      "max": 5.299999997019768,
+      "samples": 1
+    },
+    "Fit all": {
+      "last": 0.10000000149011612,
+      "max": 5.600000001490116,
+      "samples": 4
+    },
+    "topic selection": {
+      "last": 4.800000000745058,
+      "max": 12.300000000745058,
+      "samples": 8
+    },
+    "search": {
+      "last": 0.19999999925494194,
+      "max": 0.19999999925494194,
+      "samples": 1
+    }
+  }
+}

@@ -1,0 +1,42 @@
+/* Existing offline Playwright infrastructure; immutable world + disposable contexts. */
+const fs=require('fs'),path=require('path'),assert=require('node:assert/strict'),crypto=require('crypto');
+const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
+(async()=>{
+ const base=path.resolve(__dirname,'..'),out=process.env.ATLAS_TEST_OUTPUT||path.join(__dirname,'ux');fs.mkdirSync(out,{recursive:true});
+ const baseline=JSON.parse(fs.readFileSync(path.join(__dirname,'ux-baseline.json'))),geo=fs.readFileSync(base+'/generated/global-geometry.json');
+ assert.equal(crypto.createHash('sha256').update(geo).digest('hex'),baseline.geometry_sha256);
+ const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_EXECUTABLE?{executablePath:process.env.CHROMIUM_EXECUTABLE}:{})}),results=[];
+ try{for(const [width,height]of [[1440,900],[1920,1080],[1024,768]]){
+ const page=await browser.newPage({viewport:{width,height},deviceScaleFactor:1}),errors=[],external=[];
+ page.on('pageerror',e=>errors.push(e.message));await page.route('**/*',r=>{const u=new URL(r.request().url()),key=u.pathname.slice(1)||'index.html';if(u.origin!=='http://global-atlas.invalid'||key.includes('..')){external.push(u.href);return r.abort();}const file=path.join(base,key);if(!fs.existsSync(file))return r.abort();return r.fulfill({body:fs.readFileSync(file),contentType:key.endsWith('.json')?'application/json':key.endsWith('.js')?'application/javascript':key.endsWith('.css')?'text/css':'text/html'});});
+ await page.goto('http://global-atlas.invalid/');await page.waitForFunction(()=>window.GlobalAtlas);
+ const settle=()=>page.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r))));
+ const shot=async name=>{await settle();await page.screenshot({path:path.join(out,`${width}-${name}.png`)});};
+ await settle();const original=await page.evaluate(()=>({geometry:JSON.stringify(GlobalAtlas.m.geometry),nodes:JSON.stringify([...GlobalAtlas.m.nodes.values()].map(n=>[n.key,n.slot,n.x,n.y,n.w,n.h,n.parent,n.sibling_order]))}));
+ const global=await page.evaluate(()=>({...GlobalAtlas.metrics}));assert(global.labels>=5);assert.equal(global.labelKeys.filter(k=>['category:525','category:1162','category:2148','category:3051','category:4055'].includes(k)).length,5);await shot('global');
+ await page.locator('[data-mode=my]').click();await page.locator('#fit-scope').click();await shot('my-default');
+ const my=await page.evaluate(()=>({...GlobalAtlas.metrics}));assert.equal(await page.evaluate(()=>GlobalAtlas.state().explicit.length),135);assert.match(await page.locator('#scope-info').innerText(),/31 learned.*12 verified/);
+ await page.locator('#ghost').selectOption('none');await shot('my-active-only');await page.locator('#ghost').selectOption('ancestors');await shot('my-ancestors');await page.locator('#ghost').selectOption('local');await shot('my-ghosts');const variants={};for(const policy of ['none','ancestors','local']){await page.evaluate(p=>GlobalAtlas.setGhost(p),policy);await settle();variants[policy]=await page.evaluate(()=>({...GlobalAtlas.metrics}));}await page.evaluate(()=>GlobalAtlas.setGhost('local'));
+ await page.evaluate(()=>GlobalAtlas.focus('category:73'));await shot('my-java');assert.match(await page.locator('#breadcrumbs').innerText(),/Computer science.*Programming languages.*Java/s);
+ await page.locator('[data-mode=course]').click();await page.locator('#fit-scope').click();await shot('course-8');assert.equal(await page.evaluate(()=>GlobalAtlas.state().explicit.length),135);
+ await page.locator('[data-mode=project]').click();await page.locator('#fit-scope').click();await shot('project-113');assert.equal(await page.evaluate(()=>GlobalAtlas.state().explicit.length),26);
+ await page.locator('#stage').selectOption('617');await page.locator('#fit-scope').click();await shot('stage-617');assert.equal(await page.evaluate(()=>GlobalAtlas.state().explicit.length),12);assert.match(await page.locator('#scope-info').innerText(),/Stage 617: 12 Topics/);
+ await page.evaluate(()=>GlobalAtlas.focus('category:35'));await shot('minimap-narrow-project');const narrow=await page.evaluate(()=>({...GlobalAtlas.metrics}));assert(narrow.labels>0);
+ await page.locator('#topic-groups').selectOption('category:35');await shot('project-topic-group');
+ await page.locator('[data-mode=my]').click();await page.locator('#search').fill('reference:333');assert.match(await page.locator('#results button').first().innerText(),/dormant.*unresolved reference/);await page.locator('#results button').first().click();await shot('dormant-reference');assert.equal(await page.evaluate(()=>GlobalAtlas.state().explicit.includes('reference:333')),false);assert.match(await page.locator('#details').innerText(),/does not activate/);assert.ok(await page.evaluate(()=>GlobalAtlas.metrics.objects)>0);
+ await page.locator('#search').fill('topic:78');assert.match(await page.locator('#results button').first().innerText(),/active.*Course relevant/);await page.locator('#results button').first().click();await shot('deep-active-topic');assert.ok(await page.evaluate(()=>GlobalAtlas.metrics.labels)>0);
+ await page.locator('[data-mode=project]').click();await page.locator('#context').selectOption('380');assert.match(await page.locator('#scope-info').innerText(),/Requirements UNKNOWN/);assert.equal(await page.locator('#fit-scope').isDisabled(),true);await shot('unknown-project');
+ // Pan, zoom, minimap, back, progress styling and repeated presentation changes.
+ await page.locator('#fit').click();await page.locator('#zoom-in').click();await page.locator('#back').click();await page.locator('#canvas').focus();await page.keyboard.press('ArrowLeft');await page.locator('#mini').click({position:{x:90,y:70}});await page.locator('#progress').uncheck();await page.locator('#progress').check();
+ const perf=await page.evaluate(async()=>{const A=GlobalAtlas,frame=()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r))),samples={draw:[],scope:[],fit:[],search:[]};let comparisons=0;
+ const coordinates=new Map(A.m.geometry.positions.map(p=>[p.key,[p.x,p.y,p.w,p.h]]));
+ for(let i=0;i<60;i++){const previousCamera=JSON.stringify(A.state().cam);A.switchScope(['global','my','course','project'][i%4],i%4===3?113:8,i%8===7?617:null);if(JSON.stringify(A.state().cam)!==previousCamera)throw Error('Scope switched camera synchronously');const t=performance.now();A.setGhost(['none','ancestors','local'][i%3]);A.fitScope();samples.fit.push(A.metrics.fitScopeMs);samples.scope.push(A.metrics.scopeMs);A.search(['Java','leaf:333','topic:78'][i%3]);samples.search.push(A.metrics.searchMs);await frame();samples.draw.push(A.metrics.drawMs);
+ for(const k of new Set([...A.state().highlight,...A.state().ghosts,...(A.state().selected?[A.state().selected]:[])])){const n=A.m.nodes.get(k);if(JSON.stringify([n.x,n.y,n.w,n.h])!==JSON.stringify(coordinates.get(n.slot)))throw Error('Coordinate mutation');comparisons++;}}
+ const summary=a=>{a.sort((a,b)=>a-b);return{median:a[Math.floor(a.length/2)],p95:a[Math.floor(a.length*.95)]};};return{comparisons,drawMs:summary(samples.draw),scopeMs:summary(samples.scope),fitScopeMs:summary(samples.fit),searchMs:summary(samples.search),heapBytes:performance.memory?.usedJSHeapSize??null};});
+ const final=await page.evaluate(()=>({geometry:JSON.stringify(GlobalAtlas.m.geometry),nodes:JSON.stringify([...GlobalAtlas.m.nodes.values()].map(n=>[n.key,n.slot,n.x,n.y,n.w,n.h,n.parent,n.sibling_order]))}));assert.deepEqual(final,original);assert.deepEqual(errors,[]);assert.deepEqual(external,[]);assert.equal(await page.evaluate(()=>localStorage.length+sessionStorage.length),0);assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth&&document.documentElement.scrollHeight<=innerHeight),true);
+ assert(global.initMs<2000);assert(perf.drawMs.p95<100);assert(perf.fitScopeMs.p95<50);assert(perf.searchMs.p95<50);assert(global.labels<=90&&my.labels>0&&my.labels<=90);
+ results.push({viewport:[width,height],variants,narrow,browser:await page.evaluate(()=>navigator.userAgent),global,my,...perf,maximumDisplacementPx:0,geometryUnchanged:true});await page.close();
+ }}finally{await browser.close();}
+ assert.equal(crypto.createHash('sha256').update(fs.readFileSync(base+'/generated/global-geometry.json')).digest('hex'),baseline.geometry_sha256);
+ fs.writeFileSync(out+'/browser-results.json',JSON.stringify(results,null,2)+'\n');console.log(JSON.stringify(results,null,2));
+})().catch(e=>{console.error(e);process.exitCode=1;});

@@ -1,0 +1,196 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Knowledge Atlas V6.3 presentation checkpoint, schema 5",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "layout_schema_version",
+    "layout_algorithm_version",
+    "categories"
+  ],
+  "properties": {
+    "layout_schema_version": {
+      "const": 5
+    },
+    "layout_algorithm_version": {
+      "const": "atlas-trays-3"
+    },
+    "categories": {
+      "type": "object",
+      "patternProperties": {
+        "^category:[0-9]+$": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "anchor",
+            "width",
+            "height",
+            "box",
+            "band",
+            "childTop",
+            "children",
+            "sibling_order"
+          ],
+          "properties": {
+            "anchor": {
+              "type": "number"
+            },
+            "width": {
+              "type": "number",
+              "minimum": 0
+            },
+            "height": {
+              "type": "number",
+              "minimum": 0
+            },
+            "box": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "width",
+                "height",
+                "font",
+                "line",
+                "labelLines",
+                "metaFont"
+              ],
+              "properties": {
+                "width": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "height": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "font": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "line": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "metaFont": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "labelLines": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "band": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "left",
+                "top",
+                "width",
+                "height",
+                "columns",
+                "rows",
+                "gapX",
+                "gapY",
+                "padding"
+              ],
+              "properties": {
+                "left": {
+                  "type": "number"
+                },
+                "top": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "width": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "height": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "rows": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "gapX": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "gapY": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "columns": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "minimum": 0
+                  }
+                },
+                "padding": {
+                  "type": "number",
+                  "minimum": 0
+                }
+              }
+            },
+            "childTop": {
+              "type": "number",
+              "minimum": 0
+            },
+            "children": {
+              "type": "object",
+              "patternProperties": {
+                "^category:[0-9]+$": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "x",
+                    "y",
+                    "width",
+                    "height",
+                    "overflow"
+                  ],
+                  "properties": {
+                    "x": {
+                      "type": "number"
+                    },
+                    "y": {
+                      "type": "number",
+                      "minimum": 0
+                    },
+                    "width": {
+                      "type": "number",
+                      "minimum": 0
+                    },
+                    "height": {
+                      "type": "number",
+                      "minimum": 0
+                    },
+                    "overflow": {
+                      "type": "boolean"
+                    }
+                  }
+                }
+              },
+              "additionalProperties": false
+            },
+            "sibling_order": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "pattern": "^category:[0-9]+$"
+              }
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

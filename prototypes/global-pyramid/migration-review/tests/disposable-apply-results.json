@@ -1,0 +1,26 @@
+{
+  "applied": {
+    "applied": true,
+    "generation": 1,
+    "manifest_fingerprint": "b4f21abc87916822c912fbdb81dae609c58c3b1f540cf6acc51bc16cae91681c",
+    "status": "APPLIED_DISPOSABLE_ONLY"
+  },
+  "fixture_only": true,
+  "knowledge_unchanged": true,
+  "layout_regenerated": false,
+  "replay": {
+    "applied": false,
+    "generation": 1,
+    "status": "ALREADY_APPLIED"
+  },
+  "source_generation": 0,
+  "target_generation": 1,
+  "validation": {
+    "accepted_positions": 135,
+    "exact_target": true,
+    "generation": 1,
+    "history_version": 0,
+    "spatial_events": 1,
+    "status": "PASS"
+  }
+}

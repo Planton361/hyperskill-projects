@@ -1,0 +1,591 @@
+{
+  "schema_version": 1,
+  "fixture_only": true,
+  "existing_nodes": 135,
+  "existing_nodes_moved": 0,
+  "overlaps": 0,
+  "hierarchy_crossings": 0,
+  "connector_through_cards": 0,
+  "invalid_ports": 0,
+  "existing_connectors_preserved": true,
+  "existing_trays_preserved": true,
+  "new_categories": 3,
+  "new_topics": 6,
+  "new_connectors": 10,
+  "canvas_before": {
+    "x0": -4460,
+    "x1": 4456,
+    "y0": -8,
+    "y1": 1859.1399999999999
+  },
+  "canvas_after": {
+    "x0": -4460,
+    "x1": 4456,
+    "y0": -8,
+    "y1": 1859.1399999999999
+  },
+  "width_growth": 0,
+  "height_growth": 0,
+  "average_new_connector_length": 867.5,
+  "max_new_connector_length": 2664,
+  "parent_centering_drift": 1291,
+  "max_branch_isolation": 76,
+  "new_card_min_clearance": 16,
+  "new_tray_min_clearance": 20,
+  "blocked_references": [],
+  "drawn_candidates": [
+    "category:1201",
+    "category:331",
+    "category:428",
+    "fixture-topic:small-001",
+    "fixture-topic:small-002",
+    "fixture-topic:small-003",
+    "fixture-topic:small-004",
+    "fixture-topic:small-005",
+    "fixture-topic:small-006"
+  ],
+  "requested_categories": 3,
+  "requested_topics": 6,
+  "max_requested_tray_height": 210,
+  "outcome": "ACTIVATION_REVIEW_REQUIRED",
+  "geometry_outcome": "ACTIVATION_REVIEW_REQUIRED",
+  "refusal": null,
+  "geometry_persisted": false,
+  "generation": 0,
+  "search_evaluations": 38697,
+  "search": [
+    {
+      "category": "category:331",
+      "feasible_candidates": 176,
+      "retained": 64,
+      "rejected": {
+        "collision": 51,
+        "attachment": 65,
+        "tray_attachment": 0,
+        "drift": 0
+      },
+      "x_positions": [
+        948,
+        1360,
+        892,
+        1416,
+        1539,
+        703,
+        612,
+        1696,
+        1798,
+        363,
+        1945,
+        249,
+        2059,
+        2210,
+        23,
+        2308,
+        -4,
+        -180,
+        -271,
+        2625,
+        2716,
+        -408,
+        -601,
+        2965,
+        -657,
+        3073,
+        -775,
+        -922,
+        3305,
+        3332,
+        -1088,
+        3498,
+        3589,
+        -1337,
+        3736,
+        -1428,
+        3910,
+        3989,
+        -1681,
+        -1795,
+        -2065,
+        -2179,
+        929,
+        1379,
+        925,
+        1383,
+        1448,
+        1453.5,
+        1544.5,
+        1605,
+        699,
+        1609,
+        680,
+        1628,
+        676,
+        1632,
+        608,
+        1700,
+        589,
+        1719,
+        585,
+        1723,
+        1783.5,
+        1874.5
+      ]
+    },
+    {
+      "category": "category:1201",
+      "feasible_candidates": 185,
+      "retained": 64,
+      "rejected": {
+        "collision": 7973,
+        "attachment": 10786,
+        "tray_attachment": 0,
+        "drift": 0
+      },
+      "x_positions": [
+        -922,
+        -1037,
+        -1203,
+        -1294,
+        -1428,
+        -1543,
+        3910,
+        -1681,
+        3989,
+        -922,
+        -981,
+        -997,
+        -997,
+        -1013.5,
+        -1013.5,
+        -1020,
+        -1020,
+        -1024,
+        -1024,
+        -1088,
+        -1088,
+        -1088,
+        -1104.5,
+        -1104.5,
+        -1104.5,
+        -1111,
+        -1111,
+        -1111,
+        -1115,
+        -1115,
+        -1115,
+        -1128,
+        -1024,
+        -1020,
+        -1013.5,
+        -997,
+        -973,
+        -922,
+        -1337,
+        -1337,
+        -1337,
+        -1337,
+        -1341,
+        -1341,
+        -1341,
+        -1341,
+        -1360,
+        -1360,
+        -1360,
+        -1360,
+        -1364,
+        -1364,
+        -1364,
+        -1364,
+        -1428,
+        -1428,
+        -1428,
+        -1428,
+        -1432,
+        -1432,
+        -1432,
+        -1432,
+        -1432,
+        -1451
+      ]
+    },
+    {
+      "category": "category:428",
+      "feasible_candidates": 45,
+      "retained": 45,
+      "rejected": {
+        "collision": 14786,
+        "attachment": 4630,
+        "tray_attachment": 0,
+        "drift": 0
+      },
+      "x_positions": [
+        4130,
+        4504,
+        4615,
+        4743,
+        4871,
+        4999,
+        5127,
+        5255,
+        4130,
+        4143,
+        4195,
+        4222,
+        4504,
+        4520.5,
+        4520.5,
+        4527,
+        4527,
+        4531,
+        4531,
+        4547.5,
+        4547.5,
+        4554,
+        4554,
+        4559,
+        4559,
+        4586,
+        4586,
+        4615,
+        4679,
+        4679,
+        4743,
+        4807,
+        4807,
+        4871,
+        4935,
+        4935,
+        4999,
+        5063,
+        5063,
+        5127,
+        5191,
+        5191,
+        5255,
+        5319,
+        5319
+      ]
+    }
+  ],
+  "thresholds": {
+    "cardGap": 16,
+    "trayGap": 20,
+    "siblingGap": 64,
+    "stem": 28,
+    "childStem": 30,
+    "diversityCell": 128,
+    "beam": 64,
+    "maxSlots": 512,
+    "maxBusSlots": 24,
+    "maxConnector": 5200,
+    "maxDrift": 2400,
+    "maxWidthGrowth": 0.75,
+    "maxAreaGrowth": 1.5,
+    "maxIsolation": 1600,
+    "searchSteps": 12
+  },
+  "activation_reasons": {
+    "category:1201": [
+      {
+        "child": "category:428",
+        "kind": "STRUCTURAL_ANCESTOR",
+        "membership_sources": [
+          {
+            "observation": "observations/global-knowledge-map-2026-10-04.json",
+            "source_ids": [
+              "source:838950d6fe2751ecd7215de64dc37009ad3d78d0f6507bbb96bd6a03c3c68a8b"
+            ]
+          }
+        ],
+        "source": "fixture-topic:small-001"
+      },
+      {
+        "child": "category:428",
+        "kind": "STRUCTURAL_ANCESTOR",
+        "membership_sources": [
+          {
+            "observation": "observations/global-knowledge-map-2026-10-04.json",
+            "source_ids": [
+              "source:838950d6fe2751ecd7215de64dc37009ad3d78d0f6507bbb96bd6a03c3c68a8b"
+            ]
+          }
+        ],
+        "source": "fixture-topic:small-002"
+      },
+      {
+        "child": "category:428",
+        "kind": "STRUCTURAL_ANCESTOR",
+        "membership_sources": [
+          {
+            "observation": "observations/global-knowledge-map-2026-10-04.json",
+            "source_ids": [
+              "source:838950d6fe2751ecd7215de64dc37009ad3d78d0f6507bbb96bd6a03c3c68a8b"
+            ]
+          }
+        ],
+        "source": "fixture-topic:small-003"
+      },
+      {
+        "child": "category:428",
+        "kind": "STRUCTURAL_ANCESTOR",
+        "membership_sources": [
+          {
+            "observation": "observations/global-knowledge-map-2026-10-04.json",
+            "source_ids": [
+              "source:838950d6fe2751ecd7215de64dc37009ad3d78d0f6507bbb96bd6a03c3c68a8b"
+            ]
+          }
+        ],
+        "source": "fixture-topic:small-004"
+      },
+      {
+        "child": "category:428",
+        "kind": "STRUCTURAL_ANCESTOR",
+        "membership_sources": [
+          {
+            "observation": "observations/global-knowledge-map-2026-10-04.json",
+            "source_ids": [
+              "source:838950d6fe2751ecd7215de64dc37009ad3d78d0f6507bbb96bd6a03c3c68a8b"
+            ]
+          }
+        ],
+        "source": "fixture-topic:small-005"
+      },
+      {
+        "child": "category:428",
+        "kind": "STRUCTURAL_ANCESTOR",
+        "membership_sources": [
+          {
+            "observation": "observations/global-knowledge-map-2026-10-04.json",
+            "source_ids": [
+              "source:838950d6fe2751ecd7215de64dc37009ad3d78d0f6507bbb96bd6a03c3c68a8b"
+            ]
+          }
+        ],
+        "source": "fixture-topic:small-006"
+      }
+    ],
+    "category:331": [
+      {
+        "child": "category:1201",
+        "kind": "STRUCTURAL_ANCESTOR",
+        "membership_sources": [
+          {
+            "observation": "observations/global-knowledge-map-2026-10-04.json",
+            "source_ids": [
+              "source:838950d6fe2751ecd7215de64dc37009ad3d78d0f6507bbb96bd6a03c3c68a8b"
+            ]
+          }
+        ],
+        "source": "fixture-topic:small-001"
+      },
+      {
+        "child": "category:1201",
+        "kind": "STRUCTURAL_ANCESTOR",
+        "membership_sources": [
+          {
+            "observation": "observations/global-knowledge-map-2026-10-04.json",
+            "source_ids": [
+              "source:838950d6fe2751ecd7215de64dc37009ad3d78d0f6507bbb96bd6a03c3c68a8b"
+            ]
+          }
+        ],
+        "source": "fixture-topic:small-002"
+      },
+      {
+        "child": "category:1201",
+        "kind": "STRUCTURAL_ANCESTOR",
+        "membership_sources": [
+          {
+            "observation": "observations/global-knowledge-map-2026-10-04.json",
+            "source_ids": [
+              "source:838950d6fe2751ecd7215de64dc37009ad3d78d0f6507bbb96bd6a03c3c68a8b"
+            ]
+          }
+        ],
+        "source": "fixture-topic:small-003"
+      },
+      {
+        "child": "category:1201",
+        "kind": "STRUCTURAL_ANCESTOR",
+        "membership_sources": [
+          {
+            "observation": "observations/global-knowledge-map-2026-10-04.json",
+            "source_ids": [
+              "source:838950d6fe2751ecd7215de64dc37009ad3d78d0f6507bbb96bd6a03c3c68a8b"
+            ]
+          }
+        ],
+        "source": "fixture-topic:small-004"
+      },
+      {
+        "child": "category:1201",
+        "kind": "STRUCTURAL_ANCESTOR",
+        "membership_sources": [
+          {
+            "observation": "observations/global-knowledge-map-2026-10-04.json",
+            "source_ids": [
+              "source:838950d6fe2751ecd7215de64dc37009ad3d78d0f6507bbb96bd6a03c3c68a8b"
+            ]
+          }
+        ],
+        "source": "fixture-topic:small-005"
+      },
+      {
+        "child": "category:1201",
+        "kind": "STRUCTURAL_ANCESTOR",
+        "membership_sources": [
+          {
+            "observation": "observations/global-knowledge-map-2026-10-04.json",
+            "source_ids": [
+              "source:838950d6fe2751ecd7215de64dc37009ad3d78d0f6507bbb96bd6a03c3c68a8b"
+            ]
+          }
+        ],
+        "source": "fixture-topic:small-006"
+      }
+    ],
+    "category:428": [
+      {
+        "child": "fixture-topic:small-001",
+        "kind": "STRUCTURAL_ANCESTOR",
+        "membership_sources": [
+          {
+            "edge_id": "fixture-placement-900001",
+            "evidence_ids": [
+              "fixture-only-explicit"
+            ]
+          }
+        ],
+        "source": "fixture-topic:small-001"
+      },
+      {
+        "child": "fixture-topic:small-002",
+        "kind": "STRUCTURAL_ANCESTOR",
+        "membership_sources": [
+          {
+            "edge_id": "fixture-placement-900002",
+            "evidence_ids": [
+              "fixture-only-explicit"
+            ]
+          }
+        ],
+        "source": "fixture-topic:small-002"
+      },
+      {
+        "child": "fixture-topic:small-003",
+        "kind": "STRUCTURAL_ANCESTOR",
+        "membership_sources": [
+          {
+            "edge_id": "fixture-placement-900003",
+            "evidence_ids": [
+              "fixture-only-explicit"
+            ]
+          }
+        ],
+        "source": "fixture-topic:small-003"
+      },
+      {
+        "child": "fixture-topic:small-004",
+        "kind": "STRUCTURAL_ANCESTOR",
+        "membership_sources": [
+          {
+            "edge_id": "fixture-placement-900004",
+            "evidence_ids": [
+              "fixture-only-explicit"
+            ]
+          }
+        ],
+        "source": "fixture-topic:small-004"
+      },
+      {
+        "child": "fixture-topic:small-005",
+        "kind": "STRUCTURAL_ANCESTOR",
+        "membership_sources": [
+          {
+            "edge_id": "fixture-placement-900005",
+            "evidence_ids": [
+              "fixture-only-explicit"
+            ]
+          }
+        ],
+        "source": "fixture-topic:small-005"
+      },
+      {
+        "child": "fixture-topic:small-006",
+        "kind": "STRUCTURAL_ANCESTOR",
+        "membership_sources": [
+          {
+            "edge_id": "fixture-placement-900006",
+            "evidence_ids": [
+              "fixture-only-explicit"
+            ]
+          }
+        ],
+        "source": "fixture-topic:small-006"
+      }
+    ],
+    "fixture-topic:small-001": [
+      {
+        "evidence_ids": [
+          "fixture-only-explicit"
+        ],
+        "field": "topic_ids",
+        "kind": "COURSE",
+        "source": "fixture-course:reveal"
+      }
+    ],
+    "fixture-topic:small-002": [
+      {
+        "evidence_ids": [
+          "fixture-only-explicit"
+        ],
+        "field": "topic_ids",
+        "kind": "COURSE",
+        "source": "fixture-course:reveal"
+      }
+    ],
+    "fixture-topic:small-003": [
+      {
+        "evidence_ids": [
+          "fixture-only-explicit"
+        ],
+        "field": "topic_ids",
+        "kind": "COURSE",
+        "source": "fixture-course:reveal"
+      }
+    ],
+    "fixture-topic:small-004": [
+      {
+        "evidence_ids": [
+          "fixture-only-explicit"
+        ],
+        "field": "topic_ids",
+        "kind": "COURSE",
+        "source": "fixture-course:reveal"
+      }
+    ],
+    "fixture-topic:small-005": [
+      {
+        "evidence_ids": [
+          "fixture-only-explicit"
+        ],
+        "field": "topic_ids",
+        "kind": "COURSE",
+        "source": "fixture-course:reveal"
+      }
+    ],
+    "fixture-topic:small-006": [
+      {
+        "evidence_ids": [
+          "fixture-only-explicit"
+        ],
+        "field": "topic_ids",
+        "kind": "COURSE",
+        "source": "fixture-course:reveal"
+      }
+    ]
+  },
+  "baseline_geometry_hash": "3ae5f458602cd10a819dac851e7c59c29b68d919705e6f81c961633b15ce6323",
+  "candidate_existing_geometry_hash": "3ae5f458602cd10a819dac851e7c59c29b68d919705e6f81c961633b15ce6323"
+}

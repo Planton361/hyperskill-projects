@@ -1,0 +1,991 @@
+{
+  "checks": [
+    "default category connectors have zero crossings",
+    "default routing respects all card/tray zones",
+    "135 existing anchors unchanged",
+    "presentation checkpoint byte structure unchanged",
+    "1920 typography >=10",
+    "micro-bends removed, maximum four around blocked trays",
+    "geometry is orthogonal; paths have boundary ports",
+    "shared segments render once",
+    "growth no intersections advanced-oop",
+    "growth zero hierarchy crossings advanced-oop",
+    "growth major anchors fixed advanced-oop",
+    "growth no intersections basics-growth",
+    "growth zero hierarchy crossings basics-growth",
+    "growth major anchors fixed basics-growth",
+    "growth no intersections databases",
+    "growth zero hierarchy crossings databases",
+    "growth major anchors fixed databases",
+    "exact project focus with amber shared path subset",
+    "selection highlights taxonomy context and inspector"
+  ],
+  "before": {
+    "hierarchySegments": 281,
+    "membershipSegments": 26,
+    "crossings": [
+      [
+        "category:13",
+        "category:251"
+      ],
+      [
+        "category:73",
+        "category:196"
+      ]
+    ],
+    "sameGroupJunctions": [
+      [
+        "category:1163",
+        "category:1163"
+      ]
+    ],
+    "intersections": [],
+    "averageBends": 5.2444444444444445,
+    "maxBends": 41,
+    "overTwoBends": [
+      {
+        "parent": "category:126",
+        "child": "category:2944",
+        "bends": 3
+      },
+      {
+        "parent": "category:1163",
+        "child": "category:126",
+        "bends": 4
+      },
+      {
+        "parent": "category:262",
+        "child": "category:386",
+        "bends": 5
+      },
+      {
+        "parent": "category:258",
+        "child": "category:262",
+        "bends": 4
+      },
+      {
+        "parent": "category:4502",
+        "child": "category:4503",
+        "bends": 3
+      },
+      {
+        "parent": "category:258",
+        "child": "category:4502",
+        "bends": 4
+      },
+      {
+        "parent": "category:1163",
+        "child": "category:258",
+        "bends": 4
+      },
+      {
+        "parent": "category:850",
+        "child": "category:1432",
+        "bends": 12
+      },
+      {
+        "parent": "category:357",
+        "child": "category:850",
+        "bends": 4
+      },
+      {
+        "parent": "category:1186",
+        "child": "category:516",
+        "bends": 3
+      },
+      {
+        "parent": "category:357",
+        "child": "category:1186",
+        "bends": 3
+      },
+      {
+        "parent": "category:1188",
+        "child": "category:679",
+        "bends": 3
+      },
+      {
+        "parent": "category:357",
+        "child": "category:1188",
+        "bends": 4
+      },
+      {
+        "parent": "category:1163",
+        "child": "category:357",
+        "bends": 6
+      },
+      {
+        "parent": "category:1162",
+        "child": "category:1163",
+        "bends": 4
+      },
+      {
+        "parent": "category:252",
+        "child": "category:3",
+        "bends": 4
+      },
+      {
+        "parent": "category:252",
+        "child": "category:35",
+        "bends": 4
+      },
+      {
+        "parent": "category:252",
+        "child": "category:74",
+        "bends": 4
+      },
+      {
+        "parent": "category:252",
+        "child": "category:153",
+        "bends": 5
+      },
+      {
+        "parent": "category:252",
+        "child": "category:188",
+        "bends": 5
+      },
+      {
+        "parent": "category:252",
+        "child": "category:306",
+        "bends": 4
+      },
+      {
+        "parent": "category:73",
+        "child": "category:252",
+        "bends": 4
+      },
+      {
+        "parent": "category:1215",
+        "child": "category:187",
+        "bends": 3
+      },
+      {
+        "parent": "category:73",
+        "child": "category:1215",
+        "bends": 16
+      },
+      {
+        "parent": "category:1258",
+        "child": "category:95",
+        "bends": 4
+      },
+      {
+        "parent": "category:1258",
+        "child": "category:196",
+        "bends": 4
+      },
+      {
+        "parent": "category:13",
+        "child": "category:1262",
+        "bends": 4
+      },
+      {
+        "parent": "category:13",
+        "child": "category:1263",
+        "bends": 4
+      },
+      {
+        "parent": "category:251",
+        "child": "category:13",
+        "bends": 4
+      },
+      {
+        "parent": "category:195",
+        "child": "category:1264",
+        "bends": 4
+      },
+      {
+        "parent": "category:195",
+        "child": "category:1265",
+        "bends": 4
+      },
+      {
+        "parent": "category:195",
+        "child": "category:1267",
+        "bends": 4
+      },
+      {
+        "parent": "category:251",
+        "child": "category:195",
+        "bends": 6
+      },
+      {
+        "parent": "category:1268",
+        "child": "category:1269",
+        "bends": 3
+      },
+      {
+        "parent": "category:251",
+        "child": "category:1268",
+        "bends": 4
+      },
+      {
+        "parent": "category:1258",
+        "child": "category:251",
+        "bends": 6
+      },
+      {
+        "parent": "category:73",
+        "child": "category:1258",
+        "bends": 4
+      },
+      {
+        "parent": "category:1260",
+        "child": "category:61",
+        "bends": 4
+      },
+      {
+        "parent": "category:1260",
+        "child": "category:1423",
+        "bends": 4
+      },
+      {
+        "parent": "category:73",
+        "child": "category:1260",
+        "bends": 41
+      },
+      {
+        "parent": "category:1164",
+        "child": "category:73",
+        "bends": 3
+      },
+      {
+        "parent": "category:1162",
+        "child": "category:1164",
+        "bends": 4
+      },
+      {
+        "parent": "category:477",
+        "child": "category:1356",
+        "bends": 3
+      },
+      {
+        "parent": "category:2679",
+        "child": "category:477",
+        "bends": 3
+      },
+      {
+        "parent": "category:1162",
+        "child": "category:2679",
+        "bends": 4
+      }
+    ],
+    "bounds": {
+      "width": 2272.937728881836,
+      "height": 1191.38
+    },
+    "averageSiblingGap": 210.74308098687067,
+    "alignment": [
+      {
+        "parent": "category:1163",
+        "children": 3,
+        "ySpan": 597.36
+      },
+      {
+        "parent": "category:258",
+        "children": 2,
+        "ySpan": 0
+      },
+      {
+        "parent": "category:357",
+        "children": 3,
+        "ySpan": 0
+      },
+      {
+        "parent": "category:1162",
+        "children": 3,
+        "ySpan": 0
+      },
+      {
+        "parent": "category:252",
+        "children": 6,
+        "ySpan": 524.2399999999999
+      },
+      {
+        "parent": "category:73",
+        "children": 4,
+        "ySpan": 566.4200000000001
+      },
+      {
+        "parent": "category:1258",
+        "children": 3,
+        "ySpan": 183.05999999999995
+      },
+      {
+        "parent": "category:13",
+        "children": 2,
+        "ySpan": 0
+      },
+      {
+        "parent": "category:251",
+        "children": 3,
+        "ySpan": 360.24
+      },
+      {
+        "parent": "category:195",
+        "children": 3,
+        "ySpan": 0
+      },
+      {
+        "parent": "category:1260",
+        "children": 2,
+        "ySpan": 0
+      }
+    ],
+    "regionExtents": [
+      {
+        "key": "category:1163",
+        "title": "Software development foundations",
+        "width": 580,
+        "height": 1094.06
+      },
+      {
+        "key": "category:1164",
+        "title": "Programming languages",
+        "width": 1680.8754577636719,
+        "height": 1104.3400000000001
+      },
+      {
+        "key": "category:2679",
+        "title": "System administration and DevOps",
+        "width": 216,
+        "height": 370.52
+      }
+    ],
+    "centerOfMass": {
+      "x": -46.918007015278015,
+      "y": 672.1621388873209
+    },
+    "whitespace": {
+      "left": 15,
+      "right": 15,
+      "top": 58.68989671987261,
+      "bottom": 26.68989671987265
+    },
+    "scale": 0.7215331855161701,
+    "font": 10.10146459722638
+  },
+  "after": {
+    "hierarchySegments": 116,
+    "membershipSegments": 26,
+    "crossings": [],
+    "sameGroupJunctions": [],
+    "intersections": [],
+    "averageBends": 1.9111111111111112,
+    "maxBends": 4,
+    "overTwoBends": [
+      {
+        "parent": "category:262",
+        "child": "category:386",
+        "bends": 4
+      },
+      {
+        "parent": "category:850",
+        "child": "category:1432",
+        "bends": 4
+      },
+      {
+        "parent": "category:1163",
+        "child": "category:357",
+        "bends": 4
+      },
+      {
+        "parent": "category:73",
+        "child": "category:1215",
+        "bends": 4
+      },
+      {
+        "parent": "category:1258",
+        "child": "category:95",
+        "bends": 4
+      },
+      {
+        "parent": "category:251",
+        "child": "category:195",
+        "bends": 4
+      },
+      {
+        "parent": "category:1258",
+        "child": "category:251",
+        "bends": 4
+      },
+      {
+        "parent": "category:73",
+        "child": "category:1260",
+        "bends": 4
+      }
+    ],
+    "bounds": {
+      "width": 2260.1377288818358,
+      "height": 1191.38
+    },
+    "averageSiblingGap": 210.74308098687067,
+    "alignment": [
+      {
+        "parent": "category:1163",
+        "children": 3,
+        "ySpan": 597.36
+      },
+      {
+        "parent": "category:258",
+        "children": 2,
+        "ySpan": 0
+      },
+      {
+        "parent": "category:357",
+        "children": 3,
+        "ySpan": 0
+      },
+      {
+        "parent": "category:1162",
+        "children": 3,
+        "ySpan": 0
+      },
+      {
+        "parent": "category:252",
+        "children": 6,
+        "ySpan": 524.2399999999999
+      },
+      {
+        "parent": "category:73",
+        "children": 4,
+        "ySpan": 566.4200000000001
+      },
+      {
+        "parent": "category:1258",
+        "children": 3,
+        "ySpan": 183.05999999999995
+      },
+      {
+        "parent": "category:13",
+        "children": 2,
+        "ySpan": 0
+      },
+      {
+        "parent": "category:251",
+        "children": 3,
+        "ySpan": 360.24
+      },
+      {
+        "parent": "category:195",
+        "children": 3,
+        "ySpan": 0
+      },
+      {
+        "parent": "category:1260",
+        "children": 2,
+        "ySpan": 0
+      }
+    ],
+    "regionExtents": [
+      {
+        "key": "category:1163",
+        "title": "Software development foundations",
+        "width": 567.2,
+        "height": 1094.06
+      },
+      {
+        "key": "category:1164",
+        "title": "Programming languages",
+        "width": 1680.8754577636719,
+        "height": 1104.3400000000001
+      },
+      {
+        "key": "category:2679",
+        "title": "System administration and DevOps",
+        "width": 216,
+        "height": 370.52
+      }
+    ],
+    "centerOfMass": {
+      "x": -46.918007015278015,
+      "y": 672.1621388873209
+    },
+    "whitespace": {
+      "left": 18.309026269007177,
+      "right": 18.309026269007063,
+      "top": 58,
+      "bottom": 26
+    },
+    "scale": 0.7226913327401836,
+    "font": 10.117678658362571
+  },
+  "growth": [
+    {
+      "name": "advanced-oop",
+      "hierarchySegments": 120,
+      "membershipSegments": 27,
+      "crossings": [],
+      "sameGroupJunctions": [],
+      "intersections": [],
+      "averageBends": 1.9565217391304348,
+      "maxBends": 4,
+      "overTwoBends": [
+        {
+          "parent": "category:262",
+          "child": "category:386",
+          "bends": 4
+        },
+        {
+          "parent": "category:850",
+          "child": "category:1432",
+          "bends": 4
+        },
+        {
+          "parent": "category:1163",
+          "child": "category:357",
+          "bends": 4
+        },
+        {
+          "parent": "category:73",
+          "child": "category:1215",
+          "bends": 4
+        },
+        {
+          "parent": "category:1258",
+          "child": "category:95",
+          "bends": 4
+        },
+        {
+          "parent": "category:251",
+          "child": "category:195",
+          "bends": 4
+        },
+        {
+          "parent": "category:1258",
+          "child": "category:251",
+          "bends": 4
+        },
+        {
+          "parent": "category:73",
+          "child": "category:1260",
+          "bends": 4
+        },
+        {
+          "parent": "category:73",
+          "child": "category:90000",
+          "bends": 4
+        }
+      ],
+      "bounds": {
+        "width": 2260.1377288818358,
+        "height": 1505.4399999999998
+      },
+      "averageSiblingGap": 210.74308098687067,
+      "alignment": [
+        {
+          "parent": "category:1163",
+          "children": 3,
+          "ySpan": 597.36
+        },
+        {
+          "parent": "category:258",
+          "children": 2,
+          "ySpan": 0
+        },
+        {
+          "parent": "category:357",
+          "children": 3,
+          "ySpan": 0
+        },
+        {
+          "parent": "category:1162",
+          "children": 3,
+          "ySpan": 0
+        },
+        {
+          "parent": "category:252",
+          "children": 6,
+          "ySpan": 524.2399999999999
+        },
+        {
+          "parent": "category:73",
+          "children": 5,
+          "ySpan": 991.7199999999999
+        },
+        {
+          "parent": "category:1258",
+          "children": 3,
+          "ySpan": 183.05999999999995
+        },
+        {
+          "parent": "category:13",
+          "children": 2,
+          "ySpan": 0
+        },
+        {
+          "parent": "category:251",
+          "children": 3,
+          "ySpan": 360.24
+        },
+        {
+          "parent": "category:195",
+          "children": 3,
+          "ySpan": 0
+        },
+        {
+          "parent": "category:1260",
+          "children": 2,
+          "ySpan": 0
+        }
+      ],
+      "regionExtents": [
+        {
+          "key": "category:1163",
+          "title": "Software development foundations",
+          "width": 567.2,
+          "height": 1094.06
+        },
+        {
+          "key": "category:1164",
+          "title": "Programming languages",
+          "width": 1680.8754577636719,
+          "height": 1418.3999999999999
+        },
+        {
+          "key": "category:2679",
+          "title": "System administration and DevOps",
+          "width": 216,
+          "height": 370.52
+        }
+      ],
+      "centerOfMass": {
+        "x": -31.288465292101773,
+        "y": 710.5750910862711
+      },
+      "whitespace": null,
+      "font": null,
+      "majorMoves": []
+    },
+    {
+      "name": "basics-growth",
+      "hierarchySegments": 122,
+      "membershipSegments": 27,
+      "crossings": [],
+      "sameGroupJunctions": [],
+      "intersections": [],
+      "averageBends": 2.1777777777777776,
+      "maxBends": 4,
+      "overTwoBends": [
+        {
+          "parent": "category:262",
+          "child": "category:386",
+          "bends": 4
+        },
+        {
+          "parent": "category:850",
+          "child": "category:1432",
+          "bends": 4
+        },
+        {
+          "parent": "category:1163",
+          "child": "category:357",
+          "bends": 4
+        },
+        {
+          "parent": "category:252",
+          "child": "category:3",
+          "bends": 4
+        },
+        {
+          "parent": "category:252",
+          "child": "category:35",
+          "bends": 4
+        },
+        {
+          "parent": "category:252",
+          "child": "category:74",
+          "bends": 4
+        },
+        {
+          "parent": "category:252",
+          "child": "category:153",
+          "bends": 4
+        },
+        {
+          "parent": "category:252",
+          "child": "category:188",
+          "bends": 4
+        },
+        {
+          "parent": "category:252",
+          "child": "category:306",
+          "bends": 4
+        },
+        {
+          "parent": "category:73",
+          "child": "category:1215",
+          "bends": 4
+        },
+        {
+          "parent": "category:1258",
+          "child": "category:95",
+          "bends": 4
+        },
+        {
+          "parent": "category:251",
+          "child": "category:195",
+          "bends": 4
+        },
+        {
+          "parent": "category:1258",
+          "child": "category:251",
+          "bends": 4
+        },
+        {
+          "parent": "category:73",
+          "child": "category:1260",
+          "bends": 4
+        }
+      ],
+      "bounds": {
+        "width": 2260.1377288818358,
+        "height": 1478.08
+      },
+      "averageSiblingGap": 210.74308098687067,
+      "alignment": [
+        {
+          "parent": "category:1163",
+          "children": 3,
+          "ySpan": 597.36
+        },
+        {
+          "parent": "category:258",
+          "children": 2,
+          "ySpan": 0
+        },
+        {
+          "parent": "category:357",
+          "children": 3,
+          "ySpan": 0
+        },
+        {
+          "parent": "category:1162",
+          "children": 3,
+          "ySpan": 0
+        },
+        {
+          "parent": "category:252",
+          "children": 6,
+          "ySpan": 528.24
+        },
+        {
+          "parent": "category:73",
+          "children": 4,
+          "ySpan": 875.3000000000001
+        },
+        {
+          "parent": "category:1258",
+          "children": 3,
+          "ySpan": 183.05999999999995
+        },
+        {
+          "parent": "category:13",
+          "children": 2,
+          "ySpan": 0
+        },
+        {
+          "parent": "category:251",
+          "children": 3,
+          "ySpan": 360.24
+        },
+        {
+          "parent": "category:195",
+          "children": 3,
+          "ySpan": 0
+        },
+        {
+          "parent": "category:1260",
+          "children": 2,
+          "ySpan": 0
+        }
+      ],
+      "regionExtents": [
+        {
+          "key": "category:1163",
+          "title": "Software development foundations",
+          "width": 567.2,
+          "height": 1094.06
+        },
+        {
+          "key": "category:1164",
+          "title": "Programming languages",
+          "width": 1682.075457763672,
+          "height": 1391.04
+        },
+        {
+          "key": "category:2679",
+          "title": "System administration and DevOps",
+          "width": 216,
+          "height": 370.52
+        }
+      ],
+      "centerOfMass": {
+        "x": -71.14261902386839,
+        "y": 744.4005357021229
+      },
+      "whitespace": null,
+      "font": null,
+      "majorMoves": []
+    },
+    {
+      "name": "databases",
+      "hierarchySegments": 129,
+      "membershipSegments": 29,
+      "crossings": [],
+      "sameGroupJunctions": [],
+      "intersections": [],
+      "averageBends": 1.9591836734693877,
+      "maxBends": 4,
+      "overTwoBends": [
+        {
+          "parent": "category:262",
+          "child": "category:386",
+          "bends": 4
+        },
+        {
+          "parent": "category:850",
+          "child": "category:1432",
+          "bends": 4
+        },
+        {
+          "parent": "category:1163",
+          "child": "category:357",
+          "bends": 4
+        },
+        {
+          "parent": "category:73",
+          "child": "category:1215",
+          "bends": 4
+        },
+        {
+          "parent": "category:1258",
+          "child": "category:95",
+          "bends": 4
+        },
+        {
+          "parent": "category:251",
+          "child": "category:195",
+          "bends": 4
+        },
+        {
+          "parent": "category:1258",
+          "child": "category:251",
+          "bends": 4
+        },
+        {
+          "parent": "category:73",
+          "child": "category:1260",
+          "bends": 4
+        },
+        {
+          "parent": "category:1162",
+          "child": "category:90000",
+          "bends": 4
+        }
+      ],
+      "bounds": {
+        "width": 2260.1377288818358,
+        "height": 1794.2799999999997
+      },
+      "averageSiblingGap": 118.89846611022949,
+      "alignment": [
+        {
+          "parent": "category:1163",
+          "children": 3,
+          "ySpan": 597.36
+        },
+        {
+          "parent": "category:258",
+          "children": 2,
+          "ySpan": 0
+        },
+        {
+          "parent": "category:357",
+          "children": 3,
+          "ySpan": 0
+        },
+        {
+          "parent": "category:1162",
+          "children": 4,
+          "ySpan": 1142.34
+        },
+        {
+          "parent": "category:252",
+          "children": 6,
+          "ySpan": 524.2399999999999
+        },
+        {
+          "parent": "category:73",
+          "children": 4,
+          "ySpan": 566.4200000000001
+        },
+        {
+          "parent": "category:1258",
+          "children": 3,
+          "ySpan": 183.05999999999995
+        },
+        {
+          "parent": "category:13",
+          "children": 2,
+          "ySpan": 0
+        },
+        {
+          "parent": "category:251",
+          "children": 3,
+          "ySpan": 360.24
+        },
+        {
+          "parent": "category:195",
+          "children": 3,
+          "ySpan": 0
+        },
+        {
+          "parent": "category:1260",
+          "children": 2,
+          "ySpan": 0
+        },
+        {
+          "parent": "category:90000",
+          "children": 3,
+          "ySpan": 267.05999999999995
+        }
+      ],
+      "regionExtents": [
+        {
+          "key": "category:1163",
+          "title": "Software development foundations",
+          "width": 567.2,
+          "height": 1094.06
+        },
+        {
+          "key": "category:1164",
+          "title": "Programming languages",
+          "width": 1680.8754577636719,
+          "height": 1104.3400000000001
+        },
+        {
+          "key": "category:2679",
+          "title": "System administration and DevOps",
+          "width": 216,
+          "height": 370.52
+        },
+        {
+          "key": "category:90000",
+          "title": "Databases",
+          "width": 740,
+          "height": 564.8999999999999
+        }
+      ],
+      "centerOfMass": {
+        "x": -48.357177071213115,
+        "y": 799.17028156296
+      },
+      "whitespace": null,
+      "font": null,
+      "majorMoves": []
+    }
+  ],
+  "alignmentTrial": {
+    "JavaSiblingAlignmentWithoutHorizontalRelayoutCardOverlaps": 18
+  }
+}

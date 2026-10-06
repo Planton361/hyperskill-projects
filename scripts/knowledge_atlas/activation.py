@@ -25,13 +25,20 @@ def order(key):
 class ActivationPlanner:
     def __init__(self, catalog, checkpoint, geometry):
         self.catalog = catalog
-        validate.checkpoint(checkpoint)
-        categories = set(checkpoint['categories'])
-        topics = {k for r in checkpoint['categories'].values() for k in r['topic_order']}
-        keys = [n['key'] for n in geometry['nodes']]
+        canonical = checkpoint.get('spatial_authority') is not None
+        if canonical:
+            categories = {k for k in checkpoint['accepted_inventory'] if k.startswith('category:')}
+            topics = set(checkpoint['accepted_inventory']) - categories
+        else:
+            validate.checkpoint(checkpoint)
+            categories = set(checkpoint['categories'])
+            topics = {k for r in checkpoint['categories'].values() for k in r['topic_order']}
+        nodes = geometry['positions'] if canonical else geometry['nodes']
+        keys = [n['key'] for n in nodes]
         if len(keys) != len(set(keys)) or set(keys) != categories | topics:
             raise ValueError('Accepted geometry/checkpoint inventory mismatch')
-        for node in geometry['nodes']:
+        for node in nodes:
+            if canonical: node = {**node, 'width': node['w'], 'height': node['h']}
             if any(type(node.get(f)) not in (int, float) or not math.isfinite(node[f])
                    for f in ('x', 'y', 'width', 'height')) or node['width'] <= 0 or node['height'] <= 0:
                 raise ValueError('Invalid accepted geometry bounds')

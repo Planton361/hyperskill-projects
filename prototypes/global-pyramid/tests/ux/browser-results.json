@@ -1,0 +1,724 @@
+[
+  {
+    "viewport": [
+      1440,
+      900
+    ],
+    "variants": {
+      "none": {
+        "loadMs": 44.100000001490116,
+        "hydrateMs": 16.5,
+        "fitMs": 0,
+        "initMs": 70.70000000298023,
+        "drawMs": 1.5,
+        "objects": 134,
+        "activeObjects": 134,
+        "ghostObjects": 0,
+        "labels": 5,
+        "labelKeys": [
+          "category:1163",
+          "category:1164",
+          "category:2679",
+          "category:126",
+          "category:73"
+        ],
+        "minimap": {
+          "scope": {
+            "x": 66358,
+            "y": 30043,
+            "w": 164148,
+            "h": 14380
+          },
+          "focus": null,
+          "world": {
+            "h": 44551,
+            "w": 262860,
+            "x": 0,
+            "y": 0
+          }
+        },
+        "scopeMs": 0.3999999985098839,
+        "fitScopeMs": 0.09999999403953552
+      },
+      "ancestors": {
+        "loadMs": 44.100000001490116,
+        "hydrateMs": 16.5,
+        "fitMs": 0,
+        "initMs": 70.70000000298023,
+        "drawMs": 1.2999999970197678,
+        "objects": 134,
+        "activeObjects": 134,
+        "ghostObjects": 0,
+        "labels": 5,
+        "labelKeys": [
+          "category:1163",
+          "category:1164",
+          "category:2679",
+          "category:126",
+          "category:73"
+        ],
+        "minimap": {
+          "scope": {
+            "x": 66358,
+            "y": 30043,
+            "w": 164148,
+            "h": 14380
+          },
+          "focus": null,
+          "world": {
+            "h": 44551,
+            "w": 262860,
+            "x": 0,
+            "y": 0
+          }
+        },
+        "scopeMs": 0.3999999985098839,
+        "fitScopeMs": 0.09999999403953552
+      },
+      "local": {
+        "loadMs": 44.100000001490116,
+        "hydrateMs": 16.5,
+        "fitMs": 0,
+        "initMs": 70.70000000298023,
+        "drawMs": 1.3999999985098839,
+        "objects": 258,
+        "activeObjects": 134,
+        "ghostObjects": 124,
+        "labels": 5,
+        "labelKeys": [
+          "category:1163",
+          "category:1164",
+          "category:2679",
+          "category:126",
+          "category:73"
+        ],
+        "minimap": {
+          "scope": {
+            "x": 66358,
+            "y": 30043,
+            "w": 164148,
+            "h": 14380
+          },
+          "focus": null,
+          "world": {
+            "h": 44551,
+            "w": 262860,
+            "x": 0,
+            "y": 0
+          }
+        },
+        "scopeMs": 0.3999999985098839,
+        "fitScopeMs": 0.09999999403953552
+      }
+    },
+    "narrow": {
+      "loadMs": 44.100000001490116,
+      "hydrateMs": 16.5,
+      "fitMs": 0,
+      "initMs": 70.70000000298023,
+      "drawMs": 1.6000000014901161,
+      "objects": 13,
+      "activeObjects": 3,
+      "ghostObjects": 10,
+      "labels": 4,
+      "labelKeys": [
+        "category:35",
+        "category:3",
+        "topic:25",
+        "topic:36"
+      ],
+      "minimap": {
+        "scope": {
+          "x": 68906,
+          "y": 33825,
+          "w": 53920,
+          "h": 9233
+        },
+        "focus": "category:35",
+        "world": {
+          "h": 44551,
+          "w": 262860,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "scopeMs": 0.20000000298023224,
+      "fitScopeMs": 0.10000000149011612
+    },
+    "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+    "global": {
+      "loadMs": 44.100000001490116,
+      "hydrateMs": 16.5,
+      "fitMs": 0.10000000149011612,
+      "initMs": 70.70000000298023,
+      "drawMs": 6.200000002980232,
+      "objects": 3955,
+      "activeObjects": 3955,
+      "ghostObjects": 0,
+      "labels": 12,
+      "labelKeys": [
+        "category:525",
+        "category:1162",
+        "category:2148",
+        "category:3051",
+        "category:4055",
+        "category:987",
+        "category:521",
+        "category:1163",
+        "category:1164",
+        "category:1165",
+        "category:1167",
+        "category:2180"
+      ],
+      "minimap": {
+        "scope": {
+          "x": 10,
+          "y": 732,
+          "w": 262840,
+          "h": 43811
+        },
+        "focus": null,
+        "world": {
+          "h": 44551,
+          "w": 262860,
+          "x": 0,
+          "y": 0
+        }
+      }
+    },
+    "my": {
+      "loadMs": 44.100000001490116,
+      "hydrateMs": 16.5,
+      "fitMs": 0,
+      "initMs": 70.70000000298023,
+      "drawMs": 1.6000000014901161,
+      "objects": 258,
+      "activeObjects": 134,
+      "ghostObjects": 124,
+      "labels": 5,
+      "labelKeys": [
+        "category:1163",
+        "category:1164",
+        "category:2679",
+        "category:126",
+        "category:73"
+      ],
+      "minimap": {
+        "scope": {
+          "x": 66358,
+          "y": 30043,
+          "w": 164148,
+          "h": 14380
+        },
+        "focus": null,
+        "world": {
+          "h": 44551,
+          "w": 262860,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "scopeMs": 0.3999999985098839,
+      "fitScopeMs": 0.09999999403953552
+    },
+    "comparisons": 65709,
+    "drawMs": {
+      "median": 1.3000000044703484,
+      "p95": 4.899999998509884
+    },
+    "scopeMs": {
+      "median": 0.20000000298023224,
+      "p95": 1.5
+    },
+    "fitScopeMs": {
+      "median": 0,
+      "p95": 0.10000000149011612
+    },
+    "searchMs": {
+      "median": 0.20000000298023224,
+      "p95": 0.30000000447034836
+    },
+    "heapBytes": 21356248,
+    "maximumDisplacementPx": 0,
+    "geometryUnchanged": true
+  },
+  {
+    "viewport": [
+      1920,
+      1080
+    ],
+    "variants": {
+      "none": {
+        "loadMs": 38,
+        "hydrateMs": 16.400000005960464,
+        "fitMs": 0,
+        "initMs": 64.10000000149012,
+        "drawMs": 1.5,
+        "objects": 134,
+        "activeObjects": 134,
+        "ghostObjects": 0,
+        "labels": 5,
+        "labelKeys": [
+          "category:1163",
+          "category:1164",
+          "category:2679",
+          "category:126",
+          "category:73"
+        ],
+        "minimap": {
+          "scope": {
+            "x": 66358,
+            "y": 30043,
+            "w": 164148,
+            "h": 14380
+          },
+          "focus": null,
+          "world": {
+            "h": 44551,
+            "w": 262860,
+            "x": 0,
+            "y": 0
+          }
+        },
+        "scopeMs": 0.5999999940395355,
+        "fitScopeMs": 0
+      },
+      "ancestors": {
+        "loadMs": 38,
+        "hydrateMs": 16.400000005960464,
+        "fitMs": 0,
+        "initMs": 64.10000000149012,
+        "drawMs": 1.3000000044703484,
+        "objects": 134,
+        "activeObjects": 134,
+        "ghostObjects": 0,
+        "labels": 5,
+        "labelKeys": [
+          "category:1163",
+          "category:1164",
+          "category:2679",
+          "category:126",
+          "category:73"
+        ],
+        "minimap": {
+          "scope": {
+            "x": 66358,
+            "y": 30043,
+            "w": 164148,
+            "h": 14380
+          },
+          "focus": null,
+          "world": {
+            "h": 44551,
+            "w": 262860,
+            "x": 0,
+            "y": 0
+          }
+        },
+        "scopeMs": 0.5999999940395355,
+        "fitScopeMs": 0
+      },
+      "local": {
+        "loadMs": 38,
+        "hydrateMs": 16.400000005960464,
+        "fitMs": 0,
+        "initMs": 64.10000000149012,
+        "drawMs": 1.3999999985098839,
+        "objects": 257,
+        "activeObjects": 134,
+        "ghostObjects": 123,
+        "labels": 5,
+        "labelKeys": [
+          "category:1163",
+          "category:1164",
+          "category:2679",
+          "category:126",
+          "category:73"
+        ],
+        "minimap": {
+          "scope": {
+            "x": 66358,
+            "y": 30043,
+            "w": 164148,
+            "h": 14380
+          },
+          "focus": null,
+          "world": {
+            "h": 44551,
+            "w": 262860,
+            "x": 0,
+            "y": 0
+          }
+        },
+        "scopeMs": 0.5999999940395355,
+        "fitScopeMs": 0
+      }
+    },
+    "narrow": {
+      "loadMs": 38,
+      "hydrateMs": 16.400000005960464,
+      "fitMs": 0,
+      "initMs": 64.10000000149012,
+      "drawMs": 1.7000000029802322,
+      "objects": 13,
+      "activeObjects": 3,
+      "ghostObjects": 10,
+      "labels": 4,
+      "labelKeys": [
+        "category:35",
+        "category:3",
+        "topic:25",
+        "topic:36"
+      ],
+      "minimap": {
+        "scope": {
+          "x": 68906,
+          "y": 33825,
+          "w": 53920,
+          "h": 9233
+        },
+        "focus": "category:35",
+        "world": {
+          "h": 44551,
+          "w": 262860,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "scopeMs": 0.20000000298023224,
+      "fitScopeMs": 0
+    },
+    "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+    "global": {
+      "loadMs": 38,
+      "hydrateMs": 16.400000005960464,
+      "fitMs": 0.10000000149011612,
+      "initMs": 64.10000000149012,
+      "drawMs": 6.299999997019768,
+      "objects": 3955,
+      "activeObjects": 3955,
+      "ghostObjects": 0,
+      "labels": 15,
+      "labelKeys": [
+        "category:525",
+        "category:1162",
+        "category:2148",
+        "category:3051",
+        "category:4055",
+        "category:521",
+        "category:962",
+        "category:1163",
+        "category:1164",
+        "category:1165",
+        "category:1166",
+        "category:1167",
+        "category:3389",
+        "category:2180",
+        "category:5030"
+      ],
+      "minimap": {
+        "scope": {
+          "x": 10,
+          "y": 732,
+          "w": 262840,
+          "h": 43811
+        },
+        "focus": null,
+        "world": {
+          "h": 44551,
+          "w": 262860,
+          "x": 0,
+          "y": 0
+        }
+      }
+    },
+    "my": {
+      "loadMs": 38,
+      "hydrateMs": 16.400000005960464,
+      "fitMs": 0,
+      "initMs": 64.10000000149012,
+      "drawMs": 1.8000000044703484,
+      "objects": 257,
+      "activeObjects": 134,
+      "ghostObjects": 123,
+      "labels": 5,
+      "labelKeys": [
+        "category:1163",
+        "category:1164",
+        "category:2679",
+        "category:126",
+        "category:73"
+      ],
+      "minimap": {
+        "scope": {
+          "x": 66358,
+          "y": 30043,
+          "w": 164148,
+          "h": 14380
+        },
+        "focus": null,
+        "world": {
+          "h": 44551,
+          "w": 262860,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "scopeMs": 0.5999999940395355,
+      "fitScopeMs": 0
+    },
+    "comparisons": 65709,
+    "drawMs": {
+      "median": 1.3999999985098839,
+      "p95": 5
+    },
+    "scopeMs": {
+      "median": 0.20000000298023224,
+      "p95": 1.5
+    },
+    "fitScopeMs": {
+      "median": 0,
+      "p95": 0.10000000149011612
+    },
+    "searchMs": {
+      "median": 0.20000000298023224,
+      "p95": 0.30000000447034836
+    },
+    "heapBytes": 21339888,
+    "maximumDisplacementPx": 0,
+    "geometryUnchanged": true
+  },
+  {
+    "viewport": [
+      1024,
+      768
+    ],
+    "variants": {
+      "none": {
+        "loadMs": 36.20000000298023,
+        "hydrateMs": 16.899999998509884,
+        "fitMs": 0,
+        "initMs": 63.70000000298023,
+        "drawMs": 1.3999999985098839,
+        "objects": 134,
+        "activeObjects": 134,
+        "ghostObjects": 0,
+        "labels": 3,
+        "labelKeys": [
+          "category:1163",
+          "category:2679",
+          "category:73"
+        ],
+        "minimap": {
+          "scope": {
+            "x": 66358,
+            "y": 30043,
+            "w": 164148,
+            "h": 14380
+          },
+          "focus": null,
+          "world": {
+            "h": 44551,
+            "w": 262860,
+            "x": 0,
+            "y": 0
+          }
+        },
+        "scopeMs": 0.5,
+        "fitScopeMs": 0
+      },
+      "ancestors": {
+        "loadMs": 36.20000000298023,
+        "hydrateMs": 16.899999998509884,
+        "fitMs": 0,
+        "initMs": 63.70000000298023,
+        "drawMs": 1.2999999970197678,
+        "objects": 134,
+        "activeObjects": 134,
+        "ghostObjects": 0,
+        "labels": 3,
+        "labelKeys": [
+          "category:1163",
+          "category:2679",
+          "category:73"
+        ],
+        "minimap": {
+          "scope": {
+            "x": 66358,
+            "y": 30043,
+            "w": 164148,
+            "h": 14380
+          },
+          "focus": null,
+          "world": {
+            "h": 44551,
+            "w": 262860,
+            "x": 0,
+            "y": 0
+          }
+        },
+        "scopeMs": 0.5,
+        "fitScopeMs": 0
+      },
+      "local": {
+        "loadMs": 36.20000000298023,
+        "hydrateMs": 16.899999998509884,
+        "fitMs": 0,
+        "initMs": 63.70000000298023,
+        "drawMs": 1.3000000044703484,
+        "objects": 259,
+        "activeObjects": 134,
+        "ghostObjects": 125,
+        "labels": 3,
+        "labelKeys": [
+          "category:1163",
+          "category:2679",
+          "category:73"
+        ],
+        "minimap": {
+          "scope": {
+            "x": 66358,
+            "y": 30043,
+            "w": 164148,
+            "h": 14380
+          },
+          "focus": null,
+          "world": {
+            "h": 44551,
+            "w": 262860,
+            "x": 0,
+            "y": 0
+          }
+        },
+        "scopeMs": 0.5,
+        "fitScopeMs": 0
+      }
+    },
+    "narrow": {
+      "loadMs": 36.20000000298023,
+      "hydrateMs": 16.899999998509884,
+      "fitMs": 0,
+      "initMs": 63.70000000298023,
+      "drawMs": 1.5,
+      "objects": 17,
+      "activeObjects": 4,
+      "ghostObjects": 13,
+      "labels": 4,
+      "labelKeys": [
+        "category:35",
+        "category:3",
+        "topic:25",
+        "topic:36"
+      ],
+      "minimap": {
+        "scope": {
+          "x": 68906,
+          "y": 33825,
+          "w": 53920,
+          "h": 9233
+        },
+        "focus": "category:35",
+        "world": {
+          "h": 44551,
+          "w": 262860,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "scopeMs": 0.19999999552965164,
+      "fitScopeMs": 0
+    },
+    "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+    "global": {
+      "loadMs": 36.20000000298023,
+      "hydrateMs": 16.899999998509884,
+      "fitMs": 0,
+      "initMs": 63.70000000298023,
+      "drawMs": 6.600000001490116,
+      "objects": 3955,
+      "activeObjects": 3955,
+      "ghostObjects": 0,
+      "labels": 10,
+      "labelKeys": [
+        "category:525",
+        "category:1162",
+        "category:2148",
+        "category:3051",
+        "category:4055",
+        "category:987",
+        "category:610",
+        "category:1164",
+        "category:1166",
+        "category:3389"
+      ],
+      "minimap": {
+        "scope": {
+          "x": 10,
+          "y": 732,
+          "w": 262840,
+          "h": 43811
+        },
+        "focus": null,
+        "world": {
+          "h": 44551,
+          "w": 262860,
+          "x": 0,
+          "y": 0
+        }
+      }
+    },
+    "my": {
+      "loadMs": 36.20000000298023,
+      "hydrateMs": 16.899999998509884,
+      "fitMs": 0,
+      "initMs": 63.70000000298023,
+      "drawMs": 1.6999999955296516,
+      "objects": 259,
+      "activeObjects": 134,
+      "ghostObjects": 125,
+      "labels": 3,
+      "labelKeys": [
+        "category:1163",
+        "category:2679",
+        "category:73"
+      ],
+      "minimap": {
+        "scope": {
+          "x": 66358,
+          "y": 30043,
+          "w": 164148,
+          "h": 14380
+        },
+        "focus": null,
+        "world": {
+          "h": 44551,
+          "w": 262860,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "scopeMs": 0.5,
+      "fitScopeMs": 0
+    },
+    "comparisons": 65709,
+    "drawMs": {
+      "median": 1.2999999970197678,
+      "p95": 5
+    },
+    "scopeMs": {
+      "median": 0.20000000298023224,
+      "p95": 1.5
+    },
+    "fitScopeMs": {
+      "median": 0,
+      "p95": 0.10000000149011612
+    },
+    "searchMs": {
+      "median": 0.20000000298023224,
+      "p95": 0.30000000447034836
+    },
+    "heapBytes": 17939618,
+    "maximumDisplacementPx": 0,
+    "geometryUnchanged": true
+  }
+]

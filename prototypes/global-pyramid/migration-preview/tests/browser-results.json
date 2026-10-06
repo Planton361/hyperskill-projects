@@ -1,0 +1,125 @@
+[
+  {
+    "viewport": [
+      1440,
+      900
+    ],
+    "screenshots": [
+      "1440-current-overview.png",
+      "1440-target-overview.png",
+      "1440-split-overview.png",
+      "1440-my-atlas.png",
+      "1440-java.png",
+      "1440-deep-topic.png",
+      "1440-project-113.png",
+      "1440-stage-617.png",
+      "1440-largest-category.png",
+      "1440-largest-topic.png",
+      "1440-bounds-minimap.png",
+      "1440-selected-vector.png"
+    ],
+    "performance": {
+      "overlay": {
+        "median": 0.5,
+        "p95": 0.8000000044703484
+      },
+      "selectedVector": {
+        "median": 0.3999999985098839,
+        "p95": 0.5
+      },
+      "fit": {
+        "median": 0,
+        "p95": 0.10000000149011612
+      }
+    },
+    "initMs": 54.5,
+    "heapBytes": 15166544,
+    "comparisons": 6345,
+    "geometryAndSemanticsUnchanged": true,
+    "matched": 135,
+    "errors": [],
+    "external": []
+  },
+  {
+    "viewport": [
+      1920,
+      1080
+    ],
+    "screenshots": [
+      "1920-current-overview.png",
+      "1920-target-overview.png",
+      "1920-split-overview.png",
+      "1920-my-atlas.png",
+      "1920-java.png",
+      "1920-deep-topic.png",
+      "1920-project-113.png",
+      "1920-stage-617.png",
+      "1920-largest-category.png",
+      "1920-largest-topic.png",
+      "1920-bounds-minimap.png",
+      "1920-selected-vector.png"
+    ],
+    "performance": {
+      "overlay": {
+        "median": 0.5,
+        "p95": 0.6000000014901161
+      },
+      "selectedVector": {
+        "median": 0.3999999985098839,
+        "p95": 0.5
+      },
+      "fit": {
+        "median": 0,
+        "p95": 0.10000000149011612
+      }
+    },
+    "initMs": 50,
+    "heapBytes": 12390784,
+    "comparisons": 6345,
+    "geometryAndSemanticsUnchanged": true,
+    "matched": 135,
+    "errors": [],
+    "external": []
+  },
+  {
+    "viewport": [
+      1024,
+      768
+    ],
+    "screenshots": [
+      "1024-current-overview.png",
+      "1024-target-overview.png",
+      "1024-split-overview.png",
+      "1024-my-atlas.png",
+      "1024-java.png",
+      "1024-deep-topic.png",
+      "1024-project-113.png",
+      "1024-stage-617.png",
+      "1024-largest-category.png",
+      "1024-largest-topic.png",
+      "1024-bounds-minimap.png",
+      "1024-selected-vector.png"
+    ],
+    "performance": {
+      "overlay": {
+        "median": 0.5,
+        "p95": 0.6000000014901161
+      },
+      "selectedVector": {
+        "median": 0.3999999985098839,
+        "p95": 0.4000000059604645
+      },
+      "fit": {
+        "median": 0,
+        "p95": 0.10000000149011612
+      }
+    },
+    "initMs": 50.19999999552965,
+    "heapBytes": 15255176,
+    "comparisons": 6345,
+    "geometryAndSemanticsUnchanged": true,
+    "matched": 135,
+    "errors": [],
+    "external": []
+  }
+]

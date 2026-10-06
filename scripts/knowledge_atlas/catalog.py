@@ -18,7 +18,7 @@ def active_projection(data):
 
 
 class Catalog:
-    def __init__(self, data):
+    def __init__(self, data, allow_metadata_updates=False):
         self.active = active_projection(data)
         self.categories, self.topics, self.references = {}, {}, {}
         self.reference_history, self.memberships = {}, {}
@@ -71,13 +71,14 @@ class Catalog:
             for row in data[table]:
                 key = f"{kind}:{row['id']}"
                 if key in target:
-                    require(target[key]['title'] == row['title'], 'Global/active title conflict requires review')
+                    require(allow_metadata_updates or target[key]['title'] == row['title'], 'Global/active title conflict requires review')
                     parent = row['canonical_parent_id']
                     require(parent is None or parent in self.memberships.get(row['id'], set()), 'Global/active structural conflict requires review')
                 else:
                     target[key] = {'id': row['id'], 'title': row['title'], 'parent_id': row['canonical_parent_id'],
                                    **({'resolution': 'RESOLVED_TOPIC'} if kind == 'topic' else {})}
                 target[key]['accepted_metadata'] = deepcopy(row)
+                if allow_metadata_updates: target[key]['title'] = row['title']
                 for evidence in row.get('evidence_ids', []):
                     self.provenance.setdefault(evidence, []).append({'accepted_evidence': evidence})
         for edge in data['edges']:

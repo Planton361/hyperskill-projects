@@ -1,0 +1,10 @@
+{
+  "migration_apply_guard": {
+    "reason": "REAL_SPATIAL_MIGRATION_FORBIDDEN: Real publication is disabled; marked external disposable root required",
+    "status": "REAL_SPATIAL_MIGRATION_FORBIDDEN"
+  },
+  "normal_canonical_writer_guard": {
+    "reason": "REAL_CANONICAL_PUBLICATION_FORBIDDEN: Canonical publication requires external disposable root",
+    "status": "REAL_CANONICAL_PUBLICATION_FORBIDDEN"
+  }
+}

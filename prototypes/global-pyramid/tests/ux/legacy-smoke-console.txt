@@ -1,0 +1,143 @@
+{
+  "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+  "viewport": [
+    1440,
+    900
+  ],
+  "overview": {
+    "loadMs": 42.900000005960464,
+    "hydrateMs": 16.599999994039536,
+    "fitMs": 0.19999999552965164,
+    "initMs": 70.5,
+    "drawMs": 6,
+    "objects": 3955,
+    "activeObjects": 3955,
+    "ghostObjects": 0,
+    "labels": 12,
+    "labelKeys": [
+      "category:525",
+      "category:1162",
+      "category:2148",
+      "category:3051",
+      "category:4055",
+      "category:987",
+      "category:521",
+      "category:1163",
+      "category:1164",
+      "category:1165",
+      "category:1167",
+      "category:2180"
+    ],
+    "minimap": {
+      "scope": {
+        "x": 10,
+        "y": 732,
+        "w": 262840,
+        "h": 43811
+      },
+      "focus": null,
+      "world": {
+        "h": 44551,
+        "w": 262860,
+        "x": 0,
+        "y": 0
+      }
+    }
+  },
+  "deepBranch": {
+    "key": "category:2930",
+    "loadMs": 42.900000005960464,
+    "hydrateMs": 16.599999994039536,
+    "fitMs": 0,
+    "initMs": 70.5,
+    "drawMs": 3.5,
+    "objects": 2,
+    "activeObjects": 2,
+    "ghostObjects": 0,
+    "labels": 2,
+    "labelKeys": [
+      "category:2930",
+      "reference:2931"
+    ],
+    "minimap": {
+      "scope": {
+        "x": 10,
+        "y": 732,
+        "w": 262840,
+        "h": 43811
+      },
+      "focus": "category:2930",
+      "world": {
+        "h": 44551,
+        "w": 262860,
+        "x": 0,
+        "y": 0
+      }
+    },
+    "searchMs": 0.29999999701976776,
+    "scopeMs": 1.2000000029802322,
+    "zoom": 2.2083333333333335
+  },
+  "deepFocus": {
+    "key": "reference:2931",
+    "loadMs": 42.900000005960464,
+    "hydrateMs": 16.599999994039536,
+    "fitMs": 0,
+    "initMs": 70.5,
+    "drawMs": 4.200000002980232,
+    "objects": 1,
+    "activeObjects": 1,
+    "ghostObjects": 0,
+    "labels": 1,
+    "labelKeys": [
+      "reference:2931"
+    ],
+    "minimap": {
+      "scope": {
+        "x": 10,
+        "y": 732,
+        "w": 262840,
+        "h": 43811
+      },
+      "focus": "reference:2931",
+      "world": {
+        "h": 44551,
+        "w": 262860,
+        "x": 0,
+        "y": 0
+      }
+    },
+    "searchMs": 0.29999999701976776,
+    "scopeMs": 1.2000000029802322,
+    "zoom": 4.4
+  },
+  "searchMs": {
+    "min": 0.09999999403953552,
+    "median": 0.20000000298023224,
+    "p95": 0.5,
+    "max": 0.5
+  },
+  "scopeMs": {
+    "min": 0,
+    "median": 0.20000000298023224,
+    "p95": 1.5,
+    "max": 1.7999999970197678
+  },
+  "drawMs": {
+    "min": 1.1999999955296516,
+    "median": 1.3999999985098839,
+    "p95": 4.800000004470348,
+    "max": 5.600000001490116
+  },
+  "scopeToPaintMs": {
+    "min": 30.69999999552965,
+    "median": 33.100000001490116,
+    "p95": 33.20000000298023,
+    "max": 33.20000000298023
+  },
+  "coordinateComparisons": 64080,
+  "maximumDisplacementPx": 0,
+  "domElements": 103,
+  "heapBytes": 14940322,
+  "checks": "PASS: real forest, all scopes, stage requirements, UNKNOWN project, shared memberships, deep focus, search, pan/zoom, keyboard, progress, no errors/external requests/storage"
+}

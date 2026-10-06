@@ -1,0 +1,410 @@
+[
+  {
+    "timings": {
+      "draw": {
+        "median": 1.4000000059604645,
+        "p95": 1.7999999970197678
+      },
+      "scope": {
+        "median": 0.8999999910593033,
+        "p95": 1.2000000029802322
+      },
+      "fit": {
+        "median": 0,
+        "p95": 0.10000000894069672
+      },
+      "search": {
+        "median": 0.20000000298023224,
+        "p95": 0.29999999701976776
+      }
+    },
+    "viewport": [
+      1440,
+      900
+    ],
+    "status": "PASS",
+    "comparisons": 31640,
+    "metrics": {
+      "loadMs": 35.3999999910593,
+      "hydrateMs": 15.700000002980232,
+      "fitMs": 0,
+      "fitScopeMs": 0,
+      "initMs": 58.79999999701977,
+      "labelMs": 0,
+      "labelBoxes": [
+        {
+          "key": "category:1162",
+          "x": 499.80839522942586,
+          "y": 336,
+          "w": 132.20709228515625,
+          "h": 44,
+          "lines": [
+            "Computer science"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:521",
+          "x": 8,
+          "y": 307.0651400579282,
+          "w": 191.4292449951172,
+          "h": 44,
+          "lines": [
+            "Algorithms and data structures"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:1163",
+          "x": 226.93529665005042,
+          "y": 307.0651400579282,
+          "w": 214.6254119873047,
+          "h": 44,
+          "lines": [
+            "Software development foundations"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:2679",
+          "x": 897.8786163330078,
+          "y": 307.0651400579282,
+          "w": 214.1213836669922,
+          "h": 44,
+          "lines": [
+            "System administration and DevOps"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:331",
+          "x": 647.4160860722096,
+          "y": 363.35688043076806,
+          "w": 97.09660339355469,
+          "h": 44,
+          "lines": [
+            "Python"
+          ],
+          "truncated": false
+        }
+      ],
+      "drawMs": 1.4000000059604645,
+      "objects": 292,
+      "activeObjects": 144,
+      "ghostObjects": 148,
+      "labels": 5,
+      "labelKeys": [
+        "category:1162",
+        "category:521",
+        "category:1163",
+        "category:2679",
+        "category:331"
+      ],
+      "minimap": {
+        "scope": {
+          "x": 24734,
+          "y": 30043,
+          "w": 205772,
+          "h": 14380
+        },
+        "focus": null,
+        "world": {
+          "h": 44551,
+          "w": 262860,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "scopeMs": 0.800000011920929,
+      "searchMs": 0.20000000298023224,
+      "navigationMs": 0.7000000029802322
+    },
+    "heap": 19160500,
+    "screenshots": [
+      "1440-my-atlas.png",
+      "1440-course-8.png",
+      "1440-project-113.png",
+      "1440-stage-617.png",
+      "1440-revealed-333.png",
+      "1440-deep-topic.png",
+      "1440-relations.png",
+      "1440-navigation.png"
+    ],
+    "errors": [],
+    "external": []
+  },
+  {
+    "timings": {
+      "draw": {
+        "median": 1.5,
+        "p95": 2.6000000089406967
+      },
+      "scope": {
+        "median": 1,
+        "p95": 1.9000000059604645
+      },
+      "fit": {
+        "median": 0,
+        "p95": 0.09999999403953552
+      },
+      "search": {
+        "median": 0.29999999701976776,
+        "p95": 0.5
+      }
+    },
+    "viewport": [
+      1920,
+      1080
+    ],
+    "status": "PASS",
+    "comparisons": 31640,
+    "metrics": {
+      "loadMs": 32.599999994039536,
+      "hydrateMs": 17.299999997019768,
+      "fitMs": 0,
+      "fitScopeMs": 0.09999999403953552,
+      "initMs": 57.79999999701977,
+      "labelMs": 0,
+      "labelBoxes": [
+        {
+          "key": "category:1162",
+          "x": 742.4956413076095,
+          "y": 336,
+          "w": 132.20709228515625,
+          "h": 44,
+          "lines": [
+            "Computer science"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:521",
+          "x": 8,
+          "y": 376.6402037206228,
+          "w": 191.4292449951172,
+          "h": 44,
+          "lines": [
+            "Algorithms and data structures"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:1163",
+          "x": 364.320752397188,
+          "y": 376.6402037206228,
+          "w": 214.6254119873047,
+          "h": 44,
+          "lines": [
+            "Software development foundations"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:2679",
+          "x": 1377.8786163330078,
+          "y": 376.6402037206228,
+          "w": 214.1213836669922,
+          "h": 44,
+          "lines": [
+            "System administration and DevOps"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:73",
+          "x": 642.7990631027286,
+          "y": 458.5190988083898,
+          "w": 103.96064758300781,
+          "h": 44,
+          "lines": [
+            "Java"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:331",
+          "x": 949.2180805126583,
+          "y": 458.5190988083898,
+          "w": 97.09660339355469,
+          "h": 44,
+          "lines": [
+            "Python"
+          ],
+          "truncated": false
+        }
+      ],
+      "drawMs": 1.3999999910593033,
+      "objects": 291,
+      "activeObjects": 144,
+      "ghostObjects": 147,
+      "labels": 6,
+      "labelKeys": [
+        "category:1162",
+        "category:521",
+        "category:1163",
+        "category:2679",
+        "category:73",
+        "category:331"
+      ],
+      "minimap": {
+        "scope": {
+          "x": 24734,
+          "y": 30043,
+          "w": 205772,
+          "h": 14380
+        },
+        "focus": null,
+        "world": {
+          "h": 44551,
+          "w": 262860,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "scopeMs": 1.0999999940395355,
+      "searchMs": 0.20000000298023224,
+      "navigationMs": 0.7000000029802322
+    },
+    "heap": 18194396,
+    "screenshots": [
+      "1920-my-atlas.png",
+      "1920-course-8.png",
+      "1920-project-113.png",
+      "1920-stage-617.png",
+      "1920-revealed-333.png",
+      "1920-deep-topic.png",
+      "1920-relations.png",
+      "1920-navigation.png"
+    ],
+    "errors": [],
+    "external": []
+  },
+  {
+    "timings": {
+      "draw": {
+        "median": 1.4000000059604645,
+        "p95": 1.7000000029802322
+      },
+      "scope": {
+        "median": 0.8999999910593033,
+        "p95": 1.3999999910593033
+      },
+      "fit": {
+        "median": 0,
+        "p95": 0.10000000894069672
+      },
+      "search": {
+        "median": 0.20000000298023224,
+        "p95": 0.4000000059604645
+      }
+    },
+    "viewport": [
+      1024,
+      768
+    ],
+    "status": "PASS",
+    "comparisons": 31640,
+    "metrics": {
+      "loadMs": 34.5,
+      "hydrateMs": 17.100000008940697,
+      "fitMs": 0,
+      "fitScopeMs": 0,
+      "initMs": 59.20000000298023,
+      "labelMs": 0.10000000894069672,
+      "labelBoxes": [
+        {
+          "key": "category:1162",
+          "x": 309.7033858015153,
+          "y": 336,
+          "w": 132.20709228515625,
+          "h": 44,
+          "lines": [
+            "Computer science"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:521",
+          "x": 8,
+          "y": 257.06467352215077,
+          "w": 191.4292449951172,
+          "h": 44,
+          "lines": [
+            "Algorithms and data structures"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:1164",
+          "x": 353.2586429690048,
+          "y": 257.06467352215077,
+          "w": 156.18496704101562,
+          "h": 44,
+          "lines": [
+            "Programming languages"
+          ],
+          "truncated": false
+        },
+        {
+          "key": "category:2679",
+          "x": 521.8786163330078,
+          "y": 257.06467352215077,
+          "w": 214.1213836669922,
+          "h": 44,
+          "lines": [
+            "System administration and DevOps"
+          ],
+          "truncated": false
+        }
+      ],
+      "drawMs": 1.3999999910593033,
+      "objects": 295,
+      "activeObjects": 144,
+      "ghostObjects": 151,
+      "labels": 4,
+      "labelKeys": [
+        "category:1162",
+        "category:521",
+        "category:1164",
+        "category:2679"
+      ],
+      "minimap": {
+        "scope": {
+          "x": 24734,
+          "y": 30043,
+          "w": 205772,
+          "h": 14380
+        },
+        "focus": null,
+        "world": {
+          "h": 44551,
+          "w": 262860,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "scopeMs": 0.800000011920929,
+      "searchMs": 0.20000000298023224,
+      "navigationMs": 0.6000000089406967
+    },
+    "heap": 17844784,
+    "screenshots": [
+      "1024-my-atlas.png",
+      "1024-course-8.png",
+      "1024-project-113.png",
+      "1024-stage-617.png",
+      "1024-revealed-333.png",
+      "1024-deep-topic.png",
+      "1024-relations.png",
+      "1024-navigation.png"
+    ],
+    "errors": [],
+    "external": []
+  },
+  {
+    "kind": "exact-reveal-review",
+    "status": "PASS",
+    "copyableFingerprint": true,
+    "screenshot": "1440-reveal-review.png"
+  }
+]

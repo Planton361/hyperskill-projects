@@ -1,0 +1,321 @@
+{
+  checks: 339,
+  views: 90,
+  reading: [
+    {
+      width: 1920,
+      view: 'overview',
+      title: undefined,
+      font: 2.546882009869897,
+      clipped: 0
+    },
+    {
+      width: 1920,
+      view: 'subtree',
+      title: 'Java',
+      font: 3.989458889669712,
+      clipped: 0
+    },
+    {
+      width: 1920,
+      view: 'subtree',
+      title: 'Basics',
+      font: 11.633196721311474,
+      clipped: 0
+    },
+    {
+      width: 1920,
+      view: 'topic',
+      title: 'For loop',
+      font: 16,
+      clipped: 0
+    },
+    {
+      width: 1920,
+      view: 'project',
+      title: undefined,
+      font: 2.796551724137931,
+      clipped: 0
+    },
+    {
+      width: 1440,
+      view: 'overview',
+      title: undefined,
+      font: 1.7931807985643788,
+      clipped: 0
+    },
+    {
+      width: 1440,
+      view: 'subtree',
+      title: 'Java',
+      font: 2.808854532677442,
+      clipped: 0
+    },
+    {
+      width: 1440,
+      view: 'subtree',
+      title: 'Basics',
+      font: 8.190573770491804,
+      clipped: 0
+    },
+    {
+      width: 1440,
+      view: 'topic',
+      title: 'For loop',
+      font: 16,
+      clipped: 0
+    },
+    {
+      width: 1440,
+      view: 'project',
+      title: undefined,
+      font: 1.9689655172413794,
+      clipped: 0
+    },
+    {
+      width: 1280,
+      view: 'overview',
+      title: undefined,
+      font: 1.5419470614625392,
+      clipped: 0
+    },
+    {
+      width: 1280,
+      view: 'subtree',
+      title: 'Java',
+      font: 2.415319747013352,
+      clipped: 0
+    },
+    {
+      width: 1280,
+      view: 'subtree',
+      title: 'Basics',
+      font: 7.043032786885245,
+      clipped: 0
+    },
+    {
+      width: 1280,
+      view: 'topic',
+      title: 'For loop',
+      font: 16,
+      clipped: 0
+    },
+    {
+      width: 1280,
+      view: 'project',
+      title: undefined,
+      font: 1.693103448275862,
+      clipped: 0
+    },
+    {
+      width: 1200,
+      view: 'overview',
+      title: undefined,
+      font: 1.8088829071332437,
+      clipped: 0
+    },
+    {
+      width: 1200,
+      view: 'subtree',
+      title: 'Java',
+      font: 2.833450456781448,
+      clipped: 0
+    },
+    {
+      width: 1200,
+      view: 'subtree',
+      title: 'Basics',
+      font: 8.262295081967213,
+      clipped: 0
+    },
+    {
+      width: 1200,
+      view: 'topic',
+      title: 'For loop',
+      font: 16,
+      clipped: 0
+    },
+    {
+      width: 1200,
+      view: 'project',
+      title: undefined,
+      font: 1.9862068965517243,
+      clipped: 0
+    },
+    {
+      width: 1024,
+      view: 'overview',
+      title: undefined,
+      font: 1.5325257963212202,
+      clipped: 0
+    },
+    {
+      width: 1024,
+      view: 'subtree',
+      title: 'Java',
+      font: 2.400562192550949,
+      clipped: 0
+    },
+    {
+      width: 1024,
+      view: 'subtree',
+      title: 'Basics',
+      font: 7,
+      clipped: 0
+    },
+    {
+      width: 1024,
+      view: 'topic',
+      title: 'For loop',
+      font: 16,
+      clipped: 0
+    },
+    {
+      width: 1024,
+      view: 'project',
+      title: undefined,
+      font: 1.6827586206896552,
+      clipped: 0
+    },
+    {
+      width: 768,
+      view: 'overview',
+      title: undefined,
+      font: 1.1305518169582771,
+      clipped: 0
+    },
+    {
+      width: 768,
+      view: 'subtree',
+      title: 'Java',
+      font: 1.7709065354884046,
+      clipped: 0
+    },
+    {
+      width: 768,
+      view: 'subtree',
+      title: 'Basics',
+      font: 5.163934426229509,
+      clipped: 0
+    },
+    {
+      width: 768,
+      view: 'topic',
+      title: 'For loop',
+      font: 16,
+      clipped: 0
+    },
+    {
+      width: 768,
+      view: 'project',
+      title: undefined,
+      font: 1.2413793103448276,
+      clipped: 0
+    },
+    {
+      width: 430,
+      view: 'overview',
+      title: undefined,
+      font: 0.5998205473306415,
+      clipped: 0
+    },
+    {
+      width: 430,
+      view: 'subtree',
+      title: 'Java',
+      font: 13,
+      clipped: 88
+    },
+    {
+      width: 430,
+      view: 'subtree',
+      title: 'Basics',
+      font: 13,
+      clipped: 29
+    },
+    {
+      width: 430,
+      view: 'topic',
+      title: 'For loop',
+      font: 16,
+      clipped: 0
+    },
+    {
+      width: 430,
+      view: 'project',
+      title: undefined,
+      font: 0.6586206896551724,
+      clipped: 0
+    },
+    {
+      width: 390,
+      view: 'overview',
+      title: undefined,
+      font: 0.5370121130551817,
+      clipped: 0
+    },
+    {
+      width: 390,
+      view: 'subtree',
+      title: 'Java',
+      font: 13,
+      clipped: 88
+    },
+    {
+      width: 390,
+      view: 'subtree',
+      title: 'Basics',
+      font: 13,
+      clipped: 29
+    },
+    {
+      width: 390,
+      view: 'topic',
+      title: 'For loop',
+      font: 16,
+      clipped: 0
+    },
+    {
+      width: 390,
+      view: 'project',
+      title: undefined,
+      font: 0.5896551724137931,
+      clipped: 0
+    },
+    {
+      width: 320,
+      view: 'overview',
+      title: undefined,
+      font: 0.42709735307312696,
+      clipped: 0
+    },
+    {
+      width: 320,
+      view: 'subtree',
+      title: 'Java',
+      font: 13,
+      clipped: 88
+    },
+    {
+      width: 320,
+      view: 'subtree',
+      title: 'Basics',
+      font: 13,
+      clipped: 29
+    },
+    {
+      width: 320,
+      view: 'topic',
+      title: 'For loop',
+      font: 16,
+      clipped: 0
+    },
+    {
+      width: 320,
+      view: 'project',
+      title: undefined,
+      font: 0.46896551724137925,
+      clipped: 0
+    }
+  ]
+}

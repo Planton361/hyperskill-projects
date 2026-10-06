@@ -1,0 +1,57 @@
+{
+  "counts": {
+    "categories": 849,
+    "structural_leaves": 3106,
+    "positions": 3955,
+    "hierarchy_pairs": 3952
+  },
+  "resolution": {
+    "resolved": 1,
+    "partial": 88,
+    "unresolved": 3017
+  },
+  "geometry_fingerprint": "0c5171f3ea6ccd706b4c901c36aaea674a44a46818136b7b941dc1c7ef9d4194",
+  "source_catalog_fingerprint": "bd49dfedac5c2045ac1e3ac57a130524534c20a1ee5f9be775408abf17b9cda9",
+  "geometry_bytes": 3295568,
+  "catalog_bytes": 1976924,
+  "projection_ms": 1220.733610993193,
+  "layout_ms": 28.403967997292057,
+  "geometry_encode_ms": 9.8541430052137,
+  "total_build_ms": 1258.9917219956988,
+  "bounds": {
+    "x": 0,
+    "y": 0,
+    "w": 262860,
+    "h": 44551
+  },
+  "personal": {
+    "accepted_categories": 46,
+    "accepted_topics": 89,
+    "visible_positions": 135,
+    "hidden_positions": 3820,
+    "hidden_percent": 96.5865992414665,
+    "bounds": {
+      "x": 65994,
+      "y": 240,
+      "w": 167748,
+      "h": 44183
+    },
+    "leaf_bounds": {
+      "x": 66378,
+      "y": 30203,
+      "w": 164108,
+      "h": 14220
+    },
+    "leaf_span_percent_of_global_width": 62.43171269877501,
+    "card_area_percent_of_visible_bounds": 0.023124800506566977,
+    "empty_area_percent_of_visible_bounds": 99.97687519949343,
+    "hidden_positions_in_leaf_horizontal_span": 2379
+  },
+  "activation_simulations": 2,
+  "maximum_displacement_px": 0,
+  "reference_promotion": {
+    "id": 333,
+    "slot": "leaf:333",
+    "entire_geometry_byte_identical": true
+  }
+}

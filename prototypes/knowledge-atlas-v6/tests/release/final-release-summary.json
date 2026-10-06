@@ -1,0 +1,29 @@
+{
+  "commit": "c46fae5d57cc901f9c639d3cd2976246be167350",
+  "publicUrl": "https://planton361.github.io/hyperskill-projects/knowledge-atlas-preview/",
+  "localChecks": 750,
+  "publicChecks": 750,
+  "publicWidthThemeConfigurations": 18,
+  "publicTouchConfigurations": 6,
+  "runtimeErrors": 0,
+  "protectedFilesUnchanged": true,
+  "frozenGeometryUnchanged": true,
+  "filesAdded": [
+    "docs/knowledge-atlas-preview/PREVIEW-NOTES.md",
+    "docs/knowledge-atlas-preview/app.js",
+    "docs/knowledge-atlas-preview/index.html",
+    "docs/knowledge-atlas-preview/layout-checkpoint.json",
+    "docs/knowledge-atlas-preview/layout-checkpoint.schema.json",
+    "docs/knowledge-atlas-preview/layout.js",
+    "docs/knowledge-atlas-preview/model.js",
+    "docs/knowledge-atlas-preview/model.json",
+    "docs/knowledge-atlas-preview/release-manifest.json",
+    "docs/knowledge-atlas-preview/routing.js",
+    "docs/knowledge-atlas-preview/style.css",
+    "docs/knowledge-atlas-preview/vendor/D3-LICENSE",
+    "docs/knowledge-atlas-preview/vendor/d3-7.9.0.min.js"
+  ],
+  "filesChanged": [],
+  "physicalTests": "outstanding",
+  "productionMigration": "NOT PERFORMED"
+}
