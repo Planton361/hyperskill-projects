@@ -13,8 +13,21 @@ Begin from deployed adaptive Production on main. The read-only release check is
 checks are documented in [MAC-HANDOFF.md](../../MAC-HANDOFF.md).
 The optional `--adaptive-preview` remains an isolated development preview.
 Do not use the legacy `--production` or spatial-migration workflow below to publish
-adaptive Production. The next milestone is **REAL PERSONAL-PROGRESS UPDATE FLOW
-VALIDATION**, as described in the architecture decision.
+adaptive Production. Progress tooling status: **REAL_PERSONAL_PROGRESS_UPDATE_FLOW_VALIDATED**.
+`python3 -B scripts/preview-adaptive-progress.py --observation /PATH/TO/ACTUAL-SANITIZED-ENVELOPE.json --json`
+validates/normalizes explicit progress, reports semantic before/after and builds the
+real adaptive candidate into a fresh temporary root outside the repository/source.
+It cannot accept an output/publication destination; synthetic fixtures are confined
+to disposable output. It neither migrates State nor publishes Production.
+
+Personal progress is semantic Knowledge; local geometry is derived presentation.
+For existing-Topic learned/verified-only changes, global geometry, ACTIVE_HISTORY,
+generation/history counters and local checkpoints stay unchanged. Review semantic
+diff and global equality, obtain human review before real Knowledge/Production
+changes, then explicitly publish and commit / CI / deploy under separate authorization.
+The next milestone is **REAL HYPERSKILL PROGRESS EVIDENCE INGESTION PREVIEW**, requiring
+actual new user-supplied/captured sanitized evidence, never manufactured progress.
+See the architecture decision and [validation report](../../prototypes/adaptive-pyramid/PERSONAL-PROGRESS-FLOW-VALIDATION.md).
 
 The remaining documentation is the **historical V6 pipeline reference**. Its
 runtime descriptions and operator examples record that earlier architecture;

@@ -47,13 +47,26 @@ pending/not-yet-applied wording does not describe current Production. The frozen
 final-v1 approval is audit evidence, not authorization for future replacements.
 Main is authoritative; the retained handoff branch is historical/recovery context.
 
-## Next engineering milestone
+## Personal-progress flow and next milestone
 
-**REAL PERSONAL-PROGRESS UPDATE FLOW VALIDATION** will verify the normal workflow:
-new accepted personal progress evidence → learned/verified semantic state update
-→ adaptive Production rebuild → My Knowledge expands/restyles → global reference
-remains unchanged.
+**REAL_PERSONAL_PROGRESS_UPDATE_FLOW_VALIDATED**. The pure personal-progress
+normalizer and preview-only CLI have validated learned and verified-only updates
+through the real semantic loader and adaptive candidate builder in disposable roots.
+See [the validation report](../../prototypes/adaptive-pyramid/PERSONAL-PROGRESS-FLOW-VALIDATION.md).
 
-This decision records the next task; this documentation cleanup does not implement
-or execute that workflow. Normal development starts from deployed adaptive
-Production, as documented in [MAC-HANDOFF.md](../../MAC-HANDOFF.md).
+Personal progress changes are semantic Knowledge changes; local geometry remains
+derived presentation. Existing-Topic learned/verified-only updates require no global
+geometry migration, ACTIVE_HISTORY mutation, presentation/layout-generation increment,
+history-version increment or local geometry checkpoint migration. The existing
+activation state remains a read dependency for Accepted Landscape. A different kind
+of structural evidence change requires explicit review; this result does not authorize it.
+
+Future flow: sanitized explicit Hyperskill evidence → validate / normalize → inspect
+semantic diff → build adaptive Production candidate → verify global reference unchanged
+→ human review of real Knowledge/Production changes → explicit publication → commit /
+CI / deploy. The preview has no real-root publication or implicit State migration path.
+
+Next: **REAL HYPERSKILL PROGRESS EVIDENCE INGESTION PREVIEW**. Use actual new sanitized
+user-supplied/captured progress evidence to produce a read-only semantic + Production
+preview before accepting or publishing it. Do not manufacture new progress; actual
+evidence is required. This next milestone has not been performed.

@@ -62,3 +62,44 @@ Machine-local `real-production-apply/preflight.json` and `final-results.json` co
 full local working inventories/status and remain excluded. Their useful outcomes are
 recorded in the milestone report and portable focused/protection summaries. No
 excluded file is deleted. No superseded history is reactivated by this commit.
+
+## Personal-progress tooling
+
+**REAL_PERSONAL_PROGRESS_UPDATE_FLOW_VALIDATED**. The real-pipeline disposable
+proof validates 31 → 32 learned (12 verified unchanged), and 12 → 13 verified
+without changing learned visibility or layout. Global reference bytes remain equal.
+See [the milestone report](../prototypes/adaptive-pyramid/PERSONAL-PROGRESS-FLOW-VALIDATION.md).
+
+Read-only preview of actual sanitized evidence:
+
+```sh
+python3 -B scripts/preview-adaptive-progress.py \
+  --observation /ABSOLUTE/PATH/TO/ACTUAL-SANITIZED-ENVELOPE.json --json
+```
+
+The envelope contains `observation` (the complete accepted personal-progress schema)
+and `evidence` with `id`, `source: hyperskill`,
+`method: user_supplied_authenticated_excerpt`, `confidence: explicit` and `note`.
+Supply explicit Topic statuses and a UTC timestamp, never inferred facts. The CLI
+reads current inputs and writes only to a newly allocated temporary root outside
+the repository/source. No real-root output flag, acceptance or publication is available.
+Validation fixtures use separate synthetic provenance and must never enter Knowledge.
+
+Future sequence: sanitized explicit evidence → validate / normalize → inspect semantic
+diff → adaptive candidate → verify global reference unchanged → human review of real
+Knowledge/Production changes → explicit publication → commit / CI / deploy.
+Personal progress changes semantic Knowledge. Derived local geometry may grow;
+learned/verified-only updates to existing Topics do not require global geometry
+migration, ACTIVE_HISTORY mutation, presentation/layout-generation or history-version
+increments, or local geometry checkpoint migration. Structural changes require a
+separate architecture review. Existing State remains read-only context for Accepted Landscape.
+
+Next milestone: **REAL HYPERSKILL PROGRESS EVIDENCE INGESTION PREVIEW** — actual new
+sanitized progress supplied/captured by the user, producing a read-only semantic +
+Production preview before acceptance/publication. This task must not manufacture
+progress and has not been performed.
+
+Focused reproducibility checks are `personal-progress-flow/validate.py` and
+`layout.cjs` under `prototypes/adaptive-pyramid/`. Their generated fixtures/results,
+local inventories, screenshots and temporary candidate trees are excluded from Git;
+the historical report retains the original measurements and local evidence links.

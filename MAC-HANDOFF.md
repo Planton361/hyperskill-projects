@@ -66,16 +66,35 @@ Such generated output is optional development material, not the adopted package.
 
 ## NORMAL POST-ADOPTION DEVELOPMENT
 
-Future work starts from deployed adaptive Production on main. The next substantive
-engineering milestone is **REAL PERSONAL-PROGRESS UPDATE FLOW VALIDATION**:
+Future work starts from deployed adaptive Production on main.
+**REAL_PERSONAL_PROGRESS_UPDATE_FLOW_VALIDATED**: the normalizer and preview-only
+interface have passed learned and verified-only pipeline checks in disposable roots.
+See [the validation report](prototypes/adaptive-pyramid/PERSONAL-PROGRESS-FLOW-VALIDATION.md).
 
-new accepted personal progress evidence → learned/verified semantic state update
-→ adaptive Production rebuild → My Knowledge expands/restyles → global reference
-remains unchanged.
+Personal progress changes are semantic Knowledge changes; adaptive local geometry
+remains derived presentation. For learned/verified-only updates of existing Topics,
+no global geometry migration, ACTIVE_HISTORY mutation, presentation/layout-generation
+increment, history-version increment or local geometry checkpoint migration is needed.
+Structural evidence changes require a separate review of that decision.
 
-This is a future validation task, not work performed by this documentation cleanup.
-Any future Production replacement must follow an explicit reviewed package workflow;
-the completed migration's frozen approval is not reusable authorization.
+The normal future flow is sanitized explicit Hyperskill progress evidence → validate /
+normalize → inspect semantic diff → build adaptive Production candidate → verify global
+reference unchanged → human review of real Knowledge/Production changes → explicit
+publication → commit / CI / deploy. Preview alone authorizes none of these writes.
+
+```sh
+python3 -B scripts/preview-adaptive-progress.py \
+  --observation /ABSOLUTE/PATH/TO/ACTUAL-SANITIZED-ENVELOPE.json --json
+```
+
+The source repository is read-only; output goes only to a fresh temporary root
+outside the repository/source. Synthetic fixtures cannot be published to real roots.
+
+Next milestone: **REAL HYPERSKILL PROGRESS EVIDENCE INGESTION PREVIEW** — use a genuinely
+new sanitized observation supplied/captured by the user to produce a read-only semantic
+and Production preview before acceptance or publication. It requires actual evidence;
+future work must not manufacture progress. This milestone has not been performed.
+The completed adoption's frozen approval is not reusable authorization.
 
 ## Historical evidence and local exclusions
 
