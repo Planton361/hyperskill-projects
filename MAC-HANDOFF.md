@@ -3,6 +3,7 @@
 - Handoff branch: `work/adaptive-pyramid-handoff` (tracks `origin` after push).
 - Baseline main: `b666e28d326e25c1ac8dca03aafe149798fa2a84`.
 - Date: 2026-10-06.
+- Implementation/handoff snapshot commit: `7126370496d8fc7ddc85ab666efd2507b3e91457`.
 - Final handoff commit SHA: run `git rev-parse HEAD` after checking out this branch.
   A commit cannot embed its own SHA; the final pushed SHA is also in the handoff report.
 - Main is unchanged. This branch preserves unfinished experimental work.
