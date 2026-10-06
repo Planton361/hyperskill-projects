@@ -1,7 +1,10 @@
 > **Historical strict-global workflow — superseded for Production.**
 > All packages and tokens described below are non-applicable. Follow
 > [the current architecture decision](../../../scripts/knowledge_atlas/ARCHITECTURE-DECISION.md)
-> and the root MAC-HANDOFF.md. Production has not been migrated.
+> and [MAC-HANDOFF.md](../../../MAC-HANDOFF.md). Adaptive Production is deployed;
+> strict-global personal-coordinate adoption remains permanently superseded unless
+> a future explicit architecture decision replaces it. The instructions and
+> awaiting-review statuses below describe the historical strict-global phase only.
 
 # Exact spatial migration review and approval contract
 

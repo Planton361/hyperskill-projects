@@ -1,10 +1,26 @@
-> **Current decision:** Production migration is **PAUSED_PENDING_ADAPTIVE_VIEW_ACCEPTANCE**.
-> Strict-global Version-A packages are non-applicable. The isolated normal-stack
-> candidate uses `--adaptive-preview` (optionally `--check --json`).
-> See [ARCHITECTURE-DECISION.md](ARCHITECTURE-DECISION.md).
-> Existing Production and historical pipeline documentation below remain unchanged.
+> **Current decision: ADAPTIVE_VIEW_PRODUCTION_ADOPTED.** Production is deployed
+> as **GLOBAL REFERENCE + ADAPTIVE LOCAL PYRAMID**. State, Knowledge,
+> ACTIVE_HISTORY and Generation/history were unchanged by adoption.
+> Strict-global Version-A Production adoption is permanently superseded unless
+> a future explicit architecture decision replaces it.
+> See [ARCHITECTURE-DECISION.md](ARCHITECTURE-DECISION.md) and
+> [the current Production adoption guide](../../docs/ADAPTIVE-PRODUCTION-ADOPTION.md).
 
-# Knowledge Atlas production hardening (pipeline v2)
+## Current adaptive Production workflow
+
+Begin from deployed adaptive Production on main. The read-only release check is
+`python3 -B scripts/check-adaptive-production.py`; normal local serving and focused
+checks are documented in [MAC-HANDOFF.md](../../MAC-HANDOFF.md).
+The optional `--adaptive-preview` remains an isolated development preview.
+Do not use the legacy `--production` or spatial-migration workflow below to publish
+adaptive Production. The next milestone is **REAL PERSONAL-PROGRESS UPDATE FLOW
+VALIDATION**, as described in the architecture decision.
+
+The remaining documentation is the **historical V6 pipeline reference**. Its
+runtime descriptions and operator examples record that earlier architecture;
+they are not current adaptive Production instructions.
+
+# Historical V6 production hardening (pipeline v2)
 
 The accepted V6 UI and public URLs are unchanged. `/knowledge-map/` is the
 production Atlas target. This offline
@@ -46,7 +62,7 @@ the complete deterministic plan. The default accumulated `MY_ATLAS` includes
 historical Courses, Project evidence and personal relevance without hiding
 accepted presentation history. This planner has no apply or geometry writer.
 
-## Normal operator workflow
+## Historical V6 operator workflow
 
 ```bash
 python -B scripts/update-knowledge-atlas.py --dry-run

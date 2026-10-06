@@ -1,8 +1,11 @@
-> **Current architecture decision (2026-10-06):** Production migration is **PAUSED**
-> pending adaptive-view acceptance. The strict-global Version-A migration is
-> **NOT CURRENTLY APPROVED FOR EXECUTION**; all historical packages are non-applicable.
-> See [the dual-view decision](../../scripts/knowledge_atlas/ARCHITECTURE-DECISION.md).
-> The documentation below is retained historical/reference evidence.
+> **Current architecture: ADAPTIVE_VIEW_PRODUCTION_ADOPTED.** Production is
+> deployed as **GLOBAL REFERENCE + ADAPTIVE LOCAL PYRAMID**. The strict-global
+> personal-coordinate Version-A Production adoption is permanently superseded,
+> unless a future explicit architecture decision replaces it. Historical migration
+> packages and approval tokens are non-applicable.
+> See [the current decision](../../scripts/knowledge_atlas/ARCHITECTURE-DECISION.md).
+> The documentation below is retained historical/reference evidence, not a pending
+> Production migration or current operator workflow.
 
 # Global Canonical Pyramid — Version A
 
