@@ -1,0 +1,7 @@
+{
+  "global_model_sha256": "43108621762bcac6a29ece79cf4df71d2ef3a40ca80275c0736beef80862e332",
+  "observations": [
+    "observations/global-knowledge-map-2026-10-04.json",
+    "observations/global-topic-metadata-2026-10-07-89d5c1a731e5.json"
+  ]
+}

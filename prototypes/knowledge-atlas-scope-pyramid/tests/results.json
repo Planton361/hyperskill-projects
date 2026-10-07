@@ -1,0 +1,358 @@
+{
+  "all": [
+    {
+      "scope": "course:8",
+      "synthetic": false,
+      "explicitTopics": 89,
+      "explicitCategories": 46,
+      "contextCategories": 0,
+      "rootCount": 1,
+      "worldWidth": 2727.86865234375,
+      "worldHeight": 1386.3999999999999,
+      "aspectRatio": 1.96759135339278,
+      "fitAllScale": 0.49336410848240053,
+      "projectedTopicFont": 6.9070975187536074,
+      "trayCount": 26,
+      "trayColumns": {
+        "1": 24,
+        "2": 2
+      },
+      "connectorSpan": {
+        "min": 0,
+        "median": 85,
+        "p90": 499,
+        "p95": 732,
+        "max": 1671.11865234375
+      },
+      "connectorSegmentLength": {
+        "min": 9.999999999999943,
+        "median": 20,
+        "p90": 276,
+        "p95": 446,
+        "max": 965.184326171875
+      },
+      "layoutMs": 387.19999999552965,
+      "overlapCount": 0,
+      "routeCollisionCount": 0,
+      "clippedTitleCount": 0,
+      "orderViolations": 0,
+      "learned": 31,
+      "verified": 12,
+      "geometrySha256": "e50f06bcf2618f1410c47bdd7945b4f6c16562df4c67ab910e016c7c35688990"
+    },
+    {
+      "scope": "project:113",
+      "synthetic": false,
+      "explicitTopics": 26,
+      "explicitCategories": 0,
+      "contextCategories": 21,
+      "rootCount": 1,
+      "worldWidth": 1816.5,
+      "worldHeight": 939.8,
+      "aspectRatio": 1.9328580549052992,
+      "fitAllScale": 0.7278144286018302,
+      "projectedTopicFont": 10.189402000425623,
+      "trayCount": 11,
+      "trayColumns": {
+        "1": 9,
+        "2": 2
+      },
+      "connectorSpan": {
+        "min": 0,
+        "median": 0,
+        "p90": 489,
+        "p95": 539.5,
+        "max": 698
+      },
+      "connectorSegmentLength": {
+        "min": 9.999999999999943,
+        "median": 20,
+        "p90": 208,
+        "p95": 272.75,
+        "max": 630
+      },
+      "layoutMs": 51.79999999701977,
+      "overlapCount": 0,
+      "routeCollisionCount": 0,
+      "clippedTitleCount": 0,
+      "orderViolations": 0,
+      "learned": 26,
+      "verified": 10,
+      "geometrySha256": "ead9f295bb564b87b70b8c8fe9d5b8e40f0b31d90e8c3af782d42ed46ae10f76"
+    },
+    {
+      "scope": "stage:617",
+      "synthetic": false,
+      "explicitTopics": 12,
+      "explicitCategories": 0,
+      "contextCategories": 16,
+      "rootCount": 1,
+      "worldWidth": 1271.5,
+      "worldHeight": 698.6,
+      "aspectRatio": 1.820068708846264,
+      "fitAllScale": 0.9791010592613799,
+      "projectedTopicFont": 13.707414829659319,
+      "trayCount": 6,
+      "trayColumns": {
+        "1": 6
+      },
+      "connectorSpan": {
+        "min": 0,
+        "median": 0,
+        "p90": 175.25,
+        "p95": 267,
+        "max": 357.5
+      },
+      "connectorSegmentLength": {
+        "min": 9.999999999999943,
+        "median": 20,
+        "p90": 157.5,
+        "p95": 267,
+        "max": 357.5
+      },
+      "layoutMs": 11.799999997019768,
+      "overlapCount": 0,
+      "routeCollisionCount": 0,
+      "clippedTitleCount": 0,
+      "orderViolations": 0,
+      "learned": 12,
+      "verified": 7,
+      "geometrySha256": "144f26af29affe78e80c978f56576fe9ec17be9d0064adf7c0cd42731c7e3558"
+    },
+    {
+      "scope": "synthetic:one",
+      "synthetic": true,
+      "explicitTopics": 1,
+      "explicitCategories": 0,
+      "contextCategories": 5,
+      "rootCount": 1,
+      "worldWidth": 239,
+      "worldHeight": 664.9,
+      "aspectRatio": 0.35945254925552717,
+      "fitAllScale": 1.0287261242292074,
+      "projectedTopicFont": 14.402165739208904,
+      "trayCount": 1,
+      "trayColumns": {
+        "1": 1
+      },
+      "connectorSpan": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "connectorSegmentLength": {
+        "min": 20,
+        "median": 20,
+        "p90": 20,
+        "p95": 20,
+        "max": 20
+      },
+      "layoutMs": 0.8999999985098839,
+      "overlapCount": 0,
+      "routeCollisionCount": 0,
+      "clippedTitleCount": 0,
+      "orderViolations": 0,
+      "learned": 0,
+      "verified": 0,
+      "geometrySha256": "ea0bf1666a4fff0172b04cf8d36b714d707ea0653c969f12b1c7719aa6a28a36"
+    },
+    {
+      "scope": "synthetic:five-one-branch",
+      "synthetic": true,
+      "explicitTopics": 5,
+      "explicitCategories": 0,
+      "contextCategories": 5,
+      "rootCount": 1,
+      "worldWidth": 664,
+      "worldHeight": 651,
+      "aspectRatio": 1.0199692780337941,
+      "fitAllScale": 1.0506912442396312,
+      "projectedTopicFont": 14.709677419354836,
+      "trayCount": 1,
+      "trayColumns": {
+        "3": 1
+      },
+      "connectorSpan": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "connectorSegmentLength": {
+        "min": 19.999999999999943,
+        "median": 20,
+        "p90": 20,
+        "p95": 20,
+        "max": 20
+      },
+      "layoutMs": 1.3000000044703484,
+      "overlapCount": 0,
+      "routeCollisionCount": 0,
+      "clippedTitleCount": 0,
+      "orderViolations": 0,
+      "learned": 2,
+      "verified": 1,
+      "geometrySha256": "3adf3a094d033cbf4a3a1349f055901ff6e3051a70fecd49895464bb12f51170"
+    },
+    {
+      "scope": "synthetic:twenty-several-branches",
+      "synthetic": true,
+      "explicitTopics": 20,
+      "explicitCategories": 0,
+      "contextCategories": 29,
+      "rootCount": 5,
+      "worldWidth": 2155,
+      "worldHeight": 757.3,
+      "aspectRatio": 2.8456358114353626,
+      "fitAllScale": 0.645939675174014,
+      "projectedTopicFont": 9.043155452436196,
+      "trayCount": 13,
+      "trayColumns": {
+        "1": 12,
+        "2": 1
+      },
+      "connectorSpan": {
+        "min": 0,
+        "median": 0,
+        "p90": 206,
+        "p95": 303.5,
+        "max": 961.5
+      },
+      "connectorSegmentLength": {
+        "min": 9.999999999999943,
+        "median": 20,
+        "p90": 153.1,
+        "p95": 253.25,
+        "max": 494.5
+      },
+      "layoutMs": 38.400000005960464,
+      "overlapCount": 0,
+      "routeCollisionCount": 0,
+      "clippedTitleCount": 0,
+      "orderViolations": 0,
+      "learned": 0,
+      "verified": 0,
+      "geometrySha256": "cdd7c3f0a8c0fc48d58927c7a77ce581eacc24c44cd08616ba1b4d14ce5577a2"
+    },
+    {
+      "scope": "synthetic:hundred-multiple-roots",
+      "synthetic": true,
+      "explicitTopics": 100,
+      "explicitCategories": 0,
+      "contextCategories": 73,
+      "rootCount": 5,
+      "worldWidth": 3488,
+      "worldHeight": 1751.8,
+      "aspectRatio": 1.9910948738440462,
+      "fitAllScale": 0.39045553145336226,
+      "projectedTopicFont": 5.466377440347071,
+      "trayCount": 47,
+      "trayColumns": {
+        "1": 44,
+        "2": 3
+      },
+      "connectorSpan": {
+        "min": 0,
+        "median": 74,
+        "p90": 528,
+        "p95": 667,
+        "max": 2501
+      },
+      "connectorSegmentLength": {
+        "min": 9,
+        "median": 20,
+        "p90": 286.20000000000005,
+        "p95": 420.29999999999995,
+        "max": 1737
+      },
+      "layoutMs": 867,
+      "overlapCount": 0,
+      "routeCollisionCount": 0,
+      "clippedTitleCount": 0,
+      "orderViolations": 0,
+      "learned": 6,
+      "verified": 2,
+      "geometrySha256": "4255af6e07baa8a9b82b5aebc65ef66921533b47bb1c9993653a8e98529fe909"
+    },
+    {
+      "scope": "synthetic:three-hundred",
+      "synthetic": true,
+      "explicitTopics": 300,
+      "explicitCategories": 0,
+      "contextCategories": 133,
+      "rootCount": 5,
+      "worldWidth": 5912,
+      "worldHeight": 2942,
+      "aspectRatio": 2.009517335146159,
+      "fitAllScale": 0.23249490142760026,
+      "projectedTopicFont": 3.2549286199864036,
+      "trayCount": 92,
+      "trayColumns": {
+        "1": 83,
+        "2": 9
+      },
+      "connectorSpan": {
+        "min": 0,
+        "median": 94,
+        "p90": 881,
+        "p95": 1054,
+        "max": 4752.75
+      },
+      "connectorSegmentLength": {
+        "min": 9.999999999999943,
+        "median": 20,
+        "p90": 301,
+        "p95": 508,
+        "max": 2957
+      },
+      "layoutMs": 2475.89999999851,
+      "overlapCount": 0,
+      "routeCollisionCount": 0,
+      "clippedTitleCount": 0,
+      "orderViolations": 0,
+      "learned": 12,
+      "verified": 7,
+      "geometrySha256": "18af0bf5d34dff6718a8fd1d3d6c21fbc19ee5ebbf10cc84f2dc6653bb40de46"
+    }
+  ],
+  "failures": [],
+  "foundation": {
+    "categories": 849,
+    "topics": 3106,
+    "unresolved": 0,
+    "learned": 31,
+    "verified": 12
+  },
+  "checks": "All real and synthetic layouts: exact inventory, independent minimal closure, shuffled-input determinism, semantic uniqueness, full titles, complete memberships, canonical order/alignment, rows/trays/card overlap, orthogonal routes/endpoints/card avoidance, exact identity mapping, unchanged catalog.",
+  "dom": [
+    {
+      "type": "course",
+      "textIssues": [],
+      "rendered": 136
+    },
+    {
+      "type": "project",
+      "textIssues": [],
+      "rendered": 48
+    },
+    {
+      "type": "stage",
+      "textIssues": [],
+      "rendered": 29
+    }
+  ],
+  "browserErrors": [],
+  "interactions": {
+    "searchExactId": true,
+    "requirementLearnedVerifiedTogether": true,
+    "topicFocus": true,
+    "subtreeFit": true,
+    "fitAll": true,
+    "panZoomMinimap": true,
+    "noNavigationRelayout": true,
+    "actualGlobalTopicAndCategory": true
+  }
+}

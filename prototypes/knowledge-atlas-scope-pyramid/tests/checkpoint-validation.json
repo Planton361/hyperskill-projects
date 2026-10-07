@@ -1,0 +1,50 @@
+{
+  "status": "GENERIC_SCOPE_PYRAMID_PROVEN",
+  "foundation": {
+    "categories": 849,
+    "topics": 3106,
+    "unresolved": 0,
+    "learned": 31,
+    "verified": 12
+  },
+  "real_scopes": [
+    {
+      "scope": "course:8",
+      "explicitTopics": 89,
+      "explicitCategories": 46,
+      "contextCategories": 0,
+      "rootCount": 1,
+      "overlapCount": 0,
+      "clippedTitleCount": 0,
+      "geometrySha256": "e50f06bcf2618f1410c47bdd7945b4f6c16562df4c67ab910e016c7c35688990"
+    },
+    {
+      "scope": "project:113",
+      "explicitTopics": 26,
+      "explicitCategories": 0,
+      "contextCategories": 21,
+      "rootCount": 1,
+      "overlapCount": 0,
+      "clippedTitleCount": 0,
+      "geometrySha256": "ead9f295bb564b87b70b8c8fe9d5b8e40f0b31d90e8c3af782d42ed46ae10f76"
+    },
+    {
+      "scope": "stage:617",
+      "explicitTopics": 12,
+      "explicitCategories": 0,
+      "contextCategories": 16,
+      "rootCount": 1,
+      "overlapCount": 0,
+      "clippedTitleCount": 0,
+      "geometrySha256": "144f26af29affe78e80c978f56576fe9ec17be9d0064adf7c0cd42731c7e3558"
+    }
+  ],
+  "synthetic_tests_passed": 5,
+  "generality": "PASS",
+  "security": "PASS: staged source/data credential and artifact scan",
+  "protected_surfaces": "unchanged",
+  "protected_files_checked": 330,
+  "screenshots_committed": 3,
+  "excluded": "acquisition/browser/session/HAR material; temporary protected manifests; generated semantic test dumps; Inspector screenshot; unrelated adaptive and Skill Tree work",
+  "next_milestone": "COURSE / PROJECT / STAGE RELATION DISCOVERY + ACQUISITION"
+}
