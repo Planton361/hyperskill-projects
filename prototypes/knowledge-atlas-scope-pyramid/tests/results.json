@@ -7,38 +7,38 @@
       "explicitCategories": 46,
       "contextCategories": 0,
       "rootCount": 1,
-      "worldWidth": 2727.86865234375,
-      "worldHeight": 1386.3999999999999,
-      "aspectRatio": 1.96759135339278,
-      "fitAllScale": 0.49336410848240053,
-      "projectedTopicFont": 6.9070975187536074,
+      "worldWidth": 3408.11865234375,
+      "worldHeight": 1435.7,
+      "aspectRatio": 2.3738376069817857,
+      "fitAllScale": 0.40843648417073947,
+      "projectedTopicFont": 5.718110778390352,
       "trayCount": 26,
       "trayColumns": {
-        "1": 24,
-        "2": 2
+        "1": 23,
+        "2": 3
       },
       "connectorSpan": {
         "min": 0,
-        "median": 85,
-        "p90": 499,
-        "p95": 732,
-        "max": 1671.11865234375
+        "median": 0,
+        "p90": 585.059326171875,
+        "p95": 820,
+        "max": 1829.11865234375
       },
       "connectorSegmentLength": {
-        "min": 9.999999999999943,
+        "min": 10,
         "median": 20,
-        "p90": 276,
-        "p95": 446,
-        "max": 965.184326171875
+        "p90": 337,
+        "p95": 485,
+        "max": 1068.059326171875
       },
-      "layoutMs": 387.19999999552965,
+      "layoutMs": 259.29999999701977,
       "overlapCount": 0,
       "routeCollisionCount": 0,
       "clippedTitleCount": 0,
       "orderViolations": 0,
       "learned": 31,
       "verified": 12,
-      "geometrySha256": "e50f06bcf2618f1410c47bdd7945b4f6c16562df4c67ab910e016c7c35688990"
+      "geometrySha256": "e594a5c6e4ca771e0ca9246fa928bff564f95cc45b724df42a5d1529972c30d6"
     },
     {
       "scope": "project:113",
@@ -47,38 +47,37 @@
       "explicitCategories": 0,
       "contextCategories": 21,
       "rootCount": 1,
-      "worldWidth": 1816.5,
-      "worldHeight": 939.8,
-      "aspectRatio": 1.9328580549052992,
-      "fitAllScale": 0.7278144286018302,
-      "projectedTopicFont": 10.189402000425623,
+      "worldWidth": 1954,
+      "worldHeight": 956.9,
+      "aspectRatio": 2.042010659421047,
+      "fitAllScale": 0.7123848515864892,
+      "projectedTopicFont": 9.973387922210849,
       "trayCount": 11,
       "trayColumns": {
-        "1": 9,
-        "2": 2
+        "1": 11
       },
       "connectorSpan": {
         "min": 0,
         "median": 0,
-        "p90": 489,
-        "p95": 539.5,
-        "max": 698
+        "p90": 470,
+        "p95": 490,
+        "max": 768.5
       },
       "connectorSegmentLength": {
-        "min": 9.999999999999943,
-        "median": 20,
-        "p90": 208,
-        "p95": 272.75,
-        "max": 630
+        "min": 10,
+        "median": 32.099999999999966,
+        "p90": 188,
+        "p95": 208,
+        "max": 768.5
       },
-      "layoutMs": 51.79999999701977,
+      "layoutMs": 57.8999999910593,
       "overlapCount": 0,
       "routeCollisionCount": 0,
       "clippedTitleCount": 0,
       "orderViolations": 0,
       "learned": 26,
       "verified": 10,
-      "geometrySha256": "ead9f295bb564b87b70b8c8fe9d5b8e40f0b31d90e8c3af782d42ed46ae10f76"
+      "geometrySha256": "0356108a9d3d292fd8c00970f1fc855b1fc820fc6ee4cc7fb0aaa46632ebe65c"
     },
     {
       "scope": "stage:617",
@@ -87,37 +86,38 @@
       "explicitCategories": 0,
       "contextCategories": 16,
       "rootCount": 1,
-      "worldWidth": 1271.5,
-      "worldHeight": 698.6,
-      "aspectRatio": 1.820068708846264,
-      "fitAllScale": 0.9791010592613799,
-      "projectedTopicFont": 13.707414829659319,
+      "worldWidth": 1409.5,
+      "worldHeight": 724.9,
+      "aspectRatio": 1.9444061249827562,
+      "fitAllScale": 0.9435784246102911,
+      "projectedTopicFont": 13.210097944544074,
       "trayCount": 6,
       "trayColumns": {
-        "1": 6
+        "1": 5,
+        "2": 1
       },
       "connectorSpan": {
         "min": 0,
         "median": 0,
-        "p90": 175.25,
-        "p95": 267,
-        "max": 357.5
+        "p90": 222,
+        "p95": 272.75,
+        "max": 426.5
       },
       "connectorSegmentLength": {
-        "min": 9.999999999999943,
-        "median": 20,
+        "min": 10,
+        "median": 32.099999999999966,
         "p90": 157.5,
-        "p95": 267,
-        "max": 357.5
+        "p95": 272.75,
+        "max": 426.5
       },
-      "layoutMs": 11.799999997019768,
+      "layoutMs": 17.700000002980232,
       "overlapCount": 0,
       "routeCollisionCount": 0,
       "clippedTitleCount": 0,
       "orderViolations": 0,
       "learned": 12,
       "verified": 7,
-      "geometrySha256": "144f26af29affe78e80c978f56576fe9ec17be9d0064adf7c0cd42731c7e3558"
+      "geometrySha256": "4ad5690ada8733859ce5efed8ae900634dc5793fcdac1ae4a92e867e078c29cd"
     },
     {
       "scope": "synthetic:one",
@@ -127,10 +127,10 @@
       "contextCategories": 5,
       "rootCount": 1,
       "worldWidth": 239,
-      "worldHeight": 664.9,
-      "aspectRatio": 0.35945254925552717,
-      "fitAllScale": 1.0287261242292074,
-      "projectedTopicFont": 14.402165739208904,
+      "worldHeight": 670.9,
+      "aspectRatio": 0.35623788940229545,
+      "fitAllScale": 1.0195260098375316,
+      "projectedTopicFont": 14.273364137725443,
       "trayCount": 1,
       "trayColumns": {
         "1": 1
@@ -149,14 +149,14 @@
         "p95": 20,
         "max": 20
       },
-      "layoutMs": 0.8999999985098839,
+      "layoutMs": 1.0999999940395355,
       "overlapCount": 0,
       "routeCollisionCount": 0,
       "clippedTitleCount": 0,
       "orderViolations": 0,
       "learned": 0,
       "verified": 0,
-      "geometrySha256": "ea0bf1666a4fff0172b04cf8d36b714d707ea0653c969f12b1c7719aa6a28a36"
+      "geometrySha256": "33068886b5b191eaa450c32840476a7b1733e45ed97ac618ffa08cf11c1b1135"
     },
     {
       "scope": "synthetic:five-one-branch",
@@ -166,10 +166,10 @@
       "contextCategories": 5,
       "rootCount": 1,
       "worldWidth": 664,
-      "worldHeight": 651,
-      "aspectRatio": 1.0199692780337941,
-      "fitAllScale": 1.0506912442396312,
-      "projectedTopicFont": 14.709677419354836,
+      "worldHeight": 657,
+      "aspectRatio": 1.0106544901065448,
+      "fitAllScale": 1.0410958904109588,
+      "projectedTopicFont": 14.575342465753424,
       "trayCount": 1,
       "trayColumns": {
         "3": 1
@@ -188,14 +188,14 @@
         "p95": 20,
         "max": 20
       },
-      "layoutMs": 1.3000000044703484,
+      "layoutMs": 1.3999999910593033,
       "overlapCount": 0,
       "routeCollisionCount": 0,
       "clippedTitleCount": 0,
       "orderViolations": 0,
       "learned": 2,
       "verified": 1,
-      "geometrySha256": "3adf3a094d033cbf4a3a1349f055901ff6e3051a70fecd49895464bb12f51170"
+      "geometrySha256": "cc4fe92bbe7eaedabe0d3ec955f9ea3cfb14dfdcd3798b0e3ab12706aab4b5b5"
     },
     {
       "scope": "synthetic:twenty-several-branches",
@@ -204,38 +204,37 @@
       "explicitCategories": 0,
       "contextCategories": 29,
       "rootCount": 5,
-      "worldWidth": 2155,
-      "worldHeight": 757.3,
-      "aspectRatio": 2.8456358114353626,
-      "fitAllScale": 0.645939675174014,
-      "projectedTopicFont": 9.043155452436196,
+      "worldWidth": 2176.5,
+      "worldHeight": 835.3999999999999,
+      "aspectRatio": 2.6053387598755093,
+      "fitAllScale": 0.6395589248793935,
+      "projectedTopicFont": 8.953824948311508,
       "trayCount": 13,
       "trayColumns": {
-        "1": 12,
-        "2": 1
+        "1": 13
       },
       "connectorSpan": {
         "min": 0,
         "median": 0,
-        "p90": 206,
-        "p95": 303.5,
-        "max": 961.5
+        "p90": 190.5,
+        "p95": 305.25,
+        "max": 972.25
       },
       "connectorSegmentLength": {
-        "min": 9.999999999999943,
+        "min": 3.25,
         "median": 20,
-        "p90": 153.1,
-        "p95": 253.25,
-        "max": 494.5
+        "p90": 176.25,
+        "p95": 190.5,
+        "max": 499
       },
-      "layoutMs": 38.400000005960464,
+      "layoutMs": 63.599999994039536,
       "overlapCount": 0,
       "routeCollisionCount": 0,
       "clippedTitleCount": 0,
       "orderViolations": 0,
       "learned": 0,
       "verified": 0,
-      "geometrySha256": "cdd7c3f0a8c0fc48d58927c7a77ce581eacc24c44cd08616ba1b4d14ce5577a2"
+      "geometrySha256": "6a8354b1033074d6c5ce5eeb2bcf5800f0b7eb4d35809b77610db7b88ec64678"
     },
     {
       "scope": "synthetic:hundred-multiple-roots",
@@ -244,38 +243,38 @@
       "explicitCategories": 0,
       "contextCategories": 73,
       "rootCount": 5,
-      "worldWidth": 3488,
-      "worldHeight": 1751.8,
-      "aspectRatio": 1.9910948738440462,
-      "fitAllScale": 0.39045553145336226,
-      "projectedTopicFont": 5.466377440347071,
+      "worldWidth": 3590,
+      "worldHeight": 1950.6999999999998,
+      "aspectRatio": 1.8403649971804994,
+      "fitAllScale": 0.350643358794279,
+      "projectedTopicFont": 4.909007023119906,
       "trayCount": 47,
       "trayColumns": {
-        "1": 44,
-        "2": 3
+        "1": 43,
+        "2": 4
       },
       "connectorSpan": {
         "min": 0,
-        "median": 74,
-        "p90": 528,
-        "p95": 667,
-        "max": 2501
+        "median": 84,
+        "p90": 542.5,
+        "p95": 795.75,
+        "max": 2872
       },
       "connectorSegmentLength": {
-        "min": 9,
+        "min": 9.999999999999943,
         "median": 20,
-        "p90": 286.20000000000005,
-        "p95": 420.29999999999995,
-        "max": 1737
+        "p90": 282,
+        "p95": 519.25,
+        "max": 1796
       },
-      "layoutMs": 867,
+      "layoutMs": 554.1999999880791,
       "overlapCount": 0,
       "routeCollisionCount": 0,
       "clippedTitleCount": 0,
       "orderViolations": 0,
       "learned": 6,
       "verified": 2,
-      "geometrySha256": "4255af6e07baa8a9b82b5aebc65ef66921533b47bb1c9993653a8e98529fe909"
+      "geometrySha256": "6384b4cd6ddd5d000c0c2f9ea8ccea24f13178c1d3b1c210f4c06880922a6785"
     },
     {
       "scope": "synthetic:three-hundred",
@@ -284,38 +283,39 @@
       "explicitCategories": 0,
       "contextCategories": 133,
       "rootCount": 5,
-      "worldWidth": 5912,
-      "worldHeight": 2942,
-      "aspectRatio": 2.009517335146159,
-      "fitAllScale": 0.23249490142760026,
-      "projectedTopicFont": 3.2549286199864036,
+      "worldWidth": 6249,
+      "worldHeight": 2968.8,
+      "aspectRatio": 2.1048908649959577,
+      "fitAllScale": 0.2227556409025444,
+      "projectedTopicFont": 3.1185789726356217,
       "trayCount": 92,
       "trayColumns": {
         "1": 83,
-        "2": 9
+        "2": 8,
+        "3": 1
       },
       "connectorSpan": {
         "min": 0,
         "median": 94,
-        "p90": 881,
-        "p95": 1054,
-        "max": 4752.75
+        "p90": 794.25,
+        "p95": 1318,
+        "max": 5088.75
       },
       "connectorSegmentLength": {
         "min": 9.999999999999943,
-        "median": 20,
-        "p90": 301,
-        "p95": 508,
-        "max": 2957
+        "median": 42.09999999999991,
+        "p90": 306.2999999999997,
+        "p95": 635.75,
+        "max": 3125.5
       },
-      "layoutMs": 2475.89999999851,
+      "layoutMs": 1529.7999999970198,
       "overlapCount": 0,
       "routeCollisionCount": 0,
       "clippedTitleCount": 0,
       "orderViolations": 0,
       "learned": 12,
       "verified": 7,
-      "geometrySha256": "18af0bf5d34dff6718a8fd1d3d6c21fbc19ee5ebbf10cc84f2dc6653bb40de46"
+      "geometrySha256": "96997e7631c86e76bb95a612a7cf969ff4cf4be6d84a204984d00fb3e4b4846b"
     }
   ],
   "failures": [],

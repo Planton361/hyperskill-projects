@@ -1,0 +1,141 @@
+[
+  {
+    "overlapCount": 0,
+    "minimapOcclusions": [],
+    "scope": "course",
+    "worldWidth": 2727.86865234375,
+    "worldHeight": 1386.3999999999999,
+    "fitAllScale": 0.49336410848240053,
+    "projectedTopicPx": 6.9070975187536074,
+    "averageSameDepthYDeviation": 164.4820630861039,
+    "maxSameDepthYDeviation": 380.65999999999997,
+    "maxSameDepthYRange": 536.6,
+    "connectorSpan": {
+      "mean": 278.4654116423234,
+      "median": 135,
+      "p95": 965.184326171875,
+      "max": 1671.11865234375
+    },
+    "whitespaceRatio": 0.6657560511838522,
+    "layoutMs": 393.70000000298023,
+    "depthBands": {
+      "category:1162:1": [
+        86.4
+      ],
+      "category:1162:2": [
+        191
+      ],
+      "category:1162:3": [
+        302.3,
+        772.5999999999999,
+        280.2
+      ],
+      "category:1162:4": [
+        369.4,
+        861.8,
+        347.29999999999995,
+        771.5999999999999
+      ],
+      "category:1162:5": [
+        436.5,
+        951,
+        414.4,
+        436.49999999999994,
+        838.6999999999999
+      ],
+      "category:1162:6": [
+        927.9
+      ],
+      "category:1162:7": [
+        1017.1,
+        995,
+        1236.1999999999998
+      ]
+    }
+  },
+  {
+    "overlapCount": 0,
+    "minimapOcclusions": [],
+    "scope": "project",
+    "worldWidth": 1816.5,
+    "worldHeight": 939.8,
+    "fitAllScale": 0.7278144286018302,
+    "projectedTopicPx": 10.189402000425623,
+    "averageSameDepthYDeviation": 51.10603174603174,
+    "maxSameDepthYDeviation": 160.7,
+    "maxSameDepthYRange": 242.19999999999993,
+    "connectorSpan": {
+      "mean": 214.8452380952381,
+      "median": 132.5,
+      "p95": 630,
+      "max": 698
+    },
+    "whitespaceRatio": 0.7223521563788279,
+    "layoutMs": 55,
+    "depthBands": {
+      "category:1162:1": [
+        86.4
+      ],
+      "category:1162:2": [
+        191
+      ],
+      "category:1162:3": [
+        302.3,
+        280.2
+      ],
+      "category:1162:4": [
+        369.4,
+        391.5,
+        347.29999999999995
+      ],
+      "category:1162:5": [
+        436.5,
+        480.7,
+        414.4,
+        656.5999999999999
+      ]
+    }
+  },
+  {
+    "overlapCount": 0,
+    "minimapOcclusions": [],
+    "scope": "stage",
+    "worldWidth": 1271.5,
+    "worldHeight": 698.6,
+    "fitAllScale": 0.9791010592613799,
+    "projectedTopicPx": 13.707414829659319,
+    "averageSameDepthYDeviation": 13.35208333333335,
+    "maxSameDepthYDeviation": 51.566666666666606,
+    "maxSameDepthYRange": 66.30000000000001,
+    "connectorSpan": {
+      "mean": 105.640625,
+      "median": 94,
+      "p95": 357.5,
+      "max": 357.5
+    },
+    "whitespaceRatio": 0.6859069523801268,
+    "layoutMs": 12.200000002980232,
+    "depthBands": {
+      "category:1162:1": [
+        86.4
+      ],
+      "category:1162:2": [
+        191
+      ],
+      "category:1162:3": [
+        302.3,
+        280.2
+      ],
+      "category:1162:4": [
+        369.4,
+        391.5,
+        347.29999999999995
+      ],
+      "category:1162:5": [
+        436.5,
+        480.7,
+        414.4
+      ]
+    }
+  }
+]

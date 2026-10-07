@@ -60,14 +60,14 @@ const sha=x=>crypto.createHash('sha256').update(JSON.stringify(x)).digest('hex')
  for(const type of ['course','project','stage']){await page.evaluate(type=>ScopeApp.load(ScopeApp.state().scopes.find(s=>s.scope_type===type)),type);
   dom.push(await page.evaluate(()=>{const issues=[];for(const el of document.querySelectorAll('#world .node')){const n=ScopeApp.state().L.byKey.get(el.dataset.key),labels=[...el.querySelectorAll('text')].map(t=>({text:t.textContent,b:t.getBBox()}));for(const {text,b}of labels)if(b.x<0||b.y<0||b.x+b.width>n.width+.01||b.y+b.height>n.height+.01)issues.push([n.key,text,'outside card']);for(let i=0;i<labels.length;i++)for(let j=i+1;j<labels.length;j++){const a=labels[i].b,b=labels[j].b;if(Math.min(a.x+a.width,b.x+b.width)>Math.max(a.x,b.x)+.01&&Math.min(a.y+a.height,b.y+b.height)>Math.max(a.y,b.y)+.01)issues.push([n.key,'text overlap']);}}
   return{type:ScopeApp.state().projection.scope_type,textIssues:issues,rendered:document.querySelectorAll('#world .node').length};}));
-  await page.screenshot({path:path.join(__dirname,type+'-fit-all.png')});
+  if(process.env.CAPTURE==='1')await page.screenshot({path:path.join(__dirname,type+'-fit-all.png')});
  }
  // Actual search, Inspector, camera and exact-ID Global bridge; never edits Global.
  const beforeNav=await page.evaluate(()=>({builds:ScopeApp.state().builds,L:ScopeApp.state().L.nodes.map(n=>[n.key,n.x,n.y])}));
  await page.locator('#search').fill('36');await page.locator('#search').press('Enter');
  assert.equal(await page.evaluate(()=>ScopeApp.state().selected),'topic:36');
  assert.match(await page.locator('#inspector').innerText(),/Stage requirement/);assert.match(await page.locator('#inspector').innerText(),/Learned/);assert.match(await page.locator('#inspector').innerText(),/Verified/);
- await page.screenshot({path:path.join(__dirname,'stage-topic-focus-inspector.png')});
+ if(process.env.CAPTURE==='1')await page.screenshot({path:path.join(__dirname,'stage-topic-focus-inspector.png')});
  await page.locator('#fit-subtree').click();await page.locator('#fit').click();await page.locator('#in').click();await page.mouse.move(680,400);await page.mouse.down();await page.mouse.move(730,420);await page.mouse.up();await page.locator('#out').click();await page.locator('#minimap').click({position:{x:90,y:56}});
  assert.deepEqual(await page.evaluate(()=>({builds:ScopeApp.state().builds,L:ScopeApp.state().L.nodes.map(n=>[n.key,n.x,n.y])})),beforeNav);
  const bridge=await browser.newPage({viewport:{width:1440,height:900}});for(const key of ['topic:36','category:3']){await bridge.goto(base+'global.html?key='+encodeURIComponent(key));await bridge.waitForFunction(k=>window.resolvedGlobalKey===k,key);assert.equal(await bridge.locator('iframe').evaluate((el)=>el.contentWindow.AtlasV6.state().selected),key);}
