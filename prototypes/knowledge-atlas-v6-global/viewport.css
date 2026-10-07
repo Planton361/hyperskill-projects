@@ -1,0 +1,44 @@
+/* Application chrome only. Frozen graph styles live in renderer.css. */
+body{height:100dvh;display:flex;flex-direction:column;overflow:hidden}
+header{flex:none}
+main{position:relative;flex:1;min-height:0;display:block}
+#canvas{width:100%;height:100%;min-height:0}
+#error:empty{display:none}
+#inspector-drawer{position:absolute;right:0;top:0;bottom:0;width:250px;max-height:none;z-index:4}
+main[data-inspector-open=true][data-inspector-pinned=true]{display:grid;grid-template-columns:minmax(0,1fr) 250px}
+main[data-inspector-open=true][data-inspector-pinned=true] #inspector-drawer{position:relative;width:auto}
+#inspector-toggle{position:absolute;right:8px;top:8px;z-index:3;font-size:11px;padding:7px 9px;background:var(--panel);border-color:var(--border)}
+main[data-inspector-open=true] #inspector-toggle{display:none}
+.inspector-tools{display:flex;align-items:center;gap:2px}
+.inspector-top #inspector-pin{font-size:10px;letter-spacing:0;padding:4px}
+#clear{font-size:11px;letter-spacing:0;padding:4px}
+.map-controls{top:8px;left:18px;padding:2px}
+#view-status{left:330px;top:19px}
+#overview-guide{top:48px}
+#overview-guide>span{font-size:12px;line-height:16px;margin-bottom:4px}
+#overview-guide>div{gap:10px}
+#overview-guide>div>button{padding:6px 10px}
+#overview-guide p{margin-top:4px;line-height:16px}
+main[data-inspector-open=true][data-inspector-pinned=false] #overview-guide{right:272px}
+main[data-inspector-open=true][data-inspector-pinned=false] #minimap{right:268px}
+main[data-inspector-open=true][data-inspector-pinned=false] .map-footer{right:268px}
+#orientation{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:hidden}
+#orientation-world{fill:none;stroke:var(--accent);stroke-width:.85;stroke-opacity:.68}
+#orientation-world path,#orientation-world rect{vector-effect:non-scaling-stroke}
+#orientation-world .direct{stroke:var(--line);stroke-width:.7;stroke-opacity:.58}
+#orientation-world rect{stroke-width:.7;stroke-opacity:.65}
+#orientation-world rect.chosen{stroke-width:1.15;stroke-opacity:.85}
+@media(max-width:700px){
+ #view-status{left:22px;top:44px}
+ #overview-guide{top:68px;left:12px;right:12px}
+ #overview-guide>div{gap:5px}
+ #overview-guide>div>button{font-size:11px;padding:6px 4px}
+ #overview-guide p{font-size:10px}
+ #inspector-toggle{top:40px}
+ #inspector-drawer{width:min(250px,70vw)}
+ main[data-inspector-open=true][data-inspector-pinned=true]{grid-template-columns:minmax(0,1fr) min(250px,70vw)}
+ main[data-inspector-open=true][data-inspector-pinned=false] #overview-guide{right:calc(min(250px,70vw) + 12px)}
+ #minimap{display:block;width:120px;height:50px}
+ main[data-inspector-open=true][data-inspector-pinned=false] #minimap,main[data-inspector-open=true][data-inspector-pinned=false] .map-footer{right:calc(min(250px,70vw) + 18px)}
+ .map-footer{flex-wrap:wrap;gap:2px}
+}

@@ -1,0 +1,516 @@
+{
+  "checks": [
+    "geometry hash matches accepted b38b9c7…",
+    "849 Categories, 3106 leaf slots, complete labels and connector commands identical",
+    "31 learned / 12 verified IDs, marker anchors and collision metadata identical",
+    "original Inspector semantic HTML preserved",
+    "closed/overlay canvas 1440x787; pin 1190x787",
+    "overlay and pin fits exclude exactly the drawer width",
+    "closed Fit All scale grows by width gain only",
+    "global Fit All bounds inside actual unobstructed map rectangle",
+    "selected-branch Fit All bounds inside actual unobstructed map rectangle",
+    "selected-branch minimap and drawer do not intersect",
+    "programming-languages Fit All bounds inside actual unobstructed map rectangle",
+    "programming-languages minimap and drawer do not intersect",
+    "pinned Fit All bounds inside actual unobstructed map rectangle",
+    "pinned minimap and drawer do not intersect",
+    "natural normal reading state and scale unchanged",
+    "natural shared main map pixel-identical at identical camera and canvas",
+    "bio normal reading state and scale unchanged",
+    "bio shared main map pixel-identical at identical camera and canvas",
+    "topic normal reading state and scale unchanged",
+    "topic shared main map pixel-identical at identical camera and canvas",
+    "orientation uses each exact canonical ancestor / direct-child segment once",
+    "selected, ancestor and direct child boundaries use frozen card bounds",
+    "pan/zoom preserves full scene, layout, overview state and orientation inventory",
+    "closing drawer restores full area without graph rebuild",
+    "clear selection restores accepted overview and removes only UI highlights",
+    "subtree has no orientation overlay",
+    "Topic Focus has no orientation overlay and unchanged full inventory",
+    "Fit All closes unpinned drawer",
+    "Fit All respects optional pinned Inspector",
+    "Escape closes Inspector and returns focus to reopen control",
+    "all tile levels retain all entities; no camera-triggered layout build",
+    "zero browser errors",
+    "474 frozen/protected files byte-identical, including renderer and optics CSS",
+    "native Safari DPR2 at 1440x900",
+    "Safari overview frame cadence preserved",
+    "Safari overview scene/layout/cache preservation",
+    "Safari dense frame cadence preserved",
+    "Safari dense scene/layout/cache preservation"
+  ],
+  "geometryHash": "b38b9c7a692c27be27db7e4500b1a5b3abec85eac2ab0bf0c07852f0f8f1a6d9",
+  "labelHash": "001d547c2037450d364cb9c4c306f3f45b1de0d76396ede62b115bf8fa900ba6",
+  "inkHash": "df2f8475713cc607f0b0b2c21d352dc451f8a8d147fd38d2ca5efd0b61e8fffc",
+  "pixelComparisons": {
+    "natural": {
+      "physicalPixels": 2380000,
+      "changed": 0,
+      "nativeCameraTranslationPx": -0.5,
+      "comparisonCamera": "identical camera and canvas to before"
+    },
+    "bio": {
+      "physicalPixels": 2380000,
+      "changed": 0,
+      "nativeCameraTranslationPx": -0.5,
+      "comparisonCamera": "identical camera and canvas to before"
+    },
+    "topic": {
+      "physicalPixels": 2380000,
+      "changed": 0,
+      "nativeCameraTranslationPx": -0.5,
+      "comparisonCamera": "identical camera and canvas to before"
+    }
+  },
+  "runtime": {
+    "orientation": {
+      "paths": 30,
+      "exact": true,
+      "expected": 30,
+      "unique": 30,
+      "categoryKeys": [
+        "category:1164",
+        "category:1162",
+        "atlas:root",
+        "category:73",
+        "category:209",
+        "category:331",
+        "category:620",
+        "category:737",
+        "category:1492",
+        "category:2981",
+        "category:3250"
+      ],
+      "wantedKeys": [
+        "category:1164",
+        "category:1162",
+        "atlas:root",
+        "category:73",
+        "category:209",
+        "category:331",
+        "category:620",
+        "category:737",
+        "category:1492",
+        "category:2981",
+        "category:3250"
+      ],
+      "boundsExact": true,
+      "visible": true
+    }
+  },
+  "viewport": {
+    "before": {
+      "canvas": {
+        "x": 0,
+        "y": 113,
+        "width": 1190,
+        "height": 765
+      },
+      "guide": {
+        "x": 70,
+        "y": 189,
+        "width": 1050,
+        "height": 84.296875
+      },
+      "controls": {
+        "x": 18,
+        "y": 127,
+        "width": 288.53125,
+        "height": 35
+      },
+      "status": {
+        "x": 22,
+        "y": 162,
+        "width": 139.6875,
+        "height": 13
+      },
+      "minimap": {
+        "x": 992,
+        "y": 756,
+        "width": 180,
+        "height": 74
+      },
+      "inspector": {
+        "x": 1190,
+        "y": 113,
+        "width": 250,
+        "height": 765
+      },
+      "camera": {
+        "x": 594.8884143585902,
+        "y": 266.7150332992533,
+        "k": 0.03719521380326761
+      },
+      "mapBounds": {
+        "x": 24,
+        "y": 379.4174715888272,
+        "width": 1142,
+        "height": 367.46193182234566
+      },
+      "view": "overview",
+      "selected": null,
+      "viewport": null,
+      "inspectorState": null,
+      "inspectorContent": "<p>Global Catalog</p><h2>Global Atlas</h2><p class=\"stat\">3.106 leaf slots</p><p>849 categories · 5 roots<br>1 resolved Topic · 88 partial Topics<br>3.017 unresolved references</p><p>31 learned · 12 verified</p><details open=\"\"><summary>Root Categories (5)</summary><div class=\"inspector-list\"><button data-select=\"category:525\">Math</button><button data-select=\"category:1162\">Computer science</button><button data-select=\"category:2148\">Natural science</button><button data-select=\"category:3051\">Product development</button><button data-select=\"category:4055\">Generative AI</button></div></details><p class=\"legend\">● Learned · ◎ Verified<br>○ Not learned · ◌ Unknown<br>ID labels: unresolved references<br>Slate branches: taxonomy</p><p>Fit All is an orientation view. Select a Category, then fit its subtree; focus a row to read.</p><p>Relation overlays are disabled in this prototype.</p>",
+      "orientation": ""
+    },
+    "closed": {
+      "canvas": {
+        "x": 0,
+        "y": 113,
+        "width": 1440,
+        "height": 787
+      },
+      "guide": {
+        "x": 195,
+        "y": 161,
+        "width": 1050,
+        "height": 70.796875
+      },
+      "controls": {
+        "x": 18,
+        "y": 121,
+        "width": 284.53125,
+        "height": 31
+      },
+      "status": {
+        "x": 330,
+        "y": 132,
+        "width": 139.6875,
+        "height": 13
+      },
+      "minimap": {
+        "x": 1242,
+        "y": 778,
+        "width": 180,
+        "height": 74
+      },
+      "inspector": null,
+      "camera": {
+        "x": 719.863986678772,
+        "y": 216.80885899961524,
+        "k": 0.045337773742686965
+      },
+      "mapBounds": {
+        "x": 24,
+        "y": 329.44615680967377,
+        "width": 1392,
+        "height": 447.9045613806525
+      },
+      "view": "overview",
+      "selected": null,
+      "viewport": {
+        "overview": {
+          "x": 24,
+          "y": 134.796875,
+          "width": 1392,
+          "height": 611.203125
+        },
+        "reading": {
+          "x": 24,
+          "y": 55,
+          "width": 1392,
+          "height": 691
+        }
+      },
+      "inspectorState": {
+        "open": false,
+        "pinned": false
+      },
+      "inspectorContent": "<p>Global Catalog</p><h2>Global Atlas</h2><p class=\"stat\">3.106 leaf slots</p><p>849 categories · 5 roots<br>1 resolved Topic · 88 partial Topics<br>3.017 unresolved references</p><p>31 learned · 12 verified</p><details open=\"\"><summary>Root Categories (5)</summary><div class=\"inspector-list\"><button data-select=\"category:525\">Math</button><button data-select=\"category:1162\">Computer science</button><button data-select=\"category:2148\">Natural science</button><button data-select=\"category:3051\">Product development</button><button data-select=\"category:4055\">Generative AI</button></div></details><p class=\"legend\">● Learned · ◎ Verified<br>○ Not learned · ◌ Unknown<br>ID labels: unresolved references<br>Slate branches: taxonomy</p><p>Fit All is an orientation view. Select a Category, then fit its subtree; focus a row to read.</p><p>Relation overlays are disabled in this prototype.</p>",
+      "orientation": ""
+    },
+    "overlay": {
+      "canvas": {
+        "x": 0,
+        "y": 113,
+        "width": 1440,
+        "height": 787
+      },
+      "guide": {
+        "x": 70,
+        "y": 161,
+        "width": 1050,
+        "height": 70.796875
+      },
+      "controls": {
+        "x": 18,
+        "y": 121,
+        "width": 284.53125,
+        "height": 31
+      },
+      "status": {
+        "x": 330,
+        "y": 132,
+        "width": 139.6875,
+        "height": 13
+      },
+      "minimap": {
+        "x": 992,
+        "y": 778,
+        "width": 180,
+        "height": 74
+      },
+      "inspector": {
+        "x": 1190,
+        "y": 113,
+        "width": 250,
+        "height": 787
+      },
+      "camera": {
+        "x": 594.8884143585902,
+        "y": 256.9650332992533,
+        "k": 0.03719521380326761
+      },
+      "mapBounds": {
+        "x": 24,
+        "y": 369.6674715888272,
+        "width": 1142,
+        "height": 367.46193182234566
+      },
+      "view": "overview",
+      "selected": "category:1162",
+      "viewport": {
+        "overview": {
+          "x": 24,
+          "y": 134.796875,
+          "width": 1142,
+          "height": 611.203125
+        },
+        "reading": {
+          "x": 24,
+          "y": 55,
+          "width": 1142,
+          "height": 691
+        }
+      },
+      "inspectorState": {
+        "open": true,
+        "pinned": false
+      },
+      "inspectorContent": "<h2>Computer science</h2><p class=\"path\">Global Atlas &gt; Computer science</p><p>Category ID 1162<br>11 child categories<br>0 direct leaf memberships<br>2686 distinct descendant leaves<br>2686 rows in this physical subtree</p><div class=\"actions\"><button id=\"focus-subtree\">Fit selected subtree</button></div><details open=\"\"><summary>Child Categories (11)</summary><div class=\"inspector-list\"><button data-select=\"category:521\">Algorithms and data structures</button><button data-select=\"category:610\">Frontend</button><button data-select=\"category:962\">Data science</button><button data-select=\"category:1163\">Software development foundations</button><button data-select=\"category:1164\">Programming languages</button><button data-select=\"category:1165\">Desktop</button><button data-select=\"category:1166\">Backend</button><button data-select=\"category:1167\">Mobile</button><button data-select=\"category:2679\">System administration and DevOps</button><button data-select=\"category:3389\">Cybersecurity</button><button data-select=\"category:3472\">Blockchain</button></div></details><details><summary>Shared leaves located elsewhere (0)</summary><div class=\"inspector-list\"><p>None recorded.</p></div></details><details><summary>Advanced / Evidence (1)</summary><div class=\"inspector-list\"><p>map-8<br>public_json · 2026-10-01<br>Course-scoped hierarchy; retain multiple category memberships.<br><a href=\"https://hyperskill.org/api/topic-relations?track_id=8&amp;page_size=100\" target=\"_blank\" rel=\"noopener\">Source</a></p></div></details><details><summary>Catalog provenance (1)</summary><div class=\"inspector-list\"><p>source:838950d6fe2751ecd7215de64dc37009ad3d78d0f6507bbb96bd6a03c3c68a8b<br>observations/global-knowledge-map-2026-10-04.json<br>GET </p></div></details>",
+      "orientation": "<path d=\"M0,63.04L0,91.03999999999999\" data-segment=\"123\" class=\"ancestor\"></path><path d=\"M-2163.3125,91.03999999999999L0,91.03999999999999\" data-segment=\"125\" class=\"ancestor\"></path><path d=\"M-2163.3125,91.03999999999999L-2163.3125,121.03999999999999\" data-segment=\"130\" class=\"ancestor\"></path><path d=\"M-2163.3125,200.6L-2163.3125,228.6\" data-segment=\"218\" class=\"direct\"></path><path d=\"M-11950.4375,228.6L-7471.5625,228.6\" data-segment=\"219\" class=\"direct\"></path><path d=\"M-7471.5625,228.6L-3618.0625,228.6\" data-segment=\"220\" class=\"direct\"></path><path d=\"M-3618.0625,228.6L-2163.3125,228.6\" data-segment=\"221\" class=\"direct\"></path><path d=\"M-2163.3125,228.6L-299.0625,228.6\" data-segment=\"222\" class=\"direct\"></path><path d=\"M-299.0625,228.6L3704.6875,228.6\" data-segment=\"223\" class=\"direct\"></path><path d=\"M-7471.5625,228.6L-7471.5625,258.6\" data-segment=\"224\" class=\"direct\"></path><path d=\"M-3618.0625,228.6L-3618.0625,258.6\" data-segment=\"225\" class=\"direct\"></path><path d=\"M-299.0625,228.6L-299.0625,258.6\" data-segment=\"226\" class=\"direct\"></path><path d=\"M3704.6875,228.6L3704.6875,258.6\" data-segment=\"227\" class=\"direct\"></path><path d=\"M-11950.4375,228.6L-11950.4375,4671.64\" data-segment=\"228\" class=\"direct\"></path><path d=\"M-11950.4375,4671.64L-11950.4375,9233.86\" data-segment=\"229\" class=\"direct\"></path><path d=\"M-11950.4375,4671.64L-6406.8125,4671.64\" data-segment=\"230\" class=\"direct\"></path><path d=\"M-6406.8125,4671.64L-753.1875,4671.64\" data-segment=\"231\" class=\"direct\"></path><path d=\"M-753.1875,4671.64L1672.5625,4671.64\" data-segment=\"232\" class=\"direct\"></path><path d=\"M1672.5625,4671.64L5271.8125,4671.64\" data-segment=\"233\" class=\"direct\"></path><path d=\"M-6406.8125,4671.64L-6406.8125,4701.64\" data-segment=\"234\" class=\"direct\"></path><path d=\"M-753.1875,4671.64L-753.1875,4701.64\" data-segment=\"235\" class=\"direct\"></path><path d=\"M1672.5625,4671.64L1672.5625,4701.64\" data-segment=\"236\" class=\"direct\"></path><path d=\"M5271.8125,4671.64L5271.8125,4701.64\" data-segment=\"237\" class=\"direct\"></path><path d=\"M-11950.4375,9233.86L-3085.8125,9233.86\" data-segment=\"238\" class=\"direct\"></path><path d=\"M-3085.8125,9233.86L335.6875,9233.86\" data-segment=\"239\" class=\"direct\"></path><path d=\"M335.6875,9233.86L1258.1875,9233.86\" data-segment=\"240\" class=\"direct\"></path><path d=\"M-3085.8125,9233.86L-3085.8125,9263.86\" data-segment=\"241\" class=\"direct\"></path><path d=\"M335.6875,9233.86L335.6875,9263.86\" data-segment=\"242\" class=\"direct\"></path><path d=\"M1258.1875,9233.86L1258.1875,9263.86\" data-segment=\"243\" class=\"direct\"></path><rect x=\"-2243.3125\" y=\"121.03999999999999\" width=\"160\" height=\"79.56\" rx=\"5\" data-category=\"category:1162\" class=\"chosen\"></rect><rect x=\"-99.5\" y=\"0\" width=\"199\" height=\"63.04\" rx=\"5\" data-category=\"atlas:root\" class=\"ancestor\"></rect><rect x=\"-7555.0625\" y=\"258.6\" width=\"167\" height=\"65.12\" rx=\"5\" data-category=\"category:521\" class=\"direct\"></rect><rect x=\"-3689.0625\" y=\"258.6\" width=\"142\" height=\"45.06\" rx=\"5\" data-category=\"category:610\" class=\"direct\"></rect><rect x=\"-372.5625\" y=\"258.6\" width=\"147\" height=\"45.06\" rx=\"5\" data-category=\"category:962\" class=\"direct\"></rect><rect x=\"3630.6875\" y=\"258.6\" width=\"148\" height=\"85.17999999999999\" rx=\"5\" data-category=\"category:1163\" class=\"direct\"></rect><rect x=\"-6483.3125\" y=\"4701.64\" width=\"153\" height=\"65.12\" rx=\"5\" data-category=\"category:1164\" class=\"direct\"></rect><rect x=\"-823.1875\" y=\"4701.64\" width=\"140\" height=\"45.06\" rx=\"5\" data-category=\"category:1165\" class=\"direct\"></rect><rect x=\"1601.5625\" y=\"4701.64\" width=\"142\" height=\"45.06\" rx=\"5\" data-category=\"category:1166\" class=\"direct\"></rect><rect x=\"5201.3125\" y=\"4701.64\" width=\"141\" height=\"45.06\" rx=\"5\" data-category=\"category:1167\" class=\"direct\"></rect><rect x=\"-3165.3125\" y=\"9263.86\" width=\"159\" height=\"85.17999999999999\" rx=\"5\" data-category=\"category:2679\" class=\"direct\"></rect><rect x=\"257.1875\" y=\"9263.86\" width=\"157\" height=\"45.06\" rx=\"5\" data-category=\"category:3389\" class=\"direct\"></rect><rect x=\"1188.1875\" y=\"9263.86\" width=\"140\" height=\"45.06\" rx=\"5\" data-category=\"category:3472\" class=\"direct\"></rect>"
+    },
+    "pinned": {
+      "canvas": {
+        "x": 0,
+        "y": 113,
+        "width": 1190,
+        "height": 787
+      },
+      "guide": {
+        "x": 70,
+        "y": 161,
+        "width": 1050,
+        "height": 70.796875
+      },
+      "controls": {
+        "x": 18,
+        "y": 121,
+        "width": 284.53125,
+        "height": 31
+      },
+      "status": {
+        "x": 330,
+        "y": 132,
+        "width": 139.6875,
+        "height": 13
+      },
+      "minimap": {
+        "x": 992,
+        "y": 778,
+        "width": 180,
+        "height": 74
+      },
+      "inspector": {
+        "x": 1190,
+        "y": 113,
+        "width": 250,
+        "height": 787
+      },
+      "camera": {
+        "x": 594.8884143585902,
+        "y": 256.9650332992533,
+        "k": 0.03719521380326761
+      },
+      "mapBounds": {
+        "x": 24,
+        "y": 369.6674715888272,
+        "width": 1142,
+        "height": 367.46193182234566
+      },
+      "view": "overview",
+      "selected": "category:1164",
+      "viewport": {
+        "overview": {
+          "x": 24,
+          "y": 134.796875,
+          "width": 1142,
+          "height": 611.203125
+        },
+        "reading": {
+          "x": 24,
+          "y": 55,
+          "width": 1142,
+          "height": 691
+        }
+      },
+      "inspectorState": {
+        "open": true,
+        "pinned": true
+      },
+      "inspectorContent": "<h2>Programming languages</h2><p class=\"path\">Global Atlas &gt; Computer science &gt; Programming languages</p><p>Category ID 1164<br>8 child categories<br>0 direct leaf memberships<br>1127 distinct descendant leaves<br>1127 rows in this physical subtree</p><div class=\"actions\"><button id=\"focus-subtree\">Fit selected subtree</button></div><details open=\"\"><summary>Child Categories (8)</summary><div class=\"inspector-list\"><button data-select=\"category:73\">Java</button><button data-select=\"category:209\">Kotlin</button><button data-select=\"category:331\">Python</button><button data-select=\"category:620\">JavaScript</button><button data-select=\"category:737\">Scala</button><button data-select=\"category:1492\">Golang</button><button data-select=\"category:2981\">C++</button><button data-select=\"category:3250\">TypeScript</button></div></details><details><summary>Shared leaves located elsewhere (0)</summary><div class=\"inspector-list\"><p>None recorded.</p></div></details><details><summary>Advanced / Evidence (1)</summary><div class=\"inspector-list\"><p>map-8<br>public_json · 2026-10-01<br>Course-scoped hierarchy; retain multiple category memberships.<br><a href=\"https://hyperskill.org/api/topic-relations?track_id=8&amp;page_size=100\" target=\"_blank\" rel=\"noopener\">Source</a></p></div></details><details><summary>Catalog provenance (1)</summary><div class=\"inspector-list\"><p>source:838950d6fe2751ecd7215de64dc37009ad3d78d0f6507bbb96bd6a03c3c68a8b<br>observations/global-knowledge-map-2026-10-04.json<br>GET </p></div></details>",
+      "orientation": "<path d=\"M0,63.04L0,91.03999999999999\" data-segment=\"123\" class=\"ancestor\"></path><path d=\"M-2163.3125,91.03999999999999L0,91.03999999999999\" data-segment=\"125\" class=\"ancestor\"></path><path d=\"M-2163.3125,91.03999999999999L-2163.3125,121.03999999999999\" data-segment=\"130\" class=\"ancestor\"></path><path d=\"M-2163.3125,200.6L-2163.3125,228.6\" data-segment=\"218\" class=\"ancestor\"></path><path d=\"M-11950.4375,228.6L-7471.5625,228.6\" data-segment=\"219\" class=\"ancestor\"></path><path d=\"M-7471.5625,228.6L-3618.0625,228.6\" data-segment=\"220\" class=\"ancestor\"></path><path d=\"M-3618.0625,228.6L-2163.3125,228.6\" data-segment=\"221\" class=\"ancestor\"></path><path d=\"M-11950.4375,228.6L-11950.4375,4671.64\" data-segment=\"228\" class=\"ancestor\"></path><path d=\"M-11950.4375,4671.64L-6406.8125,4671.64\" data-segment=\"230\" class=\"ancestor\"></path><path d=\"M-6406.8125,4671.64L-6406.8125,4701.64\" data-segment=\"234\" class=\"ancestor\"></path><path d=\"M-6406.8125,4766.76L-6406.8125,4794.76\" data-segment=\"1041\" class=\"direct\"></path><path d=\"M-11920.4375,4794.76L-9654.6875,4794.76\" data-segment=\"1042\" class=\"direct\"></path><path d=\"M-9654.6875,4794.76L-6406.8125,4794.76\" data-segment=\"1043\" class=\"direct\"></path><path d=\"M-6406.8125,4794.76L-5685.1875,4794.76\" data-segment=\"1044\" class=\"direct\"></path><path d=\"M-5685.1875,4794.76L-2466.1875,4794.76\" data-segment=\"1045\" class=\"direct\"></path><path d=\"M-9654.6875,4794.76L-9654.6875,4824.76\" data-segment=\"1046\" class=\"direct\"></path><path d=\"M-5685.1875,4794.76L-5685.1875,4824.76\" data-segment=\"1047\" class=\"direct\"></path><path d=\"M-2466.1875,4794.76L-2466.1875,4824.76\" data-segment=\"1048\" class=\"direct\"></path><path d=\"M-11920.4375,4794.76L-11920.4375,7937.26\" data-segment=\"1049\" class=\"direct\"></path><path d=\"M-11920.4375,7937.26L-11920.4375,8663.62\" data-segment=\"1050\" class=\"direct\"></path><path d=\"M-11920.4375,7937.26L-10106.3125,7937.26\" data-segment=\"1051\" class=\"direct\"></path><path d=\"M-10106.3125,7937.26L-7480.0625,7937.26\" data-segment=\"1052\" class=\"direct\"></path><path d=\"M-7480.0625,7937.26L-3780.5625,7937.26\" data-segment=\"1053\" class=\"direct\"></path><path d=\"M-10106.3125,7937.26L-10106.3125,7967.26\" data-segment=\"1054\" class=\"direct\"></path><path d=\"M-7480.0625,7937.26L-7480.0625,7967.26\" data-segment=\"1055\" class=\"direct\"></path><path d=\"M-3780.5625,7937.26L-3780.5625,7967.26\" data-segment=\"1056\" class=\"direct\"></path><path d=\"M-11920.4375,8663.62L-7056.8125,8663.62\" data-segment=\"1057\" class=\"direct\"></path><path d=\"M-7056.8125,8663.62L-5265.3125,8663.62\" data-segment=\"1058\" class=\"direct\"></path><path d=\"M-7056.8125,8663.62L-7056.8125,8693.62\" data-segment=\"1059\" class=\"direct\"></path><path d=\"M-5265.3125,8663.62L-5265.3125,8693.62\" data-segment=\"1060\" class=\"direct\"></path><rect x=\"-6483.3125\" y=\"4701.64\" width=\"153\" height=\"65.12\" rx=\"5\" data-category=\"category:1164\" class=\"chosen\"></rect><rect x=\"-2243.3125\" y=\"121.03999999999999\" width=\"160\" height=\"79.56\" rx=\"5\" data-category=\"category:1162\" class=\"ancestor\"></rect><rect x=\"-99.5\" y=\"0\" width=\"199\" height=\"63.04\" rx=\"5\" data-category=\"atlas:root\" class=\"ancestor\"></rect><rect x=\"-9729.1875\" y=\"4824.76\" width=\"149\" height=\"45.06\" rx=\"5\" data-category=\"category:73\" class=\"direct\"></rect><rect x=\"-5757.1875\" y=\"4824.76\" width=\"144\" height=\"45.06\" rx=\"5\" data-category=\"category:209\" class=\"direct\"></rect><rect x=\"-2537.6875\" y=\"4824.76\" width=\"143\" height=\"45.06\" rx=\"5\" data-category=\"category:331\" class=\"direct\"></rect><rect x=\"-10176.3125\" y=\"7967.26\" width=\"140\" height=\"45.06\" rx=\"5\" data-category=\"category:620\" class=\"direct\"></rect><rect x=\"-7550.0625\" y=\"7967.26\" width=\"140\" height=\"45.06\" rx=\"5\" data-category=\"category:737\" class=\"direct\"></rect><rect x=\"-3852.0625\" y=\"7967.26\" width=\"143\" height=\"45.06\" rx=\"5\" data-category=\"category:1492\" class=\"direct\"></rect><rect x=\"-7126.8125\" y=\"8693.62\" width=\"140\" height=\"45.06\" rx=\"5\" data-category=\"category:2981\" class=\"direct\"></rect><rect x=\"-5335.3125\" y=\"8693.62\" width=\"140\" height=\"45.06\" rx=\"5\" data-category=\"category:3250\" class=\"direct\"></rect>"
+    }
+  },
+  "safari": {
+    "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.0.1 Safari/605.1.15",
+    "dpr": 2,
+    "runs": {
+      "before": {
+        "overview": {
+          "frames": {
+            "n": 90,
+            "median": 17,
+            "p95": 17,
+            "max": 19,
+            "over50": 0
+          },
+          "inputJS": {
+            "n": 92,
+            "median": 0,
+            "p95": 1,
+            "max": 1,
+            "over50": 0
+          },
+          "renderJS": {
+            "n": 91,
+            "median": 4,
+            "p95": 4,
+            "max": 5,
+            "over50": 0
+          },
+          "layoutCalls": 0,
+          "geometryUnchanged": true,
+          "sceneUnchanged": true,
+          "entities": 3956,
+          "bytes": 35145792,
+          "cap": 100663296,
+          "mode": "worker",
+          "viewport": [
+            1440,
+            900
+          ],
+          "stateAfterNavigation": "overview"
+        },
+        "dense": {
+          "frames": {
+            "n": 90,
+            "median": 17,
+            "p95": 17,
+            "max": 18,
+            "over50": 0
+          },
+          "inputJS": {
+            "n": 92,
+            "median": 0,
+            "p95": 1,
+            "max": 1,
+            "over50": 0
+          },
+          "renderJS": {
+            "n": 91,
+            "median": 2,
+            "p95": 3,
+            "max": 4,
+            "over50": 0
+          },
+          "layoutCalls": 0,
+          "geometryUnchanged": true,
+          "sceneUnchanged": true,
+          "entities": 3956,
+          "bytes": 100112256,
+          "cap": 100663296,
+          "mode": "worker",
+          "viewport": [
+            1440,
+            900
+          ],
+          "stateAfterNavigation": "subtree"
+        }
+      },
+      "after": {
+        "overview": {
+          "frames": {
+            "n": 90,
+            "median": 17,
+            "p95": 17,
+            "max": 18,
+            "over50": 0
+          },
+          "inputJS": {
+            "n": 92,
+            "median": 0,
+            "p95": 1,
+            "max": 1,
+            "over50": 0
+          },
+          "renderJS": {
+            "n": 91,
+            "median": 4,
+            "p95": 5,
+            "max": 5,
+            "over50": 0
+          },
+          "layoutCalls": 0,
+          "geometryUnchanged": true,
+          "sceneUnchanged": true,
+          "entities": 3956,
+          "bytes": 26625600,
+          "cap": 100663296,
+          "mode": "worker",
+          "viewport": [
+            1440,
+            900
+          ],
+          "stateAfterNavigation": "overview"
+        },
+        "dense": {
+          "frames": {
+            "n": 91,
+            "median": 17,
+            "p95": 17,
+            "max": 18,
+            "over50": 0
+          },
+          "inputJS": {
+            "n": 93,
+            "median": 0,
+            "p95": 1,
+            "max": 1,
+            "over50": 0
+          },
+          "renderJS": {
+            "n": 92,
+            "median": 2,
+            "p95": 3,
+            "max": 6,
+            "over50": 0
+          },
+          "layoutCalls": 0,
+          "geometryUnchanged": true,
+          "sceneUnchanged": true,
+          "entities": 3956,
+          "bytes": 100112256,
+          "cap": 100663296,
+          "mode": "worker",
+          "viewport": [
+            1440,
+            900
+          ],
+          "stateAfterNavigation": "subtree"
+        }
+      }
+    }
+  }
+}

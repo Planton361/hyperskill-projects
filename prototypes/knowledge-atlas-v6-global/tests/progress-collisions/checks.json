@@ -1,0 +1,308 @@
+{
+  "checks": [
+    "geometryHash unchanged",
+    "labelHash unchanged",
+    "edgeHash unchanged",
+    "849 Categories and 3106 leaf slots unchanged",
+    "31 learned / 12 verified identities and exact anchors unchanged",
+    "Global Fit All and Java crop use identical camera/clip",
+    "all distinct composite progress AABBs disjoint at Fit All",
+    "all progress glyphs nonzero",
+    "learned row accents disjoint and no glyph intersects another learned row",
+    "sparse glyph target extent preserved",
+    "computer-science accepted main map pixel-identical",
+    "natural accepted main map pixel-identical",
+    "bio accepted main map pixel-identical",
+    "topic accepted main map pixel-identical",
+    "exactly 31 learned accents use frozen row geometry",
+    "12 verified rings each make a measurable DPR2 pixel contribution",
+    "continuous radii remain positive and noncolliding across all tested scales",
+    "subtree/topic cores and rings retain normal V6.6 radii",
+    "full entity inventory at all tile levels; versioned cache",
+    "pan/zoom keeps overview, full scene, geometry and cached neighbours",
+    "zero browser errors",
+    "466 frozen/protected files byte-identical",
+    "neighbour search called only once in scene compile, never per frame",
+    "native Safari DPR2, 1440x900",
+    "Safari overview frame cadence preserved",
+    "Safari overview no geometry rebuild / cache growth",
+    "Safari dense frame cadence preserved",
+    "Safari dense no geometry rebuild / cache growth"
+  ],
+  "measurements": {
+    "rule": "Stroke-inclusive outer AABBs around composite glyphs, comparing distinct Topic IDs only; overlapping depth=max(0,min(rx+ry-|dx|,rx+ry-|dy|)). Learned-row rectangles checked separately and against foreign glyphs.",
+    "before": {
+      "maxOverlapPx": 4.8063986271643895,
+      "overlappingPairs": 37,
+      "minDistancePx": 1.2274420555078223,
+      "minDistanceWorld": 32.99999999999976,
+      "diametersPx": {
+        "min": 3.9499999999999997,
+        "median": 3.9499999999999997,
+        "max": 6.35
+      }
+    },
+    "after": {
+      "maxOverlapPx": 0,
+      "overlappingPairs": 0,
+      "minDistancePx": 1.2274420555078223,
+      "minDistanceWorld": 32.99999999999976,
+      "diametersPx": {
+        "min": 0.981953644406265,
+        "median": 1.2348810982684848,
+        "max": 6.35
+      }
+    },
+    "learned": 31,
+    "verified": 12,
+    "javaLearned": 26,
+    "javaVerified": 11,
+    "sparseUnreduced": [
+      "topic:259",
+      "topic:260",
+      "topic:348",
+      "topic:1476",
+      "topic:1761",
+      "topic:3538"
+    ]
+  },
+  "geometryHash": "b38b9c7a692c27be27db7e4500b1a5b3abec85eac2ab0bf0c07852f0f8f1a6d9",
+  "labelHash": "001d547c2037450d364cb9c4c306f3f45b1de0d76396ede62b115bf8fa900ba6",
+  "edgeHash": "f71e495536a207c2c5495abd1566b43f2fdd48b66b46c97f05f16079d1f1a065",
+  "pixels": {
+    "computer-science": {
+      "count": 3519600,
+      "changed": 0
+    },
+    "natural": {
+      "count": 3519600,
+      "changed": 0
+    },
+    "bio": {
+      "count": 3519600,
+      "changed": 0
+    },
+    "topic": {
+      "count": 3519600,
+      "changed": 0
+    }
+  },
+  "runtime": {
+    "collisions": [],
+    "missing": [],
+    "scales": [
+      0.001,
+      0.01,
+      0.03719521380326761,
+      0.1,
+      1,
+      4
+    ],
+    "verifiedContributions": [
+      {
+        "key": "topic:259",
+        "changedPixels": 91
+      },
+      {
+        "key": "topic:25",
+        "changedPixels": 14
+      },
+      {
+        "key": "topic:152",
+        "changedPixels": 17
+      },
+      {
+        "key": "topic:32",
+        "changedPixels": 4
+      },
+      {
+        "key": "topic:571",
+        "changedPixels": 7
+      },
+      {
+        "key": "topic:15",
+        "changedPixels": 8
+      },
+      {
+        "key": "topic:148",
+        "changedPixels": 6
+      },
+      {
+        "key": "topic:31",
+        "changedPixels": 6
+      },
+      {
+        "key": "topic:36",
+        "changedPixels": 7
+      },
+      {
+        "key": "topic:87",
+        "changedPixels": 8
+      },
+      {
+        "key": "topic:88",
+        "changedPixels": 7
+      },
+      {
+        "key": "topic:1761",
+        "changedPixels": 92
+      }
+    ],
+    "rowCount": 31,
+    "rowGeometryExact": true,
+    "distancesPositive": true,
+    "normalMarkerMatch": true,
+    "levelInventories": true,
+    "cacheVersion": true
+  },
+  "safari": {
+    "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.0.1 Safari/605.1.15",
+    "dpr": 2,
+    "runs": {
+      "before": {
+        "overview": {
+          "frames": {
+            "n": 90,
+            "median": 17,
+            "p95": 17,
+            "max": 20,
+            "over50": 0
+          },
+          "inputJS": {
+            "n": 92,
+            "median": 0,
+            "p95": 1,
+            "max": 1,
+            "over50": 0
+          },
+          "renderJS": {
+            "n": 91,
+            "median": 4,
+            "p95": 4,
+            "max": 5,
+            "over50": 0
+          },
+          "layoutCalls": 0,
+          "geometryUnchanged": true,
+          "sceneUnchanged": true,
+          "entities": 3956,
+          "bytes": 35145792,
+          "cap": 100663296,
+          "mode": "worker",
+          "viewport": [
+            1440,
+            900
+          ],
+          "stateAfterNavigation": "overview"
+        },
+        "dense": {
+          "frames": {
+            "n": 91,
+            "median": 17,
+            "p95": 17,
+            "max": 18,
+            "over50": 0
+          },
+          "inputJS": {
+            "n": 93,
+            "median": 0,
+            "p95": 0,
+            "max": 1,
+            "over50": 0
+          },
+          "renderJS": {
+            "n": 92,
+            "median": 2,
+            "p95": 3,
+            "max": 10,
+            "over50": 0
+          },
+          "layoutCalls": 0,
+          "geometryUnchanged": true,
+          "sceneUnchanged": true,
+          "entities": 3956,
+          "bytes": 100112256,
+          "cap": 100663296,
+          "mode": "worker",
+          "viewport": [
+            1440,
+            900
+          ],
+          "stateAfterNavigation": "subtree"
+        }
+      },
+      "after": {
+        "overview": {
+          "frames": {
+            "n": 90,
+            "median": 17,
+            "p95": 17,
+            "max": 18,
+            "over50": 0
+          },
+          "inputJS": {
+            "n": 92,
+            "median": 0,
+            "p95": 1,
+            "max": 1,
+            "over50": 0
+          },
+          "renderJS": {
+            "n": 91,
+            "median": 4,
+            "p95": 5,
+            "max": 7,
+            "over50": 0
+          },
+          "layoutCalls": 0,
+          "geometryUnchanged": true,
+          "sceneUnchanged": true,
+          "entities": 3956,
+          "bytes": 35145792,
+          "cap": 100663296,
+          "mode": "worker",
+          "viewport": [
+            1440,
+            900
+          ],
+          "stateAfterNavigation": "overview"
+        },
+        "dense": {
+          "frames": {
+            "n": 90,
+            "median": 17,
+            "p95": 17,
+            "max": 18,
+            "over50": 0
+          },
+          "inputJS": {
+            "n": 92,
+            "median": 0,
+            "p95": 1,
+            "max": 1,
+            "over50": 0
+          },
+          "renderJS": {
+            "n": 91,
+            "median": 3,
+            "p95": 3,
+            "max": 10,
+            "over50": 0
+          },
+          "layoutCalls": 0,
+          "geometryUnchanged": true,
+          "sceneUnchanged": true,
+          "entities": 3956,
+          "bytes": 100112256,
+          "cap": 100663296,
+          "mode": "worker",
+          "viewport": [
+            1440,
+            900
+          ],
+          "stateAfterNavigation": "subtree"
+        }
+      }
+    }
+  }
+}
