@@ -128,7 +128,7 @@ function provenance(n){
 }
 function inspect(){
  const n=m.nodes.get(selected),counts=m.raw.counts;let html='';
- if(!n||n===m.root){html=`<p>Global Catalog</p><h2>Global Atlas</h2><p class="stat">${counts.leaves.toLocaleString()} leaf slots</p><p>${counts.categories} categories · 5 roots<br>${counts.RESOLVED_TOPIC} resolved Topic · ${counts.PARTIAL_TOPIC} partial Topics<br>${counts.UNRESOLVED_REFERENCE.toLocaleString()} unresolved references</p><p>${[...m.registry.values()].filter(n=>n.is_learned).length} learned · ${[...m.registry.values()].filter(n=>n.is_verified).length} verified</p>`+list('Root Categories',m.root.children.map(c=>listButton(c.key,c.title)))+`<p class="legend">● Learned · ◎ Verified<br>○ Not learned · ◌ Unknown<br>ID labels: unresolved references<br>Slate branches: taxonomy</p><p>Fit All is an orientation view. Select a Category, then fit its subtree; focus a row to read.</p><p>Relation overlays are disabled in this prototype.</p>`;}
+ if(!n||n===m.root){html=`<p>Global Catalog</p><h2>Global Atlas</h2><p class="stat">${counts.leaves.toLocaleString()} leaf slots</p><p>${counts.categories} categories · 5 roots<br>${counts.RESOLVED_TOPIC} resolved Topic · ${counts.PARTIAL_TOPIC} partial Topics<br>${counts.UNRESOLVED_REFERENCE.toLocaleString()} unresolved references</p><p>${[...m.registry.values()].filter(n=>n.is_learned).length} learned · ${[...m.registry.values()].filter(n=>n.is_verified).length} verified</p>`+list('Root Categories',m.root.children.map(c=>listButton(c.key,c.title)))+`<p class="legend">● Learned · ◎ Verified<br>○ Not learned · ◌ Unknown<br>Slate branches: taxonomy</p><p>Fit All is an orientation view. Select a Category, then fit its subtree; focus a row to read.</p><p>Relation overlays are disabled in this prototype.</p>`;}
  else{
   html=`<h2>${esc(n.displayTitle)}</h2><p class="path">${path(n).map(esc).join(' &gt; ')}</p>`;
   if(n.type==='category'){
@@ -144,6 +144,8 @@ function inspect(){
     if(meta.theory_step_id!=null)html+=`<p>Theory step: ${esc(meta.theory_step_id)}<br>Source: accepted Topic metadata</p>`;
     if(n.theory!=null)html+=`<p>Catalog theory identifier: ${esc(n.theory)}</p>`;
     if(meta.url)html+=`<p><a href="${esc(meta.url)}" target="_blank" rel="noopener">Open in Hyperskill ↗</a></p>`;
+    const fields=['parent_id','root_id','hierarchy','children','prerequisites','explicit_prerequisites','followers'];
+    html+=list('Topic metadata',fields.filter(k=>Object.hasOwn(n,k)).map(k=>`<p>${esc(k.replaceAll('_',' '))}: ${esc(JSON.stringify(n[k],null,1))}</p>`),false);
     html+='<p>Resolution describes the global capture; existing accepted metadata is retained by the same Topic ID.</p>';
    }
    html+=list('Structural memberships',n.memberships.map(k=>listButton(k,m.nodes.get(k).title)))+`<p>Physical row: ${esc(m.parent(n).title)}${n.memberships.length>1?' · one row shared by all memberships':''}</p>`;

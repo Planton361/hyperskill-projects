@@ -2,14 +2,14 @@
    Global geometry is built from the current catalog, with no historical checkpoint. */
 (function(g){
 'use strict';
-const VERSION='atlas-v66-global-4-local-contours',SCHEMA=2,FONT='14px system-ui';
+const VERSION='atlas-v66-global-5-full-titles',SCHEMA=2,FONT='14px system-ui';
 const TYPE={ROOT:28,MAJOR:21,CATEGORY:17,TOPIC:14,META:10};
 const LAYOUT=Object.freeze({rootMajorGap:88,majorDomainGap:82,categoryChildGap:76,categoryTrayGap:68,trayNextLevelGap:72,majorSiblingGap:112,categorySiblingGap:24,traySiblingGap:52,nodeSafeArea:12,traySafeArea:12,majorSafeArea:24,rootSafeArea:24,parentToBus:28,busToChild:30,trayWidth:220,trayMaxWidth:320,trayPadding:8,trayRowGap:4,trayColumnGap:24});
 const SPACE={ROOT_MAJOR:LAYOUT.rootMajorGap,MAJOR_CATEGORY:LAYOUT.majorDomainGap,CATEGORY_CATEGORY:LAYOUT.categoryChildGap,CATEGORY_TRAY:LAYOUT.categoryTrayGap,SIBLING_MAJOR:LAYOUT.majorSiblingGap,SIBLING_CATEGORY:LAYOUT.categorySiblingGap,TRAY_INTERNAL_X:LAYOUT.trayColumnGap,TRAY_INTERNAL_Y:LAYOUT.trayRowGap,TRAY_PADDING:LAYOUT.trayPadding};
 const categorySize=d=>d===0?TYPE.ROOT:d===1?TYPE.MAJOR:TYPE.CATEGORY;
 const POLICY={minWidth:LAYOUT.trayWidth,preferredWidth:LAYOUT.trayWidth,maxWidth:LAYOUT.trayMaxWidth,padX:10,padY:6,gapX:SPACE.TRAY_INTERNAL_X,gapY:SPACE.TRAY_INTERNAL_Y,trayPadding:SPACE.TRAY_PADDING,topicFont:TYPE.TOPIC,topicLine:17,metaFont:TYPE.META};
 function wrap(title,measure,max){const lines=[];let line='';for(const word of title.split(/\s+/)){if(line&&measure(line+' '+word)>max){lines.push(line);line=word;}else line+=(line?' ':'')+word;}if(line)lines.push(line);return lines;}
-function topicCard(t,measure){let width=t.type==='reference'?Math.max(112,Math.ceil(measure(t.displayTitle)+44)):POLICY.preferredWidth,lines=wrap(t.displayTitle,measure,width-44);while(lines.length>3&&width<POLICY.maxWidth){width=Math.min(POLICY.maxWidth,width+12);lines=wrap(t.displayTitle,measure,width-44);}width=Math.max(width,...lines.map(line=>measure(line)).map(w=>w+44));return{key:t.key,lines,width,height:Math.max(29,lines.length*POLICY.topicLine+12)};}
+function topicCard(t,measure){let width=POLICY.preferredWidth,lines=wrap(t.displayTitle,measure,width-44);while(lines.length>3&&width<POLICY.maxWidth){width=Math.min(POLICY.maxWidth,width+12);lines=wrap(t.displayTitle,measure,width-44);}width=Math.max(width,...lines.map(line=>measure(line)).map(w=>w+44));return{key:t.key,lines,width,height:Math.max(29,lines.length*POLICY.topicLine+12)};}
 function pack(topics,measure,available=Infinity,forcedCols=null,weights={width:1,height:1}){
  const items=topics.map(t=>topicCard(t,measure));if(!items.length)return{width:0,height:0,columns:[],rows:0,items:[],gapX:POLICY.gapX,gapY:POLICY.gapY,padding:POLICY.trayPadding};
  const candidates=[];
@@ -28,7 +28,7 @@ function measuredBox(n,depth,measure,m){
 // Text measurement is the only source of card size. Subtree space is separate.
 function categoryChildren(n){return n.children.filter(c=>c.type==='category');}
 function translate(rs,x,y){return rs.map(r=>({...r,x:r.x+x,y:r.y+y}));}
-const PACKING=Object.freeze({siblingGap:24,rootGap:64,childGap:LAYOUT.parentToBus+LAYOUT.busToChild,trayGap:LAYOUT.parentToBus+LAYOUT.busToChild,rowGap:64,corridor:12,spineGap:24,extremeWidth:6000,rowWidth:3600,maxTrayColumns:3});
+const PACKING=Object.freeze({siblingGap:24,rootGap:64,childGap:LAYOUT.parentToBus+LAYOUT.busToChild,trayGap:LAYOUT.parentToBus+LAYOUT.busToChild,rowGap:64,corridor:12,spineGap:24,extremeWidth:6000,rowWidth:3600,maxTrayColumns:4});
 // Piecewise contours include cards, complete trays and reserved routing corridors.
 // Unlike rectangular envelopes they allow a short branch to occupy a tall
 // neighbour's unused space while maintaining left-to-right order at every Y.
@@ -46,7 +46,7 @@ function buildOnce(m,measure,previous=null,config={}){
   cards.set(n.key,{...measuredBox(n,depth,measure,m),scale:1});
   const started=performance.now(),topics=n.children.filter(AtlasModel.isLeaf);
   // Short trays retain a single reading column; larger ones compare at most
-  // three column-major alternatives using the existing V6.6 measurement/pack.
+  // four column-major alternatives using the existing V6.6 measurement/pack.
   const choices=Array.from({length:topics.length>=8?Math.min(PACKING.maxTrayColumns,topics.length):1},(_,i)=>pack(topics,measure,Infinity,i+1));
   const band=choices.sort((a,b)=>(a.width+1.35*a.height)-(b.width+1.35*b.height)||a.width-b.width)[0];
   trayPackingMilliseconds+=performance.now()-started;bands.set(n.key,band);

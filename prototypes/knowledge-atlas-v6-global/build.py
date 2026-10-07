@@ -23,7 +23,8 @@ def project():
                progress=data['progress'], evidence=data['evidence'],
                provenance=catalog.provenance, observations=catalog.observation_ids)
     raw['counts'] = dict(categories=len(raw['categories']), leaves=len(raw['topics']) + len(raw['references']),
-                         **collections.Counter(r['resolution'] for r in raw['topics'] + raw['references']))
+                         **{status: 0 for status in ('RESOLVED_TOPIC', 'PARTIAL_TOPIC', 'UNRESOLVED_REFERENCE')})
+    raw['counts'].update(collections.Counter(r['resolution'] for r in raw['topics'] + raw['references']))
     return raw
 
 

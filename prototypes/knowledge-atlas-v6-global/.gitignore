@@ -22,3 +22,14 @@ node_modules/
 !/tests/viewport-polish/after/global.png
 !/tests/viewport-polish/after/programming-languages.png
 !/tests/viewport-polish/after/topic.png
+
+# Full-title remeasure: focused validation and two final review views.
+!/tests/full-title/
+!/tests/full-title/*.cjs
+!/tests/full-title/audit.py
+!/tests/full-title/README.md
+!/tests/full-title/*.json
+!/tests/full-title/safari.html
+!/tests/full-title/review/
+!/tests/full-title/review/01-global-fit-all.png
+!/tests/full-title/review/05-topic-3887.png
