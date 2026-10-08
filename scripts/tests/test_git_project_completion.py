@@ -89,7 +89,8 @@ class GitCompletionTests(unittest.TestCase):
         (self.root/folder/'link').unlink();self.export(7,'duplicate','revoked');self.commit();self.run_sync(False)
 
     def test_real_legacy(self):
-        command=[sys.executable,'-B',str(CLI),'--previous',str(ROOT/'data/myatlas/progress.json')]
+        baseline_ref=json.loads((ROOT/'docs/knowledge-map/progress.json').read_text())['source']['commit']
+        command=[sys.executable,'-B',str(CLI),'--ref',baseline_ref,'--previous',str(ROOT/'data/myatlas/progress.json')]
         result=json.loads(subprocess.check_output(command));p=result['projection']
         self.assertEqual(p['completed_project_ids'],[113]);self.assertEqual(len(p['project_learned_topic_ids']),26)
         self.assertEqual(p['global']['learned'],31);self.assertEqual(p['global']['verified'],12)

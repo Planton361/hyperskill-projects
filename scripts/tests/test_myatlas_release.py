@@ -57,3 +57,21 @@ class MyAtlasReleaseTests(unittest.TestCase):
             return result
         with patch.object(myatlas_guard, 'bound_tree', side_effect=changed):
             with self.assertRaisesRegex(ValueError, 'Changed historical evidence'): verify_release(ROOT, self.site)
+
+    def test_stale_reference_snapshot_rejected_for_current_artifact(self):
+        with self.assertRaisesRegex(ValueError, 'Outdated artifact'):
+            verify_release(ROOT, self.site, current_head=True)
+
+    def test_mismatched_source_inputs_and_runtime_provenance_rejected(self):
+        target = self.site / 'progress.json'
+        original = target.read_bytes()
+        p = json.loads(original); p['source']['evidence'][0]['sha256'] = '0' * 64
+        target.write_text(json.dumps(p))
+        with self.assertRaisesRegex(ValueError, 'committed evidence'):
+            verify_release(ROOT, self.site)
+        target.write_bytes(original)
+        target = self.site / 'runtime-manifest.json'
+        p = json.loads(target.read_bytes()); p['source_input_digest'] = '0' * 64
+        target.write_text(json.dumps(p))
+        with self.assertRaisesRegex(ValueError, 'Source input digest mismatch'):
+            verify_release(ROOT, self.site)

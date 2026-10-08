@@ -14,7 +14,7 @@
     "index.html": "50b7c9e0ccd5a712aae81c826a80c30e4a2ae8af948b751c89e5bc0a4aee9869",
     "progress.json": "a6da143c5eae639870c31bfa8d86ebe2f3b73e46486ba63cb9398bfa24016de8",
     "projection-adapter.js": "d5e45358e5d5d97a1aa54c11320830ae1c98eaf6b0cbaa4efec6b1c02492312f",
-    "release-manifest.json": "00f1be1e38382072dcf292ee2a25289cf2104e25acb27c8da62203837e5505e4",
+    "release-manifest.json": "3c48f376905b300b3449185e28ff53ab37f2e9790aceb246a9c78cd26760c7ca",
     "shell.css": "efc0dd9e932a6317813eadbfe3248f0483a722d14c2c416e5f4de62204937e59",
     "shell.js": "58b18769947e6a59f87adfeee90a33dda3156e97be2fe15707a1606dd9083367",
     "views/knowledge-atlas-navigation/navigation.css": "bc77d8552527bc8e7278383e227ac45874284330c9a56497b4f2a75545d327ac",
@@ -304,5 +304,6 @@
       "target": "data/knowledge/evidence.json"
     }
   ],
-  "source_commit": "4215ac2fefea0ff6084210bac8d2dc0f42c32b34"
+  "source_commit": "4215ac2fefea0ff6084210bac8d2dc0f42c32b34",
+  "source_input_digest": "9dbf869ea6c052968806302d2028ea1e3a02f39975774b359eec53247b375422"
 }

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Deterministic MyAtlas V6.6 package from tracked sources and Git-only evidence."""
-import argparse,hashlib,json,shutil,subprocess,sys
+import argparse,hashlib,json,os,shutil,subprocess,sys
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 parser=argparse.ArgumentParser(description=__doc__)
@@ -10,11 +10,22 @@ OUT=args.output.resolve()
 if ROOT/'build' not in OUT.parents or any(p.is_symlink() for p in [OUT,*OUT.parents]):
     raise SystemExit('Unsafe build destination')
 projection=json.loads(subprocess.check_output([sys.executable,'-B',str(ROOT/'scripts/sync-project-completion.py')]))['projection']
+head=subprocess.check_output(['git','-C',str(ROOT),'rev-parse','HEAD']).decode().strip()
+if projection['source']['commit']!=head or os.environ.get('GITHUB_SHA',head)!=head:
+    raise SystemExit('Build revision does not match checkout/GITHUB_SHA')
+for name in ['scripts/build-myatlas.py',*projection['source']['implementation_sha256']]:
+    committed=subprocess.check_output(['git','-C',str(ROOT),'show','HEAD:'+name])
+    if committed!=(ROOT/name).read_bytes():
+        raise SystemExit('Uncommitted build implementation refused')
+input_digest=hashlib.sha256(json.dumps({k:projection['source'][k] for k in ['evidence','implementation_sha256']},sort_keys=True,separators=(',',':'),ensure_ascii=False).encode()).hexdigest()
 ledger=[]
 if OUT.exists():shutil.rmtree(OUT)
 OUT.mkdir(parents=True)
 def copy(source,target):
-    raw=(ROOT/source).read_bytes();dest=OUT/target;dest.parent.mkdir(parents=True,exist_ok=True);dest.write_bytes(raw)
+    raw=(ROOT/source).read_bytes()
+    if raw!=subprocess.check_output(['git','-C',str(ROOT),'show','HEAD:'+source]):
+        raise ValueError('Uncommitted runtime source refused: '+source)
+    dest=OUT/target;dest.parent.mkdir(parents=True,exist_ok=True);dest.write_bytes(raw)
     ledger.append(dict(source=source,target=target,source_sha256=hashlib.sha256(raw).hexdigest()))
 def adapt(name,old,new):
     path=OUT/name;s=path.read_text()
@@ -74,6 +85,6 @@ release_manifest=ROOT/'docs/releases/myatlas-v6.6.json'
 if release_manifest.exists():
     shutil.copy2(release_manifest,OUT/'release-manifest.json')
 inventory={str(p.relative_to(OUT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(OUT.rglob('*')) if p.is_file()}
-record=dict(schema=1,edition='myatlas-v6.6',source_commit=projection['source']['commit'],source_assets=ledger,inventory=inventory,adapters=['relative base-path relocation','generated projection boundary validation','personal dormant-ID resolution from committed Global catalog','legacy URL adapters'],historical_manifest_sha256=hashlib.sha256((ROOT/'docs/releases/knowledge-atlas-pre-v6.6-manifest.json').read_bytes()).hexdigest())
+record=dict(schema=1,edition='myatlas-v6.6',source_commit=projection['source']['commit'],source_input_digest=input_digest,source_assets=ledger,inventory=inventory,adapters=['relative base-path relocation','generated projection boundary validation','personal dormant-ID resolution from committed Global catalog','legacy URL adapters'],historical_manifest_sha256=hashlib.sha256((ROOT/'docs/releases/knowledge-atlas-pre-v6.6-manifest.json').read_bytes()).hexdigest())
 (OUT/'runtime-manifest.json').write_text(json.dumps(record,sort_keys=True,indent=2)+'\n')
 print(json.dumps(dict(files=len(inventory)+1,learned=projection['global']['learned'],verified=projection['global']['verified'],completed=projection['completed_project_count'])))

@@ -29,3 +29,11 @@ UNKNOWN requirements contribute no invented Topics; explicitly empty requirement
 `MyAtlas read-only validation` and `Review Git-driven completed Project learning` retain `contents: read`. `MyAtlas Pages` builds and tests with read-only access; only its deployment job has `pages: write` and `id-token: write`. It deploys validated `main` artifacts, refuses stale main SHAs, and cancels superseded runs. Release branch runs validate without deploying. No permanent credentials or repository-writing scanner permission is required. A main push or manual dispatch regenerates the Pages artifact; no self-modifying commits occur.
 
 The Pages artifact root contains `knowledge-map/`; the repository base path is supplied by GitHub Pages. [Official custom-workflow requirements](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages) and [Pages REST configuration](https://docs.github.com/en/rest/pages/pages) document the supported deployment mechanism.
+
+## Revision and provenance contract
+
+The committed `docs/knowledge-map/progress.json` is a validated reference snapshot at the explicit source revision in `docs/releases/myatlas-v6.6.json`. It is not a claim that a generated file contains the SHA of its own Git commit; that would be circular. Its source revision, SHA-256, evidence blobs, and reconstruction are all checked.
+
+Deployable files are generated only after establishing the final committed release HEAD, into ignored `build/pages/knowledge-map/`. The generator reads that Git revision. The builder verifies its implementation and runtime sources against Git blobs, binds the artifact to checkout HEAD and `GITHUB_SHA` when present, and records a deterministic evidence/implementation digest. The artifact guard requires current HEAD, exact source inputs, exact application inventory, and reproducible progress. Fresh rebuilds never update or recommit the tracked reference snapshot.
+
+Advancing HEAD invalidates a previously generated deployment artifact. Build again before testing; do not alter source or HEAD while the artifact is being validated. Identical committed inputs produce byte-identical outputs. The focused stale-snapshot fixture is expected to fail current-artifact validation.

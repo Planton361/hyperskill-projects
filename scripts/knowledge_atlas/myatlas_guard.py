@@ -1,13 +1,14 @@
 """Explicit V6.6 migration gate: frozen application, preserved evidence, Git-only progress."""
 import hashlib
 import json
+import os
 from pathlib import Path
 import subprocess
 import sys
 from .adaptive_production import bound_tree, digest, require
 
 MANIFEST = 'docs/releases/myatlas-v6.6.json'
-REVIEWED_FINGERPRINT = '57d2cff0731ad02bd447a5efe25342d293522a123a560d78d48a04442b4103b4'
+REVIEWED_FINGERPRINT = '11b5be07945d442eebf14f00f8d7cefd9ac7da49e75504aceb7fecea1e6f34b4'
 HISTORIC_FINGERPRINT = '36679d13ac5b2f9deedfd9d9ff077de3305ed6c4398a0576a10bdd2837bb1ec7'
 DYNAMIC = {'progress.json', 'runtime-manifest.json', 'release-manifest.json'}
 
@@ -39,11 +40,15 @@ def verify_release(root, site=None, current_head=False):
     ref = progress['source']['commit']
     require(len(ref) == 40 and all(c in '0123456789abcdef' for c in ref), 'Exact evidence commit required')
     subprocess.run(['git', '-C', str(root), 'merge-base', '--is-ancestor', ref, 'HEAD'], check=True)
+    if site == root / 'docs/knowledge-map':
+        require(ref == manifest['committed_snapshot']['source_commit'] and actual['progress.json'] == manifest['committed_snapshot']['projection_sha256'], 'Changed committed reference snapshot')
     if current_head:
         require(ref == subprocess.check_output(['git', '-C', str(root), 'rev-parse', 'HEAD']).decode().strip(), 'Outdated artifact')
+        require(ref == os.environ.get('GITHUB_SHA', ref), 'Artifact does not match GITHUB_SHA')
     expected = json.loads(subprocess.check_output([sys.executable, '-B', str(root / 'scripts/sync-project-completion.py'), '--ref', ref]))['projection']
     require(progress == expected, 'Progress not reconstructed from committed evidence')
     runtime = json.loads((site / 'runtime-manifest.json').read_bytes())
+    require(runtime['source_input_digest'] == digest({k:progress['source'][k] for k in ['evidence','implementation_sha256']}), 'Source input digest mismatch')
     require(runtime['source_commit'] == ref and runtime['edition'] == 'myatlas-v6.6', 'Runtime source identity mismatch')
     require(runtime['inventory'] == {p:sha for p,sha in actual.items() if p != 'runtime-manifest.json'}, 'Runtime inventory mismatch')
     for row in runtime['source_assets']:

@@ -51,6 +51,11 @@
     "views/knowledge-atlas-v6-skill-tree/vendor/D3-LICENSE": "3e6849627f74ff73c257a3ae1efb574015d94fc1035c05ec3c15805165efcbc4",
     "views/knowledge-atlas-v6-skill-tree/vendor/d3-7.9.0.min.js": "f2094bbf6141b359722c4fe454eb6c4b0f0e42cc10cc7af921fc158fceb86539"
   },
+  "committed_snapshot": {
+    "projection_sha256": "a6da143c5eae639870c31bfa8d86ebe2f3b73e46486ba63cb9398bfa24016de8",
+    "purpose": "validated-reference-snapshot; deployment regenerates from final checkout HEAD",
+    "source_commit": "4215ac2fefea0ff6084210bac8d2dc0f42c32b34"
+  },
   "dynamic_files": [
     "progress.json",
     "runtime-manifest.json"
@@ -67,7 +72,7 @@
     "docs/releases/knowledge-atlas-pre-v6.6-manifest.json": "902d1f6c76ad7fc11a96cb859b517f4dbc21a910ce9523fc9b4a18c3ef16bb98",
     "docs/releases/knowledge-atlas-pre-v6.6-release.json": "700effb6cd927be6c7a017a9f453290f6ca398bbcf7fbfcd221695dd204c384a"
   },
-  "manifest_fingerprint": "57d2cff0731ad02bd447a5efe25342d293522a123a560d78d48a04442b4103b4",
+  "manifest_fingerprint": "11b5be07945d442eebf14f00f8d7cefd9ac7da49e75504aceb7fecea1e6f34b4",
   "progress_policy": "owner-attested-project-requirements-are-learned",
   "protected_evidence": {
     "data/knowledge": {
@@ -109,7 +114,7 @@
     "data/knowledge/courses.json": "e4e2f71107a8512f865c6ea4c20a855bf732364781ec662aa35782eaf35c5ed9",
     "data/knowledge/evidence.json": "7abb2ebaf3f9e11ac71c17cf38d8cccda1726aa923afd039dbe34a4fc27d7a0e",
     "data/myatlas/progress.json": "431e87e07c43da47559820c1833dcb4a33c0ef276f1072d4eec9a599b922d6d8",
-    "scripts/build-myatlas.py": "dcc2aa3f68eb142cf6b2e6f814955604bd1020e1d166a452ed6507d5381e4f0a",
+    "scripts/build-myatlas.py": "6b46c11f09c988ebd56f3b880299e71c4ad391b4889cc52529084055985fd968",
     "scripts/knowledge_atlas/completion_projection.cjs": "3346b3022b1babe61b575a6206f5172e393968216abc1e2ae8fd58673085a7ca",
     "scripts/knowledge_atlas/course_completion.py": "d251540738edafd3c1fa74696dea9464429d91b0a1bfa42e9bae8ca1ad68ceba",
     "scripts/knowledge_atlas/git_completion.py": "d2d67ad0e5ea08d7b25e768ed845048960947d766cd530166b00c8d530a7cfd9",
