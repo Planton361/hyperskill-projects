@@ -5,11 +5,11 @@ on:
       - 'java/**'
       - 'scripts/knowledge_atlas/*completion*'
       - 'scripts/*project-completion.py'
-      - 'prototypes/knowledge-atlas-v6-skill-tree/progress-analytics.js'
-      - 'prototypes/knowledge-atlas-scope-pyramid/catalog.json'
-      - 'prototypes/knowledge-atlas-scope-pyramid/scope-index.json'
-      - 'prototypes/project-completion/accepted-sync.json'
-      - 'prototypes/project-completion/course-completions.json'
+      - 'src/myatlas/knowledge-atlas-v6-skill-tree/progress-analytics.js'
+      - 'src/myatlas/knowledge-atlas-scope-pyramid/catalog.json'
+      - 'src/myatlas/knowledge-atlas-scope-pyramid/scope-index.json'
+      - 'data/myatlas/accepted-sync.json'
+      - 'data/myatlas/course-completions.json'
       - '.github/workflows/project-completion-review.yml'
   workflow_dispatch:
 permissions:

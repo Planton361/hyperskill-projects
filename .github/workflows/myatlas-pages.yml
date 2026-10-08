@@ -1,0 +1,87 @@
+name: MyAtlas Pages
+on:
+  push:
+    branches: [main, 'release/**']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: myatlas-pages-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate committed edition and completion evidence
+        run: |
+          python3 -B scripts/check-myatlas-production.py
+          python3 -B -m unittest scripts.tests.test_course_completion scripts.tests.test_git_project_completion scripts.tests.test_myatlas_release
+          for test in progress-analytics universal-progress completion portfolio copy; do node "tests/myatlas/$test.cjs"; done
+      - name: Generate public evidence and readable differential summary
+        run: |
+          python3 -B scripts/sync-project-completion.py > "$RUNNER_TEMP/progress-review.json"
+          python3 -B scripts/sync-project-completion.py --summary < "$RUNNER_TEMP/progress-review.json" >> "$GITHUB_STEP_SUMMARY"
+      - name: Build the Pages artifact from committed sources
+        run: |
+          python3 -B scripts/build-myatlas.py
+          python3 -B scripts/check-myatlas-production.py --site build/pages/knowledge-map --current-head
+          cp docs/.nojekyll build/pages/.nojekyll
+      - name: Install locked focused browser tooling
+        run: |
+          npm ci --prefix scripts/knowledge_atlas --ignore-scripts
+          scripts/knowledge_atlas/node_modules/.bin/playwright install --with-deps chromium
+      - name: Validate the actual repository base path
+        run: |
+          mkdir -p build/preview
+          ln -s ../pages build/preview/hyperskill-projects
+          python3 -B -m http.server 8807 --bind 127.0.0.1 --directory build/preview > "$RUNNER_TEMP/preview.log" 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid"' EXIT
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent http://127.0.0.1:8807/hyperskill-projects/knowledge-map/ > /dev/null; then break; fi
+            sleep 1
+          done
+          node tests/myatlas/release.cjs
+          git diff --exit-code -- docs/knowledge-map state/knowledge-atlas data/knowledge src/myatlas
+      - uses: actions/upload-artifact@v4
+        with:
+          name: myatlas-review-${{ github.sha }}
+          path: |
+            test-results/v66-release.json
+            ${{ runner.temp }}/progress-review.json
+      - uses: actions/upload-pages-artifact@v3
+        if: github.ref == 'refs/heads/main'
+        with:
+          path: build/pages
+  deploy:
+    if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+    needs: build
+    runs-on: ubuntu-24.04
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Refuse an outdated main artifact
+        env:
+          EXPECTED_SHA: ${{ github.sha }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          actual_sha=$(git ls-remote "https://github.com/$REPOSITORY.git" refs/heads/main | cut -f1)
+          test "$actual_sha" = "$EXPECTED_SHA"
+      - name: Deploy validated artifact
+        id: deployment
+        uses: actions/deploy-pages@v4

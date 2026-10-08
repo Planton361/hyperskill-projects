@@ -37,7 +37,7 @@ def verify_historical_knowledge_compatibility(historical, current, catalog_obser
     return additions
 
 
-def verify_release(root):
+def verify_historic_release(root):
     """Verify the historical package and current active inputs without writes."""
     root = Path(root)
     m = json.loads((root / MANIFEST).read_bytes())
@@ -77,3 +77,12 @@ def verify_release(root):
         'state_history_generation_unchanged': True,
         'global_reference_unchanged': True,
     }
+
+
+def verify_release(root):
+    root = Path(root)
+    release = root / 'docs/knowledge-map/release-manifest.json'
+    if release.is_file() and json.loads(release.read_bytes()).get('edition') == 'myatlas-v6.6':
+        from .myatlas_guard import verify_release as verify_v66
+        return verify_v66(root)
+    return verify_historic_release(root)

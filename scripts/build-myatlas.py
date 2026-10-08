@@ -7,7 +7,7 @@ parser=argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--output',type=Path,default=ROOT/'build/pages/knowledge-map')
 args=parser.parse_args()
 OUT=args.output.resolve()
-if OUT==ROOT or OUT in (ROOT/'state',ROOT/'data',ROOT/'src') or any(p.is_symlink() for p in [OUT,*OUT.parents]):
+if ROOT/'build' not in OUT.parents or any(p.is_symlink() for p in [OUT,*OUT.parents]):
     raise SystemExit('Unsafe build destination')
 projection=json.loads(subprocess.check_output([sys.executable,'-B',str(ROOT/'scripts/sync-project-completion.py')]))['projection']
 ledger=[]
@@ -70,6 +70,9 @@ ProgressAnalytics.create=function(input){
 (OUT/'global.html').write_text('<!doctype html><meta charset="utf-8"><title>Knowledge Atlas</title><script>const u=new URL("index.html",location.href);u.search=location.search;if(!u.searchParams.has("key")&&/^(topic|category):[1-9][0-9]*$/.test(location.hash.slice(1)))u.searchParams.set("key",location.hash.slice(1));location.replace(u.href);</script>')
 legacy="""<script>const q=new URLSearchParams(location.search);let changed=false;for(const k of ['course','project','stage'])if(q.has(k+'_id')&&!q.has(k)){q.set(k,q.get(k+'_id'));q.delete(k+'_id');changed=true;}if(['my','my-atlas','my-knowledge'].includes(q.get('view'))){q.set('view','skill-tree');changed=true;}if(!q.has('key')&&/^(topic|category):[1-9][0-9]*$/.test(location.hash.slice(1))){q.set('key',location.hash.slice(1));changed=true;}if(changed)history.replaceState(null,'','?'+q);</script>"""
 adapt('index.html','<script src="shell.js">',legacy+'<script src="shell.js">')
+release_manifest=ROOT/'docs/releases/myatlas-v6.6.json'
+if release_manifest.exists():
+    shutil.copy2(release_manifest,OUT/'release-manifest.json')
 inventory={str(p.relative_to(OUT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(OUT.rglob('*')) if p.is_file()}
 record=dict(schema=1,edition='myatlas-v6.6',source_commit=projection['source']['commit'],source_assets=ledger,inventory=inventory,adapters=['relative base-path relocation','generated projection boundary validation','personal dormant-ID resolution from committed Global catalog','legacy URL adapters'],historical_manifest_sha256=hashlib.sha256((ROOT/'docs/releases/knowledge-atlas-pre-v6.6-manifest.json').read_bytes()).hexdigest())
 (OUT/'runtime-manifest.json').write_text(json.dumps(record,sort_keys=True,indent=2)+'\n')

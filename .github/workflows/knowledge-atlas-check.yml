@@ -1,55 +1,8 @@
-name: Knowledge Atlas read-only validation
+name: MyAtlas read-only validation
 on:
   push:
-    paths:
-      - 'docs/knowledge-map/**'
-      - 'prototypes/adaptive-pyramid/**'
-      - 'scripts/check-adaptive-production.py'
-      - 'data/knowledge/**'
-      - 'scripts/update-knowledge-atlas.py'
-      - 'scripts/plan-knowledge-atlas-activation.py'
-      - 'scripts/sanitize-hyperskill-knowledge-map.py'
-      - 'scripts/knowledge_atlas/**'
-      - 'scripts/tests/test_knowledge_atlas*.py'
-      - 'scripts/tests/fixtures/activation/**'
-      - 'scripts/tests/test_global_catalog.py'
-      - 'scripts/tests/test_knowledge_graph.py'
-      - 'scripts/tests/test_knowledge_map.py'
-      - 'scripts/tests/test_import.py'
-      - 'scripts/build-knowledge-graph.py'
-      - 'scripts/build-knowledge-map.py'
-      - 'state/knowledge-atlas/**'
-      - 'prototypes/knowledge-atlas-v6/*.js'
-      - 'prototypes/knowledge-atlas-v6/*.json'
-      - 'prototypes/knowledge-atlas-v6/*.html'
-      - 'prototypes/knowledge-atlas-v6/*.css'
-      - 'prototypes/knowledge-atlas-v6/vendor/**'
-      - '.github/workflows/knowledge-atlas-check.yml'
+    branches: [main, 'release/**']
   pull_request:
-    paths:
-      - 'docs/knowledge-map/**'
-      - 'prototypes/adaptive-pyramid/**'
-      - 'scripts/check-adaptive-production.py'
-      - 'data/knowledge/**'
-      - 'scripts/update-knowledge-atlas.py'
-      - 'scripts/plan-knowledge-atlas-activation.py'
-      - 'scripts/sanitize-hyperskill-knowledge-map.py'
-      - 'scripts/knowledge_atlas/**'
-      - 'scripts/tests/test_knowledge_atlas*.py'
-      - 'scripts/tests/fixtures/activation/**'
-      - 'scripts/tests/test_global_catalog.py'
-      - 'scripts/tests/test_knowledge_graph.py'
-      - 'scripts/tests/test_knowledge_map.py'
-      - 'scripts/tests/test_import.py'
-      - 'scripts/build-knowledge-graph.py'
-      - 'scripts/build-knowledge-map.py'
-      - 'state/knowledge-atlas/**'
-      - 'prototypes/knowledge-atlas-v6/*.js'
-      - 'prototypes/knowledge-atlas-v6/*.json'
-      - 'prototypes/knowledge-atlas-v6/*.html'
-      - 'prototypes/knowledge-atlas-v6/*.css'
-      - 'prototypes/knowledge-atlas-v6/vendor/**'
-      - '.github/workflows/knowledge-atlas-check.yml'
   workflow_dispatch:
 permissions:
   contents: read
@@ -58,38 +11,18 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.12.11'
+          python-version: '3.12'
       - uses: actions/setup-node@v4
         with:
-          node-version: '22.16.0'
-      - name: Install focused browser runner
+          node-version: '22'
+      - name: Protect committed Production and historic evidence
+        run: python3 -B scripts/check-adaptive-production.py
+      - name: Focused evidence and presentation contracts
         run: |
-          npm ci --prefix scripts/knowledge_atlas --ignore-scripts
-          scripts/knowledge_atlas/node_modules/.bin/playwright install --with-deps chromium
-      - name: Protect Production, State and Knowledge inventories
-        run: |
-          find docs/knowledge-map state/knowledge-atlas data/knowledge -type f -print0 | sort -z | xargs -0 sha256sum > "$RUNNER_TEMP/atlas-protected-before.sha256"
-      - name: Verify exact adaptive release and semantic inputs
-        run: python -B scripts/check-adaptive-production.py
-      - name: Adaptive layout and read-only growth contracts
-        run: node prototypes/adaptive-pyramid/real-production-apply/focused.cjs
-      - name: Production browser smoke at 1440 by 900
-        env:
-          PLAYWRIGHT_MODULE: ${{ github.workspace }}/scripts/knowledge_atlas/node_modules/playwright
-        run: |
-          python -B -m http.server 8765 --bind 127.0.0.1 --directory . > "$RUNNER_TEMP/atlas-server.log" 2>&1 &
-          SERVER_PID=$!
-          trap 'kill "$SERVER_PID"' EXIT
-          for attempt in $(seq 1 30); do
-            if curl --fail --silent http://127.0.0.1:8765/docs/knowledge-map/ > /dev/null; then break; fi
-            sleep 1
-          done
-          node prototypes/adaptive-pyramid/real-production-apply/smoke.cjs
-      - name: Verify read-only contract
-        if: always()
-        run: |
-          sha256sum --check "$RUNNER_TEMP/atlas-protected-before.sha256"
-          git diff --exit-code -- docs/knowledge-map state/knowledge-atlas data/knowledge
-          test -z "$(git ls-files --others --exclude-standard -- docs/knowledge-map state/knowledge-atlas data/knowledge)"
+          python3 -B -m unittest scripts.tests.test_course_completion scripts.tests.test_git_project_completion scripts.tests.test_myatlas_release
+          for test in progress-analytics universal-progress completion portfolio copy; do node "tests/myatlas/$test.cjs"; done
+          git diff --exit-code -- docs/knowledge-map state/knowledge-atlas data/knowledge src/myatlas

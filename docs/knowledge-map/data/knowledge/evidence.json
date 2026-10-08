@@ -1,0 +1,1874 @@
+[
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "topics_count",
+      "capstone_topics_count",
+      "projects"
+    ],
+    "id": "course-8",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/tracks/8"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "parent_id",
+      "children",
+      "descendants"
+    ],
+    "id": "map-8",
+    "method": "public_json",
+    "note": "Course-scoped hierarchy; retain multiple category memberships.",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topic-relations?track_id=8&page_size=100"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "learned_topics_count=31",
+      "skipped_topics_count=0",
+      "applied_capstone_topics_count=26",
+      "completed_projects=[113]"
+    ],
+    "id": "personal-course-8",
+    "method": "user_supplied_authenticated_excerpt",
+    "note": "User-supplied authenticated track-8 response; only whitelisted values retained.",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "track_id=8",
+      "project_id=380",
+      "mode=track"
+    ],
+    "id": "personal-plan",
+    "method": "user_supplied_authenticated_excerpt",
+    "note": "User-supplied current study-plan response; no account or plan ID retained.",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "is_completed=false",
+      "completed_stages=[]"
+    ],
+    "id": "personal-project-380",
+    "method": "user_supplied_authenticated_excerpt",
+    "note": "User-supplied authenticated project-380 response.",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "is_learned=true",
+      "is_completed=true",
+      "is_skipped=false",
+      "verification_status=verified",
+      "stage_position=1"
+    ],
+    "id": "personal-topic-15",
+    "method": "user_supplied_authenticated_excerpt",
+    "note": "User-supplied authenticated topic-15 response. Stage position does not establish project application.",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "topic_id",
+      "is_learned",
+      "is_completed",
+      "is_skipped",
+      "verification_status",
+      "learned_topics_count"
+    ],
+    "id": "personal-topics-8-20261001",
+    "method": "user_supplied_authenticated_excerpt",
+    "note": "Owner-supplied sanitized JSON from authenticated progresses batch covering all 89 course topics, cross-checked against track-8. Learned is is_learned === true; verified is verification_status === \"verified\". No application claims.",
+    "observed_at": "2026-10-01T13:57:59.083Z",
+    "observed_on": "2026-10-01",
+    "snapshot_file": "observations/learned-2026-10-01.json",
+    "source": "hyperskill"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "language",
+      "stages_ids"
+    ],
+    "id": "project-113",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/projects/113"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "language",
+      "stages_ids"
+    ],
+    "id": "project-133",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/projects/133"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "language",
+      "stages_ids"
+    ],
+    "id": "project-184",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/projects/184"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "language",
+      "stages_ids"
+    ],
+    "id": "project-229",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/projects/229"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "language",
+      "stages_ids"
+    ],
+    "id": "project-293",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/projects/293"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "language",
+      "stages_ids"
+    ],
+    "id": "project-33",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/projects/33"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "language",
+      "stages_ids"
+    ],
+    "id": "project-341",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/projects/341"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "language",
+      "stages_ids"
+    ],
+    "id": "project-380",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/projects/380"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "language",
+      "stages_ids"
+    ],
+    "id": "project-383",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/projects/383"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "language",
+      "stages_ids"
+    ],
+    "id": "project-48",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/projects/48"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "language",
+      "stages_ids"
+    ],
+    "id": "project-53",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/projects/53"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "project",
+      "step",
+      "step_index",
+      "prerequisites",
+      "all_prerequisites"
+    ],
+    "id": "stage-614",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/stages/614"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "project",
+      "step",
+      "step_index",
+      "prerequisites",
+      "all_prerequisites"
+    ],
+    "id": "stage-615",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/stages/615"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "project",
+      "step",
+      "step_index",
+      "prerequisites",
+      "all_prerequisites"
+    ],
+    "id": "stage-616",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/stages/616"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "project",
+      "step",
+      "step_index",
+      "prerequisites",
+      "all_prerequisites"
+    ],
+    "id": "stage-617",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/stages/617"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "project",
+      "step",
+      "step_index",
+      "prerequisites",
+      "all_prerequisites"
+    ],
+    "id": "stage-618",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/stages/618"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-1",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/1"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-1033",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/1033"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-1038",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/1038"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-1087",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/1087"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-1088",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/1088"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-112",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/112"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-113",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/113"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-115",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/115"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-116",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/116"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-117",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/117"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-12",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/12"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-120",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/120"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-122",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/122"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-1248",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/1248"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-127",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/127"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-128",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/128"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-14",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/14"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-1425",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/1425"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-146",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/146"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-147",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/147"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-1476",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/1476"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-148",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/148"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-149",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/149"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-15",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/15"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-152",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/152"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-161",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/161"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-163",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/163"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-164",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/164"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-165",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/165"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-17",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/17"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-1761",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/1761"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-19",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/19"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-191",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/191"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-192",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/192"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-193",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/193"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-2",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/2"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-201",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/201"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-2108",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/2108"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-24",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/24"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-25",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/25"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-259",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/259"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-260",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/260"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-27",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/27"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-28",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/28"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-30",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/30"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-307",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/307"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-308",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/308"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-309",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/309"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-31",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/31"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-32",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/32"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-33",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/33"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-348",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/348"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-3538",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/3538"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-36",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/36"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-360",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/360"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-37",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/37"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-38",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/38"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-387",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/387"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-4",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/4"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-4510",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/4510"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-4533",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/4533"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-4635",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/4635"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-480",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/480"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-491",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/491"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-5",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/5"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-5028",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/5028"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-5107",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/5107"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-518",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/518"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-571",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/571"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-59",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/59"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-60",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/60"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-65",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/65"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-7",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/7"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-78",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/78"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-8",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/8"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-851",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/851"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-87",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/87"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-872",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/872"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-876",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/876"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-88",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/88"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-89",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/89"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-9",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/9"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-90",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/90"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-96",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/96"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-97",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/97"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-98",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/98"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-985",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/985"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-99",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/99"
+  },
+  {
+    "confidence": "explicit",
+    "fields": [
+      "id",
+      "title",
+      "theory",
+      "parent_id",
+      "prerequisites",
+      "followers"
+    ],
+    "id": "topic-999",
+    "method": "public_json",
+    "note": "",
+    "observed_on": "2026-10-01",
+    "source": "hyperskill",
+    "url": "https://hyperskill.org/api/topics/999"
+  }
+]
