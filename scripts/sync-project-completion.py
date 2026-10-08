@@ -26,6 +26,9 @@ try:
                     'no_longer_effectively_learned_topic_ids', 'already_learned_topic_ids', 'updated_provenance_topic_ids'):
             print('- ' + key.replace('_', ' ') + ': ' + json.dumps(c[key]))
         print('- Global learned: ' + str(c['global']['learned']) + '; verified: ' + str(c['global']['verified']))
+        portfolio = artifact['projection']['portfolio']
+        print('- Confirmed completed Projects: ' + str(portfolio['completed_project_count']) + '; catalog Projects: ' + str(portfolio['project_catalog_count']))
+        print('- Course completions: ' + ('Not recorded' if portfolio['completed_course_count'] is None else str(portfolio['completed_course_count']) + ' confirmed') + '; catalog Courses: ' + str(portfolio['course_catalog_count']))
         print('- Impacted scopes: ' + ', '.join(k + '=' + str(len(v)) for k,v in c['impacted_scopes'].items()))
     else:
         inputs = committed_inputs(args.root, args.ref)
@@ -37,7 +40,7 @@ try:
         engine = ROOT / 'scripts/knowledge_atlas/completion_projection.cjs'
         inputs['source']['implementation_sha256'] = {name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in (
             'scripts/sync-project-completion.py', 'scripts/knowledge_atlas/git_completion.py',
-            'scripts/knowledge_atlas/project_completion.py', 'scripts/knowledge_atlas/completion_projection.cjs',
+            'scripts/knowledge_atlas/project_completion.py', 'scripts/knowledge_atlas/course_completion.py', 'scripts/knowledge_atlas/completion_projection.cjs',
             'prototypes/knowledge-atlas-v6-skill-tree/progress-analytics.js')}
         result = subprocess.run(['node', str(engine)], input=json.dumps(inputs), text=True, capture_output=True, check=True)
         print(json.dumps(json.loads(result.stdout), sort_keys=True, indent=2))

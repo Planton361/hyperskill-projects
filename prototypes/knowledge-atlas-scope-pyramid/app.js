@@ -124,6 +124,7 @@ async function init(){
  const read=async path=>{const r=await fetch(path);if(!r.ok)throw Error('Missing local catalog input');return r.json();};
  let acceptedCourses,evidence;[catalog,index,acceptedCourses,evidence]=await Promise.all(['catalog.json','scope-index.json','../../data/knowledge/courses.json','../../data/knowledge/evidence.json'].map(read));
  catalog.projectCompletion=await read('../project-completion/progress.json');
+ if(!catalog.projectCompletion.course_completion)catalog.projectCompletion.course_completion=await read('../project-completion/course-completions.json');
  scopes=[...index.courses,...index.projects,...index.stages];ux=ScopeUXModel.create(index,catalog,acceptedCourses,evidence);
  if(!g.AtlasViewHost?.ownsFilters)for(const type of ['course','project','stage']){
   const input=$('#'+type+'-search'),select=$('#'+type+'-choice');input.oninput=()=>options(type);

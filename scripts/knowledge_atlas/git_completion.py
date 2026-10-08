@@ -5,6 +5,7 @@ from pathlib import Path
 import subprocess
 import tempfile
 from .project_completion import scan
+from .course_completion import validate_records
 
 CATALOG = 'prototypes/knowledge-atlas-scope-pyramid/catalog.json'
 SCOPES = 'prototypes/knowledge-atlas-scope-pyramid/scope-index.json'
@@ -51,6 +52,8 @@ def committed_inputs(root, ref='HEAD'):
         completion = scan(destination, scopes)
     if completion['rejected']:
         raise ValueError('Rejected committed exports: ' + json.dumps(completion['rejected'], sort_keys=True))
+    course_path = 'prototypes/project-completion/course-completions.json'
+    completion['course_completion'] = validate_records(json.loads(read(course_path)) if course_path in entries else {'schema': 1, 'records': []}, scopes)
     baseline = next((p for p in (ACCEPTED, 'prototypes/project-completion/progress.json') if p in entries), None)
     previous = json.loads(read(baseline)) if baseline else None
     return dict(catalog=catalog, scopes=scopes, completion=completion, previous=previous,

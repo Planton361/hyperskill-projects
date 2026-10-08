@@ -94,3 +94,18 @@ class GitCompletionTests(unittest.TestCase):
         self.assertEqual(p['completed_project_ids'],[113]);self.assertEqual(len(p['project_learned_topic_ids']),26)
         self.assertEqual(p['global']['learned'],31);self.assertEqual(p['global']['verified'],12)
         self.assertFalse(result['changes']['semantic_change']);self.assertEqual(result,json.loads(subprocess.check_output(command)))
+
+    def test_explicit_committed_course_completion_independent_of_projects(self):
+        baseline=self.run_sync();self.accept(baseline)
+        records=dict(schema=1,records=[dict(course_id=1,is_completed=True,observed_at='2026-10-08T14:00:00Z',source='owner',evidence_id='course-1-fixture')])
+        self.write('prototypes/project-completion/course-completions.json',records)
+        self.assertIsNone(self.run_sync()['projection']['portfolio']['completed_course_count'])
+        self.commit();result=self.run_sync()
+        self.assertEqual(result['projection']['portfolio']['completed_course_count'],1)
+        self.assertEqual(result['projection']['completed_project_ids'],[])
+        self.assertEqual(result['projection']['effective_learned_topic_ids'],[1])
+        self.assertEqual(result['projection']['verified_topic_ids'],[1])
+        self.assertEqual(result['changes']['changed_course_completion_ids'],[1])
+        self.assertEqual(result['changes']['impacted_scopes']['courses'],[1])
+        self.assertTrue(any(e['path'].endswith('course-completions.json') for e in result['projection']['source']['evidence']))
+        self.accept(result);self.assertFalse(self.run_sync()['changes']['semantic_change'])

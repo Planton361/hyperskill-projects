@@ -61,7 +61,37 @@ function create({catalog,scopes,progress=catalog.progress,evidence=catalog.evide
   return result;
  }
  function personalStatus(type,id){if(type==='project'){const p=(completion?.projects||[]).filter(p=>p.project_id===id).sort((a,b)=>a.observed_at.localeCompare(b.observed_at)).at(-1);if(p)return{status:'completed',lastObserved:p.observed_at};}const rows=(progress[type+'s']||[]).filter(r=>r[type+'_id']===id&&sourced(r)).sort((a,b)=>(date(a)||'').localeCompare(date(b)||''));const row=rows.at(-1);return row?{status:row.status||null,lastObserved:date(row)}:null;}
- return{aggregate,descendants,category,categoryInScope,topic,officialCourseProgress,scope,scopeMaps,categories,children,newLearnedTopicIds:()=>[...projectEvidence.keys()].filter(id=>state(observations.get(id)||[],'is_learned')!==true).sort((a,b)=>a-b),global:()=>aggregate(topics),personalStatus,courseObserved:id=>(progress.courses||[]).some(r=>r.course_id===id&&sourced(r))};
+ // Portfolio entities remain independent of Topic knowledge and official snapshots.
+ const completedProjectIds=[...new Set((completion?.projects||[]).map(p=>p.project_id))].sort((a,b)=>a-b);
+ if(completedProjectIds.some(id=>!scopeMaps.project.has(id)))throw Error('Unknown completed Project ID');
+ const courseRecords=completion?.course_completion?.records||[];
+ for(const r of courseRecords){if(!scopeMaps.course.has(r.course_id)||typeof r.is_completed!=='boolean'||!['owner','hyperskill'].includes(r.source)||!r.evidence_id||!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z$/.test(r.observed_at)||!Number.isFinite(Date.parse(r.observed_at)))throw Error('Invalid explicit Course completion record');}
+ function completionStatus(type,id){
+  if(!scopeMaps[type]?.has(id))throw Error('Unknown completion scope');
+  if(type==='project'){
+   const exports=(completion?.projects||[]).filter(p=>p.project_id===id);
+   if(exports.length)return{state:'COMPLETED',completed:true,evidence:exports.map(p=>({source:p.attested_by+' · '+p.source,observed_at:p.observed_at,project_id:id}))};
+  }
+  const explicit=(progress[type+'s']||[]).filter(r=>r[type+'_id']===id&&sourced(r)&&date(r)&& (typeof r.is_completed==='boolean'||['completed','not_completed'].includes(r.status))).map(r=>({is_completed:typeof r.is_completed==='boolean'?r.is_completed:r.status==='completed',observed_at:date(r),source:(r.evidence_ids||[]).join(', ')}));
+  if(type==='course')explicit.push(...courseRecords.filter(r=>r.course_id===id));
+  if(!explicit.length)return{state:'NOT_RECORDED',completed:null,evidence:[]};
+  const latest=Math.max(...explicit.map(r=>Date.parse(r.observed_at))),values=new Set(explicit.filter(r=>Date.parse(r.observed_at)===latest).map(r=>r.is_completed));
+  const completed=values.size===1?[...values][0]:null;
+  return{state:completed===true?'COMPLETED':completed===false?'NOT_COMPLETED':'NOT_RECORDED',completed,evidence:explicit.map(r=>({source:r.source,observed_at:r.observed_at,evidence_id:r.evidence_id||null}))};
+ }
+ function courseProjects(id){
+  if(!scopeMaps.course.has(id))throw Error('Unknown Course');
+  const inventory=scopes.course_project_associations?.courses.find(c=>c.course_id===id);
+  if(!inventory||inventory.complete!==true||inventory.state==='UNKNOWN')return{state:'UNKNOWN',eligible:null,completed:null,completed_project_ids:null};
+  const ids=[...new Set(inventory.project_ids)];if(ids.some(id=>!scopeMaps.project.has(id)))throw Error('Unknown associated Project');
+  const done=ids.filter(id=>completedProjectIds.includes(id)).sort((a,b)=>a-b);
+  return{state:ids.length?'KNOWN':'KNOWN_EMPTY',eligible:ids.length,completed:done.length,completed_project_ids:done,evidence_id:inventory.source_id};
+ }
+ function portfolio(){
+  const statuses=[...scopeMaps.course.keys()].map(id=>({id,...completionStatus('course',id)})),recorded=statuses.filter(s=>s.evidence.length),done=statuses.filter(s=>s.completed===true).map(s=>s.id).sort((a,b)=>a-b);
+  return{completed_project_ids:[...completedProjectIds],completed_project_count:completedProjectIds.length,project_catalog_count:scopeMaps.project.size,course_catalog_count:scopeMaps.course.size,course_completion_state:recorded.length?'RECORDED':'NOT_RECORDED',completed_course_count:recorded.length?done.length:null,completed_course_ids:done,recorded_course_ids:recorded.map(s=>s.id).sort((a,b)=>a-b)};
+ }
+ return{portfolio,courseProjects,completionStatus,aggregate,descendants,category,categoryInScope,topic,officialCourseProgress,scope,scopeMaps,categories,children,newLearnedTopicIds:()=>[...projectEvidence.keys()].filter(id=>state(observations.get(id)||[],'is_learned')!==true).sort((a,b)=>a-b),global:()=>aggregate(topics),personalStatus,courseObserved:id=>(progress.courses||[]).some(r=>r.course_id===id&&sourced(r))};
 }
 const api={create};if(typeof module!=='undefined')module.exports=api;g.ProgressAnalytics=api;
 })(globalThis);

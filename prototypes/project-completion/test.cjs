@@ -14,7 +14,7 @@ assert.equal(a.global().learned,32);assert.equal(a.global().verified,12);assert.
 assert.deepEqual(a.officialCourseProgress(8),baseline.officialCourseProgress(8));assert.equal(a.scope('project',900003).learned,null);assert.equal(a.scope('project',900004).learned,0);
 for(const type of ['course','project','stage'])for(const row of scopes[type+'s']){const before=baseline.scope(type,row.scope_id),after=a.scope(type,row.scope_id);assert.equal(after.verified,before.verified);assert.equal(after.learned,before.learned===null?null:before.learned+(row.explicit_topic_ids.includes(id)?1:0));}
 for(const category of catalog.categories){assert.equal(a.category(category.id).learned,baseline.category(category.id).learned+(a.descendants(category.id).has(id)?1:0));assert.equal(a.category(category.id).verified,baseline.category(category.id).verified);}
-assert.match(presentation.topic(a,id),/Completed Project 900001/);assert.match(presentation.topic(a,id),/2026-10-08T12:00:00Z/);
+assert.match(presentation.topic(a,id),/Owner-attested Project 900001/);assert.match(presentation.topic(a,id),/2026-10-08T12:00:00Z/);
 assert.deepEqual(a.global(),P.create({catalog,scopes:fixture,completion:candidate}).global());
 const raw=read('../knowledge-atlas-v6-skill-tree/model.json');
 const context={ProgressAnalytics:P,performance:{now:()=>0}};context.globalThis=context;vm.createContext(context);

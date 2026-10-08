@@ -9,6 +9,7 @@ on:
       - 'prototypes/knowledge-atlas-scope-pyramid/catalog.json'
       - 'prototypes/knowledge-atlas-scope-pyramid/scope-index.json'
       - 'prototypes/project-completion/accepted-sync.json'
+      - 'prototypes/project-completion/course-completions.json'
       - '.github/workflows/project-completion-review.yml'
   workflow_dispatch:
 permissions:

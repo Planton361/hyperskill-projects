@@ -8,3 +8,8 @@
 @media(max-width:700px){#progress-overview{top:98px;left:10px;gap:8px;flex-wrap:wrap;font-size:11px}#progress-overview .progress-bar{width:60px}#progress-panel{top:165px;left:10px;max-height:calc(100% - 180px)}.progress-grid{grid-template-columns:1fr}.progress-controls{grid-template-columns:1fr}}
 #inspector .category-progress .progress-card p{font-size:11px;line-height:1.4;margin:5px 0}
 #inspector .category-progress .child-progress p{font-size:11px;line-height:1.4;margin:3px 0}
+
+/* Compact portfolio metrics reuse the existing overlay; no canvas/layout changes. */
+#progress-panel{top:166px;max-height:calc(100% - 182px)}
+#progress-overview .overview-metrics{display:flex;gap:16px;flex-wrap:wrap}.overview-metric{display:flex;flex-direction:column;gap:2px}.overview-metric small{font-size:10px;color:var(--muted)}.overview-metric b{font-size:12px}.portfolio-completions{margin:8px 0}.portfolio-completions details{font-size:11px}.completion-evidence{font-size:10px}.course-portfolio{border-top:1px solid var(--border);margin-top:8px;padding-top:5px}.course-portfolio .completion-bar{height:5px}
+@media(max-width:700px){#progress-overview .overview-metrics{gap:8px 14px}.overview-metric:last-child{flex-basis:100%}#progress-overview{align-items:flex-start}#progress-panel{top:255px;max-height:calc(100% - 270px)}}
