@@ -198,7 +198,7 @@ async function init(){
  m.analytics=ProgressAnalytics.create({catalog:raw,scopes,completion});
  for(const n of m.registry.values())if(n.type==='topic'){const state=m.analytics.topic(n.id);n.is_learned=state.learned;n.is_verified=state.verified;}
  const canvas=document.createElement('canvas'),ctx=canvas.getContext('2d');
- const measure=(t,font=14,weight=400)=>{ctx.font=weight+' '+font+'px system-ui';return ctx.measureText(t).width;};
+ const measure=g.AtlasMeasure.width;
  L=timed('layout',()=>AtlasLayout.build(m,measure));metrics['tray packing']=L.trayPackingMilliseconds;
  $('#counts').textContent=`${raw.counts.leaves.toLocaleString()} leaf slots · ${raw.counts.categories} categories · all rendered`;
  $('#mode-summary').textContent=`Global Atlas · 5 roots · ${raw.counts.leaves.toLocaleString()} leaf slots · ${[...m.registry.values()].filter(n=>n.is_learned).length} learned · ${[...m.registry.values()].filter(n=>n.is_verified).length} verified`;

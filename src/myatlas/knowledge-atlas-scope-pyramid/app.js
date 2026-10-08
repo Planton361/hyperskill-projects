@@ -2,7 +2,7 @@
 'use strict';
 const $=s=>document.querySelector(s),esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const svg=d3.select('#graph'),world=d3.select('#world'),ctx=document.createElement('canvas').getContext('2d');
-const measure=(t,font=14,weight=400)=>{ctx.font=`${weight} ${font}px system-ui`;return ctx.measureText(t).width;};
+const measure=g.AtlasMeasure.width;
 let catalog,index,scopes,ux,nav,scope,m,L,projection,selected,mini,transform=d3.zoomIdentity,layoutMs,busy=false,builds=0,job=0,worker,pending,cameraIntent=null;
 const cache=new Map(),inspectorState={open:false,pinned:false};
 const zoom=d3.zoom().scaleExtent([.02,4]).on('zoom',e=>{if(e.sourceEvent)cameraIntent=null;transform=e.transform;world.attr('transform',transform);$('#zoom-value').textContent=Math.round(transform.k*100)+'%';updateMini();});svg.call(zoom).on('dblclick.zoom',null);
@@ -65,7 +65,7 @@ function render(){world.selectAll('*').remove();
  nodes.append('title').text(accessibleTitle);
  nodes.filter(n=>n.data.type==='category'&&categoryStats(n.data.id)?.fully_learned).append('path').attr('class','completion-check').attr('d','M 7 13 L 10 16 L 16 9');
  nodes.each(function(n){const group=d3.select(this),topic=n.data.type==='topic';if(topic){group.append('circle').attr('class','core').attr('cx',12).attr('cy',n.height/2).attr('r',3.5);if(ux.topic(n.data.id).verified===true)group.append('circle').attr('class','ring').attr('cx',12).attr('cy',n.height/2).attr('r',6);}
-  group.selectAll('text.label').data(n.lines).join('text').attr('class','label').attr('x',topic?24:22).attr('y',(_,i)=>(topic?6:8)+n.font+i*n.line).style('font-size',n.font+'px').text(s=>s);
+  group.selectAll('text.label').data(n.lines).join('text').attr('class','label').attr('x',topic?24:22).attr('y',(_,i)=>(topic?6:8)+n.font+i*n.line).style('font-size',n.font+'px').text(s=>s).each(function(){g.AtlasMeasure.fit(this,n.width-44);});
   if(!topic)group.append('text').attr('class','category-coverage').attr('x',22).attr('y',n.height-7).text(coverageLabel(n));
  });
  const b=bounds(),k=Math.min(172/(b.x1-b.x0),104/(b.y1-b.y0));mini={k,x:90-(b.x0+b.x1)/2*k,y:56-(b.y0+b.y1)/2*k};const mm=d3.select('#minimap');mm.selectAll('*').remove();mm.selectAll('rect').data(L.nodes).join('rect').attr('x',n=>mini.x+(n.x-n.width/2)*k).attr('y',n=>mini.y+n.y*k).attr('width',n=>Math.max(1,n.width*k)).attr('height',n=>Math.max(1,n.height*k));mm.append('rect').attr('class','mini-viewport');

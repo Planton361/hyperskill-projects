@@ -1,0 +1,557 @@
+{
+  "global": {
+    "nodes": 3956,
+    "changed_nodes": 3956,
+    "wrapped_nodes": 511,
+    "size_nodes": 921,
+    "position_nodes": 3955,
+    "connectors": 2746,
+    "changed_connectors": 2740,
+    "trays": 725,
+    "changed_trays": 725,
+    "checkpoint_changed": true,
+    "order_unchanged": true,
+    "native_repeat_identical": true,
+    "canonical_mac_exact": true,
+    "examples": [
+      {
+        "key": "atlas:root",
+        "mac": [
+          0,
+          0,
+          199,
+          63.04,
+          [
+            "Global Atlas"
+          ]
+        ],
+        "ubuntu": [
+          0,
+          0,
+          235,
+          63.04,
+          [
+            "Global Atlas"
+          ]
+        ]
+      },
+      {
+        "key": "category:987",
+        "mac": [
+          -16408.3125,
+          233.82,
+          165,
+          45.06,
+          [
+            "Number theory"
+          ]
+        ],
+        "ubuntu": [
+          -16472.5,
+          233.82,
+          140,
+          65.12,
+          [
+            "Number",
+            "theory"
+          ]
+        ]
+      },
+      {
+        "key": "topic:1084",
+        "mac": [
+          -16148.3125,
+          414.94,
+          220,
+          46,
+          [
+            "Geometric interpretation of",
+            "linear systems"
+          ]
+        ],
+        "ubuntu": [
+          -16212.5,
+          414.94,
+          220,
+          46,
+          [
+            "Geometric interpretation",
+            "of linear systems"
+          ]
+        ]
+      }
+    ],
+    "measurement_examples": [
+      {
+        "font_text": [
+          "10px system-ui",
+          "1 slots \u00b7 0 learned"
+        ],
+        "mac": 85.1806640625,
+        "ubuntu": 89.6875
+      },
+      {
+        "font_text": [
+          "10px system-ui",
+          "10 slots \u00b7 0 learned"
+        ],
+        "mac": 91.5966796875,
+        "ubuntu": 96.0498046875
+      },
+      {
+        "font_text": [
+          "10px system-ui",
+          "101 slots \u00b7 0 learned"
+        ],
+        "mac": 96.3525390625,
+        "ubuntu": 102.412109375
+      }
+    ]
+  },
+  "personal": {
+    "nodes": 54,
+    "changed_nodes": 53,
+    "wrapped_nodes": 8,
+    "size_nodes": 22,
+    "position_nodes": 52,
+    "connectors": 70,
+    "changed_connectors": 67,
+    "trays": 11,
+    "changed_trays": 11,
+    "checkpoint_changed": true,
+    "order_unchanged": true,
+    "native_repeat_identical": true,
+    "canonical_mac_exact": true,
+    "examples": [
+      {
+        "key": "category:1162",
+        "mac": [
+          0,
+          105.03999999999999,
+          230,
+          54.78,
+          [
+            "Computer science"
+          ]
+        ],
+        "ubuntu": [
+          0,
+          105.03999999999999,
+          256,
+          54.78,
+          [
+            "Computer science"
+          ]
+        ]
+      },
+      {
+        "key": "category:1163",
+        "mac": [
+          -768,
+          201.82,
+          148,
+          85.17999999999999,
+          [
+            "Software",
+            "development",
+            "foundations"
+          ]
+        ],
+        "ubuntu": [
+          -773.5,
+          201.82,
+          170,
+          85.17999999999999,
+          [
+            "Software",
+            "development",
+            "foundations"
+          ]
+        ]
+      },
+      {
+        "key": "category:386",
+        "mac": [
+          -869.5,
+          620.3,
+          144,
+          65.12,
+          [
+            "IntelliJ IDEA"
+          ]
+        ],
+        "ubuntu": [
+          -876,
+          620.3,
+          158,
+          85.17999999999999,
+          [
+            "IntelliJ IDEA"
+          ]
+        ]
+      }
+    ],
+    "measurement_examples": [
+      {
+        "font_text": [
+          "10px system-ui",
+          "89 / 89 learned"
+        ],
+        "mac": 74.1064453125,
+        "ubuntu": 76.1865234375
+      },
+      {
+        "font_text": [
+          "14px system-ui",
+          "Arithmetic operations"
+        ],
+        "mac": 139.0703125,
+        "ubuntu": 151.8740234375
+      },
+      {
+        "font_text": [
+          "14px system-ui",
+          "Arithmetic"
+        ],
+        "mac": 66.6025390625,
+        "ubuntu": 72.912109375
+      }
+    ]
+  },
+  "course8": {
+    "nodes": 136,
+    "changed_nodes": 136,
+    "wrapped_nodes": 30,
+    "size_nodes": 86,
+    "position_nodes": 134,
+    "connectors": 128,
+    "changed_connectors": 126,
+    "trays": 26,
+    "changed_trays": 26,
+    "checkpoint_changed": true,
+    "order_unchanged": true,
+    "native_repeat_identical": true,
+    "canonical_mac_exact": true,
+    "examples": [
+      {
+        "key": "presentation:course:8",
+        "mac": [
+          0,
+          0,
+          180,
+          66.4,
+          [
+            "Course 8"
+          ]
+        ],
+        "ubuntu": [
+          0,
+          0,
+          183,
+          66.4,
+          [
+            "Course 8"
+          ]
+        ]
+      },
+      {
+        "key": "category:1162",
+        "mac": [
+          0,
+          86.4,
+          160,
+          84.6,
+          [
+            "Computer",
+            "science"
+          ]
+        ],
+        "ubuntu": [
+          0,
+          86.4,
+          161,
+          84.6,
+          [
+            "Computer",
+            "science"
+          ]
+        ]
+      },
+      {
+        "key": "category:1163",
+        "mac": [
+          -1068.059326171875,
+          191,
+          148,
+          91.30000000000001,
+          [
+            "Software",
+            "development",
+            "foundations"
+          ]
+        ],
+        "ubuntu": [
+          -1534.35595703125,
+          191,
+          170,
+          91.30000000000001,
+          [
+            "Software",
+            "development",
+            "foundations"
+          ]
+        ]
+      }
+    ],
+    "measurement_examples": [
+      {
+        "font_text": [
+          "10px system-ui",
+          "1 slots \u00b7 0 learned"
+        ],
+        "mac": 85.1806640625,
+        "ubuntu": 89.6875
+      },
+      {
+        "font_text": [
+          "10px system-ui",
+          "10 slots \u00b7 0 learned"
+        ],
+        "mac": 91.5966796875,
+        "ubuntu": 96.0498046875
+      },
+      {
+        "font_text": [
+          "10px system-ui",
+          "18 slots \u00b7 5 learned"
+        ],
+        "mac": 91.5673828125,
+        "ubuntu": 96.0498046875
+      }
+    ]
+  },
+  "project113": {
+    "nodes": 48,
+    "changed_nodes": 48,
+    "wrapped_nodes": 4,
+    "size_nodes": 25,
+    "position_nodes": 44,
+    "connectors": 55,
+    "changed_connectors": 49,
+    "trays": 11,
+    "changed_trays": 11,
+    "checkpoint_changed": true,
+    "order_unchanged": true,
+    "native_repeat_identical": true,
+    "canonical_mac_exact": true,
+    "examples": [
+      {
+        "key": "presentation:project:113",
+        "mac": [
+          0,
+          0,
+          187,
+          66.4,
+          [
+            "Project 113"
+          ]
+        ],
+        "ubuntu": [
+          0,
+          0,
+          225,
+          66.4,
+          [
+            "Project 113"
+          ]
+        ]
+      },
+      {
+        "key": "category:1162",
+        "mac": [
+          0,
+          86.4,
+          160,
+          84.6,
+          [
+            "Computer",
+            "science"
+          ]
+        ],
+        "ubuntu": [
+          0,
+          86.4,
+          161,
+          84.6,
+          [
+            "Computer",
+            "science"
+          ]
+        ]
+      },
+      {
+        "key": "category:1163",
+        "mac": [
+          -768.5,
+          191,
+          148,
+          91.30000000000001,
+          [
+            "Software",
+            "development",
+            "foundations"
+          ]
+        ],
+        "ubuntu": [
+          -781.75,
+          191,
+          170,
+          91.30000000000001,
+          [
+            "Software",
+            "development",
+            "foundations"
+          ]
+        ]
+      }
+    ],
+    "measurement_examples": [
+      {
+        "font_text": [
+          "10px system-ui",
+          "1 slots \u00b7 1 learned"
+        ],
+        "mac": 83.5205078125,
+        "ubuntu": 89.6875
+      },
+      {
+        "font_text": [
+          "10px system-ui",
+          "17 slots \u00b7 17 learned"
+        ],
+        "mac": 95.1416015625,
+        "ubuntu": 102.412109375
+      },
+      {
+        "font_text": [
+          "10px system-ui",
+          "2 slots \u00b7 2 learned"
+        ],
+        "mac": 86.3134765625,
+        "ubuntu": 89.6875
+      }
+    ]
+  },
+  "stage617": {
+    "nodes": 29,
+    "changed_nodes": 29,
+    "wrapped_nodes": 3,
+    "size_nodes": 14,
+    "position_nodes": 27,
+    "connectors": 38,
+    "changed_connectors": 36,
+    "trays": 6,
+    "changed_trays": 6,
+    "checkpoint_changed": true,
+    "order_unchanged": true,
+    "native_repeat_identical": true,
+    "canonical_mac_exact": true,
+    "examples": [
+      {
+        "key": "presentation:stage:617",
+        "mac": [
+          0,
+          0,
+          180,
+          66.4,
+          [
+            "Stage 617"
+          ]
+        ],
+        "ubuntu": [
+          0,
+          0,
+          204,
+          66.4,
+          [
+            "Stage 617"
+          ]
+        ]
+      },
+      {
+        "key": "category:1162",
+        "mac": [
+          0,
+          86.4,
+          160,
+          84.6,
+          [
+            "Computer",
+            "science"
+          ]
+        ],
+        "ubuntu": [
+          0,
+          86.4,
+          161,
+          84.6,
+          [
+            "Computer",
+            "science"
+          ]
+        ]
+      },
+      {
+        "key": "category:1163",
+        "mac": [
+          -426.5,
+          191,
+          148,
+          91.30000000000001,
+          [
+            "Software",
+            "development",
+            "foundations"
+          ]
+        ],
+        "ubuntu": [
+          -440.25,
+          191,
+          170,
+          91.30000000000001,
+          [
+            "Software",
+            "development",
+            "foundations"
+          ]
+        ]
+      }
+    ],
+    "measurement_examples": [
+      {
+        "font_text": [
+          "10px system-ui",
+          "0 slots \u00b7 0 learned"
+        ],
+        "mac": 86.8408203125,
+        "ubuntu": 89.6875
+      },
+      {
+        "font_text": [
+          "10px system-ui",
+          "1 slots \u00b7 1 learned"
+        ],
+        "mac": 83.5205078125,
+        "ubuntu": 89.6875
+      },
+      {
+        "font_text": [
+          "10px system-ui",
+          "12 slots \u00b7 12 learned"
+        ],
+        "mac": 95.8251953125,
+        "ubuntu": 102.412109375
+      }
+    ]
+  }
+}

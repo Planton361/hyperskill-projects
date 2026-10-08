@@ -44,6 +44,7 @@ sets={
 'knowledge-atlas-scope-pyramid':['index.html','style.css','scope.css','app.js','layout.js','layout-worker.js','projection.js','routing.js','ux-model.js','scope-index.json','catalog.json','global.html']}
 for folder,names in sets.items():
     for name in names:copy('src/myatlas/'+folder+'/'+name,'views/'+folder+'/'+name)
+copy('src/myatlas/geometry/measure.js','views/geometry/measure.js')
 for name in ['courses.json','evidence.json']:copy('data/knowledge/'+name,'data/knowledge/'+name)
 # Resolve dormant personal snapshot references from committed catalog identities.
 # Preserve the accepted existing Topic/Category metadata and renderer geometry.

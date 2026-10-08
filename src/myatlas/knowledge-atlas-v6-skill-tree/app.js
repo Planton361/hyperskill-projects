@@ -60,7 +60,7 @@ function draw(){
  group.on('click',e=>{e.stopPropagation();select(d.key,isTopic);}).on('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();select(d.key,isTopic);}});
  group.append('rect').attr('class','card').attr('x',-n.width/2).attr('y',0).attr('width',n.width).attr('height',n.height).attr('rx',isTopic?CARD.TOPIC_RADIUS:CARD.RADIUS*(n.cardScale||1));if(isTopic)group.append('title').text((d.displayTitle||d.title));
  if(isTopic){group.append('circle').attr('class','core slot-cue').attr('cx',-n.width/2+CARD.STATUS_X).attr('cy',n.height/2).attr('r',4);if(d.is_verified)group.append('circle').attr('class','ring').attr('cx',-n.width/2+CARD.STATUS_X).attr('cy',n.height/2).attr('r',7);}
- const tx=-n.width/2+(isTopic?CARD.TOPIC_LABEL_X:CARD.LABEL_X*(n.cardScale||1)),ty=isTopic?n.height/2-(n.lines.length-1)*n.line/2+n.font*.35:(n.depth>=2?CARD.HEADER_CATEGORY:CARD.HEADER_MAIN)*(n.cardScale||1)+n.font,label=group.append('text').attr('class','label').attr('x',tx).attr('y',ty).style('font-size',n.font+'px');n.lines.forEach((l,i)=>label.append('tspan').attr('x',tx).attr('dy',i?n.line:0).text(l));
+ const tx=-n.width/2+(isTopic?CARD.TOPIC_LABEL_X:CARD.LABEL_X*(n.cardScale||1)),ty=isTopic?n.height/2-(n.lines.length-1)*n.line/2+n.font*.35:(n.depth>=2?CARD.HEADER_CATEGORY:CARD.HEADER_MAIN)*(n.cardScale||1)+n.font,label=group.append('text').attr('class','label').attr('x',tx).attr('y',ty).style('font-size',n.font+'px');n.lines.forEach((l,i)=>label.append('tspan').attr('x',tx).attr('dy',i?n.line:0).text(l).each(function(){g.AtlasMeasure.fit(this,n.width-44);}));
  if(!isTopic){const ts=descendants(d).filter(AtlasModel.isLeaf);group.append('text').attr('class','category-coverage').style('font-size',(10*(n.cardScale||1))+'px').attr('x',tx).attr('y',n.height-CARD.META_BOTTOM*(n.cardScale||1)).text(d.type==='context'?'Personal learning':ts.length+' Topics · context');}
  }
  inspect();updateOptics();}
@@ -161,7 +161,7 @@ async function init(){
  raw.completionScopes=await(await fetch('../knowledge-atlas-scope-pyramid/scope-index.json')).json();
  m=timed('model parse',()=>{return AtlasModel.model(raw);});
  const canvas=document.createElement('canvas'),ctx=canvas.getContext('2d');
- const measure=(t,font=14,weight=400)=>{ctx.font=weight+' '+font+'px system-ui';return ctx.measureText(t).width;};
+ const measure=g.AtlasMeasure.width;
  L=timed('layout',()=>AtlasLayout.build(m,measure));metrics['tray packing']=L.trayPackingMilliseconds;
  updateCounts();
  buildOverviewGuide();buildMinimap();timed('initial render',draw);fit(null,false);

@@ -14,16 +14,17 @@
     "index.html": "50b7c9e0ccd5a712aae81c826a80c30e4a2ae8af948b751c89e5bc0a4aee9869",
     "progress.json": "a6da143c5eae639870c31bfa8d86ebe2f3b73e46486ba63cb9398bfa24016de8",
     "projection-adapter.js": "d5e45358e5d5d97a1aa54c11320830ae1c98eaf6b0cbaa4efec6b1c02492312f",
-    "release-manifest.json": "3c48f376905b300b3449185e28ff53ab37f2e9790aceb246a9c78cd26760c7ca",
+    "release-manifest.json": "2fad0070eba5706d1d1aaa5d8a87df2948bfd5e2a8e0826715ccda0e0e3740fe",
     "shell.css": "efc0dd9e932a6317813eadbfe3248f0483a722d14c2c416e5f4de62204937e59",
     "shell.js": "58b18769947e6a59f87adfeee90a33dda3156e97be2fe15707a1606dd9083367",
+    "views/geometry/measure.js": "c26ef0dfd570e6aa45da088543f589d9bccdddcc5b79eda35464a8989e5cfb03",
     "views/knowledge-atlas-navigation/navigation.css": "bc77d8552527bc8e7278383e227ac45874284330c9a56497b4f2a75545d327ac",
     "views/knowledge-atlas-navigation/navigation.js": "5346e471981d0bac4f93fa2a30b803e61001a7d5dabc005cf030bcbeaa8c893a",
-    "views/knowledge-atlas-scope-pyramid/app.js": "4bb8d05b334a0d8dffd8edaecfbe69359726fd15a5645913ffcda85d436bbdaf",
+    "views/knowledge-atlas-scope-pyramid/app.js": "5b5d4f4687ed44a6dc9f231063a43078b3806752635739d5e3f3d95b606d7586",
     "views/knowledge-atlas-scope-pyramid/catalog.json": "43108621762bcac6a29ece79cf4df71d2ef3a40ca80275c0736beef80862e332",
     "views/knowledge-atlas-scope-pyramid/global.html": "d9e91853d2c226f27187db6e071c242439a0dbdafe8179501ed5100fd7831e11",
-    "views/knowledge-atlas-scope-pyramid/index.html": "db8f148ced30f2ee7ff1c913624ab3090702df70471d0d6ec6b4673937381166",
-    "views/knowledge-atlas-scope-pyramid/layout-worker.js": "370a46b0ca815cd91ce03db860369b9704c16e3f0592b09b78ec56ce1a6b0804",
+    "views/knowledge-atlas-scope-pyramid/index.html": "c57fc5bb2c1c02faba79c19d06b8a7126a9cddbaded2d657465659d5d4e6bd99",
+    "views/knowledge-atlas-scope-pyramid/layout-worker.js": "0f65b957aff38e9215c27b7ae7c910a26e6a23144763a6ab650302a5670820b9",
     "views/knowledge-atlas-scope-pyramid/layout.js": "efddc623e3f92ab57a24538444270b931dc3c9e62f904488d1715b44b43321f9",
     "views/knowledge-atlas-scope-pyramid/projection.js": "df12f8ae672594ca0f56b1ce0fdf1fba00eb89a4e78fb5955bb5c6cab9f5e271",
     "views/knowledge-atlas-scope-pyramid/routing.js": "38c84a54ee4689456a7dec636e2f19bdfca05b2fce6ce29ae79a415342cb0752",
@@ -31,24 +32,24 @@
     "views/knowledge-atlas-scope-pyramid/scope.css": "b2807d20554b884fcb15f2374a11eb3fcd1ec4cebb46933f2fca9d6eb774129f",
     "views/knowledge-atlas-scope-pyramid/style.css": "75d32c70b619888d1a14858c2a921fcd0770fb2c4c5298195ce633622b473a9c",
     "views/knowledge-atlas-scope-pyramid/ux-model.js": "3a19b053a852c4c0dfc079f3e338a46d6785c59cfc1a94b77d04b27a17a22301",
-    "views/knowledge-atlas-v6-global/app.js": "d9f6fb25962480e7a719ae8cb5e43048640ccccd35ab02d10d76c5db97d0edce",
-    "views/knowledge-atlas-v6-global/index.html": "9e53b567cf057ca631ccf5c8635f79da472a838a5e969e345717cc0f06711170",
+    "views/knowledge-atlas-v6-global/app.js": "afd4dbd3eeb15a9ceb3a7c00ea38f1636d9b79c62f0e178adea1ebc5074c8fc6",
+    "views/knowledge-atlas-v6-global/index.html": "24696a6e3903d4c1e262addef795b03d3e92db50370f0f01fc891bbc91c50073",
     "views/knowledge-atlas-v6-global/layout.js": "79456f637ceb1cd05cedf45904ca13307ede1aa4889dadcdb8ca7b4f0caefe14",
     "views/knowledge-atlas-v6-global/model.js": "d45e48c6e2c8fde6a51afd76a9c508a8834041e301039836a165b884f32c0782",
     "views/knowledge-atlas-v6-global/model.json": "43108621762bcac6a29ece79cf4df71d2ef3a40ca80275c0736beef80862e332",
     "views/knowledge-atlas-v6-global/renderer.css": "e918c9fef7aaa09ead3d6598e32ee347639eb3d92b6b9d4dba71c676016027b3",
     "views/knowledge-atlas-v6-global/routing.js": "38c84a54ee4689456a7dec636e2f19bdfca05b2fce6ce29ae79a415342cb0752",
     "views/knowledge-atlas-v6-global/style.css": "75d32c70b619888d1a14858c2a921fcd0770fb2c4c5298195ce633622b473a9c",
-    "views/knowledge-atlas-v6-global/tile-paint.js": "9e777d73e20881eedb8a4859d1dec122ea229d741826dff95ff82cda2d473274",
+    "views/knowledge-atlas-v6-global/tile-paint.js": "d67e00160e23fcf9748c7d7fd8f78a9dbed4db6c63c692e98da405203b5d8fbf",
     "views/knowledge-atlas-v6-global/tile-worker.js": "e7bce17b85eadb970d9ab503cde8e5baea97ffe864df39bdecb1b8469907de64",
-    "views/knowledge-atlas-v6-global/tiled-renderer.js": "716d5d1ade7a5240ae46ea0234449c15329743611f3363abeb4f94c946a5edb0",
+    "views/knowledge-atlas-v6-global/tiled-renderer.js": "27b60ae0744b9d97c02e494ff9700f795779d407235d2c850a6d4a8a45c59ef4",
     "views/knowledge-atlas-v6-global/vendor/D3-LICENSE": "3e6849627f74ff73c257a3ae1efb574015d94fc1035c05ec3c15805165efcbc4",
     "views/knowledge-atlas-v6-global/vendor/d3-7.9.0.min.js": "f2094bbf6141b359722c4fe454eb6c4b0f0e42cc10cc7af921fc158fceb86539",
     "views/knowledge-atlas-v6-global/viewport.css": "2ed74f0c34a8739f93999fcec60824e34d9dbe385fc81dd255a552ce4ae131e5",
-    "views/knowledge-atlas-v6-skill-tree/app.js": "d52c2036399f66d8aea12c63e87d6251fed646747676620a5a03929e878af35d",
+    "views/knowledge-atlas-v6-skill-tree/app.js": "79143071b9b5bb9a2584980e4f1401ad120dc715538a046962212f59790e23b5",
     "views/knowledge-atlas-v6-skill-tree/global-registry.js": "6bee7472d6ee02a99d830485cc22088494be32fe1c6f0c012b75d6358398a2e4",
     "views/knowledge-atlas-v6-skill-tree/global.html": "d9e91853d2c226f27187db6e071c242439a0dbdafe8179501ed5100fd7831e11",
-    "views/knowledge-atlas-v6-skill-tree/index.html": "115a76a258a4a23cdcab79e96ecff67687e2ce55731a2031262e35077cfd0b65",
+    "views/knowledge-atlas-v6-skill-tree/index.html": "b5516bd4dc24a6d844b9b6fad980b9f46a8c176fa203b823c80694f7584b0be4",
     "views/knowledge-atlas-v6-skill-tree/layout.js": "9084eb334357060e0501ae1fea2e24d9e3b606d6a154da082405a3e6cac11562",
     "views/knowledge-atlas-v6-skill-tree/model.js": "5c89602d77726faf11204083d468153ac412726206f0d4d045bc26c4804adc35",
     "views/knowledge-atlas-v6-skill-tree/model.json": "fcadfd68010dce467d117aa7fcebc3299a0d21e2dfcf310dd782a9123b66e4f5",
@@ -90,7 +91,7 @@
     },
     {
       "source": "src/myatlas/knowledge-atlas-v6-global/index.html",
-      "source_sha256": "6288ddf510a72653ca5dd90a06ecb6971f525ece19fe8a1498b79acf19b3d9f2",
+      "source_sha256": "9c913b17c9efddfde4b2b12f997c8e9bd74a33f453ab98261cc6b93a06fc51f7",
       "target": "views/knowledge-atlas-v6-global/index.html"
     },
     {
@@ -110,7 +111,7 @@
     },
     {
       "source": "src/myatlas/knowledge-atlas-v6-global/app.js",
-      "source_sha256": "b3618caeb5cdf12bdf4d3da15805f10824e27a78825d70b2527fcb30ba233337",
+      "source_sha256": "8bfcd301ac99029c14a12e776b2cb2aa6114a6132996cf282b00dab88c580cfa",
       "target": "views/knowledge-atlas-v6-global/app.js"
     },
     {
@@ -135,7 +136,7 @@
     },
     {
       "source": "src/myatlas/knowledge-atlas-v6-global/tile-paint.js",
-      "source_sha256": "9e777d73e20881eedb8a4859d1dec122ea229d741826dff95ff82cda2d473274",
+      "source_sha256": "d67e00160e23fcf9748c7d7fd8f78a9dbed4db6c63c692e98da405203b5d8fbf",
       "target": "views/knowledge-atlas-v6-global/tile-paint.js"
     },
     {
@@ -145,7 +146,7 @@
     },
     {
       "source": "src/myatlas/knowledge-atlas-v6-global/tiled-renderer.js",
-      "source_sha256": "716d5d1ade7a5240ae46ea0234449c15329743611f3363abeb4f94c946a5edb0",
+      "source_sha256": "27b60ae0744b9d97c02e494ff9700f795779d407235d2c850a6d4a8a45c59ef4",
       "target": "views/knowledge-atlas-v6-global/tiled-renderer.js"
     },
     {
@@ -160,7 +161,7 @@
     },
     {
       "source": "src/myatlas/knowledge-atlas-v6-skill-tree/index.html",
-      "source_sha256": "c09ed1e418c755b9832928a95ba5dfa0c4f322e86c4c9c8d6189e4b976aa8668",
+      "source_sha256": "e9502efd890d1d82e189a6a98953c7a06a43b58149075eb2c3bd3f07b6e5c6ae",
       "target": "views/knowledge-atlas-v6-skill-tree/index.html"
     },
     {
@@ -170,7 +171,7 @@
     },
     {
       "source": "src/myatlas/knowledge-atlas-v6-skill-tree/app.js",
-      "source_sha256": "d530ee54a5b4da130e604bfd26becf92eeeeee898e2dc3dd8646d99bceab9c68",
+      "source_sha256": "07db4d126d03a317795e39e60e8baa8290b7b392f3a995cb2774e51e58732c27",
       "target": "views/knowledge-atlas-v6-skill-tree/app.js"
     },
     {
@@ -235,7 +236,7 @@
     },
     {
       "source": "src/myatlas/knowledge-atlas-scope-pyramid/index.html",
-      "source_sha256": "6212fd289dd16072db1df05a7c0e1ef103d196f297ac65c42e8bb124df256280",
+      "source_sha256": "cc4e347d113b4d71393a738f2c206b60a99144a570b7aec5dd1526f64f96c576",
       "target": "views/knowledge-atlas-scope-pyramid/index.html"
     },
     {
@@ -250,7 +251,7 @@
     },
     {
       "source": "src/myatlas/knowledge-atlas-scope-pyramid/app.js",
-      "source_sha256": "d3b83b39e10e29ded72a2f84d3c1d47cb97208f8f6420d5408d684a4b725cad0",
+      "source_sha256": "9d87c73b754924d888f3f46bd488d07190b16fa814422a800b60b288ce3a1b56",
       "target": "views/knowledge-atlas-scope-pyramid/app.js"
     },
     {
@@ -260,7 +261,7 @@
     },
     {
       "source": "src/myatlas/knowledge-atlas-scope-pyramid/layout-worker.js",
-      "source_sha256": "370a46b0ca815cd91ce03db860369b9704c16e3f0592b09b78ec56ce1a6b0804",
+      "source_sha256": "0f65b957aff38e9215c27b7ae7c910a26e6a23144763a6ab650302a5670820b9",
       "target": "views/knowledge-atlas-scope-pyramid/layout-worker.js"
     },
     {
@@ -302,6 +303,11 @@
       "source": "data/knowledge/evidence.json",
       "source_sha256": "7abb2ebaf3f9e11ac71c17cf38d8cccda1726aa923afd039dbe34a4fc27d7a0e",
       "target": "data/knowledge/evidence.json"
+    },
+    {
+      "source": "src/myatlas/geometry/measure.js",
+      "source_sha256": "c26ef0dfd570e6aa45da088543f589d9bccdddcc5b79eda35464a8989e5cfb03",
+      "target": "views/geometry/measure.js"
     }
   ],
   "source_commit": "4215ac2fefea0ff6084210bac8d2dc0f42c32b34",

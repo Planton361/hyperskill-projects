@@ -8,7 +8,7 @@ import sys
 from .adaptive_production import bound_tree, digest, require
 
 MANIFEST = 'docs/releases/myatlas-v6.6.json'
-REVIEWED_FINGERPRINT = '11b5be07945d442eebf14f00f8d7cefd9ac7da49e75504aceb7fecea1e6f34b4'
+REVIEWED_FINGERPRINT = '70b97e99f104ed85af7d49bba6f6b3af66cc826164caa6e93fb31d4ffc13e3b5'
 HISTORIC_FINGERPRINT = '36679d13ac5b2f9deedfd9d9ff077de3305ed6c4398a0576a10bdd2837bb1ec7'
 DYNAMIC = {'progress.json', 'runtime-manifest.json', 'release-manifest.json'}
 

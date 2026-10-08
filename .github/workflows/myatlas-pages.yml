@@ -27,7 +27,7 @@ jobs:
         run: |
           python3 -B scripts/check-myatlas-production.py
           python3 -B -m unittest scripts.tests.test_course_completion scripts.tests.test_git_project_completion scripts.tests.test_myatlas_release
-          for test in progress-analytics universal-progress completion portfolio copy; do node "tests/myatlas/$test.cjs"; done
+          for test in progress-analytics universal-progress completion portfolio copy geometry-measurements; do node "tests/myatlas/$test.cjs"; done
       - name: Generate public evidence and readable differential summary
         run: |
           python3 -B scripts/sync-project-completion.py > "$RUNNER_TEMP/progress-review.json"
@@ -53,12 +53,14 @@ jobs:
             sleep 1
           done
           node tests/myatlas/release.cjs
+          node tests/myatlas/geometry-browser.cjs
           git diff --exit-code -- docs/knowledge-map state/knowledge-atlas data/knowledge src/myatlas
       - uses: actions/upload-artifact@v4
         with:
           name: myatlas-review-${{ github.sha }}
           path: |
             test-results/v66-release.json
+            test-results/v66-geometry.json
             ${{ runner.temp }}/progress-review.json
       - uses: actions/upload-pages-artifact@v3
         if: github.ref == 'refs/heads/main'
