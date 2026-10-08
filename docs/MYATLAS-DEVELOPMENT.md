@@ -7,12 +7,12 @@ Use `scripts/build-myatlas.py` to package the accepted two-tab application into 
 ```sh
 python3 -B scripts/check-myatlas-production.py
 python3 -B -m unittest scripts.tests.test_course_completion scripts.tests.test_git_project_completion scripts.tests.test_myatlas_release
-for test in progress-analytics universal-progress completion portfolio copy; do node "tests/myatlas/$test.cjs"; done
+for test in progress-analytics universal-progress completion portfolio copy geometry-measurements; do node "tests/myatlas/$test.cjs"; done
 npm ci --prefix scripts/knowledge_atlas --ignore-scripts
 scripts/knowledge_atlas/node_modules/.bin/playwright install chromium
 ```
 
-Serve the README's Pages-base-path preview, then run `node tests/myatlas/release.cjs`. `ATLAS_PREVIEW`, `ATLAS_SITE`, and `ATLAS_BROWSER_EXECUTABLE` select a different local URL, generated site folder, or installed browser. Output goes to ignored `test-results/`. No live Hyperskill request is made. Disposable completion fixtures are never inserted into real evidence.
+Serve the README's Pages-base-path preview, then run `node tests/myatlas/release.cjs` and `node tests/myatlas/geometry-browser.cjs`. `ATLAS_PREVIEW`, `ATLAS_SITE`, and `ATLAS_BROWSER_EXECUTABLE` select a different local URL, generated site folder, or installed browser. Output goes to ignored `test-results/`. No live Hyperskill request is made. Disposable completion fixtures are never inserted into real evidence.
 
 The explicit migration guard pins the application, build sources, release manifest, and historic Knowledge/State inventories. It reconstructs the committed production projection at its embedded evidence commit; the artifact check additionally requires current HEAD. Public progress and its source commit may change after new validated exports. The static application and historical evidence remain frozen. A code/catalog migration requires a reviewed manifest change, never an unconditional PASS.
 
@@ -37,3 +37,11 @@ The committed `docs/knowledge-map/progress.json` is a validated reference snapsh
 Deployable files are generated only after establishing the final committed release HEAD, into ignored `build/pages/knowledge-map/`. The generator reads that Git revision. The builder verifies its implementation and runtime sources against Git blobs, binds the artifact to checkout HEAD and `GITHUB_SHA` when present, and records a deterministic evidence/implementation digest. The artifact guard requires current HEAD, exact source inputs, exact application inventory, and reproducible progress. Fresh rebuilds never update or recommit the tracked reference snapshot.
 
 Advancing HEAD invalidates a previously generated deployment artifact. Build again before testing; do not alter source or HEAD while the artifact is being validated. Identical committed inputs produce byte-identical outputs. The focused stale-snapshot fixture is expected to fail current-artifact validation.
+
+## Frozen cross-platform geometry
+
+`src/myatlas/geometry/measure.js` contains reviewed numeric widths from the accepted macOS font environment, not font files. All three renderers and the scope worker use these exact widths for structural layout. Native system fonts paint complete labels inside unchanged card bounds. Layout/routing code and the five accepted fingerprints remain unchanged. Unknown widths fail closed; the focused measurement test covers every known scope and future learned-counter values. The browser test serializes complete geometry twice and checks full-label containment.
+
+A catalog change requires reviewed measurement coverage and a new explicit release manifest. Ordinary completed Project exports only update progress data and use existing measurement coverage. The maintenance capture tool records widths on the accepted font environment; automatic builds reuse the committed frozen asset on every platform.
+
+Historical compatibility assets under `prototypes/` and the old Knowledge/State helpers are retained only where historic evidence, migration tools or integrity reconstruction need them. They are not deployment inputs or alternate maintained applications. Earlier experiments and generated review imagery are available through Git history.

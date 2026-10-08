@@ -54,7 +54,7 @@ class AssociationTests(unittest.TestCase):
             self.assertEqual(src['endpoint'],'/api/tracks/'+str(row['course_id']))
             self.assertTrue(src['captured_at'].startswith('2026-10-07T'))
             self.assertEqual(src['meta'],{'page':1,'has_next':False,'has_previous':False})
-        self.assertEqual(json.loads((ROOT/'prototypes/knowledge-atlas-scope-pyramid/scope-index.json').read_bytes()),self.scopes.index())
+        self.assertEqual(json.loads((ROOT/'src/myatlas/knowledge-atlas-scope-pyramid/scope-index.json').read_bytes()),self.scopes.index())
         validate_observation(self.o,self.scopes,self.data['courses'])
 
     def test_existing_scope_semantics_and_progress_unchanged(self):
@@ -103,6 +103,17 @@ class AssociationTests(unittest.TestCase):
         source['id']='source:'+hashlib.sha256(snapshot.encode({k:v for k,v in source.items() if k!='id'})).hexdigest();row['source_id']=source['id']
         with self.assertRaisesRegex(ValueError,'Unknown catalog Project'):validate_observation(o,self.scopes,self.data['courses'])
 
+    def assert_guard_rejects_bytes(self, path, payload):
+        # V6.6 pins real evidence bytes rather than the historic active-loader
+        # mock. Corrupt a read in memory; never write protected source evidence.
+        original = Path.read_bytes
+        self.assertNotEqual(original(path), payload)
+        def read(candidate):
+            return payload if candidate == path else original(candidate)
+        with patch.object(Path, 'read_bytes', read):
+            with self.assertRaisesRegex(ValueError, 'Changed (historical evidence|canonical source)'):
+                verify_release(ROOT)
+
     def test_active_boundary_and_negative_guard(self):
         before=copy.deepcopy(self.data);before['catalog_observations'].pop(self.identity)
         self.assertEqual(active_projection(self.data),active_projection(before))
@@ -110,11 +121,9 @@ class AssociationTests(unittest.TestCase):
         manifest=json.loads((ROOT/MANIFEST).read_bytes())
         self.assertEqual({t:snapshot.digest(self.data[t]) for t in snapshot.TABLES},manifest['semantic_invariance']['source_hashes'])
         bad=copy.deepcopy(self.data);bad['catalog_observations'][self.identity]['courses'][0]['project_ids'].append(999999999)
-        with patch('knowledge_atlas.production_guard.snapshot.load_source',return_value=bad):
-            with self.assertRaises(ValueError):verify_release(ROOT)
+        self.assert_guard_rejects_bytes(next((ROOT/'data/knowledge/observations').glob('course-project-associations-*.json')), snapshot.encode(bad['catalog_observations'][self.identity]))
         bad=copy.deepcopy(self.data);bad['progress']['topics'][0]['is_learned']=not bad['progress']['topics'][0]['is_learned']
-        with patch('knowledge_atlas.production_guard.snapshot.load_source',return_value=bad):
-            with self.assertRaisesRegex(ValueError,'Semantic inputs changed'):verify_release(ROOT)
+        self.assert_guard_rejects_bytes(ROOT/'data/knowledge/progress.json', snapshot.encode(bad['progress']))
 
 
 if __name__=='__main__': unittest.main()

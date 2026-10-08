@@ -35,3 +35,5 @@ Open `http://127.0.0.1:8807/hyperskill-projects/knowledge-map/`. Use a fresh pre
 Canonical accepted sources are in `src/myatlas/`; public completion records are in `data/myatlas/`; historical Knowledge observations and State remain intact. `docs/knowledge-map/` is the reviewed committed production snapshot; Actions builds the current projection into an artifact, so source updates need no generated-data commit loop.
 
 [Build, validation and evidence contract](docs/MYATLAS-DEVELOPMENT.md) · [Release and rollback](docs/V66-PRODUCTION-RELEASE.md) · [Rollback procedure](docs/MYATLAS-ROLLBACK.md)
+
+Earlier experimental applications and generated comparison imagery have been removed. The small frozen compatibility fixtures that remain support historical State reconstruction; they are not public deployment sources. [Current release](https://github.com/Planton361/hyperskill-projects/tree/v6.6.0) · [Cleanup inventory](docs/releases/v66-cleanup-inventory.json).

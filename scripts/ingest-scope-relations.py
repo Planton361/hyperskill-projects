@@ -18,8 +18,8 @@ a = p.parse_args()
 catalog = Catalog(load_source(a.root / 'data/knowledge'))
 o = observation_from_candidate(a.candidate, a.expected_digest, catalog)
 # Exact reviewed Global and semantic contracts are preconditions, including replay.
-for key, relative in [('global_catalog_sha256', 'prototypes/knowledge-atlas-scope-pyramid/catalog.json'),
-                      ('report_sha256', 'prototypes/knowledge-atlas-scope-pyramid/RELATION-DISCOVERY.md')]:
+for key, relative in [('global_catalog_sha256', 'src/myatlas/knowledge-atlas-scope-pyramid/catalog.json'),
+                      ('report_sha256', 'docs/evidence/SCOPE-RELATIONS-DISCOVERY.md')]:
     expected = o['candidate'][key] if key in o['candidate'] else o['semantic_contract'][key]
     require(hashlib.sha256((a.root / relative).read_bytes()).hexdigest() == expected, 'Reviewed source contract changed')
 inventory = {}

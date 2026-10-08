@@ -18,7 +18,7 @@ data = snapshot.load_source(a.root/'data/knowledge')
 catalog = Catalog(data)
 require(catalog.scope_relations is not None, 'Existing dormant scope catalog required')
 o = observation_from_candidate(a.candidate, a.expected_digest, catalog.scope_relations, data['courses'])
-require(hashlib.sha256((a.root/'prototypes/knowledge-atlas-scope-pyramid/catalog.json').read_bytes()).hexdigest() == o['candidate']['global_catalog_sha256'], 'Reviewed Global Catalog changed')
+require(hashlib.sha256((a.root/'src/myatlas/knowledge-atlas-scope-pyramid/catalog.json').read_bytes()).hexdigest() == o['candidate']['global_catalog_sha256'], 'Reviewed Global Catalog changed')
 require(len(o['courses']) == 52 and sum(len(c['project_ids']) for c in o['courses']) == 867 and
         len({pid for c in o['courses'] for pid in c['project_ids']}) == 299, 'Reviewed association coverage mismatch')
 require([c['course_id'] for c in o['courses'] if c['state'] == 'KNOWN_EMPTY'] == [31,41,57,60], 'Reviewed known-empty inventories changed')

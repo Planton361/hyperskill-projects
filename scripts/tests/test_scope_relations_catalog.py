@@ -39,7 +39,7 @@ class ScopeRelationsTests(unittest.TestCase):
         validate_observation(self.o,self.catalog)
 
     def test_exact_accepted_fixture_sets_not_just_counts(self):
-        fixtures=json.loads((ROOT/'prototypes/knowledge-atlas-scope-pyramid/scopes.json').read_bytes())
+        fixtures=json.loads((ROOT/'tests/myatlas/fixtures/scope-controls.json').read_bytes())
         for f in fixtures:
             actual=self.catalog.get_scope_projection(f['scope_type'],f['scope_id'])
             self.assertEqual(actual['explicit_topic_ids'],sorted(f['explicit_topic_ids']))
@@ -67,7 +67,7 @@ class ScopeRelationsTests(unittest.TestCase):
         self.assertEqual(self.o['candidate']['inventory_sha256'],'3edd24dfffb842033ba1166dd75fca38804eb65dd3cf5c96859d39e7c56be43f')
         self.assertTrue(all(s['captured_at'].startswith('2026-10-07T') and s['http_status']==200 for s in sources.values()))
         self.assertTrue(all(s['source_id'] in sources for s in self.o['stages']))
-        exported=json.loads((ROOT/'prototypes/knowledge-atlas-scope-pyramid/scope-index.json').read_bytes())
+        exported=json.loads((ROOT/'src/myatlas/knowledge-atlas-scope-pyramid/scope-index.json').read_bytes())
         self.assertEqual(exported,self.relations.index())
         self.assertEqual(exported['observation_sha256'],hashlib.sha256(snapshot.encode(self.o)).hexdigest())
 
@@ -104,19 +104,28 @@ class ScopeRelationsTests(unittest.TestCase):
         manifest=json.loads((ROOT/MANIFEST).read_bytes())
         self.assertEqual({t:snapshot.digest(self.data[t]) for t in snapshot.TABLES},manifest['semantic_invariance']['source_hashes'])
 
+    def assert_guard_rejects_bytes(self, path, payload):
+        # V6.6 pins real evidence bytes rather than the historic active-loader
+        # mock. Corrupt a read in memory; never write protected source evidence.
+        original = Path.read_bytes
+        self.assertNotEqual(original(path), payload)
+        def read(candidate):
+            return payload if candidate == path else original(candidate)
+        with patch.object(Path, 'read_bytes', read):
+            with self.assertRaisesRegex(ValueError, 'Changed (historical evidence|canonical source)'):
+                verify_release(ROOT)
+
     def test_invalid_relation_and_future_active_loader_mutation_fail_guard(self):
         # In-memory negative inputs exercise the actual release verifier without
         # writing to protected surfaces or cloning the entire repository.
         changed=copy.deepcopy(self.data)
         row=next(v for v in changed['catalog_observations'].values() if v['observation_type']=='scope_relations_catalog')
         row['stages'][0]['prerequisites'].append(999999999)
-        with patch('knowledge_atlas.production_guard.snapshot.load_source',return_value=changed):
-            with self.assertRaises(ValueError):verify_release(ROOT)
+        self.assert_guard_rejects_bytes(next((ROOT/'data/knowledge/observations').glob('scope-relations-*.json')), snapshot.encode(row))
         mutations=[lambda d:d['courses'][0]['topic_ids'].append(999999999),lambda d:d['progress']['topics'][0].update(is_learned=not d['progress']['topics'][0]['is_learned'])]
         for mutate in mutations:
             changed=copy.deepcopy(self.data);mutate(changed)
-            with patch('knowledge_atlas.production_guard.snapshot.load_source',return_value=changed):
-                with self.assertRaisesRegex(ValueError,'Semantic inputs changed'):verify_release(ROOT)
+            self.assert_guard_rejects_bytes(ROOT/'data/knowledge/progress.json' if changed['progress'] != self.data['progress'] else ROOT/'data/knowledge/courses.json', snapshot.encode(changed['progress'] if changed['progress'] != self.data['progress'] else changed['courses']))
 
 
 if __name__=='__main__':unittest.main()

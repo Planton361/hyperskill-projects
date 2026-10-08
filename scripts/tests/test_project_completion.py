@@ -11,10 +11,10 @@ ROOT = Path(__file__).resolve().parents[2]
 
 class CompletionTests(unittest.TestCase):
     def test_real_legacy_and_idempotence(self):
-        scopes = json.loads((ROOT/'prototypes/knowledge-atlas-scope-pyramid/scope-index.json').read_text())
+        scopes = json.loads((ROOT/'src/myatlas/knowledge-atlas-scope-pyramid/scope-index.json').read_text())
         first = scan(ROOT, scopes)
         self.assertEqual(first, scan(ROOT, scopes))
-        self.assertEqual(first, json.loads((ROOT/'prototypes/project-completion/progress.json').read_text()))
+        self.assertEqual(first, json.loads((ROOT/'data/myatlas/progress.json').read_text()))
         self.assertEqual([p['project_id'] for p in first['projects']], [113])
         self.assertEqual(len(first['learned_topic_ids']), 26)
         self.assertEqual(first['rejected'], [])

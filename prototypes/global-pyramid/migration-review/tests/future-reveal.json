@@ -1,9 +1,0 @@
-{
-  "fixture_only": true,
-  "maximum_displacement": 0,
-  "placement_search": false,
-  "promotion_displacement": 0,
-  "promotion_id": 333,
-  "reveal_existing_comparisons": 271,
-  "steps": 2
-}

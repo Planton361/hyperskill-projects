@@ -1,6 +1,6 @@
 # MyAtlas V6.6 production release — cross-platform repair
 
-**Publication pending both release CI gates. Original Production remains unchanged.**
+**MyAtlas V6.6 is live and independently verified. Legacy cleanup has passed local validation; its final main deployment and annotated release tag remain gated on CI and live verification.**
 
 ## Exact original root cause
 
@@ -62,14 +62,56 @@ The numeric asset is a reviewed frozen input reconstructible from committed Git;
 
 849 Categories;3106 Topics;zero unresolved Topics;52 Courses;391 Projects;1967 Stages;867 explicit Course→Project associations. Real evidence remains31 learned,12 verified,one confirmed Project113. Course8:31/89 Topics and1/11 Projects. No Course completion record is invented. Collapsed Data details retain independent provenance.
 
-The explicit migration manifest now pins the measurement asset and updated adapters; historical evidence and the strict fresh/stale provenance gate remain protected. Original Production and State are untouched. Published rollback tag `knowledge-atlas-pre-v6.6` dereferences to `a8b79e2e6c32df990fc3305983bb5aff1d9e2500`; historic Production fingerprint `36679d13ac5b2f9deedfd9d9ff077de3305ed6c4398a0576a10bdd2837bb1ec7`.
+The explicit migration manifest pins the measurement asset and updated adapters; historical evidence and the strict fresh/stale provenance gate remain protected. Remote Production is now the verified V6.6 edition. The original development checkout’s Production, State and excluded files remain untouched. Published rollback tag `knowledge-atlas-pre-v6.6` dereferences to `a8b79e2e6c32df990fc3305983bb5aff1d9e2500`; historic Production fingerprint `36679d13ac5b2f9deedfd9d9ff077de3305ed6c4398a0576a10bdd2837bb1ec7`.
 
 Public URL: https://planton361.github.io/hyperskill-projects/knowledge-map/
 
-## Publication, cleanup and rollback
+## Verified release revision and CI
 
-Release promotion requires BOTH MyAtlas read-only validation and MyAtlas Pages release build PASS. Before that, main remains the historic revision and Pages remains legacy main:/docs. After successful gates, use normal fast-forward main integration, supported Pages artifact deployment, actual live smoke and deterministic JSON comparison, workflow_dispatch synchronization verification, and only then proven legacy cleanup and final annotated v6.6.0 tag.
+Geometry repair/main integration revision: `c73d2e9b27f7274f0870c53f03a2b980a11fa882`. One focused repair commit preserved all accepted development and release commits.
 
-Rollback: reconstruct the old docs tree and original guard/manifest from the published rollback tag in an isolated checkout; create a normal reviewed revert/migration commit, restore legacy main:/docs publication if needed, and verify historic fingerprint and live HTML. Never force-push main or move the rollback tag.
+- [Release read-only validation37795709476](https://github.com/Planton361/hyperskill-projects/actions/runs/37795709476): PASS.
+- [Release Pages build37795708913](https://github.com/Planton361/hyperskill-projects/actions/runs/37795708913): PASS. Full geometry artifact equals two macOS runs and two Ubuntu runs exactly.
+- [Main read-only validation37796497199](https://github.com/Planton361/hyperskill-projects/actions/runs/37796497199): PASS.
+- [Main Git-completion review37796497115](https://github.com/Planton361/hyperskill-projects/actions/runs/37796497115): PASS.
+- [Main Pages deployment37796497042](https://github.com/Planton361/hyperskill-projects/actions/runs/37796497042): PASS; actual site verified afterward.
 
-Cleanup inventory so far: none. Excluded original files remain untouched. No synthetic achievement is inserted into real evidence. CI and live results will be recorded after the repaired revision is independently validated.
+Duplicate older runs were cancelled by concurrency. No failed geometry guard was bypassed. Main advanced by normal fast-forward; no reset, rebase or force push occurred. Pages was explicitly changed from legacy main:/docs to supported Actions artifact publication. Build/scanning jobs remain read-only; only deployment has pages:write/id-token:write.
+
+Two clean checkouts at the repair HEAD produced byte-identical54-file builds. Fresh HEAD guards PASS; stale and corrupted source/runtime fixtures FAIL. Fourteen focused Python tests, aggregation/universal/union/portfolio/copy tests, measurement coverage, and repeated browser geometry checks PASS. All5248 Global label lines are preserved. Native-font fitting preserves complete labels in unchanged cards; macOS needs no fitted lines. Ubuntu fits23 personal,58 Course8,23 Project113 and18 Stage617 lines, with no overflow or clipping. Global Canvas labels use bounded full-text painting.
+
+Actual public HTML and progress JSON matched the validated build byte-for-byte. Live browser smoke passed complete Global rendering, both tabs, Course8/Project113/Stage617, compact analytics, Inspector/Data details, exact-ID navigation, Back/Forward, direct/legacy reloads and390px layout. No missing resources, page errors or external Hyperskill requests occurred. Synthetic Project203 added Topic2682 locally (32 learned,12 verified) without changing Global/Scope geometry or public evidence.
+
+Manifest fingerprint: `70b97e99f104ed85af7d49bba6f6b3af66cc826164caa6e93fb31d4ffc13e3b5`. Static application fingerprint: `8f114d6fb3e758bc75f857026e9f5066e68afbfcbcca04c7810821d9e79196d9`.
+
+## Cleanup proof and retained sources
+
+The [exact cleanup inventory](releases/v66-cleanup-inventory.json) lists1158 removed tracked files. Complete obsolete application/demo directories removed:
+
+- prototypes/knowledge-tree-v5/
+- prototypes/knowledge-atlas-activation/
+- prototypes/knowledge-atlas-navigation/
+- prototypes/knowledge-atlas-scope-pyramid/
+- prototypes/knowledge-atlas-v6-global/
+- prototypes/knowledge-atlas-v6-skill-tree/
+- prototypes/project-completion/
+- docs/knowledge-graph/
+- docs/knowledge-map-preview/
+
+Earlier Global/Adaptive demos and historical V6 experiments were reduced to38 required compatibility source/data files plus concise role notes. These preserve existing historical State tools, exact migration sources, frozen master geometry, required vendor licenses and bootstrap fixtures. They are not public deployment inputs or alternate maintained applications. Canonical V6.6 sources,49 packaged source assets, all catalog/evidence/State bytes, project exports, scanner/aggregation/build tools and necessary tests remain intact. Superseded build-v66-candidate.py was removed.
+
+Every deleted path is outside the canonical runtime source inventory and protected evidence. Current builds load no deleted source. Scope evidence-contract report and explicit scope-control fixture were relocated byte-identically; retained ingestion tools and tests now use canonical catalog paths. Two pre-existing historical negative tests mocked the retired guard loader and failed even before cleanup. Their fixtures now corrupt evidence reads at the real V6.6 integrity boundary, in memory;17 retained semantic/legacy tests PASS. No guard logic was weakened.
+
+Personal geometry uses the accepted fingerprint for the unchanged31/[113] baseline; genuine new personal evidence is checked for repeatable full geometry rather than being incorrectly required to retain an older, smaller personal scope. This matches the already accepted release test contract. Linux baseline validation is never skipped.
+
+Earlier pre-V6.6 files remain recoverable from the rollback tag; later accepted V6.6 experiments remain recoverable from the preserved c73d2e9 ancestor. No untracked or excluded original-worktree file was deleted.
+
+## Final revision, automatic updates and rollback
+
+The final immutable revision is identified by the annotated `v6.6.0` tag, published only after cleanup CI, actual live verification and workflow_dispatch synchronization succeed. Resolve its exact SHA with `git rev-parse v6.6.0^{commit}`. The generated live progress/runtime manifests carry the exact deployed commit; they are build artifacts, never self-referential committed SHAs. Post-publication audit records the final SHA and CI results without creating a new unvalidated source revision.
+
+The main-push workflow already generated and deployed correct public progress. Final dispatch repeats the scanner, deterministic projection, protected build, strict geometry checks and Pages deployment with unchanged real baseline; synthetic completed exports are restricted to disposable fixtures. There is no generated commit loop, repository-writing scanner permission, permanent credential, API connection or synthetic public achievement.
+
+Published rollback tag `knowledge-atlas-pre-v6.6` still points to `a8b79e2e6c32df990fc3305983bb5aff1d9e2500`. [Exact rollback commands](MYATLAS-ROLLBACK.md) reconstruct and verify the previous edition, disable current deployment, publish a normal rollback branch, restore legacy publication and verify the actual old site. Never force-push main or move the rollback tag.
+
+The original checkout retains its frozen local HEAD and pre-existing exclusions. Release/cleanup work uses isolated worktrees. Only this authorized audit report is updated in the original checkout; its index remains empty.

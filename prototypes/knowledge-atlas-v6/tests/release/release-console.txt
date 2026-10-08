@@ -1,5 +1,0 @@
-{
-  url: 'http://127.0.0.1:8779/hyperskill-projects/knowledge-atlas-preview/',
-  checks: 750,
-  runs: 18
-}

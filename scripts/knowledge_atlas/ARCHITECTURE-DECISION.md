@@ -52,7 +52,7 @@ Main is authoritative; the retained handoff branch is historical/recovery contex
 **REAL_PERSONAL_PROGRESS_UPDATE_FLOW_VALIDATED**. The pure personal-progress
 normalizer and preview-only CLI have validated learned and verified-only updates
 through the real semantic loader and adaptive candidate builder in disposable roots.
-See [the validation report](../../prototypes/adaptive-pyramid/PERSONAL-PROGRESS-FLOW-VALIDATION.md).
+See the historical validation report in Git history.
 
 Personal progress changes are semantic Knowledge changes; local geometry remains
 derived presentation. Existing-Topic learned/verified-only updates require no global

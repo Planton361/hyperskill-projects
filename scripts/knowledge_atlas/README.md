@@ -1,3 +1,7 @@
+# Historical Knowledge/State compatibility layer
+
+The maintained public application is [MyAtlas V6.6](../../README.md). Use its [current build and validation instructions](../../docs/MYATLAS-DEVELOPMENT.md). The material below documents frozen historical State behavior; its old preview/publication commands are not the V6.6 release workflow. Earlier validation reports are available through Git history and the rollback tag.
+
 > **Current decision: ADAPTIVE_VIEW_PRODUCTION_ADOPTED.** Production is deployed
 > as **GLOBAL REFERENCE + ADAPTIVE LOCAL PYRAMID**. State, Knowledge,
 > ACTIVE_HISTORY and Generation/history were unchanged by adoption.
@@ -27,7 +31,7 @@ diff and global equality, obtain human review before real Knowledge/Production
 changes, then explicitly publish and commit / CI / deploy under separate authorization.
 The next milestone is **REAL HYPERSKILL PROGRESS EVIDENCE INGESTION PREVIEW**, requiring
 actual new user-supplied/captured sanitized evidence, never manufactured progress.
-See the architecture decision and [validation report](../../prototypes/adaptive-pyramid/PERSONAL-PROGRESS-FLOW-VALIDATION.md).
+See the architecture decision and historical validation report in Git history.
 
 The remaining documentation is the **historical V6 pipeline reference**. Its
 runtime descriptions and operator examples record that earlier architecture;

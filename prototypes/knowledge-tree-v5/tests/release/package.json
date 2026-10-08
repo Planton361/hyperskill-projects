@@ -1,9 +1,0 @@
-{
-  "name": "knowledge-map-preview-release-checks",
-  "version": "5.2.1",
-  "private": true,
-  "description": "Development-only validation of the static public preview",
-  "devDependencies": {
-    "playwright": "1.61.0"
-  }
-}
