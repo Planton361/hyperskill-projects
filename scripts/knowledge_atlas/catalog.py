@@ -29,7 +29,8 @@ class Catalog:
         self.snapshot_positions = {'categories': {f"category:{r['id']}" for r in data['categories']},
                                    'leaves': {r['id'] for r in data['topics']}}
         self.latest_hierarchy = set()
-        observations = sorted(data.get('catalog_observations', {}).items(),
+        observations = sorted(((name, row) for name, row in data.get('catalog_observations', {}).items()
+                               if row['observation_type'] == 'global_knowledge_catalog'),
                               key=lambda item: (item[1]['captured_at_end'], item[0]))
         for name, observation in observations:
             validate_observation(observation)
@@ -88,6 +89,23 @@ class Catalog:
                     self.latest_hierarchy.add((int(edge['source'].split(':')[1]), int(edge['target'].split(':')[1])))
         for key in self.topics:
             self.references.pop(int(key.split(':')[1]), None)
+
+        # Separate inert relation index; accepted active course/project APIs stay unchanged.
+        from .scope_relations import ScopeRelationCatalog
+        relations = [(name, row) for name, row in data.get('catalog_observations', {}).items()
+                     if row['observation_type'] == 'scope_relations_catalog']
+        require(len(relations) <= 1, 'Conflicting immutable scope catalogs')
+        self.scope_relations = ScopeRelationCatalog(relations[0][1], relations[0][0], self) if relations else None
+        associations = [(name, row) for name, row in data.get('catalog_observations', {}).items()
+                        if row['observation_type'] == 'course_project_associations_catalog']
+        require(len(associations) <= 1, 'Conflicting immutable Course association catalogs')
+        if associations:
+            require(self.scope_relations is not None, 'Course associations require the existing scope catalog')
+            self.scope_relations.attach_course_projects(associations[0][1], associations[0][0], data['courses'])
+
+    def get_scope_projection(self, scope_type, scope_id):
+        require(self.scope_relations is not None, 'Scope relations not established')
+        return self.scope_relations.scope(scope_type, scope_id)
 
     def get_resolution_status(self, identifier):
         numeric = int(str(identifier).split(':')[-1])

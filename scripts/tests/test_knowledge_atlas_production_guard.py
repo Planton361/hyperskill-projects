@@ -62,7 +62,7 @@ class ProductionGuardTests(unittest.TestCase):
                          '36679d13ac5b2f9deedfd9d9ff077de3305ed6c4398a0576a10bdd2837bb1ec7')
         additions = sorted(before[A.KNOWLEDGE]['inventory'].keys()
                            - self.manifest['source_knowledge']['inventory'].keys())
-        self.assertEqual(len(additions), 1)
+        self.assertGreaterEqual(len(additions), 1)
         self.assertEqual(result['validated_catalog_only_additions'], additions)
         self.assertTrue(result['active_semantic_hashes_unchanged'])
         self.assertEqual(before, {f: A.bound_tree(self.root, f) for f in folders})
@@ -76,9 +76,10 @@ class ProductionGuardTests(unittest.TestCase):
         self.assertEqual(verify_release(self.root)['validated_catalog_only_additions'], [])
 
     def test_future_valid_catalog_has_no_filename_whitelist(self):
+        before = verify_release(self.root)['validated_catalog_only_additions']
         self.write_observation('another-reviewed-capture.json', future_catalog_observation())
         result = verify_release(self.root)
-        self.assertEqual(len(result['validated_catalog_only_additions']), 2)
+        self.assertEqual(len(result['validated_catalog_only_additions']), len(before) + 1)
 
     def test_changed_historical_knowledge_is_rejected(self):
         # Even whitespace-only changes must fail the byte identity contract.
@@ -136,7 +137,8 @@ class ProductionGuardTests(unittest.TestCase):
 
     def test_schema_valid_catalog_conflicting_with_active_identity_is_rejected(self):
         data = snapshot.load_source(self.root / A.KNOWLEDGE)
-        row = copy.deepcopy(next(iter(data['catalog_observations'].values())))
+        row = copy.deepcopy(next(row for row in data['catalog_observations'].values()
+                                 if row['observation_type'] == 'global_knowledge_catalog'))
         active_ids = {t['id'] for t in data['topics']}
         topic = next(t for t in row['topics'] if t['id'] in active_ids)
         topic['title'] = 'Conflicting active title'

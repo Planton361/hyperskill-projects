@@ -5,7 +5,7 @@ from pathlib import Path, PurePosixPath
 
 from . import adaptive_production as A, snapshot
 from .catalog import Catalog
-from .catalog_observation import validate_observation
+from .observations import validate_catalog_observation
 
 
 MANIFEST = 'prototypes/adaptive-pyramid/production-review/final-v1/apply-manifest.json'
@@ -33,7 +33,7 @@ def verify_historical_knowledge_compatibility(historical, current, catalog_obser
         key = path.relative_to(A.KNOWLEDGE).as_posix()
         A.require(key in catalog_observations,
                   'Additional observation is not catalog-only: ' + name)
-        validate_observation(catalog_observations[key])
+        validate_catalog_observation(catalog_observations[key])
     return additions
 
 
