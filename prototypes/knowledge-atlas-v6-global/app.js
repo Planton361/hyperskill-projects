@@ -140,6 +140,7 @@ function inspect(){
    if(n.type==='reference')html+='<p>Known from structural membership. Topic title, public URL and theory metadata have not been resolved.</p>';
    else{
     const meta=n.accepted_metadata||{};
+    html+=ProgressPresentation.topic(m.analytics,n.id);
     html+=`<p>${n.is_learned===true?'● Learned':n.is_learned===false?'○ Not learned':'◌ Unknown'}${n.is_verified?' · ◎ Verified':''}<br>Verification: ${n.observations.map(o=>esc(o.verification_status)).join(', ')||'unknown'}</p>`;
     if(meta.theory_step_id!=null)html+=`<p>Theory step: ${esc(meta.theory_step_id)}<br>Source: accepted Topic metadata</p>`;
     if(n.theory!=null)html+=`<p>Catalog theory identifier: ${esc(n.theory)}</p>`;
@@ -193,6 +194,9 @@ function select(key,navigate=false){
 async function init(){
  const start=performance.now(),text=await(await fetch('model.json')).text();let raw;
  m=timed('model parse',()=>{raw=JSON.parse(text);return AtlasModel.model(raw);});
+ const scopes=await(await fetch('../knowledge-atlas-scope-pyramid/scope-index.json')).json(),completion=await(await fetch('../project-completion/progress.json')).json();
+ m.analytics=ProgressAnalytics.create({catalog:raw,scopes,completion});
+ for(const n of m.registry.values())if(n.type==='topic'){const state=m.analytics.topic(n.id);n.is_learned=state.learned;n.is_verified=state.verified;}
  const canvas=document.createElement('canvas'),ctx=canvas.getContext('2d');
  const measure=(t,font=14,weight=400)=>{ctx.font=weight+' '+font+'px system-ui';return ctx.measureText(t).width;};
  L=timed('layout',()=>AtlasLayout.build(m,measure));metrics['tray packing']=L.trayPackingMilliseconds;

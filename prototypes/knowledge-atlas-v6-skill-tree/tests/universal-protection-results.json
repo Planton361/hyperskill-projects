@@ -1,0 +1,19 @@
+{
+  "baselineFiles": 773,
+  "unchangedExistingFiles": 766,
+  "changedExistingFiles": [
+    "prototypes/knowledge-atlas-scope-pyramid/index.html",
+    "prototypes/knowledge-atlas-scope-pyramid/ux-model.js",
+    "prototypes/knowledge-atlas-scope-pyramid/app.js",
+    "prototypes/knowledge-atlas-v6-skill-tree/progress-ui.js",
+    "prototypes/knowledge-atlas-v6-skill-tree/index.html",
+    "prototypes/knowledge-atlas-v6-skill-tree/progress-analytics.js",
+    "prototypes/knowledge-atlas-v6-skill-tree/tests/progress-browser.cjs"
+  ],
+  "protectedDataUnchanged": true,
+  "globalSourcesUnchanged": true,
+  "geometrySourcesUnchanged": true,
+  "personalRendererSourcesUnchanged": true,
+  "scopeRendererCameraRoutingAndInitializationUnchanged": true,
+  "acceptedProgressCSSUnchanged": true
+}

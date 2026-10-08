@@ -5,8 +5,11 @@
 const isLeaf=GlobalRegistry.isLeaf;
 function model(raw,options={}){
  const global=GlobalRegistry.model(raw),learned=new Set(raw.progress.topics.filter(p=>p.is_learned===true).map(p=>'topic:'+p.topic_id));
+ const analytics=raw.projectCompletion?(g.ProgressAnalytics||(typeof require==='function'?require('./progress-analytics.js'):null)).create({catalog:raw,scopes:raw.completionScopes}):null;
+ if(analytics){learned.clear();for(const t of raw.topics)if(analytics.topic(t.id).learned===true)learned.add('topic:'+t.id);}
  const verified=new Set(raw.progress.topics.filter(p=>p.is_verified===true).map(p=>'topic:'+p.topic_id));
  for(const key of options.extraLearned||[]){if(global.nodes.get(key)?.type!=='topic')throw Error('Growth needs an existing Topic');learned.add(key);}
+ if(analytics){verified.clear();for(const t of raw.topics)if(analytics.topic(t.id).verified===true)verified.add('topic:'+t.id);}
  const contexts=new Set(raw.progress.courses.map(p=>p.course_id));
  const relevant=new Set(raw.courses.filter(c=>contexts.has(c.id)).flatMap(c=>c.topic_ids).map(id=>'topic:'+id));
  const next=new Map();
@@ -40,7 +43,7 @@ function model(raw,options={}){
  for(const n of registry.values())if(n.type==='category')leaves(n.key);
  const counts={learned:fixture?0:[...scope].filter(k=>learned.has(k)).length,verified:fixture?0:[...scope].filter(k=>verified.has(k)).length,next:fixture?0:next.size,
   leaves:scope.size,categories:[...registry.values()].filter(n=>n.type==='category').length,roots:root.children.length};
- return{raw:{...raw,counts},source:raw,nodes,registry,root,parent,connections:[],structuralChildren,membershipLeaves,global,scope,next,fixture};
+ return{analytics,raw:{...raw,counts},source:raw,nodes,registry,root,parent,connections:[],structuralChildren,membershipLeaves,global,scope,next,fixture};
 }
 g.AtlasModel={model,isLeaf};
 })(globalThis);

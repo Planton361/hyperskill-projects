@@ -42,20 +42,20 @@ function contextHtml(){return[['course',nav.course_id],['project',nav.project_id
 function inspect(){
  if(!scope){$('#inspector').innerHTML='<h2>No scope selected</h2><p>Select a Course or Project to inspect its evidenced knowledge.</p>';return;}
  const n=m?.nodes.get(selected)||m?.root;
- if(!n){$('#inspector').innerHTML=`<h2>${esc(scope.title)}</h2><p>Project ${scope.scope_id}</p><p>Requirements not established</p><p>Project entry-prerequisite IDs remain UNKNOWN.</p><p>${contextHtml()}</p>`;bindInspector();return;}
- const p=n.type==='category'?categoryStats(n.id):null,s=n.type==='topic'?ux.topic(n.id):null,exact=n.type!=='context';
+ if(!n){$('#inspector').innerHTML=`<h2>${esc(scope.title)}</h2><p>${contextHtml()}</p>`+ProgressPresentation.scope(ux.analytics,scope);bindInspector();return;}
+ const s=n.type==='topic'?ux.topic(n.id):null,exact=n.type!=='context';
  const role=n.type==='context'?'Presentation only':n.scopeRole==='context'?'Context Category':scope.scope_type==='course'?'Course membership':scope.scope_type==='stage'?'Stage-local requirement':'Project study-plan requirement';
  let html=`<h2>${esc(n.title)}</h2><p>${esc(n.type[0].toUpperCase()+n.type.slice(1))} · ${esc(n.key)}</p><div><span class="badge">${role}</span>${s?.learned===true?'<span class="badge personal">Learned</span>':''}${s?.verified===true?'<span class="badge personal">Verified</span>':''}</div><details open><summary>Scope context</summary><p>${contextHtml()}</p></details>`;
- if(s)html+=`<p id="personal-status">Learning: ${stateText(s.learned,'● Learned','○ Not learned')}<br>Verification: ${stateText(s.verified,'◎ Verified','Not verified')}</p><p class="scope-note">Only explicit accepted personal observations set these states. Membership and requirements do not imply learning.</p>`;
- if(p)html+=`<p class="stat" id="category-progress">${p.learned} / ${p.eligible_count} learned</p><p>${p.verified} / ${p.eligible_count} verified<br>${p.unknown_learned} learning unknown · ${p.unknown_verified} verification unknown</p><p>Within Course ${nav.course_id} only. Counts use all distinct Course-member descendants through every structural membership, including Topics physically drawn in another branch.${p.fully_learned?' Fully learned within this Course.':''}${p.fully_verified?' Fully verified within this Course.':''}</p>`;
- else if(n.type==='category')html+='<p>No Course completion claim. Select a Course context to see Course-eligible learned/verified counts.</p>';
+ if(s)html+=ProgressPresentation.topic(ux.analytics,n.id);
+ if(n.type==='category')html+=ProgressPresentation.category(ux.analytics,n.id,scope);
+ if(n.type==='context')html+=ProgressPresentation.scope(ux.analytics,scope);
  html+=`<details open><summary>Taxonomy path</summary><p class="path">${ancestors(n).map(a=>`<button class="path-button" data-key="${a.key}">${esc(a.title)}</button>`).join(' → ')}</p></details>`;
  if(exact)html+=`<a id="global-link" target="_blank" rel="noopener" href="global.html?key=${encodeURIComponent(ScopeProjection.globalTarget(projection,n.key))}">Show in Global ↗</a><details><summary>Structural memberships</summary>${n.memberships.map(k=>`<button class="path-button" data-key="${k}">${esc(m.nodes.get(k)?.title||k)}</button>`).join('')||'<p>Global root</p>'}</details>`;
  if(n.type==='topic')html+=nativeRelations(n);
  if(n.type==='category')html+=`<details><summary>Topics in this scope (${n.taxonomyTopicKeys.length})</summary>${n.taxonomyTopicKeys.map(k=>`<button class="path-button" data-key="${k}">${esc(m.nodes.get(k).title)}</button>`).join('')}</details>`;
  html+=`<div class="actions"><button id="read-selected">${n.type==='topic'?'Topic Focus':'Fit subtree'}</button></div>`;$('#inspector').innerHTML=html;bindInspector();$('#read-selected').onclick=()=>n.type==='topic'?focusTopic(n.key):fitSubtree(n.key);
 }
-function bindInspector(){$('#inspector').querySelectorAll('[data-key]').forEach(b=>b.onclick=()=>select(b.dataset.key));$('#inspector').querySelectorAll('[data-context]').forEach(b=>b.onclick=()=>{const type=b.dataset.context;return navigate({...nav,...(type==='course'?{project_id:null,stage_id:null}:type==='project'?{stage_id:null}:{})});});}
+function bindInspector(){$('#inspector').querySelectorAll('[data-progress-category]').forEach(b=>b.onclick=()=>{const key='category:'+b.dataset.progressCategory;if(m?.nodes.has(key))select(key);else window.parent.AtlasShell.showGlobal(key);});$('#inspector').querySelectorAll('[data-key]').forEach(b=>b.onclick=()=>select(b.dataset.key));$('#inspector').querySelectorAll('[data-context]').forEach(b=>b.onclick=()=>{const type=b.dataset.context;return navigate({...nav,...(type==='course'?{project_id:null,stage_id:null}:type==='project'?{stage_id:null}:{})});});}
 function render(){world.selectAll('*').remove();
  world.append('g').selectAll('path').data(L.connectorSegments).join('path').attr('class',d=>'taxonomy depth-'+d.depth).attr('d',d=>d.d);
  world.append('g').selectAll('rect').data(L.trays).join('rect').attr('class','tray-surface').attr('x',d=>d.x).attr('y',d=>d.y).attr('width',d=>d.width).attr('height',d=>d.height).attr('rx',4);
@@ -123,6 +123,7 @@ function resetView(){for(const input of document.querySelectorAll('.scope-contro
 async function init(){
  const read=async path=>{const r=await fetch(path);if(!r.ok)throw Error('Missing local catalog input');return r.json();};
  let acceptedCourses,evidence;[catalog,index,acceptedCourses,evidence]=await Promise.all(['catalog.json','scope-index.json','../../data/knowledge/courses.json','../../data/knowledge/evidence.json'].map(read));
+ catalog.projectCompletion=await read('../project-completion/progress.json');
  scopes=[...index.courses,...index.projects,...index.stages];ux=ScopeUXModel.create(index,catalog,acceptedCourses,evidence);
  if(!g.AtlasViewHost?.ownsFilters)for(const type of ['course','project','stage']){
   const input=$('#'+type+'-search'),select=$('#'+type+'-choice');input.oninput=()=>options(type);

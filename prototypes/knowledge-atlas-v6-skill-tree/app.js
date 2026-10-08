@@ -108,6 +108,7 @@ function inspect(){
     html+='<p>Resolution describes the global capture; existing accepted metadata is retained by the same Topic ID.</p>';
    }
    html+=`<p>Global identity: ${esc(n.key)}</p><div class="actions"><a id="show-global" href="global.html?key=${encodeURIComponent(n.key)}" target="_blank" rel="noopener">Show in Global Atlas ↗</a></div>`;
+   if(n.type==='topic'&&m.analytics)html+=ProgressPresentation.topic(m.analytics,n.id);
    if(n.is_next)html+=`<p>◇ Next: complete captured prerequisite list is satisfied by explicit learned progress.</p>`+list('Required learned Topics',n.nextEvidence.required.map(k=>listButton(k,m.nodes.get(k).displayTitle)))+`<p>Source: ${n.nextEvidence.source_ids.map(esc).join(', ')}</p>`;
    html+=list('Structural memberships',n.memberships.map(k=>m.nodes.has(k)?listButton(k,m.nodes.get(k).title):`<p>${esc(m.global.nodes.get(k).title)} · global context</p>`))+`<p>Physical row: ${esc(m.parent(n).title)}${n.memberships.length>1?' · one row shared by all memberships':''}</p>`;
   }
@@ -155,8 +156,10 @@ function reflow(extraLearned=[]){
  return L;
 }
 async function init(){
- const start=performance.now(),text=await(await fetch('model.json')).text();let raw;
- m=timed('model parse',()=>{raw=JSON.parse(text);return AtlasModel.model(raw);});
+ const start=performance.now(),raw=await(await fetch('model.json')).json();
+ raw.projectCompletion=await(await fetch('../project-completion/progress.json')).json();
+ raw.completionScopes=await(await fetch('../knowledge-atlas-scope-pyramid/scope-index.json')).json();
+ m=timed('model parse',()=>{return AtlasModel.model(raw);});
  const canvas=document.createElement('canvas'),ctx=canvas.getContext('2d');
  const measure=(t,font=14,weight=400)=>{ctx.font=weight+' '+font+'px system-ui';return ctx.measureText(t).width;};
  L=timed('layout',()=>AtlasLayout.build(m,measure));metrics['tray packing']=L.trayPackingMilliseconds;

@@ -24,18 +24,16 @@ function create(index,raw,acceptedCourses,evidence){
   if(associations.has(row.id)){if(JSON.stringify([...row.project_ids].sort((a,b)=>a-b))!==JSON.stringify([...associations.get(row.id).project_ids].sort((a,b)=>a-b)))throw Error('Historical Course Project association conflict');continue;}
   associations.set(row.id,{state:'KNOWN',project_ids:[...row.project_ids],evidence_ids:sources.map(e=>e.id),unavailable_project_ids:row.project_ids.filter(id=>!projects.has(id))});
  }
- const progressRows=new Map();for(const row of raw.progress.topics){if(!progressRows.has(row.topic_id))progressRows.set(row.topic_id,[]);progressRows.get(row.topic_id).push(row);}
- const status=(rows,field)=>{const values=rows.map(r=>r[field]).filter(v=>typeof v==='boolean');return values.includes(true)?true:values.length?false:null;};
- const topic=id=>{const rows=progressRows.get(id)||[];return{learned:status(rows,'is_learned'),verified:status(rows,'is_verified'),evidence_ids:[...new Set(rows.flatMap(r=>r.evidence_ids||[]))]};};
+ const analytics=(g.ProgressAnalytics||(typeof require==='function'?require('../knowledge-atlas-v6-skill-tree/progress-analytics.js'):null)).create({catalog:raw,scopes:index});
+ const topic=id=>analytics.topic(id);
  const ancestry=new Map();
  function ancestors(id){if(ancestry.has(id))return ancestry.get(id);const result=new Set(),pending=[...(raw.memberships[id]||[])];while(pending.length){const p=pending.pop();if(result.has(p))continue;result.add(p);pending.push(...(raw.memberships[p]||[]));}ancestry.set(id,result);return result;}
  const categoryCache=new Map();
  function categoryProgress(courseId){
   if(!courses.has(courseId))return new Map();if(categoryCache.has(courseId))return categoryCache.get(courseId);
-  const result=new Map();for(const id of new Set(courses.get(courseId).explicit_topic_ids))for(const categoryId of ancestors(id)){
-   if(!result.has(categoryId))result.set(categoryId,{eligible_ids:new Set(),learned:0,verified:0,unknown_learned:0,unknown_verified:0});result.get(categoryId).eligible_ids.add(id);
+  const result=new Map();for(const row of raw.categories){const p=analytics.categoryInScope(row.id,'course',courseId);if(!p.eligible)continue;
+   result.set(row.id,{eligible_ids:new Set([...analytics.descendants(row.id)].filter(id=>courses.get(courseId).explicit_topic_ids.includes(id))),eligible_count:p.eligible,learned:p.learned,verified:p.verified,unknown_learned:p.unknown,unknown_verified:p.verifiedUnknown,fully_learned:p.allLearned,fully_verified:p.allVerified});
   }
-  for(const p of result.values()){for(const id of p.eligible_ids){const s=topic(id);p.learned+=s.learned===true?1:0;p.verified+=s.verified===true?1:0;p.unknown_learned+=s.learned===null?1:0;p.unknown_verified+=s.verified===null?1:0;}p.eligible_count=p.eligible_ids.size;p.fully_learned=p.eligible_count>0&&p.learned===p.eligible_count;p.fully_verified=p.eligible_count>0&&p.verified===p.eligible_count;}
   categoryCache.set(courseId,result);return result;
  }
  const association=id=>associations.get(id)||{state:'UNKNOWN',project_ids:null,evidence_ids:[],unavailable_project_ids:[]};
@@ -56,7 +54,7 @@ function create(index,raw,acceptedCourses,evidence){
  function choose(state,kind,id){const next={...state};if(kind==='course'){next.course_id=number(id);}else if(kind==='project'){next.project_id=number(id);next.stage_id=null;}else if(kind==='stage')next.stage_id=number(id);return normalize(next);}
  const stageChoices=projectId=>[...stages.values()].filter(s=>s.project_id===projectId).sort((a,b)=>a.order-b.order||a.scope_id-b.scope_id);
  const projectChoices=state=>!state.course_id?[...projects.values()]:association(state.course_id).state==='KNOWN'?association(state.course_id).project_ids.map(id=>projects.get(id)).filter(Boolean):[];
- return{courses,projects,stages,entities,associations,association,topic,ancestors,categoryProgress,normalize,current,parse,url,choose,stageChoices,projectChoices};
+ return{analytics,courses,projects,stages,entities,associations,association,topic,ancestors,categoryProgress,normalize,current,parse,url,choose,stageChoices,projectChoices};
 }
 g.ScopeUXModel={create,number};if(typeof module!=='undefined')module.exports=g.ScopeUXModel;
 })(globalThis);
