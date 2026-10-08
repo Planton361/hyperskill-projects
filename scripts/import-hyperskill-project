@@ -326,6 +326,18 @@ def execute(args):
                 "original_project_name": title, "directory_name": directory_name,
                 "files": {name: digest(data) for name, data in sorted(payload.items())
                           if name != "README.md"}}
+    if getattr(args, 'completed_at', None):
+        from knowledge_atlas.project_completion import validate_completion
+        if not url:
+            fail("--completed-at requires --project-url with an exact Hyperskill Project ID")
+        manifest['project_id'] = int(urlsplit(url).path.rstrip('/').split('/')[-1])
+        manifest['completion'] = validate_completion(dict(
+            project_id=int(urlsplit(url).path.rstrip('/').split('/')[-1]),
+            status='completed', attested_by='owner', observed_at=args.completed_at))
+    elif args.update and (target / MANIFEST).exists():
+        previous = json.loads((target / MANIFEST).read_text())
+        if previous.get('completion'):
+            fail("Updating an attested export requires a fresh --completed-at owner attestation")
     print(f"Hyperskill-Titel: {title!r}; Zielordner: {directory_name!r}")
     payload[MANIFEST] = (json.dumps(manifest, indent=2) + "\n").encode()
     print(f"\nZiel: {target}")
@@ -378,6 +390,7 @@ def main():
     parser.add_argument("--title", help="override the title detected in course-info.yaml")
     parser.add_argument("--concepts", default="Konsolenein-/ausgabe, Kontrollfluss und Methoden")
     parser.add_argument("--project-url")
+    parser.add_argument("--completed-at", help="Owner attests completion at this UTC timestamp; requires exact --project-url")
     args = parser.parse_args()
     try:
         if args.java_version is not None and not 8 <= args.java_version <= 99:

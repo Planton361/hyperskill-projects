@@ -62,6 +62,15 @@ class ImportTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0 if success else 2, result.stdout + result.stderr)
         return result.stdout + result.stderr
 
+    def test_explicit_owner_completion_metadata(self):
+        self.invoke('--completed-at', '2026-10-08T12:00:00Z', success=False)
+        self.invoke('--project-url', 'https://hyperskill.org/projects/113',
+                    '--completed-at', '2026-10-08T12:00:00Z')
+        meta = json.loads((self.target / '.hyperskill-import.json').read_text())
+        self.assertEqual(meta['completion'], dict(project_id=113, status='completed',
+            attested_by='owner', observed_at='2026-10-08T12:00:00Z'))
+        self.invoke('--update', success=False)
+
     def test_dry_run_no_writes_and_unknown_version(self):
         before = snapshot(self.repo)
         self.assertIn("--java-version", self.invoke("--dry-run", version=False, success=False))
