@@ -1,7 +1,7 @@
 /* Public serialization and diff only. Learning is delegated to accepted analytics. */
 'use strict';
 const fs=require('node:fs');
-const {create}=require('../../prototypes/knowledge-atlas-v6-skill-tree/progress-analytics.js');
+const {create}=require('../../src/myatlas/knowledge-atlas-v6-skill-tree/progress-analytics.js');
 const canonical=v=>JSON.stringify(v,(_k,x)=>x&&typeof x==='object'&&!Array.isArray(x)?Object.fromEntries(Object.keys(x).sort().map(k=>[k,x[k]])):x);
 const sorted=xs=>[...new Set(xs)].sort((a,b)=>a-b);
 const pick=s=>({state:s.state,eligible:s.eligible,learned:s.learned,verified:s.verified});

@@ -9,9 +9,9 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[2]
 CLI = ROOT/'scripts/sync-project-completion.py'
-CAT = 'prototypes/knowledge-atlas-scope-pyramid/catalog.json'
-SCOPES = 'prototypes/knowledge-atlas-scope-pyramid/scope-index.json'
-ACCEPTED = 'prototypes/project-completion/accepted-sync.json'
+CAT = 'src/myatlas/knowledge-atlas-scope-pyramid/catalog.json'
+SCOPES = 'src/myatlas/knowledge-atlas-scope-pyramid/scope-index.json'
+ACCEPTED = 'data/myatlas/accepted-sync.json'
 
 class GitCompletionTests(unittest.TestCase):
     def setUp(self):
@@ -89,7 +89,7 @@ class GitCompletionTests(unittest.TestCase):
         (self.root/folder/'link').unlink();self.export(7,'duplicate','revoked');self.commit();self.run_sync(False)
 
     def test_real_legacy(self):
-        command=[sys.executable,'-B',str(CLI),'--previous',str(ROOT/'prototypes/project-completion/progress.json')]
+        command=[sys.executable,'-B',str(CLI),'--previous',str(ROOT/'data/myatlas/progress.json')]
         result=json.loads(subprocess.check_output(command));p=result['projection']
         self.assertEqual(p['completed_project_ids'],[113]);self.assertEqual(len(p['project_learned_topic_ids']),26)
         self.assertEqual(p['global']['learned'],31);self.assertEqual(p['global']['verified'],12)
@@ -98,7 +98,7 @@ class GitCompletionTests(unittest.TestCase):
     def test_explicit_committed_course_completion_independent_of_projects(self):
         baseline=self.run_sync();self.accept(baseline)
         records=dict(schema=1,records=[dict(course_id=1,is_completed=True,observed_at='2026-10-08T14:00:00Z',source='owner',evidence_id='course-1-fixture')])
-        self.write('prototypes/project-completion/course-completions.json',records)
+        self.write('data/myatlas/course-completions.json',records)
         self.assertIsNone(self.run_sync()['projection']['portfolio']['completed_course_count'])
         self.commit();result=self.run_sync()
         self.assertEqual(result['projection']['portfolio']['completed_course_count'],1)

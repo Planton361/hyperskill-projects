@@ -41,7 +41,7 @@ try:
         inputs['source']['implementation_sha256'] = {name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in (
             'scripts/sync-project-completion.py', 'scripts/knowledge_atlas/git_completion.py',
             'scripts/knowledge_atlas/project_completion.py', 'scripts/knowledge_atlas/course_completion.py', 'scripts/knowledge_atlas/completion_projection.cjs',
-            'prototypes/knowledge-atlas-v6-skill-tree/progress-analytics.js')}
+            'src/myatlas/knowledge-atlas-v6-skill-tree/progress-analytics.js')}
         result = subprocess.run(['node', str(engine)], input=json.dumps(inputs), text=True, capture_output=True, check=True)
         print(json.dumps(json.loads(result.stdout), sort_keys=True, indent=2))
 except (ValueError, KeyError, OSError, subprocess.CalledProcessError):

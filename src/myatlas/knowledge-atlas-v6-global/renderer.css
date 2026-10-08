@@ -1,0 +1,22 @@
+/* Renderer plumbing and explicit Overview overrides.
+   Normal V6.6 reading styles remain in unchanged style.css. */
+#graph:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+
+/* Overview emphasis only. All world geometry and rasterized text stay fixed.
+   Explicit navigation state, never a numeric zoom threshold, selects these. */
+#canvas[data-view=overview] .taxonomy{stroke-width:.45;stroke-opacity:.14}
+#canvas[data-view=overview] .taxonomy.depth-0{stroke-width:1.1;stroke-opacity:.9}
+#canvas[data-view=overview] .taxonomy.depth-1{stroke-width:.95;stroke-opacity:.7}
+#canvas[data-view=overview] .taxonomy.depth-2{stroke-width:.7;stroke-opacity:.46}
+#canvas[data-view=overview] .taxonomy.depth-3{stroke-width:.55;stroke-opacity:.27}
+#canvas[data-view=overview] .taxonomy.depth-4{stroke-opacity:.18}
+#canvas[data-view=overview] .node:is(.category,.context) .card{stroke-width:.55;stroke-opacity:.28}
+#canvas[data-view=overview] .node:is(.category,.context).depth-0 .card,
+#canvas[data-view=overview] .node.category.depth-1 .card{stroke-width:1.1;stroke-opacity:1}
+#canvas[data-view=overview] .node.category.depth-2 .card{stroke-width:.9;stroke-opacity:.9}
+#canvas[data-view=overview] .node.category.depth-3 .card{stroke-width:.7;stroke-opacity:.65}
+#canvas[data-view=overview] .node.category.depth-4 .card{stroke-width:.6;stroke-opacity:.4}
+#canvas[data-view=overview] .tray-surface{stroke:var(--line);stroke-width:.45;stroke-opacity:.2;fill:var(--topic);fill-opacity:.55}
+#overview-guide>div>button{font-size:14px;font-weight:550;line-height:1.2}
+#overview-guide .guide-branches button{font-size:inherit;font-weight:400;line-height:inherit;border:0;background:transparent;padding:0;color:var(--muted);text-decoration:underline;text-decoration-color:var(--border);text-underline-offset:3px}
+#overview-guide .guide-branches button:hover{color:var(--text);text-decoration-color:var(--accent)}
