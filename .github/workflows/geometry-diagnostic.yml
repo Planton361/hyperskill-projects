@@ -1,0 +1,47 @@
+name: V66 geometry diagnosis
+on:
+  push:
+    branches: ['diagnostics/v66-geometry']
+permissions:
+  contents: read
+jobs:
+  compare:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build unchanged failed source revision
+        run: |
+          git worktree add --detach "$RUNNER_TEMP/source" 335e8ff214886f697ce40ba54f485292f72903c2
+          cd "$RUNNER_TEMP/source"
+          env -u GITHUB_SHA python3 -B scripts/build-myatlas.py
+          npm ci --prefix scripts/knowledge_atlas --ignore-scripts
+          scripts/knowledge_atlas/node_modules/.bin/playwright install --with-deps chromium
+      - name: Capture native and canonical-measurement layouts twice
+        run: |
+          mkdir -p "$RUNNER_TEMP/source/build/preview" test-results/geometry
+          ln -s ../pages "$RUNNER_TEMP/source/build/preview/hyperskill-projects"
+          python3 -B -m http.server 8807 --bind 127.0.0.1 --directory "$RUNNER_TEMP/source/build/preview" > "$RUNNER_TEMP/preview.log" 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid"' EXIT
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent http://127.0.0.1:8807/hyperskill-projects/knowledge-map/ > /dev/null; then break; fi
+            sleep 1
+          done
+          export PLAYWRIGHT_MODULE="$RUNNER_TEMP/source/scripts/knowledge_atlas/node_modules/playwright"
+          CAPTURE_OUTPUT=test-results/geometry/ubuntu-native.json node tests/diagnostics/capture.cjs
+          CANONICAL_METRICS=tests/diagnostics/macos-metrics.json CAPTURE_OUTPUT=test-results/geometry/ubuntu-canonical.json node tests/diagnostics/capture.cjs
+          fc-match system-ui > test-results/geometry/fontconfig.txt
+          uname -a > test-results/geometry/environment.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: structured-geometry
+          path: test-results/geometry
