@@ -36,7 +36,9 @@ async function run(engine,name,options){
   }
   await page.goto(base+'?view=atlas');await ready();await header('atlas');
   await page.locator('#nav-skill-tree').click();await ready();assert.equal(await page.evaluate(()=>AtlasShell.state().route.view),'skill-tree');await header('skill-tree');
-  await page.locator('#nav-leetcode').focus();await page.keyboard.press('Tab');await page.keyboard.press('Shift+Tab');
+  await page.locator('#nav-skill-tree').focus();
+  // WebKit's native default reaches links with Option+Tab.
+  await page.keyboard.press(name==='webkit'?'Alt+Tab':'Tab');
   assert.equal(await page.evaluate(()=>document.activeElement.id),'nav-leetcode');
   assert.notEqual(await page.locator('#nav-leetcode').evaluate(e=>getComputedStyle(e).outlineStyle),'none');
   await page.keyboard.press('Enter');await page.waitForFunction(()=>window.LeetCodeAtlas&&document.body.dataset.publicState==='published');
