@@ -1,0 +1,24 @@
+{
+  "schema": 2,
+  "language": "java",
+  "java_version": 23,
+  "original_project_name": "My First Project with Java",
+  "directory_name": "My First Project with Java",
+  "files": {
+    "build.gradle.kts": "c5778153ec45af81a78a4199aa6d954c5c288464d4b32eaddceb19cc89bc6342",
+    "gradle/wrapper/gradle-wrapper.jar": "497c8c2a7e5031f6aa847f88104aa80a93532ec32ee17bdb8d1d2f67a194a9c7",
+    "gradle/wrapper/gradle-wrapper.properties": "89f62533208a72b7a8cc2892b6b3540c445fa6175508297d932dae57d653591a",
+    "gradlew": "a5a5c199ba02189ae8c46a334223371a20599d9c298ef65e7540ede4a3f72d59",
+    "gradlew.bat": "d539676c48b596afda64c963ec8f7ee56c7b3fe7e3b81d1dbe2d1a1e3dd9e9f8",
+    "settings.gradle.kts": "ad3bc830125cada7a6443b56649f9c04043c50627bd03ebe01622861882702e9",
+    "src/main/java/calculator/Item.java": "1f0564275616ce0f27ebbaa0457c0bad452353e39e5d8e7c9cb8255c133b0f38",
+    "src/main/java/calculator/Main.java": "9b24f41f4af5fc986c6265bfcd03471ad1ff048540d1c2fdc205e07554a10ef5"
+  },
+  "project_id": 380,
+  "completion": {
+    "project_id": 380,
+    "status": "completed",
+    "attested_by": "owner",
+    "observed_at": "2026-10-09T21:19:23Z"
+  }
+}
