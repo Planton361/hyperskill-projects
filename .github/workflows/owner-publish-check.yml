@@ -1,9 +1,9 @@
 name: Owner project publishing helper checks
 on:
   push:
-    paths: ['scripts/publish-hyperskill-project', 'scripts/import-hyperskill-project', 'scripts/templates/**', 'scripts/export_metadata.py', 'scripts/tests/test_publish.py', 'scripts/tests/test_import.py', '.github/workflows/owner-publish-check.yml']
+    paths: ['scripts/publish-hyperskill-project', 'scripts/import-hyperskill-project', 'scripts/templates/**', 'scripts/export_metadata.py', 'scripts/source_adapters.py', 'scripts/validate-project-exports.py', 'scripts/test-cross-repository.py', 'scripts/tests/**', '.github/workflows/owner-publish-check.yml']
   pull_request:
-    paths: ['scripts/publish-hyperskill-project', 'scripts/import-hyperskill-project', 'scripts/templates/**', 'scripts/export_metadata.py', 'scripts/tests/test_publish.py', 'scripts/tests/test_import.py', '.github/workflows/owner-publish-check.yml']
+    paths: ['scripts/publish-hyperskill-project', 'scripts/import-hyperskill-project', 'scripts/templates/**', 'scripts/export_metadata.py', 'scripts/source_adapters.py', 'scripts/validate-project-exports.py', 'scripts/test-cross-repository.py', 'scripts/tests/**', '.github/workflows/owner-publish-check.yml']
   workflow_dispatch:
 permissions:
   contents: read
@@ -23,6 +23,6 @@ jobs:
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: '25'
+          java-version: '23'
       - name: Disposable import, build and publication regressions
-        run: python3 -B -m unittest scripts.tests.test_import scripts.tests.test_publish
+        run: python3 -B -m unittest scripts.tests.test_import scripts.tests.test_publish scripts.tests.test_adapters

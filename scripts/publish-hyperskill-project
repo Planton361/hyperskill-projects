@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Owner-reviewed publication of one new Java export; Academy source stays read-only."""
+"""Owner-reviewed publication of one new validated export; Academy source stays read-only."""
 import argparse
 from datetime import datetime, timezone
 import hashlib
@@ -50,9 +50,9 @@ def duplicate_check(pid):
     # Validate explicit IDs and protected bytes in both committed and local
     # manifests. Topic mapping remains MyAtlas's committed scanner's authority.
     from export_metadata import validate_completion
-    committed = git('ls-tree', '-r', '--name-only', '-z', 'HEAD', '--', 'java').stdout.split('\0')
+    committed = git('ls-tree', '-r', '--name-only', '-z', 'HEAD', '--', 'java', 'python').stdout.split('\0')
     markers = [n for n in committed if n.endswith('/.hyperskill-import.json')]
-    local = [p.relative_to(ROOT).as_posix() for p in ROOT.glob('java/*/.hyperskill-import.json')]
+    local = [p.relative_to(ROOT).as_posix() for p in [*ROOT.glob('java/*/.hyperskill-import.json'), *ROOT.glob('python/*/.hyperskill-import.json')]]
     for name, tracked in [(n, True) for n in markers] + [(n, False) for n in local]:
         def read(relative):
             if tracked:
@@ -62,7 +62,7 @@ def duplicate_check(pid):
                     'Unsafe existing export path; request manual review.')
             return path.read_bytes()
         meta = json.loads(read(name))
-        require(meta.get('schema') == 2 and meta.get('language') == 'java' and
+        require(meta.get('schema') == 2 and meta.get('language') in ('java', 'python') and
                 isinstance(meta.get('files'), dict) and meta['files'],
                 'Invalid existing export manifest; request manual review.')
         directory = str(Path(name).parent)
@@ -87,30 +87,70 @@ def duplicate_check(pid):
         require(pid not in ids, 'Duplicate Project ID export; request manual adapter/update review.')
 
 
+def isolated_checkout():
+    origin = git('remote', 'get-url', 'origin').stdout.strip()
+    require(origin.removesuffix('.git') in ('https://github.com/' + REPOSITORY, 'git@github.com:' + REPOSITORY), 'Unexpected origin repository.')
+    # Clone into a persistent temporary directory, also when .git is read-only.
+    # Neither worktree/index/branch nor Git administration in the user's checkout changes.
+    folder = Path(tempfile.mkdtemp(prefix='hyperskill-owner-review-'))
+    print('Isolated review checkout (retained on failure): ' + str(folder), flush=True)
+    subprocess.run(['git', 'clone', '--no-hardlinks', '--no-checkout', str(ROOT), str(folder)], check=True, capture_output=True)
+    subprocess.run(['git', '-C', str(folder), 'remote', 'set-url', 'origin', origin], check=True)
+    subprocess.run(['git', '-C', str(folder), 'fetch', 'origin', 'main'], check=True)
+    subprocess.run(['git', '-C', str(folder), 'checkout', '-B', 'owner-review', 'FETCH_HEAD'], check=True)
+    # Repository-local identity is useful on machines without a global identity.
+    for key in ('user.name', 'user.email'):
+        result = subprocess.run(['git', '-C', str(ROOT), 'config', '--get', key], capture_output=True, text=True)
+        if result.returncode == 0:
+            subprocess.run(['git', '-C', str(folder), 'config', key, result.stdout.strip()], check=True)
+    return folder
+
+
 def execute(args):
-    require(args.attest_completed, 'Explicit --attest-completed owner attestation is required.')
+    global ROOT
+    from source_adapters import workspace, project_url, detect, validate_python_export
+    source = workspace(args.source)
+    importer = runpy.run_path(str(IMPORTER))
+    try:
+        args.project_url = project_url(source, args.project_url)
+    except ValueError as error:
+        if args.project_url or not sys.stdin.isatty():
+            raise
+        print(str(error))
+        args.project_url = project_url(source, input('Exact Hyperskill Project URL: ').strip())
+    try:
+        title = importer['title_from_source'](source, args.title)
+    except ValueError:
+        if not sys.stdin.isatty():
+            raise
+        args.title = input('Exact project title from Academy: ').strip()
+        title = importer['title_from_source'](source, args.title)
+    language = detect(source, getattr(args, 'language', 'auto'))
+    if not args.completed_at:
+        require(sys.stdin.isatty(), 'Supply actual --completed-at UTC timestamp (never generated).')
+        args.completed_at = input('Actual completion timestamp (UTC, ending Z): ').strip()
     require(re.fullmatch(r'https://hyperskill\.org/projects/[1-9][0-9]*/?', args.project_url),
             'Supply the exact HTTPS Hyperskill Project URL, without query or fragment.')
     require(re.fullmatch(r'\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(?:\.\d{1,6})?Z', args.completed_at),
             'Supply the actual UTC completion timestamp ending in Z; it is never generated.')
     stamp = datetime.fromisoformat(args.completed_at.replace('Z', '+00:00'))
     require(stamp <= datetime.now(timezone.utc), 'Completion timestamp must not be in the future.')
-    source = Path(args.source).resolve(strict=True)
-    importer = runpy.run_path(str(IMPORTER))
     # Importer remains the sole authority for supported layouts, secrets,
     # source allowlists, Java selection, wrapper checks and manifest format.
-    command = [sys.executable, '-B', str(IMPORTER), str(source), 'java',
+    command = [sys.executable, '-B', str(IMPORTER), str(source), language,
                '--project-url', args.project_url, '--completed-at', args.completed_at]
     for key in ('java_version', 'title', 'main_class'):
         if getattr(args, key) is not None:
             command += ['--' + key.replace('_', '-'), str(getattr(args, key))]
     before = source_snapshot(source, importer)
+    pid = int(args.project_url.rstrip('/').split('/')[-1])
+    duplicate_check(pid)
     subprocess.run(command + ['--dry-run'], check=True)
     require(source_snapshot(source, importer) == before, 'Academy source changed during inspection; stop and review.')
     pid = int(args.project_url.rstrip('/').split('/')[-1])
     duplicate_check(pid)
     title = importer['title_from_source'](source, args.title)
-    target = ROOT / 'java' / importer['safe_directory_name'](title)
+    target = ROOT / language / importer['safe_directory_name'](title)
     relative = target.relative_to(ROOT).as_posix()
     require(not target.exists(), 'New exports only; existing destinations require manual update review.')
     require(not git('ls-tree', 'HEAD', '--', relative).stdout, 'Destination exists in Git; restore/review it manually.')
@@ -118,12 +158,15 @@ def execute(args):
     if args.dry_run:
         print('REVIEW ONLY: no import, build, staging, commit or push.')
         return
+    # Reject local duplicate/uncommitted exports before isolating, then check
+    # the latest fetched main again so stale checkouts cannot republish an ID.
+    ROOT = isolated_checkout()
+    command += ['--repository', str(ROOT)]
+    duplicate_check(pid)
+    target = ROOT / language / importer['safe_directory_name'](title)
+    relative = target.relative_to(ROOT).as_posix()
+    require(not target.exists(), 'Destination exists on canonical main.')
     head = git('rev-parse', 'HEAD').stdout.strip()
-    require(git('branch', '--show-current').stdout.strip() == 'main', 'Start on main; unrelated branch commits must not be published.')
-    origin = git('remote', 'get-url', 'origin').stdout.strip().removesuffix('.git')
-    require(origin in ('https://github.com/' + REPOSITORY, 'git@github.com:' + REPOSITORY), 'Unexpected origin repository.')
-    remote_head = git('ls-remote', 'origin', 'refs/heads/main').stdout.split()
-    require(remote_head and remote_head[0] == head, 'Local main differs from remote main; update it safely before publishing.')
     confirm('Confirm that you personally completed this project at the stated actual UTC time.', f'COMPLETE {pid}')
     subprocess.run(command, check=True)
     require(source_snapshot(source, importer) == before, 'Academy source changed during import; no publication.')
@@ -132,8 +175,11 @@ def execute(args):
     payload = {name: (ROOT / name).read_bytes() for name in files}
     with tempfile.TemporaryDirectory(prefix='hyperskill-publish-review-') as temporary:
         # Build only the independent, validated export, never the Academy tree.
-        subprocess.run([str(target / 'gradlew'), '--no-daemon', '--project-cache-dir',
-                        str(Path(temporary) / 'gradle-cache'), 'build'], cwd=target, check=True)
+        if language == 'java':
+            subprocess.run([str(target / 'gradlew'), '--no-daemon', '--project-cache-dir',
+                            str(Path(temporary) / 'gradle-cache'), 'build'], cwd=target, check=True)
+        else:
+            validate_python_export(target, manifest)
         require(source_snapshot(source, importer) == before, 'Academy source changed; no publication.')
         require(all((ROOT / n).read_bytes() == b for n, b in payload.items()), 'Export changed during build; review manually.')
         # The review index is isolated from every staged user change.
@@ -178,9 +224,10 @@ def execute(args):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('source', help='original independent IntelliJ Academy project directory')
-    parser.add_argument('--project-url', required=True)
-    parser.add_argument('--completed-at', required=True)
-    parser.add_argument('--attest-completed', action='store_true')
+    parser.add_argument('--project-url')
+    parser.add_argument('--language', choices=('auto', 'java', 'python'), default='auto')
+    parser.add_argument('--completed-at')
+    parser.add_argument('--attest-completed', action='store_true', help='compatibility flag; COMPLETE confirmation always required')
     parser.add_argument('--java-version', type=int)
     parser.add_argument('--title')
     parser.add_argument('--main-class')
