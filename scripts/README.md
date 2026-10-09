@@ -8,7 +8,7 @@ files, stages Git changes, commits, or pushes.
 ## Supported projects
 
 Version 1 accepts only simple Java console projects in the legacy Academy layout
-`<lesson>/task/src/<package>`, with one of the exact reviewed build profiles in
+`<lesson>/task/src/<package>`, with the reviewed build profile recorded in
 `templates/academy-profile.json`. It copies Java source from the final `task/src`
 into `src/main/java`, then creates a small Gradle application build without
 Hyperskill plugins or `hs-test` dependencies.
@@ -122,10 +122,7 @@ They do not change real Hyperskill workspaces.
 `templates/java-gradle/` contains the standalone Gradle templates.
 `templates/wrapper/` contains the independent Gradle 9.6.1 wrapper and its
 generation settings; `wrapper-sha256.json` verifies all copied wrapper files.
-`templates/academy-profile.json` preserves the original reviewed Academy scaffold
-and records additional reviewed scaffolds by exact build-file SHA-256. The importer
-requires one complete, unambiguous profile match; it never executes or exports
-Academy build files.
+`templates/academy-profile.json` pins the one manually reviewed Academy scaffold.
 
 When Hyperskill changes its build files, review all plugins, dependency
 declarations, source sets, modules, and build logic manually. Add a new profile
