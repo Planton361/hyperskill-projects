@@ -327,7 +327,7 @@ def execute(args):
                 "files": {name: digest(data) for name, data in sorted(payload.items())
                           if name != "README.md"}}
     if getattr(args, 'completed_at', None):
-        from knowledge_atlas.project_completion import validate_completion
+        from export_metadata import validate_completion
         if not url:
             fail("--completed-at requires --project-url with an exact Hyperskill Project ID")
         manifest['project_id'] = int(urlsplit(url).path.rstrip('/').split('/')[-1])

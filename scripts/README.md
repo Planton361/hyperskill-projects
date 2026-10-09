@@ -99,6 +99,12 @@ project README is user-maintained and is preserved across updates. Build outputs
 such as ignored `build/` or `.gradle/` directories in an existing target cause the
 conservative update check to stop; move them aside before updating.
 
+## Completion evidence
+
+`--project-url` records the exact Hyperskill Project ID. To explicitly attest a completed export, supply `--completed-at` with the actual UTC completion/observation time, in `YYYY-MM-DDTHH:MM:SSZ` form. This is an owner attestation; it does not fabricate platform verification or imply Course completion. The independent `export_metadata.py` validator keeps this importer usable without MyAtlas.
+
+MyAtlas now lives in [its own repository](https://github.com/Planton361/myatlas) and reads committed public exports from this repository. After publishing a new completed export, run its MyAtlas Pages workflow to refresh the visualization.
+
 ## Tests
 
 Run the infrastructure tests from the repository root:

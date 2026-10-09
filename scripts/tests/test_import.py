@@ -26,7 +26,7 @@ class ImportTests(unittest.TestCase):
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory(prefix="hyperskill paths ")
         self.addCleanup(self.tmp.cleanup)
-        base = Path(self.tmp.name)
+        base = Path(self.tmp.name).resolve()
         self.repo = base / "repo"
         self.source = base / "source"
         self.repo.mkdir()
