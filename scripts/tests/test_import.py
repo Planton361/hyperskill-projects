@@ -62,6 +62,13 @@ class ImportTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0 if success else 2, result.stdout + result.stderr)
         return result.stdout + result.stderr
 
+    def test_independent_completion_validator_rejects_non_owner_attestation(self):
+        import runpy
+        validate = runpy.run_path(str(self.repo / 'scripts/export_metadata.py'))['validate_completion']
+        with self.assertRaises(ValueError):
+            validate(dict(project_id=7, status='completed', attested_by='platform',
+                          observed_at='2026-10-08T12:00:00Z'))
+
     def test_explicit_owner_completion_metadata(self):
         self.invoke('--completed-at', '2026-10-08T12:00:00Z', success=False)
         self.invoke('--project-url', 'https://hyperskill.org/projects/113',

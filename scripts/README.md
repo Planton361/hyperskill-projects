@@ -31,7 +31,7 @@ Python, and complex Java projects are not supported by this version.
 
 ## Requirements
 
-- Linux with Python 3.10 or newer and Git
+- Linux or macOS with Python 3.10 or newer and Git
 - A JDK at least as new as the selected Java target
 - Gradle 9.6.1 Wrapper template (the wrapper pins and verifies its distribution)
 
@@ -128,3 +128,73 @@ When Hyperskill changes its build files, review all plugins, dependency
 declarations, source sets, modules, and build logic manually. Add a new profile
 only after confirming it remains safe to replace with the standalone template.
 Update relevant behavior tests and verify a fresh export before accepting it.
+
+## One-command owner publication
+
+Keep every Academy project in its original independent IntelliJ workspace. Publish
+only its reviewed final Java export under this existing repository's
+`java/<Project Title>/`. No separate project repository is needed.
+
+From **main**, after the helper changes have themselves been reviewed and released,
+replace every placeholder with your actual project information:
+
+```bash
+./scripts/publish-hyperskill-project "/absolute/path/to/Original Academy Project" \
+  --project-url "https://hyperskill.org/projects/ACTUAL_ID" \
+  --java-version 23 --attest-completed \
+  --completed-at "YYYY-MM-DDTHH:MM:SSZ"
+```
+
+Use the actual Java target; omit `--java-version` only when the existing importer
+can unambiguously determine it. Use your actual completion time in UTC, not today's
+time unless that is when you completed the project. The helper never generates a
+completion timestamp. The JDK must support that target and Gradle (JDK 25 is used
+in the disposable build test).
+
+The helper runs the **unchanged importer dry-run**, showing COPY/IGNORE and every
+RESULT path. It rejects unsupported profiles/layouts, conflicting explicit Project IDs,
+duplicate exports and invalid existing evidence. It asks you to type
+`COMPLETE <ID>` before import. It reads the Academy workspace only and executes
+only the independent export's verified Gradle wrapper. A failed build stops before
+staging or publication, leaving the new candidate available for manual review.
+
+After a successful build it shows the exact Git diff using a temporary index,
+then asks for `PUBLISH <ID>`. Default publication commits only the reviewed export
+on a new `publish/hyperskill-<ID>-…` branch, performs one normal non-force push,
+and prints the PR comparison URL. You open/approve/merge that PR into **main**;
+MyAtlas's canonical reader follows only main. `--publish push` instead makes one
+normal main push; rejected rules or concurrent changes stop it and retain the
+local commit. Neither path stages or commits unrelated existing work. Start on
+main at the same revision as remote main; the helper refuses divergent histories.
+It preserves preexisting staged, unstaged and untracked changes.
+
+Add `--dry-run` for inspection only, or `--prepare-only` for import/build/diff
+without touching the real index, committing or pushing. There is no validation
+bypass or automatic update flag; collisions and unsupported layouts require manual
+adapter/update review. The schema-2 `.hyperskill-import.json` remains unchanged.
+Neither the helper nor Java source assigns Topic IDs: MyAtlas uses the exact
+committed Project-to-explicit-Topic-ID catalog mapping.
+
+After a merged export, MyAtlas's daily 05:23 UTC check refreshes progress through
+the existing validated Pages build. A MyAtlas main push or manual workflow run also
+reads the latest committed export revision. See MyAtlas's `scripts/README.md` for
+skip/failure behavior. Scheduling requires the workflow update to reach MyAtlas's
+default branch; these local changes alone activate nothing.
+
+### Focused helper tests and rollback
+
+```bash
+python3 -B -m unittest scripts.tests.test_import scripts.tests.test_publish
+```
+
+Tests use disposable IDE sources/Git repositories. Publication is mocked, while
+one fixture executes the real pinned standalone Gradle build. The dedicated
+`owner-publish-check.yml` workflow has read-only GitHub permissions and no publish
+step.
+
+To roll back this helper release, revert its reviewed infrastructure commit through
+a normal PR; keep the existing importer and all `java/` exports intact. If an owner
+cancels before publication, the new export may remain untracked: inspect only that
+new directory manually, and never delete or change the original Academy workspace.
+If a push is rejected, inspect the retained local commit; do not force push or use
+an automatic reset. This implementation has not imported or published a real project.
