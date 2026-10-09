@@ -23,8 +23,12 @@ def validate(root):
     for item in tree.split(b'\0'):
         if item:
             meta,name=item.split(b'\t',1);entries[name.decode()]=meta.decode().split()
-    markers=sorted(n for n in entries if len(n.split('/'))==3 and n.split('/')[0] in ('java','python') and n.endswith('/.hyperskill-import.json'))
+    markers=sorted(n for n in entries if len(n.split('/'))==3 and n.endswith('/.hyperskill-import.json'))
     if not markers:raise ValueError('No committed exports')
+    if any(n.split('/')[0] not in ('java','python') for n in markers):raise ValueError('Unsupported export language')
+    for name in entries:
+        if len(name.split('/')) >= 3 and name.split('/')[0] in ('java','python') and '/'.join(name.split('/')[:2])+'/.hyperskill-import.json' not in markers:
+            raise ValueError('Project directory missing completion/export manifest: '+name)
     results=[];seen=set()
     with tempfile.TemporaryDirectory(prefix='validated-export-build-') as folder:
         for marker in markers:

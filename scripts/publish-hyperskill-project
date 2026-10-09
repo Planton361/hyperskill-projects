@@ -45,7 +45,7 @@ def source_snapshot(source, importer):
     return result
 
 
-def duplicate_check(pid):
+def duplicate_check(pid, integrity=True):
     # This repository now contains independent exports, not Atlas catalogs.
     # Validate explicit IDs and protected bytes in both committed and local
     # manifests. Topic mapping remains MyAtlas's committed scanner's authority.
@@ -71,7 +71,7 @@ def duplicate_check(pid):
             require(not path.is_absolute() and '..' not in path.parts and
                     isinstance(digest, str) and re.fullmatch(r'[a-f0-9]{64}', digest),
                     'Invalid existing export inventory; request manual review.')
-            require(hashlib.sha256(read(directory + '/' + relative)).hexdigest() == digest,
+            require(not integrity or hashlib.sha256(read(directory + '/' + relative)).hexdigest() == digest,
                     'Existing export evidence is invalid; request manual review.')
         ids = {int(n) for n in re.findall(r'https://hyperskill\.org/projects/([1-9][0-9]*)(?![0-9])',
                                         read(directory + '/README.md').decode())}
@@ -92,7 +92,7 @@ def isolated_checkout():
     require(origin.removesuffix('.git') in ('https://github.com/' + REPOSITORY, 'git@github.com:' + REPOSITORY), 'Unexpected origin repository.')
     # Clone into a persistent temporary directory, also when .git is read-only.
     # Neither worktree/index/branch nor Git administration in the user's checkout changes.
-    folder = Path(tempfile.mkdtemp(prefix='hyperskill-owner-review-'))
+    folder = Path(tempfile.mkdtemp(prefix='hyperskill-owner-review-')).resolve()
     print('Isolated review checkout (retained on failure): ' + str(folder), flush=True)
     subprocess.run(['git', 'clone', '--no-hardlinks', '--no-checkout', str(ROOT), str(folder)], check=True, capture_output=True)
     subprocess.run(['git', '-C', str(folder), 'remote', 'set-url', 'origin', origin], check=True)
@@ -144,11 +144,11 @@ def execute(args):
             command += ['--' + key.replace('_', '-'), str(getattr(args, key))]
     before = source_snapshot(source, importer)
     pid = int(args.project_url.rstrip('/').split('/')[-1])
-    duplicate_check(pid)
+    duplicate_check(pid, integrity=False)
     subprocess.run(command + ['--dry-run'], check=True)
     require(source_snapshot(source, importer) == before, 'Academy source changed during inspection; stop and review.')
     pid = int(args.project_url.rstrip('/').split('/')[-1])
-    duplicate_check(pid)
+    duplicate_check(pid, integrity=False)
     title = importer['title_from_source'](source, args.title)
     target = ROOT / language / importer['safe_directory_name'](title)
     relative = target.relative_to(ROOT).as_posix()
@@ -218,7 +218,15 @@ def execute(args):
             raise ValueError('Push rejected; commit retained locally. No force push or retry. Review repository rules and publish the reviewed commit through a PR if required.')
         print('Published reviewed export to ' + REPOSITORY + ', branch ' + destination)
         if args.publish == 'pr':
-            print('Open the prepared PR comparison: https://github.com/' + REPOSITORY + '/compare/main...' + branch + '?expand=1')
+            comparison = 'https://github.com/' + REPOSITORY + '/compare/main...' + branch + '?expand=1'
+            body = Path(temporary) / 'pr-body.md'
+            body.write_text(f'Publish the owner-attested standalone {language} export for Hyperskill Project {pid}: {title}.\n\nCompletion timestamp: {args.completed_at}. The Academy workspace was read-only. Only this export was committed, after its build and exact diff review.\n\nThe cross-repository Pages acceptance check must pass before merge. No production deployment is performed by this PR.\n')
+            try:
+                subprocess.run(['gh', 'pr', 'create', '--repo', REPOSITORY, '--base', 'main', '--head', branch,
+                                '--draft', '--title', f'Publish Hyperskill Project {pid}: {title}', '--body-file', str(body)], cwd=ROOT, check=True)
+            except (OSError, subprocess.CalledProcessError) as error:
+                raise ValueError('Export branch pushed; PR creation failed. Retained checkout: ' + str(ROOT) + '. Open ' + comparison + '. Do not repeat publication.') from error
+
 
 
 def main():

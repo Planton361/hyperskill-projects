@@ -92,6 +92,8 @@ PYTHON_MODULES = {'math', 'random', 're', 'datetime', 'json', 'collections', 'it
 
 
 def python_sources(source, inventory, excluded, platform, secrets):
+    if sys.version_info < (3, 12):
+        fail('The Python adapter requires Python 3.12 or newer; restart the helper with python3.12.')
     tasks = [p for p in inventory(source) if p.name == 'task' and len(p.parts) == 2
              and (source / p).is_dir() and not (source / p).is_symlink()]
     if len(tasks) != 1:

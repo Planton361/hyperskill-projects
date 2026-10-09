@@ -50,12 +50,24 @@ class PublishTests(unittest.TestCase):
         root_before=self.g['ROOT']
         def run(command,*args,**kwargs):
             self.calls.append(command)
+            if command[0]=='gh':
+                return subprocess.CompletedProcess(command,0)
             if command[0]=='git' and 'fetch' in command:
                 command=[*command];command[command.index('origin')]=str(self.remote)
             if command[0].endswith('/gradlew') and not real_build:
                 if not build:raise subprocess.CalledProcessError(1,command)
                 return subprocess.CompletedProcess(command,0)
             if command[0]=='git' and 'push' in command:
+                if push=='real-conflict':
+                    race=self.repo.parent/'race'
+                    original(['git','clone','-q',str(self.remote),str(race)],check=True)
+                    for key,value in [('user.name','Concurrent fixture'),('user.email','race@example.invalid')]:original(['git','-C',str(race),'config',key,value],check=True)
+                    (race/'race.txt').write_text('Concurrent remote advance\n')
+                    original(['git','-C',str(race),'add','race.txt'],check=True)
+                    original(['git','-C',str(race),'commit','-qm','Concurrent remote main'],check=True)
+                    original(['git','-C',str(race),'push','origin','main'],check=True)
+                    command=list(command);command[command.index('origin')]=str(self.remote)
+                    return original(command,*args,**kwargs)
                 if not push:raise subprocess.CalledProcessError(1,command)
                 return subprocess.CompletedProcess(command,0)
             return original(command,*args,**kwargs)
@@ -122,6 +134,7 @@ class PublishTests(unittest.TestCase):
     def test_duplicate_and_second_simulated_project(self):
         self.helper()
         with self.assertRaisesRegex(ValueError,'Duplicate'):self.helper([])
+        self.git('push',str(self.remote),'HEAD:refs/heads/main',root=self.review)
         self.g['ROOT']=self.repo
         (self.source/'course-remote-info.yaml').write_text('hyperskill_project:\n  id: 8\n')
         self.args.project_url=None;self.args.title='Second simulated project';self.helper(['COMPLETE 8','PUBLISH 8'])
@@ -145,7 +158,15 @@ class PublishTests(unittest.TestCase):
         meta=json.loads((self.review/'python/Demo Python/.hyperskill-import.json').read_text())
         self.assertEqual(meta['dependencies'],[]);self.assertIn('src/data.json',meta['files'])
         self.assertFalse(any('pip' in str(c) for c in self.calls))
+        result=subprocess.check_output([sys.executable,'main.py'],cwd=self.review/'python/Demo Python/src').decode()
+        self.assertEqual(result.strip(),"{'hello': 1}")
 
     def test_nonwritable_temporary_destination_stops_without_source_changes(self):
         with patch('tempfile.mkdtemp',side_effect=PermissionError('no write access')):
             with self.assertRaises(PermissionError):self.helper([])
+
+    def test_real_non_fast_forward_conflict_preserves_review_commit(self):
+        self.args.publish='push'
+        with self.assertRaisesRegex(ValueError,'Push rejected'):self.helper(push='real-conflict')
+        self.assertTrue(self.git('log','-1','--format=%s',root=self.review).startswith(b'Publish owner-attested'))
+        self.assertFalse(any('--force' in c for c in self.calls))
