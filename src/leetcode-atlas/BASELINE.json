@@ -1,0 +1,18 @@
+{
+  "description": "Accepted local CPU runtime source only; evaluation metadata is intentionally excluded.",
+  "geometrySHA256": "c23469da99adc627db3a52d89d316082e53514d8d7210e46c1b13cc8296504a6",
+  "files": {
+    "app.js": "29204a6b0bdf4f779ab138dcd4392b5403adecc3653861df06ba0102f976b2d2",
+    "index.html": "fa1ba9c9c878fdec98292e796c4a351d69dc4ce3a7534cadbe77529cb3a6e0c0",
+    "optimized-cpu.js": "5ac4aa841f1bfb71a8626c3ee5141bb292d3e98a7de726bb3137926a860b69a4",
+    "visual-state.js": "5278f0a98ef48ea2e25c7c3d7c10ec6916b0b2deb83d66b1b0416579931088fa",
+    "style.css": "92aa7dc4b5cfaa8f4a188d520275dad0832502c816430d722367c8c2e21cf8c3",
+    "model.js": "f4472d28918f9f8ad994273650ca10475df7a5112778bb88aa20dba6a471ffdf"
+  },
+  "localEvaluationInputs": {
+    "catalog.json": "8163ea4c61177b25af2291286c96fe4fb7d3d08aee95595e444fa593160ab600",
+    "taxonomy.json": "5fdf50b1cdc9e0774cc9af5cb50f6b7602841e7fb259ea00841b6c569b2e2c5a",
+    "sources.json": "17eed6a5d950b31641dfb464b4a4d40929ba214bfde82806b57992b0db75f760",
+    "progress.json": "11b44d85942ae0afea706e70a52b9c28d50ca0dbf024a56be347ffeb02a91318"
+  }
+}

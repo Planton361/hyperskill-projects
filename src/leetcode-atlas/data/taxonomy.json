@@ -1,0 +1,1462 @@
+{
+  "schemaVersion": 1,
+  "version": "lc-taxonomy-local-review-2",
+  "authority": "MyAtlas curated local review; not an official LeetCode hierarchy",
+  "coverage": "All 71 tags in the pinned snapshot; not a complete/current official vocabulary",
+  "nodes": [
+    {
+      "id": "lc:root",
+      "parent": null,
+      "title": "Problem Atlas",
+      "kind": "root",
+      "tags": []
+    },
+    {
+      "id": "lc:family:collections",
+      "parent": "lc:root",
+      "title": "Data structures",
+      "kind": "family",
+      "tags": []
+    },
+    {
+      "id": "lc:family:networks",
+      "parent": "lc:root",
+      "title": "Algorithms",
+      "kind": "family",
+      "tags": []
+    },
+    {
+      "id": "lc:family:strategies",
+      "parent": "lc:root",
+      "title": "Problem-solving techniques",
+      "kind": "family",
+      "tags": []
+    },
+    {
+      "id": "lc:family:models",
+      "parent": "lc:root",
+      "title": "Specialized domains & review",
+      "kind": "family",
+      "tags": []
+    },
+    {
+      "id": "lc:category:arrays",
+      "parent": "lc:family:collections",
+      "title": "Arrays & Strings",
+      "kind": "category",
+      "tags": []
+    },
+    {
+      "id": "lc:category:hashing",
+      "parent": "lc:family:collections",
+      "title": "Hash Tables",
+      "kind": "category",
+      "tags": []
+    },
+    {
+      "id": "lc:category:linked",
+      "parent": "lc:family:collections",
+      "title": "Linked Lists",
+      "kind": "category",
+      "tags": []
+    },
+    {
+      "id": "lc:category:stacks",
+      "parent": "lc:family:collections",
+      "title": "Stacks & Queues",
+      "kind": "category",
+      "tags": []
+    },
+    {
+      "id": "lc:category:trees",
+      "parent": "lc:family:collections",
+      "title": "Trees",
+      "kind": "category",
+      "tags": []
+    },
+    {
+      "id": "lc:category:graph-structures",
+      "parent": "lc:family:collections",
+      "title": "Graph Structures",
+      "kind": "category",
+      "tags": []
+    },
+    {
+      "id": "lc:category:advanced",
+      "parent": "lc:family:collections",
+      "title": "Advanced Data Structures",
+      "kind": "category",
+      "tags": []
+    },
+    {
+      "id": "lc:category:search-sort",
+      "parent": "lc:family:networks",
+      "title": "Searching, Sorting & Selection",
+      "kind": "category",
+      "tags": []
+    },
+    {
+      "id": "lc:category:graphs",
+      "parent": "lc:family:networks",
+      "title": "Graph & Traversal Algorithms",
+      "kind": "category",
+      "tags": []
+    },
+    {
+      "id": "lc:category:dp",
+      "parent": "lc:family:networks",
+      "title": "Dynamic Programming",
+      "kind": "category",
+      "tags": []
+    },
+    {
+      "id": "lc:category:greedy-family",
+      "parent": "lc:family:networks",
+      "title": "Greedy",
+      "kind": "category",
+      "tags": []
+    },
+    {
+      "id": "lc:category:string-algorithms",
+      "parent": "lc:family:networks",
+      "title": "String Algorithms",
+      "kind": "category",
+      "tags": []
+    },
+    {
+      "id": "lc:category:hash-algorithms",
+      "parent": "lc:family:networks",
+      "title": "Hash Algorithms",
+      "kind": "category",
+      "tags": []
+    },
+    {
+      "id": "lc:category:sweeping",
+      "parent": "lc:family:networks",
+      "title": "Event Sweeping",
+      "kind": "category",
+      "tags": []
+    },
+    {
+      "id": "lc:category:randomized",
+      "parent": "lc:family:networks",
+      "title": "Randomized Algorithms & Sampling",
+      "kind": "category",
+      "tags": []
+    },
+    {
+      "id": "lc:category:bit-family",
+      "parent": "lc:family:strategies",
+      "title": "Bit Manipulation & State Masks",
+      "kind": "category",
+      "tags": []
+    },
+    {
+      "id": "lc:category:sequence-techniques",
+      "parent": "lc:family:strategies",
+      "title": "Pointers, Windows & Prefixes",
+      "kind": "category",
+      "tags": []
+    },
+    {
+      "id": "lc:category:backtracking",
+      "parent": "lc:family:strategies",
+      "title": "Backtracking & Enumeration",
+      "kind": "category",
+      "tags": []
+    },
+    {
+      "id": "lc:category:decomposition",
+      "parent": "lc:family:strategies",
+      "title": "Recursion & Divide and Conquer",
+      "kind": "category",
+      "tags": []
+    },
+    {
+      "id": "lc:category:design",
+      "parent": "lc:family:strategies",
+      "title": "Design, Streams & Iterators",
+      "kind": "category",
+      "tags": []
+    },
+    {
+      "id": "lc:category:counting",
+      "parent": "lc:family:strategies",
+      "title": "Counting",
+      "kind": "category",
+      "tags": []
+    },
+    {
+      "id": "lc:category:simulation",
+      "parent": "lc:family:strategies",
+      "title": "Simulation",
+      "kind": "category",
+      "tags": []
+    },
+    {
+      "id": "lc:category:memoization",
+      "parent": "lc:family:strategies",
+      "title": "Memoization & State Caching",
+      "kind": "category",
+      "tags": []
+    },
+    {
+      "id": "lc:category:math",
+      "parent": "lc:family:models",
+      "title": "Mathematics",
+      "kind": "category",
+      "tags": []
+    },
+    {
+      "id": "lc:category:geometry",
+      "parent": "lc:family:models",
+      "title": "Computational Geometry",
+      "kind": "category",
+      "tags": []
+    },
+    {
+      "id": "lc:category:games",
+      "parent": "lc:family:models",
+      "title": "Game Theory",
+      "kind": "category",
+      "tags": []
+    },
+    {
+      "id": "lc:category:probability",
+      "parent": "lc:family:models",
+      "title": "Probability & Statistics",
+      "kind": "category",
+      "tags": []
+    },
+    {
+      "id": "lc:category:reasoning",
+      "parent": "lc:family:models",
+      "title": "Brainteasers",
+      "kind": "category",
+      "tags": []
+    },
+    {
+      "id": "lc:category:interactive",
+      "parent": "lc:family:models",
+      "title": "Interactive Protocols",
+      "kind": "category",
+      "tags": []
+    },
+    {
+      "id": "lc:category:database",
+      "parent": "lc:family:models",
+      "title": "Database",
+      "kind": "category",
+      "tags": []
+    },
+    {
+      "id": "lc:category:shell",
+      "parent": "lc:family:models",
+      "title": "Shell",
+      "kind": "category",
+      "tags": []
+    },
+    {
+      "id": "lc:category:concurrency",
+      "parent": "lc:family:models",
+      "title": "Concurrency",
+      "kind": "category",
+      "tags": []
+    },
+    {
+      "id": "lc:category:other",
+      "parent": "lc:family:models",
+      "title": "Placement Review",
+      "kind": "category",
+      "tags": []
+    },
+    {
+      "id": "lc:pattern:sequences",
+      "parent": "lc:category:arrays",
+      "title": "Array",
+      "kind": "pattern",
+      "tags": [
+        "Array"
+      ],
+      "semanticRole": "data structure",
+      "rationale": "Indexed sequence container; not evidence of a particular algorithm.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:strings",
+      "parent": "lc:category:arrays",
+      "title": "String",
+      "kind": "pattern",
+      "tags": [
+        "String"
+      ],
+      "semanticRole": "data structure",
+      "rationale": "Character sequence; string matching requires its own explicit tag.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:matrices",
+      "parent": "lc:category:arrays",
+      "title": "Matrix",
+      "kind": "pattern",
+      "tags": [
+        "Matrix"
+      ],
+      "semanticRole": "data structure",
+      "rationale": "Two-dimensional indexed container; not automatically a graph.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:lookup",
+      "parent": "lc:category:hashing",
+      "title": "Hash Table",
+      "kind": "pattern",
+      "tags": [
+        "Hash Table"
+      ],
+      "semanticRole": "data structure",
+      "rationale": "Hash-based lookup container; separate from hash functions.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:list-merge",
+      "parent": "lc:category:linked",
+      "title": "Linked List",
+      "kind": "pattern",
+      "tags": [
+        "Linked List"
+      ],
+      "semanticRole": "data structure",
+      "rationale": "Linked sequence; merging is not inferred from the tag.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:doubly-linked",
+      "parent": "lc:category:linked",
+      "title": "Doubly-Linked List",
+      "kind": "pattern",
+      "tags": [
+        "Doubly-Linked List"
+      ],
+      "semanticRole": "data structure",
+      "rationale": "Specializes linked lists with bidirectional links.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:stack",
+      "parent": "lc:category:stacks",
+      "title": "Stack",
+      "kind": "pattern",
+      "tags": [
+        "Stack"
+      ],
+      "semanticRole": "data structure",
+      "rationale": "LIFO container; bracket processing is not inferred.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:queue",
+      "parent": "lc:category:stacks",
+      "title": "Queue",
+      "kind": "pattern",
+      "tags": [
+        "Queue"
+      ],
+      "semanticRole": "data structure",
+      "rationale": "FIFO container.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:monotonic",
+      "parent": "lc:category:stacks",
+      "title": "Monotonic Stack",
+      "kind": "pattern",
+      "tags": [
+        "Monotonic Stack"
+      ],
+      "semanticRole": "problem-solving technique",
+      "rationale": "Ordered stack invariant; more specific than Stack.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:monotonic-queue",
+      "parent": "lc:category:stacks",
+      "title": "Monotonic Queue",
+      "kind": "pattern",
+      "tags": [
+        "Monotonic Queue"
+      ],
+      "semanticRole": "problem-solving technique",
+      "rationale": "Ordered queue invariant; separate from a stack.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:general-trees",
+      "parent": "lc:category:trees",
+      "title": "Tree",
+      "kind": "pattern",
+      "tags": [
+        "Tree"
+      ],
+      "semanticRole": "data structure",
+      "rationale": "General trees; does not assert binary branching.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:binary-trees",
+      "parent": "lc:category:trees",
+      "title": "Binary Tree",
+      "kind": "pattern",
+      "tags": [
+        "Binary Tree"
+      ],
+      "semanticRole": "data structure",
+      "rationale": "Binary trees specialize general trees.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:bst",
+      "parent": "lc:category:trees",
+      "title": "Binary Search Tree",
+      "kind": "pattern",
+      "tags": [
+        "Binary Search Tree"
+      ],
+      "semanticRole": "data structure",
+      "rationale": "Ordered binary tree specializes Binary Tree.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:graph-structure",
+      "parent": "lc:category:graph-structures",
+      "title": "Graph",
+      "kind": "pattern",
+      "tags": [
+        "Graph"
+      ],
+      "semanticRole": "data structure",
+      "rationale": "General vertex-edge structure; no traversal algorithm inferred.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:fenwick",
+      "parent": "lc:category:advanced",
+      "title": "Binary Indexed Tree",
+      "kind": "pattern",
+      "tags": [
+        "Binary Indexed Tree"
+      ],
+      "semanticRole": "data structure",
+      "rationale": "Fenwick indexed aggregation structure.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:segment-tree",
+      "parent": "lc:category:advanced",
+      "title": "Segment Tree",
+      "kind": "pattern",
+      "tags": [
+        "Segment Tree"
+      ],
+      "semanticRole": "data structure",
+      "rationale": "Hierarchical interval aggregation structure.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:heaps",
+      "parent": "lc:category:advanced",
+      "title": "Heap (Priority Queue)",
+      "kind": "pattern",
+      "tags": [
+        "Heap (Priority Queue)"
+      ],
+      "semanticRole": "data structure",
+      "rationale": "Priority access structure; not automatically greedy.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:tries",
+      "parent": "lc:category:advanced",
+      "title": "Trie",
+      "kind": "pattern",
+      "tags": [
+        "Trie"
+      ],
+      "semanticRole": "data structure",
+      "rationale": "Prefix-indexed tree; generic Tree tag is not inferred.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:ordered",
+      "parent": "lc:category:advanced",
+      "title": "Ordered Set",
+      "kind": "pattern",
+      "tags": [
+        "Ordered Set"
+      ],
+      "semanticRole": "data structure",
+      "rationale": "Ordered collection; implementation not inferred.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:disjoint",
+      "parent": "lc:category:advanced",
+      "title": "Union Find",
+      "kind": "pattern",
+      "tags": [
+        "Union Find"
+      ],
+      "semanticRole": "data structure",
+      "rationale": "Disjoint-set connectivity structure; exact source spelling retained.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:dfs",
+      "parent": "lc:category:graphs",
+      "title": "Depth-First Search",
+      "kind": "pattern",
+      "tags": [
+        "Depth-First Search"
+      ],
+      "semanticRole": "algorithm",
+      "rationale": "Depth-first traversal can apply to trees and implicit graphs.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:bfs",
+      "parent": "lc:category:graphs",
+      "title": "Breadth-First Search",
+      "kind": "pattern",
+      "tags": [
+        "Breadth-First Search"
+      ],
+      "semanticRole": "algorithm",
+      "rationale": "Breadth-first traversal can apply to trees and implicit graphs.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:shortest-paths",
+      "parent": "lc:category:graphs",
+      "title": "Shortest Path",
+      "kind": "pattern",
+      "tags": [
+        "Shortest Path"
+      ],
+      "semanticRole": "algorithm",
+      "rationale": "Explicit path-optimization algorithm family.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:ordering",
+      "parent": "lc:category:graphs",
+      "title": "Topological Sort",
+      "kind": "pattern",
+      "tags": [
+        "Topological Sort"
+      ],
+      "semanticRole": "algorithm",
+      "rationale": "Dependency ordering; not generic value sorting.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:spanning",
+      "parent": "lc:category:graphs",
+      "title": "Minimum Spanning Tree",
+      "kind": "pattern",
+      "tags": [
+        "Minimum Spanning Tree"
+      ],
+      "semanticRole": "algorithm",
+      "rationale": "Graph spanning optimization; not a binary-tree problem.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:biconnected",
+      "parent": "lc:category:graphs",
+      "title": "Biconnected Component",
+      "kind": "pattern",
+      "tags": [
+        "Biconnected Component"
+      ],
+      "semanticRole": "algorithm",
+      "rationale": "Graph connectivity decomposition.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:scc",
+      "parent": "lc:category:graphs",
+      "title": "Strongly Connected Component",
+      "kind": "pattern",
+      "tags": [
+        "Strongly Connected Component"
+      ],
+      "semanticRole": "algorithm",
+      "rationale": "Directed mutual-reachability decomposition.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:eulerian",
+      "parent": "lc:category:graphs",
+      "title": "Eulerian Circuit",
+      "kind": "pattern",
+      "tags": [
+        "Eulerian Circuit"
+      ],
+      "semanticRole": "algorithm",
+      "rationale": "Edge-covering graph circuit construction.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:sweep",
+      "parent": "lc:category:sweeping",
+      "title": "Line Sweep",
+      "kind": "pattern",
+      "tags": [
+        "Line Sweep"
+      ],
+      "semanticRole": "algorithm",
+      "rationale": "Event-order processing; exact source spelling, not inferred Geometry.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:binary-search",
+      "parent": "lc:category:search-sort",
+      "title": "Binary Search",
+      "kind": "pattern",
+      "tags": [
+        "Binary Search"
+      ],
+      "semanticRole": "algorithm",
+      "rationale": "Ordered search; not a binary-search-tree assertion.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:sorting",
+      "parent": "lc:category:search-sort",
+      "title": "Sorting",
+      "kind": "pattern",
+      "tags": [
+        "Sorting"
+      ],
+      "semanticRole": "algorithm",
+      "rationale": "General ordering; does not assert intervals.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:merge-sort",
+      "parent": "lc:category:search-sort",
+      "title": "Merge Sort",
+      "kind": "pattern",
+      "tags": [
+        "Merge Sort"
+      ],
+      "semanticRole": "algorithm",
+      "rationale": "Merge-based ordering specializes Sorting.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:bucket-sort",
+      "parent": "lc:category:search-sort",
+      "title": "Bucket Sort",
+      "kind": "pattern",
+      "tags": [
+        "Bucket Sort"
+      ],
+      "semanticRole": "algorithm",
+      "rationale": "Bucket-based ordering specializes Sorting.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:counting-sort",
+      "parent": "lc:category:search-sort",
+      "title": "Counting Sort",
+      "kind": "pattern",
+      "tags": [
+        "Counting Sort"
+      ],
+      "semanticRole": "algorithm",
+      "rationale": "Frequency-indexed ordering; distinct from general Counting.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:radix-sort",
+      "parent": "lc:category:search-sort",
+      "title": "Radix Sort",
+      "kind": "pattern",
+      "tags": [
+        "Radix Sort"
+      ],
+      "semanticRole": "algorithm",
+      "rationale": "Digit-based ordering specializes Sorting.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:quickselect",
+      "parent": "lc:category:search-sort",
+      "title": "Quickselect",
+      "kind": "pattern",
+      "tags": [
+        "Quickselect"
+      ],
+      "semanticRole": "algorithm",
+      "rationale": "Order-statistic selection; sorting all values is not asserted.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:dp-states",
+      "parent": "lc:category:dp",
+      "title": "Dynamic Programming",
+      "kind": "pattern",
+      "tags": [
+        "Dynamic Programming"
+      ],
+      "semanticRole": "algorithm",
+      "rationale": "State-transition optimization family.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:memoization",
+      "parent": "lc:category:memoization",
+      "title": "Memoization",
+      "kind": "pattern",
+      "tags": [
+        "Memoization"
+      ],
+      "semanticRole": "problem-solving technique",
+      "rationale": "Caching repeated states; dynamic programming is not added as a source tag.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:greedy",
+      "parent": "lc:category:greedy-family",
+      "title": "Greedy",
+      "kind": "pattern",
+      "tags": [
+        "Greedy"
+      ],
+      "semanticRole": "algorithm",
+      "rationale": "Local-choice algorithm family; not automatically a proof of optimality.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:string-matching",
+      "parent": "lc:category:string-algorithms",
+      "title": "String Matching",
+      "kind": "pattern",
+      "tags": [
+        "String Matching"
+      ],
+      "semanticRole": "algorithm",
+      "rationale": "Explicit string-search family.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:hash-function",
+      "parent": "lc:category:hash-algorithms",
+      "title": "Hash Function",
+      "kind": "pattern",
+      "tags": [
+        "Hash Function"
+      ],
+      "semanticRole": "algorithm",
+      "rationale": "Hash computation; does not assert Hash Table or string input.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:rolling-hash",
+      "parent": "lc:category:hash-algorithms",
+      "title": "Rolling Hash",
+      "kind": "pattern",
+      "tags": [
+        "Rolling Hash"
+      ],
+      "semanticRole": "algorithm",
+      "rationale": "Incrementally updated hashing specializes Hash Function.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:suffix-array",
+      "parent": "lc:category:string-algorithms",
+      "title": "Suffix Array",
+      "kind": "pattern",
+      "tags": [
+        "Suffix Array"
+      ],
+      "semanticRole": "data structure",
+      "rationale": "Suffix-order index used for string algorithms.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:randomized",
+      "parent": "lc:category:randomized",
+      "title": "Randomized",
+      "kind": "pattern",
+      "tags": [
+        "Randomized"
+      ],
+      "semanticRole": "algorithm",
+      "rationale": "Randomized algorithms, independent of mathematical-domain classification.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:reservoir",
+      "parent": "lc:category:randomized",
+      "title": "Reservoir Sampling",
+      "kind": "pattern",
+      "tags": [
+        "Reservoir Sampling"
+      ],
+      "semanticRole": "algorithm",
+      "rationale": "Sampling from streams; does not infer the Data Stream source tag.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:rejection",
+      "parent": "lc:category:randomized",
+      "title": "Rejection Sampling",
+      "kind": "pattern",
+      "tags": [
+        "Rejection Sampling"
+      ],
+      "semanticRole": "algorithm",
+      "rationale": "Sampling by acceptance/rejection.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:bits",
+      "parent": "lc:category:bit-family",
+      "title": "Bit Manipulation",
+      "kind": "pattern",
+      "tags": [
+        "Bit Manipulation"
+      ],
+      "semanticRole": "problem-solving technique",
+      "rationale": "Bitwise operations.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:bitmask",
+      "parent": "lc:category:bit-family",
+      "title": "Bitmask",
+      "kind": "pattern",
+      "tags": [
+        "Bitmask"
+      ],
+      "semanticRole": "problem-solving technique",
+      "rationale": "Bit-encoded state representation.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:two-pointers",
+      "parent": "lc:category:sequence-techniques",
+      "title": "Two Pointers",
+      "kind": "pattern",
+      "tags": [
+        "Two Pointers"
+      ],
+      "semanticRole": "problem-solving technique",
+      "rationale": "Coordinated sequence cursors.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:windows",
+      "parent": "lc:category:sequence-techniques",
+      "title": "Sliding Window",
+      "kind": "pattern",
+      "tags": [
+        "Sliding Window"
+      ],
+      "semanticRole": "problem-solving technique",
+      "rationale": "Moving active sequence interval.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:prefix",
+      "parent": "lc:category:sequence-techniques",
+      "title": "Prefix Sum",
+      "kind": "pattern",
+      "tags": [
+        "Prefix Sum"
+      ],
+      "semanticRole": "problem-solving technique",
+      "rationale": "Prefix aggregation; not a matrix-only technique.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:backtracking-search",
+      "parent": "lc:category:backtracking",
+      "title": "Backtracking",
+      "kind": "pattern",
+      "tags": [
+        "Backtracking"
+      ],
+      "semanticRole": "problem-solving technique",
+      "rationale": "Search with reversible choices.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:enumeration",
+      "parent": "lc:category:backtracking",
+      "title": "Enumeration",
+      "kind": "pattern",
+      "tags": [
+        "Enumeration"
+      ],
+      "semanticRole": "problem-solving technique",
+      "rationale": "Candidate enumeration; does not imply backtracking.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:divide",
+      "parent": "lc:category:decomposition",
+      "title": "Divide and Conquer",
+      "kind": "pattern",
+      "tags": [
+        "Divide and Conquer"
+      ],
+      "semanticRole": "problem-solving technique",
+      "rationale": "Recursive splitting; not restricted to sorting.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:recursive",
+      "parent": "lc:category:decomposition",
+      "title": "Recursion",
+      "kind": "pattern",
+      "tags": [
+        "Recursion"
+      ],
+      "semanticRole": "problem-solving technique",
+      "rationale": "Recursive formulation; not automatically backtracking.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:design",
+      "parent": "lc:category:design",
+      "title": "Design",
+      "kind": "pattern",
+      "tags": [
+        "Design"
+      ],
+      "semanticRole": "problem-solving technique",
+      "rationale": "Explicit interface/design task; underlying container tags remain secondary.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:data-stream",
+      "parent": "lc:category:design",
+      "title": "Data Stream",
+      "kind": "pattern",
+      "tags": [
+        "Data Stream"
+      ],
+      "semanticRole": "specialized problem domain",
+      "rationale": "Incremental stream interface, independent of a particular data structure.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:iterator",
+      "parent": "lc:category:design",
+      "title": "Iterator",
+      "kind": "pattern",
+      "tags": [
+        "Iterator"
+      ],
+      "semanticRole": "problem-solving technique",
+      "rationale": "Iteration interface, independent of its underlying container.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:counting",
+      "parent": "lc:category:counting",
+      "title": "Counting",
+      "kind": "pattern",
+      "tags": [
+        "Counting"
+      ],
+      "semanticRole": "problem-solving technique",
+      "rationale": "Counting objectives/aggregation; not necessarily hashing or Counting Sort.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:simulation",
+      "parent": "lc:category:simulation",
+      "title": "Simulation",
+      "kind": "pattern",
+      "tags": [
+        "Simulation"
+      ],
+      "semanticRole": "problem-solving technique",
+      "rationale": "Explicit process simulation.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:arithmetic",
+      "parent": "lc:category:math",
+      "title": "Math",
+      "kind": "pattern",
+      "tags": [
+        "Math"
+      ],
+      "semanticRole": "specialized problem domain",
+      "rationale": "Broad mathematical domain; no specific subfield inferred.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:number-theory",
+      "parent": "lc:category:math",
+      "title": "Number Theory",
+      "kind": "pattern",
+      "tags": [
+        "Number Theory"
+      ],
+      "semanticRole": "specialized problem domain",
+      "rationale": "Integer arithmetic and number-theoretic structure.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:combinatorics",
+      "parent": "lc:category:math",
+      "title": "Combinatorics",
+      "kind": "pattern",
+      "tags": [
+        "Combinatorics"
+      ],
+      "semanticRole": "specialized problem domain",
+      "rationale": "Discrete counting arrangements; separate from generic Counting.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:geometry",
+      "parent": "lc:category:geometry",
+      "title": "Geometry",
+      "kind": "pattern",
+      "tags": [
+        "Geometry"
+      ],
+      "semanticRole": "specialized problem domain",
+      "rationale": "Spatial/geometric domain.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:games",
+      "parent": "lc:category:games",
+      "title": "Game Theory",
+      "kind": "pattern",
+      "tags": [
+        "Game Theory"
+      ],
+      "semanticRole": "specialized problem domain",
+      "rationale": "Strategic game models; not inferred from a title.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:probability",
+      "parent": "lc:category:probability",
+      "title": "Probability and Statistics",
+      "kind": "pattern",
+      "tags": [
+        "Probability and Statistics"
+      ],
+      "semanticRole": "specialized problem domain",
+      "rationale": "Probabilistic/statistical domain; not synonymous with Randomized.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:brainteaser",
+      "parent": "lc:category:reasoning",
+      "title": "Brainteaser",
+      "kind": "pattern",
+      "tags": [
+        "Brainteaser"
+      ],
+      "semanticRole": "specialized problem domain",
+      "rationale": "Source-provided reasoning label; no invented mathematical subtopic.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:interactive",
+      "parent": "lc:category:interactive",
+      "title": "Interactive",
+      "kind": "pattern",
+      "tags": [
+        "Interactive"
+      ],
+      "semanticRole": "specialized problem domain",
+      "rationale": "Interactive protocol boundary, distinct from the search algorithm.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:database",
+      "parent": "lc:category:database",
+      "title": "Database",
+      "kind": "pattern",
+      "tags": [
+        "Database"
+      ],
+      "semanticRole": "specialized problem domain",
+      "rationale": "Query/data-management domain; included without claiming an algorithm-only catalog.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:shell",
+      "parent": "lc:category:shell",
+      "title": "Shell",
+      "kind": "pattern",
+      "tags": [
+        "Shell"
+      ],
+      "semanticRole": "specialized problem domain",
+      "rationale": "Shell task domain, separate from general algorithm techniques.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:concurrency",
+      "parent": "lc:category:concurrency",
+      "title": "Concurrency",
+      "kind": "pattern",
+      "tags": [
+        "Concurrency"
+      ],
+      "semanticRole": "specialized problem domain",
+      "rationale": "Concurrent coordination domain.",
+      "sourceEvidence": "literal tag in pinned local evaluation snapshot; no official hierarchy claim"
+    },
+    {
+      "id": "lc:pattern:intervals",
+      "parent": "lc:category:arrays",
+      "title": "Interval processing",
+      "kind": "pattern",
+      "tags": [],
+      "evidence": [
+        "source:merge-intervals",
+        "source:the-skyline-problem"
+      ],
+      "rationale": "Retained individually curated concept; never inferred from a broad source tag."
+    },
+    {
+      "id": "lc:pattern:cartesian",
+      "parent": "lc:category:trees",
+      "title": "Cartesian trees",
+      "kind": "pattern",
+      "tags": [],
+      "evidence": [
+        "source:maximum-binary-tree"
+      ],
+      "rationale": "Retained individually curated concept; never inferred from a broad source tag."
+    },
+    {
+      "id": "lc:pattern:traversal",
+      "parent": "lc:category:graphs",
+      "title": "Traversal & connectivity",
+      "kind": "pattern",
+      "tags": [],
+      "evidence": [
+        "source:maximum-depth-of-binary-tree",
+        "source:number-of-islands",
+        "source:coin-change",
+        "source:network-delay-time",
+        "source:course-schedule",
+        "source:min-cost-to-connect-all-points",
+        "source:shortest-path-visiting-all-nodes"
+      ],
+      "rationale": "Retained individually curated concept; never inferred from a broad source tag."
+    },
+    {
+      "id": "lc:pattern:range-queries",
+      "parent": "lc:category:advanced",
+      "title": "Range query structures",
+      "kind": "pattern",
+      "tags": [],
+      "evidence": [
+        "source:the-skyline-problem",
+        "source:range-frequency-queries"
+      ],
+      "rationale": "Retained individually curated concept; never inferred from a broad source tag."
+    },
+    {
+      "id": "lc:pattern:knapsack",
+      "parent": "lc:category:dp",
+      "title": "Knapsack families",
+      "kind": "pattern",
+      "tags": [],
+      "evidence": [
+        "source:coin-change",
+        "source:partition-equal-subset-sum"
+      ],
+      "rationale": "Retained individually curated concept; never inferred from a broad source tag."
+    },
+    {
+      "id": "lc:pattern:home-arrays",
+      "parent": "lc:category:arrays",
+      "title": "Arrays & Strings — multiple methods",
+      "kind": "pattern",
+      "tags": [],
+      "rationale": "Neutral visual home for equally evidenced concepts in this category; no method ranked first."
+    },
+    {
+      "id": "lc:pattern:home-hashing",
+      "parent": "lc:category:hashing",
+      "title": "Hash Tables — multiple methods",
+      "kind": "pattern",
+      "tags": [],
+      "rationale": "Neutral visual home for equally evidenced concepts in this category; no method ranked first."
+    },
+    {
+      "id": "lc:pattern:home-linked",
+      "parent": "lc:category:linked",
+      "title": "Linked Lists — multiple methods",
+      "kind": "pattern",
+      "tags": [],
+      "rationale": "Neutral visual home for equally evidenced concepts in this category; no method ranked first."
+    },
+    {
+      "id": "lc:pattern:home-stacks",
+      "parent": "lc:category:stacks",
+      "title": "Stacks & Queues — multiple methods",
+      "kind": "pattern",
+      "tags": [],
+      "rationale": "Neutral visual home for equally evidenced concepts in this category; no method ranked first."
+    },
+    {
+      "id": "lc:pattern:home-trees",
+      "parent": "lc:category:trees",
+      "title": "Trees — multiple methods",
+      "kind": "pattern",
+      "tags": [],
+      "rationale": "Neutral visual home for equally evidenced concepts in this category; no method ranked first."
+    },
+    {
+      "id": "lc:pattern:home-graph-structures",
+      "parent": "lc:category:graph-structures",
+      "title": "Graph Structures — multiple methods",
+      "kind": "pattern",
+      "tags": [],
+      "rationale": "Neutral visual home for equally evidenced concepts in this category; no method ranked first."
+    },
+    {
+      "id": "lc:pattern:home-advanced",
+      "parent": "lc:category:advanced",
+      "title": "Advanced Data Structures — multiple methods",
+      "kind": "pattern",
+      "tags": [],
+      "rationale": "Neutral visual home for equally evidenced concepts in this category; no method ranked first."
+    },
+    {
+      "id": "lc:pattern:home-search-sort",
+      "parent": "lc:category:search-sort",
+      "title": "Searching, Sorting & Selection — multiple methods",
+      "kind": "pattern",
+      "tags": [],
+      "rationale": "Neutral visual home for equally evidenced concepts in this category; no method ranked first."
+    },
+    {
+      "id": "lc:pattern:home-graphs",
+      "parent": "lc:category:graphs",
+      "title": "Graph & Traversal Algorithms — multiple methods",
+      "kind": "pattern",
+      "tags": [],
+      "rationale": "Neutral visual home for equally evidenced concepts in this category; no method ranked first."
+    },
+    {
+      "id": "lc:pattern:home-dp",
+      "parent": "lc:category:dp",
+      "title": "Dynamic Programming — multiple methods",
+      "kind": "pattern",
+      "tags": [],
+      "rationale": "Neutral visual home for equally evidenced concepts in this category; no method ranked first."
+    },
+    {
+      "id": "lc:pattern:home-greedy-family",
+      "parent": "lc:category:greedy-family",
+      "title": "Greedy — multiple methods",
+      "kind": "pattern",
+      "tags": [],
+      "rationale": "Neutral visual home for equally evidenced concepts in this category; no method ranked first."
+    },
+    {
+      "id": "lc:pattern:home-string-algorithms",
+      "parent": "lc:category:string-algorithms",
+      "title": "String Algorithms — multiple methods",
+      "kind": "pattern",
+      "tags": [],
+      "rationale": "Neutral visual home for equally evidenced concepts in this category; no method ranked first."
+    },
+    {
+      "id": "lc:pattern:home-hash-algorithms",
+      "parent": "lc:category:hash-algorithms",
+      "title": "Hash Algorithms — multiple methods",
+      "kind": "pattern",
+      "tags": [],
+      "rationale": "Neutral visual home for equally evidenced concepts in this category; no method ranked first."
+    },
+    {
+      "id": "lc:pattern:home-sweeping",
+      "parent": "lc:category:sweeping",
+      "title": "Event Sweeping — multiple methods",
+      "kind": "pattern",
+      "tags": [],
+      "rationale": "Neutral visual home for equally evidenced concepts in this category; no method ranked first."
+    },
+    {
+      "id": "lc:pattern:home-randomized",
+      "parent": "lc:category:randomized",
+      "title": "Randomized Algorithms & Sampling — multiple methods",
+      "kind": "pattern",
+      "tags": [],
+      "rationale": "Neutral visual home for equally evidenced concepts in this category; no method ranked first."
+    },
+    {
+      "id": "lc:pattern:home-bit-family",
+      "parent": "lc:category:bit-family",
+      "title": "Bit Manipulation & State Masks — multiple methods",
+      "kind": "pattern",
+      "tags": [],
+      "rationale": "Neutral visual home for equally evidenced concepts in this category; no method ranked first."
+    },
+    {
+      "id": "lc:pattern:home-sequence-techniques",
+      "parent": "lc:category:sequence-techniques",
+      "title": "Pointers, Windows & Prefixes — multiple methods",
+      "kind": "pattern",
+      "tags": [],
+      "rationale": "Neutral visual home for equally evidenced concepts in this category; no method ranked first."
+    },
+    {
+      "id": "lc:pattern:home-backtracking",
+      "parent": "lc:category:backtracking",
+      "title": "Backtracking & Enumeration — multiple methods",
+      "kind": "pattern",
+      "tags": [],
+      "rationale": "Neutral visual home for equally evidenced concepts in this category; no method ranked first."
+    },
+    {
+      "id": "lc:pattern:home-decomposition",
+      "parent": "lc:category:decomposition",
+      "title": "Recursion & Divide and Conquer — multiple methods",
+      "kind": "pattern",
+      "tags": [],
+      "rationale": "Neutral visual home for equally evidenced concepts in this category; no method ranked first."
+    },
+    {
+      "id": "lc:pattern:home-design",
+      "parent": "lc:category:design",
+      "title": "Design, Streams & Iterators — multiple methods",
+      "kind": "pattern",
+      "tags": [],
+      "rationale": "Neutral visual home for equally evidenced concepts in this category; no method ranked first."
+    },
+    {
+      "id": "lc:pattern:home-counting",
+      "parent": "lc:category:counting",
+      "title": "Counting — multiple methods",
+      "kind": "pattern",
+      "tags": [],
+      "rationale": "Neutral visual home for equally evidenced concepts in this category; no method ranked first."
+    },
+    {
+      "id": "lc:pattern:home-simulation",
+      "parent": "lc:category:simulation",
+      "title": "Simulation — multiple methods",
+      "kind": "pattern",
+      "tags": [],
+      "rationale": "Neutral visual home for equally evidenced concepts in this category; no method ranked first."
+    },
+    {
+      "id": "lc:pattern:home-memoization",
+      "parent": "lc:category:memoization",
+      "title": "Memoization & State Caching — multiple methods",
+      "kind": "pattern",
+      "tags": [],
+      "rationale": "Neutral visual home for equally evidenced concepts in this category; no method ranked first."
+    },
+    {
+      "id": "lc:pattern:home-math",
+      "parent": "lc:category:math",
+      "title": "Mathematics — multiple methods",
+      "kind": "pattern",
+      "tags": [],
+      "rationale": "Neutral visual home for equally evidenced concepts in this category; no method ranked first."
+    },
+    {
+      "id": "lc:pattern:home-geometry",
+      "parent": "lc:category:geometry",
+      "title": "Computational Geometry — multiple methods",
+      "kind": "pattern",
+      "tags": [],
+      "rationale": "Neutral visual home for equally evidenced concepts in this category; no method ranked first."
+    },
+    {
+      "id": "lc:pattern:home-games",
+      "parent": "lc:category:games",
+      "title": "Game Theory — multiple methods",
+      "kind": "pattern",
+      "tags": [],
+      "rationale": "Neutral visual home for equally evidenced concepts in this category; no method ranked first."
+    },
+    {
+      "id": "lc:pattern:home-probability",
+      "parent": "lc:category:probability",
+      "title": "Probability & Statistics — multiple methods",
+      "kind": "pattern",
+      "tags": [],
+      "rationale": "Neutral visual home for equally evidenced concepts in this category; no method ranked first."
+    },
+    {
+      "id": "lc:pattern:home-reasoning",
+      "parent": "lc:category:reasoning",
+      "title": "Brainteasers — multiple methods",
+      "kind": "pattern",
+      "tags": [],
+      "rationale": "Neutral visual home for equally evidenced concepts in this category; no method ranked first."
+    },
+    {
+      "id": "lc:pattern:home-interactive",
+      "parent": "lc:category:interactive",
+      "title": "Interactive Protocols — multiple methods",
+      "kind": "pattern",
+      "tags": [],
+      "rationale": "Neutral visual home for equally evidenced concepts in this category; no method ranked first."
+    },
+    {
+      "id": "lc:pattern:home-database",
+      "parent": "lc:category:database",
+      "title": "Database — multiple methods",
+      "kind": "pattern",
+      "tags": [],
+      "rationale": "Neutral visual home for equally evidenced concepts in this category; no method ranked first."
+    },
+    {
+      "id": "lc:pattern:home-shell",
+      "parent": "lc:category:shell",
+      "title": "Shell — multiple methods",
+      "kind": "pattern",
+      "tags": [],
+      "rationale": "Neutral visual home for equally evidenced concepts in this category; no method ranked first."
+    },
+    {
+      "id": "lc:pattern:home-concurrency",
+      "parent": "lc:category:concurrency",
+      "title": "Concurrency — multiple methods",
+      "kind": "pattern",
+      "tags": [],
+      "rationale": "Neutral visual home for equally evidenced concepts in this category; no method ranked first."
+    },
+    {
+      "id": "lc:pattern:unclassified",
+      "parent": "lc:category:other",
+      "title": "Missing source tags — review",
+      "kind": "pattern",
+      "tags": [],
+      "rationale": "No algorithm/domain inferred from title, difficulty or number."
+    },
+    {
+      "id": "lc:pattern:ambiguous",
+      "parent": "lc:category:other",
+      "title": "Multiple candidate homes — review",
+      "kind": "pattern",
+      "tags": [],
+      "rationale": "Incomparable categories require individual review; every source association remains navigable."
+    }
+  ]
+}

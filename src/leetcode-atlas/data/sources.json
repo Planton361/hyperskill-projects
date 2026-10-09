@@ -1,0 +1,497 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": "source:two-sum",
+      "url": "https://leetcode.com/problems/two-sum/",
+      "publisher": "LeetCode",
+      "reviewedAt": "2026-10-08",
+      "method": "individual review of public search-indexed official page metadata",
+      "observedTopicTags": [
+        "Array",
+        "Hash Table"
+      ],
+      "retainedContent": "metadata only",
+      "limitations": "Search index may lag live metadata. Company lock icons do not establish Premium-only problem status."
+    },
+    {
+      "id": "source:longest-substring-without-repeating-characters",
+      "url": "https://leetcode.com/problems/longest-substring-without-repeating-characters/",
+      "publisher": "LeetCode",
+      "reviewedAt": "2026-10-08",
+      "method": "individual review of public search-indexed official page metadata",
+      "observedTopicTags": [
+        "Hash Table",
+        "String",
+        "Sliding Window"
+      ],
+      "retainedContent": "metadata only",
+      "limitations": "Search index may lag live metadata. Company lock icons do not establish Premium-only problem status."
+    },
+    {
+      "id": "source:valid-parentheses",
+      "url": "https://leetcode.com/problems/valid-parentheses/",
+      "publisher": "LeetCode",
+      "reviewedAt": "2026-10-08",
+      "method": "individual review of public search-indexed official page metadata",
+      "observedTopicTags": [
+        "String",
+        "Stack",
+        "Bracket Sequences"
+      ],
+      "retainedContent": "metadata only",
+      "limitations": "Search index may lag live metadata. Company lock icons do not establish Premium-only problem status."
+    },
+    {
+      "id": "source:merge-k-sorted-lists",
+      "url": "https://leetcode.com/problems/merge-k-sorted-lists/",
+      "publisher": "LeetCode",
+      "reviewedAt": "2026-10-08",
+      "method": "individual review of public search-indexed official page metadata",
+      "observedTopicTags": [
+        "Linked List",
+        "Divide and Conquer",
+        "Heap (Priority Queue)",
+        "Merge Sort",
+        "Tournament Sort"
+      ],
+      "retainedContent": "metadata only",
+      "limitations": "Search index may lag live metadata. Company lock icons do not establish Premium-only problem status."
+    },
+    {
+      "id": "source:spiral-matrix",
+      "url": "https://leetcode.com/problems/spiral-matrix/",
+      "publisher": "LeetCode",
+      "reviewedAt": "2026-10-08",
+      "method": "individual review of public search-indexed official page metadata",
+      "observedTopicTags": [
+        "Array",
+        "Matrix",
+        "Simulation"
+      ],
+      "retainedContent": "metadata only",
+      "limitations": "Search index may lag live metadata. Company lock icons do not establish Premium-only problem status."
+    },
+    {
+      "id": "source:jump-game",
+      "url": "https://leetcode.com/problems/jump-game/",
+      "publisher": "LeetCode",
+      "reviewedAt": "2026-10-08",
+      "method": "individual review of public search-indexed official page metadata",
+      "observedTopicTags": [
+        "Array",
+        "Dynamic Programming",
+        "Greedy"
+      ],
+      "retainedContent": "metadata only",
+      "limitations": "Search index may lag live metadata. Company lock icons do not establish Premium-only problem status."
+    },
+    {
+      "id": "source:merge-intervals",
+      "url": "https://leetcode.com/problems/merge-intervals/",
+      "publisher": "LeetCode",
+      "reviewedAt": "2026-10-08",
+      "method": "individual review of public search-indexed official page metadata",
+      "observedTopicTags": [
+        "Array",
+        "Sorting",
+        "Quicksort"
+      ],
+      "retainedContent": "metadata only",
+      "limitations": "Search index may lag live metadata. Company lock icons do not establish Premium-only problem status."
+    },
+    {
+      "id": "source:subsets",
+      "url": "https://leetcode.com/problems/subsets/",
+      "publisher": "LeetCode",
+      "reviewedAt": "2026-10-08",
+      "method": "individual review of public search-indexed official page metadata",
+      "observedTopicTags": [
+        "Array",
+        "Backtracking",
+        "Bit Manipulation"
+      ],
+      "retainedContent": "metadata only",
+      "limitations": "Search index may lag live metadata. Company lock icons do not establish Premium-only problem status."
+    },
+    {
+      "id": "source:maximum-depth-of-binary-tree",
+      "url": "https://leetcode.com/problems/maximum-depth-of-binary-tree/",
+      "publisher": "LeetCode",
+      "reviewedAt": "2026-10-08",
+      "method": "individual review of public search-indexed official page metadata",
+      "observedTopicTags": [
+        "Tree",
+        "Depth-First Search",
+        "Breadth-First Search",
+        "Binary Tree"
+      ],
+      "retainedContent": "metadata only",
+      "limitations": "Search index may lag live metadata. Company lock icons do not establish Premium-only problem status."
+    },
+    {
+      "id": "source:single-number",
+      "url": "https://leetcode.com/problems/single-number/",
+      "publisher": "LeetCode",
+      "reviewedAt": "2026-10-08",
+      "method": "individual review of public search-indexed official page metadata",
+      "observedTopicTags": [
+        "Array",
+        "Bit Manipulation"
+      ],
+      "retainedContent": "metadata only",
+      "limitations": "Search index may lag live metadata. Company lock icons do not establish Premium-only problem status."
+    },
+    {
+      "id": "source:lru-cache",
+      "url": "https://leetcode.com/problems/lru-cache/",
+      "publisher": "LeetCode",
+      "reviewedAt": "2026-10-08",
+      "method": "individual review of public search-indexed official page metadata",
+      "observedTopicTags": [
+        "Hash Table",
+        "Linked List",
+        "Design",
+        "Doubly-Linked List"
+      ],
+      "retainedContent": "metadata only",
+      "limitations": "Search index may lag live metadata. Company lock icons do not establish Premium-only problem status."
+    },
+    {
+      "id": "source:number-of-islands",
+      "url": "https://leetcode.com/problems/number-of-islands/",
+      "publisher": "LeetCode",
+      "reviewedAt": "2026-10-08",
+      "method": "individual review of public search-indexed official page metadata",
+      "observedTopicTags": [
+        "Array",
+        "Depth-First Search",
+        "Breadth-First Search",
+        "Union-Find",
+        "Matrix"
+      ],
+      "retainedContent": "metadata only",
+      "limitations": "Search index may lag live metadata. Company lock icons do not establish Premium-only problem status."
+    },
+    {
+      "id": "source:count-primes",
+      "url": "https://leetcode.com/problems/count-primes/",
+      "publisher": "LeetCode",
+      "reviewedAt": "2026-10-08",
+      "method": "individual review of public search-indexed official page metadata",
+      "observedTopicTags": [
+        "Array",
+        "Math",
+        "Enumeration",
+        "Number Theory",
+        "Primality Test",
+        "Sieve Theory",
+        "Prime Number Sieve"
+      ],
+      "retainedContent": "metadata only",
+      "limitations": "Search index may lag live metadata. Company lock icons do not establish Premium-only problem status."
+    },
+    {
+      "id": "source:the-skyline-problem",
+      "url": "https://leetcode.com/problems/the-skyline-problem/",
+      "publisher": "LeetCode",
+      "reviewedAt": "2026-10-08",
+      "method": "individual review of public search-indexed official page metadata",
+      "observedTopicTags": [
+        "Array",
+        "Divide and Conquer",
+        "Binary Indexed Tree",
+        "Segment Tree",
+        "Sweep Line",
+        "Sorting",
+        "Heap (Priority Queue)",
+        "Ordered Set"
+      ],
+      "retainedContent": "metadata only",
+      "limitations": "Search index may lag live metadata. Company lock icons do not establish Premium-only problem status."
+    },
+    {
+      "id": "source:coin-change",
+      "url": "https://leetcode.com/problems/coin-change/",
+      "publisher": "LeetCode",
+      "reviewedAt": "2026-10-08",
+      "method": "individual review of public search-indexed official page metadata",
+      "observedTopicTags": [
+        "Array",
+        "Dynamic Programming",
+        "Breadth-First Search",
+        "Knapsack Problem",
+        "Complete Knapsack"
+      ],
+      "retainedContent": "metadata only",
+      "limitations": "Search index may lag live metadata. Company lock icons do not establish Premium-only problem status."
+    },
+    {
+      "id": "source:random-pick-with-weight",
+      "url": "https://leetcode.com/problems/random-pick-with-weight/",
+      "publisher": "LeetCode",
+      "reviewedAt": "2026-10-08",
+      "method": "individual review of public search-indexed official page metadata",
+      "observedTopicTags": [
+        "Array",
+        "Math",
+        "Binary Search",
+        "Prefix Sum",
+        "Randomized"
+      ],
+      "retainedContent": "metadata only",
+      "limitations": "Search index may lag live metadata. Company lock icons do not establish Premium-only problem status."
+    },
+    {
+      "id": "source:binary-search",
+      "url": "https://leetcode.com/problems/binary-search/",
+      "publisher": "LeetCode",
+      "reviewedAt": "2026-10-08",
+      "method": "individual review of public search-indexed official page metadata",
+      "observedTopicTags": [
+        "Array",
+        "Binary Search"
+      ],
+      "retainedContent": "metadata only",
+      "limitations": "Search index may lag live metadata. Company lock icons do not establish Premium-only problem status."
+    },
+    {
+      "id": "source:range-frequency-queries",
+      "url": "https://leetcode.com/problems/range-frequency-queries/",
+      "publisher": "LeetCode",
+      "reviewedAt": "2026-10-08",
+      "method": "individual review of public search-indexed official page metadata",
+      "observedTopicTags": [
+        "Array",
+        "Hash Table",
+        "Binary Search",
+        "Design",
+        "Segment Tree"
+      ],
+      "retainedContent": "metadata only",
+      "limitations": "Search index may lag live metadata. Company lock icons do not establish Premium-only problem status."
+    },
+    {
+      "id": "source:implement-trie-prefix-tree",
+      "url": "https://leetcode.com/problems/implement-trie-prefix-tree/",
+      "publisher": "LeetCode",
+      "reviewedAt": "2026-10-08",
+      "method": "individual review of public search-indexed official page metadata",
+      "observedTopicTags": [
+        "Hash Table",
+        "String",
+        "Design",
+        "Trie"
+      ],
+      "retainedContent": "metadata only",
+      "limitations": "Search index may lag live metadata. Company lock icons do not establish Premium-only problem status."
+    },
+    {
+      "id": "source:network-delay-time",
+      "url": "https://leetcode.com/problems/network-delay-time/",
+      "publisher": "LeetCode",
+      "reviewedAt": "2026-10-08",
+      "method": "individual review of public search-indexed official page metadata",
+      "observedTopicTags": [
+        "Depth-First Search",
+        "Breadth-First Search",
+        "Graph Theory",
+        "Heap (Priority Queue)",
+        "Shortest Path",
+        "Dijkstra's Algorithm"
+      ],
+      "retainedContent": "metadata only",
+      "limitations": "Search index may lag live metadata. Company lock icons do not establish Premium-only problem status."
+    },
+    {
+      "id": "source:course-schedule",
+      "url": "https://leetcode.com/problems/course-schedule/",
+      "publisher": "LeetCode",
+      "reviewedAt": "2026-10-08",
+      "method": "individual review of public search-indexed official page metadata",
+      "observedTopicTags": [
+        "Depth-First Search",
+        "Breadth-First Search",
+        "Graph Theory",
+        "Topological Sort",
+        "Directed Acyclic Graph"
+      ],
+      "retainedContent": "metadata only",
+      "limitations": "Search index may lag live metadata. Company lock icons do not establish Premium-only problem status."
+    },
+    {
+      "id": "source:guess-number-higher-or-lower",
+      "url": "https://leetcode.com/problems/guess-number-higher-or-lower/",
+      "publisher": "LeetCode",
+      "reviewedAt": "2026-10-08",
+      "method": "individual review of public search-indexed official page metadata",
+      "observedTopicTags": [
+        "Binary Search",
+        "Interactive"
+      ],
+      "retainedContent": "metadata only",
+      "limitations": "Search index may lag live metadata. Company lock icons do not establish Premium-only problem status."
+    },
+    {
+      "id": "source:check-if-it-is-a-straight-line",
+      "url": "https://leetcode.com/problems/check-if-it-is-a-straight-line/",
+      "publisher": "LeetCode",
+      "reviewedAt": "2026-10-08",
+      "method": "individual review of public search-indexed official page metadata",
+      "observedTopicTags": [
+        "Array",
+        "Math",
+        "Geometry"
+      ],
+      "retainedContent": "metadata only",
+      "limitations": "Search index may lag live metadata. Company lock icons do not establish Premium-only problem status."
+    },
+    {
+      "id": "source:jump-game-vi",
+      "url": "https://leetcode.com/problems/jump-game-vi/",
+      "publisher": "LeetCode",
+      "reviewedAt": "2026-10-08",
+      "method": "individual review of public search-indexed official page metadata",
+      "observedTopicTags": [
+        "Array",
+        "Dynamic Programming",
+        "Queue",
+        "Heap (Priority Queue)",
+        "Monotonic Queue"
+      ],
+      "retainedContent": "metadata only",
+      "limitations": "Search index may lag live metadata. Company lock icons do not establish Premium-only problem status."
+    },
+    {
+      "id": "source:maximum-binary-tree",
+      "url": "https://leetcode.com/problems/maximum-binary-tree/",
+      "publisher": "LeetCode",
+      "reviewedAt": "2026-10-08",
+      "method": "individual review of public search-indexed official page metadata",
+      "observedTopicTags": [
+        "Array",
+        "Divide and Conquer",
+        "Stack",
+        "Tree",
+        "Monotonic Stack",
+        "Binary Tree",
+        "Cartesian Tree"
+      ],
+      "retainedContent": "metadata only",
+      "limitations": "Search index may lag live metadata. Company lock icons do not establish Premium-only problem status."
+    },
+    {
+      "id": "source:find-the-index-of-the-first-occurrence-in-a-string",
+      "url": "https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/",
+      "publisher": "LeetCode",
+      "reviewedAt": "2026-10-08",
+      "method": "individual review of public search-indexed official page metadata",
+      "observedTopicTags": [
+        "Two Pointers",
+        "String",
+        "String Matching",
+        "Z Algorithm",
+        "Knuth–Morris–Pratt Algorithm",
+        "Boyer–Moore String-Search Algorithm"
+      ],
+      "retainedContent": "metadata only",
+      "limitations": "Search index may lag live metadata. Only topic tags retained; no problem content."
+    },
+    {
+      "id": "source:min-cost-to-connect-all-points",
+      "url": "https://leetcode.com/problems/min-cost-to-connect-all-points/",
+      "publisher": "LeetCode",
+      "reviewedAt": "2026-10-08",
+      "method": "individual review of public search-indexed official page metadata",
+      "observedTopicTags": [
+        "Array",
+        "Union-Find",
+        "Graph Theory",
+        "Minimum Spanning Tree",
+        "Prim's Algorithm",
+        "Kruskal's Algorithm",
+        "Borůvka's Algorithm"
+      ],
+      "retainedContent": "metadata only",
+      "limitations": "Search index may lag live metadata. Only topic tags retained; no problem content."
+    },
+    {
+      "id": "source:stone-game",
+      "url": "https://leetcode.com/problems/stone-game/",
+      "publisher": "LeetCode",
+      "reviewedAt": "2026-10-08",
+      "method": "individual review of public search-indexed official page metadata",
+      "observedTopicTags": [
+        "Array",
+        "Math",
+        "Dynamic Programming",
+        "Minimax",
+        "Game Theory",
+        "Zero-Sum Game"
+      ],
+      "retainedContent": "metadata only",
+      "limitations": "Search index may lag live metadata. Only topic tags retained; no problem content."
+    },
+    {
+      "id": "source:partition-equal-subset-sum",
+      "url": "https://leetcode.com/problems/partition-equal-subset-sum/",
+      "publisher": "LeetCode",
+      "reviewedAt": "2026-10-08",
+      "method": "individual review of public search-indexed official page metadata",
+      "observedTopicTags": [
+        "Array",
+        "Dynamic Programming",
+        "Knapsack Problem",
+        "0-1 Knapsack"
+      ],
+      "retainedContent": "metadata only",
+      "limitations": "Search index may lag live metadata. Only topic tags retained; no problem content."
+    },
+    {
+      "id": "source:fibonacci-number",
+      "url": "https://leetcode.com/problems/fibonacci-number/",
+      "publisher": "LeetCode",
+      "reviewedAt": "2026-10-08",
+      "method": "individual review of public search-indexed official page metadata",
+      "observedTopicTags": [
+        "Math",
+        "Dynamic Programming",
+        "Recursion",
+        "Memoization"
+      ],
+      "retainedContent": "metadata only",
+      "limitations": "Search index may lag live metadata. Only topic tags retained; no problem content."
+    },
+    {
+      "id": "source:shortest-path-visiting-all-nodes",
+      "url": "https://leetcode.com/problems/shortest-path-visiting-all-nodes/",
+      "publisher": "LeetCode",
+      "reviewedAt": "2026-10-08",
+      "method": "individual review of public search-indexed official page metadata",
+      "observedTopicTags": [
+        "Dynamic Programming",
+        "Bit Manipulation",
+        "Breadth-First Search",
+        "Graph Theory",
+        "Bitmask"
+      ],
+      "retainedContent": "metadata only",
+      "limitations": "Search index may lag live metadata. Only topic tags retained; no problem content."
+    },
+    {
+      "id": "source:linked-list-random-node",
+      "url": "https://leetcode.com/problems/linked-list-random-node/",
+      "publisher": "LeetCode",
+      "reviewedAt": "2026-10-08",
+      "method": "individual review of public search-indexed official page metadata",
+      "observedTopicTags": [
+        "Linked List",
+        "Math",
+        "Reservoir Sampling",
+        "Randomized"
+      ],
+      "retainedContent": "metadata only",
+      "limitations": "Search index may lag live metadata. Only topic tags retained; no problem content."
+    }
+  ]
+}

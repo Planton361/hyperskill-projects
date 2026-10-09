@@ -24,8 +24,8 @@ hashes, refuses uncommitted implementation/assets, and writes only
 are ignored by Git. The existing Hyperskill build, guard, accepted manifest,
 source assets and navigation shell remain unchanged. No LeetCode catalog,
 derived catalog metadata, CPU renderer, problem descriptions, solutions,
-extension, credentials or downloaded progress snapshot is packaged. Full local
-CPU Atlas publication remains blocked on catalog redistribution rights.
+extension, credentials or downloaded progress snapshot is packaged. The separate owner-approved CPU snapshot release is documented in
+[LEETCODE-CPU-RELEASE.md](LEETCODE-CPU-RELEASE.md); this summary allowlist remains unchanged.
 
 ## Public reader behavior
 
