@@ -46,9 +46,14 @@ class ImportTests(unittest.TestCase):
         self.approve_fixture_profile()
         self.target = self.repo / "java/Demo Project"
 
-    def approve_fixture_profile(self):
-        data = {"files": {p.name: hashlib.sha256(p.read_bytes()).hexdigest()
-                          for p in (self.build, self.settings)}}
+    def approve_fixture_profile(self, additional_profiles=None):
+        data = {
+            "id": "fixture-legacy",
+            "files": {p.name: hashlib.sha256(p.read_bytes()).hexdigest()
+                      for p in (self.build, self.settings)},
+        }
+        if additional_profiles:
+            data["additional_profiles"] = additional_profiles
         (self.repo / "scripts/templates/academy-profile.json").write_text(json.dumps(data))
 
     def invoke(self, *flags, version=True, success=True):
@@ -84,6 +89,54 @@ class ImportTests(unittest.TestCase):
         self.invoke("--dry-run")
         self.assertEqual(snapshot(self.repo), before)
         self.assertFalse(self.target.exists())
+
+    def test_both_registered_build_profiles_match_exact_bytes(self):
+        legacy_build = self.build.read_bytes()
+        legacy_settings = self.settings.read_bytes()
+        legacy_files = {
+            "build.gradle": hashlib.sha256(legacy_build).hexdigest(),
+            "settings.gradle": hashlib.sha256(legacy_settings).hexdigest(),
+        }
+        alternate_build = b"plugins { id 'application' }\n"
+        alternate_settings = b"rootProject.name = 'Reviewed fixture'\n"
+        self.build.write_bytes(alternate_build)
+        self.settings.write_bytes(alternate_settings)
+        alternate = {
+            "id": "fixture-alternative",
+            "files": {
+                "build.gradle": hashlib.sha256(alternate_build).hexdigest(),
+                "settings.gradle": hashlib.sha256(alternate_settings).hexdigest(),
+            },
+        }
+        (self.repo / "scripts/templates/academy-profile.json").write_text(json.dumps({
+            "id": "fixture-legacy",
+            "files": legacy_files,
+            "additional_profiles": [alternate],
+        }))
+
+        output = self.invoke("--dry-run")
+        self.assertIn("Geprüftes Academy-Buildprofil: fixture-alternative", output)
+        self.assertFalse(self.target.exists())
+
+        self.build.write_bytes(legacy_build)
+        self.settings.write_bytes(legacy_settings)
+        output = self.invoke("--dry-run")
+        self.assertIn("Geprüftes Academy-Buildprofil: fixture-legacy", output)
+        self.assertFalse(self.target.exists())
+
+    def test_repository_profiles_preserve_legacy_and_pin_project_380(self):
+        profile = json.loads((INFRA / "scripts/templates/academy-profile.json").read_text())
+        self.assertEqual(profile["files"], {
+            "build.gradle": "94dbe0944efe0bc5a20fa9f58c00f4815da3ec1af2621b4d4cefb038f732894c",
+            "settings.gradle": "fcfb42002285037dead8e6dbd534cce0ccd7cf2f6a4f44152f4d0c02721e2b8a",
+        })
+        project_380 = [p for p in profile["additional_profiles"]
+                       if p["id"] == "hyperskill-project-380-dynamic-java-gradle"]
+        self.assertEqual(len(project_380), 1)
+        self.assertEqual(project_380[0]["files"], {
+            "build.gradle": "26160ec6a7903614e882fe8a47e31f71038f708aad930b765a97b48338c90ead",
+            "settings.gradle": "39ac0986330a2d1ab395a7fbd8c67198084267750fb086a60cff94c1fdf0fb8e",
+        })
 
     def test_import_allowlist_and_no_commit(self):
         for name in (".git/config", ".idea/workspace.xml", ".gradle/cache", "build/report.html",
@@ -163,6 +216,17 @@ class ImportTests(unittest.TestCase):
                 self.build.write_text(original + addition)
                 self.assertIn("Buildprofil", self.invoke(success=False))
                 self.assertFalse(self.target.exists())
+        self.build.write_text(original)
+
+        original_settings = self.settings.read_text()
+        for addition in ("plugins { id 'com.example.unknown' version '1.0' }",
+                         "includeBuild 'unreviewed-build-logic'",
+                         "apply from: 'other.settings.gradle'"):
+            with self.subTest(settings_addition=addition):
+                self.settings.write_text(original_settings + addition)
+                self.assertIn("Buildprofil", self.invoke(success=False))
+                self.assertFalse(self.target.exists())
+        self.settings.write_text(original_settings)
 
     def test_extra_builds_resources_modules_abort(self):
         for name in ("pom.xml", "module/build.gradle.kts", "gradle/libs.versions.toml",
@@ -202,6 +266,24 @@ class ImportTests(unittest.TestCase):
         self.assertIn("Java-Zielversion: 21", self.invoke("--dry-run", version=False))
         self.src.write_bytes(SIMPLE + b'// """ text block syntax\n')
         self.assertIn("Untergrenze", self.invoke("--java-version", "11", success=False))
+
+    def test_explicit_java_23_overrides_course_metadata(self):
+        (self.source / "course-info.yaml").write_text(
+            "title: Demo Project\nprogramming_language_version: 11\n")
+        self.src.write_bytes(b'''package bot;
+public class Main {
+    public static void main(String[] args) {
+        String text = """
+            Java 23 export
+            """;
+        System.out.println(text);
+    }
+}
+''')
+        output = self.invoke("--dry-run")
+        self.assertIn("Kursangabe=11", output)
+        self.assertIn("Syntax-Untergrenze=15", output)
+        self.assertIn("Java-Zielversion: 23", output)
 
     def test_wrapper_tampering_is_detected(self):
         (self.repo / "scripts/templates/wrapper/gradlew").write_text("modified\n")

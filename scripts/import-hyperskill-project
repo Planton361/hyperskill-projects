@@ -34,6 +34,38 @@ def fail(message):
     raise ValueError(message)
 
 
+def academy_build_profiles():
+    data = json.loads((TEMPLATES / "academy-profile.json").read_text())
+    if not isinstance(data, dict) or not isinstance(data.get("files"), dict):
+        fail("Ungültige geprüfte Academy-Buildprofile")
+    definitions = [{"id": data.get("id", "legacy-academy-java"),
+                    "files": data["files"]}]
+    additions = data.get("additional_profiles", [])
+    if not isinstance(additions, list):
+        fail("Ungültige zusätzliche Academy-Buildprofile")
+    definitions.extend(additions)
+
+    ids = set()
+    all_names = set()
+    for definition in definitions:
+        if not isinstance(definition, dict):
+            fail("Ungültige geprüfte Academy-Buildprofile")
+        profile_id = definition.get("id")
+        files = definition.get("files")
+        if (not isinstance(profile_id, str) or
+                not re.fullmatch(r"[a-z0-9][a-z0-9._-]*", profile_id) or
+                profile_id in ids or not isinstance(files, dict) or not files):
+            fail("Ungültige oder doppelte Academy-Buildprofil-ID/Dateiliste")
+        ids.add(profile_id)
+        for name, checksum in files.items():
+            if (name not in BUILD_NAMES or Path(name).name != name or
+                    not isinstance(checksum, str) or
+                    not re.fullmatch(r"[a-f0-9]{64}", checksum)):
+                fail("Ungültige Datei oder Prüfsumme in Academy-Buildprofil " + profile_id)
+            all_names.add(name)
+    return definitions, all_names
+
+
 def digest(data):
     return hashlib.sha256(data).hexdigest()
 
@@ -81,14 +113,27 @@ def analyze(source, args):
     task = src.parent
     lesson = task.parent
     print(f"Finaler Quellordner: {src}")
-    profile = json.loads((TEMPLATES / "academy-profile.json").read_text())
+    profiles, profile_file_names = academy_build_profiles()
     issues = []
-    for name, sha in profile["files"].items():
-        path = source / name
-        if not path.is_file() or path.is_symlink() or digest(path.read_bytes()) != sha:
-            issues.append(f"{name}: unbekanntes Buildprofil; Plugins, Abhängigkeiten, "
-                          "Java-Konfiguration und Source Sets manuell prüfen")
+    present_build_names = {str(rel) for rel in entries
+                           if rel.parent == Path(".") and rel.name in BUILD_NAMES}
+    matched_profiles = []
+    for profile in profiles:
+        expected = profile["files"]
+        if present_build_names != set(expected):
+            continue
+        if all((source / name).is_file() and not (source / name).is_symlink() and
+               digest((source / name).read_bytes()) == checksum
+               for name, checksum in expected.items()):
+            matched_profiles.append(profile)
+    for name in sorted(profile_file_names | present_build_names):
         print(f"Buildanalyse: {name} (wird nicht ausgeführt oder kopiert)")
+    if len(matched_profiles) == 1:
+        print(f"Geprüftes Academy-Buildprofil: {matched_profiles[0]['id']}")
+    else:
+        issues.append("Builddateien: unbekanntes oder mehrdeutiges Buildprofil; "
+                      "Plugins, Abhängigkeiten, Java-Konfiguration und Source Sets "
+                      "manuell prüfen")
 
     accepted = {}
     texts = {}
@@ -134,11 +179,11 @@ def analyze(source, args):
             continue
         if rel.parts[0] == "util":
             issues.append(f"Nichtleeres util-Modul: {rel}")
-        elif rel.name in BUILD_NAMES and str(rel) not in profile["files"]:
+        elif rel.name in BUILD_NAMES and str(rel) not in profile_file_names:
             issues.append(f"Zusätzliche relevante Builddatei: {rel}; manuelle Analyse nötig")
         elif rel.is_relative_to(lesson) and not rel.is_relative_to(task):
             pass  # Earlier Academy stages are deliberately never imported.
-        elif str(rel) not in {*profile["files"], *WRAPPER, "README.md", ".gitignore"}:
+        elif str(rel) not in {*profile_file_names, *WRAPPER, "README.md", ".gitignore"}:
             issues.append(f"Unbekannte Datei/Ressource außerhalb des finalen Java-Codes: {rel}")
         print(f"IGNORE {str(rel)!r}: nicht auf der Positivliste (Build/Stage/sonstige Datei)")
 
