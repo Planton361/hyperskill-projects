@@ -119,7 +119,7 @@ def analyze(source, args):
                 if re.search(r"jdbc:|java\.sql|javax\.sql|javax\.persistence|"
                              r"javax\.servlet|org\.springframework|Class\.forName|"
                              r"getResource|\bFiles\.|\bPaths?\.|\bFile(?:InputStream|Reader)?\s*\(|"
-                             r"java\.lang\.reflect|ServiceLoader|ProcessBuilder|Runtime\.getRuntime|System\.load|new\s+(?:PrintWriter|PrintStream|Scanner)\s*\(\s*\"", text):
+                             r"java\.lang\.reflect|ClassLoader|MethodHandles|ScriptEngine|ServiceLoader|ProcessBuilder|Runtime\.getRuntime|System\.load|new\s+(?:PrintWriter|PrintStream|Scanner)\s*\(\s*\"", text):
                     issues.append(f"Datenbank/Framework/Datei- oder Ressourcenzugriff: {rel}")
                 dest = Path("src/main/java") / rel.relative_to(src)
                 accepted[dest.as_posix()] = data

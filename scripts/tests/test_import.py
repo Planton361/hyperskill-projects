@@ -200,7 +200,8 @@ class ImportTests(unittest.TestCase):
 
     def test_platform_secrets_database_and_dependency_in_source_abort(self):
         for extra in ("import org.hyperskill.hstest.stage.StageTest;", 'String password = "sensitive-value";',
-                      'String connection = "jdbc:h2:demo";', "import com.example.External;"):
+                      'String connection = "jdbc:h2:demo";', "import com.example.External;", "import javax.script.ScriptEngineManager;",
+                      "ClassLoader.getSystemClassLoader().loadClass(name);"):
             with self.subTest(extra=extra):
                 self.src.write_bytes(SIMPLE + extra.encode())
                 output = self.invoke(success=False)

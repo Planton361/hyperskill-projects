@@ -141,7 +141,12 @@ def python_sources(source, inventory, excluded, platform, secrets):
     modules = {Path(n).stem for n in trees if '/' not in n}
     required = set()
     for name, tree in trees.items():
+        parents = {child: parent for parent in ast.walk(tree) for child in ast.iter_child_nodes(parent)}
         for node in ast.walk(tree):
+            if isinstance(node, ast.Name) and node.id == "open":
+                parent = parents.get(node)
+                if not isinstance(parent, ast.Call) or parent.func is not node:
+                    fail("Aliased Python file access requires adapter review")
             imports = [a.name.split('.')[0] for a in node.names] if isinstance(node, ast.Import) else ([node.module.split('.')[0]] if isinstance(node, ast.ImportFrom) and node.module and not node.level else [])
             if isinstance(node, ast.ImportFrom) and (node.level or not node.module):
                 fail('Relative Python imports require adapter review')

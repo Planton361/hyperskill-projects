@@ -64,6 +64,15 @@ def validate(root):
             if language=='java':
                 if type(meta.get('java_version')) is not int or not 8 <= meta['java_version'] <= 99:raise ValueError('Invalid Java target')
                 texts={Path(n): (target/n).read_text() for n in files if n.startswith('src/main/java/') and n.endswith('.java')}
+                # Reuse the actual Java extraction/dependency/resource gate on
+                # committed source bytes, including manually edited PR exports.
+                inspect=Path(folder)/('java-inspect-'+str(pid));src=inspect/'Lesson/task/src'
+                src.mkdir(parents=True)
+                for name,text in texts.items():
+                    dest=src/name.relative_to('src/main/java');dest.parent.mkdir(parents=True,exist_ok=True);dest.write_bytes((target/name).read_bytes())
+                (inspect/'build.gradle').write_text("plugins { id 'application' }\n")
+                (inspect/'settings.gradle').write_text("rootProject.name = 'Validated export'\n")
+                importer['analyze'](inspect,None)
                 main=importer['main_class'](texts,None)
                 for name in ('build.gradle.kts','settings.gradle.kts'):
                     raw_template=(ROOT/'scripts/templates/java-gradle'/ (name+'.in')).read_bytes()

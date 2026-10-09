@@ -43,7 +43,7 @@ class AdapterTests(unittest.TestCase):
         (self.root/'requirements.txt').write_text('# no dependencies\n');self.analyze()
 
     def test_python_resources_require_literal_existing_readonly_paths(self):
-        for text in ['open("../outside.txt")\n','open(input())\n','open("data.txt", "w")\n']:
+        for text in ['open("../outside.txt")\n','open(input())\n','reader = open\nreader("outside.txt")\n','open("data.txt", "w")\n']:
             self.main.write_text(text)
             with self.assertRaises(ValueError):self.analyze()
         self.main.write_text('print("hello")\n');resource=self.task/'data.txt';resource.write_text('hello\n')
