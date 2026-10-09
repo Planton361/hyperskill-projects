@@ -62,11 +62,14 @@ def validate(root):
             seen.add(pid)
             importer['validate']({n:(target/n).read_bytes() for n in files})
             if language=='java':
+                if type(meta.get('java_version')) is not int or not 8 <= meta['java_version'] <= 99:raise ValueError('Invalid Java target')
                 texts={Path(n): (target/n).read_text() for n in files if n.startswith('src/main/java/') and n.endswith('.java')}
                 main=importer['main_class'](texts,None)
                 for name in ('build.gradle.kts','settings.gradle.kts'):
-                    expected=(ROOT/'scripts/templates/java-gradle'/ (name+'.in')).read_text()
-                    for key,value in {'JAVA_VERSION':str(meta['java_version']),'MAIN_CLASS':main,'PROJECT_NAME':importer['kotlin_string'](target.name)}.items():expected=expected.replace('@'+key+'@',value)
+                    raw_template=(ROOT/'scripts/templates/java-gradle'/ (name+'.in')).read_bytes()
+                    if hashlib.sha256(raw_template).hexdigest()!=json.loads((ROOT/'scripts/templates/java-gradle-sha256.json').read_text())[name+'.in']:raise ValueError('Unreviewed standalone export template')
+                    expected=raw_template.decode()
+                    for key,value in {'JAVA_VERSION':str(meta['java_version']),'MAIN_CLASS':importer['kotlin_string'](main)[1:-1],'PROJECT_NAME':importer['kotlin_string'](target.name)}.items():expected=expected.replace('@'+key+'@',value)
                     if (target/name).read_text()!=expected:raise ValueError('Unreviewed standalone Gradle build logic')
                 for name,digest in json.loads((ROOT/'scripts/templates/wrapper-sha256.json').read_text()).items():
                     if hashlib.sha256((target/name).read_bytes()).hexdigest()!=digest:raise ValueError('Unreviewed wrapper')

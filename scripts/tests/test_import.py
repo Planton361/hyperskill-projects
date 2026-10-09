@@ -253,5 +253,13 @@ public class Main {
         self.assertIn("Whitespace", self.invoke(success=False))
 
 
+class TemplateBoundaryTests(unittest.TestCase):
+    def test_modified_standalone_gradle_template_is_not_executed(self):
+        fixture=ImportTests('test_dry_run_no_writes_and_unknown_version');fixture.setUp()
+        try:
+            (fixture.repo/'scripts/templates/java-gradle/build.gradle.kts.in').write_text('unreviewed build logic\n')
+            self.assertIn('Unreviewed standalone export template',fixture.invoke(success=False))
+        finally:fixture.doCleanups()
+
 if __name__ == "__main__":
     unittest.main()

@@ -118,7 +118,8 @@ def analyze(source, args):
                     issues.append(f"Nicht-JDK-Imports/zusätzliche Abhängigkeiten: {rel}")
                 if re.search(r"jdbc:|java\.sql|javax\.sql|javax\.persistence|"
                              r"javax\.servlet|org\.springframework|Class\.forName|"
-                             r"getResource|\bFiles\.|\bPaths\.|\bFile(?:InputStream|Reader)?\s*\(", text):
+                             r"getResource|\bFiles\.|\bPaths?\.|\bFile(?:InputStream|Reader)?\s*\(|"
+                             r"java\.lang\.reflect|ServiceLoader|ProcessBuilder|Runtime\.getRuntime|System\.load|new\s+(?:PrintWriter|PrintStream|Scanner)\s*\(\s*\"", text):
                     issues.append(f"Datenbank/Framework/Datei- oder Ressourcenzugriff: {rel}")
                 dest = Path("src/main/java") / rel.relative_to(src)
                 accepted[dest.as_posix()] = data
@@ -181,6 +182,8 @@ def main_class(texts, explicit):
         if re.search(r"public\s+static\s+void\s+main\s*\(\s*String(?:\s*\[\s*\]|\s*\.\.\.)", text):
             package = re.search(r"(?m)^\s*package\s+([\w.]+)\s*;", text)
             found.append((package[1] + "." if package else "") + path.stem)
+    if any(not re.fullmatch(r"[A-Za-z_$][A-Za-z0-9_$]*(?:\.[A-Za-z_$][A-Za-z0-9_$]*)*", name) for name in found):
+        fail("Unsafe/unsupported Java entrypoint identifier")
     if explicit:
         if explicit not in found:
             fail("--main-class stimmt mit keinem erkannten Einstiegspunkt überein")
@@ -291,8 +294,11 @@ def execute(args):
         version = java_version(source, texts, args.java_version)
         main = main_class(texts, args.main_class)
         for name in ("build.gradle.kts", "settings.gradle.kts"):
-            content = (TEMPLATES / "java-gradle" / (name + ".in")).read_text()
-            for key, value in {"JAVA_VERSION": str(version), "MAIN_CLASS": main,
+            raw_template = (TEMPLATES / "java-gradle" / (name + ".in")).read_bytes()
+            if digest(raw_template) != json.loads((TEMPLATES / "java-gradle-sha256.json").read_text())[name + ".in"]:
+                fail("Unreviewed standalone export template: " + name)
+            content = raw_template.decode()
+            for key, value in {"JAVA_VERSION": str(version), "MAIN_CLASS": kotlin_string(main)[1:-1],
                                "PROJECT_NAME": kotlin_string(directory_name)}.items():
                 content = content.replace("@" + key + "@", value)
             payload[name] = content.encode()
