@@ -24,7 +24,16 @@ async function run(engine,name,options){
    }else assert.equal(new URL(url).origin,new URL(base).origin);
    return route.continue();
   });
-  const ready=async()=>{await page.waitForFunction(()=>window.AtlasShell&&document.querySelector('#loading').hidden&&AtlasShell.state().activeFrame?.contentWindow.PublicProgress);await page.waitForLoadState('networkidle');};
+  const ready=()=>page.waitForFunction(()=>{
+   if(!window.AtlasShell||!document.querySelector('#loading').hidden||!AtlasShell.state().activeFrame?.contentWindow.PublicProgress)return false;
+   // Wait for the actual frames and worker bootstrap, including retained views.
+   // Network-idle lifecycle events can remain unsettled after iframe switches.
+   return [...document.querySelectorAll('iframe')].every(frame=>{
+    if(frame.contentDocument?.readyState!=='complete')return false;
+    const renderer=frame.contentWindow.AtlasV6?.state().renderer;
+    return !renderer?.worker||renderer.workerReady===true;
+   });
+  });
   async function header(view){
    assert.deepEqual(await page.locator('#application-nav a').allTextContents(),['Atlas','My Skill Tree','LeetCode']);
    const boxes=await page.evaluate(()=>[document.querySelector('#application-header h1'),...document.querySelectorAll('#application-nav a')].map(e=>{const r=e.getBoundingClientRect();return {left:r.left,right:r.right,top:r.top,bottom:r.bottom,overflow:e.scrollWidth>e.clientWidth};}));
@@ -37,15 +46,18 @@ async function run(engine,name,options){
   await page.goto(base+'?view=atlas');await ready();await header('atlas');
   await page.locator('#nav-skill-tree').click();await ready();assert.equal(await page.evaluate(()=>AtlasShell.state().route.view),'skill-tree');await header('skill-tree');
   await page.locator('#nav-skill-tree').focus();
-  // WebKit's native default reaches links with Option+Tab.
-  await page.keyboard.press(name==='webkit'?'Alt+Tab':'Tab');
+  await page.keyboard.press('Tab');
+  // Native WebKit link traversal can use Option+Tab, depending on platform.
+  if(name==='webkit'&&await page.evaluate(()=>document.activeElement.id)!=='nav-leetcode'){
+   await page.locator('#nav-skill-tree').focus();await page.keyboard.press('Alt+Tab');
+  }
   assert.equal(await page.evaluate(()=>document.activeElement.id),'nav-leetcode');
   assert.notEqual(await page.locator('#nav-leetcode').evaluate(e=>getComputedStyle(e).outlineStyle),'none');
   await page.keyboard.press('Enter');await page.waitForFunction(()=>window.LeetCodeAtlas&&document.body.dataset.publicState==='published');
-  assert.equal(new URL(page.url()).pathname,new URL('../leetcode-atlas/',base).pathname);await page.waitForLoadState('networkidle');await header('leetcode');
+  assert.equal(new URL(page.url()).pathname,new URL('../leetcode-atlas/',base).pathname);await page.waitForLoadState('load');await header('leetcode');
   await page.locator('#nav-atlas').click();await ready();assert.equal(await page.evaluate(()=>AtlasShell.state().route.view),'atlas');
   // Directly test the return link from Atlas as well as Skill Tree.
-  await page.locator('#nav-leetcode').click();await page.waitForFunction(()=>window.LeetCodeAtlas&&document.body.dataset.publicState==='published');await page.waitForLoadState('networkidle');
+  await page.locator('#nav-leetcode').click();await page.waitForFunction(()=>window.LeetCodeAtlas&&document.body.dataset.publicState==='published');await page.waitForLoadState('load');
   await page.locator('#nav-skill-tree').click();await ready();assert.equal(await page.evaluate(()=>AtlasShell.state().route.view),'skill-tree');
   assert.deepEqual(errors,[]);assert.deepEqual(bad,[]);
   await context.close();
