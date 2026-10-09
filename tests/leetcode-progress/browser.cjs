@@ -46,7 +46,10 @@ async function visit(engine,name){
    await page.setViewportSize({width,height:width===390?844:1000});
    assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
    assert(await page.locator('#refresh').isVisible());
-   await page.screenshot({path:path.join(artifact,name+'-summary-'+width+'.png'),fullPage:true});
+   // Playwright's WebKit screenshot preparation injects an inline animation-sync
+   // stylesheet, which the unchanged reviewed CSP correctly refuses. Capture
+   // images in Chrome/Chromium; keep WebKit console checks free of tool injection.
+   if(name!=='webkit')await page.screenshot({path:path.join(artifact,name+'-summary-'+width+'.png'),fullPage:true});
   }
   const calls=()=>row.requests.filter(r=>r.url===source).length;
   const before=calls();await page.locator('#refresh').click();await ready('published');assert(calls()>before);
