@@ -8,6 +8,14 @@ The current portfolio records **31 learned Topics**, **12 independently verified
 
 Learning is the exact-ID union of directly observed personal learning and explicit Topic requirements of owner-attested completed Projects. Project completion provides owner-attested learning evidence; it is **not independent Hyperskill verification**. It does not establish Course or Stage completion. Missing completion records are omitted from the compact UI; provenance and evidence dates remain available in collapsed Data details.
 
+## LeetCode Progress
+
+[Open LeetCode Progress](https://planton361.github.io/hyperskill-projects/leetcode-progress/)
+
+This separate public summary reads owner-confirmed Problem IDs and attestations from [the progress-only repository](https://github.com/Planton361/myatlas-leetcode-progress). Counts refresh from the public source; visitors need no Chrome extension or authentication. It publishes no problem catalog, descriptions or solutions. The full local LeetCode CPU Atlas is not publicly hosted; catalog redistribution rights remain pending.
+
+[Summary build, validation and release boundary](docs/LEETCODE-PROGRESS-RELEASE.md)
+
 ## Exported Hyperskill Projects
 
 Each export remains a standalone application with its source and build wrapper.
@@ -24,13 +32,14 @@ Python3 and Node22 build the static application without npm runtime dependencies
 
 ```sh
 python3 -B scripts/build-myatlas.py
+python3 -B scripts/build-leetcode-progress.py
 python3 -B scripts/check-myatlas-production.py --site build/pages/knowledge-map --current-head
 mkdir -p build/preview
 ln -s ../pages build/preview/hyperskill-projects
 python3 -B -m http.server 8807 --bind 127.0.0.1 --directory build/preview
 ```
 
-Open `http://127.0.0.1:8807/hyperskill-projects/knowledge-map/`. Use a fresh preview directory, or retain its existing symlink when rebuilding.
+Open `http://127.0.0.1:8807/hyperskill-projects/knowledge-map/`. The separate summary is at `/hyperskill-projects/leetcode-progress/`. Use a fresh preview directory, or retain its existing symlink when rebuilding.
 
 Canonical accepted sources are in `src/myatlas/`; public completion records are in `data/myatlas/`; historical Knowledge observations and State remain intact. `docs/knowledge-map/` is the reviewed committed production snapshot; Actions builds the current projection into an artifact, so source updates need no generated-data commit loop.
 

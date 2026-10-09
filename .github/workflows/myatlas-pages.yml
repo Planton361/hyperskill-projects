@@ -28,6 +28,10 @@ jobs:
           python3 -B scripts/check-myatlas-production.py
           python3 -B -m unittest scripts.tests.test_course_completion scripts.tests.test_git_project_completion scripts.tests.test_myatlas_release
           for test in progress-analytics universal-progress completion portfolio copy geometry-measurements; do node "tests/myatlas/$test.cjs"; done
+      - name: Validate rights-safe LeetCode summary sources
+        run: |
+          python3 -B -m unittest scripts.tests.test_leetcode_progress
+          node --test tests/leetcode-progress/loader.cjs
       - name: Generate public evidence and readable differential summary
         run: |
           python3 -B scripts/sync-project-completion.py > "$RUNNER_TEMP/progress-review.json"
@@ -37,10 +41,12 @@ jobs:
           python3 -B scripts/build-myatlas.py
           python3 -B scripts/check-myatlas-production.py --site build/pages/knowledge-map --current-head
           cp docs/.nojekyll build/pages/.nojekyll
+      - name: Package the sibling LeetCode progress route
+        run: python3 -B scripts/build-leetcode-progress.py
       - name: Install locked focused browser tooling
         run: |
           npm ci --prefix scripts/knowledge_atlas --ignore-scripts
-          scripts/knowledge_atlas/node_modules/.bin/playwright install --with-deps chromium
+          scripts/knowledge_atlas/node_modules/.bin/playwright install --with-deps chromium webkit
       - name: Validate the actual repository base path
         run: |
           mkdir -p build/preview
@@ -54,6 +60,7 @@ jobs:
           done
           node tests/myatlas/release.cjs
           node tests/myatlas/geometry-browser.cjs
+          node tests/leetcode-progress/browser.cjs
           git diff --exit-code -- docs/knowledge-map state/knowledge-atlas data/knowledge src/myatlas
       - uses: actions/upload-artifact@v4
         with:
@@ -61,6 +68,7 @@ jobs:
           path: |
             test-results/v66-release.json
             test-results/v66-geometry.json
+            test-results/leetcode-progress.json
             ${{ runner.temp }}/progress-review.json
       - uses: actions/upload-pages-artifact@v3
         if: github.ref == 'refs/heads/main'
