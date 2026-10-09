@@ -71,14 +71,14 @@ async function run(engine,name,options){
    // PublicProgress precedes the accepted renderer's asynchronous worker script
    // bootstrap. Finish that load before this test deliberately leaves the page.
    await page.waitForLoadState('networkidle');
-   assert.deepEqual(await page.locator('#application-nav a').allTextContents(),['Atlas','My Skill Tree']);
+   assert.deepEqual(await page.locator('#application-nav a').allTextContents(),['Atlas','My Skill Tree','LeetCode']);
    assert.equal(await page.evaluate(()=>AtlasShell.state().activeFrame.contentWindow.PublicProgress.global.learned),31);
    await page.goto(cpuURL);await page.waitForFunction(()=>document.body.dataset.publicState==='published');
    await page.waitForLoadState('networkidle');
    await page.locator('#nav-skill-tree').click();
    await page.waitForFunction(()=>window.AtlasShell&&document.querySelector('#loading').hidden&&AtlasShell.state().route.view==='skill-tree'&&AtlasShell.state().activeFrame?.contentWindow.PublicProgress);
    await page.waitForLoadState('networkidle');
-   assert.deepEqual(await page.locator('#application-nav a').allTextContents(),['Atlas','My Skill Tree']);
+   assert.deepEqual(await page.locator('#application-nav a').allTextContents(),['Atlas','My Skill Tree','LeetCode']);
    assert.equal(await page.evaluate(()=>AtlasShell.state().activeFrame.contentWindow.PublicProgress.global.verified),12);
   }
   assert.deepEqual(errors,[]);results.rows.push({browser:name,version:browser.version(),width,geometry,initial,checks,anonymousPublicRequests:requests.length});await context.close();

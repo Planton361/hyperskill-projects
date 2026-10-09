@@ -26,7 +26,7 @@ jobs:
       - name: Validate committed edition and completion evidence
         run: |
           python3 -B scripts/check-myatlas-production.py
-          python3 -B -m unittest scripts.tests.test_course_completion scripts.tests.test_git_project_completion scripts.tests.test_myatlas_release
+          python3 -B -m unittest scripts.tests.test_course_completion scripts.tests.test_git_project_completion scripts.tests.test_myatlas_release scripts.tests.test_myatlas_navigation
           for test in progress-analytics universal-progress completion portfolio copy geometry-measurements; do node "tests/myatlas/$test.cjs"; done
       - name: Validate rights-safe LeetCode summary sources
         run: |
@@ -41,6 +41,10 @@ jobs:
           python3 -B scripts/build-myatlas.py
           python3 -B scripts/check-myatlas-production.py --site build/pages/knowledge-map --current-head
           cp docs/.nojekyll build/pages/.nojekyll
+      - name: Apply and validate the approved persistent navigation link
+        run: |
+          python3 -B scripts/build-myatlas-navigation.py
+          python3 -B scripts/build-myatlas-navigation.py --check
       - name: Package the sibling LeetCode progress route
         run: python3 -B scripts/build-leetcode-progress.py
       - name: Package the owner-approved CPU Atlas sibling route
@@ -61,6 +65,7 @@ jobs:
             sleep 1
           done
           node tests/myatlas/release.cjs
+          node tests/myatlas/navigation.cjs
           node tests/myatlas/geometry-browser.cjs
           node tests/leetcode-progress/browser.cjs
           node tests/leetcode-atlas/progress.cjs test-results/leetcode-cpu
@@ -72,6 +77,7 @@ jobs:
           path: |
             test-results/v66-release.json
             test-results/v66-geometry.json
+            test-results/myatlas-navigation.json
             test-results/leetcode-progress.json
             test-results/leetcode-cpu/*.json
             build/leetcode-cpu-manifest.json
