@@ -229,5 +229,29 @@ class ExistingExportValidationTests(unittest.TestCase):
         self.assertEqual(changed, [])
 
 
+class UnknownAcceptanceFixtureSelectionTests(unittest.TestCase):
+    def test_unknown_fixture_prefers_229_then_an_uncompleted_catalog_project(self):
+        import runpy
+        import sys
+        from unittest.mock import patch
+
+        with patch.object(sys, 'path', [str(INFRA / 'scripts'), *sys.path]):
+            select = runpy.run_path(str(INFRA / 'scripts/test-cross-repository.py'))[
+                'select_unknown_project']
+        scopes = {'projects': [
+            {'scope_id': 229, 'state': 'UNKNOWN'},
+            {'scope_id': 300, 'state': 'UNKNOWN'},
+            {'scope_id': 250, 'state': 'UNKNOWN'},
+            {'scope_id': 100, 'state': 'KNOWN'},
+        ]}
+        self.assertEqual(select(scopes, set())['scope_id'], 229)
+        self.assertEqual(select(scopes, {229})['scope_id'], 250)
+        self.assertEqual(select(scopes, {229}, requested_id=300)['scope_id'], 300)
+        with self.assertRaises(ValueError):
+            select(scopes, {229}, requested_id=229)
+        with self.assertRaises(ValueError):
+            select(scopes, {229, 250, 300})
+
+
 if __name__ == '__main__':
     unittest.main()
