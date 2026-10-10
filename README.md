@@ -8,7 +8,7 @@ My completed Hyperskill projects, exported as standalone applications. This repo
 | --- | --- | --- |
 | [Simple Chat Bot with Java](java/Simple%20Chat%20Bot%20with%20Java/) · [Hyperskill Project 113](https://hyperskill.org/projects/113) | Console input/output, methods, arithmetic, loops and a small quiz | Java · JDK 23 |
 
-[Browse the Java projects](java/README.md). There is currently one completed project export in this repository; new projects are added as I finish them.
+[Browse the Java projects](java/README.md). Each project directory contains its exact Hyperskill ID and completion evidence; new projects are added as I finish them.
 
 ## Run a project
 
@@ -34,7 +34,7 @@ site/                    Small redirects for the earlier MyAtlas URLs
 
 ## Add a completed project
 
-The importer supports the reviewed simple Java console-project scaffold. It copies the final Java source into a standalone application, preserves the original workspace and filters out platform tests, task descriptions, IDE files and caches.
+The existing publisher and importer support reviewed simple Java 23 and Python projects. [Owner publication workflow](scripts/README.md#one-command-owner-publication). It copies the final Java source into a standalone application, preserves the original workspace and filters out platform tests, task descriptions, IDE files and caches.
 
 Start with a dry run:
 

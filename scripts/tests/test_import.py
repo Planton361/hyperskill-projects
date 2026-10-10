@@ -85,58 +85,17 @@ class ImportTests(unittest.TestCase):
 
     def test_dry_run_no_writes_and_unknown_version(self):
         before = snapshot(self.repo)
-        self.assertIn("--java-version", self.invoke("--dry-run", version=False, success=False))
+        self.assertIn("Java-Zielversion: 23", self.invoke("--dry-run", version=False))
         self.invoke("--dry-run")
         self.assertEqual(snapshot(self.repo), before)
         self.assertFalse(self.target.exists())
 
-    def test_both_registered_build_profiles_match_exact_bytes(self):
-        legacy_build = self.build.read_bytes()
-        legacy_settings = self.settings.read_bytes()
-        legacy_files = {
-            "build.gradle": hashlib.sha256(legacy_build).hexdigest(),
-            "settings.gradle": hashlib.sha256(legacy_settings).hexdigest(),
-        }
-        alternate_build = b"plugins { id 'application' }\n"
-        alternate_settings = b"rootProject.name = 'Reviewed fixture'\n"
-        self.build.write_bytes(alternate_build)
-        self.settings.write_bytes(alternate_settings)
-        alternate = {
-            "id": "fixture-alternative",
-            "files": {
-                "build.gradle": hashlib.sha256(alternate_build).hexdigest(),
-                "settings.gradle": hashlib.sha256(alternate_settings).hexdigest(),
-            },
-        }
-        (self.repo / "scripts/templates/academy-profile.json").write_text(json.dumps({
-            "id": "fixture-legacy",
-            "files": legacy_files,
-            "additional_profiles": [alternate],
-        }))
-
-        output = self.invoke("--dry-run")
-        self.assertIn("Geprüftes Academy-Buildprofil: fixture-alternative", output)
-        self.assertFalse(self.target.exists())
-
-        self.build.write_bytes(legacy_build)
-        self.settings.write_bytes(legacy_settings)
-        output = self.invoke("--dry-run")
-        self.assertIn("Geprüftes Academy-Buildprofil: fixture-legacy", output)
-        self.assertFalse(self.target.exists())
-
-    def test_repository_profiles_preserve_legacy_and_pin_project_380(self):
-        profile = json.loads((INFRA / "scripts/templates/academy-profile.json").read_text())
-        self.assertEqual(profile["files"], {
-            "build.gradle": "94dbe0944efe0bc5a20fa9f58c00f4815da3ec1af2621b4d4cefb038f732894c",
-            "settings.gradle": "fcfb42002285037dead8e6dbd534cce0ccd7cf2f6a4f44152f4d0c02721e2b8a",
-        })
-        project_380 = [p for p in profile["additional_profiles"]
-                       if p["id"] == "hyperskill-project-380-dynamic-java-gradle"]
-        self.assertEqual(len(project_380), 1)
-        self.assertEqual(project_380[0]["files"], {
-            "build.gradle": "26160ec6a7903614e882fe8a47e31f71038f708aad930b765a97b48338c90ead",
-            "settings.gradle": "39ac0986330a2d1ab395a7fbd8c67198084267750fb086a60cff94c1fdf0fb8e",
-        })
+    def test_build_variants_ignore_comments_and_whitespace_without_sha_registration(self):
+        self.build.write_text("// new Academy revision\n\nplugins { id 'application' }\n")
+        self.settings.write_text("rootProject.name = 'New project'\n")
+        self.assertIn('Reviewed Academy statement', self.invoke('--dry-run'))
+        self.build.write_text("  def userJava = JavaVersion.current()\n")
+        self.assertIn('Reviewed Academy statement', self.invoke('--dry-run'))
 
     def test_import_allowlist_and_no_commit(self):
         for name in (".git/config", ".idea/workspace.xml", ".gradle/cache", "build/report.html",
@@ -188,7 +147,7 @@ class ImportTests(unittest.TestCase):
         self.assertIn("Ziel: " + str(self.repo / "java/Coffee Machine"), output)
 
     def test_title_is_required_when_not_reliably_detectable(self):
-        (self.source / "course-info.yaml").unlink()
+        (self.source / "course-info.yaml").write_text("programming_language: Java\n")
         self.assertIn("--title", self.invoke(success=False))
 
     def test_update_preserves_user_edited_readme(self):
@@ -214,7 +173,7 @@ class ImportTests(unittest.TestCase):
                          "sourceSets.main.java.srcDir 'custom'", "apply from: 'other.gradle'"):
             with self.subTest(addition=addition):
                 self.build.write_text(original + addition)
-                self.assertIn("Buildprofil", self.invoke(success=False))
+                self.assertIn("Unreviewed Academy", self.invoke(success=False))
                 self.assertFalse(self.target.exists())
         self.build.write_text(original)
 
@@ -224,7 +183,7 @@ class ImportTests(unittest.TestCase):
                          "apply from: 'other.settings.gradle'"):
             with self.subTest(settings_addition=addition):
                 self.settings.write_text(original_settings + addition)
-                self.assertIn("Buildprofil", self.invoke(success=False))
+                self.assertIn("Unreviewed Academy", self.invoke(success=False))
                 self.assertFalse(self.target.exists())
         self.settings.write_text(original_settings)
 
@@ -241,7 +200,8 @@ class ImportTests(unittest.TestCase):
 
     def test_platform_secrets_database_and_dependency_in_source_abort(self):
         for extra in ("import org.hyperskill.hstest.stage.StageTest;", 'String password = "sensitive-value";',
-                      'String connection = "jdbc:h2:demo";', "import com.example.External;"):
+                      'String connection = "jdbc:h2:demo";', "import com.example.External;", "import javax.script.ScriptEngineManager;",
+                      "ClassLoader.getSystemClassLoader().loadClass(name);"):
             with self.subTest(extra=extra):
                 self.src.write_bytes(SIMPLE + extra.encode())
                 output = self.invoke(success=False)
@@ -263,7 +223,7 @@ class ImportTests(unittest.TestCase):
     def test_explicit_and_inferred_java_version(self):
         self.build.write_text("java.toolchain.languageVersion = JavaLanguageVersion.of(21)\n")
         self.approve_fixture_profile()
-        self.assertIn("Java-Zielversion: 21", self.invoke("--dry-run", version=False))
+        self.assertIn("Java-Zielversion: 23", self.invoke("--dry-run", version=False))
         self.src.write_bytes(SIMPLE + b'// """ text block syntax\n')
         self.assertIn("Untergrenze", self.invoke("--java-version", "11", success=False))
 
@@ -293,6 +253,14 @@ public class Main {
         self.src.write_bytes(SIMPLE.replace(b"package bot;", b"package bot;  "))
         self.assertIn("Whitespace", self.invoke(success=False))
 
+
+class TemplateBoundaryTests(unittest.TestCase):
+    def test_modified_standalone_gradle_template_is_not_executed(self):
+        fixture=ImportTests('test_dry_run_no_writes_and_unknown_version');fixture.setUp()
+        try:
+            (fixture.repo/'scripts/templates/java-gradle/build.gradle.kts.in').write_text('unreviewed build logic\n')
+            self.assertIn('Unreviewed standalone export template',fixture.invoke(success=False))
+        finally:fixture.doCleanups()
 
 if __name__ == "__main__":
     unittest.main()

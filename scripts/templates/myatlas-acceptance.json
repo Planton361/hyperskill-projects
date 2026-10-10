@@ -1,0 +1,6 @@
+{
+  "schema": 1,
+  "repository": "Planton361/myatlas",
+  "bootstrap_commit": "32367dda28e8ee155d5b0326004ba859eaeb0dc8",
+  "policy": "Use current main once the shared acceptance entrypoint is available; until then test this exact reviewed companion PR commit. Merge MyAtlas companion first."
+}

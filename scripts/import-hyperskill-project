@@ -34,37 +34,6 @@ def fail(message):
     raise ValueError(message)
 
 
-def academy_build_profiles():
-    data = json.loads((TEMPLATES / "academy-profile.json").read_text())
-    if not isinstance(data, dict) or not isinstance(data.get("files"), dict):
-        fail("Ungültige geprüfte Academy-Buildprofile")
-    definitions = [{"id": data.get("id", "legacy-academy-java"),
-                    "files": data["files"]}]
-    additions = data.get("additional_profiles", [])
-    if not isinstance(additions, list):
-        fail("Ungültige zusätzliche Academy-Buildprofile")
-    definitions.extend(additions)
-
-    ids = set()
-    all_names = set()
-    for definition in definitions:
-        if not isinstance(definition, dict):
-            fail("Ungültige geprüfte Academy-Buildprofile")
-        profile_id = definition.get("id")
-        files = definition.get("files")
-        if (not isinstance(profile_id, str) or
-                not re.fullmatch(r"[a-z0-9][a-z0-9._-]*", profile_id) or
-                profile_id in ids or not isinstance(files, dict) or not files):
-            fail("Ungültige oder doppelte Academy-Buildprofil-ID/Dateiliste")
-        ids.add(profile_id)
-        for name, checksum in files.items():
-            if (name not in BUILD_NAMES or Path(name).name != name or
-                    not isinstance(checksum, str) or
-                    not re.fullmatch(r"[a-f0-9]{64}", checksum)):
-                fail("Ungültige Datei oder Prüfsumme in Academy-Buildprofil " + profile_id)
-            all_names.add(name)
-    return definitions, all_names
-
 
 def digest(data):
     return hashlib.sha256(data).hexdigest()
@@ -113,27 +82,10 @@ def analyze(source, args):
     task = src.parent
     lesson = task.parent
     print(f"Finaler Quellordner: {src}")
-    profiles, profile_file_names = academy_build_profiles()
+    from source_adapters import inspect_java_build
+    inspect_java_build(source, TEMPLATES)
+    profile_file_names = {'build.gradle', 'settings.gradle'}
     issues = []
-    present_build_names = {str(rel) for rel in entries
-                           if rel.parent == Path(".") and rel.name in BUILD_NAMES}
-    matched_profiles = []
-    for profile in profiles:
-        expected = profile["files"]
-        if present_build_names != set(expected):
-            continue
-        if all((source / name).is_file() and not (source / name).is_symlink() and
-               digest((source / name).read_bytes()) == checksum
-               for name, checksum in expected.items()):
-            matched_profiles.append(profile)
-    for name in sorted(profile_file_names | present_build_names):
-        print(f"Buildanalyse: {name} (wird nicht ausgeführt oder kopiert)")
-    if len(matched_profiles) == 1:
-        print(f"Geprüftes Academy-Buildprofil: {matched_profiles[0]['id']}")
-    else:
-        issues.append("Builddateien: unbekanntes oder mehrdeutiges Buildprofil; "
-                      "Plugins, Abhängigkeiten, Java-Konfiguration und Source Sets "
-                      "manuell prüfen")
 
     accepted = {}
     texts = {}
@@ -166,7 +118,8 @@ def analyze(source, args):
                     issues.append(f"Nicht-JDK-Imports/zusätzliche Abhängigkeiten: {rel}")
                 if re.search(r"jdbc:|java\.sql|javax\.sql|javax\.persistence|"
                              r"javax\.servlet|org\.springframework|Class\.forName|"
-                             r"getResource|\bFiles\.|\bPaths\.|\bFile(?:InputStream|Reader)?\s*\(", text):
+                             r"getResource|\bFiles\.|\bPaths?\.|\bFile(?:InputStream|Reader)?\s*\(|"
+                             r"java\.lang\.reflect|ClassLoader|MethodHandles|ScriptEngine|ServiceLoader|ProcessBuilder|Runtime\.getRuntime|System\.load|new\s+(?:PrintWriter|PrintStream)\s*\(\s*\"", text):
                     issues.append(f"Datenbank/Framework/Datei- oder Ressourcenzugriff: {rel}")
                 dest = Path("src/main/java") / rel.relative_to(src)
                 accepted[dest.as_posix()] = data
@@ -212,7 +165,7 @@ def java_version(source, texts, explicit):
     print(f"Java-Analyse: explizite Buildversionen={sorted(versions)}, "
           f"Kursangabe={metadata[1] if metadata else 'unbekannt'}, "
           f"erkannte Syntax-Untergrenze={minimum} (Heuristik, kein Compiler)")
-    chosen = explicit or (next(iter(versions)) if len(versions) == 1 else None)
+    chosen = explicit or 23
     if chosen is None:
         fail("WARNUNG: Java-Zielversion nicht eindeutig. Bitte --java-version N angeben.")
     if chosen < minimum:
@@ -229,6 +182,8 @@ def main_class(texts, explicit):
         if re.search(r"public\s+static\s+void\s+main\s*\(\s*String(?:\s*\[\s*\]|\s*\.\.\.)", text):
             package = re.search(r"(?m)^\s*package\s+([\w.]+)\s*;", text)
             found.append((package[1] + "." if package else "") + path.stem)
+    if any(not re.fullmatch(r"[A-Za-z_$][A-Za-z0-9_$]*(?:\.[A-Za-z_$][A-Za-z0-9_$]*)*", name) for name in found):
+        fail("Unsafe/unsupported Java entrypoint identifier")
     if explicit:
         if explicit not in found:
             fail("--main-class stimmt mit keinem erkannten Einstiegspunkt überein")
@@ -322,11 +277,11 @@ def kotlin_string(value):
 
 
 def execute(args):
-    source = Path(args.source).resolve(strict=True)
+    from source_adapters import workspace, detect
+    source = workspace(args.source)
     if not source.is_dir() or source == REPO or source.is_relative_to(REPO) or REPO.is_relative_to(source):
         fail("Quelle und Repository müssen getrennte, nicht ineinander liegende Verzeichnisse sein")
-    if args.language != "java":
-        fail("Version 1 unterstützt nur einfache Java-Projekte; andere Sprachen benötigen einen geprüften Adapter")
+    args.language = detect(source, args.language)
     title = title_from_source(source, args.title)
     directory_name = safe_directory_name(title)
     target = REPO / args.language / directory_name
@@ -334,21 +289,31 @@ def execute(args):
         fail("Ziel darf kein Symlink sein")
     if git("rev-parse", "--show-toplevel", capture=True).stdout.strip() != str(REPO):
         fail("Importer muss in einem eigenständigen Repository liegen")
-    payload, texts = analyze(source, args)
-    version = java_version(source, texts, args.java_version)
-    main = main_class(texts, args.main_class)
-    for name in ("build.gradle.kts", "settings.gradle.kts"):
-        content = (TEMPLATES / "java-gradle" / (name + ".in")).read_text()
-        for key, value in {"JAVA_VERSION": str(version), "MAIN_CLASS": main,
-                           "PROJECT_NAME": kotlin_string(directory_name)}.items():
-            content = content.replace("@" + key + "@", value)
-        payload[name] = content.encode()
-    checksums = json.loads((TEMPLATES / "wrapper-sha256.json").read_text())
-    for name in WRAPPER:
-        data = (TEMPLATES / "wrapper" / name).read_bytes()
-        if digest(data) != checksums[name]:
-            fail(f"Wrapper-Prüfsumme falsch: {name}")
-        payload[name] = data
+    if args.language == 'java':
+        payload, texts = analyze(source, args)
+        version = java_version(source, texts, args.java_version)
+        main = main_class(texts, args.main_class)
+        for name in ("build.gradle.kts", "settings.gradle.kts"):
+            raw_template = (TEMPLATES / "java-gradle" / (name + ".in")).read_bytes()
+            if digest(raw_template) != json.loads((TEMPLATES / "java-gradle-sha256.json").read_text())[name + ".in"]:
+                fail("Unreviewed standalone export template: " + name)
+            content = raw_template.decode()
+            for key, value in {"JAVA_VERSION": str(version), "MAIN_CLASS": kotlin_string(main)[1:-1],
+                               "PROJECT_NAME": kotlin_string(directory_name)}.items():
+                content = content.replace("@" + key + "@", value)
+            payload[name] = content.encode()
+        checksums = json.loads((TEMPLATES / "wrapper-sha256.json").read_text())
+        for name in WRAPPER:
+            data = (TEMPLATES / "wrapper" / name).read_bytes()
+            if digest(data) != checksums[name]:
+                fail(f"Wrapper-Prüfsumme falsch: {name}")
+            payload[name] = data
+        description = f"Java {version}\n\nBuild: `./gradlew build`\n\nRun: `./gradlew run`"
+    else:
+        from source_adapters import python_sources
+        payload, main = python_sources(source, inventory, excluded, PLATFORM, SECRETS)
+        version = None
+        description = f"Python 3.12+ (standard library only)\n\nCheck: `python3 -m compileall -q src`\n\nRun: `cd src && python3 {main}`"
     for field in (title, args.concepts):
         if any(ord(char) < 32 for char in field):
             fail("README-Felder dürfen keine Steuerzeichen enthalten")
@@ -357,20 +322,19 @@ def execute(args):
                 or not re.fullmatch(r"/projects/\d+/?", urlsplit(url).path)
                 or urlsplit(url).query or urlsplit(url).fragment):
         fail("Projektlink muss https://hyperskill.org/projects/NUMMER sein")
-    payload["README.md"] = (
-        f"# {title}\n\nLanguage: Java {version}\n\nTopics: {args.concepts}\n\n"
-        f"Build: `./gradlew build`\n\nRun: `./gradlew run`\n\n"
-        f"Requirement: JDK {max(17, version)} or newer for Gradle; Java target {version}.\n"
-        + (f"\nHyperskill: {url}\n" if url else "")
-    ).encode()
+    payload["README.md"] = (f"# {title}\n\nLanguage: {description}\n\nTopics: {args.concepts}\n"
+                            + (f"\nHyperskill: {url}\n" if url else "")).encode()
     validate(payload)
     check_existing(target, payload, args.update)
     # README is intentionally user-maintained; the manifest protects generated
     # files without preventing later documentation edits.
-    manifest = {"schema": 2, "language": "java", "java_version": version,
+    manifest = {"schema": 2, "language": args.language, "java_version": version,
                 "original_project_name": title, "directory_name": directory_name,
                 "files": {name: digest(data) for name, data in sorted(payload.items())
                           if name != "README.md"}}
+    if args.language == "python":
+        manifest.pop("java_version")
+        manifest.update(python_version="3.12", entrypoint="src/" + main, dependencies=[])
     if getattr(args, 'completed_at', None):
         from export_metadata import validate_completion
         if not url:
@@ -406,7 +370,8 @@ def execute(args):
                 path = stage / name
                 path.parent.mkdir(parents=True, exist_ok=True)
                 path.write_bytes(data)
-            (stage / "gradlew").chmod(0o755)
+            if args.language == "java":
+                (stage / "gradlew").chmod(0o755)
             validate({name: (stage / name).read_bytes() for name in payload
                        if (stage / name).is_file()})
             if target.exists():
@@ -427,6 +392,7 @@ def execute(args):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("source")
+    parser.add_argument("--repository", type=Path, help="isolated export checkout; templates remain bound to this helper")
     parser.add_argument("language")
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--update", action="store_true")
@@ -437,6 +403,9 @@ def main():
     parser.add_argument("--project-url")
     parser.add_argument("--completed-at", help="Owner attests completion at this UTC timestamp; requires exact --project-url")
     args = parser.parse_args()
+    global REPO
+    if args.repository:
+        REPO = args.repository.resolve(strict=True)
     try:
         if args.java_version is not None and not 8 <= args.java_version <= 99:
             fail("Ungültige Java-Version")

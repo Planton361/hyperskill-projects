@@ -1,0 +1,66 @@
+name: Project to MyAtlas acceptance
+on:
+  pull_request:
+  push:
+    branches: [main]
+    paths: ['scripts/**', '.github/workflows/project-atlas-acceptance.yml', 'java/**', 'python/**']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  pages-compatibility:
+    name: Full Pages compatibility (${{ matrix.scenario }})
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    strategy:
+      fail-fast: false
+      matrix:
+        scenario: [committed, java, python]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: Planton361/myatlas
+          ref: main
+          path: build/myatlas
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Select actual main or the explicitly reviewed companion PR contract
+        run: |
+          python3 - <<'PY'
+          import json, subprocess
+          from pathlib import Path
+          root = Path('build/myatlas')
+          if subprocess.run(['git','-C',str(root),'cat-file','-e','HEAD:scripts/validate-pages-candidate.py'], capture_output=True).returncode:
+              contract = json.loads(Path('scripts/templates/myatlas-acceptance.json').read_text())
+              subprocess.run(['git','-C',str(root),'fetch','origin',contract['bootstrap_commit']], check=True)
+              subprocess.run(['git','-C',str(root),'checkout','--detach',contract['bootstrap_commit']], check=True)
+              print('Companion contract not merged yet; testing its exact reviewed PR commit. Merge MyAtlas PR first.')
+          print('MyAtlas acceptance commit:', subprocess.check_output(['git','-C',str(root),'rev-parse','HEAD']).decode().strip())
+          PY
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '23'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install locked browser tooling
+        run: |
+          npm ci --prefix build/myatlas/scripts/knowledge_atlas --ignore-scripts
+          build/myatlas/scripts/knowledge_atlas/node_modules/.bin/playwright install --with-deps chromium webkit
+      - name: Academy to committed PR evidence to full Pages artifact and browser UI
+        run: python3 -B scripts/test-cross-repository.py --myatlas-root build/myatlas --scenario '${{ matrix.scenario }}'
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: project-atlas-${{ matrix.scenario }}
+          path: |
+            test-results/integration/${{ matrix.scenario }}/
+            build/myatlas/test-results/pages-candidate.json
