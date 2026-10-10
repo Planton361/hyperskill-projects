@@ -139,7 +139,10 @@ The Project 229 dry-run found one final source file, `Main.java`, under
 `java/Zookeeper with Java`, ID 229, and the owner-supplied timestamp. Its SHA-256
 is `bcbbe093891db5551df408c0f0065bd17f48f139481676139757ff05d5719d66`. The
 actual Academy workspace remains unchanged, and no Project 229 export is
-published by this test.
+published by this test. The isolated cross-repository run passed full MyAtlas
+Pages acceptance: 229 appeared as completed and `UNKNOWN`, added no learned
+topics, preserved independent verification and catalog geometry, and caused no
+deployment.
 
 After a project PR is reviewed, marked ready, and its MyAtlas acceptance check is
 green, merge it through GitHub. MyAtlas then observes the canonical `main` on
