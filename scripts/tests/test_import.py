@@ -216,8 +216,12 @@ class ExistingExportValidationTests(unittest.TestCase):
                                 text=True, capture_output=True)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         report = json.loads(result.stdout)
-        self.assertEqual({row['project_id'] for row in report}, {113, 380})
-        self.assertEqual({row['archive_mode'] for row in report}, {'legacy-schema-2'})
+        # Validate the two historical exports without fixing the total number of
+        # projects: new source-only archives must not invalidate legacy checks.
+        historical = {row['project_id']: row for row in report if row['project_id'] in (113, 380)}
+        self.assertEqual(set(historical), {113, 380})
+        self.assertTrue(all(row['archive_mode'] == 'legacy-schema-2'
+                            for row in historical.values()))
         self.assertEqual({str(path): snapshot(path) for path in exports}, before)
         changed = subprocess.check_output(['git', '-C', str(INFRA), 'diff', '--name-only', '--',
                                             'java/Simple Chat Bot with Java',
