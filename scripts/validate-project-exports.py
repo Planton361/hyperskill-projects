@@ -1,101 +1,119 @@
 #!/usr/bin/env python3
-"""Validate committed export bytes/templates and build in disposable directories."""
+"""Validate committed source archive evidence without running exported code."""
 import argparse
 import hashlib
 import json
 from pathlib import Path
 import re
-import runpy
-import shutil
 import subprocess
-import sys
 import tempfile
-from export_metadata import validate_completion
-from source_adapters import validate_python_export, python_sources
 
-ROOT=Path(__file__).resolve().parents[1]
+from export_metadata import validate_completion, validate_source_only_export
+
+ROOT = Path(__file__).resolve().parents[1]
+LEGACY_STATEMENT = 'Completed as part of [Hyperskill](https://hyperskill.org/projects/113).'
+
+
+def git(root, *args):
+    return subprocess.check_output(['git', '-C', str(root), *args])
+
+
+def _safe_legacy_path(name):
+    path = Path(name)
+    return (not path.is_absolute() and '\\' not in name and path.as_posix() == name and
+            '..' not in path.parts and not any(part.startswith('.') for part in path.parts))
 
 
 def validate(root):
-    importer=runpy.run_path(str(ROOT/'scripts/import-hyperskill-project'))
-    tree=subprocess.check_output(['git','-C',str(root),'ls-tree','-rz','HEAD'])
-    entries={}
+    root = Path(root).resolve(strict=True)
+    tree = git(root, 'ls-tree', '-rz', 'HEAD')
+    entries = {}
     for item in tree.split(b'\0'):
         if item:
-            meta,name=item.split(b'\t',1);entries[name.decode()]=meta.decode().split()
-    markers=sorted(n for n in entries if len(n.split('/'))==3 and n.endswith('/.hyperskill-import.json'))
-    if not markers:raise ValueError('No committed exports')
-    if any(n.split('/')[0] not in ('java','python') for n in markers):raise ValueError('Unsupported export language')
+            metadata, raw_name = item.split(b'\t', 1)
+            entries[raw_name.decode()] = metadata.decode().split()
+    markers = sorted(name for name in entries
+                     if len(name.split('/')) == 3 and name.endswith('/.hyperskill-import.json'))
+    if not markers:
+        raise ValueError('No committed project archives')
+    if any(name.split('/')[0] not in ('java', 'python') for name in markers):
+        raise ValueError('Unsupported archive language')
     for name in entries:
-        if len(name.split('/')) >= 3 and name.split('/')[0] in ('java','python') and '/'.join(name.split('/')[:2])+'/.hyperskill-import.json' not in markers:
-            raise ValueError('Project directory missing completion/export manifest: '+name)
-    results=[];seen=set()
-    with tempfile.TemporaryDirectory(prefix='validated-export-build-') as folder:
+        if len(name.split('/')) >= 3 and name.split('/')[0] in ('java', 'python'):
+            prefix = '/'.join(name.split('/')[:2])
+            if prefix + '/.hyperskill-import.json' not in markers:
+                raise ValueError('Project directory missing archive manifest: ' + name)
+
+    results, seen = [], set()
+    with tempfile.TemporaryDirectory(prefix='validated-source-archives-') as folder:
         for marker in markers:
-            prefix=marker.rsplit('/',1)[0]
-            target=Path(folder)/prefix
-            for name in entries:
-                if not name.startswith(prefix+'/'):continue
-                mode,kind,oid=entries[name]
-                if mode not in ('100644','100755') or kind!='blob':raise ValueError('Non-regular export')
-                path=Path(folder)/name;path.parent.mkdir(parents=True,exist_ok=True)
-                path.write_bytes(subprocess.check_output(['git','-C',str(root),'cat-file','blob',oid]))
-                if mode=='100755':path.chmod(0o755)
-            meta=json.loads((target/'.hyperskill-import.json').read_text())
-            language=prefix.split('/')[0]
-            if meta.get('schema')!=2 or meta.get('language')!=language or meta.get('directory_name')!=target.name:raise ValueError('Invalid export identity')
-            files=meta['files']
-            actual={p.relative_to(target).as_posix() for p in target.rglob('*') if p.is_file()}
-            if actual!=set(files)|{'README.md','.hyperskill-import.json'}:raise ValueError('Unmanifested export files')
-            for name,digest in files.items():
-                path=Path(name)
-                if path.is_absolute() or '..' in path.parts or path.as_posix()!=name or hashlib.sha256((target/name).read_bytes()).hexdigest()!=digest:raise ValueError('Export manifest mismatch')
-            completion=meta.get('completion')
-            if completion:
-                validate_completion(completion);pid=completion['project_id']
-                if meta.get('project_id')!=pid:raise ValueError('Exact project_id missing/conflicting')
-            elif prefix=='java/Simple Chat Bot with Java' and 'Completed as part of [Hyperskill](https://hyperskill.org/projects/113).' in (target/'README.md').read_text().splitlines():
-                pid=113  # Existing reviewed legacy evidence only.
-            else:raise ValueError('Owner completion attestation missing')
-            urls=set(map(int,re.findall(r'https://hyperskill\.org/projects/([1-9][0-9]*)(?![0-9])',(target/'README.md').read_text())))
-            if urls!={pid} or pid in seen:raise ValueError('Duplicate or conflicting Project ID')
-            seen.add(pid)
-            importer['validate']({n:(target/n).read_bytes() for n in files})
-            if language=='java':
-                if type(meta.get('java_version')) is not int or not 8 <= meta['java_version'] <= 99:raise ValueError('Invalid Java target')
-                texts={Path(n): (target/n).read_text() for n in files if n.startswith('src/main/java/') and n.endswith('.java')}
-                # Reuse the actual Java extraction/dependency/resource gate on
-                # committed source bytes, including manually edited PR exports.
-                inspect=Path(folder)/('java-inspect-'+str(pid));src=inspect/'Lesson/task/src'
-                src.mkdir(parents=True)
-                for name,text in texts.items():
-                    dest=src/name.relative_to('src/main/java');dest.parent.mkdir(parents=True,exist_ok=True);dest.write_bytes((target/name).read_bytes())
-                importer['analyze'](inspect,None)
-                main=importer['main_class'](texts,None)
-                for name in ('build.gradle.kts','settings.gradle.kts'):
-                    raw_template=(ROOT/'scripts/templates/java-gradle'/ (name+'.in')).read_bytes()
-                    if hashlib.sha256(raw_template).hexdigest()!=json.loads((ROOT/'scripts/templates/java-gradle-sha256.json').read_text())[name+'.in']:raise ValueError('Unreviewed standalone export template')
-                    expected=raw_template.decode()
-                    for key,value in {'JAVA_VERSION':str(meta['java_version']),'MAIN_CLASS':importer['kotlin_string'](main)[1:-1],'PROJECT_NAME':importer['kotlin_string'](target.name)}.items():expected=expected.replace('@'+key+'@',value)
-                    if (target/name).read_text()!=expected:raise ValueError('Unreviewed standalone Gradle build logic')
-                for name,digest in json.loads((ROOT/'scripts/templates/wrapper-sha256.json').read_text()).items():
-                    if hashlib.sha256((target/name).read_bytes()).hexdigest()!=digest:raise ValueError('Unreviewed wrapper')
-                if set(files)!=set(map(str,texts))|set(importer['WRAPPER'])|{'build.gradle.kts','settings.gradle.kts'}:raise ValueError('Unexpected Java resource/build file')
-                subprocess.run([str(target/'gradlew'),'--no-daemon','build'],cwd=target,check=True)
+            prefix = marker.rsplit('/', 1)[0]
+            target = Path(folder) / prefix
+            for name in sorted(name for name in entries if name.startswith(prefix + '/')):
+                mode, kind, oid = entries[name]
+                if mode not in ('100644', '100755') or kind != 'blob':
+                    raise ValueError('Non-regular archive member')
+                path = Path(folder) / name
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_bytes(git(root, 'cat-file', 'blob', oid))
+                if mode == '100755':
+                    path.chmod(0o755)
+            manifest = json.loads((target / '.hyperskill-import.json').read_text(encoding='utf-8'))
+            language = prefix.split('/')[0]
+            if manifest.get('schema') == 3:
+                validate_source_only_export(target, manifest)
+                pid = manifest['project_id']
+                if manifest['language'] != language:
+                    raise ValueError('Source-only archive folder language mismatch')
+            elif manifest.get('schema') == 2:
+                if manifest.get('language') != language or manifest.get('directory_name') != target.name:
+                    raise ValueError('Invalid legacy export identity')
+                files = manifest.get('files')
+                if not isinstance(files, dict) or not files:
+                    raise ValueError('Legacy export file manifest required')
+                actual = {path.relative_to(target).as_posix() for path in target.rglob('*') if path.is_file()}
+                if actual != set(files) | {'README.md', '.hyperskill-import.json'}:
+                    raise ValueError('Unmanifested legacy export files')
+                for name, expected in files.items():
+                    if not _safe_legacy_path(name) or not isinstance(expected, str) or not re.fullmatch(r'[a-f0-9]{64}', expected):
+                        raise ValueError('Unsafe legacy export inventory')
+                    if hashlib.sha256((target / name).read_bytes()).hexdigest() != expected:
+                        raise ValueError('Legacy export manifest hash mismatch')
+                completion = manifest.get('completion')
+                if completion:
+                    validate_completion(completion)
+                    pid = completion['project_id']
+                    if manifest.get('project_id') != pid:
+                        raise ValueError('Exact Project ID missing/conflicting')
+                elif (prefix == 'java/Simple Chat Bot with Java' and
+                      LEGACY_STATEMENT in (target / 'README.md').read_text().splitlines()):
+                    pid = 113
+                else:
+                    raise ValueError('Owner completion attestation missing')
+                if language == 'java' and not any(
+                        name.startswith('src/main/java/') and name.endswith('.java') for name in files):
+                    raise ValueError('Legacy Java export has no solution source')
+                if language == 'python':
+                    if manifest.get('python_version') != '3.12' or manifest.get('dependencies') != []:
+                        raise ValueError('Unsupported legacy Python archive metadata')
+                    if manifest.get('entrypoint') not in files or not manifest['entrypoint'].endswith('.py'):
+                        raise ValueError('Legacy Python entrypoint missing')
             else:
-                # Re-run the exact source/dependency/resource adapter on the
-                # exported bytes in a disposable Academy-shaped inspection tree.
-                inspect=Path(folder)/('python-inspect-'+str(pid));src=inspect/'Lesson/task/src'
-                src.mkdir(parents=True)
-                for name in files:
-                    if not name.startswith('src/'):raise ValueError('Python member outside src')
-                    dest=src/name.removeprefix('src/');dest.parent.mkdir(parents=True,exist_ok=True);dest.write_bytes((target/name).read_bytes())
-                payload,main=python_sources(inspect,importer['inventory'],importer['excluded'],importer['PLATFORM'],importer['SECRETS'])
-                if set(payload)!=set(files) or meta['entrypoint']!='src/'+main:raise ValueError('Python source contract mismatch')
-                validate_python_export(target,meta)
-            results.append(dict(project_id=pid,language=language,status='PASS'))
+                raise ValueError('Unsupported export manifest schema')
+
+            readme = (target / 'README.md').read_text(encoding='utf-8')
+            urls = set(map(int, re.findall(r'https://hyperskill\.org/projects/([1-9][0-9]*)(?![0-9])', readme)))
+            if urls != {pid} or pid in seen:
+                raise ValueError('Duplicate or conflicting Project ID')
+            seen.add(pid)
+            results.append(dict(project_id=pid, language=language,
+                                archive_mode='source-only' if manifest['schema'] == 3 else 'legacy-schema-2',
+                                status='PASS'))
     return results
 
-if __name__=='__main__':
-    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--repository',type=Path,default=ROOT)
-    args=parser.parse_args();print(json.dumps(validate(args.repository.resolve()),indent=2))
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--repository', type=Path, default=ROOT)
+    args = parser.parse_args()
+    print(json.dumps(validate(args.repository), indent=2))

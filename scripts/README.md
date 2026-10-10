@@ -1,228 +1,146 @@
-# Hyperskill Importer
+# Hyperskill source-only publisher
 
-`import-hyperskill-project` exports eligible completed Academy projects into this
-repository as standalone builds. It inventories the Academy workspace but treats
-its build files as untrusted input: it never parses, executes, copies, or uses them
-to configure an export. It never writes to the source, deletes source files, stages
-Git changes, commits, or pushes.
+The existing `publish-hyperskill-project` command archives completed Academy
+solutions as source. It does not create a release or claim that the code builds
+or runs. The Academy workspace is read-only throughout inspection and export.
 
-## Supported projects
+## One-command workflow
 
-Java supports exactly one Academy final task source root,
-`<lesson>/task/src`. It copies eligible Java files from that root into
-`src/main/java` and generates the standalone Gradle application. Python supports
-`<lesson>/task` and `<lesson>/task/src` through the separate, explicitly limited
-adapter documented below.
-
-The title is read from the unique top-level `title` field in `course-info.yaml`.
-Use `--title` only when that metadata is missing, ambiguous, or needs an explicit
-override. The original title is also the default directory name. Spaces and
-Unicode are retained. `/` and `\\` are replaced with the visibly distinct full
-width characters `／` and `＼`; control characters are replaced with `�`. The
-importer warns and records both `original_project_name` and `directory_name` in
-`.hyperskill-import.json`. It refuses empty, dot, dot-dot, and overlong names.
-
-Java exports support standalone JDK-only console code. External imports, runtime
-file/resource access, additional modules or source sets, frameworks, and ambiguous
-entry points stop with a reason. The independent export build is the final check
-that selected Java sources compile without Academy dependencies.
-
-## Requirements
-
-- Linux or macOS with Python 3.12 or newer and Git
-- A JDK at least as new as the selected Java target
-- Gradle 9.6.1 Wrapper template (the wrapper pins and verifies its distribution)
-
-The wrapper can download Gradle when needed. It does not install a JDK. Each
-exported Java project has its own wrapper and can be opened or built alone.
-
-## Usage
-
-Run from the repository root. Quote source paths that contain spaces:
+Use the current official repository checkout and quote a workspace path with
+spaces:
 
 ```bash
-./scripts/import-hyperskill-project --dry-run --java-version 23 \
-  --project-url https://hyperskill.org/projects/113 \
-  "/home/me/IdeaProjects/Simple Chat Bot with Java" java
-
-./scripts/import-hyperskill-project --java-version 23 \
-  --project-url https://hyperskill.org/projects/113 \
-  "/home/me/IdeaProjects/Simple Chat Bot with Java" java
+python3.12 scripts/publish-hyperskill-project "/path/to/Academy Project"
 ```
 
-The positional arguments are `<source> <language>`; no slug or project-name
-argument is required. The title is auto-detected, and `--title` overrides it.
-Other options are `--concepts`, `--main-class`, `--dry-run`, and `--update`.
-Run `./scripts/import-hyperskill-project --help` for the current syntax.
+The command reads the title and Java/Python language from `course-info.yaml`,
+and the exact Hyperskill ID from `course-remote-info.yaml`. If identity metadata
+is missing, it asks only for the precise missing title or project URL; explicit
+conflicts stop. It asks for the actual UTC completion time in an interactive
+terminal when one was not supplied. That time is owner-provided and is never
+inferred from file dates or the current clock.
 
-`--dry-run` lists all inspected source entries with `COPY` or `IGNORE`, validates
-the generated files, checks for a target collision, and runs `git diff --check`
-and `git status`. It does not write files or run a build. An actual import creates
-the destination only after validation, then displays Git status. It never commits
-or pushes.
+It first performs and displays a read-only archive review. For a real run, the
+owner personally types `COMPLETE <ID>` before import and `PUBLISH <ID>` after
+reviewing the exact staged diff. The publisher uses a clean, isolated checkout
+of canonical `origin/main`, verifies no duplicate Project ID exists, commits
+only the new archive to one new branch, and opens a draft PR. It never merges,
+force-pushes, changes the original Academy workspace, or publishes directly to
+`main`. If the branch push succeeds but PR creation fails, use the reported
+comparison link rather than publishing again.
 
-## Java version
+The flags `--project-url`, `--language`, and `--title` are only for missing or
+ambiguous metadata. `--completed-at` is convenient when the owner already has
+the actual UTC timestamp. `--dry-run` ends after the read-only review. There is
+no Java version, build, wrapper, dependency, or execution option in the new
+source-only flow.
 
-The importer scans selected source for a few language features such as text
-blocks, records, and sealed classes. This is a heuristic, not a compiler. Course
-metadata may be reported as a hint but never controls the target. Java 23 is the
-default; an explicit `--java-version N` selects another supported target. The
-selected value becomes Gradle's `options.release` and is recorded in the project
-README and import manifest. A version below detected syntax requirements is
-rejected.
+## What is archived
 
-## Safety and filtering
+For Java, the publisher requires one unambiguous final `<lesson>/task/src`
+folder and selects its own `.java` files. For Python, it requires one final
+`<lesson>/task` and selects its `.py` files from `task/src` when present, or
+from `task` otherwise. Relative names, package folders, and bytes are kept
+unchanged below the export's `src/` directory. No unique `main()` is required.
+Files in the opposite language and other non-source files are ignored.
 
-The source is never a copy destination, and the importer does not run any file
-from it. It rejects unsafe paths and symlinks throughout the inventory, as well
-as relevant special files. It accepts only `.java` files below the unique final
-task source directory. Academy build files and wrappers are ignored without
-parsing or copying. Hyperskill tests, earlier stages, task descriptions,
-`*-info.yaml`, `.git`, `.idea`, `.gradle`, `build`,
-`target`, `out`, IDE history, caches, generated reports, temporary files, and
-resources are excluded. Unexpected source sets, modules, resources, or files
-inside the final task stop the import.
+The adapter may add a local UTF-8 `.txt`, `.json`, or `.csv` file only when its
+relative path is directly identified by a supported string literal in the
+selected solution source (literal read-mode `open()` in Python, or the selected
+read-only file/resource APIs in Java). It does not copy binary files, infer
+dynamic resource paths, or include an unreferenced text file. Sources and
+resources are hashed in the manifest.
 
-Generated text is checked for platform-test markers, common secret patterns,
-merge markers, unsafe target paths, and trailing whitespace. Selected Java source
-is preserved byte-for-byte, including trailing whitespace; the independent
-standalone compiler validates it. This secret scan is heuristic; inspect changes
-before publishing. The manifest records the project title, actual directory
-name, Java version, and SHA-256 checksums of imported/generated files.
+Each new archive contains only:
 
-## Updates
+- the selected solution sources and safely identified text resources;
+- a short generated `README.md` with the title, language, and exact project URL;
+- `.hyperskill-import.json` schema 3 with `mode: source-only`, exact project ID,
+  language, owner completion attestation, UTC timestamp, and SHA-256 hashes.
 
-A destination collision is rejected unless `--update` is explicit. Updates require
-the importer manifest, reject extra or missing files, and refuse to overwrite
-files changed since the prior import. They never delete destination files. The
-project README is user-maintained and is preserved across updates. Build outputs
-such as ignored `build/` or `.gradle/` directories in an existing target cause the
-conservative update check to stop; move them aside before updating.
+Schema-2 standalone exports such as Projects 113 and 380 remain valid and
+unchanged. Duplicate ID checks recognize both schemas. New project imports do
+not rewrite old exports or add build files to them.
 
-## Completion evidence
+## Trust boundary and exclusions
 
-`--project-url` records the exact Hyperskill Project ID. To explicitly attest a completed export, supply `--completed-at` with the actual UTC completion/observation time, in `YYYY-MM-DDTHH:MM:SSZ` form. This is an owner attestation; it does not fabricate platform verification or imply Course completion. The independent `export_metadata.py` validator keeps this importer usable without MyAtlas.
+Academy Gradle, Maven, wrapper, requirements, IDE, and other build configuration
+is untrusted input. The importer never parses, copies, evaluates, or executes it.
+It does not compile Java, run Python, install dependencies, look for a `main`,
+verify libraries, or analyze frameworks, modules, or source sets. A harmless or
+unknown Academy build instruction cannot block an otherwise identifiable source
+archive. Malformed or non-runnable solution code can still be archived.
 
-MyAtlas now lives in [its own repository](https://github.com/Planton361/myatlas) and reads committed public exports from this repository. After an approved project merge, its daily Pages check refreshes the visualization; workflow_dispatch remains available.
+The Project 229 failure exposed the obsolete boundary: its Academy
+`build.gradle:27` and `settings.gradle:3` use double-quoted `maven { url ... }`
+declarations for the Hyperskill test repository, while the previous
+`academy-statements.json` line allowlist recognized only a narrower spelling.
+Neither file was part of the selected final solution, so build syntax is now
+outside the archive trust decision instead of receiving another project-specific
+allowlist entry.
 
-## Tests
+The inventory excludes earlier stages, Academy tests, task statements,
+`.git`, `.idea`, `.vscode`, `.gradle`, `.m2`, virtual environments,
+`node_modules`, build outputs, IDE history, caches, and generated or temporary
+files. It rejects symlinks, special files, unsafe cross-platform
+paths, ambiguous final-task layouts, private-looking names in selected files,
+and content matching the repository's common secret patterns. Secret scanning
+is a safety heuristic, so the owner still reviews the exact file list and diff.
+The adapter supports Java and Python source archives; other languages and files
+that cannot be safely identified remain unsupported until their own adapter is
+reviewed.
 
-Run the infrastructure tests from the repository root:
+## MyAtlas compatibility
 
-```bash
-python3 -B -m unittest discover -s scripts/tests -v
-```
+MyAtlas accepts legacy schema 2 and source-only schema 3. A valid owner
+completion attestation counts as project completion without requiring an
+independent build. Topic IDs come only from the trusted MyAtlas catalog. An
+unknown project can be recorded as completed, but it contributes no invented
+learned topics. MyAtlas continues to synchronize from `hyperskill-projects/main`
+on its daily Pages check or its existing manual Pages action; this publisher
+does not deploy MyAtlas or change its production data.
 
-They use disposable source trees and repositories to exercise filtering, unknown
-and reformatted Academy Gradle files, real standalone builds, title/path handling,
-update protection, version checks, and refusal cases. They do not change real
-Hyperskill workspaces. The export validator rebuilds the committed Project 113
-and 380 evidence without rewriting either export.
+The MyAtlas compatibility change is reviewed first. The publisher's
+cross-repository CI pins that exact compatibility commit until it appears on
+MyAtlas `main`, then follows `main`. Merge MyAtlas compatibility before the
+publisher change only after each PR's review and green checks.
 
-## Validated adapters and templates
+## Tests and project evidence
 
-`templates/java-gradle/` and the SHA-verified Gradle wrapper are the only Java
-build inputs exported or executed. Java 23 is the default target. Academy Gradle
-files and wrappers are untrusted inventory entries; their syntax, plugins,
-repositories, dependencies, and formatting never affect export configuration.
-Project 229 exposed the previous false rejection: both `build.gradle:27` and
-`settings.gradle:3` declare the Academy test Maven repository with a
-double-quoted URL, while the old line allowlist contained only the single-quoted
-form. Those files are not needed by the selected JDK-only `Main.java`. The
-standalone compiler remains the final dependency and Java validity check.
-
-The Project 229 dry-run now succeeds and identifies `java/Zookeeper with Java`
-as its target. The selected `Main.java` is preserved byte-for-byte, including a
-12-space whitespace-only line at line 74 inside the goose text block. The
-read-only real workspace was then imported only in a disposable evidence clone;
-its standalone Java 23 build and the full MyAtlas Pages acceptance passed with
-Project 229 recorded as completed. The source inventory matched before and
-after, and no export was published.
-
-The Python 3.12+ adapter accepts a single final task, a unique `main.py`/`app.py` or
-main guard, local modules and the explicit standard-library list in
-`source_adapters.py`. UTF-8 `.txt`, `.json` and `.csv` resources must be referenced
-by literal read-only `open` calls and remain inside `src/`. Dynamic execution,
-introspection, external imports, links, unknown resources and dependency/build
-metadata stop. A comment-only requirements file is harmless; nothing is installed.
-Validation compiles Python sources without executing the student's program.
-Run exported Python from `src/` so approved relative resource paths resolve.
-
-## One-command owner publication
-
-Run the existing helper with the original Academy directory (or a file within it):
+Run local publisher tests with Python 3.12:
 
 ```bash
-python3.12 scripts/publish-hyperskill-project "/path/to/Academy Project" \
-  --completed-at "YYYY-MM-DDTHH:MM:SSZ"
-```
-
-Use the **actual** UTC completion time. It is never invented. An interactive run
-asks for it when omitted. Language/title come from `course-info.yaml`; project ID
-comes from the typed `hyperskill_project` record in `course-remote-info.yaml`.
-Missing ID/title prompts are targeted; conflicting explicit metadata stops. Flags
-`--language`, `--title`, `--project-url`, `--main-class`, `--java-version` resolve
-supported ambiguities. Course language version never overrides the Java 23 default.
-
-The sequence is language detection → validated source extraction → language
-adapter → standalone export → owner completion evidence → Git publication.
-
-1. Inspect original sources and known local IDs without modifying them.
-2. Clone to a retained temporary checkout and fetch canonical `origin/main`.
-   This also works for stale/dirty/detached or locally read-only checkouts; it never
-   changes their files, index, branches or Git administration. Canonical evidence
-   and duplicates are checked again after fetching.
-3. The **owner** types `COMPLETE <PROJECT_ID>`. Neither Codex nor another agent may
-   enter that confirmation on the owner's behalf. `--attest-completed` is only a
-   legacy compatibility flag and never substitutes for this confirmation.
-4. Export/build, verify source immutability and show the exact temporary-index diff.
-5. The **owner** types `PUBLISH <PROJECT_ID>`. Commit only the reviewed new export,
-   push one new branch normally, and open a draft PR through the existing `gh`
-   authentication. No auto-merge. PR creation failure reports the comparison URL
-   and retained checkout; do not repeat publication. No new credentials are needed.
-
-`--dry-run` performs read-only inspection. `--prepare-only` stops after export,
-build and review. Unsupported projects, duplicates, build failures and rejected
-pushes stop with concrete reasons. The isolated checkout is retained for review;
-no resets, clean, force pushes or automatic retries are used. `--publish push`
-retains the existing explicit fast-forward publication mode; the default is a PR.
-
-## Full cross-repository acceptance
-
-Every project PR runs `project-atlas-acceptance.yml` with read-only permissions.
-It validates committed IDs, attestations, file hashes, standalone templates and
-real builds before MyAtlas imports any candidate. Separate disposable Java/Python
-Academy fixtures then exercise a further completion with the real catalog. Every
-scenario builds **all Pages routes**, reverses the reviewed release supplements
-through the existing guards, checks deduplication/independent verification, and
-runs Chromium/WebKit desktop/mobile UI and geometry tests. No Pages upload or
-deployment occurs in this workflow. Reports/screenshots are CI artifacts.
-
-The current MyAtlas main is used once it contains the acceptance entrypoint.
-During initial review only, `templates/myatlas-acceptance.json` pins the exact
-companion PR commit; **merge the MyAtlas companion first**, then this PR. This
-bootstrap never selects an arbitrary branch or downloads executable code by title.
-The chosen actual commits are reported on every run. GitHub branch protection is
-not configured by this change; reviewers must require the checks before merging.
-
-Local equivalent (clean committed MyAtlas checkout required):
-
-```bash
-python3.12 -B scripts/test-cross-repository.py --myatlas-root ../myatlas --scenario committed
-python3.12 -B scripts/test-cross-repository.py --myatlas-root ../myatlas --scenario java
-python3.12 -B scripts/test-cross-repository.py --myatlas-root ../myatlas --scenario python
 python3.12 -B -m unittest scripts.tests.test_import scripts.tests.test_publish scripts.tests.test_adapters
+python3.12 scripts/validate-project-exports.py
 ```
 
-To test a specific catalog project with its real read-only Academy workspace,
-pass `--project-id ID --academy-source /absolute/path --completed-at ACTUAL_UTC`
-to a `java` or `python` scenario. The harness creates and commits evidence only
-inside a disposable repository clone, checks the source inventory before and
-after, builds the export, and runs the complete local MyAtlas Pages acceptance
-without deployment. Unknown MyAtlas project requirements are recorded as unknown
-and receive no inferred learned topics.
+The tests use disposable trees and local Git repositories. They cover unknown,
+reformatted, and unsafe Academy builds without executing them; external
+imports, invalid Java/Python, and non-runnable sources remain archivable; and
+private names, possible secrets, symlinks, unsafe paths, and unsafe resources
+stop. They also verify source bytes, owner confirmations, duplicate prevention,
+legacy compatibility, and Python source/resource handling. The legacy export
+validator checks Projects 113 and 380 without changing their directories.
 
-After an owner-approved merge, the existing daily 05:23 UTC MyAtlas check and
-`workflow_dispatch` consume canonical main. Failed acceptance keeps the previous
-public site. Revert infrastructure through a normal PR to roll back; retain all
-existing exports and completion evidence.
+The cross-repository test creates project evidence only in a disposable clone
+and runs the MyAtlas Pages acceptance locally without deployment:
+
+```bash
+python3.12 -B scripts/test-cross-repository.py \
+  --myatlas-root /path/to/myatlas \
+  --scenario java \
+  --project-id 229 \
+  --academy-source "/Users/antonplatonov/IdeaProjects/Zookeeper with Java" \
+  --completed-at "2026-10-10T11:45:17Z"
+```
+
+The Project 229 dry-run found one final source file, `Main.java`, under
+`Zookeeper with Java/task/src`; it reported the Java archive target
+`java/Zookeeper with Java`, ID 229, and the owner-supplied timestamp. Its SHA-256
+is `bcbbe093891db5551df408c0f0065bd17f48f139481676139757ff05d5719d66`. The
+actual Academy workspace remains unchanged, and no Project 229 export is
+published by this test.
+
+After a project PR is reviewed, marked ready, and its MyAtlas acceptance check is
+green, merge it through GitHub. MyAtlas then observes the canonical `main` on
+its next scheduled sync. This workflow never auto-merges a PR.

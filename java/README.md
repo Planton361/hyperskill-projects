@@ -1,11 +1,13 @@
-# Java projects
+# Java project archives
 
-Each directory is a standalone Hyperskill project with its own source, Gradle Wrapper and README.
+New Java exports contain the final Academy solution sources under `src/`, a
+short README, and a SHA-256 manifest. They are source archives; no compiler,
+Java version, build system, framework, or runtime is required to accept them.
 
-| Completed project | Main source | Required JDK |
-| --- | --- | --- |
-| [Simple Chat Bot with Java](Simple%20Chat%20Bot%20with%20Java/) | [SimpleBot.java](Simple%20Chat%20Bot%20with%20Java/src/main/java/bot/SimpleBot.java) | 23 |
+| Completed project | Format |
+| --- | --- |
+| [Simple Chat Bot with Java](Simple%20Chat%20Bot%20with%20Java/) · [Project 113](https://hyperskill.org/projects/113) | legacy schema 2; existing standalone files retained |
 
-Open a project directory in your IDE, or run `./gradlew run` from that directory. There is no shared application build at the repository root.
-
-To add a completed export, use the [repository importer](../scripts/README.md). Each new project keeps its own build and requirements.
+Project 380 also remains in its original schema-2 format. Future projects use
+the [source-only publisher](../scripts/README.md). Both formats remain accepted
+by MyAtlas.
