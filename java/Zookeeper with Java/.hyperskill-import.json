@@ -1,0 +1,16 @@
+{
+  "schema": 3,
+  "mode": "source-only",
+  "language": "java",
+  "directory_name": "Zookeeper with Java",
+  "project_id": 229,
+  "completion": {
+    "project_id": 229,
+    "status": "completed",
+    "attested_by": "owner",
+    "observed_at": "2026-10-10T11:45:17Z"
+  },
+  "files": {
+    "src/Main.java": "bcbbe093891db5551df408c0f0065bd17f48f139481676139757ff05d5719d66"
+  }
+}
