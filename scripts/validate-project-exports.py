@@ -70,8 +70,6 @@ def validate(root):
                 src.mkdir(parents=True)
                 for name,text in texts.items():
                     dest=src/name.relative_to('src/main/java');dest.parent.mkdir(parents=True,exist_ok=True);dest.write_bytes((target/name).read_bytes())
-                (inspect/'build.gradle').write_text("plugins { id 'application' }\n")
-                (inspect/'settings.gradle').write_text("rootProject.name = 'Validated export'\n")
                 importer['analyze'](inspect,None)
                 main=importer['main_class'](texts,None)
                 for name in ('build.gradle.kts','settings.gradle.kts'):

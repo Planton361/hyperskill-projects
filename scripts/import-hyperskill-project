@@ -42,13 +42,31 @@ def digest(data):
 def inventory(root):
     """Never follow links; include empty directories and every file in dry-runs."""
     entries = []
-    for parent, dirs, files in os.walk(root, followlinks=False):
+    def fail_walk(error):
+        raise error
+    for parent, dirs, files in os.walk(root, followlinks=False, onerror=fail_walk):
         dirs.sort()
         files.sort()
         for name in dirs + files:
             path = Path(parent) / name
             entries.append(path.relative_to(root))
     return sorted(entries)
+
+
+def unsafe_source_path(path):
+    reserved = {"CON", "PRN", "AUX", "NUL", *(f"COM{i}" for i in range(1, 10)),
+                *(f"LPT{i}" for i in range(1, 10))}
+    for part in path.parts:
+        if (not part or part in {".", ".."} or part.endswith((" ", ".")) or
+                any(ord(char) < 32 or ord(char) == 127 or char in '\\<>:"|?*'
+                    for char in part) or
+                part.split(".", 1)[0].upper() in reserved):
+            return True
+        try:
+            part.encode("utf-8")
+        except UnicodeEncodeError:
+            return True
+    return False
 
 
 def excluded(path):
@@ -74,33 +92,37 @@ def git(*args, capture=False):
 def analyze(source, args):
     entries = inventory(source)
     candidates = [p for p in entries if p.parts[-2:] == ("task", "src")
-                  and len(p.parts) == 3 and (source / p).is_dir()
-                  and not excluded(p)]
+                  and len(p.parts) == 3 and not (source / p).is_symlink()
+                  and (source / p).is_dir() and not excluded(p)]
     if len(candidates) != 1:
         fail("Erwartet genau <lesson>/task/src; gefunden: " + repr(candidates))
     src = candidates[0]
     task = src.parent
     lesson = task.parent
     print(f"Finaler Quellordner: {src}")
-    from source_adapters import inspect_java_build
-    inspect_java_build(source, TEMPLATES)
-    profile_file_names = {'build.gradle', 'settings.gradle'}
+    root_build_names = BUILD_NAMES | {"gradlew", "gradlew.bat"}
+    root_wrapper_paths = set(WRAPPER)
     issues = []
 
     accepted = {}
     texts = {}
     for rel in entries:
         path = source / rel
-        reason = excluded(rel)
+        if unsafe_source_path(rel):
+            issues.append(f"Unsicherer Quellpfad: {rel!r}")
+            continue
         if path.is_symlink():
-            reason = "Symlink wird nicht verfolgt"
-            if not excluded(rel):
-                issues.append(f"Symlink im relevanten Bereich: {rel}")
-        if not path.is_dir() and not path.is_file() and not path.is_symlink():
-            issues.append(f"Spezialdatei: {rel}")
+            issues.append(f"Symlink im Academy-Workspace: {rel!r}")
+            continue
+        reason = excluded(rel)
         if reason:
             print(f"IGNORE {str(rel)!r}: {reason}")
             continue
+        if rel.is_relative_to(lesson) and not rel.is_relative_to(task):
+            print(f"IGNORE {str(rel)!r}: earlier Academy stage")
+            continue
+        if not path.is_dir() and not path.is_file() and not path.is_symlink():
+            issues.append(f"Spezialdatei: {rel}")
         if rel.is_relative_to(src):
             if path.is_dir():
                 continue
@@ -126,17 +148,33 @@ def analyze(source, args):
                 texts[rel] = text
                 print(f"COPY   {str(rel)!r} -> {dest.as_posix()!r}")
             continue
+        if str(rel) in root_wrapper_paths or rel.parts[0] == "gradle" and (
+                rel.name in BUILD_NAMES or rel.name == "gradle" or
+                str(rel) in root_wrapper_paths):
+            print(f"IGNORE {str(rel)!r}: untrusted Academy build input")
+            continue
+        if len(rel.parts) == 1 and rel.name in root_build_names:
+            print(f"IGNORE {str(rel)!r}: untrusted Academy build input")
+            continue
         if path.is_dir():
             if rel.is_relative_to(task) and rel != task:
                 issues.append(f"Zusätzliches Verzeichnis/Ressourcen: {rel}")
+            elif not rel.is_relative_to(lesson) and rel.parts[0] not in {"gradle"}:
+                members = [other for other in entries
+                           if other != rel and other.is_relative_to(rel) and
+                           not excluded(other) and
+                           not (source / other).is_dir() and
+                           str(other) not in {"README.md", ".gitignore"}]
+                if members:
+                    issues.append(f"Zusätzliches Modul/Verzeichnis: {rel}")
+                else:
+                    print(f"IGNORE {str(rel)!r}: empty scaffold directory")
             continue
         if rel.parts[0] == "util":
             issues.append(f"Nichtleeres util-Modul: {rel}")
-        elif rel.name in BUILD_NAMES and str(rel) not in profile_file_names:
+        elif rel.name in BUILD_NAMES:
             issues.append(f"Zusätzliche relevante Builddatei: {rel}; manuelle Analyse nötig")
-        elif rel.is_relative_to(lesson) and not rel.is_relative_to(task):
-            pass  # Earlier Academy stages are deliberately never imported.
-        elif str(rel) not in {*profile_file_names, *WRAPPER, "README.md", ".gitignore"}:
+        elif str(rel) not in {"README.md", ".gitignore"}:
             issues.append(f"Unbekannte Datei/Ressource außerhalb des finalen Java-Codes: {rel}")
         print(f"IGNORE {str(rel)!r}: nicht auf der Positivliste (Build/Stage/sonstige Datei)")
 
@@ -148,10 +186,6 @@ def analyze(source, args):
 
 
 def java_version(source, texts, explicit):
-    buildtext = "\n".join((source / n).read_text() for n in ("build.gradle", "settings.gradle"))
-    versions = set(map(int, re.findall(
-        r"(?:JavaLanguageVersion\.of\(|options\.release\s*=\s*|options\.release\.set\()\s*(\d+)", buildtext)))
-    versions.update(map(int, re.findall(r"JavaVersion\.VERSION_(\d+)", buildtext)))
     combined = "\n".join(texts.values())
     minimum = 8
     if '"""' in combined:
@@ -162,17 +196,14 @@ def java_version(source, texts, explicit):
         minimum = max(minimum, 17)
     course = source / "course-info.yaml"
     metadata = re.search(r"programming_language_version:\s*(\d+)", course.read_text()) if course.exists() else None
-    print(f"Java-Analyse: explizite Buildversionen={sorted(versions)}, "
-          f"Kursangabe={metadata[1] if metadata else 'unbekannt'}, "
+    print(f"Java-Analyse: Academy-Kursangabe={metadata[1] if metadata else 'unbekannt'}, "
           f"erkannte Syntax-Untergrenze={minimum} (Heuristik, kein Compiler)")
     chosen = explicit or 23
     if chosen is None:
         fail("WARNUNG: Java-Zielversion nicht eindeutig. Bitte --java-version N angeben.")
     if chosen < minimum:
         fail(f"Java {chosen} liegt unter der erkannten Syntax-Untergrenze {minimum}.")
-    if explicit and versions and versions != {explicit}:
-        print(f"WARNUNG: Explizites Java {explicit} überschreibt Buildhinweise {sorted(versions)}.")
-    print(f"Java-Zielversion: {chosen}; tatsächlicher Build muss separat getestet werden.")
+    print(f"Java-Zielversion: {chosen}; Academy-Builddateien werden ignoriert.")
     return chosen
 
 
@@ -205,7 +236,8 @@ def validate(payload):
         text = data.decode("utf-8")
         if PLATFORM.search(text) or SECRETS.search(text):
             fail(f"Plattformcode oder mögliches Secret in {name}")
-        if any(line.rstrip(" \t") != line for line in text.splitlines()):
+        java_source = path.parts[:3] == ("src", "main", "java") and path.suffix == ".java"
+        if not java_source and any(line.rstrip(" \t") != line for line in text.splitlines()):
             fail(f"Whitespace-Fehler in {name}; Quelldatei wird nicht automatisch geändert")
         if re.search(r"(?m)^(?:<{7}|={7}|>{7})(?: |$)", text):
             fail(f"Möglicher Mergekonflikt in {name}")
