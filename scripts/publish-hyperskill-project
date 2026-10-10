@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Owner-reviewed publication of one new validated export; Academy source stays read-only."""
+"""Owner-reviewed publication of one source-only Hyperskill archive."""
 import argparse
 from datetime import datetime, timezone
 import hashlib
@@ -8,6 +8,7 @@ import os
 from pathlib import Path
 import re
 import runpy
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -45,15 +46,35 @@ def source_snapshot(source, importer):
     return result
 
 
+def _tracked_source_only(directory, manifest):
+    from export_metadata import validate_source_only_export
+    with tempfile.TemporaryDirectory(prefix='hyperskill-existing-export-') as folder:
+        target = Path(folder) / Path(directory).name
+        prefix = directory.rstrip('/') + '/'
+        tree = git('ls-tree', '-rz', 'HEAD', '--', directory, text=False).stdout
+        for item in tree.split(b'\0'):
+            if not item:
+                continue
+            meta, raw_name = item.split(b'\t', 1)
+            mode, kind, oid = meta.decode().split()
+            name = raw_name.decode()
+            if not name.startswith(prefix) or kind != 'blob' or mode not in ('100644', '100755'):
+                raise ValueError('Non-regular existing source-only export member')
+            relative = name[len(prefix):]
+            path = target / relative
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_bytes(git('cat-file', 'blob', oid, text=False).stdout)
+        validate_source_only_export(target, manifest)
+
+
 def duplicate_check(pid, integrity=True):
-    # This repository now contains independent exports, not Atlas catalogs.
-    # Validate explicit IDs and protected bytes in both committed and local
-    # manifests. Topic mapping remains MyAtlas's committed scanner's authority.
-    from export_metadata import validate_completion
+    """Validate explicit IDs and keep schema-2 and schema-3 exports distinct."""
+    from export_metadata import validate_completion, validate_source_only_export
     committed = git('ls-tree', '-r', '--name-only', '-z', 'HEAD', '--', 'java', 'python').stdout.split('\0')
-    markers = [n for n in committed if n.endswith('/.hyperskill-import.json')]
-    local = [p.relative_to(ROOT).as_posix() for p in [*ROOT.glob('java/*/.hyperskill-import.json'), *ROOT.glob('python/*/.hyperskill-import.json')]]
-    for name, tracked in [(n, True) for n in markers] + [(n, False) for n in local]:
+    markers = [name for name in committed if name.endswith('/.hyperskill-import.json')]
+    local = [path.relative_to(ROOT).as_posix() for path in
+             [*ROOT.glob('java/*/.hyperskill-import.json'), *ROOT.glob('python/*/.hyperskill-import.json')]]
+    for name, tracked in [(name, True) for name in markers] + [(name, False) for name in local]:
         def read(relative):
             if tracked:
                 return git('show', 'HEAD:' + relative, text=False).stdout
@@ -61,20 +82,32 @@ def duplicate_check(pid, integrity=True):
             require(not path.is_symlink() and path.resolve().is_relative_to(ROOT),
                     'Unsafe existing export path; request manual review.')
             return path.read_bytes()
+
         meta = json.loads(read(name))
-        require(meta.get('schema') == 2 and meta.get('language') in ('java', 'python') and
-                isinstance(meta.get('files'), dict) and meta['files'],
-                'Invalid existing export manifest; request manual review.')
         directory = str(Path(name).parent)
-        for relative, digest in meta['files'].items():
-            path = Path(relative)
-            require(not path.is_absolute() and '..' not in path.parts and
-                    isinstance(digest, str) and re.fullmatch(r'[a-f0-9]{64}', digest),
-                    'Invalid existing export inventory; request manual review.')
-            require(not integrity or hashlib.sha256(read(directory + '/' + relative)).hexdigest() == digest,
-                    'Existing export evidence is invalid; request manual review.')
-        ids = {int(n) for n in re.findall(r'https://hyperskill\.org/projects/([1-9][0-9]*)(?![0-9])',
-                                        read(directory + '/README.md').decode())}
+        schema = meta.get('schema')
+        if schema == 3:
+            if tracked:
+                _tracked_source_only(directory, meta)
+            else:
+                validate_source_only_export(ROOT / directory, meta)
+        elif schema == 2:
+            require(meta.get('language') in ('java', 'python') and
+                    isinstance(meta.get('files'), dict) and meta['files'],
+                    'Invalid existing export manifest; request manual review.')
+            for relative, file_hash in meta['files'].items():
+                path = Path(relative)
+                require(not path.is_absolute() and '..' not in path.parts and
+                        isinstance(file_hash, str) and re.fullmatch(r'[a-f0-9]{64}', file_hash),
+                        'Invalid existing export inventory; request manual review.')
+                require(not integrity or hashlib.sha256(read(directory + '/' + relative)).hexdigest() == file_hash,
+                        'Existing export evidence is invalid; request manual review.')
+        else:
+            raise ValueError('Unsupported existing export manifest; request manual review.')
+
+        ids = {int(value) for value in re.findall(
+            r'https://hyperskill\.org/projects/([1-9][0-9]*)(?![0-9])',
+            read(directory + '/README.md').decode('utf-8'))}
         completion = meta.get('completion')
         if completion:
             validate_completion(completion)
@@ -84,23 +117,24 @@ def duplicate_check(pid, integrity=True):
                     'Invalid explicit Project ID; request manual review.')
             ids.add(meta['project_id'])
         require(len(ids) == 1, 'Missing or conflicting explicit Project IDs; request manual review.')
-        require(pid not in ids, 'Duplicate Project ID export; request manual adapter/update review.')
+        require(pid not in ids, 'Duplicate Project ID export; request manual update review.')
 
 
 def isolated_checkout():
     origin = git('remote', 'get-url', 'origin').stdout.strip()
-    require(origin.removesuffix('.git') in ('https://github.com/' + REPOSITORY, 'git@github.com:' + REPOSITORY), 'Unexpected origin repository.')
-    # Clone into a persistent temporary directory, also when .git is read-only.
-    # Neither worktree/index/branch nor Git administration in the user's checkout changes.
+    require(origin.removesuffix('.git') in ('https://github.com/' + REPOSITORY,
+                                            'git@github.com:' + REPOSITORY),
+            'Unexpected origin repository.')
     folder = Path(tempfile.mkdtemp(prefix='hyperskill-owner-review-')).resolve()
     print('Isolated review checkout (retained on failure): ' + str(folder), flush=True)
-    subprocess.run(['git', 'clone', '--no-hardlinks', '--no-checkout', str(ROOT), str(folder)], check=True, capture_output=True)
+    subprocess.run(['git', 'clone', '--no-hardlinks', '--no-checkout', str(ROOT), str(folder)],
+                   check=True, capture_output=True)
     subprocess.run(['git', '-C', str(folder), 'remote', 'set-url', 'origin', origin], check=True)
     subprocess.run(['git', '-C', str(folder), 'fetch', 'origin', 'main'], check=True)
     subprocess.run(['git', '-C', str(folder), 'checkout', '-B', 'owner-review', 'FETCH_HEAD'], check=True)
-    # Repository-local identity is useful on machines without a global identity.
     for key in ('user.name', 'user.email'):
-        result = subprocess.run(['git', '-C', str(ROOT), 'config', '--get', key], capture_output=True, text=True)
+        result = subprocess.run(['git', '-C', str(ROOT), 'config', '--get', key],
+                                capture_output=True, text=True)
         if result.returncode == 0:
             subprocess.run(['git', '-C', str(folder), 'config', key, result.stdout.strip()], check=True)
     return folder
@@ -108,7 +142,8 @@ def isolated_checkout():
 
 def execute(args):
     global ROOT
-    from source_adapters import workspace, project_url, detect, validate_python_export
+    from source_adapters import workspace, project_url, detect
+    from export_metadata import validate_source_only_export
     source = workspace(args.source)
     importer = runpy.run_path(str(IMPORTER))
     try:
@@ -121,11 +156,12 @@ def execute(args):
     try:
         title = importer['title_from_source'](source, args.title)
     except ValueError:
-        if not sys.stdin.isatty():
+        if args.title or not sys.stdin.isatty():
             raise
+        print('Project title could not be read exactly from course-info.yaml.')
         args.title = input('Exact project title from Academy: ').strip()
         title = importer['title_from_source'](source, args.title)
-    language = detect(source, getattr(args, 'language', 'auto'))
+    language = detect(source, args.language)
     if not args.completed_at:
         require(sys.stdin.isatty(), 'Supply actual --completed-at UTC timestamp (never generated).')
         args.completed_at = input('Actual completion timestamp (UTC, ending Z): ').strip()
@@ -135,31 +171,27 @@ def execute(args):
             'Supply the actual UTC completion timestamp ending in Z; it is never generated.')
     stamp = datetime.fromisoformat(args.completed_at.replace('Z', '+00:00'))
     require(stamp <= datetime.now(timezone.utc), 'Completion timestamp must not be in the future.')
-    # Importer remains the sole authority for supported layouts, secrets,
-    # source allowlists, Java selection, wrapper checks and manifest format.
     command = [sys.executable, '-B', str(IMPORTER), str(source), language,
                '--project-url', args.project_url, '--completed-at', args.completed_at]
-    for key in ('java_version', 'title', 'main_class'):
-        if getattr(args, key) is not None:
-            command += ['--' + key.replace('_', '-'), str(getattr(args, key))]
+    if args.title:
+        command += ['--title', args.title]
     before = source_snapshot(source, importer)
     pid = int(args.project_url.rstrip('/').split('/')[-1])
     duplicate_check(pid, integrity=False)
     subprocess.run(command + ['--dry-run'], check=True)
-    require(source_snapshot(source, importer) == before, 'Academy source changed during inspection; stop and review.')
-    pid = int(args.project_url.rstrip('/').split('/')[-1])
-    duplicate_check(pid, integrity=False)
+    require(source_snapshot(source, importer) == before,
+            'Academy source changed during inspection; stop and review.')
     title = importer['title_from_source'](source, args.title)
     target = ROOT / language / importer['safe_directory_name'](title)
     relative = target.relative_to(ROOT).as_posix()
-    require(not target.exists(), 'New exports only; existing destinations require manual update review.')
-    require(not git('ls-tree', 'HEAD', '--', relative).stdout, 'Destination exists in Git; restore/review it manually.')
-    print(f'Owner attestation: Project {pid}, completed at {args.completed_at}; export {relative}', flush=True)
+    require(not target.exists(), 'New source-only archives only; existing destinations require manual review.')
+    require(not git('ls-tree', 'HEAD', '--', relative).stdout,
+            'Destination exists in Git; restore/review it manually.')
+    print(f'Owner attestation: Project {pid}, completed at {args.completed_at}; source archive {relative}', flush=True)
     if args.dry_run:
-        print('REVIEW ONLY: no import, build, staging, commit or push.')
+        print('REVIEW ONLY: no archive files, commit, branch, or push were created.')
         return
-    # Reject local duplicate/uncommitted exports before isolating, then check
-    # the latest fetched main again so stale checkouts cannot republish an ID.
+
     ROOT = isolated_checkout()
     command += ['--repository', str(ROOT)]
     duplicate_check(pid)
@@ -169,84 +201,82 @@ def execute(args):
     head = git('rev-parse', 'HEAD').stdout.strip()
     confirm('Confirm that you personally completed this project at the stated actual UTC time.', f'COMPLETE {pid}')
     subprocess.run(command, check=True)
-    require(source_snapshot(source, importer) == before, 'Academy source changed during import; no publication.')
-    manifest = json.loads((target / '.hyperskill-import.json').read_text())
-    files = sorted([relative + '/' + n for n in manifest['files']] + [relative + '/README.md', relative + '/.hyperskill-import.json'])
+    require(source_snapshot(source, importer) == before,
+            'Academy source changed during source-only archive creation; no publication.')
+    manifest = json.loads((target / '.hyperskill-import.json').read_text(encoding='utf-8'))
+    validate_source_only_export(target, manifest)
+    files = sorted([relative + '/' + name for name in manifest['files']] +
+                   [relative + '/README.md', relative + '/.hyperskill-import.json'])
     payload = {name: (ROOT / name).read_bytes() for name in files}
     with tempfile.TemporaryDirectory(prefix='hyperskill-publish-review-') as temporary:
-        # Build only the independent, validated export, never the Academy tree.
-        if language == 'java':
-            subprocess.run([str(target / 'gradlew'), '--no-daemon', '--project-cache-dir',
-                            str(Path(temporary) / 'gradle-cache'), 'build'], cwd=target, check=True)
-        else:
-            validate_python_export(target, manifest)
-        require(source_snapshot(source, importer) == before, 'Academy source changed; no publication.')
-        require(all((ROOT / n).read_bytes() == b for n, b in payload.items()), 'Export changed during build; review manually.')
-        # The review index is isolated from every staged user change.
         env = dict(os.environ, GIT_INDEX_FILE=str(Path(temporary) / 'review-index'))
         git('read-tree', head, env=env)
         git('add', '--', *files, env=env)
-        require(all(git('show', ':' + n, env=env, text=False).stdout == data for n, data in payload.items()),
-                'Git filters would change validated export bytes; review attributes/configuration manually.')
+        require(all(git('show', ':' + name, env=env, text=False).stdout == raw
+                    for name, raw in payload.items()),
+                'Git filters would change archived bytes; review attributes/configuration manually.')
         staged = git('diff', '--cached', '--name-only', '-z', head, env=env).stdout.split('\0')
-        require(sorted(n for n in staged if n) == files, 'Review contains unexpected Git changes.')
-        git('-c', 'core.whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol', 'diff', '--cached', '--check', head, env=env)
+        require(sorted(name for name in staged if name) == files,
+                'Review contains unexpected Git changes.')
+        # Source-only archives preserve owner-authored bytes exactly. Do not
+        # reject a completed solution for whitespace that a formatter would
+        # normally flag; the exact byte/hash review below is the integrity gate.
         git('diff', '--cached', '--stat', head, env=env, capture=False)
         git('diff', '--cached', '--no-ext-diff', head, env=env, capture=False)
-        if args.prepare_only:
-            print(f'READY FOR OWNER REVIEW: built export at {target}; real Git index and HEAD unchanged.')
-            return
-        confirm(f'Review the exact export above. Commit it and publish via {args.publish}?', f'PUBLISH {pid}')
-        require(git('rev-parse', 'HEAD').stdout.strip() == head, 'HEAD changed during review; restart safely.')
-        require(all((ROOT / n).read_bytes() == b for n, b in payload.items()), 'Export changed during review; no publication.')
-        # Refresh the reviewed index to catch changed executable bits as well.
+        confirm(f'Review the exact source-only archive above. Commit it and open a draft PR?',
+                f'PUBLISH {pid}')
+        require(git('rev-parse', 'HEAD').stdout.strip() == head,
+                'HEAD changed during review; restart safely.')
+        require(all((ROOT / name).read_bytes() == raw for name, raw in payload.items()),
+                'Archive changed during review; no publication.')
         tree = git('write-tree', env=env).stdout.strip()
         git('add', '--', *files, env=env)
-        require(git('write-tree', env=env).stdout.strip() == tree, 'Export modes/content changed during review.')
+        require(git('write-tree', env=env).stdout.strip() == tree,
+                'Archive modes/content changed during review.')
         branch = 'publish/hyperskill-' + str(pid) + '-' + uuid.uuid4().hex[:8]
-        if args.publish == 'pr':
-            git('switch', '-c', branch, capture=False)
-        # Git --only ignores unrelated staged paths, even when they preexist.
+        git('switch', '-c', branch, capture=False)
         git('add', '--', *files)
-        git('commit', '--only', '-m', f'Publish owner-attested Hyperskill Project {pid}: {title}', '--', *files, capture=False)
+        git('commit', '--only', '-m', f'Archive owner-attested Hyperskill Project {pid}: {title}',
+            '--', *files, capture=False)
         require(git('rev-parse', 'HEAD^{tree}').stdout.strip() == tree,
-                'Commit differs from reviewed export; no push. Inspect hooks/changes manually.')
-        destination = 'main' if args.publish == 'push' else branch
+                'Commit differs from reviewed source archive; no push.')
         try:
-            git('push', 'origin', 'HEAD:refs/heads/' + destination, capture=False)
-        except subprocess.CalledProcessError:
-            raise ValueError('Push rejected; commit retained locally. No force push or retry. Review repository rules and publish the reviewed commit through a PR if required.')
-        print('Published reviewed export to ' + REPOSITORY + ', branch ' + destination)
-        if args.publish == 'pr':
-            comparison = 'https://github.com/' + REPOSITORY + '/compare/main...' + branch + '?expand=1'
-            body = Path(temporary) / 'pr-body.md'
-            body.write_text(f'Publish the owner-attested standalone {language} export for Hyperskill Project {pid}: {title}.\n\nCompletion timestamp: {args.completed_at}. The Academy workspace was read-only. Only this export was committed, after its build and exact diff review.\n\nThe cross-repository Pages acceptance check must pass before merge. No production deployment is performed by this PR.\n')
-            try:
-                subprocess.run(['gh', 'pr', 'create', '--repo', REPOSITORY, '--base', 'main', '--head', branch,
-                                '--draft', '--title', f'Publish Hyperskill Project {pid}: {title}', '--body-file', str(body)], cwd=ROOT, check=True)
-            except (OSError, subprocess.CalledProcessError) as error:
-                raise ValueError('Export branch pushed; PR creation failed. Retained checkout: ' + str(ROOT) + '. Open ' + comparison + '. Do not repeat publication.') from error
-
+            git('push', 'origin', 'HEAD:refs/heads/' + branch, capture=False)
+        except subprocess.CalledProcessError as error:
+            raise ValueError('Branch push rejected; no force push or retry. Retained isolated checkout: ' + str(ROOT)) from error
+        print('Published reviewed source-only branch to ' + REPOSITORY + ': ' + branch)
+        comparison = 'https://github.com/' + REPOSITORY + '/compare/main...' + branch + '?expand=1'
+        body = Path(temporary) / 'pr-body.md'
+        body.write_text(
+            f'Archive the owner-attested source-only export for Hyperskill Project {pid}: {title}.\n\n'
+            f'Completion timestamp: {args.completed_at}. The Academy workspace was read-only; only the '
+            'final solution sources, safely identified text resources, README, and verified manifest are included. '
+            'No Academy build, student code, or exported build configuration was executed.\n\n'
+            'The cross-repository MyAtlas Pages acceptance must pass before merge. This is a draft PR; '
+            'no production deployment or automatic merge is performed.\n')
+        try:
+            subprocess.run(['gh', 'pr', 'create', '--repo', REPOSITORY, '--base', 'main', '--head', branch,
+                            '--draft', '--title', f'Archive Hyperskill Project {pid}: {title}',
+                            '--body-file', str(body)], cwd=ROOT, check=True)
+        except (OSError, subprocess.CalledProcessError) as error:
+            raise ValueError('Source archive branch pushed; PR creation failed. Open ' + comparison +
+                             '. Do not repeat publication.') from error
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('source', help='original independent IntelliJ Academy project directory')
+    parser.add_argument('source', help='original Academy workspace directory')
     parser.add_argument('--project-url')
     parser.add_argument('--language', choices=('auto', 'java', 'python'), default='auto')
     parser.add_argument('--completed-at')
-    parser.add_argument('--attest-completed', action='store_true', help='compatibility flag; COMPLETE confirmation always required')
-    parser.add_argument('--java-version', type=int)
-    parser.add_argument('--title')
-    parser.add_argument('--main-class')
-    parser.add_argument('--dry-run', action='store_true', help='importer inspection only; no writes')
-    parser.add_argument('--prepare-only', action='store_true', help='import/build/review only; no staging, commit or push')
-    parser.add_argument('--publish', choices=('pr', 'push'), default='pr', help='default: isolated export branch and PR comparison; push: normal fast-forward main push')
+    parser.add_argument('--title', help='use only if course-info.yaml has no unique title')
+    parser.add_argument('--dry-run', action='store_true', help='read-only source/archive review')
     args = parser.parse_args()
     try:
         execute(args)
     except (ValueError, OSError, subprocess.CalledProcessError, EOFError) as error:
-        print('STOP: ' + str(error) + '\nNo further publication. Unsupported layouts need manual adapter review; validation is never bypassed.', file=sys.stderr)
+        print('STOP: ' + str(error) + '\nNo further publication; source-only review never executes Academy builds or student code.',
+              file=sys.stderr)
         return 2
     return 0
 
