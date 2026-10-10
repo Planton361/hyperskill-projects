@@ -23,6 +23,11 @@ def snapshot(root):
 
 
 class ImportTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.gradle_home = tempfile.TemporaryDirectory(prefix="hyperskill-gradle-home-")
+        cls.addClassCleanup(cls.gradle_home.cleanup)
+
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory(prefix="hyperskill paths ")
         self.addCleanup(self.tmp.cleanup)
@@ -36,25 +41,13 @@ class ImportTests(unittest.TestCase):
         self.src = self.source / "Lesson/task/src/bot/Main.java"
         self.src.parent.mkdir(parents=True)
         self.src.write_bytes(SIMPLE)
-        # A synthetic reviewed profile tests the same exact-byte gate, without
-        # copying or executing educational build scripts in test repositories.
         self.build = self.source / "build.gradle"
-        self.build.write_text("def userJava = JavaVersion.current()\n")
+        self.build.write_text("plugins { id 'org.hyperskill.academy' version '1.0' }\n")
         self.settings = self.source / "settings.gradle"
-        self.settings.write_text("include 'util'\n")
-        (self.source / "course-info.yaml").write_text("title: Demo Project\n")
-        self.approve_fixture_profile()
+        self.settings.write_text("includeBuild 'untrusted-academy-build-logic'\n")
+        (self.source / "course-info.yaml").write_text(
+            "title: Demo Project\nprogramming_language: Java\nprogramming_language_version: 11\n")
         self.target = self.repo / "java/Demo Project"
-
-    def approve_fixture_profile(self, additional_profiles=None):
-        data = {
-            "id": "fixture-legacy",
-            "files": {p.name: hashlib.sha256(p.read_bytes()).hexdigest()
-                      for p in (self.build, self.settings)},
-        }
-        if additional_profiles:
-            data["additional_profiles"] = additional_profiles
-        (self.repo / "scripts/templates/academy-profile.json").write_text(json.dumps(data))
 
     def invoke(self, *flags, version=True, success=True):
         before = snapshot(self.source)
@@ -90,12 +83,51 @@ class ImportTests(unittest.TestCase):
         self.assertEqual(snapshot(self.repo), before)
         self.assertFalse(self.target.exists())
 
-    def test_build_variants_ignore_comments_and_whitespace_without_sha_registration(self):
-        self.build.write_text("// new Academy revision\n\nplugins { id 'application' }\n")
-        self.settings.write_text("rootProject.name = 'New project'\n")
-        self.assertIn('Reviewed Academy statement', self.invoke('--dry-run'))
-        self.build.write_text("  def userJava = JavaVersion.current()\n")
-        self.assertIn('Reviewed Academy statement', self.invoke('--dry-run'))
+    def test_unknown_changed_and_reformatted_academy_gradle_files_are_ignored(self):
+        variants = [
+            ("description = 'harmless Academy metadata'\n",
+             "rootProject.name = 'Changed title'\n"),
+            ("plugins { id 'org.hyperskill.academy' version '999.42' }\n",
+             "includeBuild 'another-untrusted-build'\n"),
+            ("plugins {\n    id    'java'\n}\n"
+             "dependencies { implementation 'example.invalid:unused:1.0' }\n",
+             "rootProject.name\n    =\n        'Reformatted project'\n"),
+            ("this is deliberately not valid Gradle syntax\n",
+             "settingsEvaluated { throw new GradleException('must not execute') }\n"),
+        ]
+        for build, settings in variants:
+            with self.subTest(build=build):
+                self.build.write_text(build)
+                self.settings.write_text(settings)
+                output = self.invoke("--dry-run")
+                self.assertIn("untrusted Academy build input", output)
+                self.assertIn("DRY-RUN OK", output)
+                self.assertFalse(self.target.exists())
+
+    def test_new_java_workspace_builds_from_template_with_untrusted_academy_gradle(self):
+        source_bytes = SIMPLE.replace(b"package bot;", b"package bot;  ")
+        self.src.write_bytes(source_bytes)
+        self.build.write_text(
+            "plugins { id 'org.hyperskill.academy' version '999.42' }\n"
+            "repositories { maven { url 'https://packages.invalid/academy' } }\n"
+            "dependencies { implementation 'example.invalid:unused:1.0' }\n"
+            "sourceSets { main.java.srcDir 'academy-generated' }\n"
+            "tasks.register('untrustedTask') { doLast { throw new RuntimeException('must not run') } }\n")
+        self.settings.write_text("includeBuild 'missing-academy-build-logic'\n")
+        original = snapshot(self.source)
+        output = self.invoke()
+        self.assertIn("untrusted Academy build input", output)
+        self.assertFalse((self.target / "build.gradle").exists())
+        self.assertFalse((self.target / "settings.gradle").exists())
+        self.assertFalse((self.target / "academy-generated").exists())
+        self.assertEqual((self.target / "src/main/java/bot/Main.java").read_bytes(), source_bytes)
+        env = dict(os.environ, GRADLE_USER_HOME=self.gradle_home.name)
+        result = subprocess.run(
+            [str(self.target / "gradlew"), "--no-daemon", "--project-cache-dir",
+             str(self.repo.parent / "gradle-cache"), "build"],
+            cwd=self.target, env=env, text=True, capture_output=True)
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertEqual(snapshot(self.source), original)
 
     def test_import_allowlist_and_no_commit(self):
         for name in (".git/config", ".idea/workspace.xml", ".gradle/cache", "build/report.html",
@@ -167,29 +199,10 @@ class ImportTests(unittest.TestCase):
         self.invoke("--update", success=False)
         self.assertEqual(snapshot(self.target), before)
 
-    def test_unknown_build_plugins_dependencies_sourcesets_abort(self):
-        original = self.build.read_text()
-        for addition in ("plugins { id 'org.springframework.boot' }", "implementation 'foo:bar:1'",
-                         "sourceSets.main.java.srcDir 'custom'", "apply from: 'other.gradle'"):
-            with self.subTest(addition=addition):
-                self.build.write_text(original + addition)
-                self.assertIn("Unreviewed Academy", self.invoke(success=False))
-                self.assertFalse(self.target.exists())
-        self.build.write_text(original)
-
-        original_settings = self.settings.read_text()
-        for addition in ("plugins { id 'com.example.unknown' version '1.0' }",
-                         "includeBuild 'unreviewed-build-logic'",
-                         "apply from: 'other.settings.gradle'"):
-            with self.subTest(settings_addition=addition):
-                self.settings.write_text(original_settings + addition)
-                self.assertIn("Unreviewed Academy", self.invoke(success=False))
-                self.assertFalse(self.target.exists())
-        self.settings.write_text(original_settings)
-
-    def test_extra_builds_resources_modules_abort(self):
-        for name in ("pom.xml", "module/build.gradle.kts", "gradle/libs.versions.toml",
-                     "Lesson/task/resources/config.json", "Lesson/task/src/banner.txt", "util/src/Helper.java"):
+    def test_additional_source_sets_modules_and_resources_abort(self):
+        for name in ("module/src/Helper.java", "Lesson/task/custom-src/Helper.java",
+                     "Lesson/task/resources/config.json", "Lesson/task/src/banner.txt",
+                     "util/src/Helper.java"):
             with self.subTest(name=name):
                 path = self.source / name
                 path.parent.mkdir(parents=True, exist_ok=True)
@@ -198,10 +211,20 @@ class ImportTests(unittest.TestCase):
                 self.assertFalse(self.target.exists())
                 path.unlink()
 
+    def test_empty_academy_util_scaffold_is_allowed_but_module_source_is_not(self):
+        (self.source / "util/src").mkdir(parents=True)
+        output = self.invoke("--dry-run")
+        self.assertIn("empty scaffold directory", output)
+        source = self.source / "util/src/Helper.java"
+        source.write_text("package util; final class Helper {}\n")
+        self.assertIn("Zusätzliches Modul", self.invoke(success=False))
+        self.assertFalse(self.target.exists())
+
     def test_platform_secrets_database_and_dependency_in_source_abort(self):
         for extra in ("import org.hyperskill.hstest.stage.StageTest;", 'String password = "sensitive-value";',
-                      'String connection = "jdbc:h2:demo";', "import com.example.External;", "import javax.script.ScriptEngineManager;",
-                      "ClassLoader.getSystemClassLoader().loadClass(name);"):
+                      'String connection = "jdbc:h2:demo";', "import com.example.External;",
+                      "import javax.script.ScriptEngineManager;", "ClassLoader.getSystemClassLoader().loadClass(name);",
+                      'new java.io.File("missing-runtime-resource.txt");'):
             with self.subTest(extra=extra):
                 self.src.write_bytes(SIMPLE + extra.encode())
                 output = self.invoke(success=False)
@@ -211,6 +234,30 @@ class ImportTests(unittest.TestCase):
     def test_source_symlink_is_not_followed(self):
         self.src.with_name("Outside.java").symlink_to(self.repo / "README.md")
         self.assertIn("Symlink", self.invoke(success=False))
+        self.src.with_name("Outside.java").unlink()
+        (self.src.parent / "ExternalPackage").symlink_to(self.repo / "scripts", target_is_directory=True)
+        self.assertIn("Symlink", self.invoke(success=False))
+
+    def test_unsafe_cross_platform_source_paths_are_rejected(self):
+        for name in (r"..\Escape.java", "CON.java", "bad\nname.java"):
+            with self.subTest(name=name):
+                path = self.src.with_name(name)
+                path.write_text("final class Extra {}\n")
+                self.assertIn("Unsicherer Quellpfad", self.invoke(success=False))
+                self.assertFalse(self.target.exists())
+                path.unlink()
+
+    def test_symlinks_and_unsafe_paths_are_rejected_even_in_ignored_trees(self):
+        ignored = self.source / ".idea/external.xml"
+        ignored.parent.mkdir(parents=True)
+        ignored.symlink_to(self.repo / "README.md")
+        self.assertIn("Symlink im Academy-Workspace", self.invoke(success=False))
+        ignored.unlink()
+        unsafe = self.source / ".gradle/bad\nname"
+        unsafe.parent.mkdir(parents=True)
+        unsafe.write_text("ignored content\n")
+        self.assertIn("Unsicherer Quellpfad", self.invoke(success=False))
+        self.assertFalse(self.target.exists())
 
     def test_destination_symlink_is_rejected(self):
         (self.repo / "java").symlink_to(self.source, target_is_directory=True)
@@ -220,9 +267,16 @@ class ImportTests(unittest.TestCase):
         (self.source / "Second/task/src").mkdir(parents=True)
         self.invoke(success=False)
 
+    def test_main_entrypoint_must_be_unique(self):
+        self.src.write_text("package bot; public class Main {}\n")
+        self.assertIn("Main-Klasse nicht eindeutig", self.invoke(success=False))
+        self.src.write_bytes(SIMPLE)
+        second = self.src.with_name("Second.java")
+        second.write_text("package bot; public class Second { public static void main(String[] args) {} }\n")
+        self.assertIn("Main-Klasse nicht eindeutig", self.invoke(success=False))
+
     def test_explicit_and_inferred_java_version(self):
         self.build.write_text("java.toolchain.languageVersion = JavaLanguageVersion.of(21)\n")
-        self.approve_fixture_profile()
         self.assertIn("Java-Zielversion: 23", self.invoke("--dry-run", version=False))
         self.src.write_bytes(SIMPLE + b'// """ text block syntax\n')
         self.assertIn("Untergrenze", self.invoke("--java-version", "11", success=False))
@@ -245,13 +299,35 @@ public class Main {
         self.assertIn("Syntax-Untergrenze=15", output)
         self.assertIn("Java-Zielversion: 23", output)
 
+    def test_invalid_java_source_fails_the_independent_standalone_build(self):
+        self.src.write_text(
+            "package bot;\n"
+            "public class Main {\n"
+            "  public static void main(String[] args) {\n"
+            "    int value = \"not an integer\";\n"
+            "    System.out.println(value);\n"
+            "  }\n"
+            "}\n")
+        original = snapshot(self.source)
+        self.invoke()
+        env = dict(os.environ, GRADLE_USER_HOME=self.gradle_home.name)
+        result = subprocess.run(
+            [str(self.target / "gradlew"), "--no-daemon", "--project-cache-dir",
+             str(self.repo.parent / "gradle-cache"), "build"],
+            cwd=self.target, env=env, text=True, capture_output=True)
+        self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("compileJava", result.stdout + result.stderr)
+        self.assertEqual(snapshot(self.source), original)
+
     def test_wrapper_tampering_is_detected(self):
         (self.repo / "scripts/templates/wrapper/gradlew").write_text("modified\n")
         self.assertIn("Wrapper-Prüfsumme", self.invoke(success=False))
 
-    def test_whitespace_rejected_even_for_untracked_files(self):
-        self.src.write_bytes(SIMPLE.replace(b"package bot;", b"package bot;  "))
-        self.assertIn("Whitespace", self.invoke(success=False))
+    def test_generated_text_whitespace_still_rejected(self):
+        import runpy
+        validate = runpy.run_path(str(self.repo / "scripts/import-hyperskill-project"))["validate"]
+        with self.assertRaisesRegex(ValueError, "Whitespace-Fehler"):
+            validate({"README.md": b"generated text  \n"})
 
 
 class TemplateBoundaryTests(unittest.TestCase):

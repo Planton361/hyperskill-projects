@@ -1,17 +1,18 @@
 # Hyperskill Importer
 
 `import-hyperskill-project` exports eligible completed Academy projects into this
-repository as standalone builds. The importer reads the source tree and its build
-files. It never executes an Academy build, writes to the source, deletes source
-files, stages Git changes, commits, or pushes.
+repository as standalone builds. It inventories the Academy workspace but treats
+its build files as untrusted input: it never parses, executes, copies, or uses them
+to configure an export. It never writes to the source, deletes source files, stages
+Git changes, commits, or pushes.
 
 ## Supported projects
 
-Java supports the legacy and current Academy final task layout
-`<lesson>/task/src/<package>` and the reviewed non-executed build vocabulary.
-It copies Java source into `src/main/java` and generates the standalone Gradle
-application. Python supports `<lesson>/task` and `<lesson>/task/src` through the
-separate, explicitly limited adapter documented below.
+Java supports exactly one Academy final task source root,
+`<lesson>/task/src`. It copies eligible Java files from that root into
+`src/main/java` and generates the standalone Gradle application. Python supports
+`<lesson>/task` and `<lesson>/task/src` through the separate, explicitly limited
+adapter documented below.
 
 The title is read from the unique top-level `title` field in `course-info.yaml`.
 Use `--title` only when that metadata is missing, ambiguous, or needs an explicit
@@ -21,9 +22,10 @@ width characters `／` and `＼`; control characters are replaced with `�`. Th
 importer warns and records both `original_project_name` and `directory_name` in
 `.hyperskill-import.json`. It refuses empty, dot, dot-dot, and overlong names.
 
-Spring Boot, extra dependencies, custom source sets, databases and unfamiliar
-layouts require a reviewed adapter. Unknown build statements stop with a reason.
-There is no automatic approval of unknown frameworks or dependencies.
+Java exports support standalone JDK-only console code. External imports, runtime
+file/resource access, additional modules or source sets, frameworks, and ambiguous
+entry points stop with a reason. The independent export build is the final check
+that selected Java sources compile without Academy dependencies.
 
 ## Requirements
 
@@ -61,30 +63,32 @@ or pushes.
 
 ## Java version
 
-The importer reads explicit Java settings from the reviewed build files and scans
-source for a few language features such as text blocks, records, and sealed
-classes. This is a heuristic, not a compiler. Course metadata is reported as a
-hint, not treated as authoritative. Java 23 is the default; an explicit
-`--java-version N` selects another supported target. The selected value becomes Gradle's `options.release` and is
-recorded in the project README and import manifest. A version below detected
-syntax requirements is rejected.
+The importer scans selected source for a few language features such as text
+blocks, records, and sealed classes. This is a heuristic, not a compiler. Course
+metadata may be reported as a hint but never controls the target. Java 23 is the
+default; an explicit `--java-version N` selects another supported target. The
+selected value becomes Gradle's `options.release` and is recorded in the project
+README and import manifest. A version below detected syntax requirements is
+rejected.
 
 ## Safety and filtering
 
-The source is never a copy destination. The importer does not run any file from
-it, and rejects relevant symlinks and special files. A positive allowlist accepts
-only `.java` files below the final task source directory. Build scripts are
-inspected against the reviewed statement vocabulary and are never copied. Hyperskill
-tests, earlier stages, task descriptions, `*-info.yaml`, `.git`, `.idea`,
-`.gradle`, `build`, `target`, `out`, IDE history, caches, generated reports,
-temporary files, and resources are excluded. Unexpected files inside the final
-task or non-empty utility modules stop the import.
+The source is never a copy destination, and the importer does not run any file
+from it. It rejects unsafe paths and symlinks throughout the inventory, as well
+as relevant special files. It accepts only `.java` files below the unique final
+task source directory. Academy build files and wrappers are ignored without
+parsing or copying. Hyperskill tests, earlier stages, task descriptions,
+`*-info.yaml`, `.git`, `.idea`, `.gradle`, `build`,
+`target`, `out`, IDE history, caches, generated reports, temporary files, and
+resources are excluded. Unexpected source sets, modules, resources, or files
+inside the final task stop the import.
 
-Before staging any output, it checks generated text for platform-test markers,
-common secret patterns, merge markers, unsafe target paths, and trailing
-whitespace. This secret scan is heuristic; inspect changes before publishing.
-The manifest records the project title, actual directory name, Java version,
-and SHA-256 checksums of imported/generated files.
+Generated text is checked for platform-test markers, common secret patterns,
+merge markers, unsafe target paths, and trailing whitespace. Selected Java source
+is preserved byte-for-byte, including trailing whitespace; the independent
+standalone compiler validates it. This secret scan is heuristic; inspect changes
+before publishing. The manifest records the project title, actual directory
+name, Java version, and SHA-256 checksums of imported/generated files.
 
 ## Updates
 
@@ -109,21 +113,31 @@ Run the infrastructure tests from the repository root:
 python3 -B -m unittest discover -s scripts/tests -v
 ```
 
-They use disposable source trees and repositories to exercise filtering, dry
-runs, title/path handling, update protection, version checks, and refusal cases.
-They do not change real Hyperskill workspaces.
+They use disposable source trees and repositories to exercise filtering, unknown
+and reformatted Academy Gradle files, real standalone builds, title/path handling,
+update protection, version checks, and refusal cases. They do not change real
+Hyperskill workspaces. The export validator rebuilds the committed Project 113
+and 380 evidence without rewriting either export.
 
 ## Validated adapters and templates
 
 `templates/java-gradle/` and the SHA-verified Gradle wrapper are the only Java
 build inputs exported or executed. Java 23 is the default target. Academy Gradle
-files are read, never executed/copied. `academy-statements.json` recognizes the
-reviewed legacy/current scaffold vocabulary independently of whole-file hashes;
-comments, whitespace and supported target versions need no infrastructure PR.
-Unknown plugins, dependencies, source sets, modules or statements stop inspection.
-`academy-profile.json` remains historical documentation and is no longer a gate.
-Java exports currently support JDK-only console sources with no resources or
-runtime file access. The standalone compiler is the final dependency check.
+files and wrappers are untrusted inventory entries; their syntax, plugins,
+repositories, dependencies, and formatting never affect export configuration.
+Project 229 exposed the previous false rejection: both `build.gradle:27` and
+`settings.gradle:3` declare the Academy test Maven repository with a
+double-quoted URL, while the old line allowlist contained only the single-quoted
+form. Those files are not needed by the selected JDK-only `Main.java`. The
+standalone compiler remains the final dependency and Java validity check.
+
+The Project 229 dry-run now succeeds and identifies `java/Zookeeper with Java`
+as its target. The selected `Main.java` is preserved byte-for-byte, including a
+12-space whitespace-only line at line 74 inside the goose text block. The
+read-only real workspace was then imported only in a disposable evidence clone;
+its standalone Java 23 build and the full MyAtlas Pages acceptance passed with
+Project 229 recorded as completed. The source inventory matched before and
+after, and no export was published.
 
 The Python 3.12+ adapter accepts a single final task, a unique `main.py`/`app.py` or
 main guard, local modules and the explicit standard-library list in
@@ -199,6 +213,14 @@ python3.12 -B scripts/test-cross-repository.py --myatlas-root ../myatlas --scena
 python3.12 -B scripts/test-cross-repository.py --myatlas-root ../myatlas --scenario python
 python3.12 -B -m unittest scripts.tests.test_import scripts.tests.test_publish scripts.tests.test_adapters
 ```
+
+To test a specific catalog project with its real read-only Academy workspace,
+pass `--project-id ID --academy-source /absolute/path --completed-at ACTUAL_UTC`
+to a `java` or `python` scenario. The harness creates and commits evidence only
+inside a disposable repository clone, checks the source inventory before and
+after, builds the export, and runs the complete local MyAtlas Pages acceptance
+without deployment. Unknown MyAtlas project requirements are recorded as unknown
+and receive no inferred learned topics.
 
 After an owner-approved merge, the existing daily 05:23 UTC MyAtlas check and
 `workflow_dispatch` consume canonical main. Failed acceptance keeps the previous

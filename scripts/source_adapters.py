@@ -1,6 +1,5 @@
-"""Reviewed, dependency-free Academy adapters. Never execute Academy build logic."""
+"""Reviewed source-only Academy adapters. Never execute Academy build logic."""
 import ast
-import json
 from pathlib import Path
 import re
 import sys
@@ -58,31 +57,6 @@ def detect(source, requested=None):
         fail('Unsupported language; reviewed adapter required.')
     return language
 
-
-def normalized(line):
-    # Whitespace outside strings has no bearing on this non-executing inspection.
-    tokens = re.findall(r'''"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|[^\s]+''', line.strip())
-    return ' '.join(tokens)
-
-
-def inspect_java_build(source, templates):
-    allowed = set(json.loads((templates / 'academy-statements.json').read_text())['statements'])
-    for name in ('build.gradle', 'settings.gradle'):
-        path = source / name
-        if not path.exists():
-            fail('Expected Academy ' + name)
-        if path.is_symlink():
-            fail('Symlink build file refused')
-        for line in path.read_text().splitlines():
-            line = line.strip()
-            if not line or line.startswith('//'):
-                continue
-            if normalized(line) in allowed:
-                continue
-            if re.fullmatch(r'(?:java\.toolchain\.languageVersion = JavaLanguageVersion\.of\([0-9]+\)|rootProject\.name = [\"\'][A-Za-z0-9 _.-]+[\"\'])', line):
-                continue
-            fail('Unreviewed Academy build statement in ' + name + '; dependencies/plugins/build logic need adapter review (content withheld).')
-    print('Reviewed Academy statement vocabulary; build files excluded, never executed.')
 
 
 # Explicit portable subset; no environment-dependent stdlib allow-all.

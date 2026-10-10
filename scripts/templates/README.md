@@ -3,9 +3,9 @@
 `java-gradle/*.in` erzeugt ausschließlich ein Java-Application-Build ohne externe
 Plugins oder Abhängigkeiten. Platzhalter werden vom Importer ersetzt.
 
-`academy-profile.json` enthält SHA-256-Werte der manuell geprüften Academy-
-Builddateien. Diese Original-Builddateien werden gelesen, aber niemals ausgeführt
-oder exportiert. Unbekannte Varianten müssen vor Freigabe separat geprüft werden.
+Academy-Builddateien sind nicht vertrauenswürdig und werden weder geparst noch
+ausgeführt, exportiert oder zur Konfiguration des Standalone-Builds verwendet.
+Nur die ausgewählten Java-Quellen und die geprüfte Vorlage bestimmen den Export.
 
 `wrapper/` wurde unabhängig mit Gradle 9.6.1 `wrapper` erzeugt. Die kleine
 `settings.gradle.kts` dient nur zum erneuten Erzeugen der Vorlage und wird nicht
