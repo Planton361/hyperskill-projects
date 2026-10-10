@@ -42,6 +42,21 @@ def git(root, *args):
     return subprocess.check_output(['git', '-C', str(root), *args]).decode().strip()
 
 
+def select_unknown_project(scopes, completed_ids, requested_id=None):
+    """Select an uncompleted UNKNOWN catalog project for disposable acceptance."""
+    candidates = {project['scope_id']: project for project in scopes['projects']
+                  if project['state'] == 'UNKNOWN' and project['scope_id'] not in completed_ids}
+    if requested_id is not None:
+        if requested_id not in candidates:
+            raise ValueError('Requested UNKNOWN Project ID is unavailable or already completed')
+        return candidates[requested_id]
+    if 229 in candidates:
+        return candidates[229]  # Preserve the historical fixture until its first publication.
+    if not candidates:
+        raise ValueError('No uncompleted UNKNOWN project exists for the disposable fixture')
+    return candidates[min(candidates)]
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--myatlas-root', required=True, type=Path)
@@ -54,8 +69,8 @@ def main():
     atlas = args.myatlas_root.resolve(strict=True)
     if args.scenario == 'committed' and (args.project_id is not None or args.academy_source is not None):
         raise ValueError('--project-id and --academy-source require a java, python, or unknown scenario')
-    if args.scenario == 'unknown' and (args.project_id not in (None, 229) or args.academy_source is not None):
-        raise ValueError('The unknown scenario is the disposable Project 229 fixture only')
+    if args.scenario == 'unknown' and args.academy_source is not None:
+        raise ValueError('The unknown scenario only supports disposable catalog fixtures')
     if args.project_id is not None and args.project_id <= 0:
         raise ValueError('--project-id must be positive')
     if args.academy_source is not None and not args.completed_at:
@@ -101,7 +116,9 @@ def main():
                     task = academy/'Lesson/task'
                     task.mkdir(parents=True)
                     if args.scenario == 'unknown':
-                        pid = 229
+                        project = select_unknown_project(scopes, set(baseline['completed_project_ids']),
+                                                         args.project_id)
+                        pid = project['scope_id']
                     else:
                         pid = args.project_id
                     if pid is None:
