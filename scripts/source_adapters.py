@@ -124,9 +124,14 @@ def source_only_files(source, language, inventory, excluded, unsafe_source_path,
         code_root = candidates[0]
         task_root = code_root.parent
     else:
-        if len(tasks) != 1:
-            fail('Expected exactly one final <lesson>/task Python folder; found: ' + repr([str(p) for p in tasks]))
-        task_root = tasks[0]
+        # Multi-stage Academy workspaces can retain earlier task folders. As
+        # for Java, prefer the uniquely named final project task; never merge
+        # source from earlier stages or guess among ambiguous candidates.
+        named = [p for p in tasks if p.parts[0] == title]
+        candidates = named if len(named) == 1 else tasks
+        if len(candidates) != 1:
+            fail('Expected one final <lesson>/task Python folder; found: ' + repr([str(p) for p in candidates]))
+        task_root = candidates[0]
         code_root = task_root / 'src' if (source / task_root / 'src').is_dir() else task_root
         if (source / code_root).is_symlink():
             fail('Symlink final Python source folder refused')
