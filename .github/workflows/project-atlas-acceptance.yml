@@ -129,10 +129,12 @@ jobs:
           path: build/myatlas
           fetch-depth: 0
           persist-credentials: false
-      - name: Select current MyAtlas main or the reviewed compatibility commit
+      - name: Select canonical MyAtlas or exact reviewed Phase-5 PR candidate
+        env:
+          EVENT: ${{ github.event_name }}
         run: |
           python3 - <<'PY'
-          import json, subprocess
+          import json, os, subprocess
           from pathlib import Path
           root = Path('build/myatlas')
           contract = json.loads(Path('scripts/templates/myatlas-acceptance.json').read_text())
@@ -142,7 +144,22 @@ jobs:
           ancestor = subprocess.run(['git','-C',str(root),'merge-base','--is-ancestor',commit,'origin/main'], check=False)
           if ancestor.returncode:
               raise SystemExit('Merged Schema-4 MyAtlas reader required; incompatible fallback refused')
-          subprocess.run(['git','-C',str(root),'checkout','--detach','origin/main'], check=True)
+          review = contract.get('review_commit')
+          selected = 'origin/main'
+          if review:
+              import re
+              if not re.fullmatch('[a-f0-9]{40}', review):
+                  raise SystemExit('Review pin must be an exact commit')
+              subprocess.run(['git','-C',str(root),'fetch','origin',review], check=True)
+              merged = subprocess.run(['git','-C',str(root),'merge-base','--is-ancestor',review,'origin/main']).returncode == 0
+              if not merged:
+                  if os.environ['EVENT'] != 'pull_request':
+                      raise SystemExit('BLOCKED_BY_PHASE_5_MYATLAS: merge the reviewed fixture fix first')
+                  if subprocess.run(['git','-C',str(root),'merge-base','--is-ancestor','origin/main',review]).returncode:
+                      raise SystemExit('Review candidate must include current canonical MyAtlas main')
+                  selected = review
+                  print('Explicit Draft-PR review candidate; production/main still requires its merge:',review)
+          subprocess.run(['git','-C',str(root),'checkout','--detach',selected], check=True)
           if not (root/'docs/contracts/hyperskill-code-archive-v4.md').is_file():
               raise SystemExit('Current MyAtlas main lacks the Schema-4 contract')
           print('MyAtlas acceptance commit:', subprocess.check_output(['git','-C',str(root),'rev-parse','HEAD']).decode().strip())

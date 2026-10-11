@@ -60,3 +60,21 @@ class ChangePolicyTests(unittest.TestCase):
         self.git('checkout','-q','main');self.write('scripts/base-change','base update');base=self.commit()
         self.git('checkout','-q','feature');self.git('merge','-q','--no-edit','main');merge=self.git('rev-parse','HEAD').decode().strip()
         self.assertEqual(classify(self.root,base,merge,'pull_request')['change_class'],'A')
+
+    def test_workflow_requires_data_and_full_infrastructure_acceptance_without_pending_filters(self):
+        root=Path(__file__).resolve().parents[2]
+        workflow=(root/'.github/workflows/project-atlas-acceptance.yml').read_text()
+        self.assertIn("if: needs.policy.outputs.class != 'A'",workflow)
+        self.assertIn('needs: [policy, data-contract, pages-compatibility]',workflow)
+        self.assertIn('test "$POLICY" = success && test "$DATA" = success',workflow)
+        self.assertIn('test "$FULL" = success',workflow)
+        self.assertIn('test "$FULL" = skipped',workflow)
+        self.assertIn('scenario: [committed, java, python, unknown, unmapped, growth]',workflow)
+        for name in ('project-atlas-acceptance.yml','owner-publish-check.yml','projects.yml','pages-redirects.yml'):
+            raw=(root/'.github/workflows'/name).read_text()
+            self.assertNotIn('    paths:',raw)
+            self.assertIn("base.stdout==Path(path).read_bytes()",raw)
+            self.assertIn("if: steps.bootstrap.outputs.trusted == 'true'",raw)
+        action=(root/'.github/actions/change-policy/action.yml').read_text()
+        self.assertIn("base+':scripts/ci_change.py'",action)
+        self.assertNotIn('eval(',action)

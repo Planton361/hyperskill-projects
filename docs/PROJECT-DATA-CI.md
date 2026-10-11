@@ -72,8 +72,19 @@ enthalten die genaue fehlgeschlagene Anwendungsprüfung.
 
 ## Übergabe an Phase 6
 
-Beide Phase-5-PRs sind unabhängig mergebar: Projects verwendet bereits gemergtes
-MyAtlas Phase 4; empfohlen zuerst Projects, anschließend MyAtlas. In Phase 6:
+**MyAtlas Draft-PR #9 zuerst mergen, danach Projects Draft-PR #13.** Die erste
+volle Matrix fand einen Phase-4-Fixturefehler: fest auf drei Projekte geprüfte
+Reader-Fallbacks übernahmen zusätzliche Cross-Repository-Kandidaten. MyAtlas #9
+trennt diesen festen Reader-Teststand von der vollständigen Browser-Kandidaten-
+projektion; sämtliche Baseline-/Sicherheitsassertions bleiben erhalten.
+
+Der schnelle Datenpfad verwendet gemergte Phase-4-Assets. Die volle PR-Matrix
+verwendet bis zum Merge den exakten `review_commit` aus der versionierten
+Akzeptanzkonfiguration. Er muss aktuelles kanonisches Main enthalten; ein
+branchbasierter oder alter Fallback ist ausgeschlossen. Main-, Schedule- und
+manuelle Läufe stoppen mit `BLOCKED_BY_PHASE_5_MYATLAS`, solange dieser Review-
+Commit nicht in kanonisches MyAtlas Main gemergt ist. Danach testen sie wieder
+aktuelles Main. In Phase 6:
 Branchschutz/erforderliche Checks prüfen, End-to-End mit lokalem Index abnehmen,
 separat die versionierte MyAtlas-Aktivierung und ihre Release-Guards reviewen,
 ersten Producer-Bootstrap manuell freigeben, Endpunkte/Digests/Storeaufbewahrung

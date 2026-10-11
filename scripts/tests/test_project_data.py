@@ -3,7 +3,6 @@ import hashlib
 import json
 import os
 from pathlib import Path
-import shutil
 import subprocess
 import sys
 import tempfile
@@ -67,3 +66,22 @@ class ProjectDataTests(unittest.TestCase):
             self.assertEqual(hashes,{n:hashlib.sha256((repo/n).read_bytes()).hexdigest() for n in hashes})
             print(json.dumps(dict(synthetic_imports=30,final_count=reports[-1]['completed_project_count'],final_revision=previous,
                                  index_sha256=reports[-1]['index_sha256'],baseline_files=22,verified=12,course_records=0)))
+
+    def test_nonreproducible_and_oversize_candidates_block_before_projection(self):
+        from unittest.mock import patch
+        for values in ([b'first',b'second'],[b'x'*(16*1024*1024+1)]*2):
+            with patch('project_data.generate',side_effect=values),patch('project_data.validate_index') as independent:
+                with self.assertRaises(ValueError):validate_data(ROOT,ROOT,'a'*40)
+                independent.assert_not_called()
+
+    def test_invalid_committed_archive_blocks_fast_path(self):
+        from scripts.tests.test_import import ImportTests
+        fixture=ImportTests('test_dry_run_is_read_only_and_reports_exact_owner_evidence')
+        fixture.setUp()
+        try:
+            fixture.git('remote','add','origin','https://github.com/Planton361/hyperskill-projects.git')
+            fixture.invoke();fixture.commit_archive()
+            (fixture.target/fixture.code_path).write_text('tampered code without updating its hash')
+            fixture.git('add','projects');fixture.git('commit','-qm','TEST ONLY corrupt evidence')
+            with self.assertRaises(ValueError):validate_data(fixture.repo,ROOT,fixture.git('rev-parse','HEAD').decode().strip())
+        finally:fixture.doCleanups()

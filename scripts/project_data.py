@@ -5,7 +5,7 @@ from pathlib import Path
 import subprocess
 import sys
 from acceptance_context import isolated_myatlas_environment
-from project_index import generate, encode, git, validate_index, sha
+from project_index import generate, git, validate_index, sha
 
 MIN_READER = '266c1195d5552753f3a63246ec1591ccc5c2b332'
 
@@ -13,6 +13,8 @@ MIN_READER = '266c1195d5552753f3a63246ec1591ccc5c2b332'
 def validate_data(root, atlas, revision):
     root, atlas = Path(root).resolve(), Path(atlas).resolve()
     first = generate(root, revision); second = generate(root, revision)
+    if len(first)>16*1024*1024:
+        raise ValueError('Index exceeds browser payload size limit')
     if first != second:
         raise ValueError('Non-reproducible index bytes')
     validate_index(root, first, revision)
@@ -20,6 +22,13 @@ def validate_data(root, atlas, revision):
         raise ValueError('Merged Phase-4 reader required; incompatible fallback refused')
     if git(atlas,'remote','get-url','origin').decode().strip().removesuffix('.git') != 'https://github.com/Planton361/myatlas':
         raise ValueError('Wrong MyAtlas repository')
+    for name in ('src/supplements/hyperskill-index-v1/reader.js',
+                 'src/supplements/hyperskill-index-v1/projection.js',
+                 'src/myatlas/knowledge-atlas-v6-skill-tree/progress-analytics.js'):
+        path=atlas/name
+        metadata=git(atlas,'ls-tree','HEAD','--',name).split(b'\t')[0].split()
+        if metadata[:2]!=[b'100644',b'blob'] or path.is_symlink() or path.read_bytes()!=git(atlas,'show','HEAD:'+name):
+            raise ValueError('Uncommitted/non-regular MyAtlas contract implementation: '+name)
     # Existing committed scanner and serializer bind exact identities to the trusted catalog.
     code = '''import json,sys; from pathlib import Path
 sys.path.insert(0,sys.argv[1])
