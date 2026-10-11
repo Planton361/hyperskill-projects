@@ -63,4 +63,17 @@ GitHub SHA/ref variables from this repository are removed only from the isolated
 MyAtlas subprocess environment. MyAtlas's own production revision guard is
 unchanged. Universal completion totals remain separate from catalog-bound Topic
 projection. No dynamic index, runtime, catalog or production Pages integration
-is introduced in this phase.
+is introduced by the publisher phase.
+
+Phase 3 adds a read-only, explicitly revision-bound project index:
+
+```bash
+python3.12 -B scripts/build-project-index.py --revision "<full commit SHA>" > /tmp/index.json
+python3.12 -B scripts/validate-project-index.py /tmp/index.json --revision "<full commit SHA>"
+python3.12 -B -m unittest scripts.tests.test_project_index
+```
+
+See [PROJECT-INDEX.md](../docs/PROJECT-INDEX.md) for the exact index/pointer
+contract, durable Git retention, the gated extension of the **existing** Pages
+workflow, failure recovery, manual bootstrap and Phase 4 handoff. No live
+pointer or index deployment is enabled by this PR.

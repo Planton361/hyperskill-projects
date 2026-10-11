@@ -1,45 +1,92 @@
-name: Legacy MyAtlas URL redirects
+name: Legacy redirects and validated project index
 on:
   push:
     branches: [main, 'release/**']
+  pull_request:
   workflow_dispatch:
 permissions:
   contents: read
+# Serialize the entire existing Pages process; do not cancel partial publication.
 concurrency:
-  group: project-pages-${{ github.ref }}
-  cancel-in-progress: true
+  group: project-pages
+  cancel-in-progress: false
 jobs:
   build:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Build redirect-only Pages output
-        run: python3 -B scripts/build-redirects.py
-      - uses: actions/upload-pages-artifact@v3
-        if: github.ref == 'refs/heads/main'
+      - name: Unit, contract, retention and Pages artifact tests
+        run: python3 -B -m unittest scripts.tests.test_project_index
+      - name: Pin and validate deterministic committed index twice
+        run: |
+          revision=$(git rev-parse HEAD)
+          mkdir -p build
+          python3 -B scripts/build-project-index.py --revision "$revision" > build/index.json
+          python3 -B scripts/build-project-index.py --revision "$revision" > build/index-repeat.json
+          cmp build/index.json build/index-repeat.json
+          python3 -B scripts/validate-project-index.py build/index.json --revision "$revision"
+          python3 -B scripts/build-redirects.py --revision "$revision"
+      - uses: actions/upload-artifact@v4
         with:
-          path: build/pages
+          name: validated-project-index-candidate
+          path: build
   deploy:
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
     needs: build
     runs-on: ubuntu-24.04
     permissions:
+      contents: write # append-only own-repository store; never main or another repo
       pages: write
       id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Refuse stale main
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Pin current canonical main, refuse stale queued workflows
         env:
           EXPECTED_SHA: ${{ github.sha }}
-          REPOSITORY: ${{ github.repository }}
         run: |
-          actual_sha=$(git ls-remote "https://github.com/$REPOSITORY.git" refs/heads/main | cut -f1)
-          test "$actual_sha" = "$EXPECTED_SHA"
-      - name: Deploy legacy redirects
+          python3 -B -c 'import os,sys;sys.path.insert(0,"scripts");from project_index import ROOT,repository;from project_index_store import current_main;repository(ROOT);current_main(ROOT,os.environ["EXPECTED_SHA"])'
+      - name: Persist and verify immutable payload before staging pointer (explicitly gated)
+        if: vars.PROJECT_INDEX_ENABLED == 'true'
+        env:
+          EXPECTED_SHA: ${{ github.sha }}
+          BOOTSTRAP: ${{ vars.PROJECT_INDEX_BOOTSTRAP }}
+        run: |
+          args=()
+          if [ "$BOOTSTRAP" = true ]; then args+=(--bootstrap); fi
+          python3 -B scripts/prepare-project-index-publication.py --revision "$EXPECTED_SHA" --output build/portfolio "${args[@]}"
+      - name: Build complete retained Pages snapshot
+        env:
+          EXPECTED_SHA: ${{ github.sha }}
+          INDEX_ENABLED: ${{ vars.PROJECT_INDEX_ENABLED }}
+        run: |
+          args=()
+          if [ "$INDEX_ENABLED" = true ]; then args+=(--portfolio build/portfolio); fi
+          if [ "$INDEX_ENABLED" != true ]; then python3 -B -c 'import sys;sys.path.insert(0,"scripts");from project_index_store import refuse_index_removal;refuse_index_removal()'; fi
+          python3 -B scripts/build-redirects.py --revision "$EXPECTED_SHA" "${args[@]}"
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: build/pages
+      - name: Last stale-main, reachability and live-pointer guard
+        env:
+          EXPECTED_SHA: ${{ github.sha }}
+          INDEX_ENABLED: ${{ vars.PROJECT_INDEX_ENABLED }}
+        run: |
+          python3 -B -c 'import os,sys;sys.path.insert(0,"scripts");from project_index import ROOT;from project_index_store import current_main;current_main(ROOT,os.environ["EXPECTED_SHA"])'
+          if [ "$INDEX_ENABLED" = true ]; then python3 -B -c 'import os,sys;sys.path.insert(0,"scripts");from project_index import ROOT;from project_index_store import publication_guard;publication_guard(ROOT,os.environ["EXPECTED_SHA"],"build/pages/portfolio","build/publication-guard.json")'; fi
+      - name: Deploy complete validated snapshot through existing Pages job
         id: deployment
         uses: actions/deploy-pages@v4
