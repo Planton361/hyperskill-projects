@@ -1,158 +1,66 @@
-# Hyperskill source-only publisher
+# Universal Hyperskill code archive publisher
 
-The existing `publish-hyperskill-project` command archives completed Academy
-solutions as source. It does not create a release or claim that the code builds
-or runs. The Academy workspace is read-only throughout inspection and export.
+The existing `publish-hyperskill-project` command creates Schema-4 archives under
+`projects/<EXACT_ID>/`. It preserves the owner's chosen relative paths and bytes,
+without language adapters, extension admission, compilation, imports, dependency
+installation, or execution of Academy builds/solution code.
 
-## One-command workflow
-
-Use the current official repository checkout and quote a workspace path with
-spaces:
+The authoritative operating guide is [docs/PUBLISHING.md](../docs/PUBLISHING.md).
+The [Codex/Raycast snippet](../docs/publish-snippet.txt) leaves the two actual owner
+confirmations manual. The manifest follows the reviewed
+[MyAtlas contract 4.0](https://github.com/Planton361/myatlas/blob/dc5870ebdd240f022292a8050a8600e6a661a67d/docs/contracts/hyperskill-code-archive-v4.md).
 
 ```bash
+python3.12 scripts/publish-hyperskill-project "/path/to/Academy Project" --dry-run
 python3.12 scripts/publish-hyperskill-project "/path/to/Academy Project"
 ```
 
-The command reads the title and Java/Python language from `course-info.yaml`,
-and the exact Hyperskill ID from `course-remote-info.yaml`. If identity metadata
-is missing, it asks only for the precise missing title or project URL; explicit
-conflicts stop. It asks for the actual UTC completion time in an interactive
-terminal when one was not supplied. That time is owner-provided and is never
-inferred from file dates or the current clock.
+For an ambiguous structure, mixed languages, explicit text/binary resources or a
+workspace without Academy metadata, use `--files-from selection.json` with exactly
+`{"schema":1,"files":{"relative/program":"solution","data/image.bin":"resource"}}`.
+Supply the exact `--project-url` and public `--title` when missing. Repeatable
+`--language` metadata is optional. The automatic mode proposes safe UTF-8 files
+in one unambiguous final task; explicit selection determines roles and preserves
+full workspace-relative paths below `solution/`. It never infers resource needs
+from source imports, keywords or extensions. All omitted paths are reported.
 
-It first performs and displays a read-only archive review. For a real run, the
-owner personally types `COMPLETE <ID>` before import and `PUBLISH <ID>` after
-reviewing the exact staged diff. The publisher uses a clean, isolated checkout
-of canonical `origin/main`, verifies no duplicate Project ID exists, commits
-only the new archive to one new branch, and opens a draft PR. It never merges,
-force-pushes, changes the original Academy workspace, or publishes directly to
-`main`. If the branch push succeeds but PR creation fails, use the reported
-comparison link rather than publishing again.
+The owner types `COMPLETE <ID>` and `PUBLISH <ID>` interactively. Confirmation time
+is recorded after the first input; actual historical `--completed-at` is optional
+and otherwise absent. Dry-run time is never completion evidence. Publication
+uses a clean isolated canonical-main checkout, an exact reviewed Git diff,
+a deterministic new branch and a Draft PR. Existing IDs across Schema 2/3/4,
+unsafe paths, symlinks, secrets, non-regular files and inconsistent inventories
+stop. Archives 113/229/380 are never migrated or overwritten.
 
-The flags `--project-url`, `--language`, and `--title` are only for missing or
-ambiguous metadata. `--completed-at` is convenient when the owner already has
-the actual UTC timestamp. `--dry-run` ends after the read-only review. There is
-no Java version, build, wrapper, dependency, or execution option in the new
-source-only flow.
+Interrupted publication retains its review checkout and an untracked local
+journal. `--resume /exact/review/checkout` validates and reuses the same commit
+and confirmation. Existing identical branches/PRs are linked instead of creating
+another publication; conflicting changes require manual review. No force-push,
+automatic merge or deployment is performed.
 
-## What is archived
-
-For Java, the publisher requires one unambiguous final `<lesson>/task/src`
-folder and selects its own `.java` files. For Python, it requires one final
-`<lesson>/task` and selects its `.py` files from `task/src` when present, or
-from `task` otherwise. Relative names, package folders, and bytes are kept
-unchanged below the export's `src/` directory. No unique `main()` is required.
-Files in the opposite language and other non-source files are ignored.
-
-The adapter may add a local UTF-8 `.txt`, `.json`, or `.csv` file only when its
-relative path is directly identified by a supported string literal in the
-selected solution source (literal read-mode `open()` in Python, or the selected
-read-only file/resource APIs in Java). It does not copy binary files, infer
-dynamic resource paths, or include an unreferenced text file. Sources and
-resources are hashed in the manifest.
-
-Each new archive contains only:
-
-- the selected solution sources and safely identified text resources;
-- a short generated `README.md` with the title, language, and exact project URL;
-- `.hyperskill-import.json` schema 3 with `mode: source-only`, exact project ID,
-  language, owner completion attestation, UTC timestamp, and SHA-256 hashes.
-
-Schema-2 standalone exports such as Projects 113 and 380 remain valid and
-unchanged. Duplicate ID checks recognize both schemas. New project imports do
-not rewrite old exports or add build files to them.
-
-## Trust boundary and exclusions
-
-Academy Gradle, Maven, wrapper, requirements, IDE, and other build configuration
-is untrusted input. The importer never parses, copies, evaluates, or executes it.
-It does not compile Java, run Python, install dependencies, look for a `main`,
-verify libraries, or analyze frameworks, modules, or source sets. A harmless or
-unknown Academy build instruction cannot block an otherwise identifiable source
-archive. Malformed or non-runnable solution code can still be archived.
-
-The Project 229 failure exposed the obsolete boundary: its Academy
-`build.gradle:27` and `settings.gradle:3` use double-quoted `maven { url ... }`
-declarations for the Hyperskill test repository, while the previous
-`academy-statements.json` line allowlist recognized only a narrower spelling.
-Neither file was part of the selected final solution, so build syntax is now
-outside the archive trust decision instead of receiving another project-specific
-allowlist entry.
-
-The inventory excludes earlier stages, Academy tests, task statements,
-`.git`, `.idea`, `.vscode`, `.gradle`, `.m2`, virtual environments,
-`node_modules`, build outputs, IDE history, caches, and generated or temporary
-files. It rejects symlinks, special files, unsafe cross-platform
-paths, ambiguous final-task layouts, private-looking names in selected files,
-and content matching the repository's common secret patterns. Secret scanning
-is a safety heuristic, so the owner still reviews the exact file list and diff.
-The adapter supports Java and Python source archives; other languages and files
-that cannot be safely identified remain unsupported until their own adapter is
-reviewed.
-
-## MyAtlas compatibility
-
-MyAtlas accepts legacy schema 2 and source-only schema 3. A valid owner
-completion attestation counts as project completion without requiring an
-independent build. Topic IDs come only from the trusted MyAtlas catalog. An
-unknown project can be recorded as completed, but it contributes no invented
-learned topics. MyAtlas continues to synchronize from `hyperskill-projects/main`
-on its daily Pages check or its existing manual Pages action; this publisher
-does not deploy MyAtlas or change its production data.
-
-The MyAtlas compatibility change is reviewed first. The publisher's
-cross-repository CI pins that exact compatibility commit until it appears on
-MyAtlas `main`, then follows `main`. Merge MyAtlas compatibility before the
-publisher change only after each PR's review and green checks.
-
-## Tests and project evidence
-
-Run local publisher tests with Python 3.12:
+## Regression checks
 
 ```bash
-python3.12 -B -m unittest scripts.tests.test_import scripts.tests.test_publish scripts.tests.test_adapters
-python3.12 scripts/validate-project-exports.py
+python3.12 -B -m unittest scripts.tests.test_import scripts.tests.test_publish \
+  scripts.tests.test_adapters scripts.tests.test_acceptance_context \
+  scripts.tests.test_universal_validation
+python3.12 -B scripts/validate-project-exports.py
+MYATLAS_ROOT=/path/to/myatlas python3.12 -B -m unittest scripts.tests.test_universal_validation
+python3.12 -B scripts/test-portfolio-growth.py --myatlas-root /clean/myatlas
+python3.12 -B scripts/test-cross-repository.py --myatlas-root /clean/myatlas --scenario unmapped
 ```
 
-The tests use disposable trees and local Git repositories. They cover unknown,
-reformatted, and unsafe Academy builds without executing them; external
-imports, invalid Java/Python, and non-runnable sources remain archivable; and
-private names, possible secrets, symlinks, unsafe paths, and unsafe resources
-stop. They also verify source bytes, owner confirmations, duplicate prevention,
-legacy compatibility, and Python source/resource handling. The legacy export
-validator checks Projects 113 and 380 without changing their directories.
+All archive fixtures and publisher origins are temporary/local; GitHub publication
+calls are mocked in tests. The frozen Java/Python adapter utility tests remain as
+legacy regressions; those adapters no longer admit new publisher/importer code.
+New cases cover Kotlin, JavaScript, mixed languages, unknown/no suffixes, explicit
+binary resources, generic workspaces, malformed identities/inventories and safe
+resume after rejected/uncertain pushes or PR-creation failures. Cross-repository
+CI uses current Schema-4 MyAtlas main, refuses incompatible fallback, and tests
+committed/java/python/unknown/unmapped/growth against full Pages/browser gates.
 
-The cross-repository test creates project evidence only in a disposable clone
-and runs the MyAtlas Pages acceptance locally without deployment:
-
-Both `test-cross-repository.py` and `test-portfolio-growth.py` explicitly pass
-an isolated environment to MyAtlas projections and acceptance subprocesses.
-It removes the project repository's `GITHUB_SHA` and GitHub ref/branch variables
-and selects pre-release progress. Thus both PR events and `main` pushes test
-disposable evidence without impersonating a MyAtlas production build. MyAtlas's
-own production SHA guard remains unchanged; a foreign SHA still fails a direct
-production build. Regression tests exercise both event contexts with real child
-processes (`python3.12 -B -m unittest scripts.tests.test_acceptance_context`).
-
-```bash
-python3.12 -B scripts/test-cross-repository.py \
-  --myatlas-root /path/to/myatlas \
-  --scenario java \
-  --project-id 229 \
-  --academy-source "/Users/antonplatonov/IdeaProjects/Zookeeper with Java" \
-  --completed-at "2026-10-10T11:45:17Z"
-```
-
-The Project 229 dry-run found one final source file, `Main.java`, under
-`Zookeeper with Java/task/src`; it reported the Java archive target
-`java/Zookeeper with Java`, ID 229, and the owner-supplied timestamp. Its SHA-256
-is `bcbbe093891db5551df408c0f0065bd17f48f139481676139757ff05d5719d66`. The
-actual Academy workspace remains unchanged, and no Project 229 export is
-published by this test. The isolated cross-repository run passed full MyAtlas
-Pages acceptance: 229 appeared as completed and `UNKNOWN`, added no learned
-topics, preserved independent verification and catalog geometry, and caused no
-deployment.
-
-After a project PR is reviewed, marked ready, and its MyAtlas acceptance check is
-green, merge it through GitHub. MyAtlas then observes the canonical `main` on
-its next scheduled sync. This workflow never auto-merges a PR.
+GitHub SHA/ref variables from this repository are removed only from the isolated
+MyAtlas subprocess environment. MyAtlas's own production revision guard is
+unchanged. Universal completion totals remain separate from catalog-bound Topic
+projection. No dynamic index, runtime, catalog or production Pages integration
+is introduced in this phase.

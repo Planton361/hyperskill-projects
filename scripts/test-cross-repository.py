@@ -11,7 +11,6 @@ import stat
 import subprocess
 import sys
 import tempfile
-from source_adapters import detect, project_url, workspace
 from acceptance_context import isolated_myatlas_environment
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -61,149 +60,97 @@ def select_unknown_project(scopes, completed_ids, requested_id=None):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--myatlas-root', required=True, type=Path)
-    parser.add_argument('--scenario', choices=('committed', 'java', 'python', 'unknown'), default='committed')
-    parser.add_argument('--project-id', type=int, help='use this exact Atlas project scope')
-    parser.add_argument('--academy-source', type=Path, help='read a real Academy workspace; never modified')
-    parser.add_argument('--completed-at', help='actual UTC time; required with a real Academy workspace')
+    parser.add_argument('--scenario', choices=('committed','java','python','unknown','unmapped'), default='committed')
     parser.add_argument('--output', type=Path, default=ROOT/'test-results/integration')
     args = parser.parse_args()
     atlas = args.myatlas_root.resolve(strict=True)
-    if args.scenario == 'committed' and (args.project_id is not None or args.academy_source is not None):
-        raise ValueError('--project-id and --academy-source require a java, python, or unknown scenario')
-    if args.scenario == 'unknown' and args.academy_source is not None:
-        raise ValueError('The unknown scenario only supports disposable catalog fixtures')
-    if args.project_id is not None and args.project_id <= 0:
-        raise ValueError('--project-id must be positive')
-    if args.academy_source is not None and not args.completed_at:
-        raise ValueError('A real Academy workspace requires its actual --completed-at UTC timestamp')
-    completed_at = args.completed_at or '2026-10-08T12:00:00Z'
-    if git(atlas, 'remote', 'get-url', 'origin').removesuffix('.git') != 'https://github.com/Planton361/myatlas':
+    if git(atlas,'remote','get-url','origin').removesuffix('.git') != 'https://github.com/Planton361/myatlas':
         raise ValueError('Unexpected MyAtlas origin')
-    if git(atlas, 'status', '--porcelain', '--untracked-files=no'):
+    if git(atlas,'status','--porcelain','--untracked-files=no'):
         raise ValueError('MyAtlas acceptance requires clean committed sources')
-    env = isolated_myatlas_environment()
-    report = dict(scenario=args.scenario, status='RUNNING', myatlas_commit=git(atlas, 'rev-parse', 'HEAD'),
-                  hyperskill_commit=git(ROOT, 'rev-parse', 'HEAD'), deployment='disabled')
-    output = args.output.resolve() / args.scenario
-    output.mkdir(parents=True, exist_ok=True)
+    if not (atlas/'docs/contracts/hyperskill-code-archive-v4.md').is_file():
+        raise ValueError('Reviewed Schema-4 MyAtlas reader required; no incompatible bootstrap fallback')
+    env=isolated_myatlas_environment()
+    report=dict(scenario=args.scenario,status='RUNNING',deployment='disabled',
+                myatlas_commit=git(atlas,'rev-parse','HEAD'),hyperskill_commit=git(ROOT,'rev-parse','HEAD'))
+    output=args.output.resolve()/args.scenario; output.mkdir(parents=True,exist_ok=True)
     try:
-        with tempfile.TemporaryDirectory(prefix='hyperskill-atlas-e2e-') as folder:
-            folder = Path(folder)
-            evidence = folder/'evidence'
-            call(['git', 'clone', '--no-hardlinks', ROOT, evidence], ROOT)
-            call(['git', 'remote', 'set-url', 'origin', 'https://github.com/Planton361/hyperskill-projects.git'], evidence)
-            original = git(evidence, 'rev-parse', 'HEAD')
-            call([sys.executable, '-B', ROOT/'scripts/validate-project-exports.py', '--repository', evidence], ROOT)
-            baseline = json.loads(subprocess.check_output(
-                [sys.executable, '-B', atlas/'scripts/sync-hyperskill-projects.py', '--evidence-root', evidence],
-                cwd=atlas, env=env))['projection']
-            project = None
-            if args.scenario != 'committed':
-                language = 'python' if args.scenario == 'python' else 'java'
-                scopes = json.loads((atlas/'src/myatlas/knowledge-atlas-scope-pyramid/scope-index.json').read_text())
-                known = set(baseline['effective_learned_topic_ids'])
-                if args.academy_source is not None:
-                    academy = workspace(args.academy_source)
-                    detected = detect(academy)
-                    if detected != language:
-                        raise ValueError('Academy source language does not match scenario')
-                    url = project_url(academy)
-                    pid = int(url.rsplit('/', 1)[-1])
-                    if args.project_id is not None and args.project_id != pid:
-                        raise ValueError('Academy Project ID does not match --project-id')
+        with tempfile.TemporaryDirectory(prefix='hyperskill-universal-acceptance-') as folder:
+            folder=Path(folder).resolve(); evidence=folder/'evidence'
+            call(['git','clone','--no-hardlinks',ROOT,evidence],ROOT)
+            call(['git','remote','set-url','origin','https://github.com/Planton361/hyperskill-projects.git'],evidence)
+            original=git(evidence,'rev-parse','HEAD')
+            call([sys.executable,'-B',ROOT/'scripts/validate-project-exports.py','--repository',evidence],ROOT)
+            def projection():
+                return json.loads(subprocess.check_output([sys.executable,'-B',atlas/'scripts/sync-hyperskill-projects.py','--evidence-root',evidence],cwd=atlas,env=env))['projection']
+            baseline=projection(); project=None; pid=None
+            if args.scenario!='committed':
+                scopes=json.loads((atlas/'src/myatlas/knowledge-atlas-scope-pyramid/scope-index.json').read_text())
+                if args.scenario=='unmapped':
+                    pid=900000001
+                    while pid in {p['scope_id'] for p in scopes['projects']}: pid+=1
+                    project=dict(scope_id=pid,state='UNMAPPED',explicit_topic_ids=[])
+                elif args.scenario=='unknown':
+                    project=select_unknown_project(scopes,set(baseline['completed_project_ids']))
                 else:
-                    academy = folder/'academy'
-                    task = academy/'Lesson/task'
-                    task.mkdir(parents=True)
-                    if args.scenario == 'unknown':
-                        project = select_unknown_project(scopes, set(baseline['completed_project_ids']),
-                                                         args.project_id)
-                        pid = project['scope_id']
-                    else:
-                        pid = args.project_id
-                    if pid is None:
-                        project = next(p for p in sorted(scopes['projects'], key=lambda p: len(p['explicit_topic_ids'] or []))
-                                       if p['state'] == 'KNOWN' and p['scope_id'] not in baseline['completed_project_ids']
-                                       and set(p['explicit_topic_ids']) - known)
-                        pid = project['scope_id']
-                    else:
-                        project = next((p for p in scopes['projects'] if p['scope_id'] == pid), None)
-                        if project is None:
-                            raise ValueError('Project ID absent from MyAtlas scope catalog')
-                    fixture_title = project['title']
-                    (academy/'course-info.yaml').write_text(f'title: {fixture_title}\nprogramming_language: {language.title()}\n')
-                    (academy/'course-remote-info.yaml').write_text(f'hyperskill_project:\n  id: {pid}\n')
-                    url = f'https://hyperskill.org/projects/{pid}'
-                    if language == 'java':
-                        (task/'src').mkdir()
-                        (task/'src/Main.java').write_text(
-                            '// Literal project-topic-looking text must never become Atlas evidence.\n'
-                            'import com.example.UnverifiedDependency;\nclass Main { invalid syntax }\n')
-                        (academy/'build.gradle').write_text(
-                            "tasks.register('mustNotRun') { throw new RuntimeException('foreign build executed') }\n")
-                        (academy/'settings.gradle').write_text("throw new RuntimeException('must not execute')\n")
-                    else:
-                        (task/'main.py').write_text(
-                            'import unverified_dependency\nopen("data.json")\nraise SystemExit("must not run")\n')
-                        (task/'data.json').write_text('{"fixture": true}\n')
-                if pid in baseline['completed_project_ids']:
-                    raise ValueError('Project is already completed in the committed baseline')
-                project = next((p for p in scopes['projects'] if p['scope_id'] == pid), None)
-                if project is None:
-                    raise ValueError('Project ID absent from MyAtlas scope catalog')
-                report.update(project_id=pid, project_title=project['title'], requirements_state=project['state'])
-                importer = runpy.run_path(str(ROOT/'scripts/import-hyperskill-project'))
-                before = source_snapshot(academy, importer['inventory'])
-                call([sys.executable, '-B', ROOT/'scripts/import-hyperskill-project', academy, language,
-                      '--repository', evidence, '--project-url', url, '--completed-at', completed_at], ROOT)
-                if source_snapshot(academy, importer['inventory']) != before:
-                    raise ValueError('Academy source was modified')
-                call(['git', 'config', 'user.name', 'Disposable integration fixture'], evidence)
-                call(['git', 'config', 'user.email', 'fixture@example.invalid'], evidence)
-                call(['git', 'switch', '-c', 'validation-only/project-pr'], evidence)
-                call(['git', 'add', '--', language], evidence)
-                call(['git', 'commit', '-m', 'TEST ONLY: simulated source-only project PR evidence'], evidence)
-                changed = git(evidence, 'diff', '--name-only', original, 'HEAD').splitlines()
-                title = importer['title_from_source'](academy, None)
-                directory = importer['safe_directory_name'](title)
-                prefix = language + '/' + directory + '/'
-                if not changed or any(not path.startswith(prefix) for path in changed):
-                    raise ValueError('Unexpected candidate PR changes')
-                call([sys.executable, '-B', ROOT/'scripts/validate-project-exports.py', '--repository', evidence], ROOT)
-
-            current = json.loads(subprocess.check_output(
-                [sys.executable, '-B', atlas/'scripts/sync-hyperskill-projects.py', '--evidence-root', evidence],
-                cwd=atlas, env=env))['projection']
-            expected_ids = set(baseline['completed_project_ids']) | (
-                {report['project_id']} if args.scenario != 'committed' else set())
-            if current['completed_project_ids'] != sorted(expected_ids):
-                raise ValueError('Exact completion IDs mismatch')
-            if current['verified_topic_ids'] != baseline['verified_topic_ids']:
-                raise ValueError('Project archive changed independent verification')
-            project_topics = (set(project['explicit_topic_ids'] or [])
-                              if args.scenario != 'committed' and project['state'] == 'KNOWN' else set())
-            expected_topics = set(baseline['effective_learned_topic_ids']) | project_topics
-            if (current['effective_learned_topic_ids'] != sorted(expected_topics) or
-                    current['global']['learned'] != len(expected_topics)):
-                raise ValueError('Atlas-catalog topic projection mismatch')
-            call([sys.executable, '-B', atlas/'scripts/validate-pages-candidate.py', '--evidence-root', evidence], atlas, env)
-            built = json.loads((atlas/'build/pages/knowledge-map/progress.json').read_text())
-            if built != current:
-                raise ValueError('Built Pages projection differs from committed archive evidence')
-            shutil.copytree(atlas/'test-results', output/'myatlas', dirs_exist_ok=True)
-            report.update(status='PASS', candidate_commit=git(evidence, 'rev-parse', 'HEAD'),
-                          completed_project_ids=current['completed_project_ids'],
-                          newly_learned_topic_ids=sorted(expected_topics-set(baseline['effective_learned_topic_ids'])),
-                          already_known_topic_ids=sorted(set(current['project_learned_topic_ids']) &
-                                                         set(baseline['effective_learned_topic_ids'])),
-                          verified_topic_count=current['global']['verified'],
-                          learned_topic_count=current['global']['learned'])
+                    known=set(baseline['effective_learned_topic_ids'])
+                    project=next(p for p in sorted(scopes['projects'],key=lambda p:len(p['explicit_topic_ids'] or []))
+                                 if p['state']=='KNOWN' and p['scope_id'] not in baseline['completed_project_ids'] and set(p['explicit_topic_ids'])-known)
+                pid=project['scope_id']; report['project_id']=pid
+                academy=folder/'owner-source'; task=academy/'Lesson/task/src'; task.mkdir(parents=True)
+                (academy/'course-info.yaml').write_text('title: Synthetic Owner Project\n')
+                (academy/'course-remote-info.yaml').write_text(f'hyperskill_project:\n  id: {pid}\n')
+                (academy/'build.gradle').write_text("throw new RuntimeException('must not execute')\n")
+                if args.scenario=='unmapped':
+                    files={'main.kt':b'import missing.Library; invalid Kotlin\n','helper.js':b'throw Error("must not run"); // topic_id=15\n',
+                           'program':b'topic_ids=[15,999999]; course_completed=true; is_verified=true\n','code.future':b'unknown UTF-8 owner source\n',
+                           'data.bin':b'\x00\xff\x10'}
+                elif args.scenario=='python':
+                    files={'main.py':b'import missing_dependency\nraise Exception("must not execute")\ndef invalid(:\n'}
+                else:
+                    files={'Main.java':b'import missing.Library; class Broken { invalid Java; }\n'}
+                for name,raw in files.items(): (task/name).write_bytes(raw)
+                selection=folder/'selection.json'
+                selection.write_text(json.dumps(dict(schema=1,files={f'Lesson/task/src/{name}': 'resource' if name=='data.bin' else 'solution' for name in files})))
+                importer=runpy.run_path(str(ROOT/'scripts/import-hyperskill-project'))
+                before=source_snapshot(academy,importer['inventory'])
+                command=[sys.executable,'-B',ROOT/'scripts/import-hyperskill-project',academy,'--repository',evidence,
+                         '--project-url',f'https://hyperskill.org/projects/{pid}','--confirmed-at','2026-10-08T12:00:00Z']
+                if args.scenario=='unmapped': command+=['--files-from',selection]
+                call(command+['--dry-run'],ROOT); call(command,ROOT)
+                if source_snapshot(academy,importer['inventory'])!=before: raise ValueError('Owner source modified')
+                call(['git','config','user.name','Disposable Schema-4 acceptance'],evidence)
+                call(['git','config','user.email','fixture@example.invalid'],evidence)
+                call(['git','add','--',f'projects/{pid}'],evidence)
+                call(['git','commit','-m','TEST ONLY: synthetic Schema-4 project'],evidence)
+                changed=git(evidence,'diff','--name-only',original,'HEAD').splitlines()
+                if not changed or any(not path.startswith(f'projects/{pid}/') for path in changed): raise ValueError('Unexpected candidate changes')
+                call([sys.executable,'-B',ROOT/'scripts/validate-project-exports.py','--repository',evidence],ROOT)
+            current=projection()
+            expected=set(baseline['completed_project_ids']) | ({pid} if pid and project['state']!='UNMAPPED' else set())
+            if current['completed_project_ids']!=sorted(expected): raise ValueError('Catalog completion IDs mismatch')
+            if pid:
+                register=current['completion_register']
+                if register['completed_project_ids']!=sorted(set(baseline['completed_project_ids'])|{pid}): raise ValueError('Universal register IDs mismatch')
+                row=next(r for r in register['projects'] if r['project_id']==pid)
+                if row['requirements_state']!=project['state'] or row['topic_ids']!=sorted(set(project['explicit_topic_ids'] or [])): raise ValueError('Catalog/register mapping mismatch')
+                if project['state']=='UNMAPPED' and (pid in {p['project_id'] for p in current['projects']} or register['unmapped_project_ids']!=[pid]): raise ValueError('Unmapped ID leaked into catalog runtime')
+            expected_topics=set(baseline['effective_learned_topic_ids']) | (set(project['explicit_topic_ids']) if project and project['state']=='KNOWN' else set())
+            if current['effective_learned_topic_ids']!=sorted(expected_topics) or current['global']['learned']!=len(expected_topics): raise ValueError('Invented source-derived Topics')
+            # Independent Course attestations remain separate from the accepted
+            # catalog's derived completed-project counts within Courses.
+            if current['verified_topic_ids']!=baseline['verified_topic_ids'] or current['course_completion']!=baseline['course_completion']: raise ValueError('Independent verification/Course records changed')
+            if project and project['state']=='UNMAPPED' and current['course_project_completion']!=baseline['course_project_completion']:
+                raise ValueError('Unmapped archive changed catalog Course/project relationships')
+            call([sys.executable,'-B',atlas/'scripts/validate-pages-candidate.py','--evidence-root',evidence],atlas,env)
+            if json.loads((atlas/'build/pages/knowledge-map/progress.json').read_text())!=current: raise ValueError('Pages projection differs from validated archives')
+            shutil.copytree(atlas/'test-results',output/'myatlas',dirs_exist_ok=True)
+            report.update(status='PASS',candidate_commit=git(evidence,'rev-parse','HEAD'),
+                          completed_project_ids=current['completed_project_ids'],completion_register=current.get('completion_register'),
+                          learned=current['global']['learned'],verified=current['global']['verified'])
     except Exception as error:
-        report.update(status='FAIL', error=str(error))
-        raise
-    finally:
-        (output/'report.json').write_text(json.dumps(report, indent=2) + '\n')
+        report.update(status='FAIL',error=str(error)); raise
+    finally: (output/'report.json').write_text(json.dumps(report,indent=2)+'\n')
 
 
-if __name__ == '__main__':
-    main()
+if __name__=='__main__': main()

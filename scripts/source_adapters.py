@@ -8,15 +8,20 @@ def fail(message):
     raise ValueError(message)
 
 
-def workspace(path):
-    path = Path(path).resolve(strict=True)
+def workspace(path, explicit=False):
+    path = Path(path).absolute()
+    if any(p.is_symlink() for p in (path, *path.parents)):
+        fail('Symlink workspace/parent refused')
+    path = path.resolve(strict=True)
     if path.is_file():
         path = path.parent
+    if explicit:
+        return path
     for candidate in (path, *path.parents):
         marker = candidate / 'course-info.yaml'
         if marker.is_file() and not marker.is_symlink():
             return candidate
-    fail('Academy workspace not found: course-info.yaml required; supply its root directory.')
+    return path  # Explicit universal selection needs no Academy metadata.
 
 
 def project_url(source, explicit=None):

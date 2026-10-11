@@ -70,7 +70,7 @@ def fixture(base, pid, language):
         source.write_text('// Topic ID 999999 must never count as learned evidence.\n'
                           'import example.unavailable.Library;\n'
                           'class Main { invalid Java intentionally; }\n')
-        expected_files = {'src/pkg/Main.java': source.read_bytes()}
+        expected_files = {f'solution/{title}/task/src/pkg/Main.java': source.read_bytes()}
     else:
         source = task / 'main.py'
         source.write_text('# Topic ID 999999 must never count as learned evidence.\n'
@@ -79,7 +79,7 @@ def fixture(base, pid, language):
                           'raise RuntimeError("must not execute")\n')
         data = task / 'data.json'
         data.write_text('{"safe": true}\n')
-        expected_files = {'src/main.py': source.read_bytes(), 'src/data.json': data.read_bytes()}
+        expected_files = {f'solution/{title}/task/main.py': source.read_bytes(), f'solution/{title}/task/data.json': data.read_bytes()}
     (academy / '.idea').mkdir()
     (academy / '.idea/workspace.xml').write_text('private IDE cache must be omitted\n')
     return academy, title, expected_files
@@ -123,7 +123,7 @@ def main():
     output.mkdir(parents=True, exist_ok=True)
     try:
         with tempfile.TemporaryDirectory(prefix='hyperskill-portfolio-growth-') as folder:
-            folder = Path(folder)
+            folder = Path(folder).resolve()
             evidence = folder / 'evidence'
             execute(['git', 'clone', '--no-hardlinks', str(ROOT), str(evidence)], ROOT)
             execute(['git', '-C', str(evidence), 'remote', 'set-url', 'origin',
@@ -144,10 +144,12 @@ def main():
                 pid = project['scope_id']
                 academy, title, files = fixture(folder, pid, language)
                 before = file_inventory(academy)
-                command = [sys.executable, '-B', str(IMPORTER), str(academy), language,
+                selection = folder / f'selection-{pid}.json'
+                selection.write_text(json.dumps(dict(schema=1, files={name.removeprefix('solution/'): 'resource' if name.endswith('/data.json') else 'solution' for name in files})))
+                command = [sys.executable, '-B', str(IMPORTER), str(academy), '--language', language, '--files-from', str(selection),
                            '--repository', str(evidence), '--project-url',
                            f'https://hyperskill.org/projects/{pid}',
-                           '--completed-at', '2026-10-08T12:00:00Z']
+                           '--confirmed-at', '2026-10-08T12:00:00Z']
                 execute(command + ['--dry-run'], ROOT)
                 if file_inventory(academy) != before:
                     raise ValueError('Dry-run modified disposable Academy source')
@@ -155,15 +157,15 @@ def main():
                 if file_inventory(academy) != before:
                     raise ValueError('Importer modified disposable Academy source')
 
-                exported = evidence / language / importer['safe_directory_name'](title)
+                exported = evidence / 'projects' / str(pid)
                 manifest = json.loads((exported / '.hyperskill-import.json').read_text())
-                if manifest['schema'] != 3 or manifest['project_id'] != pid or manifest['language'] != language:
+                if manifest['schema'] != 4 or manifest['project_id'] != pid or manifest['languages'] != [language]:
                     raise ValueError('Source-only identity mismatch')
-                if set(manifest['files']) != set(files):
+                if set(manifest['files']) != set(files) | {'README.md'}:
                     raise ValueError('Missing or unexpected future archive files')
                 for name, raw in files.items():
                     if (exported / name).read_bytes() != raw or \
-                            manifest['files'][name] != hashlib.sha256(raw).hexdigest():
+                            manifest['files'][name]['sha256'] != hashlib.sha256(raw).hexdigest():
                         raise ValueError('Published file bytes differ from owner source')
                 members = {p.relative_to(exported).as_posix()
                            for p in exported.rglob('*') if p.is_file()}
@@ -171,7 +173,7 @@ def main():
                     raise ValueError('Academy/IDE/build material leaked into archive')
 
                 # Each completed project is committed to the DISPOSABLE evidence repository.
-                execute(['git', '-C', str(evidence), 'add', '--', f'{language}/{exported.name}'], ROOT)
+                execute(['git', '-C', str(evidence), 'add', '--', f'projects/{pid}'], ROOT)
                 execute(['git', '-C', str(evidence), 'commit', '-m',
                          f'TEST ONLY: future source-only Project {pid}'], ROOT)
                 check = execute([sys.executable, '-B', str(VALIDATOR),
@@ -183,6 +185,10 @@ def main():
                 if project['state'] == 'KNOWN':
                     topics.update(project['explicit_topic_ids'])
                 current = projection(atlas, evidence, env)
+                if current['completion_register']['completed_project_ids'] != sorted(completed):
+                    raise ValueError('Universal register failed incremental growth')
+                if current['verified_topic_ids'] != baseline['verified_topic_ids']:
+                    raise ValueError('Independent verifications changed')
                 if current['completed_project_ids'] != sorted(completed) or \
                         current['completed_project_count'] != len(completed):
                     raise ValueError('MyAtlas failed incremental portfolio growth')
@@ -208,7 +214,7 @@ def main():
                       f'{len(completed)} completed; {len(topics)} learned', flush=True)
 
             all_changes = git(evidence, 'diff', '--name-only', original, 'HEAD').splitlines()
-            allowed = {f'{row["language"]}/Future Portfolio {row["language"].title()} {row["project_id"]}/'
+            allowed = {f'projects/{row["project_id"]}/'
                        for row in report['added']}
             if not all_changes or any(not any(path.startswith(prefix) for prefix in allowed)
                                       for path in all_changes):
