@@ -152,3 +152,7 @@ vollständigen Manifesten einen atomaren, revisionsgebundenen validierten Index
 aufbauen: exakte Git-Revision, Blob-Hashes, Rollen und Identitäten; atomarer
 Pointer-Wechsel erst nach vollständiger Veröffentlichung, Last-known-good bei
 Fehlern und keine doppelte Zählung. Hier wird noch kein produktiver Index erstellt.
+
+Die Prüfpfade und der noch statische Übergang sind in
+[PROJECT-DATA-CI.md](PROJECT-DATA-CI.md) beschrieben. Der vorhandene Publisher und
+seine persönlichen COMPLETE-/PUBLISH-Eingaben bleiben unverändert.

@@ -1,0 +1,39 @@
+name: Trusted Git change policy
+description: Classify using the base commit implementation, never candidate policy code
+inputs: {}
+outputs:
+  class:
+    value: ${{ steps.policy.outputs.class }}
+runs:
+  using: composite
+  steps:
+    - id: policy
+      shell: bash
+      env:
+        EVENT: ${{ github.event_name }}
+        PR_BASE: ${{ github.event.pull_request.base.sha }}
+        PUSH_BASE: ${{ github.event.before }}
+        HEAD_SHA: ${{ github.sha }}
+      run: |
+        python3 - <<'PY'
+        import json, os, subprocess, tempfile
+        from pathlib import Path
+        base = os.environ['PR_BASE'] if os.environ['EVENT'] == 'pull_request' else os.environ['PUSH_BASE']
+        head = os.environ['HEAD_SHA']
+        if subprocess.check_output(['git','rev-parse','HEAD']).decode().strip() != head:
+            raise SystemExit('Checkout does not match workflow revision')
+        # First installation has no base policy: full acceptance, never a fast fallback.
+        policy = subprocess.run(['git','show',base+':scripts/ci_change.py'], capture_output=True)
+        if not base or policy.returncode or os.environ['EVENT'] in ('schedule','workflow_dispatch'):
+            category = 'C' if os.environ['EVENT'] in ('schedule','workflow_dispatch') else 'B'
+            report = dict(change_class=category, revision=head, base=base, project_ids=[], full_required=True, reason='Manual/health run or missing trusted base policy; full acceptance required')
+            raw = json.dumps(report,indent=2)+'\n'
+            Path('change-report.json').write_text(raw)
+            with open(os.environ['GITHUB_OUTPUT'],'a') as out: out.write('class='+category+'\n')
+            with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as out: out.write('```json\n'+raw+'```\n')
+            print(raw)
+        else:
+            with tempfile.TemporaryDirectory() as folder:
+                script = Path(folder)/'policy.py'; script.write_bytes(policy.stdout)
+                subprocess.run(['python3','-B',str(script),'--repository',str(Path.cwd()),'--base',base,'--head',head,'--event',os.environ['EVENT'],'--github-output',os.environ['GITHUB_OUTPUT']],check=True)
+        PY

@@ -77,3 +77,7 @@ See [PROJECT-INDEX.md](../docs/PROJECT-INDEX.md) for the exact index/pointer
 contract, durable Git retention, the gated extension of the **existing** Pages
 workflow, failure recovery, manual bootstrap and Phase 4 handoff. No live
 pointer or index deployment is enabled by this PR.
+
+Phase 5: [Projekt-Daten-CI und Systemgesundheit](../docs/PROJECT-DATA-CI.md).
+`test-project-data.py` validiert einen vollständigen Commit gegen den gemergten
+MyAtlas-Reader ohne App-Build; `ci_change.py` klassifiziert Git-Änderungen konservativ.
