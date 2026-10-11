@@ -15,7 +15,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        scenario: [committed, java, python, unknown]
+        scenario: [committed, java, python, unknown, growth]
     steps:
       - uses: actions/checkout@v4
         with:
@@ -55,7 +55,12 @@ jobs:
           npm ci --prefix build/myatlas/scripts/knowledge_atlas --ignore-scripts
           build/myatlas/scripts/knowledge_atlas/node_modules/.bin/playwright install --with-deps chromium webkit
       - name: Source-only archive to full Pages artifact and browser UI
-        run: python3 -B scripts/test-cross-repository.py --myatlas-root build/myatlas --scenario '${{ matrix.scenario }}'
+        run: |
+          if [ '${{ matrix.scenario }}' = 'growth' ]; then
+            python3 -B scripts/test-portfolio-growth.py --myatlas-root build/myatlas
+          else
+            python3 -B scripts/test-cross-repository.py --myatlas-root build/myatlas --scenario '${{ matrix.scenario }}'
+          fi
       - uses: actions/upload-artifact@v4
         if: always()
         with:

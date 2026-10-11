@@ -62,6 +62,31 @@ class SourceOnlyAdapterTests(unittest.TestCase):
         _, payload = self.extract('python')
         self.assertEqual(payload, {'src/main.py': main.read_bytes()})
 
+    def test_multistage_python_selects_named_final_task_not_old_stages(self):
+        (self.root/'course-info.yaml').write_text('title: Demo\nprogramming_language: Python\n')
+        shutil.rmtree(self.src)
+        main = self.task/'main.py'
+        main.write_text('import unknown_dependency\nraise SystemExit("must never execute")\n')
+        earlier = self.root/'Stage 1/task/src/Old.py'
+        earlier.parent.mkdir(parents=True)
+        earlier.write_text('raise SystemExit("wrong stage")\n')
+        later = self.root/'Stage 2/task/src/Another.py'
+        later.parent.mkdir(parents=True)
+        later.write_text('raise SystemExit("wrong stage")\n')
+        root, payload = self.extract('python')
+        self.assertEqual(root, Path('Demo/task'))
+        self.assertEqual(payload, {'src/main.py': main.read_bytes()})
+
+    def test_multistage_python_with_no_identifiable_final_task_fails_closed(self):
+        (self.root/'course-info.yaml').write_text('title: Unmatched\nprogramming_language: Python\n')
+        shutil.rmtree(self.src)
+        (self.task/'main.py').write_text('print("possible source")\n')
+        another = self.root/'Stage 1/task/main.py'
+        another.parent.mkdir(parents=True)
+        another.write_text('print("ambiguous source")\n')
+        with self.assertRaisesRegex(ValueError, 'Expected one final'):
+            self.extract('python', title='Unmatched')
+
     def test_python_literals_select_only_local_allowlisted_text_resources(self):
         (self.root/'course-info.yaml').write_text('title: Demo\nprogramming_language: Python\n')
         shutil.rmtree(self.src)
