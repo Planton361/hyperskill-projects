@@ -83,7 +83,9 @@ verwendet bis zum Merge den exakten `review_commit` aus der versionierten
 Akzeptanzkonfiguration. Er muss aktuelles kanonisches Main enthalten; ein
 branchbasierter oder alter Fallback ist ausgeschlossen. Main-, Schedule- und
 manuelle Läufe stoppen mit `BLOCKED_BY_PHASE_5_MYATLAS`, solange dieser Review-
-Commit nicht in kanonisches MyAtlas Main gemergt ist. Danach testen sie wieder
+Commit nicht in kanonisches MyAtlas Main gemergt ist. Squash-/Rebase-Merges
+werden über exakt identische committete Git-Blobs der beiden Fixturedateien
+erkannt; alte inkompatible Fixturebytes sind kein Fallback. Danach testen sie wieder
 aktuelles Main. In Phase 6:
 Branchschutz/erforderliche Checks prüfen, End-to-End mit lokalem Index abnehmen,
 separat die versionierte MyAtlas-Aktivierung und ihre Release-Guards reviewen,

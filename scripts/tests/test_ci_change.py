@@ -70,6 +70,8 @@ class ChangePolicyTests(unittest.TestCase):
         self.assertIn('test "$FULL" = success',workflow)
         self.assertIn('test "$FULL" = skipped',workflow)
         self.assertIn('scenario: [committed, java, python, unknown, unmapped, growth]',workflow)
+        self.assertIn("'diff','--quiet',review,'origin/main'",workflow)
+        self.assertIn("if os.environ['EVENT'] != 'pull_request':",workflow)
         for name in ('project-atlas-acceptance.yml','owner-publish-check.yml','projects.yml','pages-redirects.yml'):
             raw=(root/'.github/workflows'/name).read_text()
             self.assertNotIn('    paths:',raw)

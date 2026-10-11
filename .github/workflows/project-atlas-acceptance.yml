@@ -152,6 +152,12 @@ jobs:
                   raise SystemExit('Review pin must be an exact commit')
               subprocess.run(['git','-C',str(root),'fetch','origin',review], check=True)
               merged = subprocess.run(['git','-C',str(root),'merge-base','--is-ancestor',review,'origin/main']).returncode == 0
+              # Squash/rebase merges do not preserve the Draft head SHA. Require
+              # exact committed fixture blobs in canonical main instead; never
+              # fall back to the known-incompatible pre-fix fixtures.
+              if not merged:
+                  merged = subprocess.run(['git','-C',str(root),'diff','--quiet',review,'origin/main','--',
+                      'tests/myatlas/index-test-support.cjs','tests/myatlas/index-browser.cjs']).returncode == 0
               if not merged:
                   if os.environ['EVENT'] != 'pull_request':
                       raise SystemExit('BLOCKED_BY_PHASE_5_MYATLAS: merge the reviewed fixture fix first')
