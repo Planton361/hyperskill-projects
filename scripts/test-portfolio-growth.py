@@ -123,7 +123,7 @@ def main():
     output.mkdir(parents=True, exist_ok=True)
     try:
         with tempfile.TemporaryDirectory(prefix='hyperskill-portfolio-growth-') as folder:
-            folder = Path(folder)
+            folder = Path(folder).resolve()
             evidence = folder / 'evidence'
             execute(['git', 'clone', '--no-hardlinks', str(ROOT), str(evidence)], ROOT)
             execute(['git', '-C', str(evidence), 'remote', 'set-url', 'origin',
