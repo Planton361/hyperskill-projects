@@ -104,13 +104,13 @@ def select(source, title, files_from=None):
     # Never follow/open a workspace symlink or special file, even if omitted.
     for relative in entries:
         path = source / relative
+        if unsafe_source_path(relative) or any(unicodedata.category(c).startswith('C') for c in str(relative)):
+            raise ValueError('Unsafe path in workspace (contents withheld)')
+        public_text(str(relative).encode('utf-8'), 'workspace path', code=True)
         if path.is_symlink():
             raise ValueError('Symlink in source workspace refused: ' + str(relative))
         if not (path.is_file() or path.is_dir()):
             raise ValueError('Special file in source workspace refused: ' + str(relative))
-        if unsafe_source_path(relative) or any(unicodedata.category(c).startswith('C') for c in str(relative)):
-            raise ValueError('Unsafe path in workspace (contents withheld)')
-        public_text(str(relative).encode('utf-8'), 'workspace path', code=True)
     if files_from:
         choice = Path(files_from).absolute()
         if any(p.is_symlink() for p in (choice, *choice.parents)) or not choice.is_file():

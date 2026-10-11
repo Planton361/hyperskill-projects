@@ -190,6 +190,9 @@ class ImportTests(unittest.TestCase):
         self.invoke(success=False)
         private.unlink()
         self.assertNotIn(token, self.invoke('--title', token, success=False))
+        secret_named_link=self.source/token
+        secret_named_link.symlink_to(self.repo/'.gitignore')
+        self.assertNotIn(token,self.invoke(success=False))
 
     def test_symlinks_at_file_parent_workspace_and_special_files_rejected(self):
         external = self.source.parent/'outside'; external.write_text('external')
