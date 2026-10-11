@@ -125,6 +125,15 @@ validator checks Projects 113 and 380 without changing their directories.
 The cross-repository test creates project evidence only in a disposable clone
 and runs the MyAtlas Pages acceptance locally without deployment:
 
+Both `test-cross-repository.py` and `test-portfolio-growth.py` explicitly pass
+an isolated environment to MyAtlas projections and acceptance subprocesses.
+It removes the project repository's `GITHUB_SHA` and GitHub ref/branch variables
+and selects pre-release progress. Thus both PR events and `main` pushes test
+disposable evidence without impersonating a MyAtlas production build. MyAtlas's
+own production SHA guard remains unchanged; a foreign SHA still fails a direct
+production build. Regression tests exercise both event contexts with real child
+processes (`python3.12 -B -m unittest scripts.tests.test_acceptance_context`).
+
 ```bash
 python3.12 -B scripts/test-cross-repository.py \
   --myatlas-root /path/to/myatlas \

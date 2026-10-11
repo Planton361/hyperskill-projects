@@ -18,4 +18,4 @@ jobs:
         with:
           python-version: '3.12'
       - name: Disposable source-only import and publication regressions
-        run: python3 -B -m unittest scripts.tests.test_import scripts.tests.test_publish scripts.tests.test_adapters
+        run: python3 -B -m unittest scripts.tests.test_import scripts.tests.test_publish scripts.tests.test_adapters scripts.tests.test_acceptance_context

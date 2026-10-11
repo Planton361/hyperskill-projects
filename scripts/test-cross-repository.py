@@ -12,6 +12,7 @@ import subprocess
 import sys
 import tempfile
 from source_adapters import detect, project_url, workspace
+from acceptance_context import isolated_myatlas_environment
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -80,8 +81,7 @@ def main():
         raise ValueError('Unexpected MyAtlas origin')
     if git(atlas, 'status', '--porcelain', '--untracked-files=no'):
         raise ValueError('MyAtlas acceptance requires clean committed sources')
-    env = dict(os.environ)
-    env.pop('GITHUB_SHA', None)
+    env = isolated_myatlas_environment()
     report = dict(scenario=args.scenario, status='RUNNING', myatlas_commit=git(atlas, 'rev-parse', 'HEAD'),
                   hyperskill_commit=git(ROOT, 'rev-parse', 'HEAD'), deployment='disabled')
     output = args.output.resolve() / args.scenario
