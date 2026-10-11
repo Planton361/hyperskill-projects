@@ -9,14 +9,17 @@ builds or runs.
 Projects 113 and 380 use the earlier schema-2 export format. They remain valid
 and unchanged; MyAtlas reads both formats.
 
-## Projects
+## Published archives
 
-| Project | Language | Export format |
-| --- | --- | --- |
-| [Simple Chat Bot with Java](java/Simple%20Chat%20Bot%20with%20Java/) · [Project 113](https://hyperskill.org/projects/113) | Java | legacy schema 2 |
+[Browse all published Java project folders](java/). Python archives, when
+published, appear under `python/`. Projects 113 and 380 retain their original
+legacy format; later projects use source-only. The actual Git folders and their
+manifests are the source of truth: this README deliberately does not contain
+a manually updated project count or a partial project inventory.
 
-[Browse Java archives](java/README.md). MyAtlas reads committed project evidence
-from this repository and derives learned topics only from its trusted catalog.
+[MyAtlas live Skill Tree](https://planton361.github.io/myatlas/knowledge-map/?view=skill-tree)
+shows the latest successfully deployed project and Topic progress. MyAtlas reads
+committed project evidence and derives learned Topics only from its trusted catalog.
 
 ## Archive a completed project
 
