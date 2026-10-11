@@ -4,6 +4,11 @@ on:
     branches: [main, 'release/**']
   pull_request:
   workflow_dispatch:
+    inputs:
+      recovery_pointer:
+        description: 'Optional reviewed last-known-good pointer JSON for explicit recovery; empty normally'
+        required: false
+        type: string
 permissions:
   contents: read
 # Serialize the entire existing Pages process; do not cancel partial publication.
@@ -64,9 +69,15 @@ jobs:
         env:
           EXPECTED_SHA: ${{ github.sha }}
           BOOTSTRAP: ${{ vars.PROJECT_INDEX_BOOTSTRAP }}
+          RECOVERY_POINTER: ${{ inputs.recovery_pointer }}
         run: |
           args=()
           if [ "$BOOTSTRAP" = true ]; then args+=(--bootstrap); fi
+          if [ -n "$RECOVERY_POINTER" ]; then
+            mkdir -p build
+            python3 -B -c 'import os,sys;from pathlib import Path;sys.path.insert(0,"scripts");from project_index import decode,encode;Path("build/recovery-current.json").write_bytes(encode(decode(os.environ["RECOVERY_POINTER"].encode("utf-8"))))'
+            args+=(--recovery-pointer build/recovery-current.json)
+          fi
           python3 -B scripts/prepare-project-index-publication.py --revision "$EXPECTED_SHA" --output build/portfolio "${args[@]}"
       - name: Build complete retained Pages snapshot
         env:

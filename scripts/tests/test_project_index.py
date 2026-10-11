@@ -312,4 +312,16 @@ class ProjectIndexTests(unittest.TestCase):
         with patch.object(store,'urlopen',return_value=response),patch.object(store,'MAX_BYTES',8):
             with self.assertRaisesRegex(ValueError,'Oversized'):store.get(store.CURRENT)
 
+    def test_explicit_reviewed_recovery_uses_valid_history_and_pins_bad_live_bytes(self):
+        self.publish(self.first,'old',bootstrap=True);known=self.live
+        self.universal();rev=self.advance();self.live=b'broken live pointer'
+        guard=self.base/'recovery-guard';portfolio=self.base/'recovered'
+        candidate=store.prepare(self.root,rev,portfolio,fetch=self.fetch,recovery=known,guard=guard)
+        store.publication_guard(self.root,rev,portfolio,guard,fetch=self.fetch)
+        self.assertEqual(self.live,b'broken live pointer')  # preparation never deploys
+        self.assertEqual(index.decode(candidate)['revision'],rev)
+        forged=index.encode(dict(index.decode(known),index_sha256='0'*64))
+        with self.assertRaisesRegex(ValueError,'hash'):
+            store.prepare(self.root,rev,self.base/'forged-recovery',fetch=self.fetch,recovery=forged)
+
 if __name__=='__main__':unittest.main()

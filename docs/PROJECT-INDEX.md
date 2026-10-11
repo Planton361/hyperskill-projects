@@ -169,10 +169,21 @@ stoppt vor `deploy-pages`. Ein Pages-Ausfall bleibt ein Hosting-Ausfall, kein
 gültiger leerer Index.
 
 Bei fehlendem/beschädigtem Pointer im laufenden Betrieb stoppt der Workflow.
-Der Eigentümer stellt nach Prüfung das letzte gültige vollständige Artefakt
-(Redirects, alle Store-Payloads und bekannter gültiger Pointer) über **denselben**
-Pages-Workflow wieder her. Kein automatischer Reset auf null Projekte und keine
-automatische Umdeutung eines kaputten Zustands. Ist der Store beschädigt oder
+Der Eigentümer startet nach Prüfung **denselben** Pages-Workflow per
+`workflow_dispatch` auf aktuellem `main`, mit dem optionalen Eingabefeld
+`recovery_pointer`: JSON des letzten gültigen Pointers aus bekanntem Artefakt
+oder Cache. Der Workflow normalisiert es mit derselben kanonischen Serialisierung
+(doppelte Schlüssel werden abgewiesen). Dieser wird
+vollständig gegen seine tatsächlich erreichbare immutable URL, Hash und den
+validierten Git-Store geprüft. Erst diese ausdrückliche Freigabe erlaubt das
+Ersetzen eines fehlenden/beschädigten Live-Pointers. Die letzten Guards pinnen
+auch dessen tatsächlich vorgefundene beschädigte Bytes; parallele Änderungen
+stoppen weiterhin. Veröffentlicht wird ein komplett geprüftes aktuelles
+Main-Artefakt mit sämtlicher Historie, kein leerer oder teilweise alter Stand.
+Lokaler vorbereitender CLI-Vertrag ist `--recovery-pointer <regular-file>`;
+diesen niemals ohne persönliche Review automatisieren. Kein automatischer Reset
+auf null Projekte und keine automatische Umdeutung eines kaputten Zustands.
+Ist der Store beschädigt oder
 fehlt Historie, zunächst aus der bekannten Git-Historie wiederherstellen und
 alle alten Payloads unabhängig prüfen; niemals dessen Branch force-pushen.
 Nach einer fehlgeschlagenen Plattformverteilung kann ein gültiger alter oder

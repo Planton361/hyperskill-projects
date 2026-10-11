@@ -76,8 +76,20 @@ def get(url, *, missing=False):
     if len(raw)>MAX_BYTES: raise ValueError('Oversized publication source')
     return raw
 
-def previous_pointer(root, items, *, selected=None, bootstrap=False, fetch=get):
+def previous_pointer(root, items, *, selected=None, bootstrap=False, fetch=get, recovery=None):
     raw=fetch(CURRENT,missing=True)
+    if recovery is not None:
+        # Explicit owner-selected last-known-good reference. Check its complete
+        # immutable target against durable Git history before acknowledging a
+        # missing/corrupt live pointer. The guard still pins the actual bad bytes.
+        known=decode(recovery)
+        if not isinstance(known,dict): raise ValueError('Invalid recovery pointer')
+        payload=fetch(known.get('index_url',''))
+        validate_pointer(recovery,payload)
+        validate_index(root,payload,known['revision'])
+        if items.get(known['revision'])!=payload:
+            raise ValueError('Recovery reference not present in validated durable history')
+        return raw
     if raw is None:
         if not bootstrap or set(items)-{selected}:
             raise ValueError('Missing previous pointer: explicit reviewed bootstrap/recovery required')
@@ -92,12 +104,12 @@ def previous_pointer(root, items, *, selected=None, bootstrap=False, fetch=get):
         raise ValueError('Published pointer payload absent/conflicting in durable store')
     return raw
 
-def stage(root, rev, *, bootstrap=False, fetch=get):
+def stage(root, rev, *, bootstrap=False, fetch=get, recovery=None):
     """Persist immutable payload first; never touch the live pointer here."""
     root=repository(root); revision(root,rev); current_main(root,rev)
     raw=generate(root,rev); validate_index(root,raw,rev)
     tip,items=fetch_store(root)
-    prior=previous_pointer(root,items,selected=rev,bootstrap=bootstrap,fetch=fetch)
+    prior=previous_pointer(root,items,selected=rev,bootstrap=bootstrap,fetch=fetch,recovery=recovery)
     for source in items:
         if not ancestor(root,source,rev):
             raise ValueError('Stale/divergent source revision would overwrite newer history')
@@ -129,9 +141,9 @@ def stage(root, rev, *, bootstrap=False, fetch=get):
         raise ValueError('Interrupted/concurrent store push; retry, never force')
     return commit,items,prior
 
-def prepare(root, rev, destination, *, bootstrap=False, fetch=get, guard=None):
+def prepare(root, rev, destination, *, bootstrap=False, fetch=get, guard=None, recovery=None):
     """Return validated artifact inputs only after immutable HTTP bytes are available."""
-    commit,items,prior=stage(root,rev,bootstrap=bootstrap,fetch=fetch)
+    commit,items,prior=stage(root,rev,bootstrap=bootstrap,fetch=fetch,recovery=recovery)
     raw=items[rev]
     candidate=pointer(rev,commit,raw)
     url=decode(candidate)['index_url']
