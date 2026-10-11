@@ -7,22 +7,23 @@ The final isolated Pages validation retains all browser/geometry/LeetCode gates.
 import argparse
 import hashlib
 import json
-import os
 from pathlib import Path
 import runpy
 import shutil
 import subprocess
 import sys
 import tempfile
+from acceptance_context import isolated_myatlas_environment
 
 ROOT = Path(__file__).resolve().parents[1]
 IMPORTER = ROOT / 'scripts/import-hyperskill-project'
 VALIDATOR = ROOT / 'scripts/validate-project-exports.py'
 
 
-def execute(command, cwd, *, successful=True):
+def execute(command, cwd, *, successful=True, env=None):
     print('+', ' '.join(map(str, command)), flush=True)
-    result = subprocess.run(list(map(str, command)), cwd=cwd, capture_output=True, text=True)
+    result = subprocess.run(list(map(str, command)), cwd=cwd, env=env,
+                            capture_output=True, text=True)
     if successful and result.returncode:
         raise ValueError(f'Command failed (exit {result.returncode}): {command[0]}: '
                          f'{result.stdout[-800:]} {result.stderr[-800:]}')
@@ -35,9 +36,9 @@ def git(root, *args):
     return subprocess.check_output(['git', '-C', str(root), *args], text=True).strip()
 
 
-def projection(atlas, evidence):
+def projection(atlas, evidence, env):
     raw = subprocess.check_output([sys.executable, '-B', str(atlas / 'scripts/sync-hyperskill-projects.py'),
-                                   '--evidence-root', str(evidence)], cwd=atlas)
+                                   '--evidence-root', str(evidence)], cwd=atlas, env=env)
     return json.loads(raw)['projection']
 
 
@@ -132,9 +133,8 @@ def main():
             original = git(evidence, 'rev-parse', 'HEAD')
             execute([sys.executable, '-B', str(VALIDATOR), '--repository', str(evidence)], ROOT)
 
-            env = dict(os.environ)
-            env.pop('GITHUB_SHA', None)
-            baseline = projection(atlas, evidence)
+            env = isolated_myatlas_environment()
+            baseline = projection(atlas, evidence, env)
             scopes = json.loads((atlas / 'src/myatlas/knowledge-atlas-scope-pyramid/scope-index.json').read_text())
             completed = set(baseline['completed_project_ids'])
             topics = set(baseline['effective_learned_topic_ids'])
@@ -182,7 +182,7 @@ def main():
                     raise ValueError('Validator lost or added a committed Project ID')
                 if project['state'] == 'KNOWN':
                     topics.update(project['explicit_topic_ids'])
-                current = projection(atlas, evidence)
+                current = projection(atlas, evidence, env)
                 if current['completed_project_ids'] != sorted(completed) or \
                         current['completed_project_count'] != len(completed):
                     raise ValueError('MyAtlas failed incremental portfolio growth')
@@ -214,7 +214,7 @@ def main():
                                       for path in all_changes):
                 raise ValueError('Future-project integration modified unrelated files')
             execute([sys.executable, '-B', str(atlas / 'scripts/validate-pages-candidate.py'),
-                     '--evidence-root', str(evidence)], atlas)
+                     '--evidence-root', str(evidence)], atlas, env=env)
             built = json.loads((atlas / 'build/pages/knowledge-map/progress.json').read_text())
             if built != current:
                 raise ValueError('Pages artifact diverged from exact committed portfolio evidence')
