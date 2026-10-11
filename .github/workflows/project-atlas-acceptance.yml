@@ -157,7 +157,8 @@ jobs:
               # fall back to the known-incompatible pre-fix fixtures.
               if not merged:
                   merged = subprocess.run(['git','-C',str(root),'diff','--quiet',review,'origin/main','--',
-                      'tests/myatlas/index-test-support.cjs','tests/myatlas/index-browser.cjs']).returncode == 0
+                      'tests/myatlas/index-test-support.cjs','tests/myatlas/index-browser.cjs',
+                      'scripts/tests/test_dynamic_index_release.py']).returncode == 0
               if not merged:
                   if os.environ['EVENT'] != 'pull_request':
                       raise SystemExit('BLOCKED_BY_PHASE_5_MYATLAS: merge the reviewed fixture fix first')

@@ -60,3 +60,19 @@ Keine Pages-Schreibrechte außerhalb des bestehenden Deploymentjobs, keine Token
 keine Indexaktivierung, kein produktiver Pointer-Wechsel, kein Deployment/Merge.
 Normalablauf, Blocker, Branchschutz-Review und Phase-6-Übergabe:
 [PROJECT-DATA-CI.md](PROJECT-DATA-CI.md).
+
+Weitere Fälle desselben Fixturefehlers wurden separat diagnostiziert und korrigiert:
+Baseline-Semantik muss an ihrer unveränderlichen Archivrevision geprüft werden,
+nicht am um UNKNOWN/UNMAPPED erweiterten Kandidaten. Die 22 aktuellen Hashes und
+unabhängigen Verifikations-/Course-Nachweise bleiben zusätzliche Pflichtassertions.
+Der Browser-Offline-Fallback prüft das ganze Universalregister einschließlich
+UNMAPPED. Der Review-Pin enthält alle drei hierfür relevanten Fixturedateien und
+erkennt bytegleiche Squash-/Rebase-Merges, ohne alten inkompatiblen Fallback.
+Überholte Matrixläufe mit dem bereits diagnostizierten alten Fixturestand wurden
+abgebrochen; die neueste Revision muss wieder alle sechs Szenarien bestehen.
+
+Read-only GitHub-Prüfung: Projects `main` besitzt derzeit weder klassischen
+Branchschutz noch wirksame Rulesets. Vor normalen Projektmerges sind die stabilen
+Abschluss-/Archiv-/Artefaktchecks daher als Required Checks einzurichten; solange
+sie nicht technisch erzwungen werden, muss der Eigentümer alle grünen Checks
+persönlich prüfen. Diese Phase ändert keine Repository-Settings.
