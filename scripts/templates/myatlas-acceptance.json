@@ -1,6 +1,6 @@
 {
   "schema": 1,
   "repository": "Planton361/myatlas",
-  "bootstrap_commit": "a93c6365c97e4b4097a08e73eaf48135eed06127",
-  "policy": "Use current main after the source-only compatibility commit is merged; until then test this exact reviewed MyAtlas PR commit. Merge MyAtlas compatibility first."
+  "bootstrap_commit": "dc5870ebdd240f022292a8050a8600e6a661a67d",
+  "policy": "Require merged Schema-4 compatibility, then test current canonical MyAtlas main. Never fall back to a Schema-2/3-only commit."
 }

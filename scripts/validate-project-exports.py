@@ -8,7 +8,7 @@ import re
 import subprocess
 import tempfile
 
-from export_metadata import validate_completion, validate_source_only_export
+from export_metadata import validate_completion, validate_source_only_export, validate_universal_export, unique_object, universal_path
 
 ROOT = Path(__file__).resolve().parents[1]
 LEGACY_STATEMENT = 'Completed as part of [Hyperskill](https://hyperskill.org/projects/113).'
@@ -24,9 +24,9 @@ def _safe_legacy_path(name):
             '..' not in path.parts and not any(part.startswith('.') for part in path.parts))
 
 
-def validate(root):
+def validate(root, allow_empty=False, revision='HEAD'):
     root = Path(root).resolve(strict=True)
-    tree = git(root, 'ls-tree', '-rz', 'HEAD')
+    tree = git(root, 'ls-tree', '-rz', revision)
     entries = {}
     for item in tree.split(b'\0'):
         if item:
@@ -34,18 +34,31 @@ def validate(root):
             entries[raw_name.decode()] = metadata.decode().split()
     markers = sorted(name for name in entries
                      if len(name.split('/')) == 3 and name.endswith('/.hyperskill-import.json'))
-    if not markers:
+    if not markers and not allow_empty:
         raise ValueError('No committed project archives')
-    if any(name.split('/')[0] not in ('java', 'python') for name in markers):
+    if any(name.split('/')[0] not in ('java', 'python', 'projects') for name in markers):
         raise ValueError('Unsupported archive language')
     for name in entries:
-        if len(name.split('/')) >= 3 and name.split('/')[0] in ('java', 'python'):
+        if name.split('/')[0] in ('java', 'python', 'projects'):
+            if name in ('java/README.md', 'python/README.md') and entries[name][:2] == ['100644', 'blob']:
+                continue  # Existing namespace documentation, never project evidence.
+            if len(name.split('/')) < 3:
+                raise ValueError('Non-directory/orphan archive namespace member')
             prefix = '/'.join(name.split('/')[:2])
             if prefix + '/.hyperskill-import.json' not in markers:
                 raise ValueError('Project directory missing archive manifest: ' + name)
+            mode, kind, oid = entries[name]
+            if mode not in ('100644', '100755') or kind != 'blob':
+                raise ValueError('Non-regular archive Git object refused before reading blobs')
+            relative = name[len(prefix) + 1:]
+            if prefix.startswith('projects/') and relative != '.hyperskill-import.json':
+                universal_path(relative)
+            elif not prefix.startswith('projects/') and relative != '.hyperskill-import.json' and not _safe_legacy_path(relative):
+                raise ValueError('Unsafe committed archive path')
 
     results, seen = [], set()
     with tempfile.TemporaryDirectory(prefix='validated-source-archives-') as folder:
+        folder = Path(folder).resolve()
         for marker in markers:
             prefix = marker.rsplit('/', 1)[0]
             target = Path(folder) / prefix
@@ -53,14 +66,24 @@ def validate(root):
                 mode, kind, oid = entries[name]
                 if mode not in ('100644', '100755') or kind != 'blob':
                     raise ValueError('Non-regular archive member')
+                relative = name[len(prefix) + 1:]
+                if prefix.startswith('projects/') and relative != '.hyperskill-import.json':
+                    universal_path(relative)
+                elif not prefix.startswith('projects/') and relative != '.hyperskill-import.json' and not _safe_legacy_path(relative):
+                    raise ValueError('Unsafe committed archive path')
                 path = Path(folder) / name
                 path.parent.mkdir(parents=True, exist_ok=True)
                 path.write_bytes(git(root, 'cat-file', 'blob', oid))
                 if mode == '100755':
                     path.chmod(0o755)
-            manifest = json.loads((target / '.hyperskill-import.json').read_text(encoding='utf-8'))
+            manifest = json.loads((target / '.hyperskill-import.json').read_text(encoding='utf-8'), object_pairs_hook=unique_object)
             language = prefix.split('/')[0]
-            if manifest.get('schema') == 3:
+            if not isinstance(manifest, dict):
+                raise ValueError('Archive manifest must be an object')
+            if language == 'projects':
+                validate_universal_export(target, manifest)
+                pid = manifest['project_id']
+            elif manifest.get('schema') == 3:
                 validate_source_only_export(target, manifest)
                 pid = manifest['project_id']
                 if manifest['language'] != language:
@@ -102,12 +125,12 @@ def validate(root):
                 raise ValueError('Unsupported export manifest schema')
 
             readme = (target / 'README.md').read_text(encoding='utf-8')
-            urls = set(map(int, re.findall(r'https://hyperskill\.org/projects/([1-9][0-9]*)(?![0-9])', readme)))
-            if urls != {pid} or pid in seen:
+            urls = set(map(int, re.findall(r'https://hyperskill\.org/projects/([0-9]+)(?![0-9])', readme)))
+            if (urls and urls != {pid} if language == 'projects' else urls != {pid}) or pid in seen:
                 raise ValueError('Duplicate or conflicting Project ID')
             seen.add(pid)
             results.append(dict(project_id=pid, language=language,
-                                archive_mode='source-only' if manifest['schema'] == 3 else 'legacy-schema-2',
+                                archive_mode={4: 'code-archive', 3: 'source-only', 2: 'legacy-schema-2'}[manifest['schema']],
                                 status='PASS'))
     return results
 

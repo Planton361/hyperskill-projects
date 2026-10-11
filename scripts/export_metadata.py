@@ -97,3 +97,166 @@ def validate_source_only_export(directory, manifest):
     if urls != {manifest['project_id']}:
         raise ValueError('README Project ID does not match the manifest')
     return manifest
+
+
+# Contract 4.0 validation mirrors the reviewed MyAtlas reader at dc5870e.
+# Cross-repository regression tests check producer/reader acceptance parity.
+import unicodedata
+HASH = re.compile(r'[a-f0-9]{64}')
+
+# Schema 4 is selected by explicit identity and roles, never language/extensions.
+MAX_PROJECT_ID = 2**53 - 1  # Exact across Python, JSON and the browser.
+PRIVATE_NAME = re.compile(
+    r'^(?:\.env(?:\..*)?|id_(?:rsa|ed25519)|.*\.(?:pem|key))$|'
+    r'(?:^|[._-])(?:secrets?|credentials?|private|passwords?|tokens?)(?:[._-]|$)', re.I)
+SECRETS = re.compile(
+    r'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----|'
+    r'\b(?:gh[pousr]_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|AKIA[A-Z0-9]{16})\b|'
+    r"(?i:(?:password|passwd|api[_-]?key|access[_-]?token|secret)\s*[=:]\s*[\"'][^\"'\n]{4,}[\"'])")
+EXCLUDED = {'node_modules', '__pycache__', 'venv', 'env', 'target', 'dist'}
+RESERVED = {'CON', 'PRN', 'AUX', 'NUL', *(f'COM{i}' for i in range(1, 10)),
+            *(f'LPT{i}' for i in range(1, 10))}
+
+
+def unique_object(pairs):
+    result = {}
+    for key, value in pairs:
+        if key in result:
+            raise ValueError('Duplicate JSON key in export manifest')
+        result[key] = value
+    return result
+
+
+def universal_path(name):
+    if not isinstance(name, str) or not name or unicodedata.normalize('NFC', name) != name:
+        raise ValueError('Unsafe universal archive path')
+    member = PurePosixPath(name)
+    if name == 'README.md':
+        return member
+    if member.is_absolute() or member.as_posix() != name or len(member.parts) < 2 or member.parts[0] != 'solution':
+        raise ValueError('Universal members must stay below solution/')
+    for part in member.parts:
+        if (part.startswith('.') or part.endswith((' ', '.')) or
+                any(unicodedata.category(c).startswith('C') or c in '\\<>:"|?*' for c in part) or
+                part.split('.', 1)[0].upper() in RESERVED or
+                part.casefold() in EXCLUDED or PRIVATE_NAME.search(part)):
+            raise ValueError('Unsafe/private universal archive path')
+    return member
+
+
+def public_text(raw, label, *, code=False):
+    # Resource bytes remain resources; they never become code or Topic evidence.
+    try:
+        text = raw.decode('utf-8')
+    except UnicodeDecodeError as error:
+        if code:
+            raise ValueError('Solution code must be UTF-8 text: ' + label) from error
+        text = raw.decode('utf-8', errors='replace')
+    if code and any(unicodedata.category(c) == 'Cc' and c not in '\n\r\t' for c in text):
+        raise ValueError('Binary/control content is not solution code: ' + label)
+    if SECRETS.search(text):
+        raise ValueError('Possible secret in archive (contents withheld): ' + label)
+    return text
+
+
+def _universal_attestation(value):
+    if not isinstance(value, dict) or set(value) != {'project_id', 'status', 'attested_by', 'observed_at'}:
+        raise ValueError('Exact owner attestation fields required')
+    if type(value['project_id']) is not int or value['project_id'] <= 0 or value['status'] != 'completed' or value['attested_by'] != 'owner':
+        raise ValueError('Exact positive ID and owner completion required')
+    stamp = value['observed_at']
+    if not isinstance(stamp, str) or not re.fullmatch(r'\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(?:\.\d{1,6})?Z', stamp):
+        raise ValueError('UTC observation timestamp required')
+    datetime.fromisoformat(stamp.replace('Z', '+00:00'))
+
+
+def validate_universal_export(directory, manifest):
+    directory = Path(directory)
+    if directory.is_symlink() or any(p.is_symlink() for p in directory.parents):
+        raise ValueError('Symlink archive parent refused')
+    if not isinstance(manifest, dict):
+        raise ValueError('Universal manifest must be an object')
+    required = {'schema', 'mode', 'project_id', 'project_url', 'title', 'completion', 'files'}
+    if not required <= set(manifest) or set(manifest) - required - {'languages'}:
+        raise ValueError('Exact universal schema-4 manifest fields required')
+    if type(manifest['schema']) is not int or manifest['schema'] != 4 or manifest['mode'] != 'code-archive':
+        raise ValueError('Universal schema 4 / code-archive mode required')
+    pid = manifest['project_id']
+    if type(pid) is not int or not 0 < pid <= MAX_PROJECT_ID or directory.name != str(pid):
+        raise ValueError('Exact positive Project ID and canonical projects/<ID> required')
+    if manifest['project_url'] != f'https://hyperskill.org/projects/{pid}':
+        raise ValueError('Exact Hyperskill Project URL required')
+    title = manifest['title']
+    if not isinstance(title, str) or not title.strip() or title != title.strip() or any(unicodedata.category(c).startswith('C') for c in title):
+        raise ValueError('Non-empty public project title required')
+    languages = manifest.get('languages', [])
+    if not isinstance(languages, list) or any(not isinstance(v, str) or not v.strip() or v != v.strip() or any(unicodedata.category(c).startswith('C') for c in v) for v in languages):
+        raise ValueError('Languages must be optional descriptive strings')
+    if len({v.casefold() for v in languages}) != len(languages):
+        raise ValueError('Duplicate language metadata')
+    completion = manifest['completion']
+    fields = {'project_id', 'status', 'attested_by', 'confirmed_at'}
+    if not isinstance(completion, dict) or not fields <= set(completion) or set(completion) - fields - {'completed_at'}:
+        raise ValueError('Exact universal owner completion fields required')
+    _universal_attestation(dict(project_id=completion['project_id'], status=completion['status'],
+                             attested_by=completion['attested_by'], observed_at=completion['confirmed_at']))
+    if completion['project_id'] != pid:
+        raise ValueError('Ambiguous Project ID in completion')
+    if 'completed_at' in completion:
+        _universal_attestation(dict(project_id=pid, status='completed', attested_by='owner', observed_at=completion['completed_at']))
+        if datetime.fromisoformat(completion['completed_at'].replace('Z', '+00:00')) > datetime.fromisoformat(completion['confirmed_at'].replace('Z', '+00:00')):
+            raise ValueError('Actual completion cannot follow owner confirmation')
+    files = manifest['files']
+    if not isinstance(files, dict) or not files:
+        raise ValueError('Non-empty universal file inventory required')
+    if not isinstance(files.get('README.md'), dict) or files['README.md'].get('role') != 'resource':
+        raise ValueError('README.md must be inventoried as a resource')
+    # Inspect the entire tree before opening any members (including parents).
+    actual = set()
+    for item in directory.rglob('*'):
+        if item.is_symlink() or not (item.is_file() or item.is_dir()):
+            raise ValueError('Symlink/special universal archive member refused')
+        name = item.relative_to(directory).as_posix()
+        if name not in ('README.md', '.hyperskill-import.json', 'solution'):
+            universal_path(name)
+        if item.is_file():
+            actual.add(name)
+    if actual != set(files) | {'.hyperskill-import.json'}:
+        raise ValueError('Universal inventory must cover every archived file exactly')
+    # Reject aliases on case-insensitive/Unicode-normalizing filesystems,
+    # including directories shared by otherwise distinct file names.
+    aliases = {}
+    code_count = 0
+    for name, entry in files.items():
+        member = universal_path(name)
+        for i in range(1, len(member.parts) + 1):
+            prefix = '/'.join(member.parts[:i])
+            alias = prefix.casefold()
+            if alias in aliases and aliases[alias] != prefix:
+                raise ValueError('Case-colliding universal archive paths')
+            aliases[alias] = prefix
+        if not isinstance(entry, dict) or set(entry) != {'sha256', 'role'} or entry['role'] not in ('solution', 'resource'):
+            raise ValueError('Exact sha256/role inventory entry required')
+        if not isinstance(entry['sha256'], str) or not HASH.fullmatch(entry['sha256']):
+            raise ValueError('Invalid SHA-256 inventory entry')
+        raw = directory.joinpath(*member.parts).read_bytes()
+        if hashlib.sha256(raw).hexdigest() != entry['sha256']:
+            raise ValueError('Export content does not match manifest: ' + name)
+        code = entry['role'] == 'solution'
+        public_text(raw, name, code=code)
+        code_count += code
+    if not code_count:
+        raise ValueError('At least one explicitly selected solution file required')
+    public_text((directory / 'README.md').read_bytes(), 'README.md', code=True)
+    def check_metadata(value):
+        if isinstance(value, str):
+            public_text(value.encode('utf-8'), 'manifest metadata', code=True)
+        elif isinstance(value, dict):
+            for key, item in value.items():
+                check_metadata(key)
+                check_metadata(item)
+        elif isinstance(value, list):
+            for item in value:
+                check_metadata(item)
+    check_metadata(manifest)
+    return dict(project_id=pid, status='completed', attested_by='owner', observed_at=completion['confirmed_at'])
