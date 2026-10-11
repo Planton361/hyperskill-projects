@@ -105,11 +105,13 @@ Der bestehende Workflow `pages-redirects.yml` testet auch Pull Requests, dort
 immer read-only und ohne Deploy-Job. Nach Merge validiert der Build-Job die
 ausgewählte Revision zweimal und vergleicht die Bytes; archiviert wird ein
 prüfbarer CI-Kandidat. Der bestehende Deploy-Job fixiert dieselbe SHA und prüft
-live `origin/main`. Alle Pages-Läufe teilen eine Concurrency-Gruppe mit
+live `origin/main`. Alle produktiven Main-Pages-Läufe teilen eine Concurrency-Gruppe mit
 `cancel-in-progress: false`; ältere wartende Läufe scheitern am Main-SHA-Check.
 [GitHub dokumentiert](https://docs.github.com/en/actions/how-tos/deploy/configure-and-manage-deployments/control-deployments)
 die Serialisierung über Concurrency; Reihenfolge wird zusätzlich durch die
 expliziten SHA-, Ancestry- und Pointer-Prüfungen gesichert.
+PR-/Release-Prüfungen verwenden eigene Gruppen und können keinen wartenden
+Main-Publikationslauf verdrängen.
 
 Nach Aktivierung werden nacheinander ausgeführt:
 

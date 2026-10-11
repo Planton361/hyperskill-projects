@@ -11,9 +11,10 @@ on:
         type: string
 permissions:
   contents: read
-# Serialize the entire existing Pages process; do not cancel partial publication.
+# Serialize all main publications, including persistence; PR/release checks
+# cannot cancel a pending main publication. Never cancel an in-flight update.
 concurrency:
-  group: project-pages
+  group: project-pages-${{ github.ref }}
   cancel-in-progress: false
 jobs:
   build:
