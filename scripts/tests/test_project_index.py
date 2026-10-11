@@ -263,6 +263,7 @@ class ProjectIndexTests(unittest.TestCase):
         self.publish(self.first,'recovery',bootstrap=True)
 
     def test_last_guard_checks_pointer_and_disabled_mode_never_erases_index(self):
+        store.refuse_index_removal(self.root,fetch=self.fetch)
         guard=self.base/'guard.json';portfolio=self.base/'guarded'
         candidate=store.prepare(self.root,self.first,portfolio,bootstrap=True,fetch=self.fetch,guard=guard)
         store.publication_guard(self.root,self.first,portfolio,guard,fetch=self.fetch)
@@ -270,8 +271,10 @@ class ProjectIndexTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'Concurrent live'):
             store.publication_guard(self.root,self.first,portfolio,guard,fetch=self.fetch)
         with self.assertRaisesRegex(ValueError,'must not erase'):
-            store.refuse_index_removal(fetch=self.fetch)
-        self.live=None;store.refuse_index_removal(fetch=self.fetch)
+            store.refuse_index_removal(self.root,fetch=self.fetch)
+        self.live=None
+        with self.assertRaisesRegex(ValueError,'must not erase'):
+            store.refuse_index_removal(self.root,fetch=self.fetch)
 
     def test_corrupt_durable_store_fails_without_pointer_change(self):
         self.publish(self.first,'valid-store',bootstrap=True);old=self.live

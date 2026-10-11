@@ -150,7 +150,7 @@ beschreibt diesen Artifact-/Deploy-Mechanismus. Kein zweiter Workflow deployt.
 ## Fehler, Bootstrap und Wiederherstellung
 
 Ohne Aktivierung bleiben die bisherigen Redirects erhalten; der Build erzeugt
-nur den CI-Indexkandidaten. Sollte bereits ein öffentlicher Pointer vorhanden
+nur den CI-Indexkandidaten. Sollte bereits Git-Store-Historie oder ein öffentlicher Pointer vorhanden
 sein, verweigert auch dieser Modus ein Redirect-only-Deployment, damit ein
 versehentliches Deaktivieren niemals alte Indexdateien entfernt.
 

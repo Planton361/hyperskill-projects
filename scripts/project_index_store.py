@@ -184,8 +184,10 @@ def publication_guard(root, rev, portfolio, guard, *, fetch=get):
     validate_pointer(candidate,payload);validate_index(root,payload,rev)
     current_main(root,rev)
 
-def refuse_index_removal(*,fetch=get):
-    if fetch(CURRENT,missing=True) is not None:
+def refuse_index_removal(root=ROOT,*,fetch=get):
+    # A missing HTTP pointer can itself be a hosting fault. Durable history is
+    # sufficient to prevent a disabled-mode artifact erasing previous URLs.
+    if remote_sha(root,REF) is not None or fetch(CURRENT,missing=True) is not None:
         raise ValueError('Index already exists: disabled mode must not erase retained portfolio')
 
 def validate_bundle(root, portfolio, rev):
