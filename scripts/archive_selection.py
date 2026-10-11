@@ -73,15 +73,16 @@ def identity(source, explicit=None):
     if marker.is_file():
         text = marker.read_text(encoding='utf-8')
         blocks = re.findall(r'(?m)^hyperskill_project:\s*\n((?:[ \t]+[^\n]*\n?)*)', text)
-        if len(blocks) != 1:
-            raise ValueError('Academy identity missing or ambiguous; review metadata')
-        values = re.findall(r'(?m)^  id:\s*(.*?)\s*$', blocks[0])
-        urls = re.findall(r'https://hyperskill.org/api/projects/([^/\s]+)/', blocks[0])
+        if len(blocks) > 1 or (not blocks and 'hyperskill_project:' in text):
+            raise ValueError('Academy identity ambiguous or unsupported; review metadata')
+        block = blocks[0] if blocks else ''
+        values = re.findall(r'(?m)^  id:\s*(.*?)\s*$', block)
+        urls = re.findall(r'https://hyperskill.org/api/projects/([^/\s]+)/', block)
         if len(values) > 1 or any(not re.fullmatch(r'[1-9][0-9]*', v) for v in values + urls):
             raise ValueError('Invalid or ambiguous Academy Project ID')
         ids = list(map(int, values + urls))
-        if not ids or len(set(ids)) != 1:
-            raise ValueError('Academy Project ID missing or ambiguous')
+        if len(set(ids)) > 1:
+            raise ValueError('Academy Project ID ambiguous')
     if explicit is not None:
         if not re.fullmatch(r'https://hyperskill\.org/projects/[1-9][0-9]*', explicit):
             raise ValueError('Exact Hyperskill URL required (no trailing slash/query/fragment)')

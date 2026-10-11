@@ -11,7 +11,6 @@ import stat
 import subprocess
 import sys
 import tempfile
-from source_adapters import detect, project_url, workspace
 from acceptance_context import isolated_myatlas_environment
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -138,7 +137,11 @@ def main():
                 if project['state']=='UNMAPPED' and (pid in {p['project_id'] for p in current['projects']} or register['unmapped_project_ids']!=[pid]): raise ValueError('Unmapped ID leaked into catalog runtime')
             expected_topics=set(baseline['effective_learned_topic_ids']) | (set(project['explicit_topic_ids']) if project and project['state']=='KNOWN' else set())
             if current['effective_learned_topic_ids']!=sorted(expected_topics) or current['global']['learned']!=len(expected_topics): raise ValueError('Invented source-derived Topics')
-            if current['verified_topic_ids']!=baseline['verified_topic_ids'] or current['course_project_completion']!=baseline['course_project_completion']: raise ValueError('Independent verification/Course records changed')
+            # Independent Course attestations remain separate from the accepted
+            # catalog's derived completed-project counts within Courses.
+            if current['verified_topic_ids']!=baseline['verified_topic_ids'] or current['course_completion']!=baseline['course_completion']: raise ValueError('Independent verification/Course records changed')
+            if project and project['state']=='UNMAPPED' and current['course_project_completion']!=baseline['course_project_completion']:
+                raise ValueError('Unmapped archive changed catalog Course/project relationships')
             call([sys.executable,'-B',atlas/'scripts/validate-pages-candidate.py','--evidence-root',evidence],atlas,env)
             if json.loads((atlas/'build/pages/knowledge-map/progress.json').read_text())!=current: raise ValueError('Pages projection differs from validated archives')
             shutil.copytree(atlas/'test-results',output/'myatlas',dirs_exist_ok=True)

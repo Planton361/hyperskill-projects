@@ -95,6 +95,7 @@ class ImportTests(unittest.TestCase):
     def test_optional_actual_completion_is_preserved_and_not_inferred(self):
         self.invoke('--completed-at', '2026-10-01T01:02:03Z')
         self.assertEqual(self.manifest()['completion']['completed_at'], '2026-10-01T01:02:03Z')
+        self.commit_archive()
 
     def test_invalid_or_future_completion_and_actual_after_confirmation_rejected(self):
         for flags in [('--confirmed-at','now'), ('--completed-at','now'),
@@ -106,11 +107,11 @@ class ImportTests(unittest.TestCase):
         self.invoke(success=False, confirm=False)
 
     def test_all_languages_unknown_suffix_and_extensionless_sources_need_no_adapters(self):
-        self.src.unlink()
         for name in ('main.py','Main.kt','main.js','code.future','program'):
             (self.task / 'src' / name).write_text('invalid code; topic_id=999999; must not execute\n')
         self.invoke('--language', 'kotlin', '--language', 'javascript')
-        self.assertEqual(len(self.manifest()['files']), 6)
+        self.assertEqual(len(self.manifest()['files']), 7)
+        self.assertEqual((self.target/self.code_path).read_bytes(),JAVA_SOURCE)
         self.assertIn('solution/Demo Project/task/src/program', self.manifest()['files'])
         self.assertEqual(self.manifest()['languages'], ['java','kotlin','javascript'])
         self.commit_archive()
@@ -133,6 +134,7 @@ class ImportTests(unittest.TestCase):
         self.assertFalse(sentinel.exists())
         self.assertEqual((self.target / self.code_path).read_bytes(), self.src.read_bytes())
         self.assertFalse(any('gradle' in name for name in self.manifest()['files']))
+        self.commit_archive()
 
     def test_automatic_selection_omits_prior_tasks_platform_tests_and_generated_material(self):
         for name in ('Earlier/task/src/Old.java','.idea/workspace.xml','.gradle/cache/data','build/report.html',
@@ -143,6 +145,7 @@ class ImportTests(unittest.TestCase):
         platform.write_text('import org.hyperskill.hstest.StageTest; class AcademyTest {}')
         self.invoke()
         self.assertEqual(set(self.manifest()['files']), {'README.md',self.code_path})
+        self.commit_archive()
 
     def test_ambiguous_final_tasks_stop_but_explicit_selection_succeeds(self):
         another = self.source / 'Other/task/src/code'
@@ -151,6 +154,7 @@ class ImportTests(unittest.TestCase):
         choice = self.declaration({'Other/task/src/code':'solution'})
         self.invoke('--title','Unmatched','--files-from',choice)
         self.assertEqual((self.target/'solution/Other/task/src/code').read_bytes(), another.read_bytes())
+        self.commit_archive()
 
     def test_explicit_selection_without_any_academy_metadata_preserves_paths(self):
         (self.source/'course-info.yaml').unlink(); (self.source/'course-remote-info.yaml').unlink()
@@ -158,6 +162,7 @@ class ImportTests(unittest.TestCase):
         self.invoke('--files-from',choice,'--project-url','https://hyperskill.org/projects/7','--title','Generic owner code',language=None)
         self.assertNotIn('languages', self.manifest())
         self.assertEqual((self.target/self.code_path).read_bytes(), JAVA_SOURCE)
+        self.commit_archive()
 
     def test_explicit_text_and_binary_resources_remain_resources(self):
         (self.task/'src/data.json').write_bytes(b'{"fixture":true}\n')
@@ -220,6 +225,13 @@ class ImportTests(unittest.TestCase):
         (self.source/'course-remote-info.yaml').write_text('hyperskill_project:\n  id: 07\n')
         self.invoke('--project-url','https://hyperskill.org/projects/7',success=False)
 
+    def test_missing_identity_in_existing_academy_metadata_accepts_exact_owner_url(self):
+        (self.source/'course-remote-info.yaml').write_text('course_id: 42\n')
+        self.assertIn('--project-url',self.invoke(success=False))
+        self.invoke('--project-url','https://hyperskill.org/projects/7')
+        self.assertEqual(self.manifest()['project_id'],7)
+        self.commit_archive()
+
     def test_duplicate_id_stops_even_after_first_archive_is_committed(self):
         self.invoke(); self.invoke(success=False); self.commit_archive()
         self.assertIn('Duplicate', self.invoke(success=False))
@@ -232,7 +244,7 @@ class ExistingExportValidationTests(unittest.TestCase):
         result=subprocess.run(['python3.12','-B',INFRA/'scripts/validate-project-exports.py'],text=True,capture_output=True)
         self.assertEqual(result.returncode,0,result.stderr)
         rows={r['project_id']:r for r in json.loads(result.stdout)}
-        self.assertEqual(set(rows),{113,229,380})
+        self.assertTrue({113,229,380} <= set(rows), 'Historical IDs must remain accepted as new archives grow')
         self.assertEqual(rows[113]['archive_mode'],'legacy-schema-2')
         self.assertEqual(rows[229]['archive_mode'],'source-only')
         self.assertEqual({str(p):snapshot(p) for p in exports},before)

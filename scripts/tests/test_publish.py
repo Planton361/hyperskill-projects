@@ -173,11 +173,14 @@ class PublishTests(unittest.TestCase):
         main = self.fixture.task/'main.py'
         main.write_text('import unknown_module\nopen("data.json")\nraise SystemExit("must not run")\n')
         (self.fixture.task/'data.json').write_text('{"ok":true}\n')
+        self.args.files_from=self.fixture.declaration({'Demo Project/task/main.py':'solution',
+                                                      'Demo Project/task/data.json':'resource'})
         self.run_publisher()
         exported = self.review/'projects/7'
         manifest = json.loads((exported/'.hyperskill-import.json').read_text())
         self.assertEqual(set(manifest['files']), {'README.md', 'solution/Demo Project/task/main.py', 'solution/Demo Project/task/data.json'})
         self.assertEqual((exported/'solution/Demo Project/task/main.py').read_bytes(), main.read_bytes())
+        self.assertEqual(manifest['files']['solution/Demo Project/task/data.json']['role'],'resource')
         self.assertFalse(any('python' in command[0] and 'main.py' in command for command in self.calls))
 
     def test_duplicate_project_id_prevents_second_export(self):
@@ -261,6 +264,21 @@ class PublishTests(unittest.TestCase):
         meta=json.loads((self.review/'projects/7/.hyperskill-import.json').read_text())
         self.assertEqual(meta['completion']['completed_at'],self.args.completed_at)
         self.assertNotEqual(meta['completion']['confirmed_at'],self.args.completed_at)
+
+    def test_confirmation_clock_is_read_only_after_owner_complete_input(self):
+        from datetime import datetime, timezone
+        owner_complete=[]
+        def answer(prompt):
+            if 'Type COMPLETE 7' in prompt:
+                owner_complete.append(True); return 'COMPLETE 7'
+            return 'PUBLISH 7'
+        def now(zone):
+            self.assertEqual(owner_complete,[True])
+            return datetime(2026,10,8,12,34,56,789,timezone.utc)
+        clock=type('OwnerConfirmationClock',(),{'now':staticmethod(now)})
+        with patch.dict(self.globals,datetime=clock): self.run_publisher(answer)
+        meta=json.loads((self.review/'projects/7/.hyperskill-import.json').read_text())
+        self.assertEqual(meta['completion']['confirmed_at'],'2026-10-08T12:34:56.000789Z')
 
 
 if __name__ == '__main__':
