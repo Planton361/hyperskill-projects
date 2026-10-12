@@ -81,3 +81,8 @@ pointer or index deployment is enabled by this PR.
 Phase 5: [Projekt-Daten-CI und Systemgesundheit](../docs/PROJECT-DATA-CI.md).
 `test-project-data.py` validiert einen vollständigen Commit gegen den gemergten
 MyAtlas-Reader ohne App-Build; `ci_change.py` klassifiziert Git-Änderungen konservativ.
+
+Phase 6: [kontrollierter Rollout](../docs/ROLLOUT.md), inklusive Branchschutz-
+Blocker und unveröffentlichtem [Preflight](../docs/acceptance/phase6-preflight.json).
+`preflight-project-index.py --myatlas-root /isoliert/myatlas --revision <SHA>
+--output /tmp/preflight.json` ist read-only; es erzeugt weder Store noch Pointer.
