@@ -76,3 +76,11 @@ Branchschutz noch wirksame Rulesets. Vor normalen Projektmerges sind die stabile
 Abschluss-/Archiv-/Artefaktchecks daher als Required Checks einzurichten; solange
 sie nicht technisch erzwungen werden, muss der Eigentümer alle grünen Checks
 persönlich prüfen. Diese Phase ändert keine Repository-Settings.
+
+Die feste Browser-Geometrieprobe lädt nun denselben validierten historischen
+statischen Snapshot wie die bestehende Geometrieabnahme. Die tatsächlichen
+Kandidaten-Fallbackzahlen werden zuvor separat exakt geprüft. Mit sechs bereits
+vorhandenen synthetischen Kandidatenprojekten bestehen alle sechs Release-Tests,
+45 Reader-Tests und Chromium/WebKit auf Desktop/Mobil; die anschließenden
+Datenupdates benötigen keinen App-Build und erhalten sämtliche fünf festen Hashes.
+Es wurden weder Layoutregeln noch persönliche Lernnachweise geändert.
