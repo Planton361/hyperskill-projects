@@ -3,12 +3,113 @@ on:
   pull_request:
   push:
     branches: [main]
-    paths: ['scripts/**', '.github/workflows/project-atlas-acceptance.yml', 'java/**', 'python/**', 'projects/**']
   workflow_dispatch:
+  schedule:
+    - cron: "41 4 * * 1"
 permissions:
   contents: read
 jobs:
+  policy:
+    runs-on: ubuntu-24.04
+    outputs:
+      class: ${{ steps.policy.outputs.class || steps.bootstrap.outputs.class }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Admit only unchanged trusted policy action
+        id: bootstrap
+        env:
+          BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
+          EVENT: ${{ github.event_name }}
+          HEAD_SHA: ${{ github.sha }}
+        run: |
+          python3 - <<'PYCODE'
+          import json, os, subprocess
+          from pathlib import Path
+          if subprocess.check_output(['git','rev-parse','HEAD']).decode().strip() != os.environ['HEAD_SHA']:
+              raise SystemExit('Checkout revision mismatch')
+          path='.github/actions/change-policy/action.yml'
+          base=subprocess.run(['git','show',os.environ['BASE']+':'+path],capture_output=True)
+          trusted=base.returncode==0 and base.stdout==Path(path).read_bytes() and os.environ['EVENT'] not in ('schedule','workflow_dispatch')
+          category='C' if os.environ['EVENT'] in ('schedule','workflow_dispatch') else 'B'
+          with open(os.environ['GITHUB_OUTPUT'],'a') as output:
+              output.write('trusted='+str(trusted).lower()+'\nclass='+category+'\n')
+          if not trusted:
+              report=dict(change_class=category,revision=os.environ['HEAD_SHA'],base=os.environ['BASE'],project_ids=[],full_required=True,reason='Policy action new/changed or manual health: full acceptance required')
+              raw=json.dumps(report,indent=2)+'\n';Path('change-report.json').write_text(raw)
+              print(raw)
+              with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as output: output.write('```json\n'+raw+'```\n')
+          PYCODE
+      - uses: ./.github/actions/change-policy
+        if: steps.bootstrap.outputs.trusted == 'true'
+        id: policy
+      - uses: actions/upload-artifact@v4
+        with:
+          name: archive-change-policy
+          path: change-report.json
+  data-contract:
+    needs: policy
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: Planton361/myatlas
+          ref: main
+          path: build/myatlas
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Entire archive, reproducible index and merged reader contract
+        run: python3 -B scripts/test-project-data.py --myatlas-root build/myatlas --revision "$GITHUB_SHA"
+      - name: Policy and thirty sequential synthetic imports (infrastructure/health)
+        if: needs.policy.outputs.class != 'A'
+        env:
+          MYATLAS_ROOT: ${{ github.workspace }}/build/myatlas
+        run: python3 -B -m unittest scripts.tests.test_ci_change scripts.tests.test_project_data
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: archive-data-contract
+          path: project-data-report.json
+  acceptance:
+    name: Project acceptance
+    if: always()
+    needs: [policy, data-contract, pages-compatibility]
+    runs-on: ubuntu-24.04
+    env:
+      CLASS: ${{ needs.policy.outputs.class }}
+      POLICY: ${{ needs.policy.result }}
+      DATA: ${{ needs.data-contract.result }}
+      FULL: ${{ needs.pages-compatibility.result }}
+    steps:
+      - name: Required acceptance and diagnostic
+        run: |
+          echo "class=$CLASS policy=$POLICY archive-data=$DATA application-health=$FULL"
+          test "$POLICY" = success && test "$DATA" = success
+          if [ "$CLASS" = A ]; then
+            test "$FULL" = skipped
+            echo "Validated archive data: browser build not required. Owner review and merge remain manual."
+          else
+            test "$FULL" = success
+            echo "Full application health required for infrastructure/unknown/manual changes. Browser/network failure is not archive rejection."
+          fi
   pages-compatibility:
+    needs: policy
+    if: needs.policy.outputs.class != 'A'
     name: Full Pages compatibility (${{ matrix.scenario }})
     runs-on: ubuntu-24.04
     timeout-minutes: 35
@@ -28,10 +129,12 @@ jobs:
           path: build/myatlas
           fetch-depth: 0
           persist-credentials: false
-      - name: Select current MyAtlas main or the reviewed compatibility commit
+      - name: Select canonical MyAtlas or exact reviewed Phase-5 PR candidate
+        env:
+          EVENT: ${{ github.event_name }}
         run: |
           python3 - <<'PY'
-          import json, subprocess
+          import json, os, subprocess
           from pathlib import Path
           root = Path('build/myatlas')
           contract = json.loads(Path('scripts/templates/myatlas-acceptance.json').read_text())
@@ -41,7 +144,29 @@ jobs:
           ancestor = subprocess.run(['git','-C',str(root),'merge-base','--is-ancestor',commit,'origin/main'], check=False)
           if ancestor.returncode:
               raise SystemExit('Merged Schema-4 MyAtlas reader required; incompatible fallback refused')
-          subprocess.run(['git','-C',str(root),'checkout','--detach','origin/main'], check=True)
+          review = contract.get('review_commit')
+          selected = 'origin/main'
+          if review:
+              import re
+              if not re.fullmatch('[a-f0-9]{40}', review):
+                  raise SystemExit('Review pin must be an exact commit')
+              subprocess.run(['git','-C',str(root),'fetch','origin',review], check=True)
+              merged = subprocess.run(['git','-C',str(root),'merge-base','--is-ancestor',review,'origin/main']).returncode == 0
+              # Squash/rebase merges do not preserve the Draft head SHA. Require
+              # exact committed fixture blobs in canonical main instead; never
+              # fall back to the known-incompatible pre-fix fixtures.
+              if not merged:
+                  merged = subprocess.run(['git','-C',str(root),'diff','--quiet',review,'origin/main','--',
+                      'tests/myatlas/index-test-support.cjs','tests/myatlas/index-browser.cjs',
+                      'scripts/tests/test_dynamic_index_release.py']).returncode == 0
+              if not merged:
+                  if os.environ['EVENT'] != 'pull_request':
+                      raise SystemExit('BLOCKED_BY_PHASE_5_MYATLAS: merge the reviewed fixture fix first')
+                  if subprocess.run(['git','-C',str(root),'merge-base','--is-ancestor','origin/main',review]).returncode:
+                      raise SystemExit('Review candidate must include current canonical MyAtlas main')
+                  selected = review
+                  print('Explicit Draft-PR review candidate; production/main still requires its merge:',review)
+          subprocess.run(['git','-C',str(root),'checkout','--detach',selected], check=True)
           if not (root/'docs/contracts/hyperskill-code-archive-v4.md').is_file():
               raise SystemExit('Current MyAtlas main lacks the Schema-4 contract')
           print('MyAtlas acceptance commit:', subprocess.check_output(['git','-C',str(root),'rev-parse','HEAD']).decode().strip())

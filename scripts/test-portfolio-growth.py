@@ -25,6 +25,9 @@ def execute(command, cwd, *, successful=True, env=None):
     result = subprocess.run(list(map(str, command)), cwd=cwd, env=env,
                             capture_output=True, text=True)
     if successful and result.returncode:
+        # Preserve the exact failed application assertion, not only a truncated tail.
+        print(result.stdout, flush=True)
+        print(result.stderr, file=sys.stderr, flush=True)
         raise ValueError(f'Command failed (exit {result.returncode}): {command[0]}: '
                          f'{result.stdout[-800:]} {result.stderr[-800:]}')
     if not successful and result.returncode == 0:
