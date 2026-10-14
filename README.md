@@ -9,10 +9,11 @@ New projects are stored under `projects/<ID>/` with selected owner-reviewed sour
 | Hyperskill ID | Project | Language | Archived code |
 | ---: | --- | --- | --- |
 | [113](https://hyperskill.org/projects/113) | Simple Chat Bot with Java | Java | [Browse](java/Simple%20Chat%20Bot%20with%20Java/) |
+| [133](https://hyperskill.org/projects/133) | Cinema Room Manager | Java | [Browse](projects/133/) |
 | [229](https://hyperskill.org/projects/229) | Zookeeper with Java | Java | [Browse](java/Zookeeper%20with%20Java/) |
 | [380](https://hyperskill.org/projects/380) | My First Project with Java | Java | [Browse](java/My%20First%20Project%20with%20Java/) |
 
-**Documentation snapshot:** 14 October 2026. The project manifests in Git are the source of truth, and the [public validated project index](https://planton361.github.io/hyperskill-projects/portfolio/current.json) supplies the current published inventory. For the live, human-readable project list and learning progress, open [MyAtlas — My Skill Tree](https://planton361.github.io/myatlas/knowledge-map/?view=skill-tree) and choose **Meine Projekte**. The README table is updated in a separate documentation-only PR after new projects have been successfully merged; it is not an automatically refreshed view.
+**Documentation snapshot:** 14 October 2026. The project manifests in Git are the source of truth, and the [public validated project index](https://planton361.github.io/hyperskill-projects/portfolio/current.json) supplies the current published inventory. For the live, human-readable project list and learning progress, open [MyAtlas — My Skill Tree](https://planton361.github.io/myatlas/knowledge-map/?view=skill-tree) and choose **Meine Projekte**. The README table is maintained separately from project archive PRs after successful merges; it is not an automatically refreshed view.
 
 ## Publish a completed project
 
