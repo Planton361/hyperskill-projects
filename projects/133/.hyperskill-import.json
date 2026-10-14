@@ -1,0 +1,23 @@
+{
+  "schema": 4,
+  "mode": "code-archive",
+  "project_id": 133,
+  "project_url": "https://hyperskill.org/projects/133",
+  "title": "Cinema Room Manager",
+  "completion": {
+    "project_id": 133,
+    "status": "completed",
+    "attested_by": "owner",
+    "confirmed_at": "2026-10-14T15:28:18.699685Z"
+  },
+  "files": {
+    "README.md": {
+      "sha256": "b4a575dba31444973fb992b707799de0a205d60d76eac9bc2b899c3259405bb7",
+      "role": "resource"
+    },
+    "solution/Cinema Room Manager/task/src/cinema/Cinema.java": {
+      "sha256": "35b1da232741ae20500a8bd82023d5b51c1a63a9a71eec596df9d595ae01a705",
+      "role": "solution"
+    }
+  }
+}
